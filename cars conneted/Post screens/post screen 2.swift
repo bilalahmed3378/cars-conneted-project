@@ -78,7 +78,8 @@ struct post_screen_2: View {
             .padding(.top,30)
             
             Image("Line 5")
-                .padding()
+                .padding(10)
+            //Remove 10 from padding
             
             
         }
