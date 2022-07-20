@@ -12,6 +12,7 @@ struct post_screen_2: View {
 
     var body: some View {
         VStack{
+            Spacer()
             HStack{
                 Image("post back icons")
                 Spacer()
@@ -36,18 +37,21 @@ struct post_screen_2: View {
                 .padding(.leading)
                 .padding(.trailing)
             
+              Spacer()
             Spacer()
-                        
+            Spacer()
+            
+            VStack{
             HStack{
                 Button(action: {}, label: {
                     VStack{
-                       Image("clarity_picture-solid")
+                       Image("clarity_picture-solid-1")
                         Text("Add photo")
                             .fontWeight(.light)
-                            .foregroundColor(.black)
+                            .foregroundColor(AppColors.redGradientColor1)
                     }
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.gray).opacity(0.5))
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(AppColors.redGradientColor2).opacity(0.5))
                 })
               
                 Button(action: {}, label: {
@@ -75,14 +79,93 @@ struct post_screen_2: View {
                 
                 
             }
+            .frame(width: 400, height: 80)
             .padding(.top,30)
             
             Image("Line 5")
-                .padding(10)
-            //Remove 10 from padding
+                .padding()
+            
+            HStack{
+                Text("Gallery")
+                    .font(.title)
+                Spacer()
+                Button(action: {}, label: {
+                    Text("Done")
+                        .font(.body)
+                        .foregroundColor(.white)
+                        .background(RoundedRectangle(cornerRadius: 20).fill(AppColors.redGradientColor1).frame(width: 85, height: 40))
+                        .padding(.trailing,30)
+                })
+            }
+            .padding()
+            
+            HStack{
+                Text("2 Images selected")
+                    .fontWeight(.light)
+                    .foregroundColor(AppColors.redGradientColor2)
+                Spacer()
+                
+            }
+            .padding()
+            Group{
+            HStack{
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            
+            }
+            .frame(width: 328, height: 106)
+          
+            
+            HStack{
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            
+            }
+            .frame(width: 328, height: 106)
+          
+            }
+            HStack{
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                
+                Image("unsplash_eqW1MPinEV4")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+            
+            }
+            .frame(width: 328, height: 106)
+          
+            }
+            
+         
+           
             
             
-        }
+            
+        } .edgesIgnoringSafeArea(.bottom)
     }
 }
 
