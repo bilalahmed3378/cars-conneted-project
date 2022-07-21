@@ -14,6 +14,7 @@
 		592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A72887EDB800A531A4 /* Search Clubs screen.swift */; };
 		592F18AB288816DF00A531A4 /* post sceen 1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AA288816DF00A531A4 /* post sceen 1.swift */; };
 		592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AC28882C4300A531A4 /* post screen 2.swift */; };
+		592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AE2889160E00A531A4 /* Post screen 3.swift */; };
 		593466692886712800956869 /* cars_connetedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466682886712800956869 /* cars_connetedApp.swift */; };
 		5934666B2886712800956869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934666A2886712800956869 /* ContentView.swift */; };
 		5934666D2886712E00956869 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5934666C2886712E00956869 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		592F18A72887EDB800A531A4 /* Search Clubs screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Clubs screen.swift"; sourceTree = "<group>"; };
 		592F18AA288816DF00A531A4 /* post sceen 1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post sceen 1.swift"; sourceTree = "<group>"; };
 		592F18AC28882C4300A531A4 /* post screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 2.swift"; sourceTree = "<group>"; };
+		592F18AE2889160E00A531A4 /* Post screen 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post screen 3.swift"; sourceTree = "<group>"; };
 		593466652886712800956869 /* cars conneted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cars conneted.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		593466682886712800956869 /* cars_connetedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cars_connetedApp.swift; sourceTree = "<group>"; };
 		5934666A2886712800956869 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			children = (
 				592F18AA288816DF00A531A4 /* post sceen 1.swift */,
 				592F18AC28882C4300A531A4 /* post screen 2.swift */,
+				592F18AE2889160E00A531A4 /* Post screen 3.swift */,
 			);
 			path = "Post screens";
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
 				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* ClubsTab.swift in Sources */,
+				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
 				593466942886953800956869 /* AppColors.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
 				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
