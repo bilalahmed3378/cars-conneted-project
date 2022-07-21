@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct personal_message_screen: View {
+    @State private var typemessage = ""
     var body: some View {
         ZStack{
             
@@ -59,7 +60,7 @@ struct personal_message_screen: View {
                         .resizable())
                 HStack{
                     Spacer()
-                    VStack{
+                    VStack(alignment: .trailing){
                 HStack(alignment: .bottom){
                     Text("Good bye!")
                         .font(.body)
@@ -69,22 +70,32 @@ struct personal_message_screen: View {
                         .foregroundColor(.white)
                 }
                 .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor2))
+                .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                        
+                        HStack(alignment: .bottom){
+                            Text("Good bye sir Thank you!")
+                                .font(.body)
+                                .foregroundColor(.white)
+                            Text("17:47")
+                                .font(.caption)
+                                .foregroundColor(.white)
+                        }
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 
-                HStack(alignment: .bottom){
-                    Text("Good bye!")
-                        .font(.body)
-                        .foregroundColor(.white)
-                    Text("17:47")
-                        .font(.caption)
-                        .foregroundColor(.white)
-                }
-                .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor2))
+              
                     }
                 }
                 .padding()
+                HStack{
+                    Text("Fri, Jul 26")
+                        .font(.body)
+                }
+                .background(RoundedRectangle(cornerRadius:10).fill(.gray).opacity(0.5).frame(width: 130, height: 30))
+              
+                
                 Spacer()
+              
             }
         }
         .edgesIgnoringSafeArea(.all)

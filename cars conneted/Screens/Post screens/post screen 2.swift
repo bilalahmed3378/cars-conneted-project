@@ -93,7 +93,7 @@ struct post_screen_2: View {
                     Text("Done")
                         .font(.body)
                         .foregroundColor(.white)
-                        .background(RoundedRectangle(cornerRadius: 20).fill(AppColors.redGradientColor1).frame(width: 85, height: 40))
+                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 85, height: 40))
                         .padding(.trailing,30)
                 })
             }

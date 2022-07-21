@@ -77,7 +77,7 @@ struct post_screen_5_preview_: View {
                             .padding()
                             .padding(.trailing,155)
                             .padding(.leading,155)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(AppColors.redGradientColor2))
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                             .padding()
                     }
                 })

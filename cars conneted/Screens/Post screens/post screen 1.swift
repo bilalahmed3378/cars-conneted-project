@@ -44,7 +44,7 @@ struct post_sceen_1: View {
             Button(action: {}, label: {
                 Text("Post")
                     .foregroundColor(.white)
-                    .background(RoundedRectangle(cornerRadius: 20).fill(AppColors.redGradientColor1).frame(width: 327, height: 56))
+                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 327, height: 56))
             })
            
             

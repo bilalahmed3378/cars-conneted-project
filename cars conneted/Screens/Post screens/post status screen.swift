@@ -70,7 +70,7 @@ struct post_status_screen: View {
                             Text("Share")
                                 .foregroundColor(.white)
                             Image("fluent_send-20-filled")
-                        }.background(RoundedRectangle(cornerRadius: 50).fill(AppColors.redGradientColor2).frame(width: 105, height: 44))
+                        }.background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 105, height: 44))
                             .padding()
                     })
                   
