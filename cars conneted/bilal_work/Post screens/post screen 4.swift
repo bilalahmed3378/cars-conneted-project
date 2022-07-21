@@ -1,5 +1,5 @@
 //
-//  Post screen 3.swift
+//  post screen 4.swift
 //  cars conneted
 //
 //  Created by Bilal Ahmed on 21/07/2022.
@@ -7,8 +7,9 @@
 
 import SwiftUI
 
-struct Post_screen_3: View {
+struct post_screen_4: View {
     @State private var post: String = ""
+    @State private var location: String = ""
     var body: some View {
         VStack{
             HStack{
@@ -30,6 +31,21 @@ struct Post_screen_3: View {
             TextEditor(text: self.$post)
                 .foregroundColor(AppColors.redGradientColor2)
                 .frame(minHeight: 50, idealHeight: 50 , maxHeight: 150)
+                .colorMultiply(.white)
+                .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor2,lineWidth:1))
+                .padding(.leading)
+                .padding(.trailing)
+            
+            HStack{
+                Text("Add Location")
+                Spacer()
+            }
+            .padding()
+            
+            
+            TextEditor(text: self.$post)
+                .foregroundColor(AppColors.redGradientColor2)
+                .frame(minHeight: 50, idealHeight: 50 , maxHeight: 70)
                 .colorMultiply(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor2,lineWidth:1))
                 .padding(.leading)
@@ -128,8 +144,8 @@ struct Post_screen_3: View {
     }
 }
 
-struct Post_screen_3_Previews: PreviewProvider {
+struct post_screen_4_Previews: PreviewProvider {
     static var previews: some View {
-        Post_screen_3()
+        post_screen_4()
     }
 }
