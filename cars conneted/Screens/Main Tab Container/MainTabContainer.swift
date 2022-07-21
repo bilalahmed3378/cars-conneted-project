@@ -21,7 +21,7 @@ struct MainTabContainer: View {
                     HomeTab()
                 }
                 else if(self.selectedIndex == 1){
-                    ClubsTab()
+                   
                 }
                 else if(self.selectedIndex == 2){
                     
@@ -30,7 +30,7 @@ struct MainTabContainer: View {
                     
                 }
                 else{
-                    
+                    MessagesTab()
                 }
             
                 Spacer()
