@@ -21,13 +21,13 @@ struct MainTabContainer: View {
                     HomeTab()
                 }
                 else if(self.selectedIndex == 1){
-                   
+                  
                 }
                 else if(self.selectedIndex == 2){
                     
                 }
                 else if(self.selectedIndex == 3){
-                    
+                    Market_place_and_calssified()
                 }
                 else{
                     MessagesTab()

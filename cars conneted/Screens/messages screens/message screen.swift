@@ -89,14 +89,82 @@ struct personal_message_screen: View {
                 .padding()
                 HStack{
                     Text("Fri, Jul 26")
-                        .font(.body)
+                        .font(.caption)
                 }
-                .background(RoundedRectangle(cornerRadius:10).fill(.gray).opacity(0.5).frame(width: 130, height: 30))
+                .background(RoundedRectangle(cornerRadius:10).fill(.gray).opacity(0.5).frame(width: 100, height: 24))
               
+                HStack{
+                VStack(alignment: .leading){
+                    
+                HStack(alignment: .bottom){
+                    Text("Good bye sir you!")
+                        .font(.body)
+                        .foregroundColor(.black)
+                    Text("17:47")
+                        .font(.caption)
+                        .foregroundColor(.black)
+                   
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
+                    
+                    
+                    HStack(alignment: .bottom){
+                        Text("Good bye sir you!")
+                            .font(.body)
+                            .foregroundColor(.black)
+                        Text("17:47")
+                            .font(.caption)
+                            .foregroundColor(.black)
+                       
+                    }
+                    .padding(10)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
+                    
+                    
+                    Spacer()
+                }
+                .padding()
+                    
+                    Spacer()
+                }
+                
                 
                 Spacer()
-              
+                
+                //bottom bar
+                HStack{
+                    
+                    Image("Add icon")
+                        .resizable()
+                        .frame(width: 20, height: 20 )
+                        .padding(.leading,20)
+                    
+                    
+                    VStack{
+                        
+                        TextEditor(text: self.$typemessage)
+                            .frame( height: 50 )
+                            .colorMultiply(AppColors.redGradientColor2)
+                            
+                    }
+                    .background(RoundedRectangle(cornerRadius: 25).fill(.white))
+                    .padding(.leading,10)
+                    .padding(.trailing,10)
+                    
+                  Image("Camera icon")
+                        .resizable()
+                        .frame(width: 22, height: 20)
+                        .padding(.trailing,10)
+                    
+                    Image("mic icon")
+                        .resizable()
+                        .frame(width: 18, height: 22)
+                        .padding(.trailing,20)
+                }
+                .background(Rectangle().fill(AppColors.redGradientColor1).frame(width: 425, height: 82 ))
             }
+            .padding(.bottom)
         }
         .edgesIgnoringSafeArea(.all)
     }
