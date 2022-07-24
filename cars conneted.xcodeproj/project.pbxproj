@@ -30,6 +30,7 @@
 		593466992886C5C600956869 /* Home Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466982886C5C600956869 /* Home Tab.swift */; };
 		595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */; };
 		59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF0A9128871CD300298EE3 /* Search people screen .swift */; };
+		59E53A32288DAB800081D48B /* Market place search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A31288DAB800081D48B /* Market place search.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		593466982886C5C600956869 /* Home Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home Tab.swift"; sourceTree = "<group>"; };
 		595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place and calssified tab.swift"; sourceTree = "<group>"; };
 		59DF0A9128871CD300298EE3 /* Search people screen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search people screen .swift"; sourceTree = "<group>"; };
+		59E53A31288DAB800081D48B /* Market place search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place search.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,11 +226,20 @@
 			isa = PBXGroup;
 			children = (
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
+				59E53A30288DAB330081D48B /* Market place  */,
 				592F18B72889804800A531A4 /* messages screens */,
 				592F18A62887D87B00A531A4 /* Search screens */,
 				592F18A9288816B300A531A4 /* Post screens */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		59E53A30288DAB330081D48B /* Market place  */ = {
+			isa = PBXGroup;
+			children = (
+				59E53A31288DAB800081D48B /* Market place search.swift */,
+			);
+			path = "Market place ";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -367,6 +378,7 @@
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
+				59E53A32288DAB800081D48B /* Market place search.swift in Sources */,
 				593466942886953800956869 /* AppColors.swift in Sources */,
 				595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
