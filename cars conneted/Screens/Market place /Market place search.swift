@@ -38,14 +38,17 @@ struct Maeket_place_search: View {
                         } .padding(15)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
                         
-                        Image("Filter 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                            .padding()
-                            .frame(width: 53, height: 53)
-                            .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                            .padding(.leading,10)
+                        Button(action: {}, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 35, height: 35)
+                                .padding()
+                                .frame(width: 53, height: 53)
+                                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                                .padding(.leading,10)
+                        })
+                       
                     }
                 
                 }
@@ -85,7 +88,7 @@ struct Maeket_place_search_Previews: PreviewProvider {
 struct marketPlaceSreachCards : View {
     
     var body: some View {
-        
+       
         ZStack(alignment: .leading){
             Image("Rectangle 1265")
                 .resizable()
@@ -170,12 +173,14 @@ struct marketPlaceSreachCards : View {
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
                     
                     Spacer()
-                    
-                    Text("Purchase")
-                        .font(.footnote)
-                        .foregroundColor(.white)
-                        .frame(width: 250, height: 35)
-                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                    Button(action: {}, label: {
+                        Text("Purchase")
+                            .font(.footnote)
+                            .foregroundColor(.white)
+                            .frame(width: 250, height: 35)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                    })
+                  
                        
                 }
                 .padding(.leading)
