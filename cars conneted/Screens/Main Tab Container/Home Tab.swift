@@ -12,6 +12,8 @@ struct HomeTab: View {
 
     var body: some View {
         
+        NavigationView{
+        
             ZStack{
                 
                 VStack{
@@ -482,7 +484,7 @@ struct HomeTab: View {
             }
             .edgesIgnoringSafeArea(.top)
         
-        
+        }
     }
 }
 

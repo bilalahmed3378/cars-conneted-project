@@ -9,7 +9,17 @@ import SwiftUI
 
 struct Maeket_place_search: View {
     @State private var searchText = ""
+    @State var toScreen = false
+    
+    
     var body: some View {
+        
+        NavigationLink(destination: Product_Details(), isActive: $toScreen){
+            
+            EmptyView()
+            
+        }
+        
         ZStack{
             
             VStack{
@@ -67,7 +77,7 @@ struct Maeket_place_search: View {
                 ScrollView(.vertical, showsIndicators: false){
                     LazyVStack{
                         ForEach(0...5 , id:\.self){ index in
-                            marketPlaceSreachCards()
+                            marketPlaceSreachCards(toScreen:$toScreen)
                     }
                     
                 }
@@ -86,6 +96,8 @@ struct Maeket_place_search_Previews: PreviewProvider {
 }
 
 struct marketPlaceSreachCards : View {
+    
+    @Binding var toScreen : Bool
     
     var body: some View {
        
@@ -173,7 +185,11 @@ struct marketPlaceSreachCards : View {
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
                     
                     Spacer()
-                    Button(action: {}, label: {
+                    Button(action: {
+                        
+                        toScreen = true
+                        
+                    }, label: {
                         Text("Purchase")
                             .font(.footnote)
                             .foregroundColor(.white)
