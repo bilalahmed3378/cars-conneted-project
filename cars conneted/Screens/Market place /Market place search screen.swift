@@ -14,11 +14,6 @@ struct Maeket_place_search: View {
     
     var body: some View {
         
-        NavigationLink(destination: Product_Details(), isActive: $toScreen){
-            
-            EmptyView()
-            
-        }
         
         ZStack{
             
@@ -77,7 +72,7 @@ struct Maeket_place_search: View {
                 ScrollView(.vertical, showsIndicators: false){
                     LazyVStack{
                         ForEach(0...5 , id:\.self){ index in
-                            marketPlaceSreachCards(toScreen:$toScreen)
+                            marketPlaceSreachCards()
                     }
                     
                 }
@@ -97,7 +92,7 @@ struct Maeket_place_search_Previews: PreviewProvider {
 
 struct marketPlaceSreachCards : View {
     
-    @Binding var toScreen : Bool
+   
     
     var body: some View {
        
@@ -187,7 +182,7 @@ struct marketPlaceSreachCards : View {
                     Spacer()
                     Button(action: {
                         
-                        toScreen = true
+                      
                         
                     }, label: {
                         Text("Purchase")

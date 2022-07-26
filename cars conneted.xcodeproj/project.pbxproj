@@ -33,6 +33,13 @@
 		59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */; };
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
 		59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */; };
+		59DE3864288FA56500BD72D9 /* Address Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3863288FA56500BD72D9 /* Address Screen.swift */; };
+		59DE3866288FA7EF00BD72D9 /* Checkout screen 1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3865288FA7EF00BD72D9 /* Checkout screen 1.swift */; };
+		59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3867288FAC7C00BD72D9 /* Checkout Screen 2.swift */; };
+		59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3869288FADCD00BD72D9 /* Invoice screen.swift */; };
+		59DE386C288FE7FB00BD72D9 /* Add product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE386B288FE7FB00BD72D9 /* Add product.swift */; };
+		59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */; };
+		59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */; };
 		59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF0A9128871CD300298EE3 /* Search people screen .swift */; };
 		59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A31288DAB800081D48B /* Market place search screen.swift */; };
 		59E53A34288E65750081D48B /* Product Details screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A33288E65750081D48B /* Product Details screen.swift */; };
@@ -85,6 +92,13 @@
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
 		59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Method step 3 screen.swift"; sourceTree = "<group>"; };
+		59DE3863288FA56500BD72D9 /* Address Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Address Screen.swift"; sourceTree = "<group>"; };
+		59DE3865288FA7EF00BD72D9 /* Checkout screen 1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkout screen 1.swift"; sourceTree = "<group>"; };
+		59DE3867288FAC7C00BD72D9 /* Checkout Screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Checkout Screen 2.swift"; sourceTree = "<group>"; };
+		59DE3869288FADCD00BD72D9 /* Invoice screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invoice screen.swift"; sourceTree = "<group>"; };
+		59DE386B288FE7FB00BD72D9 /* Add product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add product.swift"; sourceTree = "<group>"; };
+		59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Product Preview.swift"; sourceTree = "<group>"; };
+		59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Profile- Wall.swift"; sourceTree = "<group>"; };
 		59DF0A9128871CD300298EE3 /* Search people screen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search people screen .swift"; sourceTree = "<group>"; };
 		59E53A31288DAB800081D48B /* Market place search screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place search screen.swift"; sourceTree = "<group>"; };
 		59E53A33288E65750081D48B /* Product Details screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details screen.swift"; sourceTree = "<group>"; };
@@ -236,12 +250,21 @@
 			isa = PBXGroup;
 			children = (
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
+				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow  */,
 				59E53A30288DAB330081D48B /* Market place  */,
 				592F18B72889804800A531A4 /* messages screens */,
 				592F18A62887D87B00A531A4 /* Search screens */,
 				592F18A9288816B300A531A4 /* Post screens */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow  */ = {
+			isa = PBXGroup;
+			children = (
+				59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */,
+			);
+			path = "User Profile, Follow, Unfollow ";
 			sourceTree = "<group>";
 		};
 		59E53A30288DAB330081D48B /* Market place  */ = {
@@ -253,6 +276,12 @@
 				59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */,
 				59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */,
 				59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */,
+				59DE3863288FA56500BD72D9 /* Address Screen.swift */,
+				59DE3865288FA7EF00BD72D9 /* Checkout screen 1.swift */,
+				59DE3867288FAC7C00BD72D9 /* Checkout Screen 2.swift */,
+				59DE3869288FADCD00BD72D9 /* Invoice screen.swift */,
+				59DE386B288FE7FB00BD72D9 /* Add product.swift */,
+				59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */,
 			);
 			path = "Market place ";
 			sourceTree = "<group>";
@@ -387,19 +416,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
+				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
+				59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */,
 				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
+				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
 				59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */,
 				593466942886953800956869 /* AppColors.swift in Sources */,
 				595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */,
+				59DE386C288FE7FB00BD72D9 /* Add product.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
 				59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */,
 				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
+				59DE3866288FA7EF00BD72D9 /* Checkout screen 1.swift in Sources */,
 				592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */,
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
@@ -410,6 +445,7 @@
 				592F18B628895EA600A531A4 /* post status screen.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
+				59DE3864288FA56500BD72D9 /* Address Screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
