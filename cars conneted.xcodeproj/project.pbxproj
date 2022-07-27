@@ -29,6 +29,11 @@
 		593466942886953800956869 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466932886953700956869 /* AppColors.swift */; };
 		593466992886C5C600956869 /* Home Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466982886C5C600956869 /* Home Tab.swift */; };
 		595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */; };
+		59607F1328914B5000B46682 /* My Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1228914B5000B46682 /* My Garage.swift */; };
+		59607F1528914F6700B46682 /* Car Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1428914F6700B46682 /* Car Specification.swift */; };
+		59607F19289155D800B46682 /* My products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F18289155D800B46682 /* My products.swift */; };
+		59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1B28915A1900B46682 /* Setting Screen.swift */; };
+		59607F1E28916D7B00B46682 /* My Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1D28916D7B00B46682 /* My Profile.swift */; };
 		59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385B288EA8BF00BD72D9 /* Cart screen.swift */; };
 		59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */; };
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
@@ -88,6 +93,11 @@
 		593466932886953700956869 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		593466982886C5C600956869 /* Home Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home Tab.swift"; sourceTree = "<group>"; };
 		595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place and calssified tab.swift"; sourceTree = "<group>"; };
+		59607F1228914B5000B46682 /* My Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage.swift"; sourceTree = "<group>"; };
+		59607F1428914F6700B46682 /* Car Specification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car Specification.swift"; sourceTree = "<group>"; };
+		59607F18289155D800B46682 /* My products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My products.swift"; sourceTree = "<group>"; };
+		59607F1B28915A1900B46682 /* Setting Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting Screen.swift"; sourceTree = "<group>"; };
+		59607F1D28916D7B00B46682 /* My Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Profile.swift"; sourceTree = "<group>"; };
 		59DE385B288EA8BF00BD72D9 /* Cart screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart screen.swift"; sourceTree = "<group>"; };
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
@@ -250,24 +260,53 @@
 			isa = PBXGroup;
 			children = (
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
-				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow  */,
-				59E53A30288DAB330081D48B /* Market place  */,
+				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
+				59E53A30288DAB330081D48B /* Market place screens */,
+				59607F1128914A6800B46682 /* My Garage screens */,
 				592F18B72889804800A531A4 /* messages screens */,
+				59607F17289155B100B46682 /* My products screens */,
 				592F18A62887D87B00A531A4 /* Search screens */,
 				592F18A9288816B300A531A4 /* Post screens */,
+				59607F1A289159E700B46682 /* Settings Screens */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow  */ = {
+		59607F1128914A6800B46682 /* My Garage screens */ = {
+			isa = PBXGroup;
+			children = (
+				59607F1228914B5000B46682 /* My Garage.swift */,
+				59607F1428914F6700B46682 /* Car Specification.swift */,
+			);
+			path = "My Garage screens";
+			sourceTree = "<group>";
+		};
+		59607F17289155B100B46682 /* My products screens */ = {
+			isa = PBXGroup;
+			children = (
+				59607F18289155D800B46682 /* My products.swift */,
+			);
+			path = "My products screens";
+			sourceTree = "<group>";
+		};
+		59607F1A289159E700B46682 /* Settings Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59607F1B28915A1900B46682 /* Setting Screen.swift */,
+				59607F1D28916D7B00B46682 /* My Profile.swift */,
+			);
+			path = "Settings Screens";
+			sourceTree = "<group>";
+		};
+		59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */ = {
 			isa = PBXGroup;
 			children = (
 				59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */,
 			);
-			path = "User Profile, Follow, Unfollow ";
+			path = "User Profile, Follow, Unfollow screen";
 			sourceTree = "<group>";
 		};
-		59E53A30288DAB330081D48B /* Market place  */ = {
+		59E53A30288DAB330081D48B /* Market place screens */ = {
 			isa = PBXGroup;
 			children = (
 				59E53A31288DAB800081D48B /* Market place search screen.swift */,
@@ -283,7 +322,7 @@
 				59DE386B288FE7FB00BD72D9 /* Add product.swift */,
 				59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */,
 			);
-			path = "Market place ";
+			path = "Market place screens";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,12 +458,14 @@
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
+				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
 				59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */,
 				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
 				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
+				59607F1E28916D7B00B46682 /* My Profile.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
 				59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */,
@@ -439,9 +480,12 @@
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
 				5934666B2886712800956869 /* ContentView.swift in Sources */,
+				59607F1328914B5000B46682 /* My Garage.swift in Sources */,
 				592F18AB288816DF00A531A4 /* post screen 1.swift in Sources */,
+				59607F19289155D800B46682 /* My products.swift in Sources */,
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				59E53A34288E65750081D48B /* Product Details screen.swift in Sources */,
+				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
 				592F18B628895EA600A531A4 /* post status screen.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
