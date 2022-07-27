@@ -34,6 +34,8 @@
 		59607F19289155D800B46682 /* My products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F18289155D800B46682 /* My products.swift */; };
 		59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1B28915A1900B46682 /* Setting Screen.swift */; };
 		59607F1E28916D7B00B46682 /* My Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1D28916D7B00B46682 /* My Profile.swift */; };
+		59607F202891977600B46682 /* Change Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1F2891977600B46682 /* Change Password.swift */; };
+		59607F2228919ED300B46682 /* Successfully Changed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed.swift */; };
 		59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385B288EA8BF00BD72D9 /* Cart screen.swift */; };
 		59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */; };
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
@@ -98,6 +100,8 @@
 		59607F18289155D800B46682 /* My products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My products.swift"; sourceTree = "<group>"; };
 		59607F1B28915A1900B46682 /* Setting Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting Screen.swift"; sourceTree = "<group>"; };
 		59607F1D28916D7B00B46682 /* My Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Profile.swift"; sourceTree = "<group>"; };
+		59607F1F2891977600B46682 /* Change Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change Password.swift"; sourceTree = "<group>"; };
+		59607F2128919ED300B46682 /* Successfully Changed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed.swift"; sourceTree = "<group>"; };
 		59DE385B288EA8BF00BD72D9 /* Cart screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart screen.swift"; sourceTree = "<group>"; };
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
@@ -294,6 +298,8 @@
 			children = (
 				59607F1B28915A1900B46682 /* Setting Screen.swift */,
 				59607F1D28916D7B00B46682 /* My Profile.swift */,
+				59607F1F2891977600B46682 /* Change Password.swift */,
+				59607F2128919ED300B46682 /* Successfully Changed.swift */,
 			);
 			path = "Settings Screens";
 			sourceTree = "<group>";
@@ -456,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
+				59607F202891977600B46682 /* Change Password.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
@@ -490,6 +497,7 @@
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
 				59DE3864288FA56500BD72D9 /* Address Screen.swift in Sources */,
+				59607F2228919ED300B46682 /* Successfully Changed.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
