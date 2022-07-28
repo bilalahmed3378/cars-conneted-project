@@ -23,7 +23,7 @@ struct Transacation_detail: View {
                 Spacer()
                 
                 Text("Transaction")
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                    
                 
                 Spacer()
@@ -36,14 +36,14 @@ struct Transacation_detail: View {
                 HStack{
                     VStack(alignment: .leading){
                     Text("Your Balance")
-                        .font(.title)
+                            .font(AppFonts.semiBold_22)
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Your Balance")
-                            .font(.title))
+                            .font(AppFonts.semiBold_22))
                         .padding(.bottom,5)
                         
                         Text("$365.89")
-                            .fontWeight(.semibold)
+                            .font(AppFonts.semiBold_18)
 
                     }
                     
@@ -60,10 +60,14 @@ struct Transacation_detail: View {
                 
                 HStack{
                     Text("Transaction")
-                        .font(.title)
+                        .font(AppFonts.semiBold_22)
                         Spacer()
-                    Text("See all")
-                        .foregroundColor(.red)
+                    Button(action: {}, label: {
+                        Text("See all")
+                            .font(AppFonts.regular_16)
+                            .foregroundColor(.red)
+                    })
+                  
                 }
                 .padding()
                 
@@ -104,14 +108,16 @@ struct Transactions : View {
             
             VStack(alignment: .leading){
                 Text("Ahmmd Shah")
+                    .font(AppFonts.semiBold_14)
                     .foregroundColor(.black)
                     .padding(.bottom,5)
                 Text("Today 8:23 AM")
-                    .font(.caption)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(.gray)
             }
             Spacer()
                 Text("$50.00")
+                .font(AppFonts.semiBold_14)
         }
         .frame(width: 377, height: 60)
         

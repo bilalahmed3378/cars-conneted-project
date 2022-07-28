@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Terms_of_sevices_screen: View {
     var body: some View {
+        
         VStack{
             HStack{
                 Button(action: {}, label: {
@@ -24,13 +25,14 @@ struct Terms_of_sevices_screen: View {
             HStack{
                 VStack(alignment: .leading){
                     Text("Terms of Service")
-                        .font(.title)
+                        .font(AppFonts.semiBold_24)
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Terms of Service")
-                            .font(.title))
+                            .font(AppFonts.semiBold_24))
                         .padding(.bottom,5)
                     
                     Text("Last updated on July 2022")
+                        .font(AppFonts.regular_12)
                       .foregroundColor(.gray)
                 }
                 
@@ -47,10 +49,10 @@ struct Terms_of_sevices_screen: View {
             ScrollView(.vertical){
                 HStack{
                     Text("Terms")
-                        .font(.title)
+                        .font(AppFonts.semiBold_18)
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Terms")
-                            .font(.title))
+                            .font(AppFonts.semiBold_18))
                         .padding(.bottom,5)
                     
                     Spacer()
@@ -58,14 +60,15 @@ struct Terms_of_sevices_screen: View {
                 
                 VStack(alignment: .leading){
                     Text("rem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh eget bibendum nibh. Malesuada eget faucibus arcu turpis lectus. Vulputate sociis et, adipiscing id pharetra at arcu, iaculis pellentesque. Facilisis sed ut mi tincidunt vel feugiat. Ullamcorper amet, tincidunt posuere ornare orci. At eget euismod senectus nisi eget.")
+                        .font(AppFonts.regular_16)
                 }.padding(.bottom)
                 
                 HStack{
                     Text("Use License")
-                        .font(.title)
+                        .font(AppFonts.semiBold_18)
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Use License")
-                            .font(.title))
+                            .font(AppFonts.semiBold_18))
                         .padding(.bottom,5)
                     
                     Spacer()
@@ -73,6 +76,7 @@ struct Terms_of_sevices_screen: View {
                 
                 VStack(alignment: .leading){
                     Text("rem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nibh eget bibendum nibh. Malesuada eget faucibus arcu turpis lectus. Vulputate sociis et, adipiscing id pharetra at arcu, iaculis pellentesque. Facilisis sed ut mi tincidunt vel feugiat. Ullamcorper amet, tincidunt posuere ornare orci. At eget euismod senectus nisi eget.")
+                        .font(AppFonts.regular_16)
                 }.padding(.bottom)
             }
           

@@ -131,11 +131,8 @@ struct User_Profile__Wall: View {
                                 .padding()
                                 
                             }
-                            
-                           
-                      
-                
-                        Text("Risus ullamcorper sed ultrices quam mauris ullamcorper vulputate elementum morbi. A aliquet aenean faucibus turpis erat. Sed neque lobortis et nullam et bibendum tristique faucibus elementum.")
+                        
+                       Text("Risus ullamcorper sed ultrices quam mauris ullamcorper vulputate elementum morbi. A aliquet aenean faucibus turpis erat. Sed neque lobortis et nullam et bibendum tristique faucibus elementum.")
                             .multilineTextAlignment(.center)
                             .foregroundColor(.gray)
                             .padding()
@@ -143,6 +140,7 @@ struct User_Profile__Wall: View {
                         
                         Group{
                             HStack{
+                                
                                 Button(action: {
                                     self.isPostView = true
                                 }, label: {
