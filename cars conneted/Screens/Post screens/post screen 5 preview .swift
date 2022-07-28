@@ -13,10 +13,16 @@ struct post_screen_5_preview_: View {
             
         HStack{
             Image("post back icons")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 35, height: 35)
             Spacer()
+            
             Text("Add Post")
                 .font(.title)
+            
            Spacer()
+            
             Image("edit icons")
         }
         .padding()

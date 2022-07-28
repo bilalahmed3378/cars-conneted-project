@@ -24,7 +24,7 @@ struct Address_Screen: View {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 30)
+                        .frame(width: 35, height: 35)
                 })
               
                 
@@ -40,7 +40,7 @@ struct Address_Screen: View {
                     Image("doted icons-1")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 30)
+                        .frame(width: 35, height: 35)
                     
                 })
                

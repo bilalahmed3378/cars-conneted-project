@@ -21,7 +21,7 @@ struct Payment_method_step_1_screen: View {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 30)
+                        .frame(width: 35, height: 35)
                 })
               
                 

@@ -12,6 +12,34 @@ struct Car_Specification: View {
     var body: some View {
        
         VStack{
+            HStack{
+                Button(action: {}, label: {
+                    
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+               
+                
+                Spacer()
+                
+                Text("Car Specification")
+                    .font(.title)
+                   
+                
+                Spacer()
+                Button(action: {}, label: {
+                    Image("doted Icons")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+               
+               }
+            .padding()
+            .padding(.leading,-10)
+            
               HStack{
                 Spacer()
                 Image("image 11")
@@ -20,6 +48,7 @@ struct Car_Specification: View {
                   .frame(width: UIScreen.screenWidth, height: UIScreen.heightBlockSize*40)
                   .clipped()
                   .overlay(Color.black.opacity(0.02))
+                  .padding(.bottom)
               }
               ScrollView(.vertical, showsIndicators: false){
                   HStack{

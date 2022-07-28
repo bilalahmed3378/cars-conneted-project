@@ -20,7 +20,7 @@ struct Add_Product_Preview: View {
                 Image("back icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 35, height: 35)
                 
                Spacer()
                 
@@ -33,14 +33,14 @@ struct Add_Product_Preview: View {
                 Image("clarity_shopping-cart-solid")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 35, height: 35)
                 
               
                 
                 Image("doted icons-1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 35, height: 35)
                 
                 
             }.padding(.leading,24)

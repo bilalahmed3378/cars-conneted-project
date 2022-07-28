@@ -26,7 +26,7 @@ struct Payment_Method_step_3_screen: View {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 30)
+                        .frame(width: 35, height: 35)
                 })
               
                 
@@ -42,7 +42,7 @@ struct Payment_Method_step_3_screen: View {
                     Image("doted icons-1")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 30)
+                        .frame(width: 35, height: 35)
                     
                 })
                

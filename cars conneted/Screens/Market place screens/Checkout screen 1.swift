@@ -21,7 +21,7 @@ struct Checkout_screen_1: View {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                        .frame(width: 35, height: 35)
                 })
                
                 
@@ -36,7 +36,7 @@ struct Checkout_screen_1: View {
                     Image("doted icons-1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                        .frame(width: 35, height: 35)
                 })
               
                 

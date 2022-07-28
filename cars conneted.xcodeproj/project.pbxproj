@@ -40,6 +40,7 @@
 		59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */; };
 		59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */; };
 		59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */; };
+		59D7CF12289289D500F9EC5D /* Follow Requests Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF11289289D400F9EC5D /* Follow Requests Screens.swift */; };
 		59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385B288EA8BF00BD72D9 /* Cart screen.swift */; };
 		59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */; };
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
@@ -110,6 +111,7 @@
 		59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Terms of sevices screen.swift"; sourceTree = "<group>"; };
 		59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transacation detail screen.swift"; sourceTree = "<group>"; };
 		59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Setting screen.swift"; sourceTree = "<group>"; };
+		59D7CF11289289D400F9EC5D /* Follow Requests Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follow Requests Screens.swift"; sourceTree = "<group>"; };
 		59DE385B288EA8BF00BD72D9 /* Cart screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart screen.swift"; sourceTree = "<group>"; };
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
@@ -190,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				592F18B82889806D00A531A4 /* message screen.swift */,
+				59D7CF11289289D400F9EC5D /* Follow Requests Screens.swift */,
 			);
 			path = "messages screens";
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 				59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */,
 				59607F2428924A2100B46682 /* Notifications screen.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
+				59D7CF12289289D500F9EC5D /* Follow Requests Screens.swift in Sources */,
 				59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */,
 				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
 				59DE3866288FA7EF00BD72D9 /* Checkout screen 1.swift in Sources */,

@@ -20,7 +20,7 @@ struct Cart: View {
                 Image("back icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
+                    .frame(width: 35, height: 35)
                 
                Spacer()
                 

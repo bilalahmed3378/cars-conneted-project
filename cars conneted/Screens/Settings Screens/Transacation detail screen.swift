@@ -16,7 +16,7 @@ struct Transacation_detail: View {
                     Image("Icons-2")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                        .frame(width: 35, height: 35)
                 })
                
                 

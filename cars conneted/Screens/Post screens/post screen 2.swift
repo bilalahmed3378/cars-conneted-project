@@ -12,9 +12,16 @@ struct post_screen_2: View {
 
     var body: some View {
         VStack{
+            
             Spacer()
+            
             HStack{
                 Image("post back icons")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 35, height: 35)
+                
+                
                 Spacer()
                 Text("Add Post")
                     .font(.title)

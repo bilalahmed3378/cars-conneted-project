@@ -15,6 +15,9 @@ struct post_sceen_1: View {
         VStack{
             HStack{
                 Image("cross icons")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 35, height: 35)
                 Spacer()
                 Text("Add Post")
                     .font(.title)

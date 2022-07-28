@@ -22,6 +22,7 @@ struct personal_message_screen: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
+                            .padding(.leading,-10)
                         HStack{
                             Image("profile icon home")
                                 .resizable()
