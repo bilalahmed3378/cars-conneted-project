@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Product_Details: View {
+    @Environment (\.presentationMode) var presentationMode
     var body: some View {
         ZStack{
             
@@ -17,16 +18,21 @@ struct Product_Details: View {
             
             // top bar
             HStack{
-                Image("back icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("back icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+               
                 
                Spacer()
                 
                 Text("Details")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -84,16 +90,17 @@ struct Product_Details: View {
                     HStack{
                         VStack(alignment: .leading){
                             Text("BBS Double Alloy Rims")
-                                .fontWeight(.bold)
+                                .font(AppFonts.medium_16)
                                 .padding(.bottom,5)
                             
                             Text("Spacer Parts")
+                                .font(AppFonts.regular_14)
                         }
                     
                         Spacer()
                         
                         Text("$500")
-                            .font(.headline)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.white)
                             .frame(width: 80, height: 55)
                             .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
@@ -132,7 +139,9 @@ struct Product_Details: View {
                             .frame(width: 18, height: 18)
                         
                         Text("5.0")
+                            .font(AppFonts.regular_14)
                         Text("(View Reviews)")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(AppColors.redGradientColor1)
                     }
                    
@@ -146,13 +155,14 @@ struct Product_Details: View {
                     
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit a ipsum pulvinar morbi placerat id. Nisi, tellus amet ornare bibendum dmn;jnvkajnvlkafjnlvundfivnipfadunvjfnv;afnkvjnfkjanvklnvklfjnvnv;sjnadvkjnsvjn;ssnvakjnolor, a.")
-                            .font(.caption)
+                            .font(AppFonts.regular_14)
                     }
                     .frame(width: 377, height: 50)
                     .padding(.top,15)
                     
                     HStack{
                         Text("Select Colors")
+                            .font(AppFonts.regular_14)
                         Spacer()
                     }
                     .frame(width: 377, height: 40)
@@ -187,6 +197,7 @@ struct Product_Details: View {
                     
                     HStack{
                         Text("Select Size")
+                            .font(AppFonts.regular_14)
                         Spacer()
                         
                     }
@@ -197,26 +208,31 @@ struct Product_Details: View {
                     
                     HStack{
                         Text("15")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(AppColors.redGradientColor2)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1).opacity(0.2))
                         Spacer()
                         Text("16")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("17")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("18")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("20")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
@@ -225,6 +241,7 @@ struct Product_Details: View {
                     
                     HStack{
                         Text("Quantity")
+                            .font(AppFonts.regular_14)
                         Spacer()
                         
                     }
@@ -240,6 +257,7 @@ struct Product_Details: View {
                         Spacer()
                         
                         Text("2")
+                            .font(AppFonts.regular_14)
                             .frame(width: 250, height: 35)
                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(Color.red))
                         
@@ -253,22 +271,20 @@ struct Product_Details: View {
                     .frame(width: 377, height: 40)
                     .padding(.bottom,25)
                     
-                    Button(action: {}, label: {
+                    NavigationLink(destination: Cart(),  label: {
                         Text("Add to Cart")
+                            .font(AppFonts.semiBold_16)
                             .foregroundColor(.white)
                             .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 377, height: 56))
                            
                     })
-                  
                     
                 }
-                
-                
-              
                  
             }
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
     }
         
 }

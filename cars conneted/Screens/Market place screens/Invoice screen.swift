@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Invoice_screen: View {
+    @Environment(\.presentationMode) var presentationMode
+   
     var body: some View {
         ZStack {
           Image("Rectangle 4460")
@@ -17,7 +19,7 @@ struct Invoice_screen: View {
             VStack{
                 Text("Invoice")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                     .padding()
                     .padding(.top,60)
                 Spacer()
@@ -33,18 +35,21 @@ struct Invoice_screen: View {
                         ScrollView(.vertical, showsIndicators: false){
                     VStack{
                         Text("#1348934982")
-                            .font(.title)
+                            .font(AppFonts.medium_24)
                        
                         HStack{
                             Text("ORDER DETAILS")
+                                .font(AppFonts.bold_16)
                             Spacer()
                         }
                         .padding()
                         Group{
                         HStack{
                             Text("Amount")
+                                .font(AppFonts.light_16)
                             Spacer()
                             Text("$25")
+                                .font(AppFonts.light_16)
                             
                         }
                         .padding()
@@ -55,8 +60,10 @@ struct Invoice_screen: View {
                             .frame(width: 377, height: 1)
                         HStack{
                             Text("Inc. Tax")
+                                .font(AppFonts.light_16)
                             Spacer()
                             Text("$2")
+                                .font(AppFonts.light_16)
                             
                         }
                         .padding()
@@ -68,9 +75,10 @@ struct Invoice_screen: View {
                         
                         HStack{
                             Text("Total")
-                                .fontWeight(.bold)
+                                .font(AppFonts.bold_16)
                             Spacer()
                             Text("$25")
+                                .font(AppFonts.light_16)
                             
                         }
                         .padding()
@@ -82,7 +90,7 @@ struct Invoice_screen: View {
                         }
                         HStack{
                             Text("CUSTOMER DETAILS")
-                                .fontWeight(.bold)
+                                .font(AppFonts.bold_16)
                             Spacer()
                         }
                         .padding()
@@ -90,8 +98,10 @@ struct Invoice_screen: View {
                         
                         HStack{
                             Text("Customer Name")
+                                .font(AppFonts.light_16)
                             Spacer()
                             Text("John Doe")
+                                .font(AppFonts.light_16)
                             
                         }
                         .padding()
@@ -102,8 +112,11 @@ struct Invoice_screen: View {
                             .frame(width: 377, height: 1)
                         HStack{
                             Text("Email")
+                                .font(AppFonts.light_16)
                             Spacer()
                             Text("abc@gmail.com")
+                                .font(AppFonts.light_16)
+                                .foregroundColor(.black)
                             
                         }
                         .padding()
@@ -115,8 +128,10 @@ struct Invoice_screen: View {
                         
                         HStack{
                             Text("Phone Number")
+                                .font(AppFonts.light_16)
                             Spacer()
                             Text("+9235654985")
+                                .font(AppFonts.light_16)
                             
                         }
                         .padding()
@@ -148,12 +163,18 @@ struct Invoice_screen: View {
                     
                     Spacer()
                     Spacer()
-                    Button(action: {}, label: {
+                    
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
                         Image("Frame 7271")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 50)
                     })
+                       
+                    
+                       
                   
                     
                     Spacer()
@@ -168,6 +189,7 @@ struct Invoice_screen: View {
             
             
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

@@ -31,7 +31,10 @@ struct AppFonts {
     static let semiBold_12 : Font = Font.custom("Inter-SemiBold", size: 12)
     static let bold_12 : Font = Font.custom("Inter-Bold", size: 12)
     static let semiBold_24 : Font = Font.custom("Inter-SemiBold", size: 24)
-    
+    static let semiBold_16 : Font = Font.custom("Inter-SemiBold", size: 16)
+    static let regular_10 : Font = Font.custom("Inter-Regular", size: 10)
+    static let medium_24 : Font = Font.custom("Inter-Medium", size: 24)
+    static let light_16 : Font = Font.custom("Inter-Light", size: 16)
     
     
 }

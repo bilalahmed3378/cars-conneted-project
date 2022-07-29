@@ -27,6 +27,7 @@ struct Search_people_screen: View {
             
             TextField("Search",text: self.$searchText)
                 .foregroundColor(.red)
+                .font(AppFonts.regular_14)
             
             Image(systemName: "magnifyingglass")
                 .resizable()
@@ -65,15 +66,19 @@ struct Search_people_screen: View {
                     
                 HStack{
                     Text("People")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.red)
                    Spacer()
                     Text("Posts")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("Events")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("Clubs")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     
                     
@@ -117,27 +122,32 @@ struct Search_people_screen_Previews: PreviewProvider {
         HStack{
             Image("Ellipse 33").padding(.trailing,10)
             VStack(alignment: .leading){
-                Text("Jason Statham").padding(.bottom,1)
+                Text("Jason Statham")
+                    .font(AppFonts.regular_14)
+                    .padding(.bottom,1)
                 
                 Text("@jason123")
-                    .font(.caption)
+                    .font(AppFonts.regular_12)
                     .padding(.bottom,1)
                 
                 Text("Followed by Eminem12")
-                    .font(.caption)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(.gray)
                     
             
             }
             Spacer()
             Button(action: {}, label: {
-                Text("Follow").foregroundColor(.white)
+                Text("Follow")
+                    .font(AppFonts.medium_12)
+                    .foregroundColor(.white)
                     .background(RoundedRectangle(cornerRadius: 5).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: 86, height: 45))
                     .padding()
             })
            
             
         }.padding()
+            .padding(.trailing)
         Image("Line 7")
     }
 }

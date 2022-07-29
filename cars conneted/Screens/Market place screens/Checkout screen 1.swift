@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Checkout_screen_1: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack{
             
@@ -17,7 +18,9 @@ struct Checkout_screen_1: View {
             
            
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -27,9 +30,10 @@ struct Checkout_screen_1: View {
                 
                Spacer()
                 
+               
                 Text("Checkout")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 Button(action: {}, label: {
@@ -55,7 +59,7 @@ struct Checkout_screen_1: View {
                     
                     HStack{
                     Text("Checkout")
-                            .font(.title)
+                            .font(AppFonts.SemiBold_20)
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }.padding(.leading)
@@ -63,6 +67,7 @@ struct Checkout_screen_1: View {
                     
                         HStack{
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis sed lobortis pretium sagittis porta.")
+                                .font(AppFonts.regular_12)
                                 .foregroundColor(.gray)
                             Spacer()
                         }
@@ -72,6 +77,7 @@ struct Checkout_screen_1: View {
                     
                 HStack{
                     Text("Total 4 Products")
+                        .font(AppFonts.medium_16)
                         .foregroundColor(AppColors.redGradientColor1)
                     Spacer()
                 }
@@ -92,9 +98,11 @@ struct Checkout_screen_1: View {
                 
                 HStack{
                     Text("Total Items")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("15")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(AppColors.redGradientColor1)
                 }
                 .padding(.leading)
@@ -103,9 +111,11 @@ struct Checkout_screen_1: View {
                 
                 HStack{
                     Text("Total Amount")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("$7500")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(AppColors.redGradientColor1)
                 }
                 .padding(.leading)
@@ -113,12 +123,17 @@ struct Checkout_screen_1: View {
                     .padding(.bottom)
                 
                 
-                        Button(action: {}, label: {
-                            Text("Pay $7500")
-                                .foregroundColor(.white)
-                                .frame(width: 370, height: 60)
-                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                        })
+                    NavigationLink(destination: Checkout_Screen_2(),
+                                   label: {
+                             Text("Pay $7500")
+                            .font(AppFonts.semiBold_16)
+                            .foregroundColor(.white)
+                            .frame(width: 370, height: 60)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                    })
+                    .padding()
+                           
+                     
                     
                 }
           
@@ -128,6 +143,7 @@ struct Checkout_screen_1: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
     }
 }
 
@@ -148,20 +164,22 @@ struct marketPlaceCart2 : View {
            
             VStack(alignment: .leading){
                 Text("BBS Double Alloy Rims")
+                    .font(AppFonts.regular_14)
                 Spacer()
                 Text("Spare Parts")
-                    .font(.caption)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(.gray)
                 Spacer()
 
-                Text("$500")
-                    .font(.caption)
+                Text("Total $500")
+                    .font(AppFonts.regular_12)
                     .foregroundColor(AppColors.redGradientColor1)
                 
             }
             .frame(width: 190, height: 70)
             Spacer()
             Text("5")
+                .font(AppFonts.medium_14)
                 .frame(width: 30, height: 30)
                 .background(RoundedRectangle(cornerRadius: 5).fill(.white))
             

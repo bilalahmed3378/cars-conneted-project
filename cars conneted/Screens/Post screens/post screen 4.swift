@@ -21,7 +21,7 @@ struct post_screen_4: View {
                 Spacer()
                 
                 Text("Add Post")
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                Spacer()
             }
             .padding()
@@ -31,11 +31,13 @@ struct post_screen_4: View {
                 
                 HStack{
                     Text("What is in your mind?")
+                        .font(AppFonts.regular_12)
                     Spacer()
                 }
                 .padding()
                 
                 TextEditor(text: self.$post)
+                    .font(AppFonts.regular_14)
                     .foregroundColor(AppColors.redGradientColor2)
                     .frame(minHeight: 100,  maxHeight: 150)
                     .colorMultiply(.white)
@@ -45,6 +47,7 @@ struct post_screen_4: View {
                 
                 HStack{
                     Text("Add Location")
+                        .font(AppFonts.regular_12)
                     Spacer()
                 }
                 .padding()
@@ -53,6 +56,7 @@ struct post_screen_4: View {
                 VStack{
                 HStack{
                     Text("Choose Location")
+                        .font(AppFonts.regular_14)
                         .foregroundColor(AppColors.redGradientColor2)
                     Spacer()
                     Image("export icons")
@@ -132,7 +136,7 @@ struct post_screen_4: View {
                         ZStack{
                             Text("Preview?")
                                 .foregroundColor(.white)
-                                .font(.body)
+                                .font(AppFonts.semiBold_16)
                                 .padding()
                                 .padding(.trailing,135)
                                 .padding(.leading,135)

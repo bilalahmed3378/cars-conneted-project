@@ -27,7 +27,7 @@ struct My_Garage: View {
                     Spacer()
                     
                     Text("My Garage")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .foregroundColor(.white)
                     
                     Spacer()
@@ -48,6 +48,7 @@ struct My_Garage: View {
                     
                     TextField("Search",text: self.$searchText)
                         .foregroundColor(.red)
+                        .font(AppFonts.regular_14)
                     
                     Image(systemName: "magnifyingglass")
                         .resizable()
@@ -76,7 +77,7 @@ struct My_Garage: View {
                 
                 HStack{
                     Text("5 Cars in Garage")
-                        .font(.title)
+                        .font(AppFonts.regular_18)
                         .foregroundColor(AppColors.redGradientColor1)
                     Spacer()
                 }.padding(20)
@@ -84,6 +85,7 @@ struct My_Garage: View {
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliqueto.")
                             .foregroundColor(.gray)
+                            .font(AppFonts.regular_12)
                         
                         Spacer()
                     }
@@ -127,7 +129,7 @@ struct myGaragePosts : View {
                 VStack{
                     HStack{
                         Text("Slot 1")
-                            .font(.caption)
+                            .font(AppFonts.regular_12)
                             .foregroundColor(.white)
                             .frame(width: 80, height: 30)
                             .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
@@ -149,10 +151,12 @@ struct myGaragePosts : View {
             
             HStack{
                 Text("Honda Civic 1.6 Turbo")
-                    .fontWeight(.bold)
+                    .font(AppFonts.semiBold_14)
+                
                 Spacer()
                 
                 Text("view details")
+                    .font(AppFonts.regular_12)
                     .foregroundColor(AppColors.redGradientColor1)
             }
             .padding(.top,30)

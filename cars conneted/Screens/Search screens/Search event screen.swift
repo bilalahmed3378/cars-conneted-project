@@ -26,6 +26,7 @@ struct Search_event: View {
         HStack{
             
             TextField("Search",text: self.$searchText)
+                .font(AppFonts.regular_14)
                 .foregroundColor(.red)
             
             Image(systemName: "magnifyingglass")
@@ -65,18 +66,20 @@ struct Search_event: View {
                     
                 HStack{
                     Text("People")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                    Spacer()
                     Text("Posts")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("Events")
                         .foregroundColor(.red)
+                        .font(AppFonts.medium_14)
                     Spacer()
                     Text("Clubs")
                         .foregroundColor(.gray)
-                    
-                    
+                        .font(AppFonts.medium_14)
                    
                 }
                     
@@ -92,6 +95,7 @@ struct Search_event: View {
                 }
             HStack{
                 Text("256 Events")
+                    .font(AppFonts.semiBold_14)
                     .foregroundColor(.red)
                 Spacer()
             }.padding(.leading,20)
@@ -141,7 +145,7 @@ struct EventCard : View {
                 }
                 Spacer()
                 Text("Cars Expo 2022")
-                    .font(.title)
+                    .font(AppFonts.bold_20)
                     .foregroundColor(Color.white)
                 HStack{
                     Image("bxs_star")
@@ -152,25 +156,26 @@ struct EventCard : View {
                     
                     Text("5.0")
                         .foregroundColor(.white)
-                        .font(.caption)
+                        .font(AppFonts.regular_12)
                 }
                 
                 HStack{
                     Image("time Icons")
                     Text("June 8,2022")
                         .foregroundColor(.white)
-                        .font(.caption)
+                        .font(AppFonts.regular_12)
                 }
                 HStack{
                     Image("location Icons")
                     Text("KPK, Pakistan")
                         .foregroundColor(.white)
-                        .font(.caption)
+                        .font(AppFonts.regular_12)
                 }
                 
                 HStack{
                   
                     Text("$25")
+                        .font(AppFonts.regular_14)
                         .foregroundColor(.gray)
                         .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: 86, height: 45))
                     
@@ -182,6 +187,7 @@ struct EventCard : View {
                     }){
                         VStack{
                             Text("Register")
+                                .font(AppFonts.regular_14)
                                 .foregroundColor(.white)
                                 .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: 200, height: 45))
                         }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Address_Screen: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var customerName = ""
       @State var shippingAddress = ""
     
@@ -20,7 +21,9 @@ struct Address_Screen: View {
             
             Group{
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -32,7 +35,7 @@ struct Address_Screen: View {
                 
                 Text("Shipping Address")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -59,23 +62,26 @@ struct Address_Screen: View {
                     
                     HStack{
                     Text("Enter Card Details")
-                            .font(.title)
+                            .font(AppFonts.SemiBold_20)
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }
                     
                         HStack{
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis sed lobortis pretium sagittis porta.")
+                                .font(AppFonts.regular_12)
                                 .foregroundColor(.gray)
                             Spacer()
                         }
                         .padding(.top,10)
                   
                     Text("Customer Name")
+                        .font(AppFonts.regular_12)
                               .padding(.top,28)
                               .frame(maxWidth: .infinity, alignment: .leading)
                               .foregroundColor(.gray)
                             TextField("Jhon Smith",text:$customerName)
+                        .font(AppFonts.regular_14)
                               .padding(.vertical, 10)
                               .autocapitalization(.none)
                               .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -83,10 +89,12 @@ struct Address_Screen: View {
                     
                     Group{
                     Text("Shipping Address")
+                            .font(AppFonts.regular_12)
                               .padding(.top,28)
                               .frame(maxWidth: .infinity, alignment: .leading)
                               .foregroundColor(.black)
                         TextField("Near New City hospital, Washington DC, USA",text:$shippingAddress)
+                            .font(AppFonts.regular_14)
                               .padding(.vertical, 10)
                               .autocapitalization(.none)
                               .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -94,19 +102,15 @@ struct Address_Screen: View {
                     
                     }
                     
-                    Button(action: {}, label: {
-                        Text("Checkout")
-                            .fontWeight(.medium)
+                    NavigationLink(destination: Checkout_screen_1(),
+                                   label: {
+                        
+                            Text("Checkout")
+                            .font(AppFonts.semiBold_16)
                             .foregroundColor(.white)
                             .frame(width: 350, height: 60)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    })
-                    .padding()
-                    .padding(.top)
-                    
-                    
-                    
-                    
+                    }).padding(.top)
                    
                 }
                 .padding()
@@ -115,6 +119,7 @@ struct Address_Screen: View {
                 Spacer()
             }
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

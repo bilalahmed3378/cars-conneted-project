@@ -26,6 +26,7 @@ struct Search_post_time: View {
         HStack{
             
             TextField("Search",text: self.$searchText)
+                .font(AppFonts.regular_14)
                 .foregroundColor(.red)
             
             Image(systemName: "magnifyingglass")
@@ -64,15 +65,19 @@ struct Search_post_time: View {
                     
                 HStack{
                     Text("People")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                    Spacer()
                     Text("Posts")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.red)
                     Spacer()
                     Text("Events")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("Clubs")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     
                     
@@ -118,7 +123,7 @@ struct PostCard : View {
   
     var body: some View {
         
-        VStack{
+        VStack(alignment: .leading){
             
             HStack{
                
@@ -126,8 +131,11 @@ struct PostCard : View {
                 
                 VStack(alignment: .leading){
                     Text("Elizebeth Smith")
+                        .font(AppFonts.medium_14)
+                    
                     Text("1h ago")
                         .foregroundColor(Color.gray)
+                        .font(AppFonts.regular_12)
                     
                     
                 }
@@ -138,7 +146,7 @@ struct PostCard : View {
             }.padding(.bottom,10)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                .font(.subheadline)
+                .font(AppFonts.regular_12)
                 .foregroundColor(Color.gray)
             
             Image("unsplash_gmA751dxisA")
@@ -150,13 +158,13 @@ struct PostCard : View {
                 Image("Group 7370")
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
             }
@@ -167,7 +175,7 @@ struct PostCard : View {
                 HStack{
                     Image("heart icon")
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -177,7 +185,7 @@ struct PostCard : View {
                 HStack{
                     Image("ant-design_comment-outlined")
                     Text("Comment")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -185,7 +193,7 @@ struct PostCard : View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
@@ -193,7 +201,7 @@ struct PostCard : View {
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 

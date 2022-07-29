@@ -26,7 +26,7 @@ struct Follow_Requests_Screens: View {
                   Spacer()
                     
                     Text("Follow Request")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .foregroundColor(.white)
                     
                     Spacer()
@@ -53,6 +53,7 @@ struct Follow_Requests_Screens: View {
             ScrollView(.vertical, showsIndicators: false){
                 HStack{
                     Text("7 request")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                 }
@@ -96,16 +97,18 @@ struct followRequest: View {
             
             VStack(alignment: .leading){
                 Text("Camero 123")
+                    .font(AppFonts.medium_14)
                     .padding(.bottom,2)
                 
                 Text("request to follow you")
                     .foregroundColor(.gray)
-                    .font(.caption)
+                    .font(AppFonts.regular_12)
                 
             }
             Spacer()
             Button(action: {}, label: {
                 Text("Delete")
+                    .font(AppFonts.medium_12)
                     .foregroundColor(AppColors.redGradientColor1)
                     .frame(width: 75, height: 40)
                     .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.3))
@@ -113,6 +116,7 @@ struct followRequest: View {
            
             Button(action: {}, label: {
                 Text("Confirm")
+                    .font(AppFonts.medium_12)
                     .foregroundColor(.white)
                     .frame(width: 75, height: 40)
                     .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))

@@ -46,7 +46,7 @@ struct User_Profile__Wall: View {
                                 .offset(x: 0, y: -57)
                             
                             Text("Elon Musk")
-                                .font(.title)
+                                .font(AppFonts.medium_18)
                                 .padding(.top, -40)
                         }
                        
@@ -59,6 +59,7 @@ struct User_Profile__Wall: View {
                                 if (self.isfollowing) {
                                     HStack{
                                         Text("Follow")
+                                            .font(AppFonts.semiBold_14)
                                             .foregroundColor(.white)
                                         
                                         Image("eva_person-add-fill")
@@ -73,6 +74,7 @@ struct User_Profile__Wall: View {
                                 else{
                                     
                                     Text("Following")
+                                        .font(AppFonts.semiBold_14)
                                         .foregroundColor(.red)
                                         .frame(width: 160, height: 50 )
                                         .background(RoundedRectangle(cornerRadius: 50).strokeBorder(.red, lineWidth: 1))
@@ -86,6 +88,7 @@ struct User_Profile__Wall: View {
                                 HStack{
                                     
                                     Text("Messages")
+                                        .font(AppFonts.semiBold_14)
                                         .foregroundColor(AppColors.redGradientColor1)
                                     
                                     Image("Message icon-1")
@@ -105,26 +108,32 @@ struct User_Profile__Wall: View {
                                 HStack{
                                     VStack{
                                         Text("Following")
+                                            .font(AppFonts.regular_16)
                                             .padding(.bottom,10)
                                             .foregroundColor(AppColors.redGradientColor1)
                                         Text("156")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(AppColors.redGradientColor1)
                                     }
                                     Spacer()
                                     VStack{
                                         Text("Followers")
+                                            .font(AppFonts.regular_16)
                                             .padding(.bottom,10)
                                             .foregroundColor(AppColors.redGradientColor1)
                                         Text("289")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(AppColors.redGradientColor1)
                                     }
                                     Spacer()
                                     
                                     VStack{
                                         Text("Posts")
+                                            .font(AppFonts.regular_16)
                                             .padding(.bottom,10)
                                             .foregroundColor(AppColors.redGradientColor1)
                                         Text("90")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(AppColors.redGradientColor1)
                                     }
                                 }
@@ -133,6 +142,7 @@ struct User_Profile__Wall: View {
                             }
                         
                        Text("Risus ullamcorper sed ultrices quam mauris ullamcorper vulputate elementum morbi. A aliquet aenean faucibus turpis erat. Sed neque lobortis et nullam et bibendum tristique faucibus elementum.")
+                            .font(AppFonts.regular_14)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.gray)
                             .padding()
@@ -153,15 +163,12 @@ struct User_Profile__Wall: View {
                                     }
                                     else{
                                         Text("Posts")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.gray)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).strokeBorder(.black , lineWidth: 1))
                                     }
-                                    
-                                    
-                                    
-                                    
-                                    
+                                      
                                 })
                                 
                                 
@@ -171,12 +178,14 @@ struct User_Profile__Wall: View {
                                     
                                     if !(self.isPostView){
                                         Text("Garage")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.white)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Garage")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.gray)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).strokeBorder(.black , lineWidth: 1))
@@ -191,13 +200,14 @@ struct User_Profile__Wall: View {
                             // in garage screen
                             if(!self.isPostView)  {  HStack{
                                 Text("5 Cars in Garage")
-                                    .font(.title)
+                                    .font(AppFonts.regular_18)
                                     .foregroundColor(AppColors.redGradientColor1)
                                 Spacer()
                             }.padding(10)
                                 
                                 HStack{
                                     Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliqueto.")
+                                        .font(AppFonts.regular_12)
                                         .foregroundColor(.gray)
                                     
                                     Spacer()
@@ -223,7 +233,7 @@ struct User_Profile__Wall: View {
                                             VStack{
                                                 HStack{
                                                     Text("Slot 1")
-                                                        .font(.caption)
+                                                        .font(AppFonts.regular_12)
                                                         .foregroundColor(.white)
                                                         .frame(width: 80, height: 30)
                                                         .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
@@ -245,10 +255,12 @@ struct User_Profile__Wall: View {
                                         
                                         HStack{
                                             Text("Honda Civic 1.6 Turbo")
-                                                .fontWeight(.bold)
+                                                .font(AppFonts.semiBold_14)
+                                                
                                             Spacer()
                                             
                                             Text("view details")
+                                                .font(AppFonts.regular_12)
                                                 .foregroundColor(AppColors.redGradientColor1)
                                         }
                                         .padding(.top,30)
@@ -280,15 +292,22 @@ struct User_Profile__Wall: View {
         
         var body: some View {
             
-            VStack{
+            VStack(alignment: .leading){
                 
                 HStack{
                     
                     Image("post picture")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
                     
                     VStack(alignment: .leading){
                         Text("Elizebeth Smith")
+                            .font(AppFonts.medium_14)
+                            .padding(.bottom,5)
+                        
                         Text("1h ago")
+                            .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                         
                         
@@ -296,11 +315,14 @@ struct User_Profile__Wall: View {
                     Spacer()
                     
                     Image("doted Icons")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
                     
                 }.padding(.bottom,10)
                 
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
                 Image("unsplash_gmA751dxisA")
@@ -312,13 +334,13 @@ struct User_Profile__Wall: View {
                     Image("Group 7370")
                     
                     Text("Arsalan and 20 other")
-                        .font(.subheadline)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     Spacer()
                     
                     Text("12 comments")
-                        .font(.subheadline)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -329,7 +351,7 @@ struct User_Profile__Wall: View {
                     HStack{
                         Image("heart icon")
                         Text("Like")
-                            .fontWeight(.thin)
+                            .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                         
                         
@@ -339,6 +361,7 @@ struct User_Profile__Wall: View {
                     HStack{
                         Image("ant-design_comment-outlined")
                         Text("Comment")
+                            .font(AppFonts.regular_12)
                             .fontWeight(.thin)
                             .foregroundColor(Color.gray)
                         
@@ -347,7 +370,7 @@ struct User_Profile__Wall: View {
                     HStack{
                         Image("ion_share-social-sharp")
                         Text("Share")
-                            .fontWeight(.thin)
+                            .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                     }
                     Spacer()
@@ -355,7 +378,7 @@ struct User_Profile__Wall: View {
                     HStack{
                         Image("Icons")
                         Text("Save")
-                            .fontWeight(.thin)
+                            .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                     }
                     

@@ -18,8 +18,8 @@ struct post_screen_5_preview_: View {
                 .frame(width: 35, height: 35)
             Spacer()
             
-            Text("Add Post")
-                .font(.title)
+            Text("Preview")
+                .font(AppFonts.SemiBold_20)
             
            Spacer()
             
@@ -36,12 +36,14 @@ struct post_screen_5_preview_: View {
             
                 VStack(alignment: .leading){
                     Text("Jhon Derren Smith")
+                        .font(AppFonts.medium_14)
                     
                     HStack{
                         Image("location black icon")
                         
                           
                         Text("WashingtonDC,USA")
+                            .font(AppFonts.regular_14)
                     }
                 }
                 Spacer()
@@ -50,11 +52,11 @@ struct post_screen_5_preview_: View {
             .padding(.leading,5)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim fermentum tellus tellus aliquam arcu praesent.")
-                .font(.callout)
-                .fontWeight(.light)
+                    .font(AppFonts.regular_12)
                 .foregroundColor(.gray)
                 .padding(.leading,20)
                 .padding(.trailing,20)
+                .multilineTextAlignment(.leading)
             
                
                     LazyVStack{
@@ -79,7 +81,7 @@ struct post_screen_5_preview_: View {
                     ZStack{
                         Text("Post")
                             .foregroundColor(.white)
-                            .font(.body)
+                            .font(AppFonts.semiBold_16)
                             .padding()
                             .padding(.trailing,155)
                             .padding(.leading,155)

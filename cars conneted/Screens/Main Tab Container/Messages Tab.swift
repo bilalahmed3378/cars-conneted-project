@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct  MessagesTab: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var searchText = ""
 
     var body: some View {
@@ -17,11 +18,17 @@ struct  MessagesTab: View {
             
             // top bar
             HStack{
-                Image("back icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
-                    .padding(.leading,-10)
+                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("back icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                        .padding(.leading,-10)
+                })
+               
                 Spacer()
                 
                 Text("Messages")
@@ -65,90 +72,103 @@ struct  MessagesTab: View {
                     .resizable())
             ScrollView(.vertical,showsIndicators: false){
             
-                HStack{
-                
-                Image("unsplash_X6Uj51n5CE8")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-                
-                VStack{
+                NavigationLink(destination: personal_message_screen(), label: {
                     HStack{
-                        Image("Ellipse 17")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 12, height: 12)
-                            .offset(x: -18, y: 17)
+                    
+                    Image("unsplash_X6Uj51n5CE8")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                    
+                    VStack{
+                        HStack{
+                            Image("Ellipse 17")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 12, height: 12)
+                                .offset(x: -18, y: 17)
+                                
                             
-                        
+                        }
                     }
-                }
-                
-                VStack(alignment: .leading){
                     
-                    HStack(alignment: .top){
-                    Text("Arsalan Ash")
-                        Spacer()
-                        Text("12:15 am")
-                            .font(.caption)
-                    }.padding(.bottom,1)
+                    VStack(alignment: .leading){
+                        
+                        HStack(alignment: .top){
+                        Text("Arsalan Ash")
+                                .font(AppFonts.medium_14)
+                                .foregroundColor(.black)
+                            Spacer()
+                            Text("12:15 am")
+                                .foregroundColor(.black)
+                                .font(AppFonts.medium_12)
+                        }.padding(.bottom,1)
+                        
+                        Text("Hey! Lorem ipsum is dummy text you....")
+                            .font(AppFonts.medium_12)
+                            .foregroundColor(.black)
+                    }
                     
-                    Text("Hey! Lorem ipsum is dummy text you....")
-                        .font(.caption)
+                  Spacer()
+                    
+                  
+                    
                 }
-                
-              Spacer()
-                
+                .padding(24)
               
-                
-            }
-            .padding(24)
-          
+                })
+               
             
             Image("Line 6")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 325, height: 1)
                 
-                
-                HStack{
-                
-                Image("unsplash_X6Uj51n5CE8")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
-                
-                VStack{
+                NavigationLink(destination: personal_message_screen(),  label: {
                     HStack{
-                        Image("Ellipse 917")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 12, height: 12)
-                            .offset(x: -18, y: 17)
+                    
+                    Image("unsplash_X6Uj51n5CE8")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                    
+                    VStack{
+                        HStack{
+                            Image("Ellipse 917")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 12, height: 12)
+                                .offset(x: -18, y: 17)
+                                
                             
-                        
+                        }
                     }
-                }
-                
-                VStack(alignment: .leading){
                     
-                    HStack(alignment: .top){
-                    Text("Arsalan Ash")
-                        Spacer()
-                        Text("12:15 am")
-                            .font(.caption)
-                    }.padding(.bottom,1)
+                    VStack(alignment: .leading){
+                        
+                        HStack(alignment: .top){
+                        Text("Arsalan Ash")
+                                .font(AppFonts.medium_14)
+                                .foregroundColor(.black)
+                            Spacer()
+                            Text("12:15 am")
+                                .foregroundColor(.black)
+                                .font(AppFonts.medium_12)
+                        }.padding(.bottom,1)
+                        
+                        Text("Hey! Lorem ipsum is dummy text you....")
+                            .foregroundColor(.black)
+                            .font(AppFonts.medium_12)
+                    }
                     
-                    Text("Hey! Lorem ipsum is dummy text you....")
-                        .font(.caption)
+                  Spacer()
+                    
+                  
+                    
                 }
-                
-              Spacer()
-                
-              
-                
-            }
-            .padding(24)
+                .padding(24)
+                })
+               
           
             
             Image("Line 6")
@@ -163,44 +183,52 @@ struct  MessagesTab: View {
             LazyVStack{
                 ForEach(0...5,id:\.self){
                     Index in
-                    HStack{
                     
-                    Image("unsplash_X6Uj51n5CE8")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
-                    
-                    VStack{
+                    NavigationLink(destination: personal_message_screen(),  label: {
                         HStack{
-                            Image("Ellipse 187")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 12, height: 12)
-                                .offset(x: -18, y: 17)
+                        
+                        Image("unsplash_X6Uj51n5CE8")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                        
+                        VStack{
+                            HStack{
+                                Image("Ellipse 187")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 12, height: 12)
+                                    .offset(x: -18, y: 17)
+                                    
                                 
-                            
+                            }
                         }
-                    }
-                    
-                    VStack(alignment: .leading){
                         
-                        HStack(alignment: .top){
-                        Text("Arsalan Ash")
-                            Spacer()
-                            Text("12:15 am")
-                                .font(.caption)
-                        }.padding(.bottom,1)
+                        VStack(alignment: .leading){
+                            
+                            HStack(alignment: .top){
+                            Text("Arsalan Ash")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_14)
+                                Spacer()
+                                Text("12:15 am")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_12)
+                            }.padding(.bottom,1)
+                            
+                            Text("Hey! Lorem ipsum is dummy text you....")
+                                .foregroundColor(.black)
+                                .font(AppFonts.medium_12)
+                        }
                         
-                        Text("Hey! Lorem ipsum is dummy text you....")
-                            .font(.caption)
+                      Spacer()
+                        
+                      
+                        
                     }
-                    
-                  Spacer()
-                    
-                  
-                    
-                }
-                .padding(24)
+                    .padding(24)
+                    })
+                   
               
                 
                 Image("Line 6")
@@ -217,6 +245,7 @@ struct  MessagesTab: View {
             
         }
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
         }
 }
 

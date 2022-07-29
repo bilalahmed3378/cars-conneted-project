@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Checkout_Screen_2: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack{
             
@@ -17,7 +18,9 @@ struct Checkout_Screen_2: View {
             
            
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -29,7 +32,7 @@ struct Checkout_Screen_2: View {
                 
                 Text("Checkout")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -56,13 +59,14 @@ struct Checkout_Screen_2: View {
                     
                     HStack{
                     Text("Purchase Successful!")
-                            .font(.title)
+                            .font(AppFonts.SemiBold_20)
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }
                     
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis sed lobortis pretium sagittis porta.")
+                            .font(AppFonts.regular_12)
                             .foregroundColor(.gray)
                         Spacer()
                     }
@@ -74,20 +78,24 @@ struct Checkout_Screen_2: View {
                         .frame(width: 300, height: 300)
                         .padding()
                     
-                    Button(action: {}, label: {
+                    NavigationLink(destination: Invoice_screen(), label: {
                         Text("View Recipt")
                             .foregroundColor(.white)
                             .frame(width: 370, height: 60)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
+                       
+                  
                     
-                    Button(action: {}, label: {
+                    NavigationLink(destination: Payment_method_step_1_screen(),  label: {
                         Text("Add Payment Method")
+                            .font(AppFonts.semiBold_16)
                             .foregroundColor(AppColors.redGradientColor1)
                             .frame(width: 377, height: 60)
                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
+                  
                     })
-                    .padding()
+                       
                         
                     
                        
@@ -99,6 +107,7 @@ struct Checkout_Screen_2: View {
                 Spacer()
             }
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

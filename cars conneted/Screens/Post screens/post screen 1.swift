@@ -20,7 +20,7 @@ struct post_sceen_1: View {
                     .frame(width: 35, height: 35)
                 Spacer()
                 Text("Add Post")
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                Spacer()
             }
             .padding()
@@ -28,11 +28,13 @@ struct post_sceen_1: View {
             
             HStack{
                 Text("What is in your mind?")
+                    .font(AppFonts.regular_12)
                 Spacer()
             }
             .padding()
             
             TextEditor(text: self.$post)
+                .font(AppFonts.regular_14)
                 .foregroundColor(AppColors.redGradientColor2)
                 .frame(minHeight: 50, idealHeight: 50 , maxHeight: 300)
                 .colorMultiply(.white)
@@ -46,6 +48,7 @@ struct post_sceen_1: View {
             
             Button(action: {}, label: {
                 Text("Post")
+                    .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)
                     .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 327, height: 56))
             })
@@ -56,7 +59,7 @@ struct post_sceen_1: View {
                     VStack{
                        Image("clarity_picture-solid")
                         Text("Add photo")
-                            .fontWeight(.light)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.black)
                     }
                     .padding()
@@ -67,7 +70,7 @@ struct post_sceen_1: View {
                     VStack{
                         Image("bxs_video")
                         Text("Add Video")
-                            .fontWeight(.light)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.black)
                     }
                     .padding()
@@ -78,7 +81,7 @@ struct post_sceen_1: View {
                     VStack{
                         Image("bxs_calendar-event")
                         Text("Add Event")
-                            .fontWeight(.light)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.black)
                     }
                     .padding()

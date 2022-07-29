@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct Notifications: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         VStack{
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -23,9 +26,9 @@ struct Notifications: View {
                     
                     Spacer()
                     
-                    Text("Change Password")
-                        .font(.title)
-                       
+                    Text("Notifications")
+                        .font(AppFonts.SemiBold_20)
+                        
                     
                     Spacer()
                     Button(action: {}, label: {
@@ -42,11 +45,11 @@ struct Notifications: View {
             ScrollView(.vertical, showsIndicators: false){
                 HStack{
                     Text("Today")
-                        .font(.title2)
+                        .font(AppFonts.semiBold_18)
                         .fontWeight(.semibold)
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Today")
-                            .font(.title2))
+                            .font(AppFonts.semiBold_18))
                     Spacer()
                 }
                 
@@ -58,11 +61,11 @@ struct Notifications: View {
                 
                 HStack{
                     Text("Yesterday")
-                        .font(.title2)
+                        .font(AppFonts.semiBold_18)
                         .fontWeight(.semibold)
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Yesterday")
-                            .font(.title2))
+                            .font(AppFonts.semiBold_18))
                     Spacer()
                 }
                 
@@ -78,6 +81,7 @@ struct Notifications: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 
@@ -98,7 +102,8 @@ struct unseenNotification : View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 10, height: 10)
                     .padding(.leading,5)
-                Spacer()
+                    .padding(.trailing)
+              
                 Image("unsplash_X6Uj51n5CE8")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -107,11 +112,15 @@ struct unseenNotification : View {
                 VStack(alignment: .leading){
                     Text("\(Text("Elen Barren ").foregroundColor(.red)) liked your post.")
                         .foregroundColor(.black)
+                        .font(AppFonts.regular_14)
                         .padding(.bottom,5)
                     Text("2h ago")
                         .font(.caption)
                         .foregroundColor(.gray)
+                        .font(AppFonts.regular_12)
                 }
+                
+                Spacer()
                 
                 Image("Rectangle 1269")
                     .resizable()
@@ -146,10 +155,12 @@ struct seenNotification : View {
                 VStack(alignment: .leading){
                     Text("\(Text("Elen Barren ").foregroundColor(.red)) liked your post.")
                         .foregroundColor(.black)
+                        .font(AppFonts.regular_14)
                         .padding(.bottom,5)
                     Text("2h ago")
-                        .font(.caption)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(.gray)
+                    
                 }
                 Spacer()
                 Image("Rectangle 1269")

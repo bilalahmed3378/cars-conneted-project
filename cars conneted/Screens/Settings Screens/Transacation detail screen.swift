@@ -8,10 +8,13 @@
 import SwiftUI
 
 struct Transacation_detail: View {
+    @Environment(\.presentationMode) var PresentationMode
     var body: some View {
         VStack{
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.PresentationMode.wrappedValue.dismiss()
+                }, label: {
                     
                     Image("Icons-2")
                         .resizable()
@@ -83,7 +86,7 @@ struct Transacation_detail: View {
           
             Spacer()
               
-        }
+        }.navigationBarHidden(true)
         
     }
 }

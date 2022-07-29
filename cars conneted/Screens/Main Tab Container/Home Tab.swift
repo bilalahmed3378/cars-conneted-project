@@ -12,7 +12,6 @@ struct HomeTab: View {
 
     var body: some View {
         
-        NavigationView{
         
             ZStack{
                 
@@ -31,7 +30,11 @@ struct HomeTab: View {
                             
                             Spacer()
                             
-                            Image("profile icon home")
+                            NavigationLink(destination: Setting_Screen()){
+                                Image("profile icon home")
+                            }
+                            
+                            
                             
                             
                         }.padding(.leading,24)
@@ -462,34 +465,18 @@ struct HomeTab: View {
                             
                             Image("Line 2")
                             
-                                
-                            
-                            
                         }.padding(.bottom,20)
                             .padding(.leading,20)
                             .padding(.trailing,20)
                             .padding(.top,20)
                     }
-                    
-                    
-                   
-                    
-                   
-                   
-                    
+               
                 }
-                
-                
-                
+               
             }
             .edgesIgnoringSafeArea(.top)
         
-        }
+        
     }
 }
 
-//struct Home_screen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        Home_screen()
-//    }
-//}

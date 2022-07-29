@@ -23,7 +23,7 @@ struct My_products: View {
                     Spacer()
                     
                     Text("My Products")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .foregroundColor(.white)
                     
                     Spacer()
@@ -48,6 +48,7 @@ struct My_products: View {
             ScrollView{
                 HStack{
                     Text("45 Total Results")
+                        .font(AppFonts.medium_16)
                         .foregroundColor(AppColors.redGradientColor1)
                     Spacer()
                 }.padding()
@@ -95,18 +96,17 @@ struct myProductsCards : View {
                     VStack(alignment: .leading){
                         Text("Jhon Deo Smith")
                             .foregroundColor(.white)
-                            .font(.caption)
+                            .font(AppFonts.semiBold_12)
                             .fontWeight(.medium)
                             .padding(.bottom,3)
                         Text("Tot. Sales 13")
                             .foregroundColor(.white)
-                            .font(.caption)
-                      
+                            .font(AppFonts.regular_12)
                     }
                     Spacer()
                     Text("$50")
                         .foregroundColor(.white)
-                        .font(.title)
+                        .font(AppFonts.semiBold_18)
                     
                 }.padding()
                     .padding(.bottom,-5)
@@ -114,6 +114,7 @@ struct myProductsCards : View {
                 
                 HStack{
                 Text("BMW Lazer Head Lights")
+                        .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)
                 }.padding(.leading)
                 
@@ -156,7 +157,7 @@ struct myProductsCards : View {
                 
                 HStack{
                     Text("$500")
-                        .font(.footnote)
+                        .font(AppFonts.regular_14)
                         .foregroundColor(.white)
                         .frame(width: 60, height: 35)
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
@@ -167,8 +168,8 @@ struct myProductsCards : View {
                       
                         
                     }, label: {
-                        Text("Purchase")
-                            .font(.footnote)
+                        Text("View Details")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.white)
                             .frame(width: 250, height: 35)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))

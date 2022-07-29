@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Cart: View {
+    @Environment (\.presentationMode) var presentationMode
     var body: some View {
         ZStack{
             
@@ -17,16 +18,21 @@ struct Cart: View {
             
            
             HStack{
-                Image("back icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
-                
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("back icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                    
+                })
+               
                Spacer()
                 
                 Text("Cart")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -50,6 +56,7 @@ struct Cart: View {
                     
                 HStack{
                     Text("Total 8 Items")
+                        .font(AppFonts.medium_16)
                         .foregroundColor(AppColors.redGradientColor1)
                     Spacer()
                 }
@@ -70,9 +77,11 @@ struct Cart: View {
                 
                 HStack{
                     Text("Total Products")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("25")
+                        .font(AppFonts.semiBold_14)
                 }
                 .padding(.leading)
                     .padding(.trailing)
@@ -80,9 +89,11 @@ struct Cart: View {
                 
                 HStack{
                     Text("Sub Total")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("$2500")
+                        .font(AppFonts.semiBold_14)
                 }
                 .padding(.leading)
                     .padding(.trailing)
@@ -90,9 +101,11 @@ struct Cart: View {
                 
                 HStack{
                     Text("Taxes")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(.gray)
                     Spacer()
                     Text("$20")
+                        .font(AppFonts.semiBold_14)
                 }
                 .padding(.leading)
                     .padding(.trailing)
@@ -100,19 +113,18 @@ struct Cart: View {
                 
                     HStack{
                         Text("$2520")
-                            .font(.title)
+                            .font(AppFonts.semiBold_22)
                             .foregroundColor(AppColors.redGradientColor2)
                         Spacer()
                         
-                        Button(action: {}, label: {
+                        NavigationLink(destination: Payment_method_step_1_screen(),  label: {
                             Text("Check out")
+                                .font(AppFonts.medium_14)
                                 .foregroundColor(.white)
                                 .frame(width: 200, height: 50)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         })
-                      
-                          
-                        
+                         
                     }.padding()
                     
                 }
@@ -123,6 +135,7 @@ struct Cart: View {
             }
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
     }
 }
 
@@ -144,14 +157,15 @@ struct marketPlaceCart : View {
             
             VStack(alignment: .leading){
                 Text("BBS Double Alloy Rims")
+                    .font(AppFonts.regular_14)
                 Spacer()
                 Text("Spare Parts")
-                    .font(.caption)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(.gray)
                 Spacer()
 
                 Text("$500")
-                    .font(.caption)
+                    .font(AppFonts.semiBold_12)
                     .foregroundColor(AppColors.redGradientColor1)
                 
             }

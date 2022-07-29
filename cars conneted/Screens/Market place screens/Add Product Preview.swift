@@ -24,9 +24,9 @@ struct Add_Product_Preview: View {
                 
                Spacer()
                 
-                Text("Details")
+                Text("Preview")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -84,16 +84,17 @@ struct Add_Product_Preview: View {
                     HStack{
                         VStack(alignment: .leading){
                             Text("BBS Double Alloy Rims")
-                                .fontWeight(.bold)
+                                .font(AppFonts.medium_16)
                                 .padding(.bottom,5)
                             
                             Text("Spacer Parts")
+                                .font(AppFonts.regular_14)
                         }
                     
                         Spacer()
                         
                         Text("$500")
-                            .font(.headline)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.white)
                             .frame(width: 80, height: 55)
                             .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
@@ -132,7 +133,9 @@ struct Add_Product_Preview: View {
                             .frame(width: 18, height: 18)
                         
                         Text("5.0")
+                            .font(AppFonts.regular_14)
                         Text("(View Reviews)")
+                            .font(AppFonts.medium_14)
                             .foregroundColor(AppColors.redGradientColor1)
                     }
                    
@@ -146,13 +149,14 @@ struct Add_Product_Preview: View {
                     
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit a ipsum pulvinar morbi placerat id. Nisi, tellus amet ornare bibendum dmn;jnvkajnvlkafjnlvundfivnipfadunvjfnv;afnkvjnfkjanvklnvklfjnvnv;sjnadvkjnsvjn;ssnvakjnolor, a.")
-                            .font(.caption)
+                            .font(AppFonts.regular_12)
                     }
                     .frame(width: 377, height: 50)
                     .padding(.top,15)
                     
                     HStack{
                         Text("Select Colors")
+                            .font(AppFonts.regular_14)
                         Spacer()
                     }
                     .frame(width: 377, height: 40)
@@ -187,6 +191,7 @@ struct Add_Product_Preview: View {
                     
                     HStack{
                         Text("Select Size")
+                            .font(AppFonts.regular_14)
                         Spacer()
                         
                     }
@@ -197,26 +202,31 @@ struct Add_Product_Preview: View {
                     
                     HStack{
                         Text("15")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(AppColors.redGradientColor2)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1).opacity(0.2))
                         Spacer()
                         Text("16")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("17")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("18")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("20")
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
@@ -225,6 +235,7 @@ struct Add_Product_Preview: View {
                     
                     HStack{
                         Text("Quantity")
+                            .font(AppFonts.regular_14)
                         Spacer()
                         
                     }
@@ -240,6 +251,7 @@ struct Add_Product_Preview: View {
                         Spacer()
                         
                         Text("2")
+                            .font(AppFonts.regular_14)
                             .frame(width: 250, height: 35)
                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(Color.red))
                         
@@ -255,6 +267,7 @@ struct Add_Product_Preview: View {
                     
                     Button(action: {}, label: {
                         Text("Post Product")
+                            .font(AppFonts.semiBold_16)
                             .foregroundColor(.white)
                             .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 377, height: 56))
                            

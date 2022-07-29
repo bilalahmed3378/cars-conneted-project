@@ -25,7 +25,7 @@ struct Car_Specification: View {
                 Spacer()
                 
                 Text("Car Specification")
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                    
                 
                 Spacer()
@@ -54,9 +54,9 @@ struct Car_Specification: View {
                   HStack{
                     VStack{
                       Text("Model")
-                        .font(.system(size: 16))
+                            .font(AppFonts.regular_16)
                       Text("Civic")
-                        .font(.system(size: 18))
+                            .font(AppFonts.semiBold_18)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.redGradientColor1)
                         .padding(.top,5)
@@ -64,9 +64,9 @@ struct Car_Specification: View {
                     Spacer()
                     VStack{
                       Text("Brand")
-                        .font(.system(size: 16))
+                            .font(AppFonts.regular_16)
                       Text("Honda")
-                        .font(.system(size: 18))
+                            .font(AppFonts.semiBold_18)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.redGradientColor1)
                         .padding(.top,5)
@@ -74,9 +74,9 @@ struct Car_Specification: View {
                     Spacer()
                     VStack{
                       Text("Year")
-                        .font(.system(size: 16))
+                            .font(AppFonts.regular_16)
                       Text("2017")
-                        .font(.system(size: 18))
+                            .font(AppFonts.semiBold_18)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.redGradientColor1)
                         .padding(.top,5)
@@ -85,9 +85,9 @@ struct Car_Specification: View {
                   HStack{
                     VStack{
                       Text("Engine")
-                        .font(.system(size: 16))
-                      Text("Civic")
-                        .font(.system(size: 18))
+                            .font(AppFonts.regular_16)
+                      Text("124")
+                            .font(AppFonts.semiBold_18)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.redGradientColor1)
                         .padding(.top,5)
@@ -95,19 +95,19 @@ struct Car_Specification: View {
                     Spacer()
                     VStack{
                       Text("Type")
-                        .font(.system(size: 16))
-                      Text("Honda")
-                        .font(.system(size: 18))
+                            .font(AppFonts.regular_16)
+                      Text("Sports")
+                            .font(AppFonts.semiBold_18)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.redGradientColor1)
                         .padding(.top,5)
                     }
                     Spacer()
                     VStack{
-                      Text("Year")
-                        .font(.system(size: 16))
-                      Text("2017")
-                        .font(.system(size: 18))
+                      Text("Color")
+                            .font(AppFonts.regular_16)
+                      Text("White")
+                            .font(AppFonts.semiBold_18)
                         .fontWeight(.bold)
                         .foregroundColor(AppColors.redGradientColor1)
                         .padding(.top,5)
@@ -115,10 +115,10 @@ struct Car_Specification: View {
                   }.padding(.top,30)
                   VStack(alignment: .leading){
                     Text("Description")
-                      .font(.system(size: 16))
+                          .font(AppFonts.regular_16)
                       .padding(.top,30)
                     Text("Risus ullamcorper sed ultrices quam mauris ullamcorper vulputate elementum morbi. A aliquet aenean faucibus turpis erat. Sed neque lobortis et nullam et bibendum tristique faucibus elementum.")
-                      .font(.system(size: 12))
+                          .font(AppFonts.regular_12)
                       .padding(.top,5)
                   }
               }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Market_place_and_calssified: View {
+    @Environment (\.presentationMode) var presentationMode
     @State private var searchText  = ""
     var body: some View {
         VStack{
@@ -16,23 +17,29 @@ struct Market_place_and_calssified: View {
                 
                 // top bar
                 HStack{
+                    Button(action: {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image("back icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35, height: 35)
+                    })
                     
-                    Image("back icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
                     Spacer()
                     
                     Text("Market Place")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .foregroundColor(.white)
                     
                     Spacer()
-                    
-                    Image("profile icon home")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
+                    NavigationLink(destination: Setting_Screen(), label: {
+                        Image("profile icon home")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                    })
+                  
                     
                     
                 }.padding(.leading,24)
@@ -46,11 +53,15 @@ struct Market_place_and_calssified: View {
                     TextField("Search",text: self.$searchText)
                         .foregroundColor(.red)
                     
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
+                    NavigationLink(destination: Maeket_place_search(),
+                                   label: {
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:20,height: 20)
+                            .foregroundColor(.red)
+                    })
+                   
                     
                     
                 }
@@ -75,9 +86,11 @@ struct Market_place_and_calssified: View {
                 
                 HStack{
                     Text("Popular")
+                        .font(AppFonts.semiBold_14)
                     Spacer()
                     Button(action: {}, label: {
                         Text("View all")
+                            .font(AppFonts.regular_12)
                             .foregroundColor(AppColors.redGradientColor1)
                     })
                 }
@@ -96,9 +109,11 @@ struct Market_place_and_calssified: View {
                 
                          HStack{
                              Text("Recommended")
+                                 .font(AppFonts.semiBold_14)
                              Spacer()
                              Button(action: {}, label: {
                                  Text("View all")
+                                     .font(AppFonts.regular_12)
                                      .foregroundColor(AppColors.redGradientColor1)
                              })
                          }
@@ -120,6 +135,7 @@ struct Market_place_and_calssified: View {
                         
         }
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
     }
     
     struct Market_place_and_calssified_Previews: PreviewProvider {
@@ -131,7 +147,7 @@ struct Market_place_and_calssified: View {
     struct partsCard : View {
         
         var body: some View {
-            
+            NavigationLink(destination: Product_Details(), label: {
             VStack(alignment: .leading){
                 
                 Image("Rectangle 1263")
@@ -140,6 +156,8 @@ struct Market_place_and_calssified: View {
                     .frame(width: 210, height: 180)
                 
                 Text("Enginge Valve 16.5")
+                    .foregroundColor(.black)
+                    .font(AppFonts.medium_14)
                     .lineLimit(1)
                     .padding(.leading,10)
                     .padding(.trailing,10)
@@ -147,9 +165,10 @@ struct Market_place_and_calssified: View {
                 HStack{
                     Text("Engine Part")
                         .foregroundColor(.gray)
-                        .font(.caption)
+                        .font(AppFonts.semiBold_12)
                     Spacer()
                     Text("$50")
+                        .font(AppFonts.medium_14)
                         .foregroundColor(AppColors.redGradientColor1)
                     
                 }
@@ -190,9 +209,9 @@ struct Market_place_and_calssified: View {
             .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
             .padding(5)
             .padding(.leading,10)
-            
-
-            
+                
+            })
+   
         }
     }
 }
@@ -200,64 +219,69 @@ struct Market_place_and_calssified: View {
 struct partsCardrecommented : View {
     
     var body: some View {
-        
-        ZStack(alignment: .leading){
-            Image("Rectangle 1264")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .cornerRadius(10)
-            
-            VStack(alignment: .leading){
-                Spacer()
-                Text("lazer Head lights")
-                    .foregroundColor(.white)
-                    .font(.title)
+        NavigationLink(destination: Product_Details(),  label: {
+            ZStack(alignment: .leading){
+                Image("Rectangle 1264")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(10)
                 
-                HStack{
-                    Text("Spare parts")
-                        .font(.body)
-                        .foregroundColor(.white)
+                VStack(alignment: .leading){
                     Spacer()
-                    Text("$50")
+                    Text("lazer Head lights")
                         .foregroundColor(.white)
-                        .font(.title)
+                        .font(AppFonts.semiBold_16)
+                    
+                    HStack{
+                        Text("Spare parts")
+                            .font(AppFonts.medium_12)
+                            .foregroundColor(.white)
+                        Spacer()
+                        Text("$50")
+                            .foregroundColor(.white)
+                            .font(AppFonts.semiBold_16)
+
+                    }
+                    
+                    HStack{
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                    }
+                    .padding(.top,-10)
+                    
                 }
-                
-                HStack{
-                    Image("yellow Star icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                    
-                    Image("yellow Star icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                    
-                    Image("yellow Star icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                    
-                    Image("yellow Star icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                    
-                    Image("yellow Star icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                }
-                .padding(.top,-10)
+                .padding()
                 
             }
-            .padding()
-            
-        }
-        .frame(width: 340, height: 200)
-            .padding()
-            .padding(.trailing,-15)
+            .frame(width: 340, height: 200)
+                .padding()
+                .padding(.trailing,-15)
+        })
+           
+        
+       
 
     }
 }

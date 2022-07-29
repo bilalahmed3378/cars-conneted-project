@@ -24,7 +24,7 @@ struct Successfully_Changed: View {
                     Spacer()
                     
                     Text("Change Password")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .offset(x: -10, y: 0)
                     
                     Spacer()
@@ -33,12 +33,12 @@ struct Successfully_Changed: View {
                 .padding()
             
             HStack{
-                Text("Change Password")
-                    .font(.title)
+                Text("Successfully Changed")
+                    .font(AppFonts.SemiBold_20)
                     .fontWeight(.semibold)
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    .mask( Text("Change Password")
-                        .font(.title)
+                    .mask( Text("Successfully Changed")
+                        .font(AppFonts.SemiBold_20)
                         .fontWeight(.semibold))
                 
                 Spacer()
@@ -48,6 +48,7 @@ struct Successfully_Changed: View {
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
                 .foregroundColor(.gray)
+                .font(AppFonts.regular_14)
             
           Image("ant-design_check-circle-filled")
                 .resizable()
@@ -56,7 +57,7 @@ struct Successfully_Changed: View {
             
             Button(action: {}, label: {
                 Text("Proceed to Home")
-                    .font(.title2)
+                    .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 70)
@@ -70,6 +71,7 @@ struct Successfully_Changed: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 

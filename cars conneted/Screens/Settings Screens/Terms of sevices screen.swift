@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct Terms_of_sevices_screen: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         
         VStack{
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     
                     Image("Icons-2")
                         .resizable()
@@ -82,6 +85,7 @@ struct Terms_of_sevices_screen: View {
           
         }
         .padding()
+        .navigationBarHidden(true)
         
     }
 }

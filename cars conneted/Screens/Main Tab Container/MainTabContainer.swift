@@ -99,15 +99,17 @@ struct MainTabContainer: View {
                             self.selectedIndex = 3
                         }
                     }){
-                        VStack{
-                            Image("classified icon")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                            Text("Classified")
-                                .foregroundColor(.white)
                         
-                        }
-                        .opacity(self.selectedIndex == 3 ? 1 : 0.5)
+                            VStack{
+                                Image("classified icon")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                Text("Classified")
+                                    .foregroundColor(.white)
+                            
+                            }
+                            .opacity(self.selectedIndex == 3 ? 1 : 0.5)
+                       
                         
                     }
                     
@@ -119,14 +121,16 @@ struct MainTabContainer: View {
                             self.selectedIndex = 4
                         }
                     }){
-                        VStack{
-                            Image("Message icon")
-                                .resizable()
-                                .frame(width: 24, height: 24)
-                            Text("Message")
-                                .foregroundColor(.white)
-                        }
-                        .opacity(self.selectedIndex == 4 ? 1 : 0.5)
+                        
+                            VStack{
+                                Image("Message icon")
+                                    .resizable()
+                                    .frame(width: 24, height: 24)
+                                Text("Message")
+                                    .foregroundColor(.white)
+                            }
+                            .opacity(self.selectedIndex == 4 ? 1 : 0.5)
+                      
                         
                     }
                     

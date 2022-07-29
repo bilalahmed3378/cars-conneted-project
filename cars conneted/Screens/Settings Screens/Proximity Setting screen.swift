@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Proximity_Setting_screen: View {
+    @Environment(\.presentationMode) var presentationMode
     @State var selectedCircle : Int = 0
     @State var isProfileView: Bool = true
     @State var isOnlineStatus: Bool = true
@@ -16,7 +17,9 @@ struct Proximity_Setting_screen: View {
     var body: some View {
         VStack{
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     
                     Image("Icons-2")
                         .resizable()
@@ -331,6 +334,7 @@ struct Proximity_Setting_screen: View {
           
            
         }.padding()
+            .navigationBarHidden(true)
     }
 }
 

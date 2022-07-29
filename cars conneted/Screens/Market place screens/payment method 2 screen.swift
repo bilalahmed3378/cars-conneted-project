@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct payment_method_2_screen: View {
+    @State var isMasterCart: Bool = true
+    
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack{
             
@@ -17,7 +20,9 @@ struct payment_method_2_screen: View {
             
             Group{
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -29,7 +34,7 @@ struct payment_method_2_screen: View {
                 
                 Text("Choose payment Method")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -56,13 +61,14 @@ struct payment_method_2_screen: View {
                     
                     HStack{
                     Text("Card Selection")
-                            .font(.title)
+                            .font(AppFonts.SemiBold_20)
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }
                     
                         HStack{
                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis sed lobortis pretium sagittis porta.")
+                                .font(AppFonts.regular_12)
                                 .foregroundColor(.gray)
                             Spacer()
                         }
@@ -75,25 +81,39 @@ struct payment_method_2_screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 50, height: 35)
                         Spacer()
+                        
+                        
                         Text("Master Card")
-                            .foregroundColor(AppColors.redGradientColor2)
+                            .font(AppFonts.medium_16)
+                            .foregroundColor(self.isMasterCart ? AppColors.redGradientColor1 : .gray)
                         Spacer()
                         Spacer()
                         Spacer()
                         Spacer()
 
-                        Button(action: {}, label: {
-                            Image("Group 2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: 35, height: 35)
+                        Button(action: {
+                            self.isMasterCart = true
+                        }, label: {
+                            if (self.isMasterCart) {
+                                Image("Group 2")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 35, height: 35)
+                            }
+                            else{
+                                Image("Ellipse 1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 35, height: 35)
+                            }
+                           
                         })
                         
                         Spacer()
                     }.frame(width: 320, height: 40)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 50)
-                            .strokeBorder(AppColors.redGradientColor2))
+                            .strokeBorder(self.isMasterCart ? AppColors.redGradientColor1 : .gray))
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray).opacity(0.1))
                         .padding()
                     }
@@ -105,24 +125,35 @@ struct payment_method_2_screen: View {
                             .frame(width: 50, height: 35)
                         Spacer()
                         Text("Visa Card")
-                            .foregroundColor(.gray)
+                            .font(AppFonts.medium_16)
+                            .foregroundColor(self.isMasterCart ? .gray : .red)
                         Spacer()
                         Spacer()
                         Spacer()
                         Spacer()
 
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.isMasterCart = false
+                        }, label: {
+                            if !(self.isMasterCart) {
+                                Image("Group 2")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: 35, height: 35)
+                            }
+                            else{
                             Image("Ellipse 1")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 35, height: 35)
+                            }
                         })
                        
                         Spacer()
                     }.frame(width: 320, height: 40)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 50)
-                            .strokeBorder(AppColors.redGradientColor2))
+                            .strokeBorder(self.isMasterCart ? .gray : AppColors.redGradientColor1))
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray).opacity(0.1))
                         .padding()
                     
@@ -131,14 +162,16 @@ struct payment_method_2_screen: View {
                         
                        
                     
-                    Button(action: {}, label: {
+                    NavigationLink(destination: Payment_Method_step_3_screen(),  label: {
                         Text("Next")
+                            .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
                             .frame(width: 350, height: 70)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
-                    .padding()
+                       
+                   
                    
                 }
                 .padding()
@@ -147,6 +180,7 @@ struct payment_method_2_screen: View {
                 Spacer()
             }
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

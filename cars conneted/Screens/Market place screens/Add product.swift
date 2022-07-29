@@ -39,7 +39,7 @@ struct Add_product: View {
                 
                 Text("Choose payment Method")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -67,7 +67,7 @@ struct Add_product: View {
                         HStack{
                             
                                Text("Photos")
-                                .font(.caption)
+                                .font(AppFonts.regular_14)
                                 .foregroundColor(.gray)
                             Spacer()
                         }.padding(.bottom)
@@ -97,6 +97,7 @@ struct Add_product: View {
                         .frame(width: 377, height: 100)
                       
                         Text("Product Name")
+                            .font(AppFonts.regular_12)
                                   .padding(.top,28)
                                   .frame(maxWidth: .infinity, alignment: .leading)
                                   .foregroundColor(.black)
@@ -112,16 +113,19 @@ struct Add_product: View {
                                   .frame(maxWidth: .infinity, alignment: .leading)
                                   .foregroundColor(.gray)
                             TextField("Spare Parts",text:$mainCategory )
+                                .font(AppFonts.regular_14)
                                   .padding(.vertical, 10)
                                   .autocapitalization(.none)
                                   .background(Rectangle().frame(height: 1).padding(.top, 42))
                                   .foregroundColor(.gray)
                             Group{
                         Text("Sub Category")
+                                    .font(AppFonts.regular_12)
                                   .padding(.top,28)
                                   .frame(maxWidth: .infinity, alignment: .leading)
                                   .foregroundColor(.gray)
                                 TextField("Engine Spare Parts etc",text:$subCategory)
+                                    .font(AppFonts.regular_14)
                                   .padding(.vertical, 10)
                                   .autocapitalization(.none)
                                   .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -129,10 +133,12 @@ struct Add_product: View {
                         
                         
                         Text("Price")
+                                    .font(AppFonts.regular_12)
                                   .padding(.top,28)
                                   .frame(maxWidth: .infinity, alignment: .leading)
                                   .foregroundColor(.gray)
                                 TextField("$",text:$Price)
+                                    .font(AppFonts.regular_14)
                                   .padding(.vertical, 10)
                                   .autocapitalization(.none)
                                   .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -140,10 +146,12 @@ struct Add_product: View {
                             
                             
                             Text("Quantity")
+                                    .font(AppFonts.regular_12)
                                       .padding(.top,28)
                                       .frame(maxWidth: .infinity, alignment: .leading)
                                       .foregroundColor(.gray)
                                     TextField("1,2,3,4...",text:$Quantity)
+                                    .font(AppFonts.regular_14)
                                       .padding(.vertical, 10)
                                       .autocapitalization(.none)
                                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -151,10 +159,12 @@ struct Add_product: View {
                             }
                             
                             Text("Description")
+                                .font(AppFonts.regular_12)
                                       .padding(.top,28)
                                       .frame(maxWidth: .infinity, alignment: .leading)
                                       .foregroundColor(.gray)
                                     TextField("Write description here",text:$Description)
+                                .font(AppFonts.regular_14)
                                       .padding(.vertical, 10)
                                       .autocapitalization(.none)
                                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -162,20 +172,24 @@ struct Add_product: View {
                             
                             Group{
                             Text("Brand")
+                                    .font(AppFonts.regular_12)
                                       .padding(.top,28)
                                       .frame(maxWidth: .infinity, alignment: .leading)
                                       .foregroundColor(.gray)
                                     TextField("Select brand",text:$Brand)
+                                    .font(AppFonts.regular_14)
                                       .padding(.vertical, 10)
                                       .autocapitalization(.none)
                                       .background(Rectangle().frame(height: 1).padding(.top, 42))
                                       .foregroundColor(.gray)
                             
                             Text("Avaiable Sizes")
+                                    .font(AppFonts.regular_12)
                                       .padding(.top,28)
                                       .frame(maxWidth: .infinity, alignment: .leading)
                                       .foregroundColor(.gray)
                                     TextField("Write sizes",text:$availableSizes)
+                                    .font(AppFonts.regular_14)
                                       .padding(.vertical, 10)
                                       .autocapitalization(.none)
                                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -183,10 +197,12 @@ struct Add_product: View {
                             
                             
                             Text("Avaiable Colors")
+                                    .font(AppFonts.regular_12)
                                       .padding(.top,28)
                                       .frame(maxWidth: .infinity, alignment: .leading)
                                       .foregroundColor(.gray)
                                     TextField("#Enter Color code",text:$availableColors)
+                                    .font(AppFonts.regular_14)
                                       .padding(.vertical, 10)
                                       .autocapitalization(.none)
                                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -224,10 +240,12 @@ struct Add_product: View {
                             
                             
                             Text("Shipping Method")
+                                .font(AppFonts.regular_12)
                                       .padding(.top,28)
                                       .frame(maxWidth: .infinity, alignment: .leading)
                                       .foregroundColor(.gray)
                                     TextField("#Select Shipment Method",text:$shippingMethod)
+                                .font(AppFonts.regular_14)
                                       .padding(.vertical, 10)
                                       .autocapitalization(.none)
                                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -238,7 +256,7 @@ struct Add_product: View {
                         
                         Button(action: {}, label: {
                             Text("Preview")
-                                .fontWeight(.medium)
+                                .font(AppFonts.semiBold_16)
                                 .foregroundColor(.white)
                                 .frame(width: 350, height: 70)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))

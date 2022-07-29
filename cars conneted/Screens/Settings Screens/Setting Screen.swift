@@ -26,7 +26,7 @@ struct Setting_Screen: View {
                     Spacer()
                     
                     Text("Setting")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .foregroundColor(.white)
                     
                     Spacer()
@@ -49,6 +49,7 @@ struct Setting_Screen: View {
                     
                     TextField("Search",text: self.$searchText)
                         .foregroundColor(.red)
+                        .font(AppFonts.regular_14)
                     
                     Image(systemName: "magnifyingglass")
                         .resizable()
@@ -82,24 +83,28 @@ struct Setting_Screen: View {
                 
                 VStack(alignment: .leading){
                     Text("Jason Statham")
+                        .font(AppFonts.medium_16)
                         .padding(.bottom,3)
                     
                     Text("jasonstatham98@gmailcom")
-                        .font(.caption)
+                        .font(AppFonts.regular_12)
                         .padding(.bottom,3)
                     
                     Text("+69-636434645367676")
-                        .font(.caption)
+                        .font(AppFonts.regular_12)
                 }
                 .padding(.leading,5)
                 Spacer()
-                Button(action: {}, label: {
+               
+                NavigationLink(destination: My_Profile(),  label: {
                     Image("Arrow - Right Square")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30)
                         .padding(.trailing)
                 })
+                   
+             
                
                 
             }
@@ -110,8 +115,8 @@ struct Setting_Screen: View {
             
             HStack{
                 Text("General")
-                    .font(.callout)
-                    .fontWeight(.medium)
+                    .font(AppFonts.semiBold_12)
+                    
                 
                 Spacer()
             }
@@ -120,6 +125,7 @@ struct Setting_Screen: View {
             
               
             HStack{
+                
                 Image("dashicons_lock")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -128,16 +134,16 @@ struct Setting_Screen: View {
                 
                
                 Text("Change Paasword")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
-                Button(action: {}, label: {
+                
+                NavigationLink(destination: Change_Password(), label: {
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                    
                 })
-               
                 
             }
             .frame(width: 350, height: 30)
@@ -158,15 +164,19 @@ struct Setting_Screen: View {
                 
                
                 Text("Notification")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+              
+                NavigationLink(destination: Notifications(), label: {
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
                 })
+                   
+              
                
                 
                 
@@ -189,16 +199,19 @@ struct Setting_Screen: View {
                 
                
                 Text("Proximity Setting")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+                NavigationLink(destination: Proximity_Setting_screen(),
+                               label: {
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-
                 })
+                   
+
                 
                 
             }
@@ -219,14 +232,17 @@ struct Setting_Screen: View {
                 
                
                 Text("Transaction Details")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
-                Button(action: {}, label: {
+                NavigationLink(destination: Transacation_detail(),  label: {
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
+            
                 })
+                   
               
                 
                 
@@ -248,18 +264,17 @@ struct Setting_Screen: View {
                 
                
                 Text("Terms Of Service")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+                NavigationLink(destination: Terms_of_sevices_screen(),  label: {
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
                 })
-               
-                
-                
+                 
             }
             .frame(width: 350, height: 30)
             .padding(.bottom)
@@ -278,15 +293,16 @@ struct Setting_Screen: View {
                 
                
                 Text("Privacy Policy")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+              
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+               
                
                 
                 
@@ -309,6 +325,7 @@ struct Setting_Screen: View {
                 
                
                 Text("Logout")
+                    .font(AppFonts.regular_14)
                 
                 Spacer()
                 
@@ -333,6 +350,7 @@ struct Setting_Screen: View {
             Spacer()
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
         
     }
    

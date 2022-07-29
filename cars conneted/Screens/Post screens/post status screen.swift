@@ -21,7 +21,7 @@ struct post_status_screen: View {
                     .frame(width: 50, height: 50)
                     
                     Text("Jhon Wick")
-                        .font(.callout)
+                            .font(AppFonts.medium_14)
                         .foregroundColor(.black)
                         .background(RoundedRectangle(cornerRadius: 50).fill(.white).opacity(0.7).frame(width: 100, height: 50))
                         .padding(.leading,25)
@@ -57,6 +57,7 @@ struct post_status_screen: View {
                 Spacer()
                 
                 Text("Going to long trip in my new car")
+                    .font(AppFonts.medium_14)
                     .foregroundColor(.yellow)
                     .background(RoundedRectangle(cornerRadius: 0).fill(.black).opacity(0.7).frame(width: 425, height: 48))
                 
@@ -68,6 +69,7 @@ struct post_status_screen: View {
                         HStack{
                             
                             Text("Share")
+                                .font(AppFonts.medium_14)
                                 .foregroundColor(.white)
                             Image("fluent_send-20-filled")
                         }.background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 105, height: 44))

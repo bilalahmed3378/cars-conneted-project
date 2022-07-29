@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Payment_method_step_1_screen: View {
+    @Environment(\.presentationMode) var presentationMode
     var body: some View {
         ZStack{
             
@@ -17,7 +18,9 @@ struct Payment_method_step_1_screen: View {
             
            
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                }, label: {
                     Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
@@ -29,7 +32,7 @@ struct Payment_method_step_1_screen: View {
                 
                 Text("Choose payment Method")
                     .foregroundColor(.white)
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                 
                 Spacer()
                 
@@ -56,13 +59,14 @@ struct Payment_method_step_1_screen: View {
                     
                     HStack{
                     Text("No Payment Method Found!")
-                            .font(.title)
+                            .font(AppFonts.SemiBold_20)
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }
                     
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis sed lobortis pretium sagittis porta.")
+                            .font(AppFonts.regular_12)
                             .foregroundColor(.gray)
                         Spacer()
                     }
@@ -74,17 +78,14 @@ struct Payment_method_step_1_screen: View {
                         .frame(width: 300, height: 300)
                         .padding()
                     
-                    Button(action: {}, label: {
+                    NavigationLink(destination: payment_method_2_screen(), label: {
                         Text("Add Payment Method")
+                            .font(AppFonts.semiBold_16)
                             .foregroundColor(AppColors.redGradientColor1)
                             .frame(width: 300, height: 50)
                             .background(RoundedRectangle(cornerRadius: 20).strokeBorder(AppColors.redGradientColor2))
                     })
-                    .padding()
                         
-                    
-                       
-                    
                 }
                 .padding()
                 .padding(.leading,7)
@@ -92,6 +93,7 @@ struct Payment_method_step_1_screen: View {
                 Spacer()
             }
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

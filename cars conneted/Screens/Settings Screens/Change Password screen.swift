@@ -8,13 +8,21 @@
 import SwiftUI
 
 struct Change_Password: View {
+    
+    @Environment(\.presentationMode) var presentaionMode
+    
     @State var password = ""
       @State var confirmPassword = ""
     var body: some View {
+        
         VStack{
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        
+                        self.presentaionMode.wrappedValue.dismiss()
+                        
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -26,7 +34,7 @@ struct Change_Password: View {
                     Spacer()
                     
                     Text("Change Password")
-                        .font(.title)
+                        .font(AppFonts.SemiBold_20)
                         .offset(x: -10, y: 0)
                     
                     Spacer()
@@ -36,11 +44,11 @@ struct Change_Password: View {
             
             HStack{
                 Text("Change Password")
-                    .font(.title)
+                    .font(AppFonts.semiBold_24)
                     .fontWeight(.semibold)
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     .mask( Text("Change Password")
-                        .font(.title)
+                        .font(AppFonts.semiBold_24)
                         .fontWeight(.semibold))
                 
                 Spacer()
@@ -50,14 +58,19 @@ struct Change_Password: View {
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
                 .foregroundColor(.gray)
+                .font(AppFonts.regular_14)
             
             Text("Password")
+                .font(AppFonts.regular_12)
                       .padding(.top,28)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       .foregroundColor(.gray)
                       .padding(.leading)
                       .padding(.trailing)
-                    TextField("BBS RMS 17",text:$password)
+                    
+            
+            TextField("BBS RMS 17",text:$password)
+                .font(AppFonts.regular_14)
                       .padding(.vertical, 10)
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -67,12 +80,16 @@ struct Change_Password: View {
             
             
             Text("Confirm Password")
+                .font(AppFonts.regular_12)
                       .padding(.top,28)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       .foregroundColor(.gray)
                       .padding(.leading)
                       .padding(.trailing)
-                    TextField("BBS RMS 17",text:$confirmPassword)
+                   
+            
+            TextField("BBS RMS 17",text:$confirmPassword)
+                .font(AppFonts.regular_14)
                       .padding(.vertical, 10)
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 42))
@@ -82,7 +99,7 @@ struct Change_Password: View {
             
             Button(action: {}, label: {
                 Text("Submit New Password")
-                    .font(.title2)
+                    .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                     .frame(width: 350, height: 70)
@@ -96,6 +113,7 @@ struct Change_Password: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
         
         
     }

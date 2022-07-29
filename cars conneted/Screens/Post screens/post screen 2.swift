@@ -24,7 +24,8 @@ struct post_screen_2: View {
                 
                 Spacer()
                 Text("Add Post")
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
+                
                Spacer()
             }
             .padding()
@@ -32,11 +33,13 @@ struct post_screen_2: View {
             
             HStack{
                 Text("What is in your mind?")
+                    .font(AppFonts.regular_12)
                 Spacer()
             }
             .padding()
             
             TextEditor(text: self.$post)
+                .font(AppFonts.regular_14)
                 .foregroundColor(AppColors.redGradientColor2)
                 .frame(minHeight: 50, idealHeight: 50 , maxHeight: 150)
                 .colorMultiply(.white)
@@ -54,7 +57,7 @@ struct post_screen_2: View {
                     VStack{
                        Image("clarity_picture-solid-1")
                         Text("Add photo")
-                            .fontWeight(.light)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(AppColors.redGradientColor1)
                     }
                     .padding()
@@ -65,7 +68,7 @@ struct post_screen_2: View {
                     VStack{
                         Image("bxs_video")
                         Text("Add Video")
-                            .fontWeight(.light)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.black)
                     }
                     .padding()
@@ -76,7 +79,7 @@ struct post_screen_2: View {
                     VStack{
                         Image("bxs_calendar-event")
                         Text("Add Event")
-                            .fontWeight(.light)
+                            .font(AppFonts.regular_14)
                             .foregroundColor(.black)
                     }
                     .padding()
@@ -94,11 +97,13 @@ struct post_screen_2: View {
             
             HStack{
                 Text("Gallery")
-                    .font(.title)
+                    .font(AppFonts.medium_18)
+                
                 Spacer()
+                
                 Button(action: {}, label: {
                     Text("Done")
-                        .font(.body)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(.white)
                         .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 85, height: 40))
                         .padding(.trailing,30)
@@ -108,7 +113,7 @@ struct post_screen_2: View {
             
             HStack{
                 Text("2 Images selected")
-                    .fontWeight(.light)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(AppColors.redGradientColor2)
                 Spacer()
                 

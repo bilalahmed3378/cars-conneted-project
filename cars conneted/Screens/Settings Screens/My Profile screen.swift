@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct My_Profile: View {
+    
+    @Environment(\.presentationMode) var presentaionMode
+    
     @State var isPostView: Bool = true
     @State var isfollowing: Bool = true
     var body: some View {
@@ -17,10 +20,15 @@ struct My_Profile: View {
                 VStack{
                     Group{
                         HStack{
-                            Image("Icons-2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
+                            Button(action: {
+                                self.presentaionMode.wrappedValue.dismiss()
+                            }, label: {
+                                Image("Icons-2")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 35, height: 35)
+                            })
+                            
                             
                             Spacer()
                             
@@ -44,7 +52,7 @@ struct My_Profile: View {
                                 .offset(x: 0, y: -57)
                             
                             Text("Elon Musk")
-                                .font(.title)
+                                .font(AppFonts.medium_18)
                                 .padding(.top, -40)
                         }
                        
@@ -56,6 +64,8 @@ struct My_Profile: View {
                                 .frame(width: 25, height: 25)
                             
                             Text("+96-4765765364")
+                                .font(AppFonts.regular_16)
+                                .foregroundColor(.gray)
                             
                         }
                         
@@ -66,6 +76,8 @@ struct My_Profile: View {
                                 .frame(width: 25, height: 25)
                             
                             Text("Washington DC, USA")
+                                .font(AppFonts.regular_16)
+                                .foregroundColor(.gray)
                         }
                         
                             
@@ -73,26 +85,32 @@ struct My_Profile: View {
                                 HStack{
                                     VStack{
                                         Text("Following")
+                                            .font(AppFonts.regular_16)
                                             .padding(.bottom,10)
                                             .foregroundColor(AppColors.redGradientColor1)
                                         Text("156")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(AppColors.redGradientColor1)
                                     }
                                     Spacer()
                                     VStack{
                                         Text("Followers")
+                                            .font(AppFonts.regular_16)
                                             .padding(.bottom,10)
                                             .foregroundColor(AppColors.redGradientColor1)
                                         Text("289")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(AppColors.redGradientColor1)
                                     }
                                     Spacer()
                                     
                                     VStack{
                                         Text("Posts")
+                                            .font(AppFonts.regular_16)
                                             .padding(.bottom,10)
                                             .foregroundColor(AppColors.redGradientColor1)
                                         Text("90")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(AppColors.redGradientColor1)
                                     }
                                 }
@@ -104,6 +122,7 @@ struct My_Profile: View {
                       
                 
                         Text("Risus ullamcorper sed ultrices quam mauris ullamcorper vulputate elementum morbi. A aliquet aenean faucibus turpis erat. Sed neque lobortis et nullam et bibendum tristique faucibus elementum.")
+                            .font(AppFonts.regular_14)
                             .multilineTextAlignment(.center)
                             .foregroundColor(.gray)
                             .padding()
@@ -117,12 +136,14 @@ struct My_Profile: View {
                                     
                                     if(self.isPostView){
                                         Text("Posts")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.white)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Posts")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.gray)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).strokeBorder(.black , lineWidth: 1))
@@ -141,12 +162,14 @@ struct My_Profile: View {
                                     
                                     if !(self.isPostView){
                                         Text("Garage")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.white)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Garage")
+                                            .font(AppFonts.regular_16)
                                             .foregroundColor(.gray)
                                             .frame(width: 100, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 50).strokeBorder(.black , lineWidth: 1))
@@ -161,13 +184,14 @@ struct My_Profile: View {
                             // in garage screen
                             if(!self.isPostView)  {  HStack{
                                 Text("5 Cars in Garage")
-                                    .font(.title)
+                                    .font(AppFonts.regular_18)
                                     .foregroundColor(AppColors.redGradientColor1)
                                 Spacer()
                             }.padding(10)
                                 
                                 HStack{
                                     Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliqueto.")
+                                        .font(AppFonts.regular_12)
                                         .foregroundColor(.gray)
                                     
                                     Spacer()
@@ -193,7 +217,7 @@ struct My_Profile: View {
                                             VStack{
                                                 HStack{
                                                     Text("Slot 1")
-                                                        .font(.caption)
+                                                        .font(AppFonts.regular_12)
                                                         .foregroundColor(.white)
                                                         .frame(width: 80, height: 30)
                                                         .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
@@ -215,10 +239,11 @@ struct My_Profile: View {
                                         
                                         HStack{
                                             Text("Honda Civic 1.6 Turbo")
-                                                .fontWeight(.bold)
+                                                .font(AppFonts.semiBold_14)
                                             Spacer()
                                             
                                             Text("view details")
+                                                .font(AppFonts.regular_12)
                                                 .foregroundColor(AppColors.redGradientColor1)
                                         }
                                         .padding(.top,30)
@@ -237,7 +262,7 @@ struct My_Profile: View {
                     .padding(.top,-20)
                 }
             }
-        }
+        }.navigationBarHidden(true)
     }
         
 }
@@ -260,8 +285,12 @@ struct myProfilePostCard : View {
                 Image("post picture")
                 
                 VStack(alignment: .leading){
+                    
                     Text("Elizebeth Smith")
+                        .font(AppFonts.medium_14)
+                    
                     Text("1h ago")
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -273,7 +302,7 @@ struct myProfilePostCard : View {
             }.padding(.bottom,10)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                .font(.subheadline)
+                .font(AppFonts.regular_12)
                 .foregroundColor(Color.gray)
             
             Image("unsplash_gmA751dxisA")
@@ -285,13 +314,13 @@ struct myProfilePostCard : View {
                 Image("Group 7370")
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
             }
@@ -302,7 +331,7 @@ struct myProfilePostCard : View {
                 HStack{
                     Image("heart icon")
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -312,7 +341,7 @@ struct myProfilePostCard : View {
                 HStack{
                     Image("ant-design_comment-outlined")
                     Text("Comment")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -320,7 +349,7 @@ struct myProfilePostCard : View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
@@ -328,7 +357,7 @@ struct myProfilePostCard : View {
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct personal_message_screen: View {
+    @Environment(\.presentationMode) var presentationMode
     @State private var typemessage = ""
     var body: some View {
         ZStack{
@@ -18,11 +19,17 @@ struct personal_message_screen: View {
                     
                     // top bar
                     HStack{
-                        Image("back icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                            .padding(.leading,-10)
+                        
+                        Button(action: {
+                            self.presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image("back icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 35, height: 35)
+                                .padding(.leading,-10)
+                        })
+                        
                         HStack{
                             Image("profile icon home")
                                 .resizable()
@@ -30,11 +37,12 @@ struct personal_message_screen: View {
                                 .frame(width: 40, height: 40)
                             VStack(alignment: .leading){
                                 Text("Arsalan Ash")
+                                    .font(AppFonts.semiBold_16)
                                     .foregroundColor(.white)
                                 HStack{
                                     Image("Ellipse 17")
                                     Text("Online")
-                                        .font(.caption)
+                                        .font(AppFonts.regular_12)
                                         .foregroundColor(.white)
                                        
                                 } .padding(.top,-7)
@@ -64,10 +72,10 @@ struct personal_message_screen: View {
                     VStack(alignment: .trailing){
                 HStack(alignment: .bottom){
                     Text("Good bye!")
-                        .font(.body)
+                        .font(AppFonts.regular_16)
                         .foregroundColor(.white)
                     Text("17:47")
-                        .font(.caption)
+                        .font(AppFonts.regular_10)
                         .foregroundColor(.white)
                 }
                 .padding(10)
@@ -75,10 +83,10 @@ struct personal_message_screen: View {
                         
                         HStack(alignment: .bottom){
                             Text("Good bye sir Thank you!")
-                                .font(.body)
+                                .font(AppFonts.regular_16)
                                 .foregroundColor(.white)
                             Text("17:47")
-                                .font(.caption)
+                                .font(AppFonts.regular_10)
                                 .foregroundColor(.white)
                         }
                         .padding(10)
@@ -90,7 +98,7 @@ struct personal_message_screen: View {
                 .padding()
                 HStack{
                     Text("Fri, Jul 26")
-                        .font(.caption)
+                        .font(AppFonts.semiBold_12)
                 }
                 .background(RoundedRectangle(cornerRadius:10).fill(.gray).opacity(0.5).frame(width: 100, height: 24))
               
@@ -99,10 +107,10 @@ struct personal_message_screen: View {
                     
                 HStack(alignment: .bottom){
                     Text("Good bye sir you!")
-                        .font(.body)
+                        .font(AppFonts.regular_16)
                         .foregroundColor(.black)
                     Text("17:47")
-                        .font(.caption)
+                        .font(AppFonts.regular_10)
                         .foregroundColor(.black)
                    
                 }
@@ -112,10 +120,10 @@ struct personal_message_screen: View {
                     
                     HStack(alignment: .bottom){
                         Text("Good bye sir you!")
-                            .font(.body)
+                            .font(AppFonts.regular_16)
                             .foregroundColor(.black)
                         Text("17:47")
-                            .font(.caption)
+                            .font(AppFonts.regular_10)
                             .foregroundColor(.black)
                        
                     }
@@ -168,6 +176,7 @@ struct personal_message_screen: View {
             .padding(.bottom)
         }
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
     }
 }
 

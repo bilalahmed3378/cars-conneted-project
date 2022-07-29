@@ -28,6 +28,7 @@ struct Search_Clubs: View {
                             
                             TextField("Search",text: self.$searchText)
                                 .foregroundColor(.red)
+                                .font(AppFonts.regular_14)
                             
                             Image(systemName: "magnifyingglass")
                                 .resizable()
@@ -65,15 +66,19 @@ struct Search_Clubs: View {
                         
                         HStack{
                             Text("People")
+                                .font(AppFonts.medium_14)
                                 .foregroundColor(.red)
                             Spacer()
                             Text("Posts")
+                                .font(AppFonts.medium_14)
                                 .foregroundColor(.gray)
                             Spacer()
                             Text("Events")
+                                .font(AppFonts.medium_14)
                                 .foregroundColor(.gray)
                             Spacer()
                             Text("Clubs")
+                                .font(AppFonts.medium_14)
                                 .foregroundColor(.gray)
                             
                             
@@ -121,6 +126,7 @@ struct ClubCard : View {
               
               HStack{
                   Text("Ace Classic Club")
+                      .font(AppFonts.semiBold_14)
                       .foregroundColor(.red)
                       .lineLimit(1)
                   
@@ -154,7 +160,7 @@ struct ClubCard : View {
               }
               
               Text("+120 Members")
-                  .font(.caption)
+                  .font(AppFonts.medium_12)
                   .foregroundColor(.gray)
               
               
@@ -163,6 +169,7 @@ struct ClubCard : View {
           
           Button(action: {}, label: {
               Text("Leave")
+                  .font(AppFonts.medium_12)
                   .foregroundColor(.red)
                   .padding(10)
                   .padding(.leading,5)
