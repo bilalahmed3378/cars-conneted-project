@@ -82,6 +82,29 @@ struct Terms_of_sevices_screen: View {
                         .font(AppFonts.regular_16)
                 }.padding(.bottom)
             }
+            
+            Spacer()
+            
+            HStack{
+                Spacer()
+            Text("Decline")
+                .font(AppFonts.semiBold_16)
+                .foregroundColor(AppColors.redGradientColor1)
+                .padding()
+                .frame(width: 170, height: 50)
+                .background(RoundedRectangle(cornerRadius: 20).strokeBorder(AppColors.redGradientColor2))
+                
+                Spacer()
+                
+                Text("Accept")
+                    .font(AppFonts.semiBold_16)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(width: 170, height: 50)
+                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                Spacer()
+            }
+            
           
         }
         .padding()

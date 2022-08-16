@@ -13,6 +13,11 @@ struct My_Profile: View {
     
     @State var isPostView: Bool = true
     @State var isfollowing: Bool = true
+    
+    
+    
+
+    
     var body: some View {
         ZStack{
             

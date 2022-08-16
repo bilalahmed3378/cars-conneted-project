@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Invoice_screen: View {
     @Environment(\.presentationMode) var presentationMode
+    @State var toHomeScreen = false
    
     var body: some View {
         ZStack {
@@ -164,8 +165,9 @@ struct Invoice_screen: View {
                     Spacer()
                     Spacer()
                     
+                    
                     Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
+                        self.toHomeScreen = true
                     }, label: {
                         Image("Frame 7271")
                             .resizable()
@@ -173,6 +175,7 @@ struct Invoice_screen: View {
                             .frame(width: 50, height: 50)
                     })
                        
+                    NavigationLink(destination: MainTabContainer(), isActive: $toHomeScreen) { EmptyView() }
                     
                        
                   

@@ -11,6 +11,7 @@ struct Maeket_place_search: View {
     @Environment (\.presentationMode) var presentationMode
     @State private var searchText = ""
     @State var toScreen = false
+   
     
     
     var body: some View {
@@ -29,31 +30,32 @@ struct Maeket_place_search: View {
                             Image("back icon")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
+                                .frame(width :UIScreen.widthBlockSize*10, height: UIScreen.heightBlockSize*10)
                         })
                       
                             
                         
                         HStack{
-                            
-                            TextField("BMW Head Lights",text: self.$searchText)
+                          
+                          TextField("BMW Head Lights",text: self.$searchText)
                                 .font(AppFonts.regular_14)
                                 .foregroundColor(.red)
-                            
+                                
+                           
                             Image(systemName: "magnifyingglass")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width:20,height: 20)
+                                .frame(width :20, height: 20)
                                 .foregroundColor(.red)
                        
-                        } .padding(15)
+                        } .padding()
                             .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
                         
                         Button(action: {}, label: {
                             Image("Filter 2")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
+                                .frame(width: UIScreen.widthBlockSize*8, height: UIScreen.heightBlockSize*8)
                                 .padding()
                                 .frame(width: 53, height: 53)
                                 .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
@@ -104,11 +106,11 @@ struct marketPlaceSreachCards : View {
     
     var body: some View {
        
-        ZStack(alignment: .leading){
+        ZStack(alignment: .top){
             Image("Rectangle 1265")
                 .resizable()
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 375, height: 220)
+                .frame(width: UIScreen.widthBlockSize*90, height: 250)
                 .cornerRadius(10)
             
             VStack(alignment: .leading){
@@ -116,7 +118,8 @@ struct marketPlaceSreachCards : View {
                     Image("Rectangle 1266")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 40, height: 40)
+                        .frame(width: 70, height: 70)
+                        .padding(.leading,15)
                     
                     VStack(alignment: .leading){
                         Text("Jhon Deo Smith")
@@ -127,11 +130,12 @@ struct marketPlaceSreachCards : View {
                             .foregroundColor(.white)
                             .font(AppFonts.regular_12)
                       
-                    }
+                    }.padding(.leading)
                     Spacer()
                     Text("$50")
                         .foregroundColor(.white)
                         .font(AppFonts.SemiBold_20)
+                        .padding(.trailing,10)
                     
                 }.padding()
                     .padding(.bottom,-5)
@@ -141,13 +145,13 @@ struct marketPlaceSreachCards : View {
                 Text("BMW Lazer Head Lights")
                         .font(AppFonts.SemiBold_20)
                     .foregroundColor(.white)
-                }.padding(.leading)
+                }.padding(.leading,30)
                 
                 HStack{
                     Text("Spare Parts")
                         .foregroundColor(.white)
                         .font(AppFonts.semiBold_12)
-                }.padding(.leading)
+                }.padding(.leading,30)
                     .padding(.top,-3)
                 
                 HStack{
@@ -176,7 +180,7 @@ struct marketPlaceSreachCards : View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 18, height: 18)
                 }
-                .padding(.leading)
+                .padding(.leading,30)
                 .padding(.top,1)
                 .padding(.bottom,5)
                 
@@ -184,8 +188,12 @@ struct marketPlaceSreachCards : View {
                     Text("$500")
                         .font(AppFonts.regular_14)
                         .foregroundColor(.white)
-                        .frame(width: 60, height: 35)
+                        .padding(10)
+                        .padding(.leading,10)
+                        .padding(.trailing,10)
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
+                        .padding(.leading,10)
+                       
                     
                     Spacer()
                     Button(action: {
@@ -196,7 +204,9 @@ struct marketPlaceSreachCards : View {
                         Text("Purchase")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.white)
-                            .frame(width: 250, height: 35)
+                            .padding(10)
+                            .padding(.leading,15)
+                            .padding(.trailing,15)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
                   
@@ -212,9 +222,8 @@ struct marketPlaceSreachCards : View {
             }
             
         }
-        .frame(width: 375, height: 200)
-        .padding(.bottom,20)
-        .padding(.top,10)
+        .frame(width: UIScreen.widthBlockSize*90, height: 250)
+        
     }
 }
 }

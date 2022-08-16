@@ -8,13 +8,26 @@
 import SwiftUI
 
 struct Setting_Screen: View {
+    @ObservedObject var logoutApi : LogoutApi = LogoutApi()
+    
     @State private var searchText = ""
+    
+    @State var pushToLogin : Bool = false
+    @State var isUserLoggedIn : Bool = false
+
+    @State var isProfileScreen : Bool = false
+
+    
+   
+    
+    
     var body: some View {
         VStack{
             
             VStack{
                 
                 // top bar
+                Group{
                 HStack{
                     Button(action: {}, label: {
                         Image("side menu icon white")
@@ -64,7 +77,7 @@ struct Setting_Screen: View {
                 .padding(.top,20)
                 .padding(.leading,20)
                 .padding(.trailing,20)
-                
+                }
                 
                 
             }
@@ -73,6 +86,8 @@ struct Setting_Screen: View {
                 .background(
                     Image("home screen background")
                         .resizable())
+            ScrollView(.vertical, showsIndicators: false){
+            
             Group{
             HStack{
                 Image("unsplash_OhKElOkQ3RE-1")
@@ -124,6 +139,37 @@ struct Setting_Screen: View {
             .padding(.leading,10)
             
               
+                HStack{
+                    
+                    Image("Vector")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30 )
+                        .padding(.trailing)
+                    
+                   
+                    Text("Edit Username")
+                        .font(AppFonts.regular_14)
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: Change_Password(), label: {
+                        Image("forward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                    })
+                    
+                }
+                .frame(width: 350, height: 30)
+                .padding(.bottom)
+                    
+                
+                Image("Line 26")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 1 )
+                
             HStack{
                 
                 Image("dashicons_lock")
@@ -154,6 +200,106 @@ struct Setting_Screen: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 1 )
+            Group{
+            HStack{
+                
+                Image("update email")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 30 )
+                    .padding(.trailing)
+                
+               
+                Text("Update Email")
+                    .font(AppFonts.regular_14)
+                
+                Spacer()
+                
+                Text("Verified")
+                    .font(AppFonts.regular_14)
+                    .foregroundColor(.green)
+                
+                NavigationLink(destination: Change_Password(), label: {
+                    Image("forward")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30 )
+                })
+                
+            }
+            .frame(width: 350, height: 30)
+            .padding(.bottom)
+                
+            
+            Image("Line 26")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 350, height: 1 )
+            }
+            Group{
+            HStack{
+                
+                Image("Billing details")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 30 )
+                    .padding(.trailing)
+                
+               
+                Text("Billing details")
+                    .font(AppFonts.regular_14)
+                
+                Spacer()
+                
+                NavigationLink(destination: Change_Password(), label: {
+                    Image("forward")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30 )
+                })
+                
+            }
+            .frame(width: 350, height: 30)
+            .padding(.bottom)
+                
+            
+            Image("Line 26")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .frame(width: 350, height: 1 )
+                
+                HStack{
+                    
+                    Image("Payment")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30 )
+                        .padding(.trailing)
+                    
+                   
+                    Text("Payment")
+                        .font(AppFonts.regular_14)
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: Change_Password(), label: {
+                        Image("forward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                    })
+                    
+                }
+                .frame(width: 350, height: 30)
+                .padding(.bottom)
+                    
+                
+                Image("Line 26")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 1 )
+            
+            }
             Group{
             HStack{
                 Image("bxs_bell")
@@ -189,16 +335,49 @@ struct Setting_Screen: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 1 )
             
+                
+                HStack{
+                    Image("eos-icons_network-policy")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30 )
+                        .padding(.trailing)
+                    
+                   
+                    Text("Proximity Setting")
+                        .font(AppFonts.regular_14)
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: Proximity_Setting_screen(),
+                                   label: {
+                        Image("forward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                    })
+                       
+
+                    
+                    
+                }
+                .frame(width: 350, height: 30)
+                .padding(.bottom)
+                
+                Image("Line 26")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 1 )
             
             HStack{
-                Image("eos-icons_network-policy")
+                Image("Buffer location")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30, height: 30 )
                     .padding(.trailing)
                 
                
-                Text("Proximity Setting")
+                Text("Buffer location")
                     .font(AppFonts.regular_14)
                 
                 Spacer()
@@ -222,33 +401,107 @@ struct Setting_Screen: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 1 )
-            }
-            HStack{
-                Image("ant-design_dollar-circle-filled")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30 )
-                    .padding(.trailing)
                 
-               
-                Text("Transaction Details")
-                    .font(AppFonts.regular_14)
                 
-                Spacer()
-                NavigationLink(destination: Transacation_detail(),  label: {
-                    Image("forward")
+                HStack{
+                    Image("Support")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-            
-                })
+                        .padding(.trailing)
+                    
                    
-              
+                    Text("Support")
+                        .font(AppFonts.regular_14)
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: Proximity_Setting_screen(),
+                                   label: {
+                        Image("forward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                    })
+                       
+
+                    
+                    
+                }
+                .frame(width: 350, height: 30)
+                .padding(.bottom)
                 
+                Image("Line 26")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 1 )
+            }
+            Group{
+        HStack{
+            Image("Feedback")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30 )
+                .padding(.trailing)
+            
+            
+            Text("Feedback")
+                .font(AppFonts.regular_14)
+            
+            Spacer()
+            NavigationLink(destination: Transacation_detail(),  label: {
+                Image("forward")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 30, height: 30 )
+        
+            })
+                
+            
+            
+            
+        }
+        .frame(width: 350, height: 30)
+        .padding(.bottom)
+                
+                Image("Line 26")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 1 )
+                
+                HStack{
+                    Image("help")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30 )
+                        .padding(.trailing)
+                    
+                    
+                    Text("Help")
+                        .font(AppFonts.regular_14)
+                    
+                    Spacer()
+                    NavigationLink(destination: Transacation_detail(),  label: {
+                        Image("forward")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                
+                    })
+                        
+                    
+                    
+                    
+                }
+                .frame(width: 350, height: 30)
+                .padding(.bottom)
+                
+                Image("Line 26")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: 350, height: 1 )
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
             Group{
             Image("Line 26")
                 .resizable()
@@ -256,14 +509,14 @@ struct Setting_Screen: View {
                 .frame(width: 350, height: 1 )
             
             HStack{
-                Image("fluent_document-bullet-list-20-filled")
+                Image("TOS")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30, height: 30 )
                     .padding(.trailing)
                 
                
-                Text("Terms Of Service")
+                Text("TOS")
                     .font(AppFonts.regular_14)
                 
                 Spacer()
@@ -315,7 +568,7 @@ struct Setting_Screen: View {
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 1 )
             }
-            
+            Group{
             HStack{
                 Image("majesticons_logout")
                     .resizable()
@@ -329,11 +582,19 @@ struct Setting_Screen: View {
                 
                 Spacer()
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    self.logoutApi.Logout()
+                    
+                    AppData().logoutTheUser()
+                    
+                    self.isUserLoggedIn = false
+                    
+                }, label: {
                     Image("forward")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30 )
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                   
                 })
               
                 
@@ -346,8 +607,9 @@ struct Setting_Screen: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 350, height: 1 )
-            
-            Spacer()
+            }
+            }
+           
         }
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
@@ -358,7 +620,12 @@ struct Setting_Screen: View {
 }
 
 struct Setting_Screen_Previews: PreviewProvider {
+    
+    
     static var previews: some View {
+        
+
+        
         Setting_Screen()
     }
 }

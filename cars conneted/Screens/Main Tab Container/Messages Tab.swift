@@ -19,15 +19,7 @@ struct  MessagesTab: View {
             // top bar
             HStack{
                 
-                Button(action: {
-                    self.presentationMode.wrappedValue.dismiss()
-                }, label: {
-                    Image("back icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
-                        .padding(.leading,-10)
-                })
+               
                
                 Spacer()
                 

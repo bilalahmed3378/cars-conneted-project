@@ -149,6 +149,7 @@ struct MainTabContainer: View {
         }
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.top)
+        .edgesIgnoringSafeArea(.bottom)
         
     }
 }

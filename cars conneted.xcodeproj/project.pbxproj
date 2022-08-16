@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */; };
+		590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */; };
+		591192E1289A45A4004DF048 /* Logout Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591192E0289A45A4004DF048 /* Logout Api.swift */; };
+		591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591192E7289A472E004DF048 /* LogoutResponseModel.swift */; };
+		592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A21072899102400FC9EAF /* LoginResponseModel.swift */; };
+		592A210A2899106100FC9EAF /* LoginDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A21092899106100FC9EAF /* LoginDataModel.swift */; };
+		592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A210B289910A400FC9EAF /* LoginUserModel.swift */; };
+		592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A210D2899113A00FC9EAF /* LoginApi.swift */; };
 		592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F189D2887BE3300A531A4 /* Search post screen .swift */; };
 		592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A02887C10500A531A4 /* MainTabContainer.swift */; };
 		592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A22887C7B700A531A4 /* Messages Tab.swift */; };
@@ -37,6 +45,11 @@
 		59607F202891977600B46682 /* Change Password screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1F2891977600B46682 /* Change Password screen.swift */; };
 		59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed screen.swift */; };
 		59607F2428924A2100B46682 /* Notifications screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2328924A2000B46682 /* Notifications screen.swift */; };
+		59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673EF028ABAB8600B2A305 /* Change User Name.swift */; };
+		59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669DC28ABB5210012FBF8 /* User name Successfully Changed Screen.swift */; };
+		59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669DE28ABB5D70012FBF8 /* Change Email screen.swift */; };
+		59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669E028ABB8590012FBF8 /* E-Mail Confirmation screen.swift */; };
+		59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */; };
 		59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */; };
 		59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */; };
 		59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */; };
@@ -61,6 +74,12 @@
 		59D7D0342892AF1A00F9EC5D /* Inter-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59D7D0212892AF1900F9EC5D /* Inter-BoldItalic.otf */; };
 		59D7D0352892AF1A00F9EC5D /* Inter-LightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59D7D0222892AF1900F9EC5D /* Inter-LightItalic.otf */; };
 		59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7D0372892B3C700F9EC5D /* AppFonts.swift */; };
+		59DB445F289937A7006766EA /* NetworkConfigs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB445E289937A7006766EA /* NetworkConfigs.swift */; };
+		59DB4462289939E0006766EA /* MultipartForm in Frameworks */ = {isa = PBXBuildFile; productRef = 59DB4461289939E0006766EA /* MultipartForm */; };
+		59DB446528995098006766EA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB446428995098006766EA /* Constants.swift */; };
+		59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB4466289950F5006766EA /* NullEncodeable.swift */; };
+		59DB446928995120006766EA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB446828995120006766EA /* ImagePicker.swift */; };
+		59DB446B2899514E006766EA /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB446A2899514E006766EA /* AppData.swift */; };
 		59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385B288EA8BF00BD72D9 /* Cart screen.swift */; };
 		59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */; };
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
@@ -73,8 +92,11 @@
 		59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */; };
 		59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */; };
 		59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF0A9128871CD300298EE3 /* Search people screen .swift */; };
+		59E40DC828AB806D00B6D60B /* Profile Setup screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */; };
 		59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A31288DAB800081D48B /* Market place search screen.swift */; };
 		59E53A34288E65750081D48B /* Product Details screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A33288E65750081D48B /* Product Details screen.swift */; };
+		59FD0750289BD1FC00573F88 /* Login Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD074F289BD1FC00573F88 /* Login Screen.swift */; };
+		59FD0752289BE15300573F88 /* Login Screen Sohaib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD0751289BE15300573F88 /* Login Screen Sohaib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +117,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProfileApi.swift; sourceTree = "<group>"; };
+		590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProfileResponseModel.swift; sourceTree = "<group>"; };
+		591192E0289A45A4004DF048 /* Logout Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logout Api.swift"; sourceTree = "<group>"; };
+		591192E7289A472E004DF048 /* LogoutResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponseModel.swift; sourceTree = "<group>"; };
+		592A21072899102400FC9EAF /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
+		592A21092899106100FC9EAF /* LoginDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataModel.swift; sourceTree = "<group>"; };
+		592A210B289910A400FC9EAF /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
+		592A210D2899113A00FC9EAF /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		592F189D2887BE3300A531A4 /* Search post screen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search post screen .swift"; sourceTree = "<group>"; };
 		592F18A02887C10500A531A4 /* MainTabContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabContainer.swift; sourceTree = "<group>"; };
 		592F18A22887C7B700A531A4 /* Messages Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages Tab.swift"; sourceTree = "<group>"; };
@@ -128,6 +158,11 @@
 		59607F1F2891977600B46682 /* Change Password screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change Password screen.swift"; sourceTree = "<group>"; };
 		59607F2128919ED300B46682 /* Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		59607F2328924A2000B46682 /* Notifications screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications screen.swift"; sourceTree = "<group>"; };
+		59673EF028ABAB8600B2A305 /* Change User Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Name.swift"; sourceTree = "<group>"; };
+		59D669DC28ABB5210012FBF8 /* User name Successfully Changed Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User name Successfully Changed Screen.swift"; sourceTree = "<group>"; };
+		59D669DE28ABB5D70012FBF8 /* Change Email screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change Email screen.swift"; sourceTree = "<group>"; };
+		59D669E028ABB8590012FBF8 /* E-Mail Confirmation screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-Mail Confirmation screen.swift"; sourceTree = "<group>"; };
+		59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity location screen.swift"; sourceTree = "<group>"; };
 		59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Terms of sevices screen.swift"; sourceTree = "<group>"; };
 		59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transacation detail screen.swift"; sourceTree = "<group>"; };
 		59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Setting screen.swift"; sourceTree = "<group>"; };
@@ -151,8 +186,13 @@
 		59D7D0202892AF1900F9EC5D /* Inter-ExtraBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-ExtraBoldItalic.otf"; sourceTree = "<group>"; };
 		59D7D0212892AF1900F9EC5D /* Inter-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-BoldItalic.otf"; sourceTree = "<group>"; };
 		59D7D0222892AF1900F9EC5D /* Inter-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-LightItalic.otf"; sourceTree = "<group>"; };
-		59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "cars-conneted-Info.plist"; sourceTree = SOURCE_ROOT; };
+		59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "cars-conneted-Info.plist"; sourceTree = SOURCE_ROOT; };
 		59D7D0372892B3C700F9EC5D /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
+		59DB445E289937A7006766EA /* NetworkConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigs.swift; sourceTree = "<group>"; };
+		59DB446428995098006766EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		59DB4466289950F5006766EA /* NullEncodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullEncodeable.swift; sourceTree = "<group>"; };
+		59DB446828995120006766EA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		59DB446A2899514E006766EA /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		59DE385B288EA8BF00BD72D9 /* Cart screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Cart screen.swift"; sourceTree = "<group>"; };
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
@@ -165,8 +205,11 @@
 		59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Product Preview.swift"; sourceTree = "<group>"; };
 		59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Profile- Wall.swift"; sourceTree = "<group>"; };
 		59DF0A9128871CD300298EE3 /* Search people screen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search people screen .swift"; sourceTree = "<group>"; };
+		59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Setup screen.swift"; sourceTree = "<group>"; };
 		59E53A31288DAB800081D48B /* Market place search screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place search screen.swift"; sourceTree = "<group>"; };
 		59E53A33288E65750081D48B /* Product Details screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details screen.swift"; sourceTree = "<group>"; };
+		59FD074F289BD1FC00573F88 /* Login Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Screen.swift"; sourceTree = "<group>"; };
+		59FD0751289BE15300573F88 /* Login Screen Sohaib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Screen Sohaib.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59DB4462289939E0006766EA /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +238,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		590D3C0F28AA6F3300278C83 /* New user profile Api */ = {
+			isa = PBXGroup;
+			children = (
+				590D3C1028AA6F5E00278C83 /* Api */,
+				590D3C1128AA6F6500278C83 /* Models */,
+			);
+			path = "New user profile Api";
+			sourceTree = "<group>";
+		};
+		590D3C1028AA6F5E00278C83 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		590D3C1128AA6F6500278C83 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		591192E2289A46A8004DF048 /* Logout Api */ = {
+			isa = PBXGroup;
+			children = (
+				591192E6289A46E7004DF048 /* Api */,
+				591192E0289A45A4004DF048 /* Logout Api.swift */,
+				591192E5289A46D6004DF048 /* Models */,
+			);
+			path = "Logout Api";
+			sourceTree = "<group>";
+		};
+		591192E5289A46D6004DF048 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				591192E7289A472E004DF048 /* LogoutResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		591192E6289A46E7004DF048 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		592A21032898F92400FC9EAF /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				590D3C0F28AA6F3300278C83 /* New user profile Api */,
+				591192E2289A46A8004DF048 /* Logout Api */,
+				59DB445D28993789006766EA /* Configs */,
+				592A21042898F94800FC9EAF /* Login Api */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		592A21042898F94800FC9EAF /* Login Api */ = {
+			isa = PBXGroup;
+			children = (
+				592A21052898F95700FC9EAF /* Api */,
+				592A21062898F96600FC9EAF /* Models */,
+			);
+			path = "Login Api";
+			sourceTree = "<group>";
+		};
+		592A21052898F95700FC9EAF /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				592A210D2899113A00FC9EAF /* LoginApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		592A21062898F96600FC9EAF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				592A21072899102400FC9EAF /* LoginResponseModel.swift */,
+				592A21092899106100FC9EAF /* LoginDataModel.swift */,
+				592A210B289910A400FC9EAF /* LoginUserModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		592F189F2887C0EF00A531A4 /* Main Tab Container */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +374,7 @@
 			isa = PBXGroup;
 			children = (
 				593466672886712800956869 /* cars conneted */,
+				59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */,
 				593466782886712F00956869 /* cars connetedTests */,
 				593466822886712F00956869 /* cars connetedUITests */,
 				593466662886712800956869 /* Products */,
@@ -261,7 +394,8 @@
 		593466672886712800956869 /* cars conneted */ = {
 			isa = PBXGroup;
 			children = (
-				59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */,
+				59DB446328995067006766EA /* Helpers */,
+				592A21032898F92400FC9EAF /* Networking */,
 				5934669A2886C5D800956869 /* Screens */,
 				593466682886712800956869 /* cars_connetedApp.swift */,
 				5934666A2886712800956869 /* ContentView.swift */,
@@ -318,6 +452,7 @@
 		5934669A2886C5D800956869 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				59FD074E289BD1E500573F88 /* Login */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
 				59E53A30288DAB330081D48B /* Market place screens */,
@@ -359,6 +494,11 @@
 				59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */,
 				59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */,
 				59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */,
+				59673EF028ABAB8600B2A305 /* Change User Name.swift */,
+				59D669DC28ABB5210012FBF8 /* User name Successfully Changed Screen.swift */,
+				59D669DE28ABB5D70012FBF8 /* Change Email screen.swift */,
+				59D669E028ABB8590012FBF8 /* E-Mail Confirmation screen.swift */,
+				59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */,
 			);
 			path = "Settings Screens";
 			sourceTree = "<group>";
@@ -389,6 +529,25 @@
 			path = "Inter Desktop";
 			sourceTree = "<group>";
 		};
+		59DB445D28993789006766EA /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				59DB445E289937A7006766EA /* NetworkConfigs.swift */,
+			);
+			path = Configs;
+			sourceTree = "<group>";
+		};
+		59DB446328995067006766EA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				59DB446428995098006766EA /* Constants.swift */,
+				59DB4466289950F5006766EA /* NullEncodeable.swift */,
+				59DB446828995120006766EA /* ImagePicker.swift */,
+				59DB446A2899514E006766EA /* AppData.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -416,6 +575,16 @@
 			path = "Market place screens";
 			sourceTree = "<group>";
 		};
+		59FD074E289BD1E500573F88 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				59FD074F289BD1FC00573F88 /* Login Screen.swift */,
+				59FD0751289BE15300573F88 /* Login Screen Sohaib.swift */,
+				59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,6 +601,9 @@
 			dependencies = (
 			);
 			name = "cars conneted";
+			packageProductDependencies = (
+				59DB4461289939E0006766EA /* MultipartForm */,
+			);
 			productName = "cars conneted";
 			productReference = 593466652886712800956869 /* cars conneted.app */;
 			productType = "com.apple.product-type.application";
@@ -504,6 +676,9 @@
 				Base,
 			);
 			mainGroup = 5934665C2886712800956869;
+			packageReferences = (
+				59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */,
+			);
 			productRefGroup = 593466662886712800956869 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -565,39 +740,58 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */,
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
+				59FD0750289BD1FC00573F88 /* Login Screen.swift in Sources */,
+				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
+				59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */,
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
 				59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */,
 				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
+				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
 				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
+				591192E1289A45A4004DF048 /* Logout Api.swift in Sources */,
+				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
+				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
+				592A210A2899106100FC9EAF /* LoginDataModel.swift in Sources */,
 				59607F1E28916D7B00B46682 /* My Profile screen.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
+				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
 				59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */,
 				59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */,
+				59E40DC828AB806D00B6D60B /* Profile Setup screen.swift in Sources */,
 				593466942886953800956869 /* AppColors.swift in Sources */,
 				595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */,
+				590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */,
 				59DE386C288FE7FB00BD72D9 /* Add product.swift in Sources */,
 				59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */,
+				59DB445F289937A7006766EA /* NetworkConfigs.swift in Sources */,
 				59607F2428924A2100B46682 /* Notifications screen.swift in Sources */,
+				59DB446528995098006766EA /* Constants.swift in Sources */,
+				592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Follow Requests Screens.swift in Sources */,
 				59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */,
+				590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */,
+				592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */,
 				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
 				59DE3866288FA7EF00BD72D9 /* Checkout screen 1.swift in Sources */,
 				592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */,
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
 				5934666B2886712800956869 /* ContentView.swift in Sources */,
+				59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */,
 				59607F1328914B5000B46682 /* My Garage.swift in Sources */,
 				592F18AB288816DF00A531A4 /* post screen 1.swift in Sources */,
+				59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */,
 				59607F19289155D800B46682 /* My products.swift in Sources */,
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				59E53A34288E65750081D48B /* Product Details screen.swift in Sources */,
@@ -607,6 +801,8 @@
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
 				59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */,
 				59DE3864288FA56500BD72D9 /* Address Screen.swift in Sources */,
+				59FD0752289BE15300573F88 /* Login Screen Sohaib.swift in Sources */,
+				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 			);
@@ -933,6 +1129,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/davbeck/MultipartForm.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		59DB4461289939E0006766EA /* MultipartForm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */;
+			productName = MultipartForm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5934665D2886712800956869 /* Project object */;
 }

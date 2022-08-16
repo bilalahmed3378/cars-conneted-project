@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Change_Password: View {
+    @State var isSecured = false
+    @State var isSecured2 = false
+
     
     @Environment(\.presentationMode) var presentaionMode
     
@@ -60,6 +63,9 @@ struct Change_Password: View {
                 .foregroundColor(.gray)
                 .font(AppFonts.regular_14)
             
+            
+           
+            
             Text("Password")
                 .font(AppFonts.regular_12)
                       .padding(.top,28)
@@ -68,16 +74,42 @@ struct Change_Password: View {
                       .padding(.leading)
                       .padding(.trailing)
                     
-            
-            TextField("BBS RMS 17",text:$password)
-                .font(AppFonts.regular_14)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 42))
-                      .foregroundColor(.gray)
-                      .padding(.leading)
-                      .padding(.trailing)
-            
+          
+            HStack{
+            if isSecured {
+                SecureField("Set Password", text: $password)
+                    .autocapitalization(.none)
+                    .padding(.vertical, 10)
+                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                    .overlay(HStack{
+                        Spacer()
+                        Button(action: {
+                            isSecured = !isSecured
+                                    }) {
+                                        Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                            .accentColor(.gray)
+
+                                    }
+                    })
+                
+            } else {
+                TextField("Set Password", text: $password)
+                    .autocapitalization(.none)
+                    .padding(.vertical, 10)
+                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                    .overlay(HStack{
+                        Spacer()
+                        Button(action: {
+                            isSecured = !isSecured
+                                    }) {
+                                        Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                            .accentColor(.gray)
+
+                                    }
+                    })
+            }
+            }.padding(.leading)
+                .padding(.trailing)
             
             Text("Confirm Password")
                 .font(AppFonts.regular_12)
@@ -87,15 +119,42 @@ struct Change_Password: View {
                       .padding(.leading)
                       .padding(.trailing)
                    
+            HStack{
+            if isSecured2 {
+                SecureField("Set Password", text: $confirmPassword)
+                    .autocapitalization(.none)
+                    .padding(.vertical, 10)
+                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                    .overlay(HStack{
+                        Spacer()
+                        Button(action: {
+                            isSecured2 = !isSecured2
+                                    }) {
+                                        Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
+                                            .accentColor(.gray)
+
+                                    }
+                    })
+                
+            } else {
+                TextField("Set Password", text: $confirmPassword)
+                    .autocapitalization(.none)
+                    .padding(.vertical, 10)
+                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                    .overlay(HStack{
+                        Spacer()
+                        Button(action: {
+                            isSecured2 = !isSecured2
+                                    }) {
+                                        Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
+                                            .accentColor(.gray)
+
+                                    }
+                    })
+            }
+            }.padding(.leading)
+                .padding(.trailing)
             
-            TextField("BBS RMS 17",text:$confirmPassword)
-                .font(AppFonts.regular_14)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 42))
-                      .foregroundColor(.gray)
-                      .padding(.leading)
-                      .padding(.trailing)
             
             Button(action: {}, label: {
                 Text("Submit New Password")

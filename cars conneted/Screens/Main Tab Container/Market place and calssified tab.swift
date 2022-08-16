@@ -17,14 +17,7 @@ struct Market_place_and_calssified: View {
                 
                 // top bar
                 HStack{
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image("back icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                    })
+                   
                     
                     Spacer()
                     

@@ -49,17 +49,19 @@ struct Product_Details: View {
                     .frame(width: 30, height: 30)
                 
                 
-            }.padding(.leading,24)
+            }
+            .frame(width: UIScreen.widthBlockSize*90)
+            .padding(.leading,24)
                 .padding(.trailing,24)
                 .padding(.top,20)
-            
             
         }  .padding(.top,40)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
                 .resizable())
-          
+        
+                
                 ScrollView(.vertical, showsIndicators: false){
                     
                     ZStack(alignment: .bottom){
@@ -83,7 +85,7 @@ struct Product_Details: View {
                         }
                         .padding()
                     }
-                    .frame(width: 377, height: 230)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 230)
                     .padding()
                     
                     Group{
@@ -102,11 +104,11 @@ struct Product_Details: View {
                         Text("$500")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.white)
-                            .frame(width: 80, height: 55)
+                            .padding()
                             .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
                         
                     }
-                    .frame(width: 377, height: 30)
+                    .frame(width:UIScreen.widthBlockSize*90, height: 30)
                     .padding()
                         .padding(.leading,3)
                         .padding(.trailing,5)
@@ -151,13 +153,13 @@ struct Product_Details: View {
                         
                         
                     }
-                    .frame(width: 377, height: 20)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 20)
                     
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit a ipsum pulvinar morbi placerat id. Nisi, tellus amet ornare bibendum dmn;jnvkajnvlkafjnlvundfivnipfadunvjfnv;afnkvjnfkjanvklnvklfjnvnv;sjnadvkjnsvjn;ssnvakjnolor, a.")
                             .font(AppFonts.regular_14)
                     }
-                    .frame(width: 377, height: 50)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 50)
                     .padding(.top,15)
                     
                     HStack{
@@ -165,7 +167,7 @@ struct Product_Details: View {
                             .font(AppFonts.regular_14)
                         Spacer()
                     }
-                    .frame(width: 377, height: 40)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 40)
                     
                     HStack{
                         Image("Ellipse 23")
@@ -193,7 +195,7 @@ struct Product_Details: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 60, height: 60)
                     }
-                    .frame(width: 377, height: 50)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 50)
                     
                     HStack{
                         Text("Select Size")
@@ -201,10 +203,11 @@ struct Product_Details: View {
                         Spacer()
                         
                     }
-                    .frame(width: 377, height: 20)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 20)
                     .padding(.top,15)
                         
                     }
+                  
                     
                     HStack{
                         Text("15")
@@ -237,7 +240,7 @@ struct Product_Details: View {
                             .frame(width: 60, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                     }
-                    .frame(width: 377, height: 60)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 60)
                     
                     HStack{
                         Text("Quantity")
@@ -245,7 +248,7 @@ struct Product_Details: View {
                         Spacer()
                         
                     }
-                    .frame(width: 377, height: 20)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 20)
                     .padding(.top,15)
                     
                     HStack{
@@ -268,20 +271,23 @@ struct Product_Details: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
                     }
-                    .frame(width: 377, height: 40)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 40)
                     .padding(.bottom,25)
                     
                     NavigationLink(destination: Cart(),  label: {
                         Text("Add to Cart")
                             .font(AppFonts.semiBold_16)
                             .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 377, height: 56))
+                            .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))
+                                .frame(width: UIScreen.widthBlockSize*90, height: 56))
+                            .padding()
                            
                     })
                     
                 }
                  
             }
+           
         }
         .edgesIgnoringSafeArea(.top)
         .navigationBarHidden(true)
