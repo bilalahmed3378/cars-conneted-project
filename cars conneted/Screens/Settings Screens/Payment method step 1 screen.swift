@@ -36,14 +36,9 @@ struct Payment_method_step_1_screen: View {
                 
                 Spacer()
                 
-                Button(action: {}, label: {
-                    Image("doted icons-1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 26, height: 30)
+                
                     
-                })
-               
+                
                 
             }.padding(.leading,20)
                 .padding(.trailing,20)
@@ -82,8 +77,8 @@ struct Payment_method_step_1_screen: View {
                         Text("Add Payment Method")
                             .font(AppFonts.semiBold_16)
                             .foregroundColor(AppColors.redGradientColor1)
-                            .frame(width: 300, height: 50)
-                            .background(RoundedRectangle(cornerRadius: 20).strokeBorder(AppColors.redGradientColor2))
+                            .frame(width: 350, height: 50)
+                            .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
                     })
                         
                 }

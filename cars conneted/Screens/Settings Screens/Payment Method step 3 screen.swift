@@ -41,13 +41,7 @@ struct Payment_Method_step_3_screen: View {
                 
                 Spacer()
                 
-                Button(action: {}, label: {
-                    Image("doted icons-1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 35, height: 35)
-                    
-                })
+                
                
                 
             }.padding(.leading,20)
@@ -63,14 +57,14 @@ struct Payment_Method_step_3_screen: View {
                 VStack{
                     
                     HStack{
-                    Text("Card Selection")
+                    Text("Enter Card Details")
                             .font(AppFonts.SemiBold_20)
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }
                     
                         HStack{
-                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor sagittis sed lobortis pretium sagittis porta.")
+                            Text("Kindly enter your card details to make transations")
                                 .font(AppFonts.regular_12)
                                 .foregroundColor(.gray)
                             Spacer()
@@ -131,15 +125,14 @@ struct Payment_Method_step_3_screen: View {
                     
                     }
                     
-                    NavigationLink(destination: Address_Screen(),  label: {
-                        Text("Next")
+                  
+                        Text("Save")
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
                             .frame(width: 350, height: 70)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    })
-                    .padding()
+                                .padding()
                         
                    
                    

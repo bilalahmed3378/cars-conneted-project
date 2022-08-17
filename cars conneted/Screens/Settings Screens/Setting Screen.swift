@@ -315,7 +315,7 @@ struct Setting_Screen: View {
                 Spacer()
                 
               
-                NavigationLink(destination: Notifications(), label: {
+                NavigationLink(destination: Notifications_setting(), label: {
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
