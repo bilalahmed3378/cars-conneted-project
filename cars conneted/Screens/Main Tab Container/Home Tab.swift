@@ -38,7 +38,7 @@ struct HomeTab: View {
                             
                             
                         }
-                        .frame(width: UIScreen.widthBlockSize*90)
+                       
                         .padding(.leading,24)
                             .padding(.trailing,24)
                             .padding(.top,20)

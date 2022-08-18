@@ -13,6 +13,7 @@ struct Proximity_Setting_screen: View {
     @State var isProfileView: Bool = true
     @State var isOnlineStatus: Bool = true
     @State var isRadiusStatus: Bool = true
+    @State var isOnline: Bool = false
     
     var body: some View {
         VStack{
@@ -67,8 +68,11 @@ struct Proximity_Setting_screen: View {
                     Text("Status (Online)")
                         .font(AppFonts.regular_14)
                     Spacer()
+                    
+                    Toggle("", isOn: $isOnline)
+                        .toggleStyle(SwitchToggleStyle(tint: .green))
                   
-                }
+                }.padding(.trailing,3)
                 
                 Image("Line 6")
                     .resizable()

@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */; };
 		590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */; };
+		591043AF28AE4E4100F6E81F /* passwordChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A228AE4E4000F6E81F /* passwordChanged.swift */; };
+		591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A328AE4E4000F6E81F /* signupScreen.swift */; };
+		591043B128AE4E4100F6E81F /* resetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A428AE4E4000F6E81F /* resetPassword.swift */; };
+		591043B328AE4E4100F6E81F /* forgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A628AE4E4000F6E81F /* forgetPassword.swift */; };
+		591043B428AE4E4100F6E81F /* verifyOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A728AE4E4000F6E81F /* verifyOtpScreen.swift */; };
+		591043B628AE4E4100F6E81F /* addYourCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A928AE4E4100F6E81F /* addYourCar.swift */; };
+		591043B728AE4E4100F6E81F /* garageSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043AA28AE4E4100F6E81F /* garageSetup.swift */; };
+		591043B928AE4E4100F6E81F /* onboardingScreen3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043AC28AE4E4100F6E81F /* onboardingScreen3.swift */; };
 		591192E1289A45A4004DF048 /* Logout Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591192E0289A45A4004DF048 /* Logout Api.swift */; };
 		591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591192E7289A472E004DF048 /* LogoutResponseModel.swift */; };
 		592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A21072899102400FC9EAF /* LoginResponseModel.swift */; };
@@ -41,6 +49,48 @@
 		5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */; };
 		5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088228ACBC4F00C44D86 /* Payment Methods screen.swift */; };
 		5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088428ACE97000C44D86 /* Billing Options Screen.swift */; };
+		59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EF928AE0266001F6EEE /* Support Screen.swift */; };
+		59532EFC28AE0C79001F6EEE /* Support FAQS Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EFB28AE0C79001F6EEE /* Support FAQS Screen.swift */; };
+		59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EFD28AE132C001F6EEE /* Contact Support.swift */; };
+		59532F0028AE2744001F6EEE /* My Support Requests screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EFF28AE2744001F6EEE /* My Support Requests screen.swift */; };
+		59532F0228AE3C44001F6EEE /* Support Issue Details Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0128AE3C44001F6EEE /* Support Issue Details Screen.swift */; };
+		59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */; };
+		59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0628AE435C001F6EEE /* Notification Screen.swift */; };
+		5954A15928AE51B900B8BB30 /* create event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15028AE51B800B8BB30 /* create event.swift */; };
+		5954A15B28AE51B900B8BB30 /* nearbyClubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15228AE51B800B8BB30 /* nearbyClubs.swift */; };
+		5954A15C28AE51B900B8BB30 /* create club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15328AE51B800B8BB30 /* create club.swift */; };
+		5954A15D28AE51B900B8BB30 /* joinedClubDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15428AE51B800B8BB30 /* joinedClubDetails.swift */; };
+		5954A15E28AE51B900B8BB30 /* members.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15528AE51B800B8BB30 /* members.swift */; };
+		5954A15F28AE51B900B8BB30 /* myClubDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15628AE51B800B8BB30 /* myClubDetails.swift */; };
+		5954A16028AE51B900B8BB30 /* myClubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15728AE51B800B8BB30 /* myClubs.swift */; };
+		5954A16128AE51B900B8BB30 /* clubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15828AE51B900B8BB30 /* clubs.swift */; };
+		5954A16A28AE51E500B8BB30 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16228AE51E400B8BB30 /* Events.swift */; };
+		5954A16B28AE51E500B8BB30 /* Registered Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16328AE51E400B8BB30 /* Registered Events.swift */; };
+		5954A16C28AE51E500B8BB30 /* search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16428AE51E400B8BB30 /* search.swift */; };
+		5954A16D28AE51E500B8BB30 /* previewEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16528AE51E500B8BB30 /* previewEvent.swift */; };
+		5954A16E28AE51E500B8BB30 /* Nearby Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16628AE51E500B8BB30 /* Nearby Events.swift */; };
+		5954A16F28AE51E500B8BB30 /* My Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16728AE51E500B8BB30 /* My Events.swift */; };
+		5954A17028AE51E500B8BB30 /* Successfull.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16828AE51E500B8BB30 /* Successfull.swift */; };
+		5954A17128AE51E500B8BB30 /* Turn On Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A16928AE51E500B8BB30 /* Turn On Location.swift */; };
+		5954A18728AE523000B8BB30 /* new orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A17A28AE522F00B8BB30 /* new orders.swift */; };
+		5954A18828AE523000B8BB30 /* orders:selling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A17B28AE522F00B8BB30 /* orders:selling.swift */; };
+		5954A18928AE523000B8BB30 /* orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A17C28AE522F00B8BB30 /* orders.swift */; };
+		5954A18A28AE523000B8BB30 /* order completed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A17D28AE522F00B8BB30 /* order completed.swift */; };
+		5954A18B28AE523000B8BB30 /* cancelled orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A17E28AE522F00B8BB30 /* cancelled orders.swift */; };
+		5954A18C28AE523000B8BB30 /* cancelling order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A17F28AE522F00B8BB30 /* cancelling order.swift */; };
+		5954A18D28AE523000B8BB30 /* view order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18028AE522F00B8BB30 /* view order.swift */; };
+		5954A18E28AE523000B8BB30 /* order being prepared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18128AE522F00B8BB30 /* order being prepared.swift */; };
+		5954A18F28AE523000B8BB30 /* in progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18228AE522F00B8BB30 /* in progress.swift */; };
+		5954A19028AE523000B8BB30 /* completed orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18328AE522F00B8BB30 /* completed orders.swift */; };
+		5954A19128AE523000B8BB30 /* order accepted.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18428AE523000B8BB30 /* order accepted.swift */; };
+		5954A19228AE523000B8BB30 /* order details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18528AE523000B8BB30 /* order details.swift */; };
+		5954A19328AE523000B8BB30 /* order cancelled.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A18628AE523000B8BB30 /* order cancelled.swift */; };
+		5954A19528AE5A4900B8BB30 /* Onboarding 1 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19428AE5A4900B8BB30 /* Onboarding 1 Screen.swift */; };
+		5954A19728AE5F2C00B8BB30 /* Onboarding 2 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */; };
+		5954A19928AE604E00B8BB30 /* Onboarding 3 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */; };
+		5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */; };
+		5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */; };
+		5954A1A128AE6C0800B8BB30 /* SignUp Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */; };
 		595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */; };
 		59607F1328914B5000B46682 /* My Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1228914B5000B46682 /* My Garage.swift */; };
 		59607F1528914F6700B46682 /* Car Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1428914F6700B46682 /* Car Specification.swift */; };
@@ -51,6 +101,7 @@
 		59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed screen.swift */; };
 		59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2328924A2000B46682 /* Notifications setting screen.swift */; };
 		59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673EF028ABAB8600B2A305 /* Change User Name.swift */; };
+		59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */; };
 		59D6147828AD0A560014E4E9 /* Help Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6147728AD0A550014E4E9 /* Help Screen.swift */; };
 		59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */; };
 		59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669DC28ABB5210012FBF8 /* User name Successfully Changed Screen.swift */; };
@@ -126,6 +177,14 @@
 /* Begin PBXFileReference section */
 		590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProfileApi.swift; sourceTree = "<group>"; };
 		590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProfileResponseModel.swift; sourceTree = "<group>"; };
+		591043A228AE4E4000F6E81F /* passwordChanged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passwordChanged.swift; sourceTree = "<group>"; };
+		591043A328AE4E4000F6E81F /* signupScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupScreen.swift; sourceTree = "<group>"; };
+		591043A428AE4E4000F6E81F /* resetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPassword.swift; sourceTree = "<group>"; };
+		591043A628AE4E4000F6E81F /* forgetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgetPassword.swift; sourceTree = "<group>"; };
+		591043A728AE4E4000F6E81F /* verifyOtpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verifyOtpScreen.swift; sourceTree = "<group>"; };
+		591043A928AE4E4100F6E81F /* addYourCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addYourCar.swift; sourceTree = "<group>"; };
+		591043AA28AE4E4100F6E81F /* garageSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garageSetup.swift; sourceTree = "<group>"; };
+		591043AC28AE4E4100F6E81F /* onboardingScreen3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onboardingScreen3.swift; sourceTree = "<group>"; };
 		591192E0289A45A4004DF048 /* Logout Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logout Api.swift"; sourceTree = "<group>"; };
 		591192E7289A472E004DF048 /* LogoutResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponseModel.swift; sourceTree = "<group>"; };
 		592A21072899102400FC9EAF /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
@@ -161,6 +220,48 @@
 		5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Location Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		5950088228ACBC4F00C44D86 /* Payment Methods screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Methods screen.swift"; sourceTree = "<group>"; };
 		5950088428ACE97000C44D86 /* Billing Options Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Billing Options Screen.swift"; sourceTree = "<group>"; };
+		59532EF928AE0266001F6EEE /* Support Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Screen.swift"; sourceTree = "<group>"; };
+		59532EFB28AE0C79001F6EEE /* Support FAQS Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support FAQS Screen.swift"; sourceTree = "<group>"; };
+		59532EFD28AE132C001F6EEE /* Contact Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact Support.swift"; sourceTree = "<group>"; };
+		59532EFF28AE2744001F6EEE /* My Support Requests screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Support Requests screen.swift"; sourceTree = "<group>"; };
+		59532F0128AE3C44001F6EEE /* Support Issue Details Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Issue Details Screen.swift"; sourceTree = "<group>"; };
+		59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Issue Solved Screen.swift"; sourceTree = "<group>"; };
+		59532F0628AE435C001F6EEE /* Notification Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification Screen.swift"; sourceTree = "<group>"; };
+		5954A15028AE51B800B8BB30 /* create event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "create event.swift"; sourceTree = "<group>"; };
+		5954A15228AE51B800B8BB30 /* nearbyClubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nearbyClubs.swift; sourceTree = "<group>"; };
+		5954A15328AE51B800B8BB30 /* create club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "create club.swift"; sourceTree = "<group>"; };
+		5954A15428AE51B800B8BB30 /* joinedClubDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = joinedClubDetails.swift; sourceTree = "<group>"; };
+		5954A15528AE51B800B8BB30 /* members.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = members.swift; sourceTree = "<group>"; };
+		5954A15628AE51B800B8BB30 /* myClubDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myClubDetails.swift; sourceTree = "<group>"; };
+		5954A15728AE51B800B8BB30 /* myClubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myClubs.swift; sourceTree = "<group>"; };
+		5954A15828AE51B900B8BB30 /* clubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = clubs.swift; sourceTree = "<group>"; };
+		5954A16228AE51E400B8BB30 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+		5954A16328AE51E400B8BB30 /* Registered Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Registered Events.swift"; sourceTree = "<group>"; };
+		5954A16428AE51E400B8BB30 /* search.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = search.swift; sourceTree = "<group>"; };
+		5954A16528AE51E500B8BB30 /* previewEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = previewEvent.swift; sourceTree = "<group>"; };
+		5954A16628AE51E500B8BB30 /* Nearby Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Nearby Events.swift"; sourceTree = "<group>"; };
+		5954A16728AE51E500B8BB30 /* My Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "My Events.swift"; sourceTree = "<group>"; };
+		5954A16828AE51E500B8BB30 /* Successfull.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Successfull.swift; sourceTree = "<group>"; };
+		5954A16928AE51E500B8BB30 /* Turn On Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Turn On Location.swift"; sourceTree = "<group>"; };
+		5954A17A28AE522F00B8BB30 /* new orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "new orders.swift"; sourceTree = "<group>"; };
+		5954A17B28AE522F00B8BB30 /* orders:selling.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "orders:selling.swift"; sourceTree = "<group>"; };
+		5954A17C28AE522F00B8BB30 /* orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = orders.swift; sourceTree = "<group>"; };
+		5954A17D28AE522F00B8BB30 /* order completed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "order completed.swift"; sourceTree = "<group>"; };
+		5954A17E28AE522F00B8BB30 /* cancelled orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "cancelled orders.swift"; sourceTree = "<group>"; };
+		5954A17F28AE522F00B8BB30 /* cancelling order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "cancelling order.swift"; sourceTree = "<group>"; };
+		5954A18028AE522F00B8BB30 /* view order.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "view order.swift"; sourceTree = "<group>"; };
+		5954A18128AE522F00B8BB30 /* order being prepared.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "order being prepared.swift"; sourceTree = "<group>"; };
+		5954A18228AE522F00B8BB30 /* in progress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "in progress.swift"; sourceTree = "<group>"; };
+		5954A18328AE522F00B8BB30 /* completed orders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "completed orders.swift"; sourceTree = "<group>"; };
+		5954A18428AE523000B8BB30 /* order accepted.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "order accepted.swift"; sourceTree = "<group>"; };
+		5954A18528AE523000B8BB30 /* order details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "order details.swift"; sourceTree = "<group>"; };
+		5954A18628AE523000B8BB30 /* order cancelled.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "order cancelled.swift"; sourceTree = "<group>"; };
+		5954A19428AE5A4900B8BB30 /* Onboarding 1 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 1 Screen.swift"; sourceTree = "<group>"; };
+		5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 2 Screen.swift"; sourceTree = "<group>"; };
+		5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 3 screen.swift"; sourceTree = "<group>"; };
+		5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 4 screen.swift"; sourceTree = "<group>"; };
+		5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Getting Started Screen.swift"; sourceTree = "<group>"; };
+		5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp Screen.swift"; sourceTree = "<group>"; };
 		595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place and calssified tab.swift"; sourceTree = "<group>"; };
 		59607F1228914B5000B46682 /* My Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage.swift"; sourceTree = "<group>"; };
 		59607F1428914F6700B46682 /* Car Specification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car Specification.swift"; sourceTree = "<group>"; };
@@ -171,6 +272,7 @@
 		59607F2128919ED300B46682 /* Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		59607F2328924A2000B46682 /* Notifications setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications setting screen.swift"; sourceTree = "<group>"; };
 		59673EF028ABAB8600B2A305 /* Change User Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Name.swift"; sourceTree = "<group>"; };
+		59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Privacy Policy Screen.swift"; sourceTree = "<group>"; };
 		59D6147728AD0A550014E4E9 /* Help Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Help Screen.swift"; sourceTree = "<group>"; };
 		59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedBack Screen.swift"; sourceTree = "<group>"; };
 		59D669DC28ABB5210012FBF8 /* User name Successfully Changed Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User name Successfully Changed Screen.swift"; sourceTree = "<group>"; };
@@ -275,6 +377,71 @@
 				590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		591043BC28AE4E4900F6E81F /* Onboarding Screens Sohaib */ = {
+			isa = PBXGroup;
+			children = (
+				591043A928AE4E4100F6E81F /* addYourCar.swift */,
+				591043A628AE4E4000F6E81F /* forgetPassword.swift */,
+				591043AA28AE4E4100F6E81F /* garageSetup.swift */,
+				591043AC28AE4E4100F6E81F /* onboardingScreen3.swift */,
+				591043A228AE4E4000F6E81F /* passwordChanged.swift */,
+				591043A428AE4E4000F6E81F /* resetPassword.swift */,
+				591043A328AE4E4000F6E81F /* signupScreen.swift */,
+				591043A728AE4E4000F6E81F /* verifyOtpScreen.swift */,
+			);
+			path = "Onboarding Screens Sohaib";
+			sourceTree = "<group>";
+		};
+		591043BD28AE4EB500F6E81F /* Events Screens sohaib */ = {
+			isa = PBXGroup;
+			children = (
+				5954A16228AE51E400B8BB30 /* Events.swift */,
+				5954A16728AE51E500B8BB30 /* My Events.swift */,
+				5954A16628AE51E500B8BB30 /* Nearby Events.swift */,
+				5954A16528AE51E500B8BB30 /* previewEvent.swift */,
+				5954A16328AE51E400B8BB30 /* Registered Events.swift */,
+				5954A16428AE51E400B8BB30 /* search.swift */,
+				5954A16828AE51E500B8BB30 /* Successfull.swift */,
+				5954A16928AE51E500B8BB30 /* Turn On Location.swift */,
+			);
+			path = "Events Screens sohaib";
+			sourceTree = "<group>";
+		};
+		591043CE28AE4EDC00F6E81F /* Clubs Screens sohaib */ = {
+			isa = PBXGroup;
+			children = (
+				5954A15828AE51B900B8BB30 /* clubs.swift */,
+				5954A15328AE51B800B8BB30 /* create club.swift */,
+				5954A15028AE51B800B8BB30 /* create event.swift */,
+				5954A15428AE51B800B8BB30 /* joinedClubDetails.swift */,
+				5954A15528AE51B800B8BB30 /* members.swift */,
+				5954A15628AE51B800B8BB30 /* myClubDetails.swift */,
+				5954A15728AE51B800B8BB30 /* myClubs.swift */,
+				5954A15228AE51B800B8BB30 /* nearbyClubs.swift */,
+			);
+			path = "Clubs Screens sohaib";
+			sourceTree = "<group>";
+		};
+		591043EB28AE505F00F6E81F /* Order Management screens sohaib */ = {
+			isa = PBXGroup;
+			children = (
+				5954A17E28AE522F00B8BB30 /* cancelled orders.swift */,
+				5954A17F28AE522F00B8BB30 /* cancelling order.swift */,
+				5954A18328AE522F00B8BB30 /* completed orders.swift */,
+				5954A18228AE522F00B8BB30 /* in progress.swift */,
+				5954A17A28AE522F00B8BB30 /* new orders.swift */,
+				5954A18428AE523000B8BB30 /* order accepted.swift */,
+				5954A18128AE522F00B8BB30 /* order being prepared.swift */,
+				5954A18628AE523000B8BB30 /* order cancelled.swift */,
+				5954A17D28AE522F00B8BB30 /* order completed.swift */,
+				5954A18528AE523000B8BB30 /* order details.swift */,
+				5954A17B28AE522F00B8BB30 /* orders:selling.swift */,
+				5954A17C28AE522F00B8BB30 /* orders.swift */,
+				5954A18028AE522F00B8BB30 /* view order.swift */,
+			);
+			path = "Order Management screens sohaib";
 			sourceTree = "<group>";
 		};
 		591192E2289A46A8004DF048 /* Logout Api */ = {
@@ -466,6 +633,13 @@
 		5934669A2886C5D800956869 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				591043EB28AE505F00F6E81F /* Order Management screens sohaib */,
+				591043CE28AE4EDC00F6E81F /* Clubs Screens sohaib */,
+				591043BD28AE4EB500F6E81F /* Events Screens sohaib */,
+				591043BC28AE4E4900F6E81F /* Onboarding Screens Sohaib */,
+				59532F0528AE4343001F6EEE /* Notification Screens */,
+				5954A19C28AE63BD00B8BB30 /* Onboarding Screens */,
+				5954A19D28AE644200B8BB30 /* Getting Started & Registeration Screens */,
 				59FD074E289BD1E500573F88 /* Login */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
@@ -478,6 +652,34 @@
 				59607F1A289159E700B46682 /* Settings Screens */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		59532F0528AE4343001F6EEE /* Notification Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59532F0628AE435C001F6EEE /* Notification Screen.swift */,
+			);
+			path = "Notification Screens";
+			sourceTree = "<group>";
+		};
+		5954A19C28AE63BD00B8BB30 /* Onboarding Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5954A19428AE5A4900B8BB30 /* Onboarding 1 Screen.swift */,
+				5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */,
+				5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */,
+				5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */,
+			);
+			path = "Onboarding Screens";
+			sourceTree = "<group>";
+		};
+		5954A19D28AE644200B8BB30 /* Getting Started & Registeration Screens */ = {
+			isa = PBXGroup;
+			children = (
+				5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */,
+				5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */,
+			);
+			path = "Getting Started & Registeration Screens";
 			sourceTree = "<group>";
 		};
 		59607F1128914A6800B46682 /* My Garage screens */ = {
@@ -523,6 +725,13 @@
 				59458AD728ACFF0C00A9ED02 /* Billing Screen.swift */,
 				59D6147728AD0A550014E4E9 /* Help Screen.swift */,
 				59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */,
+				59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */,
+				59532EF928AE0266001F6EEE /* Support Screen.swift */,
+				59532EFB28AE0C79001F6EEE /* Support FAQS Screen.swift */,
+				59532EFD28AE132C001F6EEE /* Contact Support.swift */,
+				59532EFF28AE2744001F6EEE /* My Support Requests screen.swift */,
+				59532F0128AE3C44001F6EEE /* Support Issue Details Screen.swift */,
+				59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */,
 			);
 			path = "Settings Screens";
 			sourceTree = "<group>";
@@ -763,76 +972,127 @@
 			files = (
 				5950087F28ACAC7D00C44D86 /* Verify Email OTP Screen.swift in Sources */,
 				591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */,
+				5954A19528AE5A4900B8BB30 /* Onboarding 1 Screen.swift in Sources */,
 				5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */,
+				5954A19128AE523000B8BB30 /* order accepted.swift in Sources */,
+				5954A18828AE523000B8BB30 /* orders:selling.swift in Sources */,
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
 				59FD0750289BD1FC00573F88 /* Login Screen.swift in Sources */,
+				591043B928AE4E4100F6E81F /* onboardingScreen3.swift in Sources */,
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
+				5954A15C28AE51B900B8BB30 /* create club.swift in Sources */,
 				59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */,
+				5954A16E28AE51E500B8BB30 /* Nearby Events.swift in Sources */,
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
+				5954A19928AE604E00B8BB30 /* Onboarding 3 screen.swift in Sources */,
+				5954A18E28AE523000B8BB30 /* order being prepared.swift in Sources */,
+				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
+				5954A16128AE51B900B8BB30 /* clubs.swift in Sources */,
 				59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */,
 				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
+				5954A16F28AE51E500B8BB30 /* My Events.swift in Sources */,
+				5954A16A28AE51E500B8BB30 /* Events.swift in Sources */,
 				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
 				591192E1289A45A4004DF048 /* Logout Api.swift in Sources */,
+				59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */,
 				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
+				5954A18D28AE523000B8BB30 /* view order.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
 				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
 				592A210A2899106100FC9EAF /* LoginDataModel.swift in Sources */,
+				5954A15D28AE51B900B8BB30 /* joinedClubDetails.swift in Sources */,
 				59607F1E28916D7B00B46682 /* My Profile screen.swift in Sources */,
+				591043B128AE4E4100F6E81F /* resetPassword.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
+				59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */,
 				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
 				59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */,
 				59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */,
+				5954A19228AE523000B8BB30 /* order details.swift in Sources */,
+				591043B628AE4E4100F6E81F /* addYourCar.swift in Sources */,
 				59E40DC828AB806D00B6D60B /* Profile Setup screen.swift in Sources */,
 				593466942886953800956869 /* AppColors.swift in Sources */,
+				59532EFC28AE0C79001F6EEE /* Support FAQS Screen.swift in Sources */,
 				595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */,
+				5954A18F28AE523000B8BB30 /* in progress.swift in Sources */,
+				5954A1A128AE6C0800B8BB30 /* SignUp Screen.swift in Sources */,
 				590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */,
 				59DE386C288FE7FB00BD72D9 /* Add product.swift in Sources */,
 				59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */,
+				5954A18A28AE523000B8BB30 /* order completed.swift in Sources */,
 				59DB445F289937A7006766EA /* NetworkConfigs.swift in Sources */,
 				59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */,
+				5954A17028AE51E500B8BB30 /* Successfull.swift in Sources */,
 				59DB446528995098006766EA /* Constants.swift in Sources */,
 				59D6147828AD0A560014E4E9 /* Help Screen.swift in Sources */,
 				592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
+				5954A15E28AE51B900B8BB30 /* members.swift in Sources */,
+				591043B328AE4E4100F6E81F /* forgetPassword.swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Follow Requests Screens.swift in Sources */,
+				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
+				5954A19728AE5F2C00B8BB30 /* Onboarding 2 Screen.swift in Sources */,
+				5954A16028AE51B900B8BB30 /* myClubs.swift in Sources */,
 				59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */,
 				590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */,
 				592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */,
+				59532F0228AE3C44001F6EEE /* Support Issue Details Screen.swift in Sources */,
 				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
+				5954A16B28AE51E500B8BB30 /* Registered Events.swift in Sources */,
+				59532F0028AE2744001F6EEE /* My Support Requests screen.swift in Sources */,
 				59DE3866288FA7EF00BD72D9 /* Checkout screen 1.swift in Sources */,
+				5954A16D28AE51E500B8BB30 /* previewEvent.swift in Sources */,
+				59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */,
 				592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */,
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
+				5954A15928AE51B900B8BB30 /* create event.swift in Sources */,
+				591043AF28AE4E4100F6E81F /* passwordChanged.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
 				5934666B2886712800956869 /* ContentView.swift in Sources */,
 				59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */,
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
 				59607F1328914B5000B46682 /* My Garage.swift in Sources */,
+				5954A15B28AE51B900B8BB30 /* nearbyClubs.swift in Sources */,
+				591043B428AE4E4100F6E81F /* verifyOtpScreen.swift in Sources */,
+				5954A18B28AE523000B8BB30 /* cancelled orders.swift in Sources */,
 				592F18AB288816DF00A531A4 /* post screen 1.swift in Sources */,
 				59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */,
 				59607F19289155D800B46682 /* My products.swift in Sources */,
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				59E53A34288E65750081D48B /* Product Details screen.swift in Sources */,
 				5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */,
+				5954A18928AE523000B8BB30 /* orders.swift in Sources */,
 				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
 				592F18B628895EA600A531A4 /* post status screen.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */,
+				5954A18C28AE523000B8BB30 /* cancelling order.swift in Sources */,
+				5954A19028AE523000B8BB30 /* completed orders.swift in Sources */,
+				5954A17128AE51E500B8BB30 /* Turn On Location.swift in Sources */,
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
+				5954A18728AE523000B8BB30 /* new orders.swift in Sources */,
 				59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */,
 				59DE3864288FA56500BD72D9 /* Address Screen.swift in Sources */,
+				5954A19328AE523000B8BB30 /* order cancelled.swift in Sources */,
+				5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */,
 				59FD0752289BE15300573F88 /* Login Screen Sohaib.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */,
+				591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
+				5954A15F28AE51B900B8BB30 /* myClubDetails.swift in Sources */,
+				5954A16C28AE51E500B8BB30 /* search.swift in Sources */,
+				591043B728AE4E4100F6E81F /* garageSetup.swift in Sources */,
+				59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
