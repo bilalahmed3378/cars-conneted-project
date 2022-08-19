@@ -173,7 +173,7 @@ struct Product_Details: View {
                         Image("Ellipse 23")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width:60, height: 60)
                         Spacer()
                         Image("Ellipse 24")
                             .resizable()

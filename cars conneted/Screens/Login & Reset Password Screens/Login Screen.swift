@@ -1,37 +1,38 @@
 //
-//  SignUp Screen.swift
+//  Login Screen.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 18/08/2022.
+//  Created by Bilal Ahmed on 19/08/2022.
 //
 
 import SwiftUI
 
-struct SignUp_Screen: View {
+struct Login_Screen: View {
     @State  var email = ""
     @State  var password = ""
-    @State  var confirmPassword = ""
     @State  var isSecured = false
     var body: some View {
         ZStack{
           
-           VStack{
-               Spacer()
+            VStack{
+                Image("Login Screen background")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.widthBlockSize*102, height: UIScreen.heightBlockSize*70)
                 
-            Image("bilal2")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*70)}
+                Spacer()
+            }
+                
+           
             
-                VStack{
-                   
+                   Spacer()
                     VStack(alignment: .leading){
                         HStack{
-                        Text("Signup")
+                        Text("Login")
                             .font(AppFonts.semiBold_22)
                             .fontWeight(.semibold)
                             .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                            .mask( Text("Signup")
+                            .mask( Text("Login")
                                 .font(AppFonts.semiBold_22)
                                 .fontWeight(.semibold))
                             .padding(.bottom)
@@ -42,7 +43,7 @@ struct SignUp_Screen: View {
                   
                         
                         HStack{
-                            Text("Welcome to Cars Connected. Please provide your details to create your account today.")
+                            Text("Provide your registered email and password to login to Cars Connected!")
                                 .font(AppFonts.regular_14)
                         }
                        
@@ -94,47 +95,27 @@ struct SignUp_Screen: View {
                           })
                       }
                         
-                        Text("Password")
-                          .padding(.top,20)
-                          .frame(maxWidth: .infinity, alignment: .leading)
-                        if isSecured {
-                          SecureField("Set Password", text: $confirmPassword)
-                            .autocapitalization(.none)
-                            .padding(.vertical, 10)
-                            .background(Rectangle().frame(height: 1).padding(.top, 40))
-                            .overlay(HStack{
-                              Spacer()
-                              Button(action: {
-                                isSecured = !isSecured
-                              }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                  .accentColor(.gray)
-                              }
-                            })
-                        } else {
-                          TextField("Re-Enter Your Password", text: $confirmPassword)
-                            .autocapitalization(.none)
-                            .padding(.vertical, 10)
-                            .background(Rectangle().frame(height: 1).padding(.top, 40))
-                            .overlay(HStack{
-                              Spacer()
-                              Button(action: {
-                                isSecured = !isSecured
-                              }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                                  .accentColor(.gray)
-                              }
-                            })
-                        }
+                        HStack{
+                            Spacer()
+                            
+                            Text("Forget Password?")
+                                .font(AppFonts.regular_12)
+                            
+                            Text("Reset")
+                                .font(AppFonts.medium_14)
+                                .foregroundColor(AppColors.redGradientColor1)
+                        }.padding(.top)
+                        
+                      
                         Group{
                         HStack{
                             Spacer()
                         Button(action: {}, label: {
-                            Text("SignUp")
+                            Text("Login")
                                 .font(AppFonts.semiBold_16)
                                 .fontWeight(.medium)
                                 .foregroundColor(.white)
-                                .frame(width: UIScreen.widthBlockSize*80, height: 70)
+                                .frame(width: UIScreen.widthBlockSize*85, height: 70)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         })
                         .padding(.top)
@@ -146,11 +127,11 @@ struct SignUp_Screen: View {
                         
                         HStack{
                             Spacer()
-                            Text("Already have an account?")
+                            Text("Don't have an account?")
                                 .font(AppFonts.regular_12)
                                 
                             
-                            Text("Login")
+                            Text("Register")
                                 .font(AppFonts.medium_14)
                                 .foregroundColor(AppColors.redGradientColor1)
                             
@@ -166,7 +147,7 @@ struct SignUp_Screen: View {
                                 .frame(width: 30, height: 30)
                                 .padding(.trailing)
                             
-                          Text("Login With Google")
+                          Text("Continue With Google")
                                 .font(AppFonts.medium_14)
                             .foregroundColor(AppColors.redGradientColor1)
                     Spacer()
@@ -183,7 +164,7 @@ struct SignUp_Screen: View {
                                     .frame(width: 30, height: 30)
                                     .padding(.trailing)
                                 
-                              Text("Login With Facebook")
+                              Text("Continue With Facebook")
                                     .font(AppFonts.medium_14)
                                 .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
@@ -198,26 +179,29 @@ struct SignUp_Screen: View {
                         
                         
                     }.padding()
-                        .padding(.top,30)
                         .padding(.bottom,30)
+                        .padding(.top,30)
                         .background(RoundedRectangle(cornerRadius: 15).fill(.white).shadow(radius: 10))
                         .padding()
-                    
+                        .padding(.leading)
+                        .padding(.trailing)
+            
+                      
                  
+                    Spacer()
                     
                     
-                    
-                }
+                
             
             
             
            
-        }.edgesIgnoringSafeArea(.bottom)
+        }.edgesIgnoringSafeArea(.top)
     }
 }
 
-struct SignUp_Screen_Previews: PreviewProvider {
+struct Login_Screen_Previews: PreviewProvider {
     static var previews: some View {
-        SignUp_Screen()
+        Login_Screen()
     }
 }

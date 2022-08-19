@@ -20,7 +20,7 @@ struct Add_Product_Preview: View {
                 Image("back icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                    .frame(width: UIScreen.widthBlockSize*9, height: 35)
                 
                Spacer()
                 
@@ -33,14 +33,14 @@ struct Add_Product_Preview: View {
                 Image("clarity_shopping-cart-solid")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                    .frame(width: UIScreen.widthBlockSize*9, height: 35)
                 
               
                 
                 Image("doted icons-1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                    .frame(width: UIScreen.widthBlockSize*9, height: 35)
                 
                 
             }.padding(.leading,24)
@@ -60,6 +60,7 @@ struct Add_Product_Preview: View {
                             Image("Rectangle 1267")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
+                            .frame(width: UIScreen.widthBlockSize*80, height: 250)
                         
                         HStack{
                             Image("Arrow - Left Circle")
@@ -77,7 +78,7 @@ struct Add_Product_Preview: View {
                         }
                         .padding()
                     }
-                    .frame(width: 377, height: 230)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 230)
                     .padding()
                     
                     Group{
@@ -96,11 +97,11 @@ struct Add_Product_Preview: View {
                         Text("$500")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.white)
-                            .frame(width: 80, height: 55)
+                            .frame(width:  UIScreen.widthBlockSize*25, height: 55)
                             .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
                         
                     }
-                    .frame(width: 377, height: 30)
+                    .frame(width:  UIScreen.widthBlockSize*90, height: 30)
                     .padding()
                         .padding(.leading,3)
                         .padding(.trailing,5)
@@ -145,13 +146,13 @@ struct Add_Product_Preview: View {
                         
                         
                     }
-                    .frame(width: 377, height: 20)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 20)
                     
                     HStack{
                         Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit a ipsum pulvinar morbi placerat id. Nisi, tellus amet ornare bibendum dmn;jnvkajnvlkafjnlvundfivnipfadunvjfnv;afnkvjnfkjanvklnvklfjnvnv;sjnadvkjnsvjn;ssnvakjnolor, a.")
                             .font(AppFonts.regular_12)
                     }
-                    .frame(width: 377, height: 50)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 50)
                     .padding(.top,15)
                     
                     HStack{
@@ -159,35 +160,35 @@ struct Add_Product_Preview: View {
                             .font(AppFonts.regular_14)
                         Spacer()
                     }
-                    .frame(width: 377, height: 40)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 40)
                     
                     HStack{
                         Image("Ellipse 23")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                         Spacer()
                         Image("Ellipse 24")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                         Spacer()
                         Image("Ellipse 26")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                         Spacer()
                         Image("Ellipse 27")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                         Spacer()
                         Image("Ellipse 28")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                     }
-                    .frame(width: 377, height: 50)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 50)
                     
                     HStack{
                         Text("Select Size")
@@ -195,7 +196,7 @@ struct Add_Product_Preview: View {
                         Spacer()
                         
                     }
-                    .frame(width: 377, height: 20)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 20)
                     .padding(.top,15)
                         
                     }
@@ -204,34 +205,34 @@ struct Add_Product_Preview: View {
                         Text("15")
                             .font(AppFonts.regular_14)
                             .foregroundColor(AppColors.redGradientColor2)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1).opacity(0.2))
                         Spacer()
                         Text("16")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("17")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("18")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                         Spacer()
                         Text("20")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
-                            .frame(width: 60, height: 60)
+                            .frame(width: UIScreen.widthBlockSize*15, height: 60)
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
                     }
-                    .frame(width: 377, height: 60)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 60)
                     
                     HStack{
                         Text("Quantity")
@@ -239,7 +240,7 @@ struct Add_Product_Preview: View {
                         Spacer()
                         
                     }
-                    .frame(width: 377, height: 20)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 20)
                     .padding(.top,15)
                     
                     HStack{
@@ -252,7 +253,7 @@ struct Add_Product_Preview: View {
                         
                         Text("2")
                             .font(AppFonts.regular_14)
-                            .frame(width: 250, height: 35)
+                            .frame(width: UIScreen.widthBlockSize*60, height: 35)
                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(Color.red))
                         
                         Spacer()
@@ -262,14 +263,15 @@ struct Add_Product_Preview: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
                     }
-                    .frame(width: 377, height: 40)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 40)
                     .padding(.bottom,25)
                     
                     Button(action: {}, label: {
                         Text("Post Product")
                             .font(AppFonts.semiBold_16)
                             .foregroundColor(.white)
-                            .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 377, height: 56))
+                            .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: 56))
+                            .padding(.bottom,30)
                            
                     })
                   

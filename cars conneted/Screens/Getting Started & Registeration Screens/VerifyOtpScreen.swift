@@ -9,6 +9,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 
 struct verifyOtpScreen: View {
@@ -22,20 +23,31 @@ struct verifyOtpScreen: View {
     var body: some View {
         
             
-            
+        ZStack{
       
+            
+        
         VStack(alignment: .leading){
              
-            
+            HStack{
+                Button(action: {
+                   
+                }, label: {
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width :UIScreen.widthBlockSize*10, height: UIScreen.heightBlockSize*10)
+                })
+            }
             
                 Text("Verify OTP")
-                    .fontWeight(.bold)
-                    .font(.largeTitle)
+                   
+                .font(AppFonts.semiBold_24)
                     .foregroundColor(AppColors.redGradientColor1)
-                    .padding(.top,80)
+                    .padding(.top,10)
                 
                 
-                Text("Enter OTP which we sent to on your email\n address abc****@gmail.com ")
+                Text("Enter OTP which we sent to on your email address abc****@gmail.com ")
                     .padding(.top,10)
                 
                 
@@ -43,8 +55,9 @@ struct verifyOtpScreen: View {
                     
                 
                     TextField("",text: self.$otp1)
-                        .font(.system(size:24).bold())
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*12)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 //                        .padding(.trailing,14)
@@ -60,57 +73,61 @@ struct verifyOtpScreen: View {
 
                     Spacer()
                     
-                    TextField("",text: self.$otp1)
-                        .font(.system(size:24).bold())
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*12)
+                    TextField("",text: self.$otp2)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 
                         
-                        .onChange(of: self.otp1) { newValue in
-                            if(self.otp1.isEmpty){
-                                self.otp1 = newValue
+                        .onChange(of: self.otp2) { newValue in
+                            if(self.otp2.isEmpty){
+                                self.otp2 = newValue
                             }
                             else{
-                                self.otp1 = String(self.otp1.prefix(1))
+                                self.otp2 = String(self.otp1.prefix(1))
                             }
                         }
                     
                     Spacer()
 
                     
-                    TextField("",text: self.$otp1)
-                        .font(.system(size:24).bold())
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*12)
+                    TextField("",text: self.$otp3)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 
                         
-                        .onChange(of: self.otp1) { newValue in
-                            if(self.otp1.isEmpty){
-                                self.otp1 = newValue
+                        .onChange(of: self.otp3) { newValue in
+                            if(self.otp3.isEmpty){
+                                self.otp3 = newValue
                             }
                             else{
-                                self.otp1 = String(self.otp1.prefix(1))
+                                self.otp3 =
+                                String(self.otp3.prefix(1))
                             }
                         }
                     
                     Spacer()
 
                     
-                    TextField("",text: self.$otp1)
-                        .font(.system(size:24).bold())
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*12)
+                    TextField("",text: self.$otp4)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 
                         
-                        .onChange(of: self.otp1) { newValue in
-                            if(self.otp1.isEmpty){
-                                self.otp1 = newValue
+                        .onChange(of: self.otp4) { newValue in
+                            if(self.otp4.isEmpty){
+                                self.otp4 = newValue
                             }
                             else{
-                                self.otp1 = String(self.otp1.prefix(1))
+                                self.otp1 = String(self.otp4 .prefix(1))
                             }
                         }
                     
@@ -127,14 +144,13 @@ struct verifyOtpScreen: View {
                 HStack{
                     Spacer()
                     Text("Verify OTP")
-                    
-                        .font(.system(size:16, design: .rounded))
+                        .font(AppFonts.semiBold_16)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                     Spacer()
                 }
                 .padding(20)
-                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: 70))
                 .padding(.top,49)
                 
             }
@@ -143,6 +159,11 @@ struct verifyOtpScreen: View {
             
                 Spacer()
             Text("Didn't receive OTP")
+                    .font(AppFonts.regular_12)
+                
+                Text("Resend (0:09)")
+                    .font(AppFonts.medium_14)
+                    .foregroundColor(AppColors.redGradientColor1)
             
                 Spacer()
                 
@@ -154,7 +175,7 @@ struct verifyOtpScreen: View {
         }.padding(.leading,24)
             .padding(.trailing,24)
         
-        
+        }
     
         
     }

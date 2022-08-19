@@ -10,14 +10,13 @@ import SwiftUI
 struct ContentView: View {
     
   
-    @State var someBool : Bool = false
-    
+  
     var body: some View {
         
         NavigationView{
             ZStack{
                 
-                Login_Screen( toHomeScreen: self.$someBool)
+               Login_Screen()
           
                 
             }

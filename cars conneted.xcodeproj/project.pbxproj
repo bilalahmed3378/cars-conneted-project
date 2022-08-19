@@ -13,7 +13,7 @@
 		591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A328AE4E4000F6E81F /* signupScreen.swift */; };
 		591043B128AE4E4100F6E81F /* resetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A428AE4E4000F6E81F /* resetPassword.swift */; };
 		591043B328AE4E4100F6E81F /* forgetPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A628AE4E4000F6E81F /* forgetPassword.swift */; };
-		591043B428AE4E4100F6E81F /* verifyOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A728AE4E4000F6E81F /* verifyOtpScreen.swift */; };
+		591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */; };
 		591043B628AE4E4100F6E81F /* addYourCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A928AE4E4100F6E81F /* addYourCar.swift */; };
 		591043B728AE4E4100F6E81F /* garageSetup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043AA28AE4E4100F6E81F /* garageSetup.swift */; };
 		591043B928AE4E4100F6E81F /* onboardingScreen3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043AC28AE4E4100F6E81F /* onboardingScreen3.swift */; };
@@ -44,6 +44,13 @@
 		593466862886712F00956869 /* cars_connetedUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466852886712F00956869 /* cars_connetedUITestsLaunchTests.swift */; };
 		593466942886953800956869 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466932886953700956869 /* AppColors.swift */; };
 		593466992886C5C600956869 /* Home Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466982886C5C600956869 /* Home Tab.swift */; };
+		593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055328AF740800FEBE5F /* E-mail Confirmation Screen.swift */; };
+		593F055728AF761A00FEBE5F /* Login Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055628AF761A00FEBE5F /* Login Screen.swift */; };
+		593F055928AF7A0400FEBE5F /* Forgot Password Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055828AF7A0400FEBE5F /* Forgot Password Screen.swift */; };
+		593F055B28AF912200FEBE5F /* Forgot Password OTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055A28AF912200FEBE5F /* Forgot Password OTP.swift */; };
+		593F055D28AF936400FEBE5F /* Reset Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055C28AF936400FEBE5F /* Reset Password.swift */; };
+		593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055E28AF971D00FEBE5F /* Password Changed Screen.swift */; };
+		593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F056128AF9C4200FEBE5F /* User profile setup Screen.swift */; };
 		59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59458AD728ACFF0C00A9ED02 /* Billing Screen.swift */; };
 		5950087F28ACAC7D00C44D86 /* Verify Email OTP Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */; };
 		5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */; };
@@ -56,6 +63,7 @@
 		59532F0228AE3C44001F6EEE /* Support Issue Details Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0128AE3C44001F6EEE /* Support Issue Details Screen.swift */; };
 		59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */; };
 		59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0628AE435C001F6EEE /* Notification Screen.swift */; };
+		5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5953999B28AFB5BD00C61A36 /* Setup Garage Screen.swift */; };
 		5954A15928AE51B900B8BB30 /* create event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15028AE51B800B8BB30 /* create event.swift */; };
 		5954A15B28AE51B900B8BB30 /* nearbyClubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15228AE51B800B8BB30 /* nearbyClubs.swift */; };
 		5954A15C28AE51B900B8BB30 /* create club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A15328AE51B800B8BB30 /* create club.swift */; };
@@ -92,6 +100,7 @@
 		5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */; };
 		5954A1A128AE6C0800B8BB30 /* SignUp Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */; };
 		595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */; };
+		595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E06C028AFBACC00EFB54B /* Add your Car Screen.swift */; };
 		59607F1328914B5000B46682 /* My Garage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1228914B5000B46682 /* My Garage.swift */; };
 		59607F1528914F6700B46682 /* Car Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1428914F6700B46682 /* Car Specification.swift */; };
 		59607F19289155D800B46682 /* My products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F18289155D800B46682 /* My products.swift */; };
@@ -153,8 +162,6 @@
 		59E40DC828AB806D00B6D60B /* Profile Setup screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */; };
 		59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A31288DAB800081D48B /* Market place search screen.swift */; };
 		59E53A34288E65750081D48B /* Product Details screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A33288E65750081D48B /* Product Details screen.swift */; };
-		59FD0750289BD1FC00573F88 /* Login Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD074F289BD1FC00573F88 /* Login Screen.swift */; };
-		59FD0752289BE15300573F88 /* Login Screen Sohaib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FD0751289BE15300573F88 /* Login Screen Sohaib.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,7 +188,7 @@
 		591043A328AE4E4000F6E81F /* signupScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = signupScreen.swift; sourceTree = "<group>"; };
 		591043A428AE4E4000F6E81F /* resetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = resetPassword.swift; sourceTree = "<group>"; };
 		591043A628AE4E4000F6E81F /* forgetPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = forgetPassword.swift; sourceTree = "<group>"; };
-		591043A728AE4E4000F6E81F /* verifyOtpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = verifyOtpScreen.swift; sourceTree = "<group>"; };
+		591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOtpScreen.swift; sourceTree = "<group>"; };
 		591043A928AE4E4100F6E81F /* addYourCar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addYourCar.swift; sourceTree = "<group>"; };
 		591043AA28AE4E4100F6E81F /* garageSetup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = garageSetup.swift; sourceTree = "<group>"; };
 		591043AC28AE4E4100F6E81F /* onboardingScreen3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = onboardingScreen3.swift; sourceTree = "<group>"; };
@@ -215,6 +222,13 @@
 		593466852886712F00956869 /* cars_connetedUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cars_connetedUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		593466932886953700956869 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 		593466982886C5C600956869 /* Home Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home Tab.swift"; sourceTree = "<group>"; };
+		593F055328AF740800FEBE5F /* E-mail Confirmation Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-mail Confirmation Screen.swift"; sourceTree = "<group>"; };
+		593F055628AF761A00FEBE5F /* Login Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Screen.swift"; sourceTree = "<group>"; };
+		593F055828AF7A0400FEBE5F /* Forgot Password Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forgot Password Screen.swift"; sourceTree = "<group>"; };
+		593F055A28AF912200FEBE5F /* Forgot Password OTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Forgot Password OTP.swift"; sourceTree = "<group>"; };
+		593F055C28AF936400FEBE5F /* Reset Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reset Password.swift"; sourceTree = "<group>"; };
+		593F055E28AF971D00FEBE5F /* Password Changed Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Password Changed Screen.swift"; sourceTree = "<group>"; };
+		593F056128AF9C4200FEBE5F /* User profile setup Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User profile setup Screen.swift"; sourceTree = "<group>"; };
 		59458AD728ACFF0C00A9ED02 /* Billing Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Billing Screen.swift"; sourceTree = "<group>"; };
 		5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Verify Email OTP Screen.swift"; sourceTree = "<group>"; };
 		5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Location Successfully Changed screen.swift"; sourceTree = "<group>"; };
@@ -227,6 +241,7 @@
 		59532F0128AE3C44001F6EEE /* Support Issue Details Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Issue Details Screen.swift"; sourceTree = "<group>"; };
 		59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Issue Solved Screen.swift"; sourceTree = "<group>"; };
 		59532F0628AE435C001F6EEE /* Notification Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification Screen.swift"; sourceTree = "<group>"; };
+		5953999B28AFB5BD00C61A36 /* Setup Garage Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setup Garage Screen.swift"; sourceTree = "<group>"; };
 		5954A15028AE51B800B8BB30 /* create event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "create event.swift"; sourceTree = "<group>"; };
 		5954A15228AE51B800B8BB30 /* nearbyClubs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = nearbyClubs.swift; sourceTree = "<group>"; };
 		5954A15328AE51B800B8BB30 /* create club.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "create club.swift"; sourceTree = "<group>"; };
@@ -263,6 +278,7 @@
 		5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Getting Started Screen.swift"; sourceTree = "<group>"; };
 		5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp Screen.swift"; sourceTree = "<group>"; };
 		595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place and calssified tab.swift"; sourceTree = "<group>"; };
+		595E06C028AFBACC00EFB54B /* Add your Car Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add your Car Screen.swift"; sourceTree = "<group>"; };
 		59607F1228914B5000B46682 /* My Garage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage.swift"; sourceTree = "<group>"; };
 		59607F1428914F6700B46682 /* Car Specification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car Specification.swift"; sourceTree = "<group>"; };
 		59607F18289155D800B46682 /* My products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My products.swift"; sourceTree = "<group>"; };
@@ -324,8 +340,6 @@
 		59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Setup screen.swift"; sourceTree = "<group>"; };
 		59E53A31288DAB800081D48B /* Market place search screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place search screen.swift"; sourceTree = "<group>"; };
 		59E53A33288E65750081D48B /* Product Details screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details screen.swift"; sourceTree = "<group>"; };
-		59FD074F289BD1FC00573F88 /* Login Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Screen.swift"; sourceTree = "<group>"; };
-		59FD0751289BE15300573F88 /* Login Screen Sohaib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login Screen Sohaib.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -389,7 +403,6 @@
 				591043A228AE4E4000F6E81F /* passwordChanged.swift */,
 				591043A428AE4E4000F6E81F /* resetPassword.swift */,
 				591043A328AE4E4000F6E81F /* signupScreen.swift */,
-				591043A728AE4E4000F6E81F /* verifyOtpScreen.swift */,
 			);
 			path = "Onboarding Screens Sohaib";
 			sourceTree = "<group>";
@@ -637,9 +650,10 @@
 				591043CE28AE4EDC00F6E81F /* Clubs Screens sohaib */,
 				591043BD28AE4EB500F6E81F /* Events Screens sohaib */,
 				591043BC28AE4E4900F6E81F /* Onboarding Screens Sohaib */,
-				59532F0528AE4343001F6EEE /* Notification Screens */,
 				5954A19C28AE63BD00B8BB30 /* Onboarding Screens */,
 				5954A19D28AE644200B8BB30 /* Getting Started & Registeration Screens */,
+				593F055528AF75D800FEBE5F /* Login & Reset Password Screens */,
+				593F056028AF9C0400FEBE5F /* Profile & Garage Setup */,
 				59FD074E289BD1E500573F88 /* Login */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
@@ -649,9 +663,32 @@
 				59607F17289155B100B46682 /* My products screens */,
 				592F18A62887D87B00A531A4 /* Search screens */,
 				592F18A9288816B300A531A4 /* Post screens */,
+				59532F0528AE4343001F6EEE /* Notification Screens */,
 				59607F1A289159E700B46682 /* Settings Screens */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		593F055528AF75D800FEBE5F /* Login & Reset Password Screens */ = {
+			isa = PBXGroup;
+			children = (
+				593F055628AF761A00FEBE5F /* Login Screen.swift */,
+				593F055828AF7A0400FEBE5F /* Forgot Password Screen.swift */,
+				593F055A28AF912200FEBE5F /* Forgot Password OTP.swift */,
+				593F055C28AF936400FEBE5F /* Reset Password.swift */,
+				593F055E28AF971D00FEBE5F /* Password Changed Screen.swift */,
+			);
+			path = "Login & Reset Password Screens";
+			sourceTree = "<group>";
+		};
+		593F056028AF9C0400FEBE5F /* Profile & Garage Setup */ = {
+			isa = PBXGroup;
+			children = (
+				593F056128AF9C4200FEBE5F /* User profile setup Screen.swift */,
+				5953999B28AFB5BD00C61A36 /* Setup Garage Screen.swift */,
+				595E06C028AFBACC00EFB54B /* Add your Car Screen.swift */,
+			);
+			path = "Profile & Garage Setup";
 			sourceTree = "<group>";
 		};
 		59532F0528AE4343001F6EEE /* Notification Screens */ = {
@@ -678,6 +715,8 @@
 			children = (
 				5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */,
 				5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */,
+				591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */,
+				593F055328AF740800FEBE5F /* E-mail Confirmation Screen.swift */,
 			);
 			path = "Getting Started & Registeration Screens";
 			sourceTree = "<group>";
@@ -808,8 +847,6 @@
 		59FD074E289BD1E500573F88 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				59FD074F289BD1FC00573F88 /* Login Screen.swift */,
-				59FD0751289BE15300573F88 /* Login Screen Sohaib.swift */,
 				59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */,
 			);
 			path = Login;
@@ -981,7 +1018,6 @@
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
-				59FD0750289BD1FC00573F88 /* Login Screen.swift in Sources */,
 				591043B928AE4E4100F6E81F /* onboardingScreen3.swift in Sources */,
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
 				5954A15C28AE51B900B8BB30 /* create club.swift in Sources */,
@@ -993,13 +1029,16 @@
 				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5954A16128AE51B900B8BB30 /* clubs.swift in Sources */,
+				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
 				59DE386E288FEF1500BD72D9 /* Add Product Preview.swift in Sources */,
 				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
+				593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */,
 				5954A16F28AE51E500B8BB30 /* My Events.swift in Sources */,
 				5954A16A28AE51E500B8BB30 /* Events.swift in Sources */,
+				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
 				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
 				591192E1289A45A4004DF048 /* Logout Api.swift in Sources */,
 				59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */,
@@ -1019,6 +1058,7 @@
 				59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */,
 				5954A19228AE523000B8BB30 /* order details.swift in Sources */,
 				591043B628AE4E4100F6E81F /* addYourCar.swift in Sources */,
+				593F055D28AF936400FEBE5F /* Reset Password.swift in Sources */,
 				59E40DC828AB806D00B6D60B /* Profile Setup screen.swift in Sources */,
 				593466942886953800956869 /* AppColors.swift in Sources */,
 				59532EFC28AE0C79001F6EEE /* Support FAQS Screen.swift in Sources */,
@@ -1062,7 +1102,7 @@
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
 				59607F1328914B5000B46682 /* My Garage.swift in Sources */,
 				5954A15B28AE51B900B8BB30 /* nearbyClubs.swift in Sources */,
-				591043B428AE4E4100F6E81F /* verifyOtpScreen.swift in Sources */,
+				591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */,
 				5954A18B28AE523000B8BB30 /* cancelled orders.swift in Sources */,
 				592F18AB288816DF00A531A4 /* post screen 1.swift in Sources */,
 				59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */,
@@ -1074,6 +1114,7 @@
 				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
 				592F18B628895EA600A531A4 /* post status screen.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
+				593F055728AF761A00FEBE5F /* Login Screen.swift in Sources */,
 				59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */,
 				5954A18C28AE523000B8BB30 /* cancelling order.swift in Sources */,
 				5954A19028AE523000B8BB30 /* completed orders.swift in Sources */,
@@ -1081,18 +1122,21 @@
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
 				5954A18728AE523000B8BB30 /* new orders.swift in Sources */,
 				59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */,
+				593F055928AF7A0400FEBE5F /* Forgot Password Screen.swift in Sources */,
 				59DE3864288FA56500BD72D9 /* Address Screen.swift in Sources */,
 				5954A19328AE523000B8BB30 /* order cancelled.swift in Sources */,
 				5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */,
-				59FD0752289BE15300573F88 /* Login Screen Sohaib.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */,
 				591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 				5954A15F28AE51B900B8BB30 /* myClubDetails.swift in Sources */,
+				595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */,
+				593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */,
 				5954A16C28AE51E500B8BB30 /* search.swift in Sources */,
 				591043B728AE4E4100F6E81F /* garageSetup.swift in Sources */,
 				59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */,
+				593F055B28AF912200FEBE5F /* Forgot Password OTP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
