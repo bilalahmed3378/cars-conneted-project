@@ -275,7 +275,7 @@ struct Add_your_Car_Screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.widthBlockSize*30, height: 100)
                         
-                        Image("unsplash_eqW1MPinEV4")
+                        Image("Frame 40")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.widthBlockSize*30, height: 100)

@@ -60,7 +60,7 @@ struct post_screen_5_preview_: View {
             
                
                     LazyVStack{
-                        ForEach(0...5,id:\.self){ Index in
+                        ForEach(0...1,id:\.self){ Index in
                             Image("unsplash_YApiWyp0lqo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)

@@ -33,7 +33,6 @@
 		592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AE2889160E00A531A4 /* Post screen 3.swift */; };
 		592F18B22889276300A531A4 /* post screen 4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B12889276300A531A4 /* post screen 4.swift */; };
 		592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B3288955A200A531A4 /* post screen 5 preview .swift */; };
-		592F18B628895EA600A531A4 /* post status screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B528895EA600A531A4 /* post status screen.swift */; };
 		592F18B92889806E00A531A4 /* message screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B82889806D00A531A4 /* message screen.swift */; };
 		593466692886712800956869 /* cars_connetedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466682886712800956869 /* cars_connetedApp.swift */; };
 		5934666B2886712800956869 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5934666A2886712800956869 /* ContentView.swift */; };
@@ -51,6 +50,8 @@
 		593F055D28AF936400FEBE5F /* Reset Password.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055C28AF936400FEBE5F /* Reset Password.swift */; };
 		593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F055E28AF971D00FEBE5F /* Password Changed Screen.swift */; };
 		593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593F056128AF9C4200FEBE5F /* User profile setup Screen.swift */; };
+		5940A43828B0FD3600C5EEF4 /* Proximity Screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5940A43728B0FD3600C5EEF4 /* Proximity Screen 2.swift */; };
+		5940A43A28B0FF3C00C5EEF4 /* Proximity Screen 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5940A43928B0FF3C00C5EEF4 /* Proximity Screen 3.swift */; };
 		59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59458AD728ACFF0C00A9ED02 /* Billing Screen.swift */; };
 		5950087F28ACAC7D00C44D86 /* Verify Email OTP Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */; };
 		5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */; };
@@ -208,7 +209,6 @@
 		592F18AE2889160E00A531A4 /* Post screen 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post screen 3.swift"; sourceTree = "<group>"; };
 		592F18B12889276300A531A4 /* post screen 4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 4.swift"; sourceTree = "<group>"; };
 		592F18B3288955A200A531A4 /* post screen 5 preview .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 5 preview .swift"; sourceTree = "<group>"; };
-		592F18B528895EA600A531A4 /* post status screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post status screen.swift"; sourceTree = "<group>"; };
 		592F18B82889806D00A531A4 /* message screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "message screen.swift"; sourceTree = "<group>"; };
 		593466652886712800956869 /* cars conneted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cars conneted.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		593466682886712800956869 /* cars_connetedApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cars_connetedApp.swift; sourceTree = "<group>"; };
@@ -229,6 +229,8 @@
 		593F055C28AF936400FEBE5F /* Reset Password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Reset Password.swift"; sourceTree = "<group>"; };
 		593F055E28AF971D00FEBE5F /* Password Changed Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Password Changed Screen.swift"; sourceTree = "<group>"; };
 		593F056128AF9C4200FEBE5F /* User profile setup Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User profile setup Screen.swift"; sourceTree = "<group>"; };
+		5940A43728B0FD3600C5EEF4 /* Proximity Screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Screen 2.swift"; sourceTree = "<group>"; };
+		5940A43928B0FF3C00C5EEF4 /* Proximity Screen 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Screen 3.swift"; sourceTree = "<group>"; };
 		59458AD728ACFF0C00A9ED02 /* Billing Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Billing Screen.swift"; sourceTree = "<group>"; };
 		5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Verify Email OTP Screen.swift"; sourceTree = "<group>"; };
 		5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Location Successfully Changed screen.swift"; sourceTree = "<group>"; };
@@ -550,7 +552,6 @@
 				592F18AE2889160E00A531A4 /* Post screen 3.swift */,
 				592F18B12889276300A531A4 /* post screen 4.swift */,
 				592F18B3288955A200A531A4 /* post screen 5 preview .swift */,
-				592F18B528895EA600A531A4 /* post status screen.swift */,
 			);
 			path = "Post screens";
 			sourceTree = "<group>";
@@ -654,15 +655,16 @@
 				5954A19D28AE644200B8BB30 /* Getting Started & Registeration Screens */,
 				593F055528AF75D800FEBE5F /* Login & Reset Password Screens */,
 				593F056028AF9C0400FEBE5F /* Profile & Garage Setup */,
+				5940A43628B0FC6A00C5EEF4 /* Proximity Settings Screens */,
+				592F18A62887D87B00A531A4 /* Search screens */,
+				592F18A9288816B300A531A4 /* Post screens */,
 				59FD074E289BD1E500573F88 /* Login */,
+				592F18B72889804800A531A4 /* messages screens */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
 				59E53A30288DAB330081D48B /* Market place screens */,
 				59607F1128914A6800B46682 /* My Garage screens */,
-				592F18B72889804800A531A4 /* messages screens */,
 				59607F17289155B100B46682 /* My products screens */,
-				592F18A62887D87B00A531A4 /* Search screens */,
-				592F18A9288816B300A531A4 /* Post screens */,
 				59532F0528AE4343001F6EEE /* Notification Screens */,
 				59607F1A289159E700B46682 /* Settings Screens */,
 			);
@@ -689,6 +691,16 @@
 				595E06C028AFBACC00EFB54B /* Add your Car Screen.swift */,
 			);
 			path = "Profile & Garage Setup";
+			sourceTree = "<group>";
+		};
+		5940A43628B0FC6A00C5EEF4 /* Proximity Settings Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */,
+				5940A43728B0FD3600C5EEF4 /* Proximity Screen 2.swift */,
+				5940A43928B0FF3C00C5EEF4 /* Proximity Screen 3.swift */,
+			);
+			path = "Proximity Settings Screens";
 			sourceTree = "<group>";
 		};
 		59532F0528AE4343001F6EEE /* Notification Screens */ = {
@@ -753,7 +765,6 @@
 				59D669DC28ABB5210012FBF8 /* User name Successfully Changed Screen.swift */,
 				59D669DE28ABB5D70012FBF8 /* Change Email screen.swift */,
 				59D669E028ABB8590012FBF8 /* E-Mail Confirmation screen.swift */,
-				59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */,
 				5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */,
 				5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */,
 				59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */,
@@ -1110,9 +1121,9 @@
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				59E53A34288E65750081D48B /* Product Details screen.swift in Sources */,
 				5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */,
+				5940A43A28B0FF3C00C5EEF4 /* Proximity Screen 3.swift in Sources */,
 				5954A18928AE523000B8BB30 /* orders.swift in Sources */,
 				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
-				592F18B628895EA600A531A4 /* post status screen.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				593F055728AF761A00FEBE5F /* Login Screen.swift in Sources */,
 				59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */,
@@ -1127,6 +1138,7 @@
 				5954A19328AE523000B8BB30 /* order cancelled.swift in Sources */,
 				5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
+				5940A43828B0FD3600C5EEF4 /* Proximity Screen 2.swift in Sources */,
 				59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */,
 				591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,

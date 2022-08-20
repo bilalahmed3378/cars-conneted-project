@@ -67,7 +67,7 @@ struct Search_Clubs: View {
                         HStack{
                             Text("People")
                                 .font(AppFonts.medium_14)
-                                .foregroundColor(.red)
+                                .foregroundColor(.gray)
                             Spacer()
                             Text("Posts")
                                 .font(AppFonts.medium_14)
@@ -79,7 +79,7 @@ struct Search_Clubs: View {
                             Spacer()
                             Text("Clubs")
                                 .font(AppFonts.medium_14)
-                                .foregroundColor(.gray)
+                                .foregroundColor(.red)
                             
                             
                             
