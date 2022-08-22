@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5909F68C28B34DB300F7FD38 /* Follow request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F68B28B34DB300F7FD38 /* Follow request.swift */; };
+		5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */; };
+		5909F69128B362E400F7FD38 /* Subscription Successful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69028B362E400F7FD38 /* Subscription Successful.swift */; };
+		5909F69328B3655D00F7FD38 /* My Plan screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69228B3655D00F7FD38 /* My Plan screen.swift */; };
+		5909F69528B3950E00F7FD38 /* My Subscription details Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69428B3950E00F7FD38 /* My Subscription details Screen.swift */; };
+		5909F69728B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69628B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift */; };
+		5909F69928B3A35800F7FD38 /* Subscription Updated Successful Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69828B3A35800F7FD38 /* Subscription Updated Successful Screen.swift */; };
+		5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */; };
+		5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */; };
 		590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */; };
 		590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */; };
 		591043AF28AE4E4100F6E81F /* passwordChanged.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A228AE4E4000F6E81F /* passwordChanged.swift */; };
@@ -121,7 +130,7 @@
 		59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */; };
 		59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */; };
 		59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */; };
-		59D7CF12289289D500F9EC5D /* Follow Requests Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF11289289D400F9EC5D /* Follow Requests Screens.swift */; };
+		59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF11289289D400F9EC5D /* Friends Requests Screens.swift */; };
 		59D7D0232892AF1900F9EC5D /* Inter-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59D7D0102892AF1900F9EC5D /* Inter-Bold.otf */; };
 		59D7D0242892AF1900F9EC5D /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59D7D0112892AF1900F9EC5D /* Inter-Regular.otf */; };
 		59D7D0252892AF1900F9EC5D /* Inter-SemiBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59D7D0122892AF1900F9EC5D /* Inter-SemiBoldItalic.otf */; };
@@ -183,6 +192,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5909F68B28B34DB300F7FD38 /* Follow request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follow request.swift"; sourceTree = "<group>"; };
+		5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Choose your plan Screen.swift"; sourceTree = "<group>"; };
+		5909F69028B362E400F7FD38 /* Subscription Successful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subscription Successful.swift"; sourceTree = "<group>"; };
+		5909F69228B3655D00F7FD38 /* My Plan screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Plan screen.swift"; sourceTree = "<group>"; };
+		5909F69428B3950E00F7FD38 /* My Subscription details Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Subscription details Screen.swift"; sourceTree = "<group>"; };
+		5909F69628B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subscription Billing Detail Screen.swift"; sourceTree = "<group>"; };
+		5909F69828B3A35800F7FD38 /* Subscription Updated Successful Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subscription Updated Successful Screen.swift"; sourceTree = "<group>"; };
+		5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage My View.swift"; sourceTree = "<group>"; };
+		5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle Deleted Screen.swift"; sourceTree = "<group>"; };
 		590D3C1228AA6F9E00278C83 /* NewUserProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProfileApi.swift; sourceTree = "<group>"; };
 		590D3C1428AA6FCA00278C83 /* NewUserProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUserProfileResponseModel.swift; sourceTree = "<group>"; };
 		591043A228AE4E4000F6E81F /* passwordChanged.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = passwordChanged.swift; sourceTree = "<group>"; };
@@ -300,7 +318,7 @@
 		59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Terms of sevices screen.swift"; sourceTree = "<group>"; };
 		59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transacation detail screen.swift"; sourceTree = "<group>"; };
 		59D7CF0F28926D6C00F9EC5D /* Proximity Setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Setting screen.swift"; sourceTree = "<group>"; };
-		59D7CF11289289D400F9EC5D /* Follow Requests Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follow Requests Screens.swift"; sourceTree = "<group>"; };
+		59D7CF11289289D400F9EC5D /* Friends Requests Screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Friends Requests Screens.swift"; sourceTree = "<group>"; };
 		59D7D0102892AF1900F9EC5D /* Inter-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Bold.otf"; sourceTree = "<group>"; };
 		59D7D0112892AF1900F9EC5D /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
 		59D7D0122892AF1900F9EC5D /* Inter-SemiBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-SemiBoldItalic.otf"; sourceTree = "<group>"; };
@@ -370,6 +388,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5909F68D28B34F4600F7FD38 /* Subscription full user */ = {
+			isa = PBXGroup;
+			children = (
+				5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */,
+				5909F69028B362E400F7FD38 /* Subscription Successful.swift */,
+				5909F69228B3655D00F7FD38 /* My Plan screen.swift */,
+				5909F69428B3950E00F7FD38 /* My Subscription details Screen.swift */,
+				5909F69628B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift */,
+				5909F69828B3A35800F7FD38 /* Subscription Updated Successful Screen.swift */,
+			);
+			path = "Subscription full user";
+			sourceTree = "<group>";
+		};
+		5909F69A28B3A48200F7FD38 /* View Social Profile */ = {
+			isa = PBXGroup;
+			children = (
+				5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */,
+				5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */,
+			);
+			path = "View Social Profile";
+			sourceTree = "<group>";
+		};
 		590D3C0F28AA6F3300278C83 /* New user profile Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -560,7 +600,8 @@
 			isa = PBXGroup;
 			children = (
 				592F18B82889806D00A531A4 /* message screen.swift */,
-				59D7CF11289289D400F9EC5D /* Follow Requests Screens.swift */,
+				59D7CF11289289D400F9EC5D /* Friends Requests Screens.swift */,
+				5909F68B28B34DB300F7FD38 /* Follow request.swift */,
 			);
 			path = "messages screens";
 			sourceTree = "<group>";
@@ -658,8 +699,10 @@
 				5940A43628B0FC6A00C5EEF4 /* Proximity Settings Screens */,
 				592F18A62887D87B00A531A4 /* Search screens */,
 				592F18A9288816B300A531A4 /* Post screens */,
-				59FD074E289BD1E500573F88 /* Login */,
 				592F18B72889804800A531A4 /* messages screens */,
+				5909F68D28B34F4600F7FD38 /* Subscription full user */,
+				59FD074E289BD1E500573F88 /* Login */,
+				5909F69A28B3A48200F7FD38 /* View Social Profile */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
 				59E53A30288DAB330081D48B /* Market place screens */,
@@ -1026,6 +1069,8 @@
 				5954A18828AE523000B8BB30 /* orders:selling.swift in Sources */,
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
+				5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */,
+				5909F69528B3950E00F7FD38 /* My Subscription details Screen.swift in Sources */,
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
@@ -1038,6 +1083,8 @@
 				5954A19928AE604E00B8BB30 /* Onboarding 3 screen.swift in Sources */,
 				5954A18E28AE523000B8BB30 /* order being prepared.swift in Sources */,
 				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
+				5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */,
+				5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5954A16128AE51B900B8BB30 /* clubs.swift in Sources */,
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
@@ -1051,8 +1098,11 @@
 				5954A16A28AE51E500B8BB30 /* Events.swift in Sources */,
 				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
 				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
+				5909F69328B3655D00F7FD38 /* My Plan screen.swift in Sources */,
 				591192E1289A45A4004DF048 /* Logout Api.swift in Sources */,
 				59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */,
+				5909F69728B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift in Sources */,
+				5909F69928B3A35800F7FD38 /* Subscription Updated Successful Screen.swift in Sources */,
 				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
 				5954A18D28AE523000B8BB30 /* view order.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
@@ -1089,7 +1139,7 @@
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
 				5954A15E28AE51B900B8BB30 /* members.swift in Sources */,
 				591043B328AE4E4100F6E81F /* forgetPassword.swift in Sources */,
-				59D7CF12289289D500F9EC5D /* Follow Requests Screens.swift in Sources */,
+				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
 				5954A19728AE5F2C00B8BB30 /* Onboarding 2 Screen.swift in Sources */,
 				5954A16028AE51B900B8BB30 /* myClubs.swift in Sources */,
@@ -1124,11 +1174,13 @@
 				5940A43A28B0FF3C00C5EEF4 /* Proximity Screen 3.swift in Sources */,
 				5954A18928AE523000B8BB30 /* orders.swift in Sources */,
 				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
+				5909F69128B362E400F7FD38 /* Subscription Successful.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				593F055728AF761A00FEBE5F /* Login Screen.swift in Sources */,
 				59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */,
 				5954A18C28AE523000B8BB30 /* cancelling order.swift in Sources */,
 				5954A19028AE523000B8BB30 /* completed orders.swift in Sources */,
+				5909F68C28B34DB300F7FD38 /* Follow request.swift in Sources */,
 				5954A17128AE51E500B8BB30 /* Turn On Location.swift in Sources */,
 				593466692886712800956869 /* cars_connetedApp.swift in Sources */,
 				5954A18728AE523000B8BB30 /* new orders.swift in Sources */,

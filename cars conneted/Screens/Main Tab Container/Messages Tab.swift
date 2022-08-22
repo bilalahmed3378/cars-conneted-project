@@ -24,12 +24,15 @@ struct  MessagesTab: View {
                 Spacer()
                 
                 Text("Messages")
-                    .font(.title)
+                    .font(AppFonts.SemiBold_20)
                     .foregroundColor(.white)
                 
                 Spacer()
                 
                 Image("profile icon home")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 40, height: 40)
                 
                 
             }.padding(.leading,24)

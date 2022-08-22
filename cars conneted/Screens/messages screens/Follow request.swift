@@ -1,13 +1,13 @@
 //
-//  Follow Requests Screens.swift
+//  Follow request.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 28/07/2022.
+//  Created by Bilal Ahmed on 22/08/2022.
 //
 
 import SwiftUI
 
-struct Follow_Requests_Screens: View {
+struct Follow_request: View {
     var body: some View {
         VStack{
             VStack{
@@ -31,12 +31,7 @@ struct Follow_Requests_Screens: View {
                     
                     Spacer()
                     
-                    Button(action: {}, label: {
-                        Image("doted icons-1")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                    })
+                    
                   
                     
                     
@@ -52,17 +47,25 @@ struct Follow_Requests_Screens: View {
             
             ScrollView(.vertical, showsIndicators: false){
                 HStack{
-                    Text("7 request")
-                        .font(AppFonts.medium_14)
-                        .foregroundColor(.gray)
+                    Text("7 Requests")
+                        .font(AppFonts.semiBold_16)
+                        .foregroundColor(AppColors.redGradientColor1)
                     Spacer()
                 }
                 .padding()
                 
                 LazyVStack{
-                    ForEach(0...4 , id: \.self){index in
+                    
+                    
+                  
+                    ForEach(0...6 , id: \.self){index in
+                        
                         followRequest()
+                        
+                        
                     }
+                    
+                  
                 }
                 
             }
@@ -75,15 +78,15 @@ struct Follow_Requests_Screens: View {
         .edgesIgnoringSafeArea(.top)
            
         
-        
     }
 }
 
-struct Follow_Requests_Screens_Previews: PreviewProvider {
+struct Follow_request_Previews: PreviewProvider {
     static var previews: some View {
-        Follow_Requests_Screens()
+        Follow_request()
     }
 }
+
 
 struct followRequest: View {
     
@@ -130,7 +133,7 @@ struct followRequest: View {
             .resizable()
             .aspectRatio(contentMode: .fill)
             .frame(width: 377, height: 1)
-            .padding(.bottom)
-            .padding(.top)
+            .padding(.bottom,10)
+            .padding(.top,10)
     }
 }
