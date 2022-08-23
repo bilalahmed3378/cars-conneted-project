@@ -1,13 +1,13 @@
 //
-//  My Garage My View.swift
+//  My Garage User View.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 22/08/2022.
+//  Created by Bilal Ahmed on 23/08/2022.
 //
 
 import SwiftUI
 
-struct My_Garage_My_View: View {
+struct My_Garage_User_View: View {
     var body: some View {
         VStack{
             HStack{
@@ -18,66 +18,15 @@ struct My_Garage_My_View: View {
                 
                 Spacer()
                 
-                Text("My Virual Garage")
+                Text("Jhons Garage")
                     .font(AppFonts.medium_18)
                 
                 Spacer()
                 
-                Image("doted Icons")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+             
                 
             }.padding()
                
-            HStack{
-                
-                Spacer()
-                
-                VStack{
-                    Text("16.3k")
-                        .font(AppFonts.SemiBold_20)
-                        .padding(.bottom,2)
-                        .foregroundColor(.white)
-                    
-                    Text("Likes")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-                VStack{
-                    Text("6.9k")
-                        .font(AppFonts.SemiBold_20)
-                        .padding(.bottom,2)
-                        .foregroundColor(.white)
-                    
-                    Text("Comments")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-                VStack{
-                    Text("2.6k")
-                        .font(AppFonts.SemiBold_20)
-                        .padding(.bottom,2)
-                        .foregroundColor(.white)
-                    
-                    Text("Shares")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-            }.padding(.top,30)
-                .padding(.bottom,30)
-            .background(RoundedRectangle(cornerRadius: 25).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-            .padding()
-            
             
             HStack{
                 Text("5 cars in Garage")
@@ -102,7 +51,7 @@ struct My_Garage_My_View: View {
                 LazyVStack{
                     ForEach (0...3 , id : \.self){
                         index in
-                        myGarage()
+                        myGarageUserView()
                     }
                     
                 }
@@ -121,13 +70,14 @@ struct My_Garage_My_View: View {
     }
 }
 
-struct My_Garage_My_View_Previews: PreviewProvider {
+struct My_Garage_User_View_Previews: PreviewProvider {
     static var previews: some View {
-        My_Garage_My_View()
+        My_Garage_User_View()
     }
 }
 
-struct myGarage : View {
+
+struct myGarageUserView : View {
     var body : some View{
         
         VStack{
@@ -140,54 +90,11 @@ struct myGarage : View {
                 VStack{
                     HStack{
                         Spacer()
-                        
-                        Menu(content: {
-                            
-                            Button(action: {}, label: {
-                                
-                              Image("share")
-                                
-                                Text("Share")
-                                    .font(AppFonts.regular_14)
-                                
-                              
-                                
-                            })
-                                
-                                Button(action: {}, label: {
-                                    
-                                    Image("carbon_edit")
-                                    
-                                    Text("Edit")
-                                        .font(AppFonts.regular_14)
-                                    
-                                })
-                                
-                                Button(action: {}, label: {
-                                    
-                                    Image("delete black")
-                                    
-                                    
-                                    Text("Delete")
-                                        .font(AppFonts.regular_14)
-                                    
-                                })
-                            
-                                
-                            
-                            
-                            
-                        }, label: {
-                            
-                            Image("doted icons-1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                                .padding()
-                        })
-                        
-                        
-                       
+                        Image("save icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                            .padding()
                     }
                     
                    Spacer()

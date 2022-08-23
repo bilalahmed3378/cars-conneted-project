@@ -1,20 +1,19 @@
 //
-//  Setup Garage Screen.swift
+//  Edit Garage Screen.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 19/08/2022.
+//  Created by Bilal Ahmed on 23/08/2022.
 //
 
 import SwiftUI
 
-struct Setup_Garage_Screen: View {
+struct Edit_Garage_Screen: View {
     @State var isSelected: Bool = true
     @State var garage = ""
     var body: some View {
         ZStack{
             
-          
-                
+           
         VStack{
            
                 HStack{
@@ -28,21 +27,15 @@ struct Setup_Garage_Screen: View {
                    
                     
                     Spacer()
-                    Button(action: {}, label: {
-                        Text("Skip")
-                            .foregroundColor(AppColors.redGradientColor1)
-                            .font(AppFonts.regular_16)
-                    })
-                
+                   
                 }
                 .padding()
             
             HStack{
-                Text("Setup your Garage")
+                Text("Edit your Garage")
                     .font(AppFonts.semiBold_24)
-                    .fontWeight(.semibold)
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    .mask( Text("Setup your Garage")
+                    .mask( Text("Edit your Garage")
                         .font(AppFonts.semiBold_24)
                         .fontWeight(.semibold))
                 
@@ -152,9 +145,8 @@ struct Setup_Garage_Screen: View {
               .padding(.trailing,10)
        
             Button(action: {}, label: {
-                Text("Next: Add your car")
+                Text("Update")
                     .font(AppFonts.semiBold_16)
-                    .fontWeight(.medium)
                     .foregroundColor(.white)
                     .frame(width: UIScreen.widthBlockSize*90, height: 70)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
@@ -173,8 +165,8 @@ struct Setup_Garage_Screen: View {
     }
 }
 
-struct Setup_Garage_Screen_Previews: PreviewProvider {
+struct Edit_Garage_Screen_Previews: PreviewProvider {
     static var previews: some View {
-        Setup_Garage_Screen()
+        Edit_Garage_Screen()
     }
 }

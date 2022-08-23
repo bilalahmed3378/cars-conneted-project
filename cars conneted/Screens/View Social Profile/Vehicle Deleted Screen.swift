@@ -26,7 +26,6 @@ struct Vehicle_Deleted_Screen: View {
                     
                    
                 }
-                .padding()
             
             HStack{
                 Text("Vehicle Deleted Successfully")
@@ -39,7 +38,8 @@ struct Vehicle_Deleted_Screen: View {
                 
                
             }
-            .padding()
+            .padding(.top)
+            .padding(.bottom)
             
             
          
