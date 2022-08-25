@@ -123,6 +123,21 @@
 		59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed screen.swift */; };
 		59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2328924A2000B46682 /* Notifications setting screen.swift */; };
 		59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673EF028ABAB8600B2A305 /* Change User Name.swift */; };
+		597282DB28B74EFF0004F4CB /* Classified Spare Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */; };
+		597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DC28B751FA0004F4CB /* Classified Service Screen.swift */; };
+		597282E028B759F10004F4CB /* Create Club Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DF28B759F10004F4CB /* Create Club Screen.swift */; };
+		597282E228B75EEC0004F4CB /* Edit Club Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282E128B75EEC0004F4CB /* Edit Club Screen.swift */; };
+		597282E428B760AF0004F4CB /* Club Created Successfully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282E328B760AF0004F4CB /* Club Created Successfully.swift */; };
+		597282E628B775870004F4CB /* My Clubs screens.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282E528B775870004F4CB /* My Clubs screens.swift */; };
+		597282E828B77ABD0004F4CB /* Clubs Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282E728B77ABD0004F4CB /* Clubs Screen.swift */; };
+		597282EA28B77F0F0004F4CB /* My club Details (admin view) Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282E928B77F0F0004F4CB /* My club Details (admin view) Screen.swift */; };
+		597282EC28B78A740004F4CB /* Members (other club members) Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282EB28B78A740004F4CB /* Members (other club members) Screen.swift */; };
+		597282EE28B78F2E0004F4CB /* Club details member view Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282ED28B78F2E0004F4CB /* Club details member view Screen.swift */; };
+		597282F028B793080004F4CB /* Club chat Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282EF28B793080004F4CB /* Club chat Screen.swift */; };
+		597282F228B796660004F4CB /* Invite friends Clubs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F128B796660004F4CB /* Invite friends Clubs.swift */; };
+		597282F428B7993E0004F4CB /* New member request club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F328B7993E0004F4CB /* New member request club.swift */; };
+		597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F528B79B460004F4CB /* Create Post Club Screen.swift */; };
+		597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F728B7A38B0004F4CB /* Club Admin View.swift */; };
 		599AF4AE28B601F900DE103F /* Create Shop Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4AD28B601F800DE103F /* Create Shop Screen.swift */; };
 		599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B028B60AE200DE103F /* Post products Services Screen.swift */; };
 		599AF4B328B62A7400DE103F /* Post Product Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */; };
@@ -183,6 +198,7 @@
 		59E40DC828AB806D00B6D60B /* Profile Setup screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */; };
 		59E53A32288DAB800081D48B /* Market place search screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A31288DAB800081D48B /* Market place search screen.swift */; };
 		59E53A34288E65750081D48B /* Product Details screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59E53A33288E65750081D48B /* Product Details screen.swift */; };
+		59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -322,6 +338,21 @@
 		59607F2128919ED300B46682 /* Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		59607F2328924A2000B46682 /* Notifications setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications setting screen.swift"; sourceTree = "<group>"; };
 		59673EF028ABAB8600B2A305 /* Change User Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Name.swift"; sourceTree = "<group>"; };
+		597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Spare Parts Screen.swift"; sourceTree = "<group>"; };
+		597282DC28B751FA0004F4CB /* Classified Service Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Service Screen.swift"; sourceTree = "<group>"; };
+		597282DF28B759F10004F4CB /* Create Club Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Club Screen.swift"; sourceTree = "<group>"; };
+		597282E128B75EEC0004F4CB /* Edit Club Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edit Club Screen.swift"; sourceTree = "<group>"; };
+		597282E328B760AF0004F4CB /* Club Created Successfully.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club Created Successfully.swift"; sourceTree = "<group>"; };
+		597282E528B775870004F4CB /* My Clubs screens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Clubs screens.swift"; sourceTree = "<group>"; };
+		597282E728B77ABD0004F4CB /* Clubs Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Clubs Screen.swift"; sourceTree = "<group>"; };
+		597282E928B77F0F0004F4CB /* My club Details (admin view) Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My club Details (admin view) Screen.swift"; sourceTree = "<group>"; };
+		597282EB28B78A740004F4CB /* Members (other club members) Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Members (other club members) Screen.swift"; sourceTree = "<group>"; };
+		597282ED28B78F2E0004F4CB /* Club details member view Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club details member view Screen.swift"; sourceTree = "<group>"; };
+		597282EF28B793080004F4CB /* Club chat Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club chat Screen.swift"; sourceTree = "<group>"; };
+		597282F128B796660004F4CB /* Invite friends Clubs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Invite friends Clubs.swift"; sourceTree = "<group>"; };
+		597282F328B7993E0004F4CB /* New member request club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New member request club.swift"; sourceTree = "<group>"; };
+		597282F528B79B460004F4CB /* Create Post Club Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Post Club Screen.swift"; sourceTree = "<group>"; };
+		597282F728B7A38B0004F4CB /* Club Admin View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club Admin View.swift"; sourceTree = "<group>"; };
 		599AF4AD28B601F800DE103F /* Create Shop Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Shop Screen.swift"; sourceTree = "<group>"; };
 		599AF4B028B60AE200DE103F /* Post products Services Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post products Services Screen.swift"; sourceTree = "<group>"; };
 		599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Product Parts Screen.swift"; sourceTree = "<group>"; };
@@ -382,6 +413,7 @@
 		59E40DC728AB806D00B6D60B /* Profile Setup screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile Setup screen.swift"; sourceTree = "<group>"; };
 		59E53A31288DAB800081D48B /* Market place search screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Market place search screen.swift"; sourceTree = "<group>"; };
 		59E53A33288E65750081D48B /* Product Details screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Details screen.swift"; sourceTree = "<group>"; };
+		59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Vehicle Screen.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,9 +759,11 @@
 				5909F68D28B34F4600F7FD38 /* Subscription full user */,
 				5909F69A28B3A48200F7FD38 /* View Social Profile */,
 				594DC7EB28B4F44E0000C99E /* Shop Creation Screens */,
+				599AF4AF28B60A9700DE103F /* Add Classified Screens */,
+				59F585E528B73E1D000CE808 /* Classified View Screens */,
 				59532F0528AE4343001F6EEE /* Notification Screens */,
 				59FD074E289BD1E500573F88 /* Login */,
-				599AF4AF28B60A9700DE103F /* Add Classified Screens */,
+				597282DE28B759CB0004F4CB /* Clubs Screens */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
 				59E53A30288DAB330081D48B /* Market place screens */,
@@ -864,6 +898,26 @@
 			path = "Settings Screens";
 			sourceTree = "<group>";
 		};
+		597282DE28B759CB0004F4CB /* Clubs Screens */ = {
+			isa = PBXGroup;
+			children = (
+				597282DF28B759F10004F4CB /* Create Club Screen.swift */,
+				597282E128B75EEC0004F4CB /* Edit Club Screen.swift */,
+				597282E328B760AF0004F4CB /* Club Created Successfully.swift */,
+				597282E528B775870004F4CB /* My Clubs screens.swift */,
+				597282E728B77ABD0004F4CB /* Clubs Screen.swift */,
+				597282E928B77F0F0004F4CB /* My club Details (admin view) Screen.swift */,
+				597282EB28B78A740004F4CB /* Members (other club members) Screen.swift */,
+				597282ED28B78F2E0004F4CB /* Club details member view Screen.swift */,
+				597282EF28B793080004F4CB /* Club chat Screen.swift */,
+				597282F128B796660004F4CB /* Invite friends Clubs.swift */,
+				597282F328B7993E0004F4CB /* New member request club.swift */,
+				597282F528B79B460004F4CB /* Create Post Club Screen.swift */,
+				597282F728B7A38B0004F4CB /* Club Admin View.swift */,
+			);
+			path = "Clubs Screens";
+			sourceTree = "<group>";
+		};
 		599AF4AF28B60A9700DE103F /* Add Classified Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -945,6 +999,16 @@
 				59DE386D288FEF1500BD72D9 /* Add Product Preview.swift */,
 			);
 			path = "Market place screens";
+			sourceTree = "<group>";
+		};
+		59F585E528B73E1D000CE808 /* Classified View Screens */ = {
+			isa = PBXGroup;
+			children = (
+				59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */,
+				597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */,
+				597282DC28B751FA0004F4CB /* Classified Service Screen.swift */,
+			);
+			path = "Classified View Screens";
 			sourceTree = "<group>";
 		};
 		59FD074E289BD1E500573F88 /* Login */ = {
@@ -1115,12 +1179,14 @@
 				5954A19528AE5A4900B8BB30 /* Onboarding 1 Screen.swift in Sources */,
 				5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */,
 				5954A19128AE523000B8BB30 /* order accepted.swift in Sources */,
+				597282F428B7993E0004F4CB /* New member request club.swift in Sources */,
 				5954A18828AE523000B8BB30 /* orders:selling.swift in Sources */,
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
 				599AF4B728B6324C00DE103F /* Add classified Services Screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
 				5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */,
 				5909F69528B3950E00F7FD38 /* My Subscription details Screen.swift in Sources */,
+				597282EA28B77F0F0004F4CB /* My club Details (admin view) Screen.swift in Sources */,
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
@@ -1129,6 +1195,7 @@
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
 				5954A15C28AE51B900B8BB30 /* create club.swift in Sources */,
 				59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */,
+				597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */,
 				5954A16E28AE51E500B8BB30 /* Nearby Events.swift in Sources */,
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
 				595013B228B4B008007B594B /* Edit Garage Screen.swift in Sources */,
@@ -1137,6 +1204,7 @@
 				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
 				5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */,
 				5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */,
+				597282E028B759F10004F4CB /* Create Club Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5954A16128AE51B900B8BB30 /* clubs.swift in Sources */,
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
@@ -1151,13 +1219,16 @@
 				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
 				59DE3868288FAC7C00BD72D9 /* Checkout Screen 2.swift in Sources */,
 				5909F69328B3655D00F7FD38 /* My Plan screen.swift in Sources */,
+				597282DB28B74EFF0004F4CB /* Classified Spare Parts Screen.swift in Sources */,
 				591192E1289A45A4004DF048 /* Logout Api.swift in Sources */,
 				59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */,
 				5909F69728B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift in Sources */,
 				5909F69928B3A35800F7FD38 /* Subscription Updated Successful Screen.swift in Sources */,
+				597282E628B775870004F4CB /* My Clubs screens.swift in Sources */,
 				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
 				59D7A47628B64BEE0022F49A /* Add classified vehicle Screen.swift in Sources */,
 				5954A18D28AE523000B8BB30 /* view order.swift in Sources */,
+				597282F028B793080004F4CB /* Club chat Screen.swift in Sources */,
 				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
 				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
 				599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */,
@@ -1182,6 +1253,7 @@
 				5954A1A128AE6C0800B8BB30 /* SignUp Screen.swift in Sources */,
 				590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */,
 				59DE386C288FE7FB00BD72D9 /* Add product.swift in Sources */,
+				597282E428B760AF0004F4CB /* Club Created Successfully.swift in Sources */,
 				59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */,
 				5954A18A28AE523000B8BB30 /* order completed.swift in Sources */,
 				59DB445F289937A7006766EA /* NetworkConfigs.swift in Sources */,
@@ -1193,6 +1265,7 @@
 				592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */,
 				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
 				5954A15E28AE51B900B8BB30 /* members.swift in Sources */,
+				597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */,
 				591043B328AE4E4100F6E81F /* forgetPassword.swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
@@ -1201,6 +1274,8 @@
 				59DE385C288EA8BF00BD72D9 /* Cart screen.swift in Sources */,
 				590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */,
 				592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */,
+				597282E228B75EEC0004F4CB /* Edit Club Screen.swift in Sources */,
+				597282EE28B78F2E0004F4CB /* Club details member view Screen.swift in Sources */,
 				59532F0228AE3C44001F6EEE /* Support Issue Details Screen.swift in Sources */,
 				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
 				5954A16B28AE51E500B8BB30 /* Registered Events.swift in Sources */,
@@ -1213,11 +1288,13 @@
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				5954A15928AE51B900B8BB30 /* create event.swift in Sources */,
 				591043AF28AE4E4100F6E81F /* passwordChanged.swift in Sources */,
+				597282E828B77ABD0004F4CB /* Clubs Screen.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
 				5934666B2886712800956869 /* ContentView.swift in Sources */,
 				59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */,
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
 				59607F1328914B5000B46682 /* My Garage.swift in Sources */,
+				597282EC28B78A740004F4CB /* Members (other club members) Screen.swift in Sources */,
 				5954A15B28AE51B900B8BB30 /* nearbyClubs.swift in Sources */,
 				591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */,
 				5954A18B28AE523000B8BB30 /* cancelled orders.swift in Sources */,
@@ -1252,12 +1329,15 @@
 				5940A43828B0FD3600C5EEF4 /* Proximity Screen 2.swift in Sources */,
 				59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */,
 				591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */,
+				597282F228B796660004F4CB /* Invite friends Clubs.swift in Sources */,
 				599AF4B328B62A7400DE103F /* Post Product Parts Screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 				5954A15F28AE51B900B8BB30 /* myClubDetails.swift in Sources */,
+				59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */,
 				595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */,
 				593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */,
 				5954A16C28AE51E500B8BB30 /* search.swift in Sources */,
+				597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */,
 				591043B728AE4E4100F6E81F /* garageSetup.swift in Sources */,
 				59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */,
 				593F055B28AF912200FEBE5F /* Forgot Password OTP.swift in Sources */,
