@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590117A528B896FF0053019E /* Create Event step1 Screen.swift */; };
 		5909F68C28B34DB300F7FD38 /* Follow request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F68B28B34DB300F7FD38 /* Follow request.swift */; };
 		5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */; };
 		5909F69128B362E400F7FD38 /* Subscription Successful.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69028B362E400F7FD38 /* Subscription Successful.swift */; };
@@ -123,6 +124,8 @@
 		59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed screen.swift */; };
 		59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2328924A2000B46682 /* Notifications setting screen.swift */; };
 		59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673EF028ABAB8600B2A305 /* Change User Name.swift */; };
+		596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */; };
+		596D8A1628B8CA6B00E0F7DE /* Event Details Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */; };
 		597282DB28B74EFF0004F4CB /* Classified Spare Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */; };
 		597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DC28B751FA0004F4CB /* Classified Service Screen.swift */; };
 		597282E028B759F10004F4CB /* Create Club Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DF28B759F10004F4CB /* Create Club Screen.swift */; };
@@ -219,6 +222,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		590117A528B896FF0053019E /* Create Event step1 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Event step1 Screen.swift"; sourceTree = "<group>"; };
 		5909F68B28B34DB300F7FD38 /* Follow request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follow request.swift"; sourceTree = "<group>"; };
 		5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Choose your plan Screen.swift"; sourceTree = "<group>"; };
 		5909F69028B362E400F7FD38 /* Subscription Successful.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Subscription Successful.swift"; sourceTree = "<group>"; };
@@ -338,6 +342,8 @@
 		59607F2128919ED300B46682 /* Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		59607F2328924A2000B46682 /* Notifications setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications setting screen.swift"; sourceTree = "<group>"; };
 		59673EF028ABAB8600B2A305 /* Change User Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Name.swift"; sourceTree = "<group>"; };
+		596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Event step 2 Screen.swift"; sourceTree = "<group>"; };
+		596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Details Screen.swift"; sourceTree = "<group>"; };
 		597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Spare Parts Screen.swift"; sourceTree = "<group>"; };
 		597282DC28B751FA0004F4CB /* Classified Service Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Service Screen.swift"; sourceTree = "<group>"; };
 		597282DF28B759F10004F4CB /* Create Club Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Club Screen.swift"; sourceTree = "<group>"; };
@@ -442,6 +448,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		590117A428B896DA0053019E /* Events Creation */ = {
+			isa = PBXGroup;
+			children = (
+				590117A528B896FF0053019E /* Create Event step1 Screen.swift */,
+				596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */,
+				596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */,
+			);
+			path = "Events Creation";
+			sourceTree = "<group>";
+		};
 		5909F68D28B34F4600F7FD38 /* Subscription full user */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,9 +777,10 @@
 				594DC7EB28B4F44E0000C99E /* Shop Creation Screens */,
 				599AF4AF28B60A9700DE103F /* Add Classified Screens */,
 				59F585E528B73E1D000CE808 /* Classified View Screens */,
+				597282DE28B759CB0004F4CB /* Clubs Screens */,
 				59532F0528AE4343001F6EEE /* Notification Screens */,
 				59FD074E289BD1E500573F88 /* Login */,
-				597282DE28B759CB0004F4CB /* Clubs Screens */,
+				590117A428B896DA0053019E /* Events Creation */,
 				592F189F2887C0EF00A531A4 /* Main Tab Container */,
 				59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */,
 				59E53A30288DAB330081D48B /* Market place screens */,
@@ -1183,6 +1200,7 @@
 				5954A18828AE523000B8BB30 /* orders:selling.swift in Sources */,
 				59DE386A288FADCD00BD72D9 /* Invoice screen.swift in Sources */,
 				599AF4B728B6324C00DE103F /* Add classified Services Screen.swift in Sources */,
+				596D8A1628B8CA6B00E0F7DE /* Event Details Screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
 				5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */,
 				5909F69528B3950E00F7FD38 /* My Subscription details Screen.swift in Sources */,
@@ -1193,6 +1211,7 @@
 				592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */,
 				591043B928AE4E4100F6E81F /* onboardingScreen3.swift in Sources */,
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
+				596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */,
 				5954A15C28AE51B900B8BB30 /* create club.swift in Sources */,
 				59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */,
 				597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */,
@@ -1331,6 +1350,7 @@
 				591043B028AE4E4100F6E81F /* signupScreen.swift in Sources */,
 				597282F228B796660004F4CB /* Invite friends Clubs.swift in Sources */,
 				599AF4B328B62A7400DE103F /* Post Product Parts Screen.swift in Sources */,
+				590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 				5954A15F28AE51B900B8BB30 /* myClubDetails.swift in Sources */,
 				59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */,

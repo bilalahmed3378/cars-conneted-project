@@ -305,6 +305,10 @@ struct Add_classified_vehicle_Screen: View {
                     .padding(.leading)
                     .padding(.trailing)
                 
+                        
+                        
+                        
+                        
                     HStack{
                         Text("Fuel type")
                         
