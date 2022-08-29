@@ -18,6 +18,10 @@ struct Market_place_and_calssified: View {
                 // top bar
                 HStack{
                    
+                    Image("back icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
                     
                     Spacer()
                     
@@ -27,10 +31,11 @@ struct Market_place_and_calssified: View {
                     
                     Spacer()
                     NavigationLink(destination: Setting_Screen(), label: {
-                        Image("profile icon home")
+                        
+                        Image("plus icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 40, height: 40)
+                            .frame(width: 26, height: 26)
                     })
                   
                     
@@ -46,14 +51,13 @@ struct Market_place_and_calssified: View {
                     TextField("Search",text: self.$searchText)
                         .foregroundColor(.red)
                     
-                    NavigationLink(destination: Maeket_place_search(),
-                                   label: {
+                    
                         Image(systemName: "magnifyingglass")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width:20,height: 20)
                             .foregroundColor(.red)
-                    })
+                  
                    
                     
                     
@@ -140,7 +144,7 @@ struct Market_place_and_calssified: View {
     struct partsCard : View {
         
         var body: some View {
-            NavigationLink(destination: Product_Details(), label: {
+           
             VStack(alignment: .leading){
                 
                 Image("Rectangle 1263")
@@ -203,7 +207,7 @@ struct Market_place_and_calssified: View {
             .padding(5)
             .padding(.leading,10)
                 
-            })
+          
    
         }
     }
@@ -212,7 +216,7 @@ struct Market_place_and_calssified: View {
 struct partsCardrecommented : View {
     
     var body: some View {
-        NavigationLink(destination: Product_Details(),  label: {
+       
             ZStack(alignment: .leading){
                 Image("Rectangle 1264")
                     .resizable()
@@ -271,8 +275,7 @@ struct partsCardrecommented : View {
             .frame(width: 340, height: 200)
                 .padding()
                 .padding(.trailing,-15)
-        })
-           
+      
         
        
 

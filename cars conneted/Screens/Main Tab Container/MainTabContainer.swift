@@ -21,10 +21,10 @@ struct MainTabContainer: View {
                     HomeTab()
                 }
                 else if(self.selectedIndex == 1){
-                  
+                  Clubs_Screen()
                 }
                 else if(self.selectedIndex == 2){
-                    
+                    Events_Screen()
                 }
                 else if(self.selectedIndex == 3){
                     Market_place_and_calssified()
@@ -153,4 +153,5 @@ struct MainTabContainer: View {
         
     }
 }
+
 

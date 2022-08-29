@@ -165,19 +165,21 @@ struct User_Profile__Wall: View {
                                 
                                 
                                
-                                HStack{
-                                    
-                                    Text("Send Message")
-                                        .font(AppFonts.semiBold_14)
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                    
-                                  
-                                    
-                                }
-                                .frame(width: 160, height: 50 )
-                                .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
                                 
                             })
+                            
+                            
+                             HStack{
+                                 
+                                 Text("Send Message")
+                                     .font(AppFonts.semiBold_14)
+                                     .foregroundColor(AppColors.redGradientColor1)
+                                 
+                             }
+                             .frame(width: 160, height: 50 )
+                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
+                            
+                            
                         }
                         
                         
@@ -252,10 +254,10 @@ struct User_Profile__Wall: View {
                                 
                                 
                                 Button(action: {
-                                    self.isPostView = 4
+                                    self.isPostView = 3
                                 }, label: {
                                     
-                                    if ((self.isPostView == 4) ){
+                                    if ((self.isPostView == 3) ){
                                         Text("Clubs")
                                             .font(AppFonts.regular_16)
                                             .foregroundColor(.white)
@@ -318,14 +320,42 @@ struct User_Profile__Wall: View {
                             }
                              )}
                                 else if(self.isPostView == 1) {
+                                    Text("Add New Car")
+                                        .font(AppFonts.regular_16)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                        .padding()
+                                    
                               GarageCardProfile()
                             }
                                 
                                 else if(self.isPostView == 2) {
+                                    VStack(alignment: .leading){
+                                        HStack{
+                                            Text("23 items in Classified")
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                                .font(AppFonts.regular_18)
+                                            Spacer()
+                                        }
+                                        
+                                        HStack{
+                                            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliqueto.")
+                                                .foregroundColor(.gray)
+                                                .font(AppFonts.regular_12)
+                                            Spacer()
+                                        }
+                                    }
+                                    .padding()
+                            
                                     ClassifiedCardProfile()
                             }
                                
                             else if(self.isPostView == 3){
+                                Text("Create New Club")
+                                    .font(AppFonts.regular_16)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                    .padding()
                                 ClubsCardProfile()
                             }
                                 
@@ -508,6 +538,7 @@ struct GarageCardProfile : View {
             
         }
         .padding()
+        .padding(.top)
         
         
         
@@ -607,7 +638,7 @@ struct ClubsCardProfile: View {
         }.padding(.bottom,20)
             .padding(.leading,20)
             .padding(.trailing,20)
-            .padding(.top,20)
+          
 
      
         
