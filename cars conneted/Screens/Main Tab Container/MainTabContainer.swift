@@ -11,6 +11,12 @@ struct MainTabContainer: View {
     
     @State var selectedIndex : Int = 0
     
+    @Binding var isUserLoggedIn : Bool
+    
+    @State var isDrawerOpen : Bool = false
+    
+    
+    
     var body: some View {
         
         ZStack{
@@ -18,19 +24,19 @@ struct MainTabContainer: View {
             VStack{
                 
                 if(self.selectedIndex == 0){
-                    HomeTab()
+                    HomeTab(isDrawerOpen: self.$isDrawerOpen)
                 }
                 else if(self.selectedIndex == 1){
-                  Clubs_Screen()
+                  Clubs_Screen(isDrawerOpen: self.$isDrawerOpen)
                 }
                 else if(self.selectedIndex == 2){
-                    Events_Screen()
+                    Events_Screen(isDrawerOpen: self.$isDrawerOpen)
                 }
                 else if(self.selectedIndex == 3){
-                    Market_place_and_calssified()
+                    Market_place_and_calssified(isDrawerOpen: self.$isDrawerOpen)
                 }
                 else{
-                    MessagesTab()
+                    MessagesTab(isDrawerOpen: self.$isDrawerOpen)
                 }
             
                 Spacer()
@@ -146,10 +152,13 @@ struct MainTabContainer: View {
                 
             }
             
+            NavigationDrawer(isDrawerOpen: self.$isDrawerOpen, isUserLoggedIn: self.$isUserLoggedIn, mainTabContainer: self)
+            
         }
         .navigationBarHidden(true)
         .edgesIgnoringSafeArea(.top)
         .edgesIgnoringSafeArea(.bottom)
+            
         
     }
 }

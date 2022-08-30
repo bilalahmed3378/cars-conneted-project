@@ -10,6 +10,13 @@ import SwiftUI
 struct Market_place_and_calssified: View {
     @Environment (\.presentationMode) var presentationMode
     @State private var searchText  = ""
+    
+    @Binding var isDrawerOpen : Bool
+    
+    init(isDrawerOpen : Binding<Bool>){
+        self._isDrawerOpen = isDrawerOpen
+    }
+    
     var body: some View {
         VStack{
             
@@ -18,10 +25,14 @@ struct Market_place_and_calssified: View {
                 // top bar
                 HStack{
                    
-                    Image("back icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                    Button(action: {
+                        self.isDrawerOpen.toggle()
+                    }, label: {
+                        Image("side menu icon white")
+                               .resizable()
+                               .aspectRatio(contentMode: .fit)
+                               .frame(width: 35, height: 35)
+                    })
                     
                     Spacer()
                     
@@ -135,11 +146,7 @@ struct Market_place_and_calssified: View {
         .navigationBarHidden(true)
     }
     
-    struct Market_place_and_calssified_Previews: PreviewProvider {
-        static var previews: some View {
-            Market_place_and_calssified()
-        }
-    }
+   
     //done
     struct partsCard : View {
         

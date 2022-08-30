@@ -32,10 +32,8 @@
 		592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A22887C7B700A531A4 /* Messages Tab.swift */; };
 		592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A42887CA7300A531A4 /* Search event screen.swift */; };
 		592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A72887EDB800A531A4 /* Search Clubs screen.swift */; };
-		592F18AB288816DF00A531A4 /* post screen 1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AA288816DF00A531A4 /* post screen 1.swift */; };
 		592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AC28882C4300A531A4 /* post screen 2.swift */; };
 		592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AE2889160E00A531A4 /* Post screen 3.swift */; };
-		592F18B22889276300A531A4 /* post screen 4.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B12889276300A531A4 /* post screen 4.swift */; };
 		592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B3288955A200A531A4 /* post screen 5 preview .swift */; };
 		592F18B92889806E00A531A4 /* message screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B82889806D00A531A4 /* message screen.swift */; };
 		593466692886712800956869 /* cars_connetedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466682886712800956869 /* cars_connetedApp.swift */; };
@@ -202,10 +200,8 @@
 		592F18A22887C7B700A531A4 /* Messages Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages Tab.swift"; sourceTree = "<group>"; };
 		592F18A42887CA7300A531A4 /* Search event screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search event screen.swift"; sourceTree = "<group>"; };
 		592F18A72887EDB800A531A4 /* Search Clubs screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Clubs screen.swift"; sourceTree = "<group>"; };
-		592F18AA288816DF00A531A4 /* post screen 1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 1.swift"; sourceTree = "<group>"; };
 		592F18AC28882C4300A531A4 /* post screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 2.swift"; sourceTree = "<group>"; };
 		592F18AE2889160E00A531A4 /* Post screen 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post screen 3.swift"; sourceTree = "<group>"; };
-		592F18B12889276300A531A4 /* post screen 4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 4.swift"; sourceTree = "<group>"; };
 		592F18B3288955A200A531A4 /* post screen 5 preview .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 5 preview .swift"; sourceTree = "<group>"; };
 		592F18B82889806D00A531A4 /* message screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "message screen.swift"; sourceTree = "<group>"; };
 		593466652886712800956869 /* cars conneted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cars conneted.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -507,10 +503,8 @@
 		592F18A9288816B300A531A4 /* Post screens */ = {
 			isa = PBXGroup;
 			children = (
-				592F18AA288816DF00A531A4 /* post screen 1.swift */,
 				592F18AC28882C4300A531A4 /* post screen 2.swift */,
 				592F18AE2889160E00A531A4 /* Post screen 3.swift */,
-				592F18B12889276300A531A4 /* post screen 4.swift */,
 				592F18B3288955A200A531A4 /* post screen 5 preview .swift */,
 			);
 			path = "Post screens";
@@ -1038,7 +1032,6 @@
 				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
 				59D7A47628B64BEE0022F49A /* Add classified vehicle Screen.swift in Sources */,
 				597282F028B793080004F4CB /* Club chat Screen.swift in Sources */,
-				592F18B22889276300A531A4 /* post screen 4.swift in Sources */,
 				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
 				599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */,
 				592A210A2899106100FC9EAF /* LoginDataModel.swift in Sources */,
@@ -1086,7 +1079,6 @@
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
 				597282EC28B78A740004F4CB /* Members (other club members) Screen.swift in Sources */,
 				591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */,
-				592F18AB288816DF00A531A4 /* post screen 1.swift in Sources */,
 				59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */,
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */,

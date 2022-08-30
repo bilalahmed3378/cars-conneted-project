@@ -9,6 +9,12 @@ import SwiftUI
 
 struct Clubs_Screen: View {
     @State private var searchText = ""
+    
+    @Binding var isDrawerOpen : Bool
+    
+    init(isDrawerOpen : Binding<Bool>){
+        self._isDrawerOpen = isDrawerOpen
+    }
     var body: some View {
         ZStack{
             
@@ -18,15 +24,19 @@ struct Clubs_Screen: View {
                     
                     // top bar
                     HStack{
-                        Image("side menu icon white")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
+                        Button(action: {
+                            self.isDrawerOpen.toggle()
+                        }, label: {
+                            Image("side menu icon white")
+                                   .resizable()
+                                   .aspectRatio(contentMode: .fit)
+                                   .frame(width: 35, height: 35)
+                        })
                         
                         Spacer()
                         
                         
-                        Text("My Clubs")
+                        Text("Clubs")
                             .font(AppFonts.SemiBold_20)
                             .foregroundColor(.white)
                         
@@ -172,11 +182,7 @@ struct Clubs_Screen: View {
     }
 }
 
-struct Clubs_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Clubs_Screen()
-    }
-}
+
 
 
 struct myClubsClubs: View{

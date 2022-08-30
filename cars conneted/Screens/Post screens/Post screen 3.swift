@@ -9,6 +9,10 @@ import SwiftUI
 
 struct Post_screen_3: View {
     @State private var post: String = ""
+    @State private var addLocation = false
+    
+    @State private var location: String = ""
+    
     var body: some View {
         VStack{
             HStack{
@@ -43,8 +47,12 @@ struct Post_screen_3: View {
                 .padding(.leading)
                 .padding(.trailing)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.addLocation = true
+            }, label: {
+                if(self.addLocation == false){
                 ZStack{
+                    
                     Text("Add Location?")
                         .foregroundColor(AppColors.redGradientColor1)
                         .font(AppFonts.semiBold_16)
@@ -54,7 +62,47 @@ struct Post_screen_3: View {
                         .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
                         .padding()
                 }
+                }
             })
+            
+            if(self.addLocation){
+            HStack{
+                Text("Add Location")
+                    .font(AppFonts.regular_12)
+                Spacer()
+            }
+            .padding()
+            .padding(.leading,5)
+            .padding(.bottom,-5)
+            .padding(.top,10)
+            
+           
+                
+            HStack{
+               
+                    TextField("Add Location",text:$location)
+                        .foregroundColor(AppColors.redGradientColor1)
+                      .padding(.vertical, 10)
+                      .autocapitalization(.none)
+                      .background(Rectangle().frame(height: 1).padding(.top,40))
+                      .foregroundColor(.black)
+                      .overlay(HStack{
+                          Spacer()
+                          Image("export icons")
+                      })
+                    
+                
+                Spacer()
+                
+                
+            }
+            .padding(.leading,20)
+            .padding(.trailing,20)
+                
+               
+            
+            }
+            
             
             ScrollView{
                 Image("unsplash_YApiWyp0lqo")

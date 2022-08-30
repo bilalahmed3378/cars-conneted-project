@@ -10,6 +10,12 @@ import SwiftUI
 struct  MessagesTab: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var searchText = ""
+    
+    @Binding var isDrawerOpen : Bool
+    
+    init(isDrawerOpen : Binding<Bool>){
+        self._isDrawerOpen = isDrawerOpen
+    }
 
     var body: some View {
         ZStack{
@@ -18,7 +24,14 @@ struct  MessagesTab: View {
             
             // top bar
             HStack{
-                
+                Button(action: {
+                    self.isDrawerOpen.toggle()
+                }, label: {
+                    Image("side menu icon white")
+                           .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: 35, height: 35)
+                })
                
                
                 Spacer()
@@ -244,8 +257,4 @@ struct  MessagesTab: View {
         }
 }
 
-struct  MessagesTab_Previews: PreviewProvider {
-    static var previews: some View {
-       MessagesTab()
-    }
-}
+

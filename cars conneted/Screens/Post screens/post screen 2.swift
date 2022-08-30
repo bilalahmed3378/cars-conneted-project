@@ -9,6 +9,10 @@ import SwiftUI
 
 struct post_screen_2: View {
     @State private var post: String = ""
+    
+    @State var  isPhoto: Bool = false
+    
+    @Environment(\.presentationMode) var presentationMode
 
     var body: some View {
         VStack{
@@ -16,11 +20,17 @@ struct post_screen_2: View {
             Spacer()
             
             HStack{
-                Image("post back icons")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
                 
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("post back icons")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                    
+                })
+              
                 
                 Spacer()
                 Text("Add Post")
@@ -30,6 +40,8 @@ struct post_screen_2: View {
             }
             .padding()
             .padding(.trailing,20)
+            
+            ScrollView(.vertical,showsIndicators: false){
             
             HStack{
                 Text("What is in your mind?")
@@ -41,19 +53,29 @@ struct post_screen_2: View {
             TextEditor(text: self.$post)
                 .font(AppFonts.regular_14)
                 .foregroundColor(AppColors.redGradientColor2)
-                .frame(minHeight: 50, idealHeight: 50 , maxHeight: 150)
+                .frame(minHeight: 80, idealHeight: 50 , maxHeight: 150)
                 .colorMultiply(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor2,lineWidth:1))
                 .padding(.leading)
                 .padding(.trailing)
+                .padding(.bottom,40)
             
-              Spacer()
-            Spacer()
-            Spacer()
+                if(self.isPhoto == false){
+                    Spacer(minLength: 400)
+                }
+            Button(action: {}, label: {
+                Text("Post")
+                    .font(AppFonts.semiBold_16)
+                    .foregroundColor(.white)
+                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 327, height: 56))
+            })
+           
             
             VStack{
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.isPhoto.toggle()
+                }, label: {
                     VStack{
                        Image("clarity_picture-solid-1")
                         Text("Add photo")
@@ -92,7 +114,8 @@ struct post_screen_2: View {
             .frame(width: 400, height: 80)
             .padding(.top,30)
             
-            Image("Line 5")
+                if(self.isPhoto){
+            Divider()
                 .padding()
             
             HStack{
@@ -171,13 +194,14 @@ struct post_screen_2: View {
             .frame(width: 328, height: 106)
           
             }
-            
+            }
          
            
             
             
-            
+            }
         } .edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
     }
 }
 

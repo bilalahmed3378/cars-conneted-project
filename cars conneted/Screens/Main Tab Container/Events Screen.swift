@@ -15,6 +15,12 @@ struct Events_Screen: View {
     @State private var searchText = ""
     @State private var isClicked: Int = 0
     
+    @Binding var isDrawerOpen : Bool
+    
+    init(isDrawerOpen : Binding<Bool>){
+        self._isDrawerOpen = isDrawerOpen
+    }
+    
     
     var body: some View {
         
@@ -24,10 +30,14 @@ struct Events_Screen: View {
             
             // top bar
             HStack{
-                Image("back icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                Button(action: {
+                    self.isDrawerOpen.toggle()
+                }, label: {
+                    Image("side menu icon white")
+                           .resizable()
+                           .aspectRatio(contentMode: .fit)
+                           .frame(width: 35, height: 35)
+                })
                 
                 Spacer()
                 
@@ -174,11 +184,7 @@ struct Events_Screen: View {
     }
 }
 
-struct Events_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Events_Screen()
-    }
-}
+
 
 struct EventsCardEvents : View {
     
