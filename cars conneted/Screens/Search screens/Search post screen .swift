@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Search_post_time: View {
     @State private var searchText = ""
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         ZStack{
             
@@ -109,7 +110,7 @@ struct Search_post_time: View {
         }
         
         }
-        }
+        } .navigationBarHidden(true)
 }
 
 struct Search_post_time_Previews: PreviewProvider {

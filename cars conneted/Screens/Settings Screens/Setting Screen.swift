@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Setting_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @ObservedObject var logoutApi : LogoutApi = LogoutApi()
     
     @State private var searchText = ""
@@ -30,7 +31,7 @@ struct Setting_Screen: View {
                 Group{
                 HStack{
                     Button(action: {}, label: {
-                        Image("side menu icon white")
+                        Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)

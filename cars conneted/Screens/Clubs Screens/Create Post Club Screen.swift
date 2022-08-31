@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Create_Post_Club_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     
     @State private var postText: String = "What's in your mind..."
     
@@ -89,7 +90,7 @@ struct Create_Post_Club_Screen: View {
            
             
             Spacer()
-        }
+        } .navigationBarHidden(true)
     }
 }
 

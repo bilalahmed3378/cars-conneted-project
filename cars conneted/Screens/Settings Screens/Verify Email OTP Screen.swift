@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Verify_Email_OTP_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     
     @State var otp1 : String = ""
     @State var otp2 : String = ""
@@ -149,6 +150,7 @@ struct Verify_Email_OTP_Screen: View {
                 
         }.padding(.leading,24)
             .padding(.trailing,24)
+            .navigationBarHidden(true)
         
         
     }

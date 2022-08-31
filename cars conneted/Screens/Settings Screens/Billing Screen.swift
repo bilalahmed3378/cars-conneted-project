@@ -155,6 +155,7 @@ struct Billing_Screen: View {
             Spacer()
             
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
         
     }
 }

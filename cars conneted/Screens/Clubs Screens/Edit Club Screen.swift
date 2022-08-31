@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Edit_Club_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     
     @State var name = ""
     @State var location = ""
@@ -245,7 +246,7 @@ struct Edit_Club_Screen: View {
             }
            
            
-        }
+        } .navigationBarHidden(true)
     }
 }
 

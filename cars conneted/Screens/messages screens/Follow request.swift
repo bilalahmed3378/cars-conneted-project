@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Follow_request: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             VStack{
@@ -76,6 +77,7 @@ struct Follow_request: View {
             Spacer()
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
            
         
     }

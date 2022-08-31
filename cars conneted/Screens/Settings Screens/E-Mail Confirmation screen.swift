@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct E_Mail_Confirmation_screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack(alignment: .leading){
            

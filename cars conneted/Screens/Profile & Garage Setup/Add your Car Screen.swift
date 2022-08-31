@@ -15,7 +15,7 @@ struct Add_your_Car_Screen: View {
     @State var type = ""
     @State var year = ""
     @State var description = ""
-    
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         ZStack{
            
@@ -305,7 +305,7 @@ struct Add_your_Car_Screen: View {
             }
            
            
-        }
+        } .navigationBarHidden(true)
     }
 }
 

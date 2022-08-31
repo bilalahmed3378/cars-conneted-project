@@ -50,23 +50,27 @@ struct SignUp_Screen: View {
                         
                         
                         Text("E-Mail")
+                            .font(AppFonts.regular_12)
                           .padding(.top,20)
                           .frame(maxWidth: .infinity, alignment: .leading)
                         
                           
                         TextField("Email",text:$email)
+                            .font(AppFonts.regular_14)
                           .padding(.vertical, 10)
                           .autocapitalization(.none)
                           .background(Rectangle().frame(height: 1).padding(.top, 40))
                           .foregroundColor(.black)
                           
                       Text("Password")
+                            .font(AppFonts.regular_12)
                         .padding(.top,20)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                       if isSecured {
                         SecureField("Enter Your Password", text: $password)
                           .autocapitalization(.none)
+                          .font(AppFonts.regular_14)
                           .padding(.vertical, 10)
                           .background(Rectangle().frame(height: 1).padding(.top, 40))
                           .overlay(HStack{
@@ -81,6 +85,7 @@ struct SignUp_Screen: View {
                       } else {
                         TextField("Enter Your Password", text: $password)
                           .autocapitalization(.none)
+                          .font(AppFonts.regular_14)
                           .padding(.vertical, 10)
                           .background(Rectangle().frame(height: 1).padding(.top, 40))
                           .overlay(HStack{
@@ -94,11 +99,13 @@ struct SignUp_Screen: View {
                           })
                       }
                         
-                        Text("Password")
+                        Text("Confirm Password")
+                            .font(AppFonts.regular_12)
                           .padding(.top,20)
                           .frame(maxWidth: .infinity, alignment: .leading)
                         if isSecured {
                           SecureField("Set Password", text: $confirmPassword)
+                                .font(AppFonts.regular_14)
                             .autocapitalization(.none)
                             .padding(.vertical, 10)
                             .background(Rectangle().frame(height: 1).padding(.top, 40))
@@ -113,6 +120,7 @@ struct SignUp_Screen: View {
                             })
                         } else {
                           TextField("Re-Enter Your Password", text: $confirmPassword)
+                                .font(AppFonts.regular_14)
                             .autocapitalization(.none)
                             .padding(.vertical, 10)
                             .background(Rectangle().frame(height: 1).padding(.top, 40))
@@ -203,16 +211,10 @@ struct SignUp_Screen: View {
                         .background(RoundedRectangle(cornerRadius: 15).fill(.white).shadow(radius: 10))
                         .padding()
                     
-                 
-                    
-                    
-                    
                 }
             
-            
-            
-           
         }.edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
     }
 }
 

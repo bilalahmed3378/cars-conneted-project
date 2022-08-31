@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Dashboard_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
         VStack{
@@ -324,6 +325,7 @@ struct Dashboard_Screen: View {
             Spacer()
         }.edgesIgnoringSafeArea(.top)
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
     }
 }
 

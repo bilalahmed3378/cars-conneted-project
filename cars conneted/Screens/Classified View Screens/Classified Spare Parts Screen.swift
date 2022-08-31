@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Classified_Spare_Parts_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -478,6 +479,7 @@ struct Classified_Spare_Parts_Screen: View {
             Spacer()
         }
     }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
 }
 }
 struct Classified_Spare_Parts_Screen_Previews: PreviewProvider {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Car_Specification: View {
     @State private var comment = ""
+    @Environment(\.presentationMode) var presentaionMode
     
     var body: some View {
        
@@ -300,6 +301,7 @@ struct Car_Specification: View {
             }
             
             }.edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
            
 
     }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Transcation_history_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State private var search = ""
     var body: some View {
         VStack{
@@ -105,6 +106,7 @@ struct Transcation_history_Screen: View {
             }
             Spacer()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

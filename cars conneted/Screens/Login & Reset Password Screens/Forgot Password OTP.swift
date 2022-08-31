@@ -14,6 +14,8 @@ struct Forgot_Password_OTP: View {
     @State var otp3 : String = ""
     @State var otp4 : String = ""
     
+    @Environment(\.presentationMode) var presentaionMode
+    
     var body: some View {
         ZStack{
       
@@ -167,7 +169,7 @@ struct Forgot_Password_OTP: View {
         }.padding(.leading,24)
             .padding(.trailing,24)
         
-        }
+        } .navigationBarHidden(true)
     
     }
 }

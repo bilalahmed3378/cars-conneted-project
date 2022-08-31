@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct User_name_Successfully_Changed_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            

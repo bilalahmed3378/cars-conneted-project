@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Setup_Garage_Screen: View {
     @State var isSelected: Bool = true
+    @Environment(\.presentationMode) var presentaionMode
     @State var garage = ""
     var body: some View {
         ZStack{
@@ -169,7 +170,7 @@ struct Setup_Garage_Screen: View {
         .padding(.trailing)
                 
            
-        }
+        } .navigationBarHidden(true)
     }
 }
 

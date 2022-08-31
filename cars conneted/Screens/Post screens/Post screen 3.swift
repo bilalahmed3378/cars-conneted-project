@@ -12,6 +12,7 @@ struct Post_screen_3: View {
     @State private var addLocation = false
     
     @State private var location: String = ""
+    @Environment(\.presentationMode) var presentaionMode
     
     var body: some View {
         VStack{
@@ -181,6 +182,7 @@ struct Post_screen_3: View {
             
         }
         .edgesIgnoringSafeArea(.bottom)
+        .navigationBarHidden(true)
     }
 }
 

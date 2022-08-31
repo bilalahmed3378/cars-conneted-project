@@ -9,7 +9,22 @@ import SwiftUI
 
 struct Onboarding_1_Screen: View {
     var body: some View {
+        ZStack{
+            
+            VStack{
+                HStack{
+                Image("Group 8725")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*40)
+                    Spacer()
+                }
+                Spacer()
+            }.edgesIgnoringSafeArea(.top)
+            
+            
         VStack{
+            Group{
             HStack{
                 
                 Spacer()
@@ -20,26 +35,37 @@ struct Onboarding_1_Screen: View {
                 })
                
                 
-            }.padding(24)
+            }.padding(.leading)
                 .padding(.trailing)
             
+            Spacer()
             HStack{
                 Image("unsplash_qyfco1nfMtg")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 377, height: 390)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*50)
             }
+            
+            Spacer()
             
             HStack{
                 Text("Create your virtual garage")
                     .font(AppFonts.semiBold_22)
-            }.padding(24)
+            }.padding(.leading)
+                .padding(.trailing)
+                .padding(.bottom,10)
+            
+            Spacer()
             
             HStack{
                 Text("Setup your virtual garage, add your most favourate cars collection to it. You can share your garage and cars within the community and with your followers, friends.")
                     .font(AppFonts.regular_14)
                     .foregroundColor(.gray)
-            }.padding(24)
+            }.padding(.leading)
+                .padding(.trailing)
+              
+            Spacer()
+            }
             
             HStack{
                 Image("Rectangle 7")
@@ -63,19 +89,26 @@ struct Onboarding_1_Screen: View {
                     .frame(width: 10, height: 10)
             }.frame(width: 80, height: 10)
             
+            Spacer()
+            
             HStack{
             Button(action: {}, label: {
                 Text("Next")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,30)
+            .padding(.top,10)
+           
             }
             Spacer()
+           
         }
+            
+            
+        } .navigationBarHidden(true)
     }
 }
 

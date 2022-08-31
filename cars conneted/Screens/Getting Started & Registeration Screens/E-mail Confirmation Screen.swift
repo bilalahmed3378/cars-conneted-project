@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct E_mail_Confirmation_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -69,6 +70,7 @@ struct E_mail_Confirmation_Screen: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Subscription_Updated_Successful_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -81,6 +82,7 @@ struct Subscription_Updated_Successful_Screen: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 

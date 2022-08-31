@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Subscription_Billing_Detail_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             HStack{
@@ -196,7 +197,7 @@ struct Subscription_Billing_Detail_Screen: View {
            
             
             Spacer()
-        }
+        } .navigationBarHidden(true)
     }
 }
 

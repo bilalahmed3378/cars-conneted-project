@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct post_screen_5_preview_: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             
@@ -93,7 +94,7 @@ struct post_screen_5_preview_: View {
                 
             Spacer()
             }
-        }
+        } .navigationBarHidden(true)
     }
 }
 

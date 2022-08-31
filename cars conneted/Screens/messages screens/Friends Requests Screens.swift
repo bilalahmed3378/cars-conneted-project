@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Friends_Requests_Screens: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             VStack{
@@ -106,6 +107,7 @@ struct Friends_Requests_Screens: View {
             Spacer()
         }
         .edgesIgnoringSafeArea(.top)
+        .navigationBarHidden(true)
            
         
         

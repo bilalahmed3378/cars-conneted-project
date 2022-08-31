@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Notification_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             
@@ -88,7 +89,7 @@ struct Notification_Screen: View {
             
         }
     }
-}
+} .navigationBarHidden(true)
     }
 
 struct Notification_Screen_Previews: PreviewProvider {

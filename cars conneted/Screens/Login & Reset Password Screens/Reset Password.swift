@@ -12,6 +12,9 @@ struct Reset_Password: View {
     @State  var confirmPassword = ""
     @State var isSecured = false
     @State var isSecured2 = false
+    
+    @Environment(\.presentationMode) var presentaionMode
+    
     var body: some View {
         VStack{
            
@@ -144,6 +147,7 @@ struct Reset_Password: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 

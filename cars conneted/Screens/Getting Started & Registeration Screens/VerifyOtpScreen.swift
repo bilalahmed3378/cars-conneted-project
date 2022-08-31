@@ -20,6 +20,8 @@ struct verifyOtpScreen: View {
     
    @State var toResetPassword = false
     
+    @Environment(\.presentationMode) var presentaionMode
+    
     var body: some View {
         
             
@@ -175,7 +177,7 @@ struct verifyOtpScreen: View {
         }.padding(.leading,24)
             .padding(.trailing,24)
         
-        }
+        } .navigationBarHidden(true)
     
         
     }

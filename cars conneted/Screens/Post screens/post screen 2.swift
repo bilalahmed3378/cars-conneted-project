@@ -53,7 +53,7 @@ struct post_screen_2: View {
             TextEditor(text: self.$post)
                 .font(AppFonts.regular_14)
                 .foregroundColor(AppColors.redGradientColor2)
-                .frame(minHeight: 80, idealHeight: 50 , maxHeight: 150)
+                .frame(minHeight: 80, idealHeight: 80 , maxHeight: 150)
                 .colorMultiply(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor2,lineWidth:1))
                 .padding(.leading)
@@ -63,16 +63,19 @@ struct post_screen_2: View {
                 if(self.isPhoto == false){
                     Spacer(minLength: 400)
                 }
-            Button(action: {}, label: {
-                Text("Post")
-                    .font(AppFonts.semiBold_16)
-                    .foregroundColor(.white)
-                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 327, height: 56))
-            })
+                Button(action: {}, label: {
+                    Text("Post")
+                        .font(AppFonts.semiBold_16)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .frame(width: 350, height: 70)
+                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                })
            
             
             VStack{
             HStack{
+               
                 Button(action: {
                     self.isPhoto.toggle()
                 }, label: {
@@ -85,7 +88,10 @@ struct post_screen_2: View {
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(AppColors.redGradientColor2).opacity(0.5))
                 })
+                .padding()
               
+                Spacer()
+                
                 Button(action: {}, label: {
                     VStack{
                         Image("bxs_video")
@@ -96,6 +102,8 @@ struct post_screen_2: View {
                     .padding()
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.gray).opacity(0.5))
                 })
+                
+                Spacer()
               
                 Button(action: {}, label: {
                     VStack{
@@ -108,11 +116,10 @@ struct post_screen_2: View {
                     .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.gray).opacity(0.5))
                 })
                
-                
-                
             }
-            .frame(width: 400, height: 80)
-            .padding(.top,30)
+            .frame(width: UIScreen.widthBlockSize*90, height: 80)
+            .padding(.top)
+            .padding(.bottom)
             
                 if(self.isPhoto){
             Divider()

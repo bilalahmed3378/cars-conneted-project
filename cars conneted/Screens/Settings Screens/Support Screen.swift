@@ -223,6 +223,7 @@ struct Support_Screen: View {
             .padding(.top)
             }
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

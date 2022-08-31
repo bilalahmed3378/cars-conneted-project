@@ -209,6 +209,7 @@ struct My_Support_Requests_screen: View {
             Spacer()
             
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

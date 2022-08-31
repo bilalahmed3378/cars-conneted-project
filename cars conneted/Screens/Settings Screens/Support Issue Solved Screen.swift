@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Support_Issue_Solved_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            

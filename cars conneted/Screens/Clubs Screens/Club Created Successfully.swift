@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Club_Created_Successfully: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -42,6 +43,7 @@ struct Club_Created_Successfully: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 

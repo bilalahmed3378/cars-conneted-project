@@ -182,6 +182,7 @@ struct Payment_Methods_screen: View {
             Spacer()
             
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
         
     }
 }

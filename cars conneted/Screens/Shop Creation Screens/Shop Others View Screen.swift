@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Shop_Others_View_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             
@@ -308,6 +309,7 @@ struct Shop_Others_View_Screen: View {
             
             
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
            
     }
 }

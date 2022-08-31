@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Club_chat_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State private var typemessage = ""
     var body: some View {
         ZStack{
@@ -236,6 +237,7 @@ struct Club_chat_Screen: View {
             .padding(.bottom)
         }
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
     }
 }
 

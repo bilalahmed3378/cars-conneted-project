@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Vehicle_Deleted_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -65,6 +66,7 @@ struct Vehicle_Deleted_Screen: View {
         }
         .padding(.leading)
         .padding(.trailing)
+        .navigationBarHidden(true)
     }
 }
 

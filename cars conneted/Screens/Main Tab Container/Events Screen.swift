@@ -181,6 +181,7 @@ struct Events_Screen: View {
             
            
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

@@ -10,15 +10,18 @@ import SwiftUI
 struct Getting_Started_Screen: View {
     var body: some View {
         ZStack{
+            
+            
+            
             VStack{
                 Image("unsplash_tHI0IUmtbWQ")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 420, height: 400)
+                    .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*100)
                 Spacer()
             }
             
-           
+            
             
             VStack{
                 Spacer()
@@ -67,13 +70,24 @@ struct Getting_Started_Screen: View {
                 .padding(.top)
                 .padding(.bottom)
                     
-                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: 420, height: 520))
+                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: 420, height: 520).overlay(VStack{
+                    Spacer()
+                    HStack{
+                        Spacer()
+                    Image("Group 8727")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*40)
+                    }
+                }.edgesIgnoringSafeArea(.bottom)))
                 
             }.padding()
             
             
             
+            
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
         
     }
 }

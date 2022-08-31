@@ -190,6 +190,7 @@ struct Notifications_setting: View {
             
             
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

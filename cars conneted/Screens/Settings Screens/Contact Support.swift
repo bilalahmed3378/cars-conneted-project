@@ -124,6 +124,7 @@ struct Contact_Support: View {
             
             Spacer()
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
         
     }
 }

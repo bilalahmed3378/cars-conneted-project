@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct My_Clubs_screens: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State private var searchText = ""
     var body: some View {
         ZStack{
@@ -119,6 +120,7 @@ struct My_Clubs_screens: View {
         }
         .edgesIgnoringSafeArea(.top)
         .edgesIgnoringSafeArea(.bottom)
+        .navigationBarHidden(true)
     }
 }
 

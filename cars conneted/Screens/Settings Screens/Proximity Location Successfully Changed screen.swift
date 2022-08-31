@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Proximity_Location_Successfully_Changed_screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            

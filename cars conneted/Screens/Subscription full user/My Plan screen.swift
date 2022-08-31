@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct My_Plan_screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             
@@ -173,6 +174,7 @@ struct My_Plan_screen: View {
             Spacer()
            
         }.edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
     }
 }
 

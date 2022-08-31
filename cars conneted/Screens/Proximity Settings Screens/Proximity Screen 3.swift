@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Proximity_Screen_3: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
         
@@ -65,6 +66,7 @@ struct Proximity_Screen_3: View {
             
             Spacer()
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

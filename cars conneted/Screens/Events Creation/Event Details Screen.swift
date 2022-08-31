@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Event_Details_Screen: View {
+    
+    @Environment(\.presentationMode) var presentaionMode
+    
     @State var answer = ""
     
     @State private var isClicked = false
@@ -720,6 +723,7 @@ struct Event_Details_Screen: View {
             }
                 Spacer()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

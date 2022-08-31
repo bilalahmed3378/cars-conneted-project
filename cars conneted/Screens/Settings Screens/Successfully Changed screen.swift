@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Successfully_Changed: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            

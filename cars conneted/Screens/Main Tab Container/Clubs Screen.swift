@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Clubs_Screen: View {
+    
     @State private var searchText = ""
     
     @Binding var isDrawerOpen : Bool
@@ -179,6 +180,7 @@ struct Clubs_Screen: View {
         }
         .edgesIgnoringSafeArea(.top)
         .edgesIgnoringSafeArea(.bottom)
+        .navigationBarHidden(true)
     }
 }
 

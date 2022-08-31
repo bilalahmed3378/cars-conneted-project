@@ -27,7 +27,7 @@ struct  MessagesTab: View {
                 Button(action: {
                     self.isDrawerOpen.toggle()
                 }, label: {
-                    Image("side menu icon white")
+                    Image("back icon")
                            .resizable()
                            .aspectRatio(contentMode: .fit)
                            .frame(width: 35, height: 35)

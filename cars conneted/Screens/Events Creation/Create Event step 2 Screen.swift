@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Create_Event_step_2_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State private var isClicked = false
     @State private var isClickedTwo = false
     @State private var isClickedThree = false
@@ -333,7 +334,7 @@ struct Create_Event_step_2_Screen: View {
                 
             }
            
-        }
+        } .navigationBarHidden(true)
     }
 }
 

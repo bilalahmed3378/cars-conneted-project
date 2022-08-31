@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Search_people_screen: View {
     @State private var searchText = ""
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         ZStack{
             
@@ -105,7 +106,7 @@ struct Search_people_screen: View {
                 }
             }
         }
-        }
+        } .navigationBarHidden(true)
     }
 }
 

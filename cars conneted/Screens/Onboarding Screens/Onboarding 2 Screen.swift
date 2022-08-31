@@ -9,6 +9,17 @@ import SwiftUI
 
 struct Onboarding_2_Screen: View {
     var body: some View {
+        ZStack{
+            
+            VStack{
+                Image("Group 8724")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*40)
+                Spacer()
+            }.edgesIgnoringSafeArea(.top)
+            
+            
         VStack{
             HStack{
                 
@@ -20,26 +31,37 @@ struct Onboarding_2_Screen: View {
                 })
                
                 
-            }.padding(24)
+            }.padding(.leading)
                 .padding(.trailing)
+            
+            Spacer()
             
             HStack{
                 Image("unsplash_GRV4ypBKgxE")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 377, height: 390)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*50)
             }
             
+            Spacer()
+            Group{
             HStack{
                 Text("Sell & buy classified")
                     .font(AppFonts.semiBold_22)
-            }.padding(24)
+            }.padding(.leading)
+                .padding(.trailing)
+                .padding(.bottom,10)
+            
+            Spacer()
                 
             HStack{
                 Text("Buy or Sell your cars, parts or services with cars connnected. Post your classfied to reach out million of people and get a good deal. Share your classified within groups or to your timeline.")
                     .font(AppFonts.regular_14)
                     .foregroundColor(.gray)
-            }.padding(24)
+            }.padding(.leading)
+                .padding(.trailing)
+            
+            Spacer()
             
             HStack{
                 Image("Ellipse 3")
@@ -62,6 +84,8 @@ struct Onboarding_2_Screen: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 10, height: 10)
             }.frame(width: 80, height: 10)
+            }
+            Spacer()
             
             HStack{
             Button(action: {}, label: {
@@ -69,13 +93,19 @@ struct Onboarding_2_Screen: View {
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,30)
+            .padding(.top,10)
             }
+            
             Spacer()
+            
+            
         }
+            
+        }.navigationBarHidden(true)
+        
     }
 }
 

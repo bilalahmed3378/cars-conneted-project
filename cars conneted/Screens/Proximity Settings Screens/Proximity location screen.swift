@@ -134,6 +134,7 @@ struct Proximity_location_screen: View {
             
             Spacer()
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

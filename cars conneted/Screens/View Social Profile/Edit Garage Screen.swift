@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Edit_Garage_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State var isSelected: Bool = true
     @State var garage = ""
     var body: some View {
@@ -161,7 +162,7 @@ struct Edit_Garage_Screen: View {
         .padding(.trailing)
                 
            
-        }
+        } .navigationBarHidden(true)
     }
 }
 

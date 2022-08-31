@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct New_member_request_club: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             VStack{
@@ -101,6 +102,7 @@ struct New_member_request_club: View {
             Spacer()
         }
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
            
     }
 }

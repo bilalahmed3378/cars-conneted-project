@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Invite_friends_Clubs: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State var searchText = ""
     var body: some View {
         VStack{
@@ -86,6 +87,7 @@ struct Invite_friends_Clubs: View {
             Spacer()
         }
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
     }
 }
 

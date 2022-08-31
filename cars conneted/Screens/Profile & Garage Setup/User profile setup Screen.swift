@@ -16,6 +16,8 @@ struct User_profile_setup_Screen: View {
     @State var about = ""
     @State var isSelected: Bool = true
     
+    @Environment(\.presentationMode) var presentaionMode
+    
     var body: some View {
         VStack{
            
@@ -216,6 +218,7 @@ struct User_profile_setup_Screen: View {
         }.padding(.leading,24)
             .padding(.trailing,24)
         .edgesIgnoringSafeArea(.all)
+        .navigationBarHidden(true)
            
     }
 }

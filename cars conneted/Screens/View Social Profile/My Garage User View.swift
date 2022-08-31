@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct My_Garage_User_View: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
             HStack{
@@ -67,6 +68,7 @@ struct My_Garage_User_View: View {
             
             Spacer()
         }.edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
     }
 }
 

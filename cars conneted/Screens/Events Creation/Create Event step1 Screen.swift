@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Create_Event_step1_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State var eventName = ""
     @State var eventCategory = ""
     @State var subCategory = ""
@@ -883,7 +884,7 @@ struct Create_Event_step1_Screen: View {
             .padding(.top,30)
              
             }
-        }
+        } .navigationBarHidden(true)
        
     }
 }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Classified_Vehicle_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -511,6 +512,7 @@ struct Classified_Vehicle_Screen: View {
            
             Spacer()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

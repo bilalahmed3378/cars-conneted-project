@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct User_Profile__Wall: View {
+    @Environment(\.presentationMode) var presentaionMode
     
     @State var isPostView: Int = 0
     @State var isfollowing: Bool = true
@@ -369,7 +370,7 @@ struct User_Profile__Wall: View {
                     .padding()
                     .padding(.top,-20)
                 }
-            }
+            } .navigationBarHidden(true)
         }
     }
     

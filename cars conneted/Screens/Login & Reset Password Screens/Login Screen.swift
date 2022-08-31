@@ -197,6 +197,7 @@ struct Login_Screen: View {
             
            
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

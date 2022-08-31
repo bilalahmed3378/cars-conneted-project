@@ -9,6 +9,7 @@ import SwiftUI
 import MapKit
 
 struct Club_details_member_view_Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     @State var requestAccept: Bool = false
     
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.5, longitude: -0.12), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
@@ -293,6 +294,7 @@ struct Club_details_member_view_Screen: View {
         Spacer()
             
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Forgot_Password_Screen: View {
     @State  var email = ""
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         ZStack{
             
@@ -99,7 +100,7 @@ struct Forgot_Password_Screen: View {
         .padding(.trailing)
                 
            
-        }
+        } .navigationBarHidden(true)
     }
 }
 

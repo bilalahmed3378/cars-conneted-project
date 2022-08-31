@@ -160,6 +160,7 @@ struct Help_Screen: View {
             
             Spacer()
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

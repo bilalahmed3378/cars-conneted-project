@@ -11,6 +11,7 @@ struct Post_Product_Parts_Screen: View {
     @State private var name = ""
     @State private var email = ""
     @State private var phone = ""
+    @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
            
@@ -259,6 +260,7 @@ struct Post_Product_Parts_Screen: View {
            
             Spacer()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

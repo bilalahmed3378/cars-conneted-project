@@ -127,6 +127,7 @@ struct FeedBack_Screen: View {
             Spacer()
             
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
     }
 }
 

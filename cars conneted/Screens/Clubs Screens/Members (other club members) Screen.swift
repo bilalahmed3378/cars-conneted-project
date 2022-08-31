@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Members__other_club_members__Screen: View {
+    @Environment(\.presentationMode) var presentaionMode
     
     @State private var searchText = ""
     
@@ -97,6 +98,7 @@ struct Members__other_club_members__Screen: View {
             
          Spacer()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

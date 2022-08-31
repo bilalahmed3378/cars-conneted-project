@@ -10,6 +10,7 @@ import SwiftUI
 import MapKit
 
 struct Club_Admin_View: View {
+    @Environment(\.presentationMode) var presentaionMode
     
     @State var requestAccept: Bool = false
     
@@ -312,6 +313,7 @@ struct Club_Admin_View: View {
         Spacer()
             
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 

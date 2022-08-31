@@ -82,6 +82,7 @@ struct Support_Issue_Details_Screen: View {
          
             }
         }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
         
     }
 }

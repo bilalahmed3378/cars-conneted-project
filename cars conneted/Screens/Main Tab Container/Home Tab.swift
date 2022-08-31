@@ -358,6 +358,7 @@ struct HomeTab: View {
             }
             .edgesIgnoringSafeArea(.top)
             .edgesIgnoringSafeArea(.bottom)
+            .navigationBarHidden(true)
         
         
     }

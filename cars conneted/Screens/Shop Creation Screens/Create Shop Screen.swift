@@ -17,6 +17,8 @@ struct Create_Shop_Screen: View {
     @State  var website = ""
     @State var description = ""
     
+    @Environment(\.presentationMode) var presentaionMode
+    
     var body: some View {
         
             VStack{
@@ -274,6 +276,7 @@ struct Create_Shop_Screen: View {
             }
            
             }.edgesIgnoringSafeArea(.top)
+            .navigationBarHidden(true)
         
     }
 }

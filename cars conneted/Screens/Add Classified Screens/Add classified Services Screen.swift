@@ -27,6 +27,7 @@ struct Add_classified_Services_Screen: View {
     @State private var price = ""
     @State private var description = ""
     @State private var location = ""
+    @Environment(\.presentationMode) var presentaionMode
     
     var body: some View {
         VStack{
@@ -736,6 +737,7 @@ struct Add_classified_Services_Screen: View {
            
             Spacer()
         }.edgesIgnoringSafeArea(.all)
+            .navigationBarHidden(true)
     }
 }
 
