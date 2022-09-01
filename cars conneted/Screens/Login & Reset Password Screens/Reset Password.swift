@@ -42,24 +42,28 @@ struct Reset_Password: View {
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     .mask( Text("Reset Credentials")
                         .font(AppFonts.semiBold_24)
-                        .fontWeight(.semibold))
+                       )
                 
                 Spacer()
             }
-            .padding(.bottom)
-            .padding(.top)
+            .padding()
             
             
-            
+            VStack(alignment: .leading){
+                HStack{
             Text("A strong password is recommended. Dont use a password that you have already used.")
                 .font(AppFonts.regular_14)
-               
-               
+                    Spacer()
+                }
+            }.padding(.leading)
+                .padding(.trailing)
                 
             
             Text("Password")
               .padding(.top,20)
               .frame(maxWidth: .infinity, alignment: .leading)
+              .padding(.leading)
+              .padding(.trailing)
              
             
             HStack{
@@ -67,7 +71,7 @@ struct Reset_Password: View {
               SecureField("***********", text: $password)
                 .autocapitalization(.none)
                 .padding(.vertical, 10)
-                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                .background(Rectangle().frame(height: 1).padding(.top, 30))
                 .overlay(HStack{
                   Spacer()
                   Button(action: {
@@ -82,7 +86,7 @@ struct Reset_Password: View {
               TextField("************", text: $password)
                 .autocapitalization(.none)
                 .padding(.vertical, 10)
-                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                .background(Rectangle().frame(height: 1).padding(.top, 30))
                 .overlay(HStack{
                   Spacer()
                   Button(action: {
@@ -94,17 +98,22 @@ struct Reset_Password: View {
                 })
             }
                 
-        }
+        } .padding(.leading)
+                .padding(.trailing)
             
             Text("Confirm Password")
-              .padding(.top,20)
+              .padding(.top,10)
               .frame(maxWidth: .infinity, alignment: .leading)
+              .padding(.leading)
+              .padding(.trailing)
               
+            HStack{
+                
             if isSecured2 {
               SecureField("***********", text: $confirmPassword)
                 .autocapitalization(.none)
                 .padding(.vertical, 15)
-                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                .background(Rectangle().frame(height: 1).padding(.top, 30))
                 
                 .overlay(HStack{
                   Spacer()
@@ -119,7 +128,7 @@ struct Reset_Password: View {
               TextField("**********", text: $confirmPassword)
                 .autocapitalization(.none)
                 .padding(.vertical, 10)
-                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                .background(Rectangle().frame(height: 1).padding(.top, 30))
                 .overlay(HStack{
                   Spacer()
                   Button(action: {
@@ -130,23 +139,25 @@ struct Reset_Password: View {
                   }
                 })
             }
-           
+                
+            }
+            .padding(.leading)
+            .padding(.trailing)
+            
             Button(action: {}, label: {
                 Text("Save Password")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,30)
+            .padding(.top)
                 
             
             
                 Spacer()
         }
-        .padding(.leading)
-        .padding(.trailing)
         .navigationBarHidden(true)
     }
 }

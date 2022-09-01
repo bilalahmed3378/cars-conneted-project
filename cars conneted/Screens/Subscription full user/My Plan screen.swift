@@ -10,6 +10,7 @@ import SwiftUI
 struct My_Plan_screen: View {
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
+        ScrollView(.vertical, showsIndicators: false){
         VStack{
             
             HStack{
@@ -175,6 +176,7 @@ struct My_Plan_screen: View {
            
         }.edgesIgnoringSafeArea(.bottom)
             .navigationBarHidden(true)
+        }
     }
 }
 

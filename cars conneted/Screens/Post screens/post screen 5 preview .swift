@@ -52,21 +52,26 @@ struct post_screen_5_preview_: View {
             .padding()
             .padding(.leading,5)
             
+                VStack(alignment: .leading){
+                    HStack{
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Enim fermentum tellus tellus aliquam arcu praesent.")
                     .font(AppFonts.regular_12)
                 .foregroundColor(.gray)
                 .padding(.leading,20)
                 .padding(.trailing,20)
                 .multilineTextAlignment(.leading)
-            
+                        Spacer()
+                    }
+                }
                
                     LazyVStack{
                         ForEach(0...1,id:\.self){ Index in
                             Image("unsplash_YApiWyp0lqo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: UIScreen.screenWidth-40, height: 250)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
                                 .padding(.top,20)
+                                .padding(.bottom,10)
                                
                                 
                     
@@ -84,10 +89,10 @@ struct post_screen_5_preview_: View {
                             .foregroundColor(.white)
                             .font(AppFonts.semiBold_16)
                             .padding()
-                            .padding(.trailing,155)
-                            .padding(.leading,155)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                            .padding()
+                            
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
+                            .padding(.top)
+                            
                     }
                 })
                 

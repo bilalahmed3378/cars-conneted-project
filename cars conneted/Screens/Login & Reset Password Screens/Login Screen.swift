@@ -47,29 +47,27 @@ struct Login_Screen: View {
                                 .font(AppFonts.regular_14)
                         }
                        
-                        
-                        
-                        
                         Text("E-Mail")
-                          .padding(.top,20)
+                          .padding(.top,10)
                           .frame(maxWidth: .infinity, alignment: .leading)
+                        
                         
                           
                         TextField("Email",text:$email)
                           .padding(.vertical, 10)
                           .autocapitalization(.none)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .foregroundColor(.black)
                           
                       Text("Password")
-                        .padding(.top,20)
+                        .padding(.top,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                       if isSecured {
                         SecureField("Enter Your Password", text: $password)
                           .autocapitalization(.none)
                           .padding(.vertical, 10)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .overlay(HStack{
                             Spacer()
                             Button(action: {
@@ -83,7 +81,7 @@ struct Login_Screen: View {
                         TextField("Enter Your Password", text: $password)
                           .autocapitalization(.none)
                           .padding(.vertical, 10)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .overlay(HStack{
                             Spacer()
                             Button(action: {
@@ -101,10 +99,15 @@ struct Login_Screen: View {
                             Text("Forget Password?")
                                 .font(AppFonts.regular_12)
                             
-                            Text("Reset")
-                                .font(AppFonts.medium_14)
-                                .foregroundColor(AppColors.redGradientColor1)
-                        }.padding(.top)
+                            NavigationLink(destination: Reset_Password(), label: {
+                                
+                            })
+                                Text("Reset")
+                                    .font(AppFonts.medium_14)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                            
+                          
+                        }
                         
                       
                         Group{
@@ -115,11 +118,12 @@ struct Login_Screen: View {
                                 .font(AppFonts.semiBold_16)
                                 .fontWeight(.medium)
                                 .foregroundColor(.white)
-                                .frame(width: UIScreen.widthBlockSize*85, height: 70)
+                                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*7)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         })
-                        .padding(.top)
-                        .padding(.bottom)
+                        .padding(.top,10)
+                        .padding(.bottom,10)
+                        
                             
                             Spacer()
                         }
@@ -130,14 +134,16 @@ struct Login_Screen: View {
                             Text("Don't have an account?")
                                 .font(AppFonts.regular_12)
                                 
-                            
-                            Text("Register")
-                                .font(AppFonts.medium_14)
-                                .foregroundColor(AppColors.redGradientColor1)
-                            
+                            NavigationLink(destination: SignUp_Screen(), label: {
+                                Text("Register")
+                                    .font(AppFonts.medium_14)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                
+                            })
+                          
                             Spacer()
                             
-                        }
+                        }.padding(.bottom)
                         
                         HStack{
                       Spacer()
@@ -153,8 +159,8 @@ struct Login_Screen: View {
                     Spacer()
                         }
                         .padding(20)
-                        .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: 70))
-                        .padding(.top,20)
+                        .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*7))
+                       
                             
                             HStack{
                           Spacer()
@@ -170,8 +176,8 @@ struct Login_Screen: View {
                         Spacer()
                             }
                             .padding(20)
-                            .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: 70))
-                            .padding(.top,20)
+                            .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*7))
+                           
                             
                             
                             

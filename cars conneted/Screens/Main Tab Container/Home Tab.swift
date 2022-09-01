@@ -259,10 +259,6 @@ struct HomeTab: View {
                                              .padding(.leading)
                                 }
                                
-                                   
-                                
-                               
-                                
                                 Divider()
                                 Group{
                                 HStack{

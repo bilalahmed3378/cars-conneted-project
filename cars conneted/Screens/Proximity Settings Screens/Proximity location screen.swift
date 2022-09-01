@@ -34,6 +34,7 @@ struct Proximity_location_screen: View {
                 Text("Proximity Location")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -69,14 +70,14 @@ struct Proximity_location_screen: View {
                 Image("Location Precise")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120)
+                        .frame(width: UIScreen.widthBlockSize*35, height: 120)
                    
                     
                     Text("Precise")
                         .font(AppFonts.semiBold_16)
                     
                 }
-                .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2).frame(width: 150, height: 190))
+                .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2).frame(width: UIScreen.widthBlockSize*45, height: 190))
                 
                 
                 Spacer()
@@ -87,7 +88,7 @@ struct Proximity_location_screen: View {
                 Image("Location Approximate")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 120, height: 120)
+                        .frame(width: UIScreen.widthBlockSize*35, height: 120)
                     
                     Text("Approximate")
                         .font(AppFonts.semiBold_16)
@@ -96,7 +97,8 @@ struct Proximity_location_screen: View {
                 
                 Spacer()
             }
-           
+            .padding(.leading)
+            .padding(.trailing)
             .padding(.top,25)
             
             
@@ -120,15 +122,16 @@ struct Proximity_location_screen: View {
                 
             } .padding(15)
                 .background(RoundedRectangle(cornerRadius: 25).strokeBorder(.gray))
-                .padding(24)
-                .padding(.top,20)
+                .padding(.leading)
+                .padding(.trailing)
+                .padding(.top,30)
             
             
             
             Text("Confirm")
                 .font(AppFonts.semiBold_16)
                 .foregroundColor(.white)
-                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 350, height: 70))
+                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
                 .padding(.top,30)
             
             

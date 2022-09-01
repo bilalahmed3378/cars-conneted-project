@@ -29,10 +29,18 @@ struct Add_your_Car_Screen: View {
                         
                         Spacer()
                         
-                    }.padding()
+                    }
+                    
+                    HStack{
+                        Spacer()
+                        Image("6-red-r8-audi-png-car-image 1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*30)
+                    }
                     
                     Spacer()
-                }.edgesIgnoringSafeArea(.top)
+                }.edgesIgnoringSafeArea(.all)
                     
             ScrollView(.vertical, showsIndicators: false){
                 VStack(alignment: .leading){
@@ -54,24 +62,27 @@ struct Add_your_Car_Screen: View {
                     }
                     .padding()
                 
+                    
+                    VStack(alignment: .leading){
+                        
                 HStack{
                     Text("Add your Car")
                         .font(AppFonts.semiBold_24)
-                        .fontWeight(.semibold)
+                        
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Add your Car")
                             .font(AppFonts.semiBold_24)
-                            .fontWeight(.semibold))
+                            )
                     
                     Spacer()
                 }
-                .padding()
-                
-                
+               
                 Text("Add your car and provide us required deatils to setup in your garage")
                     .font(AppFonts.regular_14)
-                    .padding(.leading,10)
-                    .padding(.trailing,10)
+                    .padding(.top)
+                        
+                    }.padding(.leading)
+                        .padding(.trailing)
                     
                     Group{
                     VStack{
@@ -79,71 +90,62 @@ struct Add_your_Car_Screen: View {
                 Text("Brand")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                 .padding(.bottom,-5)
                 
                   
                 TextField("Honda",text:$brand)
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                         
-                    }
+                    }.padding(.leading)
+                            .padding(.trailing)
                     
                     VStack{
                         
                 Text("Model")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                 .padding(.bottom,-5)
                 
                   
                 TextField("Civic",text:$model)
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                         
-                    }
+                    }.padding(.leading)
+                            .padding(.trailing)
                     
                     VStack{
                         
                 Text("Color")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                    .padding(.bottom,-5)
                 
                   
                 TextField("Black",text:$color)
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                        
-                    }
+                       
+                    }.padding(.leading)
+                            .padding(.trailing)
                     
                     VStack{
                         
                 Text("Engine")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -151,20 +153,17 @@ struct Add_your_Car_Screen: View {
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                         
-                    }
+                    }.padding(.leading)
+                            .padding(.trailing)
                     
                     VStack{
                         
                 Text("Type")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -172,10 +171,8 @@ struct Add_your_Car_Screen: View {
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .overlay(HStack{
                     Spacer()
                     Button(action: {
@@ -188,15 +185,14 @@ struct Add_your_Car_Screen: View {
                     }.padding()
                   })
                         
-                    }
+                    }.padding(.leading)
+                            .padding(.trailing)
                     
                     VStack{
                         
                 Text("Year")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -204,10 +200,8 @@ struct Add_your_Car_Screen: View {
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .overlay(HStack{
                     Spacer()
                     Button(action: {
@@ -220,7 +214,8 @@ struct Add_your_Car_Screen: View {
                     }.padding()
                   })
                         
-                    }
+                    }.padding(.leading)
+                            .padding(.trailing)
                         
                     }
                     
@@ -229,8 +224,6 @@ struct Add_your_Car_Screen: View {
                 Text("Description")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -238,18 +231,14 @@ struct Add_your_Car_Screen: View {
                     .foregroundColor(AppColors.redGradientColor1)
                   .padding(.vertical, 10)
                   .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+                  .background(Rectangle().frame(height: 1).padding(.top, 30))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                         
-                    }
+                    }.padding(.leading)
+                        .padding(.trailing)
                     
                     HStack{
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
+                        Spacer()
                         
                         Image("unsplash_eqW1MPinEV4")
                             .resizable()
@@ -261,10 +250,17 @@ struct Add_your_Car_Screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.widthBlockSize*30, height: 100)
                         
+                        Image("unsplash_eqW1MPinEV4")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
+                        
+                        Spacer()
                     }.padding(.top)
                         .padding(.bottom)
                     
                     HStack{
+                        Spacer()
                         Image("unsplash_eqW1MPinEV4")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -280,27 +276,29 @@ struct Add_your_Car_Screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: UIScreen.widthBlockSize*30, height: 100)
                         
+                        Spacer()
                     }.padding(.top)
                         .padding(.bottom)
                     
                     
-                    
+                    HStack{
+                        Spacer()
                 Button(action: {}, label: {
                     Text("Save to Garage")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
-                .padding(.top,30)
-                    
+                .padding(.top)
+                        Spacer()
+                    }
                 
                 
                     Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
+                }
+            
                     
             }
            

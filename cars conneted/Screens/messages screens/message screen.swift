@@ -10,6 +10,7 @@ import SwiftUI
 struct personal_message_screen: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var typemessage = ""
+    @State var addItems: Bool = false
     var body: some View {
         ZStack{
             
@@ -55,7 +56,7 @@ struct personal_message_screen: View {
                         Image("fluent_call-24-filled")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
+                            .frame(width: 30, height: 30)
                         
                         
                     }.padding(.leading,24)
@@ -143,18 +144,130 @@ struct personal_message_screen: View {
                 
                 //bottom bar
                 HStack{
-                    
-                    Image("Add icon")
-                        .resizable()
-                        .frame(width: 20, height: 20 )
-                        .padding(.leading,20)
+                    Button(action: {
+                        self.addItems = true
+                    }, label: {
+                        Image("Add icon")
+                            .resizable()
+                            .frame(width: 20, height: 20 )
+                            .padding(.leading,20)
+                            .sheet(isPresented: $addItems){
+                                VStack{
+                                    Spacer()
+                                    
+                                   
+                                    Button(action: {
+                                        self.addItems = false
+                                       
+                                    }){
+                                        
+                                             HStack{
+                                                 Image("Add post icon red")
+                                                     .padding(.trailing)
+                                                 
+                                                 Text("Camera")
+                                                     .foregroundColor(AppColors.redGradientColor1)
+                                                     .font(AppFonts.medium_16)
+                                                 Spacer()
+                                             }.padding()
+                                                 .padding(.leading)
+                                    }
+                                   
+                                    Divider()
+                                    Group{
+                                    HStack{
+                                        Image("photo video red")
+                                            .padding(.trailing)
+                                        
+                                        Text("Photo & Video Library")
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .font(AppFonts.medium_16)
+                                        Spacer()
+                                    }.padding()
+                                            .padding(.leading)
+                                    
+                                    Divider()
+                                    
+                                    HStack{
+                                        Image("document red")
+                                            .padding(.trailing)
+                                        
+                                        Text("Document")
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .font(AppFonts.medium_16)
+                                        Spacer()
+                                    }.padding()
+                                            .padding(.leading)
+                                    
+                                    Divider()
+                                    
+                                    HStack{
+                                        Image("location red")
+                                            .padding(.trailing)
+                                        
+                                        Text("Location")
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .font(AppFonts.medium_16)
+                                        Spacer()
+                                    }.padding()
+                                            .padding(.leading)
+                                    
+                                    Divider()
+                                    
+                                    HStack{
+                                        Image("Icon")
+                                            .padding(.trailing)
+                                        
+                                        Text("Contact")
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .font(AppFonts.medium_16)
+                                        Spacer()
+                                    }.padding()
+                                            .padding(.leading)
+                                    }
+                                    Divider()
+                                    
+                                    Spacer()
+                                    
+                                    HStack{
+                                        Button(action: {
+                                            self.addItems = false
+                                        }, label: {
+                                            Text("Cancel")
+                                                .font(AppFonts.semiBold_16)
+                                                .fontWeight(.medium)
+                                                .foregroundColor(.white)
+                                                .frame(width: 350, height: 70)
+                                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                        })
+                                        
+                                        
+                                    }.padding()
+
+                                    
+                                    
+                                    
+                                }
+                            }
+                    })
+                   
                     
                     
                     VStack{
                         
                         TextEditor(text: self.$typemessage)
-                            .frame( height: 50 )
-                            .colorMultiply(AppColors.redGradientColor2)
+                            .frame( height: 0 )
+                            .font(AppFonts.regular_14)
+                            .foregroundColor(.gray)
+                            .frame(minHeight: 40, idealHeight: 40 , maxHeight: 40)
+                            .colorMultiply(.white)
+                            .overlay(HStack{
+                                Text("Write message")
+                                    .font(AppFonts.regular_14)
+                                    .foregroundColor(.gray)
+                                    .padding(.leading)
+                                Spacer()
+                            })
                             
                     }
                     .background(RoundedRectangle(cornerRadius: 25).fill(.white))
@@ -185,3 +298,7 @@ struct personal_message_screen_Previews: PreviewProvider {
         personal_message_screen()
     }
 }
+
+   
+
+

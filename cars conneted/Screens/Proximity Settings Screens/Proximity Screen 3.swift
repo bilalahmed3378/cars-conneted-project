@@ -31,7 +31,7 @@ struct Proximity_Screen_3: View {
                 Text("Proximity Location")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
-                
+                    .offset(x: -15)
                 Spacer()
                 
                 

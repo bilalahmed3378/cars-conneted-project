@@ -13,6 +13,8 @@ struct  MessagesTab: View {
     
     @Binding var isDrawerOpen : Bool
     
+   
+    
     init(isDrawerOpen : Binding<Bool>){
         self._isDrawerOpen = isDrawerOpen
     }
@@ -257,4 +259,7 @@ struct  MessagesTab: View {
         }
 }
 
+
+
+  
 

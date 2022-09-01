@@ -53,14 +53,14 @@ struct Password_Changed_Screen: View {
           Image("ant-design_check-circle-filled")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 300)
+                .frame(width: UIScreen.widthBlockSize*70, height: UIScreen.heightBlockSize*40)
             
             Button(action: {}, label: {
                 Text("Back to Login")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)
@@ -69,9 +69,7 @@ struct Password_Changed_Screen: View {
             
                 Spacer()
         }
-        .padding(.leading)
-        .padding(.trailing)
-        .navigationBarHidden(true)
+       .navigationBarHidden(true)
     }
 }
 

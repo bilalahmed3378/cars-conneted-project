@@ -22,11 +22,14 @@ struct Forgot_Password_Screen: View {
                     .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*50)
                     
                     Spacer()
+                  
                     
-                }.padding()
+                }
                 
                 Spacer()
+              
             }.edgesIgnoringSafeArea(.top)
+           
                 
         VStack{
            
@@ -60,34 +63,39 @@ struct Forgot_Password_Screen: View {
             }
             .padding()
             
-            
+            VStack(alignment: .leading){
+                HStack{
             Text("Dont remember your password? We have made it easier to recover your account password.")
                 .font(AppFonts.regular_14)
-                .padding(.leading,10)
-                .padding(.trailing,10)
-                
+               
+                    
+                    Spacer()
+                }.padding(.leading)
+                    .padding(.trailing)
+            }
+            
             Text("E-Mail")
-              .padding(.top,20)
+              .padding(.top)
               .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.leading,10)
-              .padding(.trailing,10)
+              .padding(.leading)
+              .padding(.trailing)
             
               
             TextField("Email",text:$email)
                 .foregroundColor(AppColors.redGradientColor1)
               .padding(.vertical, 10)
               .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
+              .background(Rectangle().frame(height: 1).padding(.top, 30))
               .foregroundColor(.black)
-              .padding(.leading,10)
-              .padding(.trailing,10)
+              .padding(.leading)
+              .padding(.trailing)
        
             Button(action: {}, label: {
                 Text("Send OTP")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)
@@ -96,11 +104,11 @@ struct Forgot_Password_Screen: View {
             
                 Spacer()
         }
-        .padding(.leading)
-        .padding(.trailing)
+       
                 
            
         } .navigationBarHidden(true)
+            
     }
 }
 

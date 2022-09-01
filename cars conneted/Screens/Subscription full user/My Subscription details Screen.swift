@@ -10,9 +10,10 @@ import SwiftUI
 struct My_Subscription_details_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
+        ScrollView(.vertical, showsIndicators: false){
         VStack{
             HStack{
-                Image("Group")
+                Image("Icons-2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30, height: 30)
@@ -21,6 +22,7 @@ struct My_Subscription_details_Screen: View {
                 
                 Text("Membership")
                     .font(AppFonts.medium_20)
+                    .offset(x: -15)
                 
                 Spacer()
             }.padding(24)
@@ -172,6 +174,7 @@ struct My_Subscription_details_Screen: View {
             
             Spacer()
         } .navigationBarHidden(true)
+        }
     }
 }
 

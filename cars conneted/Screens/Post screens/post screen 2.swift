@@ -61,14 +61,14 @@ struct post_screen_2: View {
                 .padding(.bottom,40)
             
                 if(self.isPhoto == false){
-                    Spacer(minLength: 400)
+                    Spacer(minLength: 100)
                 }
                 Button(action: {}, label: {
                     Text("Post")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: 350, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
            
@@ -164,7 +164,7 @@ struct post_screen_2: View {
                     .aspectRatio(contentMode: .fit)
             
             }
-            .frame(width: 328, height: 106)
+            .frame(width: UIScreen.widthBlockSize*90, height: 106)
           
             
             HStack{
@@ -181,7 +181,7 @@ struct post_screen_2: View {
                     .aspectRatio(contentMode: .fit)
             
             }
-            .frame(width: 328, height: 106)
+            .frame(width: UIScreen.widthBlockSize*90, height: 106)
           
             }
             HStack{
@@ -198,7 +198,7 @@ struct post_screen_2: View {
                     .aspectRatio(contentMode: .fit)
             
             }
-            .frame(width: 328, height: 106)
+            .frame(width: UIScreen.widthBlockSize*90, height: 106)
           
             }
             }

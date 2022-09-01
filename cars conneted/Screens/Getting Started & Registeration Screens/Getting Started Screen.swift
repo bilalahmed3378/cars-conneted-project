@@ -21,8 +21,6 @@ struct Getting_Started_Screen: View {
                 Spacer()
             }
             
-            
-            
             VStack{
                 Spacer()
                 
@@ -30,8 +28,8 @@ struct Getting_Started_Screen: View {
                     
                 HStack{
                     Image("Ellipse 11")
-                }
-                
+                }.padding()
+               
                 HStack{
                     Text("Cars Connected")
                         .font(AppFonts.semiBold_22)
@@ -47,30 +45,32 @@ struct Getting_Started_Screen: View {
                     Text("Cars connected a social platform that connects people to post, buy and sell, create clubs and post events. ")
                         .font(AppFonts.regular_14)
                         .foregroundColor(.gray)
-                }.padding()
+                }.padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
                 
                 Button(action: {}, label: {
                     Text("SignUp")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: 350, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
-                .padding(.top,30)
+                .padding(.top,10)
                 
                 Button(action: {}, label: {
                     Text("Login")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: 350, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
-                .padding(.top)
-                .padding(.bottom)
+                .padding(.top,10)
+                .padding(.bottom,30)
                     
-                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: 420, height: 520).overlay(VStack{
+                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*65).overlay(VStack{
                     Spacer()
                     HStack{
                         Spacer()
@@ -81,7 +81,7 @@ struct Getting_Started_Screen: View {
                     }
                 }.edgesIgnoringSafeArea(.bottom)))
                 
-            }.padding()
+            }
             
             
             

@@ -225,7 +225,7 @@ struct Car_Specification: View {
                 VStack{
                 HStack{
                 TextEditor(text: self.$comment)
-                    .font(AppFonts.regular_14)
+                       .font(AppFonts.regular_14)
                     .foregroundColor(.gray)
                     .frame(minHeight: 40, idealHeight: 40 , maxHeight: 40)
                     .colorMultiply(.white)

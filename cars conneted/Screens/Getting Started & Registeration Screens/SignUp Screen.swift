@@ -12,6 +12,7 @@ struct SignUp_Screen: View {
     @State  var password = ""
     @State  var confirmPassword = ""
     @State  var isSecured = false
+    @State  var isSecured2 = false
     var body: some View {
         ZStack{
           
@@ -34,7 +35,7 @@ struct SignUp_Screen: View {
                             .mask( Text("Signup")
                                 .font(AppFonts.semiBold_22)
                                 .fontWeight(.semibold))
-                            .padding(.bottom)
+                            .padding(.bottom,10)
                             Spacer()
                             
                         }
@@ -42,29 +43,27 @@ struct SignUp_Screen: View {
                   
                         
                         HStack{
-                            Text("Welcome to Cars Connected. Please provide your details to create your account today.")
-                                .font(AppFonts.regular_14)
+                            Text("Welcome to Cars Connected.")
+                                .font(AppFonts.regular_12)
                         }
                        
-                        
-                        
-                        
                         Text("E-Mail")
                             .font(AppFonts.regular_12)
-                          .padding(.top,20)
+                          .padding(.top,10)
                           .frame(maxWidth: .infinity, alignment: .leading)
+                         
                         
                           
                         TextField("Email",text:$email)
                             .font(AppFonts.regular_14)
                           .padding(.vertical, 10)
                           .autocapitalization(.none)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .foregroundColor(.black)
                           
                       Text("Password")
                             .font(AppFonts.regular_12)
-                        .padding(.top,20)
+                        .padding(.top,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                       if isSecured {
@@ -72,7 +71,7 @@ struct SignUp_Screen: View {
                           .autocapitalization(.none)
                           .font(AppFonts.regular_14)
                           .padding(.vertical, 10)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .overlay(HStack{
                             Spacer()
                             Button(action: {
@@ -87,7 +86,7 @@ struct SignUp_Screen: View {
                           .autocapitalization(.none)
                           .font(AppFonts.regular_14)
                           .padding(.vertical, 10)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .overlay(HStack{
                             Spacer()
                             Button(action: {
@@ -100,19 +99,19 @@ struct SignUp_Screen: View {
                       }
                         
                         Text("Confirm Password")
-                            .font(AppFonts.regular_12)
-                          .padding(.top,20)
+                            .font(AppFonts.regular_14)
+                          .padding(.top,10)
                           .frame(maxWidth: .infinity, alignment: .leading)
-                        if isSecured {
+                        if isSecured2 {
                           SecureField("Set Password", text: $confirmPassword)
                                 .font(AppFonts.regular_14)
                             .autocapitalization(.none)
                             .padding(.vertical, 10)
-                            .background(Rectangle().frame(height: 1).padding(.top, 40))
+                            .background(Rectangle().frame(height: 1).padding(.top, 30))
                             .overlay(HStack{
                               Spacer()
                               Button(action: {
-                                isSecured = !isSecured
+                                isSecured2 = !isSecured2
                               }) {
                                 Image(systemName: self.isSecured ? "eye.slash" : "eye")
                                   .accentColor(.gray)
@@ -123,13 +122,13 @@ struct SignUp_Screen: View {
                                 .font(AppFonts.regular_14)
                             .autocapitalization(.none)
                             .padding(.vertical, 10)
-                            .background(Rectangle().frame(height: 1).padding(.top, 40))
+                            .background(Rectangle().frame(height: 1).padding(.top, 30))
                             .overlay(HStack{
                               Spacer()
                               Button(action: {
-                                isSecured = !isSecured
+                                isSecured2 = !isSecured2
                               }) {
-                                Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                                Image(systemName: self.isSecured2 ? "eye.slash" : "eye")
                                   .accentColor(.gray)
                               }
                             })
@@ -142,7 +141,7 @@ struct SignUp_Screen: View {
                                 .font(AppFonts.semiBold_16)
                                 .fontWeight(.medium)
                                 .foregroundColor(.white)
-                                .frame(width: UIScreen.widthBlockSize*80, height: 70)
+                                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*6)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         })
                         .padding(.top)
@@ -157,57 +156,64 @@ struct SignUp_Screen: View {
                             Text("Already have an account?")
                                 .font(AppFonts.regular_12)
                                 
-                            
-                            Text("Login")
-                                .font(AppFonts.medium_14)
-                                .foregroundColor(AppColors.redGradientColor1)
+                            Button(action: {}, label: {
+                                Text("Login")
+                                    .font(AppFonts.medium_14)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                            })
+                          
                             
                             Spacer()
                             
                         }
                         
-                        HStack{
-                      Spacer()
-                            Image("google icons")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                                .padding(.trailing)
+                            Button(action: {}, label: {
+                                HStack{
+                              Spacer()
+                                    Image("google icons")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .padding(.trailing)
+                                    
+                                  Text("Login With Google")
+                                        .font(AppFonts.medium_14)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                            Spacer()
+                                }
+                                .padding(20)
+                                .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*6))
+                               
+                            })
+                      
+                            Button(action: {}, label: {
+                                HStack{
+                              Spacer()
+                                    Image("facebook icon")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 30, height: 30)
+                                        .padding(.trailing)
+                                    
+                                  Text("Login With Facebook")
+                                        .font(AppFonts.medium_14)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                            Spacer()
+                                }
+                                .padding(20)
+                                .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*6))
+                            })
+                           
                             
-                          Text("Login With Google")
-                                .font(AppFonts.medium_14)
-                            .foregroundColor(AppColors.redGradientColor1)
-                    Spacer()
-                        }
-                        .padding(20)
-                        .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: 70))
-                        .padding(.top,20)
-                            
-                            HStack{
-                          Spacer()
-                                Image("facebook icon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                                    .padding(.trailing)
-                                
-                              Text("Login With Facebook")
-                                    .font(AppFonts.medium_14)
-                                .foregroundColor(AppColors.redGradientColor1)
-                        Spacer()
-                            }
-                            .padding(20)
-                            .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: 70))
-                            .padding(.top,20)
                             
                             
-                            
+                           
                         }
                         
                         
                     }.padding()
-                        .padding(.top,30)
-                        .padding(.bottom,30)
+                        .padding(.top,20)
+                        .padding(.bottom,20)
                         .background(RoundedRectangle(cornerRadius: 15).fill(.white).shadow(radius: 10))
                         .padding()
                     

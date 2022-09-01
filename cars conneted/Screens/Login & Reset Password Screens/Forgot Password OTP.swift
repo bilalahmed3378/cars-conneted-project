@@ -19,6 +19,23 @@ struct Forgot_Password_OTP: View {
     var body: some View {
         ZStack{
       
+            VStack{
+                HStack{
+                    
+                Image("Group 2-2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*50)
+                    
+                    Spacer()
+                  
+                    
+                }
+                
+                Spacer()
+              
+            }.edgesIgnoringSafeArea(.top)
+           
             
         
         VStack(alignment: .leading){
@@ -144,8 +161,8 @@ struct Forgot_Password_OTP: View {
                     Spacer()
                 }
                 .padding(20)
-                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: 70))
-                .padding(.top,49)
+                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
+                .padding(.top)
                 
             }
             
@@ -161,7 +178,7 @@ struct Forgot_Password_OTP: View {
             
                 Spacer()
                 
-            }.padding(.top,30)
+            }.padding(.top)
             
             
                 Spacer()

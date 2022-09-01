@@ -32,6 +32,7 @@ struct Post_screen_3: View {
             .padding()
             .padding(.trailing,20)
             
+            ScrollView(.vertical, showsIndicators: false){
             HStack{
                 Text("What is in your mind?")
                     .font(AppFonts.regular_12)
@@ -42,11 +43,12 @@ struct Post_screen_3: View {
             TextEditor(text: self.$post)
                 .font(AppFonts.regular_14)
                 .foregroundColor(AppColors.redGradientColor2)
-                .frame(minHeight: 50, idealHeight: 50 , maxHeight: 150)
+                .frame(minHeight: 150, idealHeight: 150 , maxHeight: 150)
                 .colorMultiply(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor2,lineWidth:1))
                 .padding(.leading)
                 .padding(.trailing)
+                .padding(.bottom)
             
             Button(action: {
                 self.addLocation = true
@@ -57,10 +59,7 @@ struct Post_screen_3: View {
                     Text("Add Location?")
                         .foregroundColor(AppColors.redGradientColor1)
                         .font(AppFonts.semiBold_16)
-                        .padding()
-                        .padding(.trailing,120)
-                        .padding(.leading,120)
-                        .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
+                       .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
                         .padding()
                 }
                 }
@@ -74,7 +73,7 @@ struct Post_screen_3: View {
             }
             .padding()
             .padding(.leading,5)
-            .padding(.bottom,-5)
+            .padding(.bottom,-20)
             .padding(.top,10)
             
            
@@ -105,7 +104,7 @@ struct Post_screen_3: View {
             }
             
             
-            ScrollView{
+          
                 Image("unsplash_YApiWyp0lqo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -170,9 +169,7 @@ struct Post_screen_3: View {
                             .foregroundColor(.white)
                             .font(AppFonts.semiBold_16)
                             .padding()
-                            .padding(.trailing,135)
-                            .padding(.leading,135)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
                             .padding()
                     }
                 })

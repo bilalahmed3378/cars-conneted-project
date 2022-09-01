@@ -31,7 +31,9 @@ struct Subscription_Successful: View {
                     Spacer()
                    
                 }
-                .padding()
+                .padding(.top)
+                .padding(.bottom)
+               
             
             HStack{
                 Text("Subscription successful Congratulations!")
@@ -44,25 +46,29 @@ struct Subscription_Successful: View {
                 
                 Spacer()
             }
-            .padding()
+            .padding(.bottom)
             
             
+            VStack(alignment: .leading){
+                HStack{
             Text("You have successfully subscribed to our premium basic plan. You can continue using our app.")
                 .foregroundColor(.gray)
                 .font(AppFonts.regular_14)
-                .padding()
+                    Spacer()
+                }
+            }
             
           Image("Rectangle")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 300)
+                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*35)
             
             Button(action: {}, label: {
                 Text("Continue")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)

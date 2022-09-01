@@ -24,7 +24,7 @@ struct User_profile_setup_Screen: View {
             HStack{
                 Image("bilal3")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
+                    .aspectRatio(contentMode: .fill)
                     .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
             }
             
@@ -32,9 +32,10 @@ struct User_profile_setup_Screen: View {
                 Image("Bilal4")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
-                    .offset(x: -130 , y: -50 )
+                    .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
+                    .offset(x: -120 , y: -30 )
             }
+           
           
             ScrollView(.vertical, showsIndicators: false){
             HStack{
@@ -43,7 +44,8 @@ struct User_profile_setup_Screen: View {
                 
                 
                 Spacer()
-            }
+            }.padding(.leading)
+                    .padding(.trailing)
             
             HStack{
                 
@@ -112,6 +114,7 @@ struct User_profile_setup_Screen: View {
                 
             }.padding(.top)
                 .padding(.trailing)
+                .padding(.leading)
             
            
                 VStack{
@@ -133,7 +136,8 @@ struct User_profile_setup_Screen: View {
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
                       .foregroundColor(.black)
-                }
+                } .padding(.trailing)
+                    .padding(.leading)
                 
                 if(self.isSelected){
                     VStack{
@@ -148,6 +152,8 @@ struct User_profile_setup_Screen: View {
                           .background(Rectangle().frame(height: 1).padding(.top, 30))
                           .foregroundColor(.black)
                     }
+                    .padding(.trailing)
+                        .padding(.leading)
                 }
                
                 
@@ -162,7 +168,8 @@ struct User_profile_setup_Screen: View {
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
                       .foregroundColor(.black)
-                }
+                } .padding(.trailing)
+                    .padding(.leading)
                 
                 VStack{
                     Text("Location")
@@ -183,7 +190,8 @@ struct User_profile_setup_Screen: View {
                           Image("location Icons")
                         }
                       })
-                }
+                } .padding(.trailing)
+                    .padding(.leading)
                 
                 VStack{
                     Text("About")
@@ -197,7 +205,8 @@ struct User_profile_setup_Screen: View {
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
                       .foregroundColor(.black)
                      
-                }
+                } .padding(.trailing)
+                    .padding(.leading)
                 
                 HStack{
                     Button(action: {}, label: {
@@ -205,18 +214,18 @@ struct User_profile_setup_Screen: View {
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
-                            .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
                     .padding(.top,30)
                     .padding(.bottom)
-                }
+                } .padding(.trailing)
+                    .padding(.leading)
                 
-            }.padding(.top,-20)
+            }
             
            
-        }.padding(.leading,24)
-            .padding(.trailing,24)
+        }
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
            

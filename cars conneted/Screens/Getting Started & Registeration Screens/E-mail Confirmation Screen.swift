@@ -36,40 +36,41 @@ struct E_mail_Confirmation_Screen: View {
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     .mask( Text("E-mail Confirmation")
                         .font(AppFonts.semiBold_24)
-                        .fontWeight(.semibold))
+                        )
                 
                 Spacer()
             }
             .padding()
             
-            
+            VStack(alignment: .leading){
+                HStack{
             Text("Thankyou! Your email has verified successfully. Now you can proceed to setup your profile.")
                 .font(AppFonts.regular_14)
-                .padding(.leading,10)
-                .padding(.trailing,10)
-                
+                    Spacer()
+                }
+            }.padding(.leading)
+                .padding(.trailing)
             
           Image("ant-design_check-circle-filled")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 300)
+                .frame(width: UIScreen.widthBlockSize*70, height: UIScreen.heightBlockSize*40)
             
             Button(action: {}, label: {
                 Text("Profile Completion")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,30)
+            .padding(.top)
                 
             
             
                 Spacer()
         }
-        .padding(.leading)
-        .padding(.trailing)
+        
         .navigationBarHidden(true)
     }
 }

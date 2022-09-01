@@ -58,7 +58,7 @@ struct verifyOtpScreen: View {
                 
                     TextField("",text: self.$otp1)
                         .foregroundColor(AppColors.redGradientColor1)
-                        .font(AppFonts.medium_20)
+                        .font(AppFonts.medium_24)
                         .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
@@ -77,7 +77,7 @@ struct verifyOtpScreen: View {
                     
                     TextField("",text: self.$otp2)
                         .foregroundColor(AppColors.redGradientColor1)
-                        .font(AppFonts.medium_20)
+                        .font(AppFonts.medium_24)
                         .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
@@ -97,7 +97,7 @@ struct verifyOtpScreen: View {
                     
                     TextField("",text: self.$otp3)
                         .foregroundColor(AppColors.redGradientColor1)
-                        .font(AppFonts.medium_20)
+                        .font(AppFonts.medium_24)
                         .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
@@ -118,7 +118,7 @@ struct verifyOtpScreen: View {
                     
                     TextField("",text: self.$otp4)
                         .foregroundColor(AppColors.redGradientColor1)
-                        .font(AppFonts.medium_20)
+                        .font(AppFonts.medium_24)
                         .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
@@ -134,7 +134,7 @@ struct verifyOtpScreen: View {
                         }
                     
                 
-                }.padding(.top,49)
+                }.padding(.top)
                 
             
             Button(action: {
@@ -152,8 +152,8 @@ struct verifyOtpScreen: View {
                     Spacer()
                 }
                 .padding(20)
-                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: 70))
-                .padding(.top,49)
+                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
+                .padding(.top)
                 
             }
             
@@ -169,7 +169,7 @@ struct verifyOtpScreen: View {
             
                 Spacer()
                 
-            }.padding(.top,30)
+            }.padding(.top)
             
             
                 Spacer()

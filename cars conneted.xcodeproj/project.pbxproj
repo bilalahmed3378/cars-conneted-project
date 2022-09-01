@@ -27,11 +27,9 @@
 		592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A210B289910A400FC9EAF /* LoginUserModel.swift */; };
 		592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A210D2899113A00FC9EAF /* LoginApi.swift */; };
 		592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BF64628B4ABA20094B1AE /* My Garage User View.swift */; };
-		592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F189D2887BE3300A531A4 /* Search post screen .swift */; };
 		592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A02887C10500A531A4 /* MainTabContainer.swift */; };
 		592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A22887C7B700A531A4 /* Messages Tab.swift */; };
-		592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A42887CA7300A531A4 /* Search event screen.swift */; };
-		592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A72887EDB800A531A4 /* Search Clubs screen.swift */; };
+		592F18A82887EDB800A531A4 /* Search Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A72887EDB800A531A4 /* Search Screen.swift */; };
 		592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AC28882C4300A531A4 /* post screen 2.swift */; };
 		592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AE2889160E00A531A4 /* Post screen 3.swift */; };
 		592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B3288955A200A531A4 /* post screen 5 preview .swift */; };
@@ -153,7 +151,6 @@
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
 		59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */; };
 		59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */; };
-		59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DF0A9128871CD300298EE3 /* Search people screen .swift */; };
 		59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */; };
 /* End PBXBuildFile section */
 
@@ -195,11 +192,9 @@
 		592A210B289910A400FC9EAF /* LoginUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUserModel.swift; sourceTree = "<group>"; };
 		592A210D2899113A00FC9EAF /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		592BF64628B4ABA20094B1AE /* My Garage User View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage User View.swift"; sourceTree = "<group>"; };
-		592F189D2887BE3300A531A4 /* Search post screen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search post screen .swift"; sourceTree = "<group>"; };
 		592F18A02887C10500A531A4 /* MainTabContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabContainer.swift; sourceTree = "<group>"; };
 		592F18A22887C7B700A531A4 /* Messages Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages Tab.swift"; sourceTree = "<group>"; };
-		592F18A42887CA7300A531A4 /* Search event screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search event screen.swift"; sourceTree = "<group>"; };
-		592F18A72887EDB800A531A4 /* Search Clubs screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Clubs screen.swift"; sourceTree = "<group>"; };
+		592F18A72887EDB800A531A4 /* Search Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Screen.swift"; sourceTree = "<group>"; };
 		592F18AC28882C4300A531A4 /* post screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 2.swift"; sourceTree = "<group>"; };
 		592F18AE2889160E00A531A4 /* Post screen 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post screen 3.swift"; sourceTree = "<group>"; };
 		592F18B3288955A200A531A4 /* post screen 5 preview .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 5 preview .swift"; sourceTree = "<group>"; };
@@ -324,7 +319,6 @@
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
 		59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Method step 3 screen.swift"; sourceTree = "<group>"; };
 		59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Profile- Wall.swift"; sourceTree = "<group>"; };
-		59DF0A9128871CD300298EE3 /* Search people screen .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search people screen .swift"; sourceTree = "<group>"; };
 		59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Vehicle Screen.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -492,10 +486,7 @@
 		592F18A62887D87B00A531A4 /* Search screens */ = {
 			isa = PBXGroup;
 			children = (
-				592F18A72887EDB800A531A4 /* Search Clubs screen.swift */,
-				59DF0A9128871CD300298EE3 /* Search people screen .swift */,
-				592F189D2887BE3300A531A4 /* Search post screen .swift */,
-				592F18A42887CA7300A531A4 /* Search event screen.swift */,
+				592F18A72887EDB800A531A4 /* Search Screen.swift */,
 			);
 			path = "Search screens";
 			sourceTree = "<group>";
@@ -1000,7 +991,7 @@
 				597282EA28B77F0F0004F4CB /* My club Details (admin view) Screen.swift in Sources */,
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
-				592F18A82887EDB800A531A4 /* Search Clubs screen.swift in Sources */,
+				592F18A82887EDB800A531A4 /* Search Screen.swift in Sources */,
 				592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */,
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
 				596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */,
@@ -1016,7 +1007,6 @@
 				597282E028B759F10004F4CB /* Create Club Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
-				59DF0A9228871CD300298EE3 /* Search people screen .swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
@@ -1056,7 +1046,6 @@
 				59DB446528995098006766EA /* Constants.swift in Sources */,
 				59D6147828AD0A560014E4E9 /* Help Screen.swift in Sources */,
 				592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */,
-				592F189E2887BE3300A531A4 /* Search post screen .swift in Sources */,
 				597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
@@ -1066,7 +1055,6 @@
 				597282E228B75EEC0004F4CB /* Edit Club Screen.swift in Sources */,
 				597282EE28B78F2E0004F4CB /* Club details member view Screen.swift in Sources */,
 				59532F0228AE3C44001F6EEE /* Support Issue Details Screen.swift in Sources */,
-				592F18A52887CA7300A531A4 /* Search event screen.swift in Sources */,
 				59532F0028AE2744001F6EEE /* My Support Requests screen.swift in Sources */,
 				59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */,
 				59D7A47828B64EE70022F49A /* Shop Updated Successfully Screen.swift in Sources */,

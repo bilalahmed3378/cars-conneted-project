@@ -10,6 +10,7 @@ import SwiftUI
 struct Subscription_Billing_Detail_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
+        ScrollView(.vertical, showsIndicators: false){
         VStack{
             HStack{
                 Image("Icons-2")
@@ -21,6 +22,7 @@ struct Subscription_Billing_Detail_Screen: View {
                 
                 Text("Billing Details")
                     .font(AppFonts.medium_20)
+                    .offset(x: -15)
                 
                 Spacer()
             }.padding(24)
@@ -198,6 +200,7 @@ struct Subscription_Billing_Detail_Screen: View {
             
             Spacer()
         } .navigationBarHidden(true)
+        }
     }
 }
 

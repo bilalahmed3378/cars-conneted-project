@@ -10,6 +10,7 @@ import SwiftUI
 struct Choose_your_plan_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
+        ScrollView(.vertical, showsIndicators: false){
         VStack{
             
             HStack{
@@ -418,6 +419,7 @@ struct Choose_your_plan_Screen: View {
             Spacer()
            
         } .navigationBarHidden(true)
+        }
     }
 }
 
