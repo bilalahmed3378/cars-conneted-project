@@ -30,7 +30,7 @@ struct Edit_Club_Screen: View {
                         
                        Spacer()
                         
-                    }.padding()
+                    }
                   
                     Spacer()
                 }.edgesIgnoringSafeArea(.top)
@@ -61,7 +61,8 @@ struct Edit_Club_Screen: View {
                             .frame(width: 35, height: 35)
                        
                     }
-                    .padding()
+                    .padding(.top)
+                    .padding(.bottom)
                 
               
                     
@@ -71,8 +72,6 @@ struct Edit_Club_Screen: View {
                 Text("Name")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -82,9 +81,7 @@ struct Edit_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                        
+                 
                     }
                     
                     VStack{
@@ -92,9 +89,7 @@ struct Edit_Club_Screen: View {
                 Text("Location")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                   .padding(.bottom,-5)
                 
                   
                 TextField("Street 1, D Arcade, Ace Club",text:$location)
@@ -103,8 +98,7 @@ struct Edit_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                         
                     }
                     
@@ -113,8 +107,6 @@ struct Edit_Club_Screen: View {
                 Text("Description")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -124,8 +116,7 @@ struct Edit_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                         
                     }
                     
@@ -134,8 +125,6 @@ struct Edit_Club_Screen: View {
                 Text("Club Privacy")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -145,8 +134,6 @@ struct Edit_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .overlay(HStack{
                     Spacer()
                     Button(action: {
@@ -166,8 +153,6 @@ struct Edit_Club_Screen: View {
                 Text("Who can join this Club")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .padding(.bottom,-5)
                 
                   
@@ -177,8 +162,6 @@ struct Edit_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
                   .overlay(HStack{
                     Spacer()
                     Button(action: {
@@ -216,32 +199,39 @@ struct Edit_Club_Screen: View {
                     }.padding(.top)
                         .padding(.bottom)
                     
-                  
+                    HStack{
+                        Spacer()
                     Button(action: {}, label: {
                         Text("Cancel")
                             .font(AppFonts.semiBold_16)
                             .foregroundColor(AppColors.redGradientColor1)
-                            .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor1))
                     })
                     .padding(.top)
+                        Spacer()
+                    }
                     
+                    HStack{
+                        Spacer()
                 Button(action: {}, label: {
                     Text("Update")
                         .font(AppFonts.semiBold_16)
                         
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top)
-                    
+                        Spacer()
+                    }
                 
                 
-                    Spacer()
+                   
             }
             .padding(.leading)
             .padding(.trailing)
+            .padding(.bottom)
                     
             }
            

@@ -31,6 +31,8 @@ struct My_Garage_My_View: View {
                 
             }.padding()
                
+            ScrollView(.vertical, showsIndicators: false){
+            
             HStack{
                 
                 Spacer()
@@ -98,7 +100,7 @@ struct My_Garage_My_View: View {
             .padding(.leading)
             .padding(.trailing)
             
-            ScrollView(.vertical, showsIndicators: false){
+           
                 
                 LazyVStack{
                     ForEach (0...3 , id : \.self){
@@ -186,6 +188,7 @@ struct myGarage : View {
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 24, height: 24)
                                 .padding()
+                                .padding(.top)
                         })
                         
                         
@@ -233,17 +236,17 @@ struct myGarage : View {
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         Image("Ellipse 20")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         Spacer()
                         
@@ -259,9 +262,10 @@ struct myGarage : View {
                         
                        
                     }.padding()
+                        .padding(.bottom)
                 }
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: 240)
+            }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
             
             VStack{
                 
@@ -281,13 +285,13 @@ struct myGarage : View {
                 
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
             }.padding(.leading,26)
@@ -341,9 +345,12 @@ struct myGarage : View {
             }.padding(.leading,26)
                 .padding(.trailing,26)
                 
-            }.background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.widthBlockSize*90, height: 82))
+            }.padding(.top,10)
+            
+            
         }.padding(.top)
-            .padding(.bottom,30)
+            .padding(.bottom)
+            .background(RoundedRectangle(cornerRadius: 0).fill(.gray.opacity(0.2)))
         
         
         

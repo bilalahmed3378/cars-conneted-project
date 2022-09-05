@@ -60,8 +60,8 @@ struct Event_Details_Screen: View {
               
                 Image("Event cards pic")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*100 , height:280)
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.widthBlockSize*100 , height: 260)
                    
                 VStack(alignment: .leading){
                     HStack{
@@ -715,10 +715,11 @@ struct Event_Details_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top)
+                .padding(.bottom)
                 
             }
                 Spacer()

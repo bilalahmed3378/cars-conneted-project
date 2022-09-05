@@ -37,11 +37,11 @@ struct New_member_request_club: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
                   
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
+                }.padding(.leading)
+                    .padding(.trailing)
                     .padding(.top,20)
                 
-            }  .padding(.top,40)
+            }  .padding(.top,30)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
@@ -138,7 +138,7 @@ struct followRequestsClub: View {
                 Text("Delete")
                     .font(AppFonts.medium_12)
                     .foregroundColor(AppColors.redGradientColor1)
-                    .frame(width: 75, height: 40)
+                    .frame(width: UIScreen.widthBlockSize*20, height: 40)
                     .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.3))
             })
            
@@ -146,7 +146,7 @@ struct followRequestsClub: View {
                 Text("Confirm")
                     .font(AppFonts.medium_12)
                     .foregroundColor(.white)
-                    .frame(width: 75, height: 40)
+                    .frame(width:  UIScreen.widthBlockSize*20, height: 40)
                     .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             

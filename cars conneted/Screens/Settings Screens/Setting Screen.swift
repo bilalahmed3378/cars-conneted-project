@@ -53,9 +53,9 @@ struct Setting_Screen: View {
                    
                     
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
-                    .padding(.top,20)
+                }.padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
                 
                 
                 
@@ -73,11 +73,11 @@ struct Setting_Screen: View {
                     
                     
                 }
-                .padding(15)
+                .padding(10)
                 .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
-                .padding(.leading,20)
-                .padding(.trailing,20)
+                .padding(.top)
+                .padding(.leading)
+                .padding(.trailing)
                 }
                 
                 
@@ -94,7 +94,7 @@ struct Setting_Screen: View {
                 Image("unsplash_OhKElOkQ3RE-1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 80, height: 80)
+                    .frame(width: UIScreen.widthBlockSize*25, height: 80)
                     .padding(.leading)
                 
                 VStack(alignment: .leading){
@@ -112,7 +112,7 @@ struct Setting_Screen: View {
                 .padding(.leading,5)
                 Spacer()
                
-                NavigationLink(destination: My_Profile(),  label: {
+                NavigationLink(destination: User_Profile__Wall(),  label: {
                     Image("Arrow - Right Square")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -124,7 +124,7 @@ struct Setting_Screen: View {
                
                 
             }
-            .frame(width: 350, height: 100)
+            .frame(width: UIScreen.widthBlockSize*90, height: 100)
             .background(RoundedRectangle(cornerRadius: 10).fill(.blue).opacity(0.04).shadow(color: .black, radius: 5))
             .padding(.top)
             .padding(.trailing)
@@ -137,7 +137,8 @@ struct Setting_Screen: View {
                 Spacer()
             }
             .padding()
-            .padding(.leading,10)
+           
+            
             
               
                 HStack{
@@ -162,14 +163,11 @@ struct Setting_Screen: View {
                     })
                     
                 }
-                .frame(width: 350, height: 30)
-                .padding(.bottom)
+                .frame(width: UIScreen.widthBlockSize*90, height: 30)
+               
                     
                 
-                Image("Line 26")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 1 )
+                Divider().padding()
                 
             HStack{
                 
@@ -193,14 +191,12 @@ struct Setting_Screen: View {
                 })
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+            
                 
             }
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+                Divider().padding()
+                
             Group{
             HStack{
                 
@@ -228,14 +224,12 @@ struct Setting_Screen: View {
                 })
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+           
                 
             
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+                Divider().padding()
+                
             }
             Group{
             HStack{
@@ -260,14 +254,10 @@ struct Setting_Screen: View {
                 })
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
                 
-            
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+                
+                Divider().padding()
                 
                 HStack{
                     
@@ -291,14 +281,10 @@ struct Setting_Screen: View {
                     })
                     
                 }
-                .frame(width: 350, height: 30)
-                .padding(.bottom)
-                    
+                .frame(width: UIScreen.widthBlockSize*90, height: 30)
                 
-                Image("Line 26")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 1 )
+                
+                Divider().padding()
             
             }
             Group{
@@ -328,13 +314,10 @@ struct Setting_Screen: View {
                 
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
-            
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                
+                
+                Divider().padding()
             
                 
                 HStack{
@@ -362,13 +345,10 @@ struct Setting_Screen: View {
                     
                     
                 }
-                .frame(width: 350, height: 30)
-                .padding(.bottom)
+                .frame(width: UIScreen.widthBlockSize*90, height: 30)
                 
-                Image("Line 26")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 1 )
+                
+                Divider().padding()
             
             HStack{
                 Image("Buffer location")
@@ -395,13 +375,10 @@ struct Setting_Screen: View {
                 
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
-            
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                
+                
+                Divider().padding()
                 
                 
                 HStack{
@@ -429,13 +406,12 @@ struct Setting_Screen: View {
                     
                     
                 }
-                .frame(width: 350, height: 30)
-                .padding(.bottom)
+                .frame(width: UIScreen.widthBlockSize*90, height: 30)
                 
-                Image("Line 26")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 1 )
+                
+                Divider().padding()
+                
+                
             }
             Group{
         HStack{
@@ -462,13 +438,10 @@ struct Setting_Screen: View {
             
             
         }
-        .frame(width: 350, height: 30)
-        .padding(.bottom)
+        .frame(width: UIScreen.widthBlockSize*90, height: 30)
                 
-                Image("Line 26")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 1 )
+                
+                Divider().padding()
                 
                 HStack{
                     Image("help")
@@ -494,20 +467,14 @@ struct Setting_Screen: View {
                     
                     
                 }
-                .frame(width: 350, height: 30)
-                .padding(.bottom)
+                .frame(width: UIScreen.widthBlockSize*90, height: 30)
                 
-                Image("Line 26")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 350, height: 1 )
+                
+                Divider().padding()
                 
             }
             Group{
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+          
             
             HStack{
                 Image("TOS")
@@ -530,13 +497,10 @@ struct Setting_Screen: View {
                 })
                  
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
-            
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                
+                
+                Divider().padding()
             
             HStack{
                 Image("material-symbols_privacy-tip")
@@ -561,13 +525,9 @@ struct Setting_Screen: View {
                 
                 
             }
-            .frame(width: 350, height: 30)
-            .padding(.bottom)
-            
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                
+                Divider().padding()
             }
             Group{
             HStack{
@@ -601,13 +561,10 @@ struct Setting_Screen: View {
                 
                 
             }
-            .frame(width: 350, height: 30)
+            .frame(width: UIScreen.widthBlockSize*90, height: 30)
             .padding(.bottom)
-            
-            Image("Line 26")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 350, height: 1 )
+                
+              
             }
             }
            

@@ -44,9 +44,9 @@ struct Create_Shop_Screen: View {
                     
                     Spacer()
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
-                    .padding(.top,20)
+                }.padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
                 
             }  .padding(.top,40)
                 .padding(.bottom,30)
@@ -71,15 +71,14 @@ struct Create_Shop_Screen: View {
                                     .fontWeight(.semibold))
                             
                             Spacer()
-                        }.padding(.leading,10)
-                            .padding(.top)
+                        }
+                        .padding(.top)
                         
                         
                 Text("Brand")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                   .padding(.bottom,-5)
                 
                   
@@ -89,8 +88,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                         
                     }
                     
@@ -99,8 +97,7 @@ struct Create_Shop_Screen: View {
                 Text("Shop Category")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .padding(.bottom,-5)
                 
                   
@@ -110,8 +107,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .overlay(HStack{
                     Spacer()
                       Menu(content: {
@@ -137,8 +133,7 @@ struct Create_Shop_Screen: View {
                 Text("Email")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                   .padding(.bottom,-5)
                 
                   
@@ -148,8 +143,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                         
                     }
                     
@@ -158,8 +152,7 @@ struct Create_Shop_Screen: View {
                 Text("Phone")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .padding(.bottom,-5)
                 
                   
@@ -169,9 +162,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                        
+                 
                     }
                     
                     VStack{
@@ -179,8 +170,7 @@ struct Create_Shop_Screen: View {
                 Text("Address")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .padding(.bottom,-5)
                 
                   
@@ -190,8 +180,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                  
                         
                     }
@@ -201,8 +190,7 @@ struct Create_Shop_Screen: View {
                 Text("Website")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                   .padding(.bottom,-5)
                 
                   
@@ -212,8 +200,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                  
                         
                     }
@@ -225,8 +212,7 @@ struct Create_Shop_Screen: View {
                 Text("Description")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .padding(.bottom,-5)
                 
                   
@@ -236,8 +222,7 @@ struct Create_Shop_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                       
                     }
                     
@@ -246,7 +231,7 @@ struct Create_Shop_Screen: View {
                             .font(AppFonts.regular_16)
                     }
                     .padding(.top,30)
-                    .padding(.leading,10)
+                   
                     
                     HStack{
                         Image("unsplash_AHnhdjyTNGM")
@@ -261,7 +246,7 @@ struct Create_Shop_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)

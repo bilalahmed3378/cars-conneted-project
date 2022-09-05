@@ -35,7 +35,7 @@ struct Classified_or_Shop_Updated_Successfully_Screen: View {
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     .mask( Text("Shop UpdatedSuccessfully")
                         .font(AppFonts.SemiBold_20)
-                        .fontWeight(.semibold))
+                        )
                 
                 Spacer()
             }
@@ -46,14 +46,14 @@ struct Classified_or_Shop_Updated_Successfully_Screen: View {
           Image("ant-design_check-circle-filled")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 300, height: 300)
+                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*40)
             
             Button(action: {}, label: {
                 Text("Proceed to Home")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)

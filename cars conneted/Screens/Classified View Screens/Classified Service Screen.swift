@@ -53,8 +53,8 @@ struct Classified_Service_Screen: View {
                     
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.widthBlockSize*90, height: 240)
                     
                     VStack{
                         
@@ -114,7 +114,7 @@ struct Classified_Service_Screen: View {
                     
                 }
                 .padding(.top)
-                .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                .frame(width: UIScreen.widthBlockSize*90, height: 240)
                 
                 HStack{
                     Text("Car Wash")
@@ -423,7 +423,7 @@ struct Classified_Service_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)
@@ -439,7 +439,7 @@ struct Classified_Service_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*43, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
               
@@ -449,7 +449,7 @@ struct Classified_Service_Screen: View {
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
-                            .frame(width: UIScreen.widthBlockSize*43, height: 70)
+                            .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
                   

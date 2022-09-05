@@ -22,7 +22,7 @@ struct Club_details_member_view_Screen: View {
                 
                 // top bar
                 HStack{
-                    Image("side menu icon white")
+                    Image("back icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
@@ -50,7 +50,8 @@ struct Club_details_member_view_Screen: View {
                
                 .padding(.leading)
                     .padding(.trailing)
-                    .padding(.top,20)
+                    .padding(.top,10)
+                   
                 
                 // search bar
                 HStack{
@@ -66,9 +67,9 @@ struct Club_details_member_view_Screen: View {
                     
                     
                 }
-                .padding(15)
+                .padding(10)
                 .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
+                .padding(.top,10)
                 .padding(.leading,20)
                 .padding(.trailing,20)
                 
@@ -87,9 +88,9 @@ struct Club_details_member_view_Screen: View {
                 Image("unsplash_AHnhdjyTNGM")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 234)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 230)
             }
-            .padding(.top)
+           
             
             HStack(alignment: .top){
                 Text("Ace Classic Club")
@@ -110,8 +111,7 @@ struct Club_details_member_view_Screen: View {
                     
                 }.padding(.leading)
                     .padding(.trailing)
-                    .padding(.top,5)
-                    .padding(.bottom,5)
+                   
                     .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor1))
                 }
             }
@@ -273,7 +273,7 @@ struct Club_details_member_view_Screen: View {
                     Text("Request to join")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,20)

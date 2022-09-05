@@ -40,7 +40,8 @@ struct Create_Event_step_2_Screen: View {
                
                
             }
-            .padding()
+            .padding(.leading)
+            .padding(.trailing)
         
         VStack(alignment: .leading){
         HStack{
@@ -327,10 +328,11 @@ struct Create_Event_step_2_Screen: View {
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,30)
+            .padding(.top)
+            .padding(.bottom)
                 
             }
            

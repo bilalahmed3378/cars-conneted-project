@@ -87,7 +87,7 @@ struct Notification_Screen: View {
                         yesterdayNotifications()
             }
             
-        }
+                }.padding(.bottom)
     }
 } .navigationBarHidden(true)
     }

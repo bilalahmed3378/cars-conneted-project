@@ -33,7 +33,7 @@ struct Create_Post_Club_Screen: View {
                     .font(AppFonts.medium_12)
                     .foregroundColor(.white)
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*6))
                 
             }
             .padding()

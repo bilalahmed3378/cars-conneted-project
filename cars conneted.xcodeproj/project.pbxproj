@@ -80,7 +80,6 @@
 		595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595E06C028AFBACC00EFB54B /* Add your Car Screen.swift */; };
 		59607F1528914F6700B46682 /* Car Specification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1428914F6700B46682 /* Car Specification.swift */; };
 		59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1B28915A1900B46682 /* Setting Screen.swift */; };
-		59607F1E28916D7B00B46682 /* My Profile screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1D28916D7B00B46682 /* My Profile screen.swift */; };
 		59607F202891977600B46682 /* Change Password screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1F2891977600B46682 /* Change Password screen.swift */; };
 		59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed screen.swift */; };
 		59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2328924A2000B46682 /* Notifications setting screen.swift */; };
@@ -248,7 +247,6 @@
 		595E06C028AFBACC00EFB54B /* Add your Car Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add your Car Screen.swift"; sourceTree = "<group>"; };
 		59607F1428914F6700B46682 /* Car Specification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Car Specification.swift"; sourceTree = "<group>"; };
 		59607F1B28915A1900B46682 /* Setting Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setting Screen.swift"; sourceTree = "<group>"; };
-		59607F1D28916D7B00B46682 /* My Profile screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Profile screen.swift"; sourceTree = "<group>"; };
 		59607F1F2891977600B46682 /* Change Password screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change Password screen.swift"; sourceTree = "<group>"; };
 		59607F2128919ED300B46682 /* Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		59607F2328924A2000B46682 /* Notifications setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications setting screen.swift"; sourceTree = "<group>"; };
@@ -691,7 +689,6 @@
 			isa = PBXGroup;
 			children = (
 				59607F1B28915A1900B46682 /* Setting Screen.swift */,
-				59607F1D28916D7B00B46682 /* My Profile screen.swift */,
 				59607F1F2891977600B46682 /* Change Password screen.swift */,
 				59607F2128919ED300B46682 /* Successfully Changed screen.swift */,
 				59607F2328924A2000B46682 /* Notifications setting screen.swift */,
@@ -1025,7 +1022,6 @@
 				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
 				599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */,
 				592A210A2899106100FC9EAF /* LoginDataModel.swift in Sources */,
-				59607F1E28916D7B00B46682 /* My Profile screen.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
 				59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */,
 				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,

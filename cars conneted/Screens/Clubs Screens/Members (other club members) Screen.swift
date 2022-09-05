@@ -19,7 +19,7 @@ struct Members__other_club_members__Screen: View {
             
             // top bar
             HStack{
-                Image("side menu icon white")
+                Image("back icon")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 35, height: 35)
@@ -39,15 +39,13 @@ struct Members__other_club_members__Screen: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30, height: 35)
-                    .padding(.trailing,10)
-                
-             
-                   
+
             }
            
             .padding(.leading)
                 .padding(.trailing)
-                .padding(.top,20)
+                .padding(.top,10)
+                
             
             // search bar
             HStack{
@@ -63,11 +61,11 @@ struct Members__other_club_members__Screen: View {
                 
                 
             }
-            .padding(15)
+            .padding(10)
             .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-            .padding(.top,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
+            .padding(.top,10)
+            .padding(.leading)
+            .padding(.trailing)
             
         }
        

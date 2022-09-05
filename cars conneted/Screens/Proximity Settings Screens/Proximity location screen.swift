@@ -102,8 +102,6 @@ struct Proximity_location_screen: View {
             .padding(.top,25)
             
             
-           
-            
             HStack{
                 
                 TextField("Washington, DC",text: self.$searchText)
@@ -115,9 +113,6 @@ struct Proximity_location_screen: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width:20,height: 20)
                     .foregroundColor(.black)
-                
-                
-                
                 
                 
             } .padding(15)

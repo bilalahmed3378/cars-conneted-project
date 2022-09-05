@@ -61,8 +61,8 @@ struct Add_classified_Services_Screen: View {
                   
                     
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
+                }.padding(.leading)
+                    .padding(.trailing)
                     .padding(.top,20)
                 
             }  .padding(.top,40)
@@ -82,8 +82,7 @@ struct Add_classified_Services_Screen: View {
                     
                     Spacer()
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                 .padding(.top)
                 
                 HStack{
@@ -113,8 +112,7 @@ struct Add_classified_Services_Screen: View {
                           
                       })
                 }
-                .padding(.leading)
-                .padding(.trailing)
+              
                 .padding(.bottom)
                 
                 HStack{
@@ -123,8 +121,7 @@ struct Add_classified_Services_Screen: View {
                     
                     Spacer()
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                
                 .padding(.top,10)
                 
                 HStack{
@@ -145,8 +142,7 @@ struct Add_classified_Services_Screen: View {
                          
                       })
                 }
-                .padding(.leading)
-                .padding(.trailing)
+              
                 .padding(.bottom)
                     
                 }
@@ -178,8 +174,7 @@ struct Add_classified_Services_Screen: View {
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
                     
                     Spacer()
-                }.padding(.leading)
-                    .padding(.trailing)
+                }
                 
                 
                 HStack{
@@ -188,8 +183,7 @@ struct Add_classified_Services_Screen: View {
                     
                     Spacer()
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                
                 .padding(.top,30)
                 
                 VStack{
@@ -209,8 +203,7 @@ struct Add_classified_Services_Screen: View {
               
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                 
                 VStack{
                     
@@ -229,8 +222,7 @@ struct Add_classified_Services_Screen: View {
               
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+              
                 .padding(.bottom)
                 
                 
@@ -242,7 +234,8 @@ struct Add_classified_Services_Screen: View {
                     Toggle("", isOn: $availability)
                         .toggleStyle(SwitchToggleStyle(tint: .green))
                 }
-                .padding()
+                .padding(.bottom)
+               
                 
                 
                 if (self.availability){
@@ -255,8 +248,7 @@ struct Add_classified_Services_Screen: View {
                         Toggle("", isOn: $monday)
                             .toggleStyle(SwitchToggleStyle(tint: .green))
                     }
-                    .padding(.leading)
-                        .padding(.trailing)
+                   
                         .padding(.bottom)
                     
                     
@@ -292,9 +284,8 @@ struct Add_classified_Services_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                            .padding(.trailing)
-                            .padding(.bottom)
+                       
+                           
                     }
                    
                     
@@ -302,9 +293,8 @@ struct Add_classified_Services_Screen: View {
                 }
                 
                 Divider()
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .padding(.bottom)
+                   
+                   
                 
                 
                 HStack{
@@ -314,8 +304,7 @@ struct Add_classified_Services_Screen: View {
                     Toggle("", isOn: $tuesday)
                         .toggleStyle(SwitchToggleStyle(tint: .green))
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                     
                     if (self.tuesday){
                         HStack{
@@ -349,13 +338,12 @@ struct Add_classified_Services_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                            .padding(.trailing)
+                       
                             .padding(.bottom)
                     }
                 
                 Divider()
-                    .padding()
+                   
                 
                 
                 HStack{
@@ -365,8 +353,7 @@ struct Add_classified_Services_Screen: View {
                     Toggle("", isOn: $wednesday)
                         .toggleStyle(SwitchToggleStyle(tint: .green))
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                
                     
                     if (self.wednesday){
                         HStack{
@@ -400,13 +387,12 @@ struct Add_classified_Services_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                            .padding(.trailing)
-                            .padding(.bottom)
+                        .padding(.bottom)
+                        
                     }
                 
                 Divider()
-                    .padding()
+                   
                 }
                     
                 Group{
@@ -417,8 +403,7 @@ struct Add_classified_Services_Screen: View {
                     Toggle("", isOn: $thursday)
                         .toggleStyle(SwitchToggleStyle(tint: .green))
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                     
                     
                     if (self.thursday){
@@ -453,13 +438,12 @@ struct Add_classified_Services_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                            .padding(.trailing)
-                            .padding(.bottom)
+                         .padding(.bottom)
+                        
                     }
                 
                 
-                Divider().padding()
+                Divider()
                 
                 HStack{
                     Text("Friday")
@@ -468,8 +452,8 @@ struct Add_classified_Services_Screen: View {
                     Toggle("", isOn: $friday)
                         .toggleStyle(SwitchToggleStyle(tint: .green))
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                
+              
                     
                     if (self.friday){
                         HStack{
@@ -503,12 +487,11 @@ struct Add_classified_Services_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                            .padding(.trailing)
+                       
                             .padding(.bottom)
                     }
                 
-                Divider().padding()
+                Divider()
                 
                 HStack{
                     Text("Saturday")
@@ -517,8 +500,7 @@ struct Add_classified_Services_Screen: View {
                     Toggle("", isOn: $saturday)
                         .toggleStyle(SwitchToggleStyle(tint: .green))
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                     
                     if (self.saturday){
                         HStack{
@@ -552,12 +534,11 @@ struct Add_classified_Services_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                            .padding(.trailing)
+                       
                             .padding(.bottom)
                     }
                     
-                Divider().padding()
+                Divider()
                     
                 }
                     
@@ -582,8 +563,7 @@ struct Add_classified_Services_Screen: View {
               
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                 
                 VStack{
                     
@@ -602,8 +582,7 @@ struct Add_classified_Services_Screen: View {
               
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                 
                 HStack{
                     Text("Upload Images")
@@ -611,29 +590,28 @@ struct Add_classified_Services_Screen: View {
                     
                     Spacer()
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                 .padding(.top)
                     
                     HStack{
                         Image("Rectangle 4485")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 120, height: 90)
+                            .frame(width: UIScreen.widthBlockSize*30, height: 90)
                         
                         
                         Image("Rectangle 4485")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 120, height: 90)
+                            .frame(width: UIScreen.widthBlockSize*30, height: 90)
                         
                         Image("Frame 40-2")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 120, height: 90)
+                            .frame(width: UIScreen.widthBlockSize*30, height: 90)
                         
                     }
-                    .padding()
+                   
                     
                     
                     HStack{
@@ -645,8 +623,7 @@ struct Add_classified_Services_Screen: View {
                         
                         Spacer()
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+                    
                     .padding(.top)
                     
                     
@@ -675,8 +652,7 @@ struct Add_classified_Services_Screen: View {
              
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                 
                 
                 VStack{
@@ -696,8 +672,7 @@ struct Add_classified_Services_Screen: View {
               
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+                
                 
                 VStack{
                     
@@ -716,8 +691,7 @@ struct Add_classified_Services_Screen: View {
              
                     
                 }
-                .padding(.leading)
-                .padding(.trailing)
+               
                         
                     }
                     }
@@ -727,13 +701,15 @@ struct Add_classified_Services_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)
                 .padding(.bottom)
                 }
             }
+            .padding(.leading)
+                .padding(.trailing)
            
             Spacer()
         }.edgesIgnoringSafeArea(.all)

@@ -70,8 +70,8 @@ struct Add_classified_Parts_Screen: View {
                   
                     
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
+                }.padding(.leading)
+                    .padding(.trailing)
                     .padding(.top,20)
                 
             }  .padding(.top,40)
@@ -430,18 +430,18 @@ struct Add_classified_Parts_Screen: View {
                             Image("Rectangle 4485")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 120, height: 90)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
                             
                             
                             Image("Rectangle 4485")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 120, height: 90)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
                             
                             Image("Frame 40-2")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 120, height: 90)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
                             
                         }
                         .padding()
@@ -537,7 +537,7 @@ struct Add_classified_Parts_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)

@@ -43,7 +43,7 @@ struct Change_Password: View {
                     Spacer()
                    
                 }
-                .padding()
+                .padding(.top)
             
             HStack{
                 Text("Change Password")
@@ -56,13 +56,18 @@ struct Change_Password: View {
                 
                 Spacer()
             }
-            .padding()
+            .padding(.top)
+            .padding(.bottom)
             
             
+            VStack(alignment: .leading){
+                HStack{
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
                 .foregroundColor(.gray)
                 .font(AppFonts.regular_14)
-            
+                    Spacer()
+            }
+            }
             
            
             
@@ -71,8 +76,7 @@ struct Change_Password: View {
                       .padding(.top,28)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       .foregroundColor(.gray)
-                      .padding(.leading)
-                      .padding(.trailing)
+                     
                     
           
             HStack{
@@ -108,16 +112,14 @@ struct Change_Password: View {
                                     }
                     })
             }
-            }.padding(.leading)
-                .padding(.trailing)
+            }
             
             Text("Confirm Password")
                 .font(AppFonts.regular_12)
                       .padding(.top,28)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       .foregroundColor(.gray)
-                      .padding(.leading)
-                      .padding(.trailing)
+                     
                    
             HStack{
             if isSecured2 {
@@ -152,8 +154,7 @@ struct Change_Password: View {
                                     }
                     })
             }
-            }.padding(.leading)
-                .padding(.trailing)
+            }
             
             
             Button(action: {}, label: {
@@ -161,7 +162,7 @@ struct Change_Password: View {
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)

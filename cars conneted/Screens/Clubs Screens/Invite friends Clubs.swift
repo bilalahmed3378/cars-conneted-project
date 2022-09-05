@@ -40,11 +40,11 @@ struct Invite_friends_Clubs: View {
                   
                     
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
-                    .padding(.top,20)
+                }.padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
                 
-            }  .padding(.top,40)
+            }  .padding(.top,30)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
@@ -65,7 +65,7 @@ struct Invite_friends_Clubs: View {
                     
                     
                 }
-                .padding(15)
+                .padding(10)
                 .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1))
                 .padding()
                 

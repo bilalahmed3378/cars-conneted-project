@@ -81,7 +81,6 @@ struct My_Garage_User_View_Previews: PreviewProvider {
 
 struct myGarageUserView : View {
     var body : some View{
-        
         VStack{
             
             ZStack{
@@ -92,11 +91,55 @@ struct myGarageUserView : View {
                 VStack{
                     HStack{
                         Spacer()
-                        Image("save icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 24, height: 24)
-                            .padding()
+                        
+                        Menu(content: {
+                            
+                            Button(action: {}, label: {
+                                
+                              Image("share")
+                                
+                                Text("Share")
+                                    .font(AppFonts.regular_14)
+                                
+                              
+                                
+                            })
+                                
+                                Button(action: {}, label: {
+                                    
+                                    Image("carbon_edit")
+                                    
+                                    Text("Edit")
+                                        .font(AppFonts.regular_14)
+                                    
+                                })
+                                
+                                Button(action: {}, label: {
+                                    
+                                    Image("delete black")
+                                    
+                                    
+                                    Text("Delete")
+                                        .font(AppFonts.regular_14)
+                                    
+                                })
+                            
+                                
+                            
+                            
+                            
+                        }, label: {
+                            
+                            Image("doted icons-1")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
+                                .padding()
+                                .padding(.top)
+                        })
+                        
+                        
+                       
                     }
                     
                    Spacer()
@@ -140,17 +183,17 @@ struct myGarageUserView : View {
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         Image("Ellipse 20")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                            .frame(width: 8, height: 8)
                         
                         Spacer()
                         
@@ -166,9 +209,10 @@ struct myGarageUserView : View {
                         
                        
                     }.padding()
+                        .padding(.bottom)
                 }
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: 240)
+            }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
             
             VStack{
                 
@@ -188,13 +232,13 @@ struct myGarageUserView : View {
                 
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
             }.padding(.leading,26)
@@ -248,9 +292,12 @@ struct myGarageUserView : View {
             }.padding(.leading,26)
                 .padding(.trailing,26)
                 
-            }.background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.widthBlockSize*90, height: 82))
+            }.padding(.top,10)
+            
+            
         }.padding(.top)
-            .padding(.bottom,30)
+            .padding(.bottom)
+            .background(RoundedRectangle(cornerRadius: 0).fill(.gray.opacity(0.1)))
         
         
         

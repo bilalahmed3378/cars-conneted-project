@@ -29,7 +29,7 @@ struct Create_Club_Screen: View {
                         
                        Spacer()
                         
-                    }.padding()
+                    }
                   
                     Spacer()
                 }.edgesIgnoringSafeArea(.top)
@@ -51,8 +51,8 @@ struct Create_Club_Screen: View {
                         
                        
                        
-                    }
-                    .padding()
+                    } .padding(.bottom)
+                   
                 
                 HStack{
                     Text("Create your Club")
@@ -65,13 +65,13 @@ struct Create_Club_Screen: View {
                     
                     Spacer()
                 }
-                .padding()
+                .padding(.bottom)
+               
                 
                 
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
                     .font(AppFonts.regular_14)
-                    .padding(.leading,10)
-                    .padding(.trailing,10)
+                   
                     
                     Group{
                     VStack{
@@ -79,9 +79,7 @@ struct Create_Club_Screen: View {
                 Text("Name")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                   .padding(.bottom,-5)
                 
                   
                 TextField("Ace Classic Club",text:$name)
@@ -90,8 +88,7 @@ struct Create_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                         
                     }
                     
@@ -100,9 +97,7 @@ struct Create_Club_Screen: View {
                 Text("Location")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                   .padding(.bottom,-5)
                 
                   
                 TextField("Street 1, D Arcade, Ace Club",text:$location)
@@ -111,8 +106,7 @@ struct Create_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                         
                     }
                     
@@ -121,9 +115,7 @@ struct Create_Club_Screen: View {
                 Text("Description")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                  .padding(.bottom,-5)
+                    .padding(.bottom,-5)
                 
                   
                 TextField("Club Description",text:$description)
@@ -132,9 +124,7 @@ struct Create_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
-                        
+                  
                     }
                     
                     VStack{
@@ -142,8 +132,7 @@ struct Create_Club_Screen: View {
                 Text("Club Privacy")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .padding(.bottom,-5)
                 
                   
@@ -153,8 +142,7 @@ struct Create_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .overlay(HStack{
                     Spacer()
                     Button(action: {
@@ -174,8 +162,7 @@ struct Create_Club_Screen: View {
                 Text("Who can join this Club")
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                  
                   .padding(.bottom,-5)
                 
                   
@@ -185,8 +172,7 @@ struct Create_Club_Screen: View {
                   .autocapitalization(.none)
                   .background(Rectangle().frame(height: 1).padding(.top, 40))
                   .foregroundColor(.black)
-                  .padding(.leading,10)
-                  .padding(.trailing,10)
+                 
                   .overlay(HStack{
                     Spacer()
                     Button(action: {
@@ -225,17 +211,20 @@ struct Create_Club_Screen: View {
                         .padding(.bottom)
                     
                     
-                    
+                    HStack{
+                        Spacer()
                 Button(action: {}, label: {
                     Text("Create")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
-                .padding(.top,30)
-                    
+                .padding(.top)
+                        
+                        Spacer()
+                    }
                 
                 
                     Spacer()

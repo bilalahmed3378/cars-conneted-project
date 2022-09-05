@@ -42,8 +42,8 @@ struct Shop_Others_View_Screen: View {
                   
                     
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
+                }.padding(.leading)
+                    .padding(.trailing)
                     .padding(.top,20)
                 
             }  .padding(.top,40)
@@ -115,8 +115,8 @@ struct Shop_Others_View_Screen: View {
                 }
                 
             }
-            .padding(.leading,24)
-            .padding(.trailing,24)
+            .padding(.leading)
+            .padding(.trailing)
             
             HStack{
                 
@@ -130,8 +130,8 @@ struct Shop_Others_View_Screen: View {
                 
                 Spacer()
                 
-            }.padding(.leading,24)
-                .padding(.trailing,24)
+            }.padding(.leading)
+                .padding(.trailing)
                 .padding(.top)
             
             
@@ -147,8 +147,8 @@ struct Shop_Others_View_Screen: View {
                 
                 Spacer()
                 
-            }.padding(.leading,24)
-                .padding(.trailing,24)
+            }.padding(.leading)
+                .padding(.trailing)
             
             HStack{
                 Text("Description")
@@ -156,8 +156,8 @@ struct Shop_Others_View_Screen: View {
                 
                 Spacer()
                 
-            }.padding(.leading,24)
-                .padding(.trailing,24)
+            }.padding(.leading)
+                .padding(.trailing)
                 .padding(.top)
             
             
@@ -165,11 +165,11 @@ struct Shop_Others_View_Screen: View {
                 Text("Tincidunt vestibulum aenean eleifend arcu vel leo porta donec tellus. Malesuada tellus dui aliquam semper odio. Egestas proin viv...")
                     .font(AppFonts.regular_14)
             }
-            .padding(.leading,24)
-                .padding(.trailing,24)
+            .padding(.leading)
+                .padding(.trailing)
                 .padding(.top,5)
             
-            Divider().padding(24)
+            Divider().padding()
             
             HStack{
                 Text("Contact Details")
@@ -177,8 +177,8 @@ struct Shop_Others_View_Screen: View {
                 
                 Spacer()
                 
-            }.padding(.leading,24)
-                .padding(.trailing,24)
+            }.padding(.leading)
+                .padding(.trailing)
             }
                 Group{
             HStack{
@@ -190,8 +190,8 @@ struct Shop_Others_View_Screen: View {
                 Text("123456789")
                     .font(AppFonts.regular_14)
             }
-            .padding(.leading,24)
-                .padding(.trailing,24)
+            .padding(.leading)
+                .padding(.trailing)
                 .padding(.top,5)
             
             HStack{
@@ -203,12 +203,12 @@ struct Shop_Others_View_Screen: View {
                 Text("abc@gmail.com")
                     .font(AppFonts.regular_14)
             }
-            .padding(.leading,24)
-                .padding(.trailing,24)
+            .padding(.leading)
+                .padding(.trailing)
                 .padding(.top,5)
             
             
-            Divider().padding(24)
+            Divider().padding()
             
             HStack{
                 Text("Owner")
@@ -216,8 +216,8 @@ struct Shop_Others_View_Screen: View {
                 
                 Spacer()
                 
-            }.padding(.leading,24)
-                .padding(.trailing,24)
+            }.padding(.leading)
+                .padding(.trailing)
                 .padding(.bottom)
                 
             HStack{
@@ -251,11 +251,11 @@ struct Shop_Others_View_Screen: View {
                     .padding(.bottom,10)
                     .padding(.leading,10)
                 .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.2)))
-                .padding(.leading,24)
-                    .padding(.trailing,24)
+                .padding(.leading)
+                    .padding(.trailing)
             
                 }
-                Divider().padding(24)
+                Divider().padding()
                 
                 HStack{
                     Text("Classifieds")
@@ -263,8 +263,8 @@ struct Shop_Others_View_Screen: View {
                     
                     Spacer()
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
+                }.padding(.leading)
+                    .padding(.trailing)
                     .padding(.bottom)
                 
                 ScrollView(.horizontal, showsIndicators: false){

@@ -32,23 +32,29 @@ struct Edit_Garage_Screen: View {
                 }
                 .padding()
             
+            VStack(alignment: .leading){
             HStack{
                 Text("Edit your Garage")
                     .font(AppFonts.semiBold_24)
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     .mask( Text("Edit your Garage")
                         .font(AppFonts.semiBold_24)
-                        .fontWeight(.semibold))
+                       )
                 
                 Spacer()
             }
             .padding()
             
-            
+                HStack{
             Text("Its time to setup your garage and add your beautiful cars collection. It will take a moment.")
                 .font(AppFonts.regular_14)
-                .padding(.leading,10)
-                .padding(.trailing,10)
+                
+                    
+                    Spacer()
+                }.padding(.leading)
+                    .padding(.trailing)
+               
+            }
             
             HStack{
                 Text("Visibility")
@@ -132,8 +138,8 @@ struct Edit_Garage_Screen: View {
             Text("Garage Name")
               .padding(.top,20)
               .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.leading,10)
-              .padding(.trailing,10)
+              .padding(.leading)
+              .padding(.trailing)
             
               
             TextField("Enter your garage name",text:$garage)
@@ -142,14 +148,14 @@ struct Edit_Garage_Screen: View {
               .autocapitalization(.none)
               .background(Rectangle().frame(height: 1).padding(.top, 40))
               .foregroundColor(.black)
-              .padding(.leading,10)
-              .padding(.trailing,10)
+              .padding(.leading)
+              .padding(.trailing)
        
             Button(action: {}, label: {
                 Text("Update")
                     .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)
@@ -158,8 +164,7 @@ struct Edit_Garage_Screen: View {
             
                 Spacer()
         }
-        .padding(.leading)
-        .padding(.trailing)
+       
                 
            
         } .navigationBarHidden(true)

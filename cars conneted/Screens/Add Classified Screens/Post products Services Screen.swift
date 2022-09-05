@@ -63,11 +63,14 @@ struct Post_products_Services_Screen: View {
                     .padding(.trailing,24)
                     .padding(.top,20)
                 
-            }  .padding(.top,40)
+            }  .padding(.top,30)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
-                    .resizable())
+                    .resizable()
+                    
+                )
+            
             ScrollView(.vertical, showsIndicators: false){
                 Group{
                 HStack{
@@ -114,7 +117,8 @@ struct Post_products_Services_Screen: View {
                         .font(AppFonts.regular_12)
                         .foregroundColor(.gray)
                 }
-                .padding()
+                .padding(.leading)
+                .padding(.trailing)
                 
                 Divider()
                     .padding(.leading)
@@ -545,7 +549,7 @@ struct Post_products_Services_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)

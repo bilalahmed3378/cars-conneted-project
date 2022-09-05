@@ -58,13 +58,14 @@ struct Post_Product_Vehicle_Screen: View {
                 .background(
                     Image("home screen background")
                     .resizable())
+            
             ScrollView(.vertical, showsIndicators: false){
                 Group{
                 HStack{
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                        .frame(width: UIScreen.widthBlockSize*92, height: 210)
                 }
                 .padding(.top)
                 
@@ -280,7 +281,7 @@ struct Post_Product_Vehicle_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)

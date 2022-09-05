@@ -31,7 +31,7 @@ struct Successfully_Changed: View {
                     Spacer()
                    
                 }
-                .padding()
+               
             
             HStack{
                 Text("Successfully Changed")
@@ -44,12 +44,17 @@ struct Successfully_Changed: View {
                 
                 Spacer()
             }
-            .padding()
+            .padding(.top)
+            .padding(.bottom)
             
-            
+            VStack(alignment: .leading){
+            HStack{
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
                 .foregroundColor(.gray)
                 .font(AppFonts.regular_14)
+                Spacer()
+            }
+            }
             
           Image("ant-design_check-circle-filled")
                 .resizable()
@@ -61,7 +66,7 @@ struct Successfully_Changed: View {
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)

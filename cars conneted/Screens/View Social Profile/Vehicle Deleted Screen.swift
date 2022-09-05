@@ -37,7 +37,7 @@ struct Vehicle_Deleted_Screen: View {
                         .font(AppFonts.semiBold_24)
                         .fontWeight(.semibold))
                 
-               
+               Spacer()
             }
             .padding(.top)
             .padding(.bottom)
@@ -55,7 +55,7 @@ struct Vehicle_Deleted_Screen: View {
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,30)

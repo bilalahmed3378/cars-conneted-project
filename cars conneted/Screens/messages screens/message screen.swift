@@ -59,15 +59,16 @@ struct personal_message_screen: View {
                             .frame(width: 30, height: 30)
                         
                         
-                    }.padding(.leading,24)
-                        .padding(.trailing,24)
-                        .padding(.top,20)
+                    }.padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
                     
-                }  .padding(.top,40)
+                }  .padding(.top,30)
                     .padding(.bottom,30)
                     .background(
                         Image("home screen background")
                         .resizable())
+                
                 HStack{
                     Spacer()
                     VStack(alignment: .trailing){

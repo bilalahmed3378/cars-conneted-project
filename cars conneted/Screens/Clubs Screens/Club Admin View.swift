@@ -21,6 +21,72 @@ struct Club_Admin_View: View {
     var body: some View {
         VStack{
             
+            VStack{
+                
+                // top bar
+                HStack{
+                    Button(action: {
+                       
+                    }, label: {
+                        Image("back icon")
+                               .resizable()
+                               .aspectRatio(contentMode: .fit)
+                               .frame(width: 35, height: 35)
+                    })
+                    
+                    Spacer()
+                    
+                    
+                    Text("Clubs")
+                        .font(AppFonts.SemiBold_20)
+                        .foregroundColor(.white)
+                    
+                    Spacer()
+                    
+                   
+                    
+                    Image("doted icons-1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
+                        .padding(.trailing,10)
+                    
+                 
+                       
+                }
+               
+                .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
+                
+                // search bar
+                HStack{
+                    
+                    TextField("Search",text: self.$searchText)
+                        .foregroundColor(.red)
+                    
+                    Image(systemName: "magnifyingglass")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width:20,height: 20)
+                        .foregroundColor(.red)
+                    
+                    
+                }
+                .padding(10)
+                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                .padding(.top,10)
+                .padding(.leading)
+                .padding(.trailing)
+                
+            }
+           
+            .padding(.top,30)
+            .padding(.bottom,15)
+            .background(
+                Image("home screen background")
+                .resizable())
+            
            
             ScrollView(.vertical, showsIndicators: false){
                 Group{
@@ -28,9 +94,9 @@ struct Club_Admin_View: View {
                 Image("unsplash_AHnhdjyTNGM")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*100, height: 256)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 230)
             }
-            .padding(.top)
+           
             
             HStack(alignment: .top){
                 Text("Ace Classic Club")
@@ -38,10 +104,8 @@ struct Club_Admin_View: View {
                 
                 Spacer()
                 
-            }
-            .padding()
-            .padding(.bottom,-10)
-            
+            }.padding(.leading)
+                        .padding(.trailing)
             
             HStack{
                
@@ -75,7 +139,9 @@ struct Club_Admin_View: View {
                 
                 Spacer()
                 
-            }.padding(.leading)
+            }
+            .padding(.leading)
+                        .padding(.trailing)
             
                     
             HStack{
@@ -90,9 +156,9 @@ struct Club_Admin_View: View {
                 
                 Spacer()
                 
-            }
-            .padding(.leading)
-            .padding(.trailing)
+            }.padding(.leading)
+                        .padding(.trailing)
+            
             .padding(.top,10)
                
             HStack{
@@ -118,9 +184,9 @@ struct Club_Admin_View: View {
                 Spacer()
                 
             }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.top,10)
+             .padding(.top,10)
+             .padding(.leading)
+             .padding(.trailing)
                
             HStack{
                 Image("unsplash_-IPFb6J03Mw")
@@ -163,6 +229,7 @@ struct Club_Admin_View: View {
             }
             .padding(.leading)
             .padding(.trailing)
+           
                     
                 }
             
@@ -197,8 +264,8 @@ struct Club_Admin_View: View {
                     
                     Spacer()
                     
-                }.padding(.leading)
-                    .padding(.trailing)
+                }
+                   
                     .padding(.top)
                 
                 Divider().padding()
@@ -214,7 +281,7 @@ struct Club_Admin_View: View {
                     
                     Text("Write something...")
                         .font(AppFonts.regular_12)
-                        .padding(.trailing,190)
+                        .padding(.trailing,150)
                         .padding(.top,15)
                         .padding(.bottom,15)
                         .padding(.leading)
@@ -222,8 +289,9 @@ struct Club_Admin_View: View {
                     
                     Spacer()
                 }
-                .padding()
-                
+                .padding(.leading)
+                    .padding(.trailing)
+               
                 VStack(alignment: .leading){
                     Text("New Member This Week")
                         .font(AppFonts.semiBold_16)
@@ -232,38 +300,38 @@ struct Club_Admin_View: View {
                         Image("Ellipse 35-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
-                        
+                            .frame(width: 35, height: 35)
+
                         Image("Ellipse 35-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 35, height: 35)
                             .offset(x: -16)
-                        
+
                         Image("Ellipse 35-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 35, height: 35)
                             .offset(x: -32)
-                        
+
                         Image("Ellipse 35-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 35, height: 35)
                             .offset(x: -48)
-                        
+
                         Image("Ellipse 35-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 35, height: 35)
                             .offset(x: -64)
-                        
+
                         Image("Ellipse 35-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 50, height: 50)
+                            .frame(width: 35, height: 35)
                             .offset(x: -80)
-                        
+
                     }
                     
                     Text("Over 300 new members this week")
@@ -373,27 +441,36 @@ struct PostsClubsAdmin : View {
           
           HStack{
               
-              Image("Group 7370")
+              Image("Group 7367")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 18, height: 18)
+              
+              Image("Group 7369")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 18, height: 18)
+                  .offset(x: -10, y: 0)
               
               Text("Arsalan and 20 other")
-                  .font(.subheadline)
+                  .font(AppFonts.regular_12)
                   .foregroundColor(Color.gray)
               
               Spacer()
               
               Text("12 comments")
-                  .font(.subheadline)
+                  .font(AppFonts.regular_12)
                   .foregroundColor(Color.gray)
               
           }
           
-          Image("Line 2")
+         Divider()
           
           HStack{
               HStack{
                   Image("heart icon")
                   Text("Like")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
                   
                   
@@ -403,7 +480,7 @@ struct PostsClubsAdmin : View {
               HStack{
                   Image("ant-design_comment-outlined")
                   Text("Comment")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
                   
               }
@@ -411,26 +488,23 @@ struct PostsClubsAdmin : View {
               HStack{
                   Image("ion_share-social-sharp")
                   Text("Share")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
               }
               Spacer()
               HStack{
                   Image("Icons")
                   Text("Save")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
               }
               
               
           }
           
-          Image("Line 2")
+         Divider()
           
-      }.padding(.bottom,20)
-          .padding(.leading,20)
-          .padding(.trailing,20)
-          .padding(.top,20)
+      }.padding()
       
   }
 }
@@ -486,10 +560,6 @@ struct EventsClubs : View {
               Image("Event cards pic")
                   .resizable()
               
-                 
-              
-            
-              
               VStack(alignment: .leading){
                   HStack{
                       Spacer()
@@ -529,7 +599,7 @@ struct EventsClubs : View {
                       Text("$25")
                           .font(AppFonts.regular_14)
                           .foregroundColor(.gray)
-                          .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: 86, height: 45))
+                          .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*6))
                       
                   
                       Spacer()
@@ -541,18 +611,18 @@ struct EventsClubs : View {
                               Text("Register")
                                   .font(AppFonts.regular_14)
                                   .foregroundColor(.white)
-                                  .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: 200, height: 45))
+                                  .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*6))
                           }
                       }
                      
                     
-                  }.padding(.trailing,75)
+                  }.padding(.trailing,55)
                       .padding(.leading,30)
                       .padding(.top,20)
                       .padding(.bottom,10)
                   
               }
-              .padding(20)
+              .padding()
               
               
            
@@ -560,31 +630,41 @@ struct EventsClubs : View {
             
               
           }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
+              .padding(.top,10)
               
           
           HStack{
               
-              Image("Group 7370")
+              Image("Group 7367")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 18, height: 18)
+              
+              Image("Group 7369")
+                  .resizable()
+                  .aspectRatio(contentMode: .fit)
+                  .frame(width: 18, height: 18)
+                  .offset(x: -10, y: 0)
               
               Text("Arsalan and 20 other")
-                  .font(.subheadline)
+                  .font(AppFonts.regular_12)
                   .foregroundColor(Color.gray)
               
               Spacer()
               
               Text("12 comments")
-                  .font(.subheadline)
+                  .font(AppFonts.regular_12)
                   .foregroundColor(Color.gray)
               
-          }
+          }.padding(.top,5)
           
-          Image("Line 2")
+        Divider()
           
           HStack{
               HStack{
                   Image("heart icon")
                   Text("Like")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
                   
                   
@@ -602,26 +682,23 @@ struct EventsClubs : View {
               HStack{
                   Image("ion_share-social-sharp")
                   Text("Share")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
               }
               Spacer()
               HStack{
                   Image("Icons")
                   Text("Save")
-                      .fontWeight(.thin)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
               }
               
               
           }
           
-          Image("Line 2")
+         Divider()
           
-      }.padding(.bottom,20)
-          .padding(.leading,20)
-          .padding(.trailing,20)
-          .padding(.top,20)
+      }.padding()
 
       
       
@@ -715,7 +792,7 @@ struct ClubsCardClubs: View {
                         
                         Text("Ace Classic Club")
                             .foregroundColor(.white)
-                            .fontWeight(.medium)
+                            .font(AppFonts.regular_14)
                         
                         Spacer()
                         
@@ -733,11 +810,11 @@ struct ClubsCardClubs: View {
                         
                         Text("+120")
                             .foregroundColor(.white)
-                            .fontWeight(.medium)
+                            .font(AppFonts.regular_12)
                         
                         
                     }.padding()
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*8))
                       
                     
                     
@@ -749,30 +826,40 @@ struct ClubsCardClubs: View {
             }
             .frame(height: 240)
             .cornerRadius(10)
-            .padding(.top,20)
+           
             HStack{
                 
-                Image("Group 7370")
+                Image("Group 7367")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                
+                Image("Group 7369")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                    .offset(x: -10, y: 0)
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
             }
             
-            Image("Line 2")
+            Divider()
             
             HStack{
                 HStack{
                     Image("heart icon")
+                    
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -782,7 +869,7 @@ struct ClubsCardClubs: View {
                 HStack{
                     Image("ant-design_comment-outlined")
                     Text("Comment")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -790,14 +877,14 @@ struct ClubsCardClubs: View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 
@@ -806,10 +893,7 @@ struct ClubsCardClubs: View {
             
             Image("Line 2")
             
-        }.padding(.bottom,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.top,20)
+        }.padding()
 
      
         
@@ -950,7 +1034,7 @@ struct ClassifiedCardsClubs : View {
                             .padding(10)
                             .padding(.leading,10)
                             .padding(.trailing,10)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*4))
+                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*7))
                             
                            
                         
@@ -986,27 +1070,36 @@ struct ClassifiedCardsClubs : View {
             
             HStack{
                 
-                Image("Group 7370")
+                Image("Group 7367")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                
+                Image("Group 7369")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                    .offset(x: -10, y: 0)
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
             }
             
-            Image("Line 2")
+           Divider()
             
             HStack{
                 HStack{
                     Image("heart icon")
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -1016,7 +1109,7 @@ struct ClassifiedCardsClubs : View {
                 HStack{
                     Image("ant-design_comment-outlined")
                     Text("Comment")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -1024,26 +1117,23 @@ struct ClassifiedCardsClubs : View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 
                 
             }
             
-            Image("Line 2")
+            Divider()
             
-        }.padding(.bottom,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.top,20)
+        }.padding()
 
     }
 }
@@ -1127,7 +1217,7 @@ struct SharedPostClubsScreen : View {
             }.padding(.bottom,10)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                .font(.subheadline)
+                .font(AppFonts.regular_12)
                 .foregroundColor(Color.gray)
             
             Image("unsplash_gmA751dxisA")
@@ -1136,16 +1226,25 @@ struct SharedPostClubsScreen : View {
             
             HStack{
                 
-                Image("Group 7370")
+                Image("Group 7367")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                
+                Image("Group 7369")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 18, height: 18)
+                    .offset(x: -10, y: 0)
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_12)
                     .foregroundColor(Color.gray)
                 
             }
@@ -1156,7 +1255,7 @@ struct SharedPostClubsScreen : View {
                 HStack{
                     Image("heart icon")
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -1174,14 +1273,14 @@ struct SharedPostClubsScreen : View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 
@@ -1190,10 +1289,7 @@ struct SharedPostClubsScreen : View {
             
             Image("Line 2")
             
-        }.padding(.bottom,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.top,20)
+        }.padding()
             .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.1)))
           
         }.padding()

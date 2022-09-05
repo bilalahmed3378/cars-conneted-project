@@ -53,7 +53,8 @@ struct Create_Event_step1_Screen: View {
                    
                    
                 }
-                .padding()
+                .padding(.leading)
+                .padding(.trailing)
             
             VStack(alignment: .leading){
             HStack{
@@ -81,33 +82,33 @@ struct Create_Event_step1_Screen: View {
                 Image("Rectangle 4485")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*26, height: 90)
+                    .frame(width: 90, height: 90)
                     
                     Image("minus icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 18, height: 18)
-                        .offset(x: 48, y: -42)
+                        .offset(x: 40, y: -35)
                 }
                 Spacer()
                 ZStack{
                 Image("Rectangle 4485")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*26, height: 90)
+                    .frame(width: 90, height: 90)
                     
                     Image("minus icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 18, height: 18)
-                        .offset(x: 48, y: -42)
+                        .offset(x: 40, y: -35)
                 }
                 Spacer()
                 
                 Image("Frame 40-2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*26, height: 90)
+                    .frame(width: 90, height: 90)
                 
             }
             .padding()
@@ -878,10 +879,11 @@ struct Create_Event_step1_Screen: View {
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,30)
+            .padding(.top)
+            .padding(.bottom)
              
             }
         } .navigationBarHidden(true)

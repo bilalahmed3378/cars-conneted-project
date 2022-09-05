@@ -19,7 +19,7 @@ struct My_Clubs_screens: View {
                     
                     // top bar
                     HStack{
-                        Image("side menu icon white")
+                        Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
@@ -43,15 +43,15 @@ struct My_Clubs_screens: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
-                            .padding(.trailing,10)
+                           
                         
                      
                            
                     }
                    
-                    .padding(.leading,24)
-                        .padding(.trailing,24)
-                        .padding(.top,20)
+                    .padding(.leading)
+                        .padding(.trailing)
+                       
                     
                     // search bar
                     HStack{
@@ -67,11 +67,11 @@ struct My_Clubs_screens: View {
                         
                         
                     }
-                    .padding(15)
+                    .padding(10)
                     .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                    .padding(.top,20)
-                    .padding(.leading,20)
-                    .padding(.trailing,20)
+                    .padding(.top,10)
+                    .padding(.leading)
+                    .padding(.trailing)
                     
                 }
                
@@ -142,7 +142,7 @@ struct myClubsPosts: View{
                 Image("unsplash_gmA751dxisA-1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 230)
                     .overlay(Color.black.opacity(0.03))
                     .clipped()
                    
@@ -180,7 +180,7 @@ struct myClubsPosts: View{
                         
                         Text("Ace Classic Club")
                             .foregroundColor(.white)
-                            .fontWeight(.medium)
+                            .font(AppFonts.regular_12)
                         
                         Spacer()
                         
@@ -198,11 +198,13 @@ struct myClubsPosts: View{
                         
                         Text("+120")
                             .foregroundColor(.white)
-                            .fontWeight(.medium)
+                            .font(AppFonts.regular_12)
                         
                         
-                    }.padding()
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                    } .padding()
+                        .padding(.top,-20)
+                    .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10) )
+                   
                       
                     
                     

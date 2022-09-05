@@ -83,8 +83,7 @@ struct HomeTab: View {
                             
                             
                         }
-                       
-                        .padding(.leading,24)
+                            .padding(.leading,24)
                             .padding(.trailing,24)
                             .padding(.top,20)
                         
@@ -111,7 +110,6 @@ struct HomeTab: View {
                         .padding(.top,20)
                         .padding(.leading,20)
                         .padding(.trailing,20)
-                        
                         
                         // status heading
                         HStack{
@@ -155,13 +153,11 @@ struct HomeTab: View {
                                             
                                         })
                                        
-                                   
                                 }
                                 
                             }
                         }
-                          
-                        
+                         
                     }
                    
                     .padding(.top,30)
@@ -173,19 +169,13 @@ struct HomeTab: View {
                  
                     ScrollView(.vertical, showsIndicators: false){
                         
-                        ///////////////
-                    
                       
-                      
-                       ////////////////////////
                         HStack{
                             Image("unsplash_X6Uj51n5CE8")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 50, height: 50)
                                 .padding(.trailing,5)
-                            
-                          
                             
                             Text("Write something...")
                                 .font(AppFonts.regular_12)
@@ -213,9 +203,6 @@ struct HomeTab: View {
                             Divider()
                         }
                         
-                        
-                  
-                       
                     }
                
                 }
@@ -1193,7 +1180,6 @@ struct marketPlaceSreachCardsHome : View {
     }
 }
 
-
 struct commentsScreen : View{
     @State private var comment = ""
     var body: some View{
@@ -1245,9 +1231,6 @@ struct commentsScreen : View{
         
     }
 }
-
-
-
 
 struct commentsDetails : View{
     var body: some View{

@@ -53,8 +53,8 @@ struct Classified_Vehicle_Screen: View {
                     
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.widthBlockSize*90, height: 230)
                     
                     VStack{
                         
@@ -74,16 +74,19 @@ struct Classified_Vehicle_Screen: View {
                             
                         }
                         .padding()
+                        .padding(.top)
                         
                         Spacer()
                         
-                        HStack{
+                        HStack(alignment: .bottom){
                             
                             Text("SOLD")
                                 .font(AppFonts.semiBold_16)
                                 .foregroundColor(AppColors.redGradientColor1)
                                 .padding()
                                 .background(RoundedRectangle(cornerRadius: 10).fill(.yellow))
+                               
+                               
                             
                             Spacer()
                           
@@ -104,7 +107,7 @@ struct Classified_Vehicle_Screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 10, height: 10)
                                 
-                            }.offset(x: -20)
+                            }.offset(x: -15)
                             
                             Spacer()
                             
@@ -113,8 +116,10 @@ struct Classified_Vehicle_Screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
                             
-                        }.padding(.trailing)
+                        }
                             .padding(.bottom,2)
+                            .padding()
+                           
                         
                         
                     }
@@ -122,7 +127,7 @@ struct Classified_Vehicle_Screen: View {
                     
                 }
                 .padding(.top)
-                .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                .frame(width: UIScreen.widthBlockSize*90, height: 230)
                 
                 HStack{
                     Text("Honda")
@@ -474,7 +479,7 @@ struct Classified_Vehicle_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,30)
@@ -490,7 +495,7 @@ struct Classified_Vehicle_Screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*43, height: 70)
+                        .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
               
@@ -500,7 +505,7 @@ struct Classified_Vehicle_Screen: View {
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
-                            .frame(width: UIScreen.widthBlockSize*43, height: 70)
+                            .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
                   
