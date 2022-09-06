@@ -47,11 +47,11 @@ struct Notifications_setting: View {
                 
                
                 
-            }.padding(.leading,20)
-                .padding(.trailing,20)
-                .padding(.top,20)
+            }.padding(.leading)
+                .padding(.trailing)
+                .padding(.top)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
@@ -68,7 +68,8 @@ struct Notifications_setting: View {
                     Spacer()
                 }
                 .padding()
-                .padding(.leading,10)
+                .padding(.bottom,-20)
+                
                 
                 HStack{
                     Text("Comments")
@@ -77,8 +78,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                .padding(.bottom,-20)
+                
                 
                 HStack{
                     Text("Likes")
@@ -87,8 +88,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                .padding(.bottom,-20)
+               
                 
                 HStack{
                     Text("Posts")
@@ -97,8 +98,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                .padding(.bottom,-20)
+               
                 
                 HStack{
                     Text("Invites to Join")
@@ -107,8 +108,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                .padding(.bottom,-20)
+                
                 }
                 Group{
                 HStack{
@@ -118,8 +119,7 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                
                 
                 HStack{
                     Text("Events")
@@ -129,7 +129,8 @@ struct Notifications_setting: View {
                     Spacer()
                 }
                 .padding()
-                .padding(.leading,10)
+                .padding(.bottom,-20)
+               
                 
                 HStack{
                     Text("Folllowing")
@@ -138,8 +139,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                .padding(.bottom,-20)
+               
                 
                 HStack{
                     Text("Saved")
@@ -148,8 +149,7 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+               
                 }
                 
                 HStack{
@@ -160,7 +160,8 @@ struct Notifications_setting: View {
                     Spacer()
                 }
                 .padding()
-                .padding(.leading,10)
+                .padding(.bottom,-20)
+                
                 
                 HStack{
                     Text("Following")
@@ -169,8 +170,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+                .padding(.bottom,-20)
+               
                 
                 HStack{
                     Text("Saved")
@@ -179,8 +180,8 @@ struct Notifications_setting: View {
                         .toggleStyle(SwitchToggleStyle(tint: .red))
                 }
                 .padding()
-                .padding(.leading,10)
-                    .padding(.trailing,10)
+              
+                
             }
             
            

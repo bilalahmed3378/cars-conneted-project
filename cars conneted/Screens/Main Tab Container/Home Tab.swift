@@ -13,6 +13,10 @@ struct HomeTab: View {
     
     @State var addItems = false
     @State var addFlowActive = false
+    
+    @State var toSearchScreen = false
+    
+    @State var toProximity = false
 
     
     init(isDrawerOpen : Binding<Bool>){
@@ -24,6 +28,14 @@ struct HomeTab: View {
             ZStack{
                 
                 NavigationLink(destination: post_screen_2() , isActive: self.$addFlowActive) {
+                    EmptyView()
+                }
+                
+                NavigationLink(destination: Search_Screen() , isActive: self.$toSearchScreen) {
+                    EmptyView()
+                }
+                
+                NavigationLink(destination: Proximity_location_screen() , isActive: self.$toProximity) {
                     EmptyView()
                 }
                 
@@ -55,7 +67,9 @@ struct HomeTab: View {
                             
                             Spacer()
                             
-                            Button(action: {}, label: {
+                            Button(action: {
+                                self.toProximity = true
+                            }, label: {
                                 Image("Location white")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -94,7 +108,9 @@ struct HomeTab: View {
                                 .foregroundColor(.red)
                             
                             
-                            Button(action: {}, label: {
+                            Button(action: {
+                                self.toSearchScreen = true
+                            }, label: {
                                 Image(systemName: "magnifyingglass")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -169,26 +185,31 @@ struct HomeTab: View {
                  
                     ScrollView(.vertical, showsIndicators: false){
                         
-                      
-                        HStack{
-                            Image("unsplash_X6Uj51n5CE8")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 50, height: 50)
-                                .padding(.trailing,5)
-                            
-                            Text("Write something...")
-                                .font(AppFonts.regular_12)
-                                .padding(.trailing,190)
-                                .padding(.top,15)
-                                .padding(.bottom,15)
-                                .padding(.leading)
-                                .background(RoundedRectangle(cornerRadius: 80).strokeBorder(.black))
-                            
-                            Spacer()
-                        }
-                        .padding()
-                        .padding(.bottom,-20)
+                        NavigationLink(destination: {
+                            post_screen_2()
+                        }, label: {
+                            HStack{
+                                Image("unsplash_X6Uj51n5CE8")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 50, height: 50)
+                                    .padding(.trailing,5)
+                                
+                                Text("Write something...")
+                                    .font(AppFonts.regular_12)
+                                    .foregroundColor(.black)
+                                    .padding(.trailing,190)
+                                    .padding(.top,15)
+                                    .padding(.bottom,15)
+                                    .padding(.leading)
+                                    .background(RoundedRectangle(cornerRadius: 80).strokeBorder(.black))
+                                
+                                Spacer()
+                            }
+                            .padding()
+                            .padding(.bottom,-20)
+                        })
+                       
                         
                         
                         
@@ -356,46 +377,30 @@ struct PostsHome : View {
       
       VStack{
           
+         
+          
           HStack{
              
               Image("post picture")
-                  .resizable()
-                  .aspectRatio(contentMode: .fit)
-                  .frame(width: 50, height: 50)
               
               VStack(alignment: .leading){
+                  Text("Elizebeth Smith")
+                      .font(AppFonts.medium_14)
                   
-                  HStack{
-                      Text("Elizebeth Smith.")
-                          .font(AppFonts.medium_14)
-                      
-                      Button(action: {}, label: {
-                          Text("Follow")
-                              .font(AppFonts.medium_14)
-                              .foregroundColor(.blue)
-                      })
-                     
-                  }
-                  .padding(.bottom,2)
-                  
-                
                   Text("1h ago")
+                      .foregroundColor(Color.gray)
                       .font(AppFonts.regular_12)
-                      .foregroundColor(.gray)
-                     
                   
                   
               }
               Spacer()
               
-              Button(action: {}, label: {
-                  Image("doted Icons")
-              })
-             
+              Image("doted Icons")
+              
           }.padding(.bottom,10)
           
           Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-              .font(.subheadline)
+              .font(AppFonts.regular_12)
               .foregroundColor(Color.gray)
           
           Image("unsplash_gmA751dxisA")
@@ -404,20 +409,10 @@ struct PostsHome : View {
           
           HStack{
               
-              Image("Group 7367")
-                  .resizable()
-                  .aspectRatio(contentMode: .fit)
-                  .frame(width: 18, height: 18)
-              
-              Image("Group 7369")
-                  .resizable()
-                  .aspectRatio(contentMode: .fit)
-                  .frame(width: 18, height: 18)
-                  .offset(x: -10, y: 0)
-              
+              Image("Group 7370")
               
               Text("Arsalan and 20 other")
-                  .font(.subheadline)
+                  .font(AppFonts.regular_10)
                   .foregroundColor(Color.gray)
               
               Spacer()
@@ -425,88 +420,63 @@ struct PostsHome : View {
               Button(action: {
                   self.showingSheet.toggle()
               }, label: {
-                  
                   Text("12 comments")
-                      .font(.subheadline)
+                      .font(AppFonts.regular_10)
                       .foregroundColor(Color.gray)
-                  
               })
               .sheet(isPresented: $showingSheet){
                   commentsScreen()
               }
              
-          }
-          
-          
-          
-         Divider()
-          
-          HStack{
-              
-              Button(action: {}, label: {
-                  HStack{
-                      Image("heart icon")
-                      
-                      Text("Like")
-                          .fontWeight(.thin)
-                          .foregroundColor(Color.gray)
-                        }
-              })
-             
-              
-              Spacer()
-              
-              HStack{
-                  Image("ant-design_comment-outlined")
-                  
-                  Button(action: {
-                      self.showingSheet.toggle()
-                  }, label: {
-                      Text("Comment")
-                          .fontWeight(.thin)
-                          .foregroundColor(Color.gray)
-                  })
-                  .sheet(isPresented: $showingSheet){
-                      commentsScreen()
-                 
-                  }
-              }
-              
-              Spacer()
-              
-              Button(action: {}, label: {
-                  HStack{
-                      Image("ion_share-social-sharp")
-                      
-                      Text("Share")
-                          .fontWeight(.thin)
-                          .foregroundColor(Color.gray)
-                  }
-              })
-             
-              
-              Spacer()
-              
-              Button(action: {}, label: {
-                  HStack{
-                      Image("Icons")
-                      
-                      Text("Save")
-                          .fontWeight(.thin)
-                          .foregroundColor(Color.gray)
-                  }
-                  
-              })
-            
               
           }
           
           Divider()
           
-      }.padding(.bottom,20)
-          .padding(.leading,20)
-          .padding(.trailing,20)
-          .padding(.top,20)
+          HStack{
+              HStack{
+                  Image("heart icon")
+                  Text("Like")
+                      .font(AppFonts.regular_12)
+                      .foregroundColor(Color.gray)
+                  
+                  
+              }
+              
+              Spacer()
+              HStack{
+                  Image("ant-design_comment-outlined")
+                  Text("Comment")
+                      .font(AppFonts.regular_12)
+                      .foregroundColor(Color.gray)
+                  
+              }
+              Spacer()
+              HStack{
+                  Image("ion_share-social-sharp")
+                  Text("Share")
+                      .font(AppFonts.regular_12)
+                      .foregroundColor(Color.gray)
+              }
+              Spacer()
+              
+              HStack{
+                  Image("Icons")
+                  Text("Save")
+                      .font(AppFonts.regular_12)
+                      .foregroundColor(Color.gray)
+              }
+              
+              
+          }
+          
+         Divider()
+          
+      
+          
+          
+      }
+      .padding()
       
   }
 }

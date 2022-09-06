@@ -70,14 +70,11 @@ struct Proximity_Setting_screen: View {
                     Spacer()
                     
                     Toggle("", isOn: $isOnline)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
+                        .toggleStyle(SwitchToggleStyle(tint: .red))
                   
                 }.padding(.trailing,3)
                 
-                Image("Line 6")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 377, height: 1)
+               Divider()
                     .padding(.bottom)
                     .padding(.top)
                 
@@ -95,6 +92,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Public")
+                        .foregroundColor(self.isProfileView ? .black : .gray)
                         .font(AppFonts.regular_14)
                 
                     Spacer()
@@ -128,7 +126,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Private")
-                        .foregroundColor(.gray)
+                        .foregroundColor(self.isProfileView ? .gray : .black)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -152,10 +150,8 @@ struct Proximity_Setting_screen: View {
                    
                 }
                 }
-                Image("Line 6")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 377, height: 1)
+                
+               Divider()
                     .padding(.bottom)
                     .padding(.top)
                            
@@ -174,6 +170,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Public")
+                        .foregroundColor(self.isOnlineStatus ? .black : .gray)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -205,7 +202,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Private")
-                        .foregroundColor(.gray)
+                        .foregroundColor(self.isOnlineStatus ? .gray : .black)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -229,10 +226,7 @@ struct Proximity_Setting_screen: View {
                   
                 }
                 
-                Image("Line 6")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 377, height: 1)
+               Divider()
                     .padding(.bottom)
                     .padding(.top)
                 }
@@ -251,6 +245,8 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Public")
+                        .foregroundColor(self.selectedCircle == 0 ? .black : .gray)
+                        .font(AppFonts.regular_14)
                     
                     Spacer()
                     Button(action: {
@@ -281,7 +277,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                   
                     Text("Only friends")
-                        .foregroundColor(.gray)
+                        .foregroundColor(self.selectedCircle == 1 ? .black : .gray)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -311,8 +307,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                   
                     Text("Private")
-                        .foregroundColor(.gray)
-                        .font(AppFonts.regular_14)
+                        .foregroundColor(self.selectedCircle == 2 ? .black : .gray)                        .font(AppFonts.regular_14)
                     
                     Spacer()
                     Button(action: {

@@ -39,14 +39,14 @@ struct User_Profile__Wall: View {
                             Image("unsplash_spxgIcI7YGo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: 360, height: 250)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
                                 .padding(.top)
                             
                             Image("unsplash_OhKElOkQ3RE-1")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 100, height: 100)
-                                .offset(x: 0, y: -45)
+                                .frame(width: UIScreen.widthBlockSize*26, height: 100)
+                                .offset(x: 0, y: -35)
                             
                             Text("Elon Musk")
                                 .font(AppFonts.medium_18)
@@ -148,7 +148,7 @@ struct User_Profile__Wall: View {
                                         
                                        
                                     }
-                                    .frame(width: 160, height: 50 )
+                                    .frame(width: UIScreen.widthBlockSize*45, height: 50 )
                                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     
                                 }
@@ -157,7 +157,7 @@ struct User_Profile__Wall: View {
                                     Text("Following")
                                         .font(AppFonts.semiBold_14)
                                         .foregroundColor(.red)
-                                        .frame(width: 160, height: 50 )
+                                        .frame(width: UIScreen.widthBlockSize*45, height: 50 )
                                         .background(RoundedRectangle(cornerRadius: 50).strokeBorder(.red, lineWidth: 1))
                                 }
                                 
@@ -177,7 +177,7 @@ struct User_Profile__Wall: View {
                                      .foregroundColor(AppColors.redGradientColor1)
                                  
                              }
-                             .frame(width: 160, height: 50 )
+                             .frame(width: UIScreen.widthBlockSize*45, height: 50 )
                              .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
                             
                             
@@ -195,15 +195,16 @@ struct User_Profile__Wall: View {
                                     
                                     if(self.isPostView == 0){
                                         Text("Posts")
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.white)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Posts")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.gray)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).strokeBorder(.black , lineWidth: 1))
                                     }
                                       
@@ -216,16 +217,16 @@ struct User_Profile__Wall: View {
                                     
                                     if ((self.isPostView == 1) ){
                                         Text("Garage")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.white)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Garage")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.gray)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).strokeBorder(.black , lineWidth: 1))
                                     }
                                     
@@ -238,16 +239,16 @@ struct User_Profile__Wall: View {
                                     
                                     if ((self.isPostView == 2) ){
                                         Text("Classified")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.white)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Classified")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.gray)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).strokeBorder(.black , lineWidth: 1))
                                     }
                                     
@@ -260,16 +261,16 @@ struct User_Profile__Wall: View {
                                     
                                     if ((self.isPostView == 3) ){
                                         Text("Clubs")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.white)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                     }
                                     else{
                                         Text("Clubs")
-                                            .font(AppFonts.regular_16)
+                                            .font(AppFonts.regular_14)
                                             .foregroundColor(.gray)
-                                            .frame(width: 80, height: 50)
+                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
                                             .background(   RoundedRectangle(cornerRadius: 10).strokeBorder(.black , lineWidth: 1))
                                     }
                                     
@@ -304,7 +305,7 @@ struct User_Profile__Wall: View {
                                 
                                 Text("Write something...")
                                     .font(AppFonts.regular_12)
-                                    .padding(.trailing,165)
+                                    .padding(.trailing,50)
                                     .padding(.top,15)
                                     .padding(.bottom,15)
                                     .padding(.leading)
@@ -385,32 +386,27 @@ struct PostCardProfile : View {
     
     var body: some View {
         
-        VStack(alignment: .leading){
+        VStack{
+            
+           
             
             HStack{
-                
+               
                 Image("post picture")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
                 
                 VStack(alignment: .leading){
                     Text("Elizebeth Smith")
                         .font(AppFonts.medium_14)
-                        .padding(.bottom,5)
                     
                     Text("1h ago")
-                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
+                        .font(AppFonts.regular_12)
                     
                     
                 }
                 Spacer()
                 
                 Image("doted Icons")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
                 
             }.padding(.bottom,10)
             
@@ -427,18 +423,18 @@ struct PostCardProfile : View {
                 Image("Group 7370")
                 
                 Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_12)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(AppFonts.regular_12)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
             }
             
-            Image("Line 2")
+            Divider()
             
             HStack{
                 HStack{
@@ -455,7 +451,6 @@ struct PostCardProfile : View {
                     Image("ant-design_comment-outlined")
                     Text("Comment")
                         .font(AppFonts.regular_12)
-                        .fontWeight(.thin)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -478,16 +473,14 @@ struct PostCardProfile : View {
                 
             }
             
-            Image("Line 2")
+           Divider()
             
-            
+        
             
             
         }
-        .padding(.bottom,20)
-        .padding(.leading,10)
-        .padding(.trailing,10)
-        .padding(.top,20)
+        .padding()
+        
     }
 }
 
@@ -496,11 +489,12 @@ struct GarageCardProfile : View {
     var body: some View {
         
         VStack{
-            ZStack(alignment: .leading){
+           
+            ZStack{
                 Image("unsplash_1ZhZpP91olQ")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: 377, height: 190)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*33)
                 VStack{
                     HStack{
                         Text("Slot 1")
@@ -511,6 +505,7 @@ struct GarageCardProfile : View {
                         Spacer()
                     }
                     .padding(.leading)
+                    .padding(.top)
                     
                     Spacer()
                     
@@ -521,6 +516,7 @@ struct GarageCardProfile : View {
                     }
                     .padding(.leading)
                     .padding(.trailing)
+                    .padding(.bottom)
                 }
             }
             
@@ -534,8 +530,8 @@ struct GarageCardProfile : View {
                     .font(AppFonts.regular_12)
                     .foregroundColor(AppColors.redGradientColor1)
             }
-            .padding(.top,30)
-            .padding(.bottom,20)
+            
+            
             
         }
         .padding()
@@ -598,7 +594,7 @@ struct ClubsCardProfile: View {
                         
                         Text("Ace Classic Club")
                             .foregroundColor(.white)
-                            .fontWeight(.medium)
+                            .font(AppFonts.regular_12)
                         
                         Spacer()
                         
@@ -620,7 +616,8 @@ struct ClubsCardProfile: View {
                         
                         
                     }.padding()
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                        .padding(.top,-20)
+                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
                       
                     
                     
@@ -657,7 +654,7 @@ struct ClassifiedCardProfile: View {
                 Image("classified")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 240)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
                 
                 VStack{
                     Spacer()
@@ -677,11 +674,11 @@ struct ClassifiedCardProfile: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 10, height: 10)
                     }
-                }.padding(.bottom)
+                }.padding(.bottom,30)
                 
                 
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: 240)
+            }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
             
             VStack{
             

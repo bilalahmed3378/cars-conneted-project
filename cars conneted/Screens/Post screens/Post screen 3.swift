@@ -14,13 +14,26 @@ struct Post_screen_3: View {
     @State private var location: String = ""
     @Environment(\.presentationMode) var presentaionMode
     
+    @State var toPreview = false
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: post_screen_5_preview_(), isActive: self.$toPreview){
+                EmptyView()
+            }
+            
             HStack{
-                Image("post back icons")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("post back icons")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+               
                 
                 Spacer()
                 
@@ -163,7 +176,9 @@ struct Post_screen_3: View {
           Spacer()
      
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toPreview = true
+                }, label: {
                     ZStack{
                         Text("Preview?")
                             .foregroundColor(.white)

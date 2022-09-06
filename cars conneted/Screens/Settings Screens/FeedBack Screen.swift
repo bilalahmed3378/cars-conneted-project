@@ -36,6 +36,7 @@ struct FeedBack_Screen: View {
                 Text("Feedback")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -46,13 +47,14 @@ struct FeedBack_Screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
                 .resizable())
         }
             
+            ScrollView(.vertical, showsIndicators: false){
             
             Text("Name")
                 .font(AppFonts.regular_12)
@@ -118,13 +120,13 @@ struct FeedBack_Screen: View {
                 Text("Submit Feedback")
                     .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint:.leading , endPoint: .trailing)).frame(width: 200, height: 40))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint:.leading , endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*50, height: 40))
                 
             }.padding()
                 .padding(.trailing,35)
             
-            
-            Spacer()
+            }
+           
             
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)

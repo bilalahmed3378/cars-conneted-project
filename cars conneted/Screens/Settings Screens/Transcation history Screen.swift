@@ -40,11 +40,11 @@ struct Transcation_history_Screen: View {
                     
                    
                     
-                }.padding(.leading,20)
-                    .padding(.trailing,20)
-                    .padding(.top,20)
+                }.padding(.leading)
+                    .padding(.trailing)
+                    .padding(.top)
                 
-            }  .padding(.top,40)
+            }  .padding(.top,30)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
@@ -93,6 +93,7 @@ struct Transcation_history_Screen: View {
                     Spacer()
                 }
                 .padding()
+                .padding(.bottom,-10)
                 
                 LazyVStack{
                     ForEach(0...3, id: \.self){index in

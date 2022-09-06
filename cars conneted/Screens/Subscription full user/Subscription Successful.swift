@@ -9,11 +9,15 @@ import SwiftUI
 
 struct Subscription_Successful: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toHome = false
     var body: some View {
         VStack{
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -63,7 +67,9 @@ struct Subscription_Successful: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*35)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toHome = true
+            }, label: {
                 Text("Continue")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

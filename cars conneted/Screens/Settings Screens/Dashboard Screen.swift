@@ -29,6 +29,7 @@ struct Dashboard_Screen: View {
                 Text("Dashboard")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -38,14 +39,14 @@ struct Dashboard_Screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
                 .resizable())
         }
             
-           
+            ScrollView(.vertical, showsIndicators: false){
                 
             HStack{
                 Text("Today")
@@ -319,10 +320,10 @@ struct Dashboard_Screen: View {
             }
             .padding()
             
-            
+            }
             
         
-            Spacer()
+           
         }.edgesIgnoringSafeArea(.top)
             .edgesIgnoringSafeArea(.bottom)
             .navigationBarHidden(true)

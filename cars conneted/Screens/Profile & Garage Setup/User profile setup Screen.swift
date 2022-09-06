@@ -18,8 +18,14 @@ struct User_profile_setup_Screen: View {
     
     @Environment(\.presentationMode) var presentaionMode
     
+    @State var toSetupGarage = false
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Setup_Garage_Screen(), isActive: $toSetupGarage){
+                EmptyView()
+            }
            
             HStack{
                 Image("bilal3")
@@ -209,7 +215,9 @@ struct User_profile_setup_Screen: View {
                     .padding(.leading)
                 
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.toSetupGarage = true
+                    }, label: {
                         Text("Next")
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)

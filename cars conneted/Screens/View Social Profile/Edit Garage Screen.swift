@@ -11,14 +11,20 @@ struct Edit_Garage_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     @State var isSelected: Bool = true
     @State var garage = ""
+    @State var toGarage = false
     var body: some View {
         ZStack{
             
+            NavigationLink(destination: My_Garage_My_View(), isActive: self.$toGarage){
+                EmptyView()
+            }
            
         VStack{
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -151,7 +157,9 @@ struct Edit_Garage_Screen: View {
               .padding(.leading)
               .padding(.trailing)
        
-            Button(action: {}, label: {
+            Button(action: {
+                self.toGarage = true
+            }, label: {
                 Text("Update")
                     .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)

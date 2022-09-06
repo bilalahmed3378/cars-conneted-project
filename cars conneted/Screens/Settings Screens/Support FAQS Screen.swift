@@ -38,6 +38,7 @@ struct Support_FAQS_Screen: View {
                 Text("Support FAQ's")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -54,7 +55,9 @@ struct Support_FAQS_Screen: View {
             .background(
                 Image("home screen background")
                 .resizable())
-            .padding(.bottom,30)
+            
+            
+            ScrollView(.vertical, showsIndicators: false){
             
             VStack(alignment: .leading){
                 
@@ -96,9 +99,7 @@ struct Support_FAQS_Screen: View {
             }
             }.padding()
                 .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
+                .padding()
             
             
             VStack(alignment: .leading){
@@ -238,7 +239,7 @@ struct Support_FAQS_Screen: View {
                 Text("Still need Help?")
                     .font(AppFonts.semiBold_16)
                 
-            }.padding(.top,30)
+            }.padding(.top)
             
             HStack{
                 Text("We are here for you")
@@ -247,17 +248,20 @@ struct Support_FAQS_Screen: View {
             }.padding(.bottom)
             
             HStack{
-                Button(action: {}, label: {
+                
+                NavigationLink(destination: Contact_Support(), label: {
                     Text("Contact Support")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(.white)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 50))
+                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*60, height: 50))
+                
                 })
+                   
               
             }
             
-            
+            }
             
             Spacer()
             

@@ -16,8 +16,14 @@ struct Add_your_Car_Screen: View {
     @State var year = ""
     @State var description = ""
     @Environment(\.presentationMode) var presentaionMode
+    @State var toHome = false
+    
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: MainTabContainer(), isActive: $toHome){
+                EmptyView()
+            }
            
                 VStack{
                     HStack{
@@ -46,7 +52,9 @@ struct Add_your_Car_Screen: View {
                 VStack(alignment: .leading){
                
                     HStack{
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.presentaionMode.wrappedValue.dismiss()
+                        }, label: {
                             
                             Image("Icons-2")
                                 .resizable()
@@ -283,7 +291,9 @@ struct Add_your_Car_Screen: View {
                     
                     HStack{
                         Spacer()
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toHome = true
+                }, label: {
                     Text("Save to Garage")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)

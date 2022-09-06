@@ -34,6 +34,7 @@ struct Help_Screen: View {
                 Text("Help")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -44,12 +45,15 @@ struct Help_Screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
                 .resizable())
         }
+            
+            ScrollView(.vertical, showsIndicators: false){
+            
             HStack{
             HStack{
               
@@ -157,8 +161,8 @@ struct Help_Screen: View {
                 .padding(.bottom)
             
             
-            
-            Spacer()
+            }
+          
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)
     }

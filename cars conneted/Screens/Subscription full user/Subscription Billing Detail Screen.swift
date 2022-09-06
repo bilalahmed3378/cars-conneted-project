@@ -13,10 +13,16 @@ struct Subscription_Billing_Detail_Screen: View {
         ScrollView(.vertical, showsIndicators: false){
         VStack{
             HStack{
-                Image("Icons-2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
+                
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 30, height: 30)
+                })
+               
                 
                 Spacer()
                 

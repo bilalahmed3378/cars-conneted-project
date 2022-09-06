@@ -17,7 +17,7 @@ struct Proximity_Screen_2: View {
            
             HStack{
                 Button(action: {
-                  
+                    self.presentaionMode.wrappedValue.dismiss()
                 }, label: {
                     Image("back icon")
                         .resizable()

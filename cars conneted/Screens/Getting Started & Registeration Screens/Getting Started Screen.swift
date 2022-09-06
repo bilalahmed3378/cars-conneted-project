@@ -7,11 +7,22 @@
 
 import SwiftUI
 
+
 struct Getting_Started_Screen: View {
+    @State var toSignUp = false
+    @State var toLogIn = false
+   
+    
     var body: some View {
         ZStack{
             
+            NavigationLink(destination: SignUp_Screen(), isActive: $toSignUp){
+                EmptyView()
+            }
             
+            NavigationLink(destination: Login_Screen( ), isActive: $toLogIn){
+                EmptyView()
+            }
             
             VStack{
                 Image("unsplash_tHI0IUmtbWQ")
@@ -49,28 +60,32 @@ struct Getting_Started_Screen: View {
                         .padding(.trailing)
                         .padding(.bottom)
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toSignUp = true
+                }, label: {
                     Text("SignUp")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,10)
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toLogIn = true
+                }, label: {
                     Text("Login")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top,10)
                 .padding(.bottom,30)
                     
-                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*65).overlay(VStack{
+                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*75).overlay(VStack{
                     Spacer()
                     HStack{
                         Spacer()
@@ -92,8 +107,4 @@ struct Getting_Started_Screen: View {
     }
 }
 
-struct Getting_Started_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Getting_Started_Screen()
-    }
-}
+

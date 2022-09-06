@@ -9,14 +9,27 @@ import SwiftUI
 
 struct post_screen_5_preview_: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toHome = false
+    
     var body: some View {
         VStack{
             
+            NavigationLink(destination: MainTabContainer(), isActive: self.$toHome){
+                EmptyView()
+            }
+            
         HStack{
-            Image("post back icons")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 35, height: 35)
+            
+            Button(action: {
+                self.presentaionMode.wrappedValue.dismiss()
+            }, label: {
+                Image("post back icons")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 35, height: 35)
+            })
+           
             Spacer()
             
             Text("Preview")
@@ -83,7 +96,9 @@ struct post_screen_5_preview_: View {
           
             
                 
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toHome = true
+                }, label: {
                     ZStack{
                         Text("Post")
                             .foregroundColor(.white)

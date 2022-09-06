@@ -58,7 +58,7 @@ struct Transacation_detail: View {
                 Image("Screenshot (29) 1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 380, height: 220)
+                    .frame(width: UIScreen.widthBlockSize*90, height: 180)
                 
                 
                 HStack{
@@ -122,12 +122,9 @@ struct Transactions : View {
                 Text("$50.00")
                 .font(AppFonts.semiBold_14)
         }
-        .frame(width: 377, height: 60)
+        .frame(width: UIScreen.widthBlockSize*90, height: 60)
         
-        Image("Line 6")
-            .resizable()
-            .aspectRatio(contentMode: .fill)
-            .frame(width: 377, height: 1)
+       Divider()
             .padding(.bottom)
         
     }

@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 
-                MainTabContainer(isUserLoggedIn: self.$isLoggedIn)
+                Onboarding_1_Screen()
           
                 
             }
@@ -82,7 +82,7 @@ struct NavigationDrawer: View {
     
     
     @Binding var isDrawerOpen : Bool
-    @Binding var isUserLoggedIn : Bool
+    
     @State var drawerOffset : CGFloat = -(UIScreen.widthBlockSize*70)
     @State var isDraging : Bool = false
     let mainTabContainer : MainTabContainer
@@ -97,9 +97,9 @@ struct NavigationDrawer: View {
     
     @State var tempDrawWidth : CGFloat = 0.0
     
-    init(isDrawerOpen : Binding<Bool> , isUserLoggedIn : Binding<Bool> ,mainTabContainer : MainTabContainer ){
+    init(isDrawerOpen : Binding<Bool> ,mainTabContainer : MainTabContainer ){
         self._isDrawerOpen = isDrawerOpen
-        self._isUserLoggedIn = isUserLoggedIn
+      
         self.mainTabContainer = mainTabContainer
     }
     
@@ -244,7 +244,7 @@ struct NavigationDrawer: View {
                             }){
                                 
                                 NavigationLink(destination: {
-                                    HomeTab(isDrawerOpen: $isDrawerOpen)
+                                   MainTabContainer()
                                 }, label: {
                                     HStack{
                                         Image("Home icon")
@@ -323,7 +323,7 @@ struct NavigationDrawer: View {
                         // Orders button group
                         Group{
                             Spacer()
-                            NavigationLink(destination: friendsRequest() ){
+                            NavigationLink(destination: Friends_Requests_Screens() ){
                                 HStack{
                                     Image("fa-solid_user-friends")
                                         .resizable()
@@ -349,7 +349,7 @@ struct NavigationDrawer: View {
                             
 //                            NavigationLink(destination: EventsScreen(isFlowRootActive: self.$eventsScreenActive) , isActive: self.$eventsScreenActive){
                             NavigationLink(destination: {
-                                myGarage()
+                                My_Garage_My_View()
                             }, label: {
                                 HStack{
                                     Image("my garage icon white")

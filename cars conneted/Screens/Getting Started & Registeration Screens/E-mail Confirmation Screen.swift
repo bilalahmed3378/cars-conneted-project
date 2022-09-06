@@ -9,11 +9,20 @@ import SwiftUI
 
 struct E_mail_Confirmation_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toProfileSetup = false
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: User_profile_setup_Screen(), isActive: $toProfileSetup){
+                EmptyView()
+            }
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -56,7 +65,9 @@ struct E_mail_Confirmation_Screen: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.widthBlockSize*70, height: UIScreen.heightBlockSize*40)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toProfileSetup = true
+            }, label: {
                 Text("Profile Completion")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

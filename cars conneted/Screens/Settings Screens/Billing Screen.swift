@@ -33,6 +33,7 @@ struct Billing_Screen: View {
                 Text("Update Billing")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x:-15)
                 
                 Spacer()
                 
@@ -43,7 +44,7 @@ struct Billing_Screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
@@ -95,14 +96,11 @@ struct Billing_Screen: View {
                 }
                 
             }
-                .frame(width: 320, height: 40)
+            .frame(width: UIScreen.widthBlockSize*80, height: 40)
                 .padding()
-                .padding(.top,40)
+                .padding(.top)
             
-            Image("Line 6")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 400, height: 1 )
+           Divider()
             
             HStack{
                 
@@ -147,7 +145,7 @@ struct Billing_Screen: View {
                 }
                 
             }
-                .frame(width: 320, height: 40)
+                .frame(width: UIScreen.widthBlockSize*80, height: 40)
                 .padding()
               
             

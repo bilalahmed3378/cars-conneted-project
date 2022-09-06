@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct Onboarding_3_screen: View {
+    @State var nextScreen3 = false
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: Onboarding_4_screen(), isActive: $nextScreen3){
+                EmptyView()
+            }
             
             VStack{
                 HStack{
@@ -17,7 +22,7 @@ struct Onboarding_3_screen: View {
             Image("Group 8726")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.widthBlockSize*60, height: UIScreen.heightBlockSize*40)
+                        .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*40)
                 }
                 Spacer()
             }.edgesIgnoringSafeArea(.top)
@@ -37,7 +42,8 @@ struct Onboarding_3_screen: View {
                
                 
             }.padding(.leading)
-                    .padding(.trailing)
+                    .padding(.trailing,30)
+                    .padding(.top,-20)
             
             Spacer()
             
@@ -95,12 +101,14 @@ struct Onboarding_3_screen: View {
             Spacer()
             
             HStack{
-            Button(action: {}, label: {
+            Button(action: {
+                self.nextScreen3 = true
+            }, label: {
                 Text("Next")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,10)

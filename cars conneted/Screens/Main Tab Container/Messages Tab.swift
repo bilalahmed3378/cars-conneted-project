@@ -80,6 +80,9 @@ struct  MessagesTab: View {
             .background(
                 Image("home screen background")
                     .resizable())
+            
+            
+            
             ScrollView(.vertical,showsIndicators: false){
             
                 NavigationLink(destination: personal_message_screen(), label: {
@@ -124,17 +127,14 @@ struct  MessagesTab: View {
                   
                     
                 }
-                .padding(24)
+                .padding()
               
                 })
                
             
-            Image("Line 6")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 325, height: 1)
+           Divider()
                 
-                NavigationLink(destination: personal_message_screen(),  label: {
+               
                     HStack{
                     
                     Image("unsplash_X6Uj51n5CE8")
@@ -176,19 +176,12 @@ struct  MessagesTab: View {
                   
                     
                 }
-                .padding(24)
-                })
+                .padding()
+               
                
           
             
-            Image("Line 6")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 325, height: 1)
-            
-            
-          
-            
+         Divider()
             
             LazyVStack{
                 ForEach(0...5,id:\.self){
@@ -236,15 +229,12 @@ struct  MessagesTab: View {
                       
                         
                     }
-                    .padding(24)
+                    .padding()
                     })
                    
               
                 
-                Image("Line 6")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 325, height: 1)
+              Divider()
                     
                     
                 }

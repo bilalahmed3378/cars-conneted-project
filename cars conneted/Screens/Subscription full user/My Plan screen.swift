@@ -9,15 +9,33 @@ import SwiftUI
 
 struct My_Plan_screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    @State var toChoosePlan = false
+    @State var toCancelPlan = false
+    
     var body: some View {
+        
         ScrollView(.vertical, showsIndicators: false){
         VStack{
             
+            NavigationLink(destination: Choose_your_plan_Screen(), isActive: self.$toChoosePlan){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: My_Subscription_details_Screen(), isActive: self.$toCancelPlan){
+                EmptyView()
+            }
+            
             HStack{
-                Image("Icons-2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+              
                 
                 Spacer()
                
@@ -40,9 +58,13 @@ struct My_Plan_screen: View {
                 
                 Spacer()
                 
+                NavigationLink(destination: {
+                    My_Subscription_details_Screen()
+                }){
                 Text("View Details")
                     .font(AppFonts.medium_14)
                     .foregroundColor(AppColors.redGradientColor1)
+                }
                 
                 Image("forward")
                     .resizable()
@@ -142,7 +164,9 @@ struct My_Plan_screen: View {
                
               
             
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toChoosePlan = true
+                }, label: {
                     Text("Upgrade")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(.white)
@@ -157,7 +181,9 @@ struct My_Plan_screen: View {
                 .background(RoundedRectangle(cornerRadius: 30).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 550))
          
             
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toCancelPlan = true
+                }, label: {
                     Text("Cancel plan")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(AppColors.redGradientColor1)

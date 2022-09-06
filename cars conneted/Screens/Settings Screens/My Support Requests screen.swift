@@ -43,12 +43,15 @@ struct My_Support_Requests_screen: View {
                 .padding(.top,20)
             
         }
-        }.padding(.top,40)
+        }.padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
                 .resizable())
             .padding(.bottom,30)
+            
+            
+            ScrollView(.vertical, showsIndicators: false){
             
             HStack{
                 Text("My Requests")
@@ -110,25 +113,28 @@ struct My_Support_Requests_screen: View {
                     
                 }.padding()
                 
-                HStack{
-                    Text("123")
-                        .font(AppFonts.regular_12)
-                    
-                    Spacer()
-                    
-                    Text("Profile Image issue")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.blue)
-                    
-                    Spacer()
-                    Spacer()
-                    Spacer()
-                    
-                    Text("Open")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.red)
-                    
-                }.padding()
+                NavigationLink(destination: Support_Issue_Details_Screen(), label: {
+                    HStack{
+                        Text("123")
+                            .font(AppFonts.regular_12)
+                        
+                        Spacer()
+                        
+                        Text("Profile Image issue")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(.blue)
+                        
+                        Spacer()
+                        Spacer()
+                        Spacer()
+                        
+                        Text("Open")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(.red)
+                        
+                    }.padding()
+                })
+               
                 
                 HStack{
                     Text("123")
@@ -190,23 +196,28 @@ struct My_Support_Requests_screen: View {
                     
                 }.padding()
                 
-            }
+            }.padding(.top,10)
             .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.1)))
             .padding()
             
             HStack{
-                Button(action: {}, label: {
+                
+                NavigationLink(destination: MainTabContainer(), label: {
                     Text("Back to Home")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(.white)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 50))
+                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*60, height: 50))
+                
                 })
+                   
               
-            }.padding(.top,30)
+            }.padding(.top)
+                    .padding(.bottom)
+                
+            }
             
-            
-            Spacer()
+           
             
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)

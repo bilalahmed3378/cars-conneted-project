@@ -122,13 +122,17 @@ struct Proximity_location_screen: View {
                 .padding(.top,30)
             
             
-            
-            Text("Confirm")
-                .font(AppFonts.semiBold_16)
-                .foregroundColor(.white)
-                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
-                .padding(.top,30)
-            
+            NavigationLink(destination: {
+                Proximity_Screen_2()
+            }, label: {
+                Text("Confirm")
+                    .font(AppFonts.semiBold_16)
+                    .foregroundColor(.white)
+                    .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
+                    .padding(.top,30)
+                
+            })
+           
             
             Spacer()
         }.edgesIgnoringSafeArea(.top)

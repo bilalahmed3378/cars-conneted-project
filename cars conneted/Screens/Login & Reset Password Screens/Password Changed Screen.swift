@@ -10,11 +10,19 @@ import SwiftUI
 struct Password_Changed_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     
+    @State var toLogIn = false
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Login_Screen(), isActive: $toLogIn){
+                EmptyView()
+            }
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -55,7 +63,9 @@ struct Password_Changed_Screen: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.widthBlockSize*70, height: UIScreen.heightBlockSize*40)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toLogIn = true
+            }, label: {
                 Text("Back to Login")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

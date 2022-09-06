@@ -91,7 +91,7 @@ struct Terms_of_sevices_screen: View {
                 .font(AppFonts.semiBold_16)
                 .foregroundColor(AppColors.redGradientColor1)
                 .padding()
-                .frame(width: 170, height: 50)
+                .frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*7)
                 .background(RoundedRectangle(cornerRadius: 20).strokeBorder(AppColors.redGradientColor2))
                 
                 Spacer()
@@ -100,7 +100,7 @@ struct Terms_of_sevices_screen: View {
                     .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)
                     .padding()
-                    .frame(width: 170, height: 50)
+                    .frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 Spacer()
             }

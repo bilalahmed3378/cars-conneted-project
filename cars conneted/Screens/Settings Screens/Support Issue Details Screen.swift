@@ -69,14 +69,16 @@ struct Support_Issue_Details_Screen: View {
             
                 }
                 
-                
-                HStack{
-                    Text("Mark as Solved")
-                        .font(AppFonts.semiBold_16)
-                        .foregroundColor(.white)
-                        .padding()
-                        .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                }
+                NavigationLink(destination: Support_Issue_Solved_Screen(), label: {
+                    HStack{
+                        Text("Mark as Solved")
+                            .font(AppFonts.semiBold_16)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*60, height: 40))
+                    }
+                })
+               
         
             
          

@@ -8,15 +8,20 @@
 import SwiftUI
 
 struct Onboarding_4_screen: View {
+    @State var nextScreen4 = false
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: Getting_Started_Screen(), isActive: $nextScreen4){
+                EmptyView()
+            }
             
             VStack{
                 HStack{
                 Image("Group 8725")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.widthBlockSize*60, height: UIScreen.heightBlockSize*40)
+                        .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*40)
                     Spacer()
                 }
                 Spacer()
@@ -35,7 +40,8 @@ struct Onboarding_4_screen: View {
                
                 
             }.padding(.leading)
-                .padding(.trailing)
+                .padding(.trailing,30)
+                .padding(.top,10)
             
             Spacer()
             
@@ -96,12 +102,14 @@ struct Onboarding_4_screen: View {
             Spacer()
             
             HStack{
-            Button(action: {}, label: {
+            Button(action: {
+                self.nextScreen4 = true
+            }, label: {
                 Text("Get Started")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,10)

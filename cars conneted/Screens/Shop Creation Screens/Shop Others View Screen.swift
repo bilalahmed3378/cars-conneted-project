@@ -17,7 +17,9 @@ struct Shop_Others_View_Screen: View {
                 
                 // top bar
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -28,7 +30,7 @@ struct Shop_Others_View_Screen: View {
                     
                   Spacer()
                     
-                    Text("Follow Request")
+                    Text("Giga Mall")
                         .font(AppFonts.SemiBold_20)
                         .foregroundColor(.white)
                     
@@ -46,7 +48,7 @@ struct Shop_Others_View_Screen: View {
                     .padding(.trailing)
                     .padding(.top,20)
                 
-            }  .padding(.top,40)
+            }  .padding(.top,30)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
@@ -144,6 +146,7 @@ struct Shop_Others_View_Screen: View {
                 
                 Text("www.web123.com")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 

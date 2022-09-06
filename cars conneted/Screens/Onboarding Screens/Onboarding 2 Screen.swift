@@ -8,8 +8,13 @@
 import SwiftUI
 
 struct Onboarding_2_Screen: View {
+    @State var nextScreen2 = false
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: Onboarding_3_screen(), isActive: $nextScreen2){
+                EmptyView()
+            }
             
             VStack{
                 Image("Group 8724")
@@ -32,7 +37,8 @@ struct Onboarding_2_Screen: View {
                
                 
             }.padding(.leading)
-                .padding(.trailing)
+                .padding(.trailing,30)
+                .padding(.top,10)
             
             Spacer()
             
@@ -50,7 +56,7 @@ struct Onboarding_2_Screen: View {
                     .font(AppFonts.semiBold_22)
             }.padding(.leading)
                 .padding(.trailing)
-                .padding(.bottom,10)
+               
             
             Spacer()
                 
@@ -88,15 +94,18 @@ struct Onboarding_2_Screen: View {
             Spacer()
             
             HStack{
-            Button(action: {}, label: {
+            Button(action: {
+                self.nextScreen2 = true
+            }, label: {
                 Text("Next")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,10)
+            .padding(.bottom,10)
             }
             
             Spacer()

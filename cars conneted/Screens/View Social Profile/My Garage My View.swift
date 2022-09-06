@@ -9,13 +9,36 @@ import SwiftUI
 
 struct My_Garage_My_View: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+   
+    @State var toEditGarage =  false
+    
+    @State var toAddCar =  false
+    
+    
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Edit_Garage_Screen(), isActive: self.$toEditGarage){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: Add_your_Car_Screen(), isActive: self.$toAddCar){
+                EmptyView()
+            }
+            
             HStack{
-                Image("Icons-2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+              
                 
                 Spacer()
                 
@@ -24,10 +47,58 @@ struct My_Garage_My_View: View {
                 
                 Spacer()
                 
-                Image("doted Icons")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                Menu(content: {
+                    
+                    Button(action: {
+                        self.toAddCar = true
+                    }, label: {
+                        
+                      Image("add new car")
+                        
+                        Text("Add New Car")
+                            .font(AppFonts.regular_14)
+                        
+                      
+                        
+                    })
+                        
+                        Button(action: {
+                            self.toEditGarage = true
+                        }, label: {
+                            
+                            Image("carbon_edit")
+                            
+                            Text("Edit")
+                                .font(AppFonts.regular_14)
+                            
+                        })
+                        
+                        Button(action: {
+                            
+                        }, label: {
+                            
+                            Image("delete black")
+                            
+                            
+                            Text("Delete Garage")
+                                .font(AppFonts.regular_14)
+                                .foregroundColor(AppColors.redGradientColor1)
+                            
+                        })
+                    
+                        
+                    
+                    
+                    
+                }, label: {
+                    
+                    Image("doted Icons")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                        
+                      
+                })
                 
             }.padding()
                
@@ -132,9 +203,16 @@ struct My_Garage_My_View_Previews: PreviewProvider {
 }
 
 struct myGarage : View {
+    
+    @State var toDeletedCar = false
+    
     var body : some View{
         
         VStack{
+            
+            NavigationLink(destination: Vehicle_Deleted_Screen(), isActive: self.$toDeletedCar){
+                EmptyView()
+            }
             
             ZStack{
                 Image("unsplash_1ZhZpP91olQ-1")
@@ -167,7 +245,9 @@ struct myGarage : View {
                                     
                                 })
                                 
-                                Button(action: {}, label: {
+                                Button(action: {
+                                    self.toDeletedCar = true
+                                }, label: {
                                     
                                     Image("delete black")
                                     
@@ -345,7 +425,7 @@ struct myGarage : View {
             }.padding(.leading,26)
                 .padding(.trailing,26)
                 
-            }.padding(.top,10)
+            }
             
             
         }.padding(.top)

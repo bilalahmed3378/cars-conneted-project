@@ -51,7 +51,7 @@ struct payment_method_2_screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
@@ -73,6 +73,7 @@ struct payment_method_2_screen: View {
                             Spacer()
                         }
                         .padding(.top,10)
+                    
                     Group{
                     HStack{
                         Spacer()
@@ -110,12 +111,17 @@ struct payment_method_2_screen: View {
                         })
                         
                         Spacer()
-                    }.frame(width: 320, height: 40)
+                        
+                    }.frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*5)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 50)
                             .strokeBorder(self.isMasterCart ? AppColors.redGradientColor1 : .gray))
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray).opacity(0.1))
                         .padding()
+                        .padding(.trailing,5)
+                        
+                      
+                        
                     }
                     HStack{
                         Spacer()
@@ -150,12 +156,13 @@ struct payment_method_2_screen: View {
                         })
                        
                         Spacer()
-                    }.frame(width: 320, height: 40)
+                    }.frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*5)
                         .padding()
                         .background(RoundedRectangle(cornerRadius: 50)
                             .strokeBorder(self.isMasterCart ? .gray : AppColors.redGradientColor1))
                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray).opacity(0.1))
                         .padding()
+                        .padding(.trailing,5)
                     
 
                         
@@ -167,7 +174,7 @@ struct payment_method_2_screen: View {
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
-                            .frame(width: 350, height: 70)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     })
                        

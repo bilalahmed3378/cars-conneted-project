@@ -32,6 +32,7 @@ struct Support_Screen: View {
                 Text("Support")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -67,11 +68,14 @@ struct Support_Screen: View {
                 .foregroundColor(.red)
                 .font(AppFonts.regular_14)
             
-            Image(systemName: "magnifyingglass")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width:20,height: 20)
-                .foregroundColor(.red)
+            NavigationLink(destination: Support_FAQS_Screen(), label: {
+                Image(systemName: "magnifyingglass")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width:20,height: 20)
+                    .foregroundColor(.red)
+            })
+          
             
         } .padding(15)
             .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.2)))

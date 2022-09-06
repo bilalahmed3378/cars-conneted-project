@@ -54,10 +54,15 @@ struct Change_User_Name: View {
             }
             .padding()
             
-            
+            VStack(alignment: .leading){
+                HStack{
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
                 .foregroundColor(.gray)
                 .font(AppFonts.regular_14)
+                    Spacer()
+            }
+            } .padding(.leading)
+                .padding(.trailing)
             
             Text("Username")
                 .font(AppFonts.regular_12)
@@ -85,22 +90,22 @@ struct Change_User_Name: View {
             
             
             
-            Button(action: {}, label: {
+            NavigationLink(destination: User_name_Successfully_Changed_Screen(), label: {
                 Text("Change")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: 350, height: 70)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-            })
-            .padding(.top,30)
+                        .padding(.top,30)
                 
+            })
+               
             
             
                 Spacer()
         }
-        .padding(.leading)
-        .padding(.trailing)
+       
         .navigationBarHidden(true)
         
         

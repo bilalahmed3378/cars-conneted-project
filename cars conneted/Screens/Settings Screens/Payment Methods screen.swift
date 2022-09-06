@@ -44,7 +44,7 @@ struct Payment_Methods_screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
@@ -58,9 +58,9 @@ struct Payment_Methods_screen: View {
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.semibold))
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor1).frame(width: 350, height: 70))
+                    .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90 , height: UIScreen.heightBlockSize*7))
                 
-            }.padding(.top,50)
+            }.padding(.top)
             
             HStack{
                 
@@ -68,8 +68,8 @@ struct Payment_Methods_screen: View {
                 Image("logos_visa")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, height: 40)
-                    .background(RoundedRectangle(cornerRadius: 0).fill(.gray).opacity(0.1).frame(width: 80, height: 60))
+                    .frame(width: 50, height: 30)
+                    .background(RoundedRectangle(cornerRadius: 0).fill(.gray).opacity(0.1).frame(width: 70, height: 50))
             
                 VStack(alignment: .leading){
                     Text("Salman Ahmed")
@@ -112,14 +112,11 @@ struct Payment_Methods_screen: View {
                 
                 
             }
-                .frame(width: 320, height: 65)
+            .frame(width: UIScreen.widthBlockSize*80, height: 65)
                 .padding()
                 .padding(.top,40)
             
-            Image("Line 6")
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 400, height: 1 )
+           Divider()
             
             HStack{
                 
@@ -127,8 +124,8 @@ struct Payment_Methods_screen: View {
                 Image("logos_visa")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 60, height: 40)
-                    .background(RoundedRectangle(cornerRadius: 0).fill(.gray).opacity(0.1).frame(width: 80, height: 60))
+                    .frame(width: 50, height: 30)
+                    .background(RoundedRectangle(cornerRadius: 0).fill(.gray).opacity(0.1).frame(width: 70, height: 50))
             
                 VStack(alignment: .leading){
                     Text("Salman Ahmed")
@@ -171,7 +168,7 @@ struct Payment_Methods_screen: View {
                 
                 
             }
-                .frame(width: 320, height: 65)
+                .frame(width: UIScreen.widthBlockSize*80, height: 65)
                 .padding()
                 
             

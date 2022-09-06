@@ -15,11 +15,19 @@ struct Reset_Password: View {
     
     @Environment(\.presentationMode) var presentaionMode
     
+    @State var toPasswordChanged = false
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Password_Changed_Screen(), isActive: $toPasswordChanged){
+                EmptyView()
+            }
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -144,7 +152,9 @@ struct Reset_Password: View {
             .padding(.leading)
             .padding(.trailing)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toPasswordChanged = true
+            }, label: {
                 Text("Save Password")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

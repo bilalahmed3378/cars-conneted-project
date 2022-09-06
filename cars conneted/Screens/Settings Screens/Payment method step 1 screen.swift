@@ -44,7 +44,7 @@ struct Payment_method_step_1_screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,40)
+        }  .padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
@@ -70,20 +70,20 @@ struct Payment_method_step_1_screen: View {
                     Image("94339-edited-yelly-face 1")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 300, height: 300)
+                        .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*40)
                         .padding()
                     
                     NavigationLink(destination: payment_method_2_screen(), label: {
                         Text("Add Payment Method")
                             .font(AppFonts.semiBold_16)
                             .foregroundColor(AppColors.redGradientColor1)
-                            .frame(width: 350, height: 50)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor2))
                     })
                         
                 }
                 .padding()
-                .padding(.leading,7)
+                
                 
                 Spacer()
             }

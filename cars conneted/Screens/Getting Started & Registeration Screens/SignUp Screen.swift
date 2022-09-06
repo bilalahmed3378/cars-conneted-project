@@ -13,8 +13,13 @@ struct SignUp_Screen: View {
     @State  var confirmPassword = ""
     @State  var isSecured = false
     @State  var isSecured2 = false
+    @State var toVerify = false
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: verifyOtpScreen(), isActive: $toVerify){
+                EmptyView()
+            }
           
            VStack{
                Spacer()
@@ -136,7 +141,9 @@ struct SignUp_Screen: View {
                         Group{
                         HStack{
                             Spacer()
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.toVerify = true
+                        }, label: {
                             Text("SignUp")
                                 .font(AppFonts.semiBold_16)
                                 .fontWeight(.medium)

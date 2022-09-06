@@ -11,8 +11,14 @@ struct Setup_Garage_Screen: View {
     @State var isSelected: Bool = true
     @Environment(\.presentationMode) var presentaionMode
     @State var garage = ""
+    @State var toAddCar = false
+    
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: Add_your_Car_Screen(), isActive: $toAddCar){
+                EmptyView()
+            }
             
             VStack{
                 HStack{
@@ -36,7 +42,9 @@ struct Setup_Garage_Screen: View {
         VStack{
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -175,7 +183,9 @@ struct Setup_Garage_Screen: View {
             .padding(.trailing)
             .padding(.leading)
        
-            Button(action: {}, label: {
+            Button(action: {
+                self.toAddCar = true
+            }, label: {
                 Text("Next: Add your car")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

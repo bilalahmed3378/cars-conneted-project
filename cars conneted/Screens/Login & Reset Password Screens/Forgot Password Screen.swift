@@ -10,11 +10,19 @@ import SwiftUI
 struct Forgot_Password_Screen: View {
     @State  var email = ""
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toSendOTP = false
+    
     var body: some View {
         ZStack{
             
+            NavigationLink(destination: Forgot_Password_OTP(), isActive: $toSendOTP){
+                EmptyView()
+            }
+            
             VStack{
                 HStack{
+                    
                     
                 Image("Group 2-2")
                     .resizable()
@@ -34,7 +42,9 @@ struct Forgot_Password_Screen: View {
         VStack{
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -90,7 +100,9 @@ struct Forgot_Password_Screen: View {
               .padding(.leading)
               .padding(.trailing)
        
-            Button(action: {}, label: {
+            Button(action: {
+                self.toSendOTP = true
+            }, label: {
                 Text("Send OTP")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

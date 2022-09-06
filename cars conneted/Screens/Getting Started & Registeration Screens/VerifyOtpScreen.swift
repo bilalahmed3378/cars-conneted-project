@@ -18,7 +18,7 @@ struct verifyOtpScreen: View {
     @State var otp3 : String = ""
     @State var otp4 : String = ""
     
-   @State var toResetPassword = false
+   @State var toEmailConfirm = false
     
     @Environment(\.presentationMode) var presentaionMode
     
@@ -27,13 +27,15 @@ struct verifyOtpScreen: View {
             
         ZStack{
       
-            
+            NavigationLink(destination: E_mail_Confirmation_Screen(), isActive: $toEmailConfirm){
+                EmptyView()
+            }
         
         VStack(alignment: .leading){
              
             HStack{
                 Button(action: {
-                   
+                    self.presentaionMode.wrappedValue.dismiss()
                 }, label: {
                     Image("Icons-2")
                         .resizable()
@@ -139,7 +141,7 @@ struct verifyOtpScreen: View {
             
             Button(action: {
                 
-                toResetPassword = true
+                toEmailConfirm = true
                 
             }){
                 

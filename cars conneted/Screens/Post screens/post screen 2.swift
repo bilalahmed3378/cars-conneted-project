@@ -13,9 +13,15 @@ struct post_screen_2: View {
     @State var  isPhoto: Bool = false
     
     @Environment(\.presentationMode) var presentationMode
+    
+    @State var toPostNext = false
 
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Post_screen_3(), isActive: self.$toPostNext){
+                EmptyView()
+            }
             
             Spacer()
             
@@ -63,7 +69,9 @@ struct post_screen_2: View {
                 if(self.isPhoto == false){
                     Spacer(minLength: 100)
                 }
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toPostNext = true
+                }, label: {
                     Text("Post")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)

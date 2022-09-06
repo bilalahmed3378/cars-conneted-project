@@ -16,8 +16,14 @@ struct Forgot_Password_OTP: View {
     
     @Environment(\.presentationMode) var presentaionMode
     
+    @State var toVerifyOTP = false
+    
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: Reset_Password(), isActive: $toVerifyOTP){
+                EmptyView()
+            }
       
             VStack{
                 HStack{
@@ -42,7 +48,7 @@ struct Forgot_Password_OTP: View {
              
             HStack{
                 Button(action: {
-                   
+                    self.presentaionMode.wrappedValue.dismiss()
                 }, label: {
                     Image("Icons-2")
                         .resizable()
@@ -147,11 +153,9 @@ struct Forgot_Password_OTP: View {
                 
             
             Button(action: {
-                
-               
-                
+                self.toVerifyOTP = true
             }){
-                
+               
                 HStack{
                     Spacer()
                     Text("Verify OTP")

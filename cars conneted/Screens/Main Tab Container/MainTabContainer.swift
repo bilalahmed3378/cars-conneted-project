@@ -11,7 +11,7 @@ struct MainTabContainer: View {
     
     @State var selectedIndex : Int = 0
     
-    @Binding var isUserLoggedIn : Bool
+   
     
     @State var isDrawerOpen : Bool = false
     
@@ -152,7 +152,7 @@ struct MainTabContainer: View {
                 
             }
             
-            NavigationDrawer(isDrawerOpen: self.$isDrawerOpen, isUserLoggedIn: self.$isUserLoggedIn, mainTabContainer: self)
+            NavigationDrawer(isDrawerOpen: self.$isDrawerOpen,  mainTabContainer: self)
             
         }
         .navigationBarHidden(true)

@@ -11,8 +11,19 @@ struct Login_Screen: View {
     @State  var email = ""
     @State  var password = ""
     @State  var isSecured = false
+    @State var toHome = false
+    @State var toResetPassword = false
+   
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: MainTabContainer(), isActive: $toHome){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: Forgot_Password_Screen(), isActive: $toResetPassword){
+                EmptyView()
+            }
           
             VStack{
                 Image("Login Screen background")
@@ -99,13 +110,15 @@ struct Login_Screen: View {
                             Text("Forget Password?")
                                 .font(AppFonts.regular_12)
                             
-                            NavigationLink(destination: Reset_Password(), label: {
-                                
-                            })
+                            Button(action: {
+                                self.toResetPassword = true
+                            }, label: {
                                 Text("Reset")
                                     .font(AppFonts.medium_14)
                                     .foregroundColor(AppColors.redGradientColor1)
                             
+                            })
+                                
                           
                         }
                         
@@ -113,7 +126,9 @@ struct Login_Screen: View {
                         Group{
                         HStack{
                             Spacer()
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.toHome = true
+                        }, label: {
                             Text("Login")
                                 .font(AppFonts.semiBold_16)
                                 .fontWeight(.medium)
@@ -207,8 +222,4 @@ struct Login_Screen: View {
     }
 }
 
-struct Login_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Login_Screen()
-    }
-}
+

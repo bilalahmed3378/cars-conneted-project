@@ -9,11 +9,19 @@ import SwiftUI
 
 struct Vehicle_Deleted_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toGarage = false
     var body: some View {
         VStack{
            
+            NavigationLink(destination: My_Garage_My_View(), isActive: self.$toGarage){
+                EmptyView()
+            }
+            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -50,7 +58,9 @@ struct Vehicle_Deleted_Screen: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 300, height: 300)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toGarage = true
+            }, label: {
                 Text("Back to Garage")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

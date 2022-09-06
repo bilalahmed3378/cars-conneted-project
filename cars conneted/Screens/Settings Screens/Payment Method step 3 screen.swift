@@ -54,6 +54,9 @@ struct Payment_Method_step_3_screen: View {
                 Image("home screen background")
                 .resizable())
         }
+                
+                ScrollView(.vertical, showsIndicators: false){
+                
                 VStack{
                     
                     HStack{
@@ -62,6 +65,7 @@ struct Payment_Method_step_3_screen: View {
                         .foregroundColor(AppColors.redGradientColor1)
                         Spacer()
                     }
+                    .padding()
                     
                         HStack{
                             Text("Kindly enter your card details to make transations")
@@ -69,19 +73,26 @@ struct Payment_Method_step_3_screen: View {
                                 .foregroundColor(.gray)
                             Spacer()
                         }
-                        .padding(.top,10)
+                        .padding(.leading)
+                        .padding(.trailing)
                   
                     Text("Name on Card")
                         .font(AppFonts.regular_12)
                               .padding(.top,28)
                               .frame(maxWidth: .infinity, alignment: .leading)
                               .foregroundColor(.gray)
+                              .padding(.leading)
+                              .padding(.trailing)
+                    
+                    
                             TextField("Jhon Smith",text:$nameOnCard)
                         .font(AppFonts.regular_14)
                               .padding(.vertical, 10)
                               .autocapitalization(.none)
                               .background(Rectangle().frame(height: 1).padding(.top, 42))
                               .foregroundColor(.gray)
+                              .padding(.leading)
+                              .padding(.trailing)
                     
                     Group{
                     Text("Card Number")
@@ -89,24 +100,37 @@ struct Payment_Method_step_3_screen: View {
                               .padding(.top,28)
                               .frame(maxWidth: .infinity, alignment: .leading)
                               .foregroundColor(.black)
+                              .padding(.leading)
+                              .padding(.trailing)
+                        
+                        
                         TextField("3335-3245-4535-4666",text:$cardNumber )
                             .font(AppFonts.regular_14)
                               .padding(.vertical, 10)
                               .autocapitalization(.none)
                               .background(Rectangle().frame(height: 1).padding(.top, 42))
                               .foregroundColor(AppColors.redGradientColor2)
+                              .padding(.leading)
+                              .padding(.trailing)
+                        
                     
                     Text("CVV")
                             .font(AppFonts.regular_12)
                               .padding(.top,28)
                               .frame(maxWidth: .infinity, alignment: .leading)
                               .foregroundColor(.gray)
+                              .padding(.leading)
+                              .padding(.trailing)
+                        
+                        
                             TextField("376",text:$CVV)
                             .font(AppFonts.regular_14)
                               .padding(.vertical, 10)
                               .autocapitalization(.none)
                               .background(Rectangle().frame(height: 1).padding(.top, 42))
                               .foregroundColor(.gray)
+                              .padding(.leading)
+                              .padding(.trailing)
                     
                     
                     Text("Expiry Date")
@@ -114,33 +138,43 @@ struct Payment_Method_step_3_screen: View {
                               .padding(.top,28)
                               .frame(maxWidth: .infinity, alignment: .leading)
                               .foregroundColor(.gray)
+                              .padding(.leading)
+                              .padding(.trailing)
+                        
+                        
                             TextField("MM-DD-YY",text:$expireDate)
                             .font(AppFonts.regular_14)
                               .padding(.vertical, 10)
                               .autocapitalization(.none)
                               .background(Rectangle().frame(height: 1).padding(.top, 42))
                               .foregroundColor(.gray)
+                              .padding(.leading)
+                              .padding(.trailing)
                              
 
                     
                     }
                     
-                  
+                    NavigationLink(destination: {
+                        Subscription_Updated_Successful_Screen()
+                    }, label: {
                         Text("Save")
                             .font(AppFonts.semiBold_16)
                             .fontWeight(.medium)
                             .foregroundColor(.white)
-                            .frame(width: 350, height: 70)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                 .padding()
                         
+                    })
+                       
                    
                    
                 }
-                .padding()
-                .padding(.leading,7)
-                
-                Spacer()
+               
+                    
+                }
+               
             }
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)

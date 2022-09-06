@@ -9,11 +9,20 @@ import SwiftUI
 
 struct Subscription_Updated_Successful_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toHome = false
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: MainTabContainer(), isActive: self.$toHome){
+                EmptyView()
+            }
+            
            
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -71,7 +80,9 @@ struct Subscription_Updated_Successful_Screen: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*35)
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toHome = true
+            }, label: {
                 Text("Continue")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

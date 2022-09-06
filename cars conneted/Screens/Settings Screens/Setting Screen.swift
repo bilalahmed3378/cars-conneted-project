@@ -30,7 +30,9 @@ struct Setting_Screen: View {
                 // top bar
                 Group{
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -140,7 +142,7 @@ struct Setting_Screen: View {
            
             
             
-              
+                NavigationLink(destination: Change_Password(), label: {
                 HStack{
                     
                     Image("Vector")
@@ -152,23 +154,25 @@ struct Setting_Screen: View {
                    
                     Text("Edit Username")
                         .font(AppFonts.regular_14)
+                        .foregroundColor(.black)
                     
                     Spacer()
                     
-                    NavigationLink(destination: Change_Password(), label: {
+                   
                         Image("forward")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30 )
-                    })
+                   
                     
                 }
                 .frame(width: UIScreen.widthBlockSize*90, height: 30)
-               
+                                   })
                     
                 
                 Divider().padding()
                 
+                NavigationLink(destination: Change_Password(), label: {
             HStack{
                 
                 Image("dashicons_lock")
@@ -180,24 +184,27 @@ struct Setting_Screen: View {
                
                 Text("Change Paasword")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
-                NavigationLink(destination: Change_Password(), label: {
+                
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+               
                 
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 30)
-            
+                               })
                 
             }
                 Divider().padding()
                 
             Group{
+                
+                NavigationLink(destination: Change_Email_screen(), label: {
             HStack{
                 
                 Image("update email")
@@ -209,29 +216,33 @@ struct Setting_Screen: View {
                
                 Text("Update Email")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
                 Text("Verified")
                     .font(AppFonts.regular_14)
                     .foregroundColor(.green)
+                    .foregroundColor(.black)
                 
-                NavigationLink(destination: Change_Password(), label: {
+              
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+                
                 
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 30)
-           
+                               })
                 
             
                 Divider().padding()
                 
             }
             Group{
+                
+                NavigationLink(destination: Billing_Screen(), label: {
             HStack{
                 
                 Image("Billing details")
@@ -243,22 +254,25 @@ struct Setting_Screen: View {
                
                 Text("Billing details")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
-                NavigationLink(destination: Change_Password(), label: {
+               
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+               
                 
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
                 
+                NavigationLink(destination: Payment_method_step_1_screen(), label: {
                 HStack{
                     
                     Image("Payment")
@@ -270,24 +284,28 @@ struct Setting_Screen: View {
                    
                     Text("Payment")
                         .font(AppFonts.regular_14)
+                        .foregroundColor(.black)
                     
                     Spacer()
                     
-                    NavigationLink(destination: Change_Password(), label: {
+                   
                         Image("forward")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30 )
-                    })
+                   
                     
                 }
                 .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
             
             }
             Group{
+                
+                NavigationLink(destination: Notifications_setting(), label: {
             HStack{
                 Image("bxs_bell")
                     .resizable()
@@ -298,16 +316,17 @@ struct Setting_Screen: View {
                
                 Text("Notification")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
               
-                NavigationLink(destination: Notifications_setting(), label: {
+                
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+                
                    
               
                
@@ -315,11 +334,13 @@ struct Setting_Screen: View {
                 
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                               })
                 
                 
                 Divider().padding()
             
-                
+                NavigationLink(destination: Proximity_Setting_screen(),
+                               label: {
                 HStack{
                     Image("eos-icons_network-policy")
                         .resizable()
@@ -330,26 +351,30 @@ struct Setting_Screen: View {
                    
                     Text("Proximity Setting")
                         .font(AppFonts.regular_14)
+                        .foregroundColor(.black)
                     
                     Spacer()
                     
-                    NavigationLink(destination: Proximity_Setting_screen(),
-                                   label: {
+                   
                         Image("forward")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30 )
-                    })
+                   
                        
 
                     
                     
                 }
                 .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
-            
+                
+                
+                NavigationLink(destination: Proximity_Setting_screen(),
+                               label: {
             HStack{
                 Image("Buffer location")
                     .resizable()
@@ -360,27 +385,29 @@ struct Setting_Screen: View {
                
                 Text("Buffer location")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
-                NavigationLink(destination: Proximity_Setting_screen(),
-                               label: {
+               
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+               
                    
 
                 
                 
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
                 
-                
+                NavigationLink(destination: Support_Screen(),
+                               label: {
                 HStack{
                     Image("Support")
                         .resizable()
@@ -391,22 +418,23 @@ struct Setting_Screen: View {
                    
                     Text("Support")
                         .font(AppFonts.regular_14)
+                        .foregroundColor(.black)
                     
                     Spacer()
                     
-                    NavigationLink(destination: Proximity_Setting_screen(),
-                                   label: {
+                   
                         Image("forward")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30 )
-                    })
+                  
                        
 
                     
                     
                 }
                 .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
@@ -414,6 +442,8 @@ struct Setting_Screen: View {
                 
             }
             Group{
+                
+                NavigationLink(destination: FeedBack_Screen(),  label: {
         HStack{
             Image("Feedback")
                 .resizable()
@@ -424,25 +454,24 @@ struct Setting_Screen: View {
             
             Text("Feedback")
                 .font(AppFonts.regular_14)
+                .foregroundColor(.black)
             
             Spacer()
-            NavigationLink(destination: Transacation_detail(),  label: {
+           
                 Image("forward")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 30, height: 30 )
         
-            })
-                
-            
-            
-            
         }
         .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
                 
+                
+                NavigationLink(destination: Help_Screen(),  label: {
                 HStack{
                     Image("help")
                         .resizable()
@@ -453,21 +482,23 @@ struct Setting_Screen: View {
                     
                     Text("Help")
                         .font(AppFonts.regular_14)
+                        .foregroundColor(.black)
                     
                     Spacer()
-                    NavigationLink(destination: Transacation_detail(),  label: {
+                   
                         Image("forward")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30 )
                 
-                    })
-                        
+                   
                     
                     
                     
                 }
                 .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
+                    
                 
                 
                 Divider().padding()
@@ -475,7 +506,7 @@ struct Setting_Screen: View {
             }
             Group{
           
-            
+                NavigationLink(destination: Terms_of_sevices_screen(),  label: {
             HStack{
                 Image("TOS")
                     .resizable()
@@ -486,83 +517,86 @@ struct Setting_Screen: View {
                
                 Text("TOS")
                     .font(AppFonts.regular_14)
+                    .foregroundColor(.black)
                 
                 Spacer()
                 
-                NavigationLink(destination: Terms_of_sevices_screen(),  label: {
+               
                     Image("forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 30, height: 30 )
-                })
+               
                  
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
                 
                 
                 Divider().padding()
             
-            HStack{
-                Image("material-symbols_privacy-tip")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30 )
-                    .padding(.trailing)
-                
-               
-                Text("Privacy Policy")
-                    .font(AppFonts.regular_14)
-                
-                Spacer()
-                
-              
-                    Image("forward")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30 )
-               
-               
-                
-                
-            }
-            .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                NavigationLink(destination: {
+                    Privacy_Policy_Screen()
+                }, label: {
+                    HStack{
+                        Image("material-symbols_privacy-tip")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 30, height: 30 )
+                            .padding(.trailing)
+                        
+                       
+                        Text("Privacy Policy")
+                            .font(AppFonts.regular_14)
+                            .foregroundColor(.black)
+                        
+                        Spacer()
+                        
+                      
+                            Image("forward")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30 )
+                       
+                       
+                        
+                        
+                    }
+                    .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                })
+           
                 
                 Divider().padding()
             }
             Group{
-            HStack{
-                Image("majesticons_logout")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30 )
-                    .padding(.trailing)
                 
-               
-                Text("Logout")
-                    .font(AppFonts.regular_14)
-                
-                Spacer()
-                
-                Button(action: {
-                    self.logoutApi.Logout()
-                    
-                    AppData().logoutTheUser()
-                    
-                    self.isUserLoggedIn = false
-                    
-                }, label: {
-                    Image("forward")
+                NavigationLink(destination: Login_Screen(), label: {
+                    HStack{
+                        Image("majesticons_logout")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30 )
-                   
+                            .padding(.trailing)
+                        
+                       
+                        Text("Logout")
+                            .font(AppFonts.regular_14)
+                            .foregroundColor(.black)
+                        
+                        Spacer()
+                        
+                       
+                            Image("forward")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 30, height: 30 )
+                           
+                    }
+                    .frame(width: UIScreen.widthBlockSize*90, height: 30)
+                    .padding(.bottom)
+                      
                 })
-              
-                
-                
-            }
-            .frame(width: UIScreen.widthBlockSize*90, height: 30)
-            .padding(.bottom)
+            
                 
               
             }

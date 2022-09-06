@@ -34,6 +34,7 @@ struct Contact_Support: View {
                 Text("Contact Support")
                     .foregroundColor(.white)
                     .font(AppFonts.SemiBold_20)
+                    .offset(x: -15)
                 
                 Spacer()
                 
@@ -45,18 +46,21 @@ struct Contact_Support: View {
                 .padding(.top,20)
             
         }
-        }.padding(.top,40)
+        }.padding(.top,30)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
                 .resizable())
-            .padding(.bottom,30)
+            
+            ScrollView(.vertical, showsIndicators: false){
+            
             Group{
             HStack{
                 Text("Subject")
                     .font(AppFonts.semiBold_16)
                 Spacer()
             }.padding(.leading)
+                    .padding(.top)
             
             HStack{
         HStack{
@@ -85,7 +89,7 @@ struct Contact_Support: View {
             TextEditor(text: $description)
                 .foregroundColor(.red)
                 .font(AppFonts.regular_14)
-                .frame(width: 377, height: 200)
+                .frame(width: UIScreen.widthBlockSize*90, height: 200)
             
         }
         .padding(3)
@@ -112,17 +116,22 @@ struct Contact_Support: View {
             
             
             HStack{
-                Button(action: {}, label: {
+                
+                NavigationLink(destination: My_Support_Requests_screen(), label: {
                     Text("Sumbit request")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(.white)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 200, height: 50))
+                        .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*70, height: 50))
+                
                 })
+                    
               
-            }.padding(.top,30)
-            
-            Spacer()
+            }.padding(.top)
+                    .padding(.bottom)
+                
+            }
+           
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)
         

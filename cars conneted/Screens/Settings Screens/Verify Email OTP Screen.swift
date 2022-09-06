@@ -18,18 +18,48 @@ struct Verify_Email_OTP_Screen: View {
     
     var body: some View {
        
+        ZStack{
+      
+            VStack{
+                HStack{
+                    
+                Image("Group 2-2")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*50)
+                    
+                    Spacer()
+                  
+                    
+                }
+                
+                Spacer()
+              
+            }.edgesIgnoringSafeArea(.top)
+           
+            
+        
         VStack(alignment: .leading){
              
-            
+            HStack{
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width :UIScreen.widthBlockSize*10, height: UIScreen.heightBlockSize*10)
+                })
+            }
             
                 Text("Verify OTP")
-                .font(AppFonts.SemiBold_20)
+                   
+                .font(AppFonts.semiBold_24)
                     .foregroundColor(AppColors.redGradientColor1)
-                    .padding(.top,80)
+                    .padding(.top,10)
                 
                 
-                Text("Enter OTP which we sent to on your email\naddress abc****@gmail.com ")
-                .font(AppFonts.regular_16)
+                Text("We have sent you a one time password to your registered email.")
                     .padding(.top,10)
                 
                 
@@ -37,8 +67,9 @@ struct Verify_Email_OTP_Screen: View {
                     
                 
                     TextField("",text: self.$otp1)
-                        .font(AppFonts.regular_20)
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*8)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 //                        .padding(.trailing,14)
@@ -55,18 +86,19 @@ struct Verify_Email_OTP_Screen: View {
                     Spacer()
                     
                     TextField("",text: self.$otp2)
-                        .font(AppFonts.regular_20)
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*8)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 
                         
                         .onChange(of: self.otp2) { newValue in
-                            if(self.otp1.isEmpty){
-                                self.otp1 = newValue
+                            if(self.otp2.isEmpty){
+                                self.otp2 = newValue
                             }
                             else{
-                                self.otp1 = String(self.otp1.prefix(1))
+                                self.otp2 = String(self.otp1.prefix(1))
                             }
                         }
                     
@@ -74,18 +106,20 @@ struct Verify_Email_OTP_Screen: View {
 
                     
                     TextField("",text: self.$otp3)
-                        .font(AppFonts.regular_20)
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*8)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 
                         
                         .onChange(of: self.otp3) { newValue in
-                            if(self.otp1.isEmpty){
-                                self.otp1 = newValue
+                            if(self.otp3.isEmpty){
+                                self.otp3 = newValue
                             }
                             else{
-                                self.otp1 = String(self.otp1.prefix(1))
+                                self.otp3 =
+                                String(self.otp3.prefix(1))
                             }
                         }
                     
@@ -93,18 +127,19 @@ struct Verify_Email_OTP_Screen: View {
 
                     
                     TextField("",text: self.$otp4)
-                        .font(AppFonts.regular_20)
-                        .frame(width: UIScreen.widthBlockSize*18, height: UIScreen.heightBlockSize*8)
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.medium_20)
+                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
                         .multilineTextAlignment(.center)
                         .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
 
                         
                         .onChange(of: self.otp4) { newValue in
-                            if(self.otp1.isEmpty){
-                                self.otp1 = newValue
+                            if(self.otp4.isEmpty){
+                                self.otp4 = newValue
                             }
                             else{
-                                self.otp1 = String(self.otp1.prefix(1))
+                                self.otp1 = String(self.otp4 .prefix(1))
                             }
                         }
                     
@@ -113,21 +148,26 @@ struct Verify_Email_OTP_Screen: View {
                 
             
             Button(action: {
-                 
+                
+               
+                
             }){
                 
-                HStack{
-                    Spacer()
-                    Text("Verify OTP")
-                    
-                        .font(AppFonts.semiBold_16)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                    Spacer()
-                }
-                .padding(20)
-                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                .padding(.top,49)
+                
+                NavigationLink(destination: E_Mail_Confirmation_screen(), label: {
+                    HStack{
+                        Spacer()
+                        Text("Verify OTP")
+                            .font(AppFonts.semiBold_16)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                        Spacer()
+                    }
+                    .padding(20)
+                    .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
+                    .padding(.top)
+                })
+               
                 
             }
             
@@ -137,20 +177,21 @@ struct Verify_Email_OTP_Screen: View {
             Text("Didn't receive OTP")
                     .font(AppFonts.regular_12)
                 
-                Text("Resent (00:09)")
-                        .font(AppFonts.medium_14)
-                        .foregroundColor(AppColors.redGradientColor1)
+                Text("Resend (0:09)")
+                    .font(AppFonts.medium_14)
+                    .foregroundColor(AppColors.redGradientColor1)
             
                 Spacer()
                 
-            }.padding(.top,30)
+            }.padding(.top)
             
             
                 Spacer()
                 
         }.padding(.leading,24)
             .padding(.trailing,24)
-            .navigationBarHidden(true)
+        
+        } .navigationBarHidden(true)
         
         
     }

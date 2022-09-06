@@ -8,8 +8,16 @@
 import SwiftUI
 
 struct Onboarding_1_Screen: View {
+    @State var nextScreen = false
     var body: some View {
+        
+        
+        
         ZStack{
+            
+            NavigationLink(destination: Onboarding_2_Screen(), isActive: $nextScreen){
+                EmptyView()
+            }
             
             VStack{
                 HStack{
@@ -24,6 +32,7 @@ struct Onboarding_1_Screen: View {
             
             
         VStack{
+            Spacer()
             Group{
             HStack{
                 
@@ -36,14 +45,15 @@ struct Onboarding_1_Screen: View {
                
                 
             }.padding(.leading)
-                .padding(.trailing)
+                .padding(.trailing,30)
+                .padding(.top)
             
             Spacer()
             HStack{
                 Image("unsplash_qyfco1nfMtg")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*50)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*40)
             }
             
             Spacer()
@@ -53,7 +63,7 @@ struct Onboarding_1_Screen: View {
                     .font(AppFonts.semiBold_22)
             }.padding(.leading)
                 .padding(.trailing)
-                .padding(.bottom,10)
+               
             
             Spacer()
             
@@ -92,19 +102,23 @@ struct Onboarding_1_Screen: View {
             Spacer()
             
             HStack{
-            Button(action: {}, label: {
+            Button(action: {
+                self.nextScreen = true
+            }, label: {
+                
                 Text("Next")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
             .padding(.top,10)
+            .padding(.bottom,10)
            
             }
-            Spacer()
-           
+          
+           Spacer()
         }
             
             

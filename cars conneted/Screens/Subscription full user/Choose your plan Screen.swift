@@ -9,15 +9,27 @@ import SwiftUI
 
 struct Choose_your_plan_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var toPaymentMethod = false
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
         VStack{
             
+            NavigationLink(destination: Payment_method_step_1_screen(), isActive: self.$toPaymentMethod){
+                EmptyView()
+            }
+            
             HStack{
-                Image("Icons-2")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
+                    Image("Icons-2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 35, height: 35)
+                })
+               
                 
                 Spacer()
                
@@ -148,7 +160,9 @@ struct Choose_your_plan_Screen: View {
                     .padding(.bottom,30)
                     
             
-                Button(action: {}, label: {
+                Button(action: {
+                    self.toPaymentMethod = true
+                }, label: {
                     Text("Choose Plan")
                         .font(AppFonts.semiBold_16)
                         .foregroundColor(.white)
