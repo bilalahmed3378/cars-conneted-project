@@ -16,7 +16,7 @@ struct ContentView: View {
         NavigationView{
             ZStack{
                 
-                Onboarding_1_Screen()
+             ContentViewOnboarding()
           
                 
             }

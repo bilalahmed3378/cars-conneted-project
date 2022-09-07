@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct Post_screen_3: View {
     @State private var post: String = ""
@@ -13,6 +14,13 @@ struct Post_screen_3: View {
     
     @State private var location: String = ""
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var deletePhoto = true
+    
+    @State var deletePhoto2 = true
+    
+    
+    
     
     @State var toPreview = false
     
@@ -116,8 +124,8 @@ struct Post_screen_3: View {
             
             }
             
-            
-          
+               
+                if(self.deletePhoto){
                 Image("unsplash_YApiWyp0lqo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
@@ -126,7 +134,9 @@ struct Post_screen_3: View {
                             
                             HStack{
                                 Spacer()
-                                Button(action: {}, label: {
+                                Button(action: {
+                                    self.deletePhoto = false
+                                }, label: {
                                     Image(systemName: "minus.circle.fill")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -142,11 +152,11 @@ struct Post_screen_3: View {
                         
                     )
                     .padding()
-          
+                }
             
               Spacer()
             
-            
+                if(self.deletePhoto2){
             Image("unsplash_YApiWyp0lqo")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -155,7 +165,9 @@ struct Post_screen_3: View {
                         
                         HStack{
                             Spacer()
-                            Button(action: {}, label: {
+                            Button(action: {
+                                self.deletePhoto2 = false
+                            }, label: {
                                 Image(systemName: "minus.circle.fill")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -171,7 +183,7 @@ struct Post_screen_3: View {
                     
                 )
                 .padding()
-      
+                }
         
           Spacer()
      

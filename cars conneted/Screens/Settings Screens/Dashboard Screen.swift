@@ -16,6 +16,7 @@ struct Dashboard_Screen: View {
             Group{
             HStack{
                 Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
                 }, label: {
                     Image("back icon")
                         .resizable()

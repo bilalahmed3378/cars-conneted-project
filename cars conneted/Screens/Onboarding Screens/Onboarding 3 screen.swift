@@ -34,10 +34,11 @@ struct Onboarding_3_screen: View {
             HStack{
                 
                 Spacer()
-                Button(action: {}, label: {
+                NavigationLink(destination: Getting_Started_Screen(), label: {
                     Text("Skip")
                         .font(AppFonts.regular_14)
                         .foregroundColor(AppColors.redGradientColor1)
+               
                 })
                
                 

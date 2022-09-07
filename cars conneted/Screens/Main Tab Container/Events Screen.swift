@@ -188,9 +188,14 @@ struct Events_Screen: View {
 
 
 struct EventsCardEvents : View {
+    @State var eventDetails = false
     
     var body: some View {
         ZStack{
+            
+            NavigationLink(destination: Event_Details_Other_Events(), isActive: self.$eventDetails){
+                EmptyView()
+            }
           
             Image("Event cards pic")
                 .resizable()
@@ -243,7 +248,7 @@ struct EventsCardEvents : View {
                     Spacer()
                     
                     Button(action: {
-                       
+                        self.eventDetails = true
                     }){
                         VStack{
                             Text("Register")

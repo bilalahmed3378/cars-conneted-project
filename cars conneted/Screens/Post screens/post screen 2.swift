@@ -15,6 +15,8 @@ struct post_screen_2: View {
     @Environment(\.presentationMode) var presentationMode
     
     @State var toPostNext = false
+    
+   
 
     var body: some View {
         VStack{
@@ -129,6 +131,8 @@ struct post_screen_2: View {
             .padding(.top)
             .padding(.bottom)
             
+               
+                
                 if(self.isPhoto){
             Divider()
                 .padding()
@@ -208,7 +212,11 @@ struct post_screen_2: View {
             }
             .frame(width: UIScreen.widthBlockSize*90, height: 106)
           
-            }
+                }
+                   
+               
+                
+                
             }
          
            

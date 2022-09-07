@@ -43,11 +43,14 @@ struct Clubs_Screen: View {
                         
                         Spacer()
                         
-                        Image("plus icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .padding(.trailing,10)
+                        NavigationLink(destination: Create_Club_Screen(), label: {
+                            Image("plus icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                                .padding(.trailing,10)
+                        })
+                      
                         
                         Image("doted icons-1")
                             .resizable()
@@ -102,9 +105,12 @@ struct Clubs_Screen: View {
                        
                     Spacer()
                     
-                    Text("View all")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(AppColors.redGradientColor1)
+                    NavigationLink(destination: My_Clubs_screens(), label: {
+                        Text("View all")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(AppColors.redGradientColor1)
+                    })
+                    
                     
                 }
                 .padding()
@@ -229,37 +235,39 @@ struct myClubsClubs: View{
                     
                     Spacer()
                     
-                    
-                    HStack{
-                        
-                        
-                        
-                        
-                        Text("Ace Classic Club")
-                            .foregroundColor(.white)
-                            .fontWeight(.medium)
-                        
-                        Spacer()
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:36)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:24)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:12)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                        //                            .offset(x:15)
-                        
-                        Text("+120")
-                            .foregroundColor(.white)
+                    NavigationLink(destination: My_club_Details__admin_view__Screen(), label: {
+                        HStack{
                             
-                        
-                        
-                    }.padding()
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                            
+                            
+                            
+                            Text("Ace Classic Club")
+                                .foregroundColor(.white)
+                                .fontWeight(.medium)
+                            
+                            Spacer()
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:36)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:24)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:12)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                            //                            .offset(x:15)
+                            
+                            Text("+120")
+                                .foregroundColor(.white)
+                                
+                            
+                            
+                        }.padding()
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                    })
+                   
                       
                 }.padding(.top,20)
                 
@@ -390,37 +398,39 @@ struct myClubsRecommened: View{
                     
                     Spacer()
                     
-                    
-                    HStack{
-                        
-                        
-                        
-                        
-                        Text("Ace Classic Club")
-                            .foregroundColor(.white)
-                            .fontWeight(.medium)
-                        
-                        Spacer()
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:36)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:24)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:12)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                        //                            .offset(x:15)
-                        
-                        Text("+120")
-                            .foregroundColor(.white)
+                    NavigationLink(destination: Club_details_member_view_Screen(), label: {
+                        HStack{
                             
-                        
-                        
-                    }.padding()
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                            
+                            
+                            
+                            Text("Ace Classic Club")
+                                .foregroundColor(.white)
+                                .fontWeight(.medium)
+                            
+                            Spacer()
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:36)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:24)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:12)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                            //                            .offset(x:15)
+                            
+                            Text("+120")
+                                .foregroundColor(.white)
+                                
+                            
+                            
+                        }.padding()
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                    })
+                   
                       
                 }.padding(.top,20)
                 

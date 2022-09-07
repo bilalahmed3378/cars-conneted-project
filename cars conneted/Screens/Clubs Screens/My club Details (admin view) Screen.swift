@@ -22,10 +22,15 @@ struct My_club_Details__admin_view__Screen: View {
                 
                 // top bar
                 HStack{
-                    Image("back icon")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
+                        Image("back icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35, height: 35)
+                    })
+                   
                     
                     Spacer()
                     

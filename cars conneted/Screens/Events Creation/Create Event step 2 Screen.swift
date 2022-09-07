@@ -17,13 +17,21 @@ struct Create_Event_step_2_Screen: View {
     @State private var answer = ""
     @State private var question = ""
     
+    @State var toPreview = false
+    
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Event_Details_Screen(), isActive: self.$toPreview){
+                EmptyView()
+            }
             
             ScrollView(.vertical, showsIndicators: false){
             
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
                     
                     Image("Icons-2")
                         .resizable()
@@ -323,7 +331,9 @@ struct Create_Event_step_2_Screen: View {
                 .padding(.bottom)
             }
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toPreview = true
+            }, label: {
                 Text("Preview")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

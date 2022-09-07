@@ -30,16 +30,24 @@ struct Create_Event_step1_Screen: View {
     @State var recurringEvent = true
     @State var eventTypeMoney = true
     
+    @State var toNextStep = false
+    
     
     
     var body: some View {
         VStack{
+            
+            NavigationLink(destination: Create_Event_step_2_Screen(), isActive: self.$toNextStep){
+                EmptyView()
+            }
            
             ScrollView(.vertical, showsIndicators: false){
             
             Group{
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         
                         Image("Icons-2")
                             .resizable()
@@ -874,7 +882,9 @@ struct Create_Event_step1_Screen: View {
             
             Spacer()
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.toNextStep = true
+            }, label: {
                 Text("Next")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)

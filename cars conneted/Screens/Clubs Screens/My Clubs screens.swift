@@ -19,10 +19,15 @@ struct My_Clubs_screens: View {
                     
                     // top bar
                     HStack{
-                        Image("back icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
+                        Button(action: {
+                            self.presentaionMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image("back icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 35, height: 35)
+                        })
+                      
                         
                         Spacer()
                         
@@ -33,16 +38,19 @@ struct My_Clubs_screens: View {
                         
                         Spacer()
                         
-                        Image("plus icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .padding(.trailing,10)
+                        NavigationLink(destination: Create_Club_Screen(), label: {
+                            Image("plus icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                                .padding(.trailing,10)
+                        })
+                       
                         
                         Image("doted icons-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 35, height: 35)
                            
                         
                      
@@ -75,7 +83,7 @@ struct My_Clubs_screens: View {
                     
                 }
                
-                .padding(.top,30)
+                .padding(.top,40)
                 .padding(.bottom,15)
                 .background(
                     Image("home screen background")
@@ -133,6 +141,7 @@ struct My_Clubs_screens_Previews: PreviewProvider {
 struct myClubsPosts: View{
     var body: some View{
     
+        
         VStack{
             
             ZStack(alignment: .top){
@@ -172,39 +181,41 @@ struct myClubsPosts: View{
                     
                     Spacer()
                     
-                    
-                    HStack{
-                        
-                        
-                        
-                        
-                        Text("Ace Classic Club")
-                            .foregroundColor(.white)
-                            .font(AppFonts.regular_12)
-                        
-                        Spacer()
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:36)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:24)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:12)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                        //                            .offset(x:15)
-                        
-                        Text("+120")
-                            .foregroundColor(.white)
-                            .font(AppFonts.regular_12)
-                        
-                        
-                    } .padding()
-                        .padding(.top,-20)
-                    .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10) )
-                   
+                    NavigationLink(destination: Club_Admin_View(), label: {
+                        HStack{
+                            
+                            
+                            
+                            
+                            Text("Ace Classic Club")
+                                .foregroundColor(.white)
+                                .font(AppFonts.regular_12)
+                            
+                            Spacer()
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:36)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:24)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:12)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                            //                            .offset(x:15)
+                            
+                            Text("+120")
+                                .foregroundColor(.white)
+                                .font(AppFonts.regular_12)
+                            
+                            
+                        } .padding()
+                            .padding(.top,-20)
+                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8) )
+                       
+                    })
+                 
                       
                     
                     

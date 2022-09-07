@@ -1,13 +1,13 @@
 //
-//  Event Details Screen.swift
+//  Event Details Other Events.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 26/08/2022.
+//  Created by Bilal Ahmed on 07/09/2022.
 //
 
 import SwiftUI
 
-struct Event_Details_Screen: View {
+struct Event_Details_Other_Events: View {
     
     @Environment(\.presentationMode) var presentaionMode
     
@@ -18,14 +18,12 @@ struct Event_Details_Screen: View {
     @State private var isClickedThree = false
     @State private var isClickedFour = false
     
-    @State var toPublish = false
+    
     
     var body: some View {
         VStack{
             
-            NavigationLink(destination: Event_Published_Successfully(), isActive: self.$toPublish){
-                EmptyView()
-            }
+           
             
             VStack{
                 
@@ -182,13 +180,11 @@ struct Event_Details_Screen: View {
             Divider().padding()
             
             HStack{
-                Spacer()
-                Text("Social Events")
-                    .foregroundColor(.white)
+               Text("Social Event")
                     .font(AppFonts.regular_12)
-                    .padding()
-                    .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*35))
-                   
+                
+                Text("Entrepreneurs")
+                     .font(AppFonts.regular_12)
                 
                 Spacer()
               
@@ -721,18 +717,38 @@ struct Event_Details_Screen: View {
                     .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.2)))
                     .padding()
                 
+                HStack{
+                    
+                    Button(action: {
+                      
+                    }, label: {
+                        Text("$50")
+                            .font(AppFonts.semiBold_16)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*7)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray))
+                    })
+                    .padding(.top)
+                    .padding(.bottom)
+                    
                 Button(action: {
-                    self.toPublish = true
+                  
                 }, label: {
-                    Text("Publish Event Now")
+                    Text("Register Now")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                        .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                 })
                 .padding(.top)
                 .padding(.bottom)
+                    
+                    
+                }
+                
+                
                 
             }
                 Spacer()
@@ -741,13 +757,8 @@ struct Event_Details_Screen: View {
     }
 }
 
-struct Event_Details_Screen_Previews: PreviewProvider {
+struct Event_Details_Other_Events_Previews: PreviewProvider {
     static var previews: some View {
-        Event_Details_Screen()
+        Event_Details_Other_Events()
     }
 }
-
-
-       
-    
-

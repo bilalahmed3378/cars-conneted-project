@@ -276,16 +276,18 @@ struct Post_Product_Vehicle_Screen: View {
                 
               
                 
-                Button(action: {}, label: {
+                NavigationLink(destination: Product_Added_Successfully(), label: {
                     Text("Post Product")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
                         .foregroundColor(.white)
                         .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                })
+               
                 .padding(.top,30)
                 .padding(.bottom)
+                })
+                   
                 
             }
            

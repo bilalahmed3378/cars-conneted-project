@@ -38,7 +38,9 @@ struct Create_Club_Screen: View {
                 VStack(alignment: .leading){
                
                     HStack{
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.presentaionMode.wrappedValue.dismiss()
+                        }, label: {
                             
                             Image("Icons-2")
                                 .resizable()
@@ -213,15 +215,17 @@ struct Create_Club_Screen: View {
                     
                     HStack{
                         Spacer()
-                Button(action: {}, label: {
-                    Text("Create")
-                        .font(AppFonts.semiBold_16)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
-                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                })
-                .padding(.top)
+              
+                        NavigationLink(destination: Club_Created_Successfully(), label: {
+                            Text("Create")
+                                .font(AppFonts.semiBold_16)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                    .padding(.top)
+                        })
+                  
                         
                         Spacer()
                     }

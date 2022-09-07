@@ -14,10 +14,15 @@ struct SignUp_Screen: View {
     @State  var isSecured = false
     @State  var isSecured2 = false
     @State var toVerify = false
+    @State var toLogin = false
     var body: some View {
         ZStack{
             
             NavigationLink(destination: verifyOtpScreen(), isActive: $toVerify){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: Login_Screen(), isActive: $toLogin){
                 EmptyView()
             }
           
@@ -163,7 +168,9 @@ struct SignUp_Screen: View {
                             Text("Already have an account?")
                                 .font(AppFonts.regular_12)
                                 
-                            Button(action: {}, label: {
+                            Button(action: {
+                                self.toLogin = true
+                            }, label: {
                                 Text("Login")
                                     .font(AppFonts.medium_14)
                                     .foregroundColor(AppColors.redGradientColor1)

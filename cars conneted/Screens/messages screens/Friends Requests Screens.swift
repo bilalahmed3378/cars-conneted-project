@@ -15,7 +15,9 @@ struct Friends_Requests_Screens: View {
                 
                 // top bar
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)

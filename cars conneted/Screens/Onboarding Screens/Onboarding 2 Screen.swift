@@ -29,10 +29,11 @@ struct Onboarding_2_Screen: View {
             HStack{
                 
                 Spacer()
-                Button(action: {}, label: {
+                NavigationLink(destination: Getting_Started_Screen(), label: {
                     Text("Skip")
                         .font(AppFonts.regular_14)
                         .foregroundColor(AppColors.redGradientColor1)
+               
                 })
                
                 
@@ -48,6 +49,7 @@ struct Onboarding_2_Screen: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*50)
             }
+            .padding(.bottom)
             
             Spacer()
             Group{
@@ -66,6 +68,7 @@ struct Onboarding_2_Screen: View {
                     .foregroundColor(.gray)
             }.padding(.leading)
                 .padding(.trailing)
+                .padding(.bottom)
             
             Spacer()
             
@@ -90,6 +93,7 @@ struct Onboarding_2_Screen: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 10, height: 10)
             }.frame(width: 80, height: 10)
+                    .padding(.bottom)
             }
             Spacer()
             
@@ -104,7 +108,7 @@ struct Onboarding_2_Screen: View {
                     .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
-            .padding(.top,10)
+            .padding(.top,30)
             .padding(.bottom,10)
             }
             

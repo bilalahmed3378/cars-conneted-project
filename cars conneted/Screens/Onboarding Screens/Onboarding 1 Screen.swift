@@ -26,6 +26,7 @@ struct Onboarding_1_Screen: View {
                         .aspectRatio(contentMode: .fill)
                         .frame(width: UIScreen.widthBlockSize*50, height: UIScreen.heightBlockSize*40)
                     Spacer()
+                   
                 }
                 Spacer()
             }.edgesIgnoringSafeArea(.top)
@@ -37,11 +38,13 @@ struct Onboarding_1_Screen: View {
             HStack{
                 
                 Spacer()
-                Button(action: {}, label: {
+                NavigationLink(destination: Getting_Started_Screen(), label: {
                     Text("Skip")
                         .font(AppFonts.regular_14)
                         .foregroundColor(AppColors.redGradientColor1)
+               
                 })
+                   
                
                 
             }.padding(.leading)
@@ -53,7 +56,8 @@ struct Onboarding_1_Screen: View {
                 Image("unsplash_qyfco1nfMtg")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*40)
+                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*50)
+               
             }
             
             Spacer()

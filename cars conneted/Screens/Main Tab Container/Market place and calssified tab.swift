@@ -41,7 +41,7 @@ struct Market_place_and_calssified: View {
                         .foregroundColor(.white)
                     
                     Spacer()
-                    NavigationLink(destination: Setting_Screen(), label: {
+                    NavigationLink(destination: Add_classified_Screen(), label: {
                         
                         Image("plus icon")
                             .resizable()

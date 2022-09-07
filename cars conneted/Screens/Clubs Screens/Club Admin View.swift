@@ -26,7 +26,7 @@ struct Club_Admin_View: View {
                 // top bar
                 HStack{
                     Button(action: {
-                       
+                        self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
                         Image("back icon")
                                .resizable()

@@ -114,7 +114,7 @@ struct Setting_Screen: View {
                 .padding(.leading,5)
                 Spacer()
                
-                NavigationLink(destination: User_Profile__Wall(),  label: {
+                NavigationLink(destination: My_Profile_Screen(),  label: {
                     Image("Arrow - Right Square")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

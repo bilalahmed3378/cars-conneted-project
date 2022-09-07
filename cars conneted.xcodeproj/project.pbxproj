@@ -101,12 +101,17 @@
 		597282F428B7993E0004F4CB /* New member request club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F328B7993E0004F4CB /* New member request club.swift */; };
 		597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F528B79B460004F4CB /* Create Post Club Screen.swift */; };
 		597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F728B7A38B0004F4CB /* Club Admin View.swift */; };
+		5983884428C85FDC007BFF7A /* Event Published Successfully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983884328C85FDC007BFF7A /* Event Published Successfully.swift */; };
+		5983884628C861A8007BFF7A /* Event Details Other Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983884528C861A8007BFF7A /* Event Details Other Events.swift */; };
+		5983884928C87533007BFF7A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5983884828C87533007BFF7A /* Kingfisher */; };
+		5983884B28C8A1B0007BFF7A /* Product Added Successfully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983884A28C8A1B0007BFF7A /* Product Added Successfully.swift */; };
+		5983884D28C8AEEE007BFF7A /* My Profile Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983884C28C8AEEE007BFF7A /* My Profile Screen.swift */; };
+		5983885328C8CCCA007BFF7A /* OnBoardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983885228C8CCCA007BFF7A /* OnBoardingModel.swift */; };
 		599AF4AE28B601F900DE103F /* Create Shop Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4AD28B601F800DE103F /* Create Shop Screen.swift */; };
 		599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B028B60AE200DE103F /* Post products Services Screen.swift */; };
 		599AF4B328B62A7400DE103F /* Post Product Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */; };
 		599AF4B528B62CE500DE103F /* Post Product Vehicle Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B428B62CE500DE103F /* Post Product Vehicle Screen.swift */; };
-		599AF4B728B6324C00DE103F /* Add classified Services Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B628B6324C00DE103F /* Add classified Services Screen.swift */; };
-		599AF4B928B6448800DE103F /* Add classified Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B828B6448800DE103F /* Add classified Parts Screen.swift */; };
+		599AF4B728B6324C00DE103F /* Add classified Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B628B6324C00DE103F /* Add classified Screen.swift */; };
 		59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */; };
 		59D6147828AD0A560014E4E9 /* Help Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6147728AD0A550014E4E9 /* Help Screen.swift */; };
 		59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */; };
@@ -114,7 +119,6 @@
 		59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669DE28ABB5D70012FBF8 /* Change Email screen.swift */; };
 		59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669E028ABB8590012FBF8 /* E-Mail Confirmation screen.swift */; };
 		59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */; };
-		59D7A47628B64BEE0022F49A /* Add classified vehicle Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7A47528B64BEE0022F49A /* Add classified vehicle Screen.swift */; };
 		59D7A47828B64EE70022F49A /* Shop Updated Successfully Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7A47728B64EE70022F49A /* Shop Updated Successfully Screen.swift */; };
 		59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */; };
 		59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */; };
@@ -268,12 +272,16 @@
 		597282F328B7993E0004F4CB /* New member request club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New member request club.swift"; sourceTree = "<group>"; };
 		597282F528B79B460004F4CB /* Create Post Club Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Post Club Screen.swift"; sourceTree = "<group>"; };
 		597282F728B7A38B0004F4CB /* Club Admin View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club Admin View.swift"; sourceTree = "<group>"; };
+		5983884328C85FDC007BFF7A /* Event Published Successfully.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Published Successfully.swift"; sourceTree = "<group>"; };
+		5983884528C861A8007BFF7A /* Event Details Other Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Details Other Events.swift"; sourceTree = "<group>"; };
+		5983884A28C8A1B0007BFF7A /* Product Added Successfully.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Added Successfully.swift"; sourceTree = "<group>"; };
+		5983884C28C8AEEE007BFF7A /* My Profile Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Profile Screen.swift"; sourceTree = "<group>"; };
+		5983885228C8CCCA007BFF7A /* OnBoardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingModel.swift; sourceTree = "<group>"; };
 		599AF4AD28B601F800DE103F /* Create Shop Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Shop Screen.swift"; sourceTree = "<group>"; };
 		599AF4B028B60AE200DE103F /* Post products Services Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post products Services Screen.swift"; sourceTree = "<group>"; };
 		599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Product Parts Screen.swift"; sourceTree = "<group>"; };
 		599AF4B428B62CE500DE103F /* Post Product Vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Product Vehicle Screen.swift"; sourceTree = "<group>"; };
-		599AF4B628B6324C00DE103F /* Add classified Services Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add classified Services Screen.swift"; sourceTree = "<group>"; };
-		599AF4B828B6448800DE103F /* Add classified Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add classified Parts Screen.swift"; sourceTree = "<group>"; };
+		599AF4B628B6324C00DE103F /* Add classified Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add classified Screen.swift"; sourceTree = "<group>"; };
 		59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Privacy Policy Screen.swift"; sourceTree = "<group>"; };
 		59D6147728AD0A550014E4E9 /* Help Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Help Screen.swift"; sourceTree = "<group>"; };
 		59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedBack Screen.swift"; sourceTree = "<group>"; };
@@ -281,7 +289,6 @@
 		59D669DE28ABB5D70012FBF8 /* Change Email screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change Email screen.swift"; sourceTree = "<group>"; };
 		59D669E028ABB8590012FBF8 /* E-Mail Confirmation screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "E-Mail Confirmation screen.swift"; sourceTree = "<group>"; };
 		59D669E228ABBA2F0012FBF8 /* Proximity location screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity location screen.swift"; sourceTree = "<group>"; };
-		59D7A47528B64BEE0022F49A /* Add classified vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add classified vehicle Screen.swift"; sourceTree = "<group>"; };
 		59D7A47728B64EE70022F49A /* Shop Updated Successfully Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shop Updated Successfully Screen.swift"; sourceTree = "<group>"; };
 		59D7CF0B289257F900F9EC5D /* Terms of sevices screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Terms of sevices screen.swift"; sourceTree = "<group>"; };
 		59D7CF0D28925C0000F9EC5D /* Transacation detail screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transacation detail screen.swift"; sourceTree = "<group>"; };
@@ -325,6 +332,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5983884928C87533007BFF7A /* Kingfisher in Frameworks */,
 				59DB4462289939E0006766EA /* MultipartForm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +360,8 @@
 				590117A528B896FF0053019E /* Create Event step1 Screen.swift */,
 				596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */,
 				596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */,
+				5983884328C85FDC007BFF7A /* Event Published Successfully.swift */,
+				5983884528C861A8007BFF7A /* Event Details Other Events.swift */,
 			);
 			path = "Events Creation";
 			sourceTree = "<group>";
@@ -670,6 +680,7 @@
 				5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */,
 				5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */,
 				5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */,
+				5983885228C8CCCA007BFF7A /* OnBoardingModel.swift */,
 			);
 			path = "Onboarding Screens";
 			sourceTree = "<group>";
@@ -747,10 +758,9 @@
 				599AF4B028B60AE200DE103F /* Post products Services Screen.swift */,
 				599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */,
 				599AF4B428B62CE500DE103F /* Post Product Vehicle Screen.swift */,
-				599AF4B628B6324C00DE103F /* Add classified Services Screen.swift */,
-				599AF4B828B6448800DE103F /* Add classified Parts Screen.swift */,
-				59D7A47528B64BEE0022F49A /* Add classified vehicle Screen.swift */,
+				599AF4B628B6324C00DE103F /* Add classified Screen.swift */,
 				59D7A47728B64EE70022F49A /* Shop Updated Successfully Screen.swift */,
+				5983884A28C8A1B0007BFF7A /* Product Added Successfully.swift */,
 			);
 			path = "Add Classified Screens";
 			sourceTree = "<group>";
@@ -805,6 +815,7 @@
 			children = (
 				59607F1428914F6700B46682 /* Car Specification.swift */,
 				59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */,
+				5983884C28C8AEEE007BFF7A /* My Profile Screen.swift */,
 			);
 			path = "User Profile, Follow, Unfollow screen";
 			sourceTree = "<group>";
@@ -837,6 +848,7 @@
 			name = "cars conneted";
 			packageProductDependencies = (
 				59DB4461289939E0006766EA /* MultipartForm */,
+				5983884828C87533007BFF7A /* Kingfisher */,
 			);
 			productName = "cars conneted";
 			productReference = 593466652886712800956869 /* cars conneted.app */;
@@ -912,6 +924,7 @@
 			mainGroup = 5934665C2886712800956869;
 			packageReferences = (
 				59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */,
+				5983884728C87533007BFF7A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 593466662886712800956869 /* Products */;
 			projectDirPath = "";
@@ -979,7 +992,8 @@
 				5954A19528AE5A4900B8BB30 /* Onboarding 1 Screen.swift in Sources */,
 				5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */,
 				597282F428B7993E0004F4CB /* New member request club.swift in Sources */,
-				599AF4B728B6324C00DE103F /* Add classified Services Screen.swift in Sources */,
+				599AF4B728B6324C00DE103F /* Add classified Screen.swift in Sources */,
+				5983884B28C8A1B0007BFF7A /* Product Added Successfully.swift in Sources */,
 				596D8A1628B8CA6B00E0F7DE /* Event Details Screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
 				5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */,
@@ -1001,6 +1015,7 @@
 				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
 				5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */,
 				5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */,
+				5983884628C861A8007BFF7A /* Event Details Other Events.swift in Sources */,
 				597282E028B759F10004F4CB /* Create Club Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
@@ -1017,7 +1032,6 @@
 				5909F69928B3A35800F7FD38 /* Subscription Updated Successful Screen.swift in Sources */,
 				597282E628B775870004F4CB /* My Clubs screens.swift in Sources */,
 				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
-				59D7A47628B64BEE0022F49A /* Add classified vehicle Screen.swift in Sources */,
 				597282F028B793080004F4CB /* Club chat Screen.swift in Sources */,
 				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
 				599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */,
@@ -1038,12 +1052,12 @@
 				59D7CF0C289257F900F9EC5D /* Terms of sevices screen.swift in Sources */,
 				59DB445F289937A7006766EA /* NetworkConfigs.swift in Sources */,
 				59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */,
-				599AF4B928B6448800DE103F /* Add classified Parts Screen.swift in Sources */,
 				59DB446528995098006766EA /* Constants.swift in Sources */,
 				59D6147828AD0A560014E4E9 /* Help Screen.swift in Sources */,
 				592A210C289910A400FC9EAF /* LoginUserModel.swift in Sources */,
 				597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
+				5983885328C8CCCA007BFF7A /* OnBoardingModel.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
 				5954A19728AE5F2C00B8BB30 /* Onboarding 2 Screen.swift in Sources */,
 				590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */,
@@ -1058,6 +1072,7 @@
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				597282E828B77ABD0004F4CB /* Clubs Screen.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
+				5983884428C85FDC007BFF7A /* Event Published Successfully.swift in Sources */,
 				5934666B2886712800956869 /* ContentView.swift in Sources */,
 				59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */,
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
@@ -1080,6 +1095,7 @@
 				599AF4B528B62CE500DE103F /* Post Product Vehicle Screen.swift in Sources */,
 				594DC7ED28B4F4E70000C99E /* Shop Others View Screen.swift in Sources */,
 				5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */,
+				5983884D28C8AEEE007BFF7A /* My Profile Screen.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				5940A43828B0FD3600C5EEF4 /* Proximity Screen 2.swift in Sources */,
 				59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */,
@@ -1419,6 +1435,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5983884728C87533007BFF7A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/davbeck/MultipartForm.git";
@@ -1430,6 +1454,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5983884828C87533007BFF7A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5983884728C87533007BFF7A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		59DB4461289939E0006766EA /* MultipartForm */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */;

@@ -17,6 +17,9 @@ struct HomeTab: View {
     @State var toSearchScreen = false
     
     @State var toProximity = false
+    
+    @State var toAddEvent = false
+    
 
     
     init(isDrawerOpen : Binding<Bool>){
@@ -36,6 +39,10 @@ struct HomeTab: View {
                 }
                 
                 NavigationLink(destination: Proximity_location_screen() , isActive: self.$toProximity) {
+                    EmptyView()
+                }
+                
+                NavigationLink(destination: Create_Event_step1_Screen() , isActive: self.$toAddEvent) {
                     EmptyView()
                 }
                 
@@ -241,7 +248,7 @@ struct HomeTab: View {
                                 .frame(width: 15, height: 15)
                                 .foregroundColor(Color.white)
                                 .padding(20)
-                                .background(Circle().fill(AppColors.redGradientColor1).shadow(radius: 10))
+                                .background(Circle().fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).shadow(radius: 10))
                                 .padding(.trailing,20)
                                 .padding(.bottom,10)
                         }
@@ -269,16 +276,23 @@ struct HomeTab: View {
                                
                                 Divider()
                                 Group{
-                                HStack{
-                                    Image("add event icon red")
-                                        .padding(.trailing)
                                     
-                                    Text("Add event")
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .font(AppFonts.medium_16)
-                                    Spacer()
-                                }.padding()
-                                        .padding(.leading)
+                                    Button(action: {
+                                        self.addItems = false
+                                        self.toAddEvent = true
+                                    }, label: {
+                                        HStack{
+                                            Image("add event icon red")
+                                                .padding(.trailing)
+                                            
+                                            Text("Add event")
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                                .font(AppFonts.medium_16)
+                                            Spacer()
+                                        }.padding()
+                                                .padding(.leading)
+                                    })
+                               
                                 
                                 Divider()
                                 
@@ -623,7 +637,7 @@ struct EventsHome : View {
                   Image("Group 7370")
                   
                   Text("Arsalan and 20 other")
-                      .font(.subheadline)
+                      .font(AppFonts.regular_10)
                       .foregroundColor(Color.gray)
                   
               })
@@ -634,7 +648,7 @@ struct EventsHome : View {
                   self.showingSheet.toggle()
               }, label: {
                   Text("12 comments")
-                      .font(.subheadline)
+                      .font(AppFonts.regular_10)
                       .foregroundColor(Color.gray)
               })
               .sheet(isPresented: $showingSheet){
@@ -653,21 +667,13 @@ struct EventsHome : View {
                   HStack{
                       Image("heart icon")
                       Text("Like")
-                          .fontWeight(.thin)
+                          .font(AppFonts.regular_12)
                           .foregroundColor(Color.gray)
                       
                   }
               })
               
-              Button(action: {}, label: {
-                  HStack{
-                      Image("heart icon")
-                      Text("Like")
-                          .fontWeight(.thin)
-                          .foregroundColor(Color.gray)
-                      
-                  }
-              })
+            
             
               
               Spacer()
@@ -678,7 +684,7 @@ struct EventsHome : View {
                   HStack{
                       Image("ant-design_comment-outlined")
                       Text("Comment")
-                          .fontWeight(.thin)
+                          .font(AppFonts.regular_12)
                           .foregroundColor(Color.gray)
                       
                   }
@@ -693,7 +699,7 @@ struct EventsHome : View {
                   HStack{
                       Image("ion_share-social-sharp")
                       Text("Share")
-                          .fontWeight(.thin)
+                          .font(AppFonts.regular_12)
                           .foregroundColor(Color.gray)
                   }
               })
@@ -704,7 +710,7 @@ struct EventsHome : View {
                   HStack{
                       Image("Icons")
                       Text("Save")
-                          .fontWeight(.thin)
+                          .font(AppFonts.regular_12)
                           .foregroundColor(Color.gray)
                   }
               })
@@ -714,10 +720,7 @@ struct EventsHome : View {
           
         Divider()
           
-      }.padding(.bottom,20)
-          .padding(.leading,20)
-          .padding(.trailing,20)
-          .padding(.top,20)
+      }.padding()
 
       
       
@@ -841,26 +844,26 @@ struct ClubsCardHome: View {
                     
                     
                     
-                }.padding(.top,20)
+                }.padding(.top)
                 
                 
                 
             }
             .frame(height: 240)
             .cornerRadius(10)
-            .padding(.top,20)
+            .padding(.top)
             HStack{
                 
                 Image("Group 7370")
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
             }
@@ -871,7 +874,7 @@ struct ClubsCardHome: View {
                 HStack{
                     Image("heart icon")
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -881,7 +884,7 @@ struct ClubsCardHome: View {
                 HStack{
                     Image("ant-design_comment-outlined")
                     Text("Comment")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -889,21 +892,22 @@ struct ClubsCardHome: View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 
                 
             }
             
-            Image("Line 2")
+          Divider()
+            
             
         }.padding(.bottom,20)
             .padding(.leading,20)
@@ -1091,24 +1095,24 @@ struct marketPlaceSreachCardsHome : View {
                 Image("Group 7370")
                 
                 Text("Arsalan and 20 other")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
                 Spacer()
                 
                 Text("12 comments")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_10)
                     .foregroundColor(Color.gray)
                 
             }
             
-            Image("Line 2")
+            Divider()
             
             HStack{
                 HStack{
                     Image("heart icon")
                     Text("Like")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                     
@@ -1118,7 +1122,7 @@ struct marketPlaceSreachCardsHome : View {
                 HStack{
                     Image("ant-design_comment-outlined")
                     Text("Comment")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                     
                 }
@@ -1126,14 +1130,14 @@ struct marketPlaceSreachCardsHome : View {
                 HStack{
                     Image("ion_share-social-sharp")
                     Text("Share")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 Spacer()
                 HStack{
                     Image("Icons")
                     Text("Save")
-                        .fontWeight(.thin)
+                        .font(AppFonts.regular_12)
                         .foregroundColor(Color.gray)
                 }
                 
@@ -1142,10 +1146,7 @@ struct marketPlaceSreachCardsHome : View {
             
             Image("Line 2")
             
-        }.padding(.bottom,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.top,20)
+        }.padding()
 
     }
 }
