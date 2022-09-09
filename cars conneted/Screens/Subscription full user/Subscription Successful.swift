@@ -62,10 +62,8 @@ struct Subscription_Successful: View {
                 }
             }
             
-          Image("Rectangle")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*35)
+            LottieView(name: LottieAnimations.successAnimation)
+                .frame(width: 300, height: 300)
             
             Button(action: {
                 self.toHome = true

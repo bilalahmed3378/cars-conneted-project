@@ -1050,7 +1050,7 @@ struct ClassifiedCardsClubs : View {
                                 .padding(10)
                                 .padding(.leading,30)
                                 .padding(.trailing,30)
-                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*30, height: UIScreen.heightBlockSize*4))
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*6))
                                 
                         })
                       

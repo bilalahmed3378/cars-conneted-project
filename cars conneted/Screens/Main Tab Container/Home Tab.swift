@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import HalfASheet
 
 struct HomeTab: View {
     @State private var searchText = ""
@@ -19,6 +20,8 @@ struct HomeTab: View {
     @State var toProximity = false
     
     @State var toAddEvent = false
+    
+   
     
 
     
@@ -84,13 +87,15 @@ struct HomeTab: View {
                                     .padding(.trailing,10)
                             })
                            
-                            Button(action: {}, label: {
+                            NavigationLink(destination: Notification_Screen(), label: {
                                 Image("bell white")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 20, height: 20)
                                     .padding(.trailing,10)
                             })
+                              
+                            
                            
                             
                             NavigationLink(destination: Setting_Screen()){
@@ -252,126 +257,255 @@ struct HomeTab: View {
                                 .padding(.trailing,20)
                                 .padding(.bottom,10)
                         }
-                        .sheet(isPresented: $addItems){
-                            VStack{
-                                Spacer()
-                                
-                               
-                                Button(action: {
-                                    self.addItems = false
-                                    self.addFlowActive = true
-                                }){
-                                    
-                                         HStack{
-                                             Image("Add post icon red")
-                                                 .padding(.trailing)
-                                             
-                                             Text("Add post")
-                                                 .foregroundColor(AppColors.redGradientColor1)
-                                                 .font(AppFonts.medium_16)
-                                             Spacer()
-                                         }.padding()
-                                             .padding(.leading)
-                                }
-                               
-                                Divider()
-                                Group{
-                                    
-                                    Button(action: {
-                                        self.addItems = false
-                                        self.toAddEvent = true
-                                    }, label: {
-                                        HStack{
-                                            Image("add event icon red")
-                                                .padding(.trailing)
-                                            
-                                            Text("Add event")
-                                                .foregroundColor(AppColors.redGradientColor1)
-                                                .font(AppFonts.medium_16)
-                                            Spacer()
-                                        }.padding()
-                                                .padding(.leading)
-                                    })
-                               
-                                
-                                Divider()
-                                
-                                HStack{
-                                    Image("add car icon red")
-                                        .padding(.trailing)
-                                    
-                                    Text("Add car")
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .font(AppFonts.medium_16)
-                                    Spacer()
-                                }.padding()
-                                        .padding(.leading)
-                                
-                                Divider()
-                                
-                                HStack{
-                                    Image("add classified icon red")
-                                        .padding(.trailing)
-                                    
-                                    Text("Add classified")
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .font(AppFonts.medium_16)
-                                    Spacer()
-                                }.padding()
-                                        .padding(.leading)
-                                
-                                Divider()
-                                
-                                HStack{
-                                    Image("add club icon red")
-                                        .padding(.trailing)
-                                    
-                                    Text("Add club")
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .font(AppFonts.medium_16)
-                                    Spacer()
-                                }.padding()
-                                        .padding(.leading)
-                                }
-                                Divider()
-                                
-                                HStack{
-                                    Image("add status icon red")
-                                        .padding(.trailing)
-                                    
-                                    Text("Add status")
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .font(AppFonts.medium_16)
-                                    Spacer()
-                                }.padding()
-                                    .padding(.leading)
-                                
-                                Divider()
-                                
-                                Spacer()
-                                
-                                HStack{
-                                    Button(action: {
-                                        self.addItems = false
-                                    }, label: {
-                                        Text("Cancel")
-                                            .font(AppFonts.semiBold_16)
-                                            .fontWeight(.medium)
-                                            .foregroundColor(.white)
-                                            .frame(width: 350, height: 70)
-                                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                                    })
-                                    
-                                    
-                                }.padding()
-
-                                
-                                
-                                
-                            }
-                        }
+//                        .sheet(isPresented: $addItems){
+//                            VStack{
+//                                Spacer()
+//
+//
+//                                Button(action: {
+//                                    self.addItems = false
+//                                    self.addFlowActive = true
+//                                }){
+//
+//                                         HStack{
+//                                             Image("Add post icon red")
+//                                                 .padding(.trailing)
+//
+//                                             Text("Add post")
+//                                                 .foregroundColor(AppColors.redGradientColor1)
+//                                                 .font(AppFonts.medium_16)
+//                                             Spacer()
+//                                         }.padding()
+//                                             .padding(.leading)
+//                                }
+//
+//                                Divider()
+//                                Group{
+//
+//                                    Button(action: {
+//                                        self.addItems = false
+//                                        self.toAddEvent = true
+//                                    }, label: {
+//                                        HStack{
+//                                            Image("add event icon red")
+//                                                .padding(.trailing)
+//
+//                                            Text("Add event")
+//                                                .foregroundColor(AppColors.redGradientColor1)
+//                                                .font(AppFonts.medium_16)
+//                                            Spacer()
+//                                        }.padding()
+//                                                .padding(.leading)
+//                                    })
+//
+//
+//                                Divider()
+//
+//                                HStack{
+//                                    Image("add car icon red")
+//                                        .padding(.trailing)
+//
+//                                    Text("Add car")
+//                                        .foregroundColor(AppColors.redGradientColor1)
+//                                        .font(AppFonts.medium_16)
+//                                    Spacer()
+//                                }.padding()
+//                                        .padding(.leading)
+//
+//                                Divider()
+//
+//                                HStack{
+//                                    Image("add classified icon red")
+//                                        .padding(.trailing)
+//
+//                                    Text("Add classified")
+//                                        .foregroundColor(AppColors.redGradientColor1)
+//                                        .font(AppFonts.medium_16)
+//                                    Spacer()
+//                                }.padding()
+//                                        .padding(.leading)
+//
+//                                Divider()
+//
+//                                HStack{
+//                                    Image("add club icon red")
+//                                        .padding(.trailing)
+//
+//                                    Text("Add club")
+//                                        .foregroundColor(AppColors.redGradientColor1)
+//                                        .font(AppFonts.medium_16)
+//                                    Spacer()
+//                                }.padding()
+//                                        .padding(.leading)
+//                                }
+//                                Divider()
+//
+//                                HStack{
+//                                    Image("add status icon red")
+//                                        .padding(.trailing)
+//
+//                                    Text("Add status")
+//                                        .foregroundColor(AppColors.redGradientColor1)
+//                                        .font(AppFonts.medium_16)
+//                                    Spacer()
+//                                }.padding()
+//                                    .padding(.leading)
+//
+//                                Divider()
+//
+//                                Spacer()
+//
+//                                HStack{
+//                                    Button(action: {
+//                                        self.addItems = false
+//                                    }, label: {
+//                                        Text("Cancel")
+//                                            .font(AppFonts.semiBold_16)
+//                                            .fontWeight(.medium)
+//                                            .foregroundColor(.white)
+//                                            .frame(width: 350, height: 70)
+//                                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+//                                    })
+//
+//
+//                                }.padding()
+//
+//
+//
+//
+//                            }
+//
+//
+//
+//                        }
+                        
+                        
+                       
                     }
                 }
+                
+                HalfASheet(isPresented: $addItems){
+                    VStack{
+                        Spacer()
+                        
+                       
+                        Button(action: {
+                            self.addItems = false
+                            self.addFlowActive = true
+                        }){
+                            
+                                 HStack{
+                                     Image("Add post icon red")
+                                         .padding(.trailing)
+                                     
+                                     Text("Add post")
+                                         .foregroundColor(AppColors.redGradientColor1)
+                                         .font(AppFonts.medium_16)
+                                     Spacer()
+                                 }.padding()
+                                     .padding(.leading)
+                        }
+                       
+                        Divider()
+                        Group{
+                            
+                            Button(action: {
+                                self.addItems = false
+                                self.toAddEvent = true
+                            }, label: {
+                                HStack{
+                                    Image("add event icon red")
+                                        .padding(.trailing)
+                                    
+                                    Text("Add event")
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .font(AppFonts.medium_16)
+                                    Spacer()
+                                }.padding()
+                                        .padding(.leading)
+                            })
+                       
+                        
+                        Divider()
+                        
+                        HStack{
+                            Image("add car icon red")
+                                .padding(.trailing)
+                            
+                            Text("Add car")
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .font(AppFonts.medium_16)
+                            Spacer()
+                        }.padding()
+                                .padding(.leading)
+                        
+                        Divider()
+                        
+                        HStack{
+                            Image("add classified icon red")
+                                .padding(.trailing)
+                            
+                            Text("Add classified")
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .font(AppFonts.medium_16)
+                            Spacer()
+                        }.padding()
+                                .padding(.leading)
+                        
+                        Divider()
+                        
+                        HStack{
+                            Image("add club icon red")
+                                .padding(.trailing)
+                            
+                            Text("Add club")
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .font(AppFonts.medium_16)
+                            Spacer()
+                        }.padding()
+                                .padding(.leading)
+                        }
+                        Divider()
+                        
+                        HStack{
+                            Image("add status icon red")
+                                .padding(.trailing)
+                            
+                            Text("Add status")
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .font(AppFonts.medium_16)
+                            Spacer()
+                        }.padding()
+                            .padding(.leading)
+                        
+                        Divider()
+                        
+                        Spacer()
+                        
+                        HStack{
+                            Button(action: {
+                                self.addItems = false
+                            }, label: {
+                                Text("Cancel")
+                                    .font(AppFonts.semiBold_16)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*7)
+                                    .background(RoundedRectangle(cornerRadius: 50).fill(.white))
+                            })
+                            
+                            
+                        }.padding()
+
+                        
+                        
+                        
+                    }
+                }
+                .height(.proportional(0.70))
+                .closeButtonColor(UIColor.white)
+                .backgroundColor(UIColor.white)
+                
                
             }
             .edgesIgnoringSafeArea(.top)
@@ -440,7 +574,9 @@ struct PostsHome : View {
               })
               .sheet(isPresented: $showingSheet){
                   commentsScreen()
+                  
               }
+              
              
               
           }

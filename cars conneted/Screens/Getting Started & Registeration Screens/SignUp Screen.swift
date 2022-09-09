@@ -54,11 +54,11 @@ struct SignUp_Screen: View {
                         
                         HStack{
                             Text("Welcome to Cars Connected.")
-                                .font(AppFonts.regular_12)
+                                .font(AppFonts.regular_14)
                         }
                        
                         Text("E-Mail")
-                            .font(AppFonts.regular_12)
+                            .font(AppFonts.regular_14)
                           .padding(.top,10)
                           .frame(maxWidth: .infinity, alignment: .leading)
                          
@@ -72,7 +72,7 @@ struct SignUp_Screen: View {
                           .foregroundColor(.black)
                           
                       Text("Password")
-                            .font(AppFonts.regular_12)
+                            .font(AppFonts.regular_14)
                         .padding(.top,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
@@ -113,7 +113,7 @@ struct SignUp_Screen: View {
                           .padding(.top,10)
                           .frame(maxWidth: .infinity, alignment: .leading)
                         if isSecured2 {
-                          SecureField("Set Password", text: $confirmPassword)
+                          SecureField("Re-Enter Your Password", text: $confirmPassword)
                                 .font(AppFonts.regular_14)
                             .autocapitalization(.none)
                             .padding(.vertical, 10)
@@ -166,7 +166,7 @@ struct SignUp_Screen: View {
                         HStack{
                             Spacer()
                             Text("Already have an account?")
-                                .font(AppFonts.regular_12)
+                                .font(AppFonts.regular_14)
                                 
                             Button(action: {
                                 self.toLogin = true
@@ -217,10 +217,6 @@ struct SignUp_Screen: View {
                                 .padding(20)
                                 .background(RoundedRectangle(cornerRadius: 100).strokeBorder(Color.red, lineWidth: 1).frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*6))
                             })
-                           
-                            
-                            
-                            
                            
                         }
                         

@@ -18,6 +18,10 @@ struct Add_your_Car_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     @State var toHome = false
     
+    @State var showSheet = false
+    
+    @State var photos : Array<Image> = []
+    
     var body: some View {
         ZStack{
             
@@ -245,48 +249,62 @@ struct Add_your_Car_Screen: View {
                     }.padding(.leading)
                         .padding(.trailing)
                     
-                    HStack{
-                        Spacer()
-                        
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Spacer()
-                    }.padding(.top)
-                        .padding(.bottom)
+                   // ScrollView( showsIndicators: false){
+                    if(!self.photos.isEmpty){
+                      
+                        ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+                            
+                            
+                            self.photos[index]
+                                .resizable()
+                                .aspectRatio( contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                                .cornerRadius(8)
+                                .overlay(
+                                    VStack{
+                                       
+                                        
+                                        HStack{
+                                            Spacer()
+                                            Image(systemName: "minus")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .foregroundColor(.white)
+                                                .padding(5)
+                                                .frame(width: 15, height: 15)
+                                                .background(Circle()
+                                                    .fill(.red))
+                                                .offset(x: 5, y: -5)
+                                                .onTapGesture{
+                                                    self.photos.remove(at: index)
+                                                }
+                                            
+                                            
+                                           
+                                        }
+                                        Spacer()
+                                    }
+                                    
+                                )
+                            
+                            
+                        }.padding(.leading)
+                            .padding(.trailing)
+                            .padding(.top)
+                    }
+                 //   }
                     
                     HStack{
+                    Image("add photo image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
+                       .onTapGesture{
+                            self.showSheet = true
+                        }
                         Spacer()
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Image("Frame 40")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Spacer()
-                    }.padding(.top)
-                        .padding(.bottom)
+                    }.padding(.leading)
+                        .padding(.trailing)
                     
                     
                     HStack{
@@ -311,9 +329,21 @@ struct Add_your_Car_Screen: View {
             
                     
             }
+            
+         
            
            
-        } .navigationBarHidden(true)
+        }.sheet(isPresented: self.$showSheet) {
+            
+            ImagePicker(sourceType: .photoLibrary) { image in
+               
+                    self.photos.append(Image(uiImage: image))
+                
+            }
+            
+            
+            }
+        .navigationBarHidden(true)
     }
 }
 

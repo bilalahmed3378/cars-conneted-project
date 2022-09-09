@@ -37,11 +37,15 @@ struct Search_Screen: View {
                                 .foregroundColor(.red)
                                 .font(AppFonts.regular_14)
                             
-                            Image(systemName: "magnifyingglass")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:20,height: 20)
-                                .foregroundColor(.red)
+                            
+                            NavigationLink(destination: Search_Screen(), label: {
+                                Image(systemName: "magnifyingglass")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:20,height: 20)
+                                    .foregroundColor(.red)
+                            })
+                           
                             
                             
                             

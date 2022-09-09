@@ -58,9 +58,7 @@ struct Successfully_Changed: View {
             }
             }
             
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            LottieView(name: LottieAnimations.successAnimation)
                 .frame(width: 300, height: 300)
             
             

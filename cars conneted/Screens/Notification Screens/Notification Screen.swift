@@ -6,14 +6,24 @@
 //
 
 import SwiftUI
+import HalfASheet
 
 struct Notification_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var filter =  false
+    
+    
     var body: some View {
+        
+      
+        
         VStack{
             
         HStack{
-            Button(action: {}, label: {
+            Button(action: {
+                self.presentaionMode.wrappedValue.dismiss()
+            }, label: {
                 
                 Image("Icons-2")
                     .resizable()
@@ -30,7 +40,9 @@ struct Notification_Screen: View {
             
             Spacer()
             
-            Button(action: {}, label: {
+            Button(action: {
+                self.filter.toggle()
+            }, label: {
                 
                 Image("filter icon 2")
                     .resizable()
@@ -38,13 +50,12 @@ struct Notification_Screen: View {
                     .frame(width: 30, height: 30)
             })
             
-            
-            
-           
         }
         .padding()
             
            
+            
+          
             
            
             ScrollView(.vertical, showsIndicators: false){
@@ -88,9 +99,23 @@ struct Notification_Screen: View {
             }
             
                 }.padding(.bottom)
+                
+                
     }
+            
+          
+            
 } .navigationBarHidden(true)
+           
+        
+        
+     
+      
+        
     }
+    
+    
+}
 
 struct Notification_Screen_Previews: PreviewProvider {
     static var previews: some View {
@@ -125,6 +150,8 @@ struct todayNotifications : View {
       }.padding().background(RoundedRectangle(cornerRadius: 0).fill(.gray.opacity(0.1)))
           .padding(.bottom,-6)
       
+     
+      
   }
 }
 
@@ -158,5 +185,6 @@ struct yesterdayNotifications : View {
       
   }
 }
-}
+
+
 

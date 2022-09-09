@@ -75,10 +75,8 @@ struct Subscription_Updated_Successful_Screen: View {
                 
             }
             
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*35)
+            LottieView(name: LottieAnimations.successAnimation)
+                .frame(width: 300, height: 300)
             
             Button(action: {
                 self.toHome = true

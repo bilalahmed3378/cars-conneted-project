@@ -53,9 +53,7 @@ struct Vehicle_Deleted_Screen: View {
             
          
             
-          Image("bin")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            LottieView(name: LottieAnimations.deletedSuccessfully)
                 .frame(width: 300, height: 300)
             
             Button(action: {

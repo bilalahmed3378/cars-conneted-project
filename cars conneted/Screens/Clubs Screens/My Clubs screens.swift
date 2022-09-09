@@ -181,7 +181,7 @@ struct myClubsPosts: View{
                     
                     Spacer()
                     
-                    NavigationLink(destination: Club_Admin_View(), label: {
+                    NavigationLink(destination: My_club_Details__admin_view__Screen(), label: {
                         HStack{
                             
                             

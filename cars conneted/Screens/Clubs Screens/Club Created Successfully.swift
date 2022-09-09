@@ -28,9 +28,7 @@ struct Club_Created_Successfully: View {
           Spacer()
             
           
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
+            LottieView(name: LottieAnimations.successAnimation)
                 .frame(width: 300, height: 300)
             
             

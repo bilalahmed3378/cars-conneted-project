@@ -16,7 +16,7 @@ struct Forgot_Password_Screen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: Forgot_Password_OTP(), isActive: $toSendOTP){
+            NavigationLink(destination: verifyOtpPasswordScreen(), isActive: $toSendOTP){
                 EmptyView()
             }
             

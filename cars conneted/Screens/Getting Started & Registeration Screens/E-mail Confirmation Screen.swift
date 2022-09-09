@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import SwiftUIGIF
+
 
 struct E_mail_Confirmation_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     
+    var image = Image("Group 7139")
+    
+    
     @State var toProfileSetup = false
+    
+    
     
     var body: some View {
         VStack{
@@ -38,6 +45,10 @@ struct E_mail_Confirmation_Screen: View {
                 }
                 .padding()
             
+        
+            
+       
+            
             HStack{
                 Text("E-mail Confirmation")
                     .font(AppFonts.semiBold_24)
@@ -60,10 +71,10 @@ struct E_mail_Confirmation_Screen: View {
             }.padding(.leading)
                 .padding(.trailing)
             
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*70, height: UIScreen.heightBlockSize*40)
+            LottieView(name: LottieAnimations.successAnimation)
+                .frame(width: 300, height: 300)
+            
+           
             
             Button(action: {
                 self.toProfileSetup = true
@@ -83,11 +94,16 @@ struct E_mail_Confirmation_Screen: View {
         }
         
         .navigationBarHidden(true)
+    
+        
     }
 }
+
 
 struct E_mail_Confirmation_Screen_Previews: PreviewProvider {
     static var previews: some View {
         E_mail_Confirmation_Screen()
     }
 }
+
+

@@ -68,10 +68,6 @@
 		59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */; };
 		59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532F0628AE435C001F6EEE /* Notification Screen.swift */; };
 		5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5953999B28AFB5BD00C61A36 /* Setup Garage Screen.swift */; };
-		5954A19528AE5A4900B8BB30 /* Onboarding 1 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19428AE5A4900B8BB30 /* Onboarding 1 Screen.swift */; };
-		5954A19728AE5F2C00B8BB30 /* Onboarding 2 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */; };
-		5954A19928AE604E00B8BB30 /* Onboarding 3 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */; };
-		5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */; };
 		5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */; };
 		5954A1A128AE6C0800B8BB30 /* SignUp Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */; };
 		5959AEEA28BCCF8000702250 /* Transcation history Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5959AEE928BCCF8000702250 /* Transcation history Screen.swift */; };
@@ -83,6 +79,10 @@
 		59607F202891977600B46682 /* Change Password screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F1F2891977600B46682 /* Change Password screen.swift */; };
 		59607F2228919ED300B46682 /* Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2128919ED300B46682 /* Successfully Changed screen.swift */; };
 		59607F2428924A2100B46682 /* Notifications setting screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59607F2328924A2000B46682 /* Notifications setting screen.swift */; };
+		5962F80D28C9C0520052CDA7 /* HalfASheet in Frameworks */ = {isa = PBXBuildFile; productRef = 5962F80C28C9C0520052CDA7 /* HalfASheet */; };
+		5962F80F28C9E9860052CDA7 /* practice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5962F80E28C9E9860052CDA7 /* practice.swift */; };
+		5962F81228C9F73D0052CDA7 /* SwiftUIGIF in Frameworks */ = {isa = PBXBuildFile; productRef = 5962F81128C9F73D0052CDA7 /* SwiftUIGIF */; };
+		5962F81528C9FC9C0052CDA7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5962F81428C9FC9C0052CDA7 /* Lottie */; };
 		59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673EF028ABAB8600B2A305 /* Change User Name.swift */; };
 		596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */; };
 		596D8A1628B8CA6B00E0F7DE /* Event Details Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */; };
@@ -101,6 +101,10 @@
 		597282F428B7993E0004F4CB /* New member request club.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F328B7993E0004F4CB /* New member request club.swift */; };
 		597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F528B79B460004F4CB /* Create Post Club Screen.swift */; };
 		597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282F728B7A38B0004F4CB /* Club Admin View.swift */; };
+		5981EC2828CB0DF300C6461D /* HalfASheetPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981EC2728CB0DF300C6461D /* HalfASheetPost.swift */; };
+		5981EC2E28CB0E2E00C6461D /* If.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981EC2A28CB0E2E00C6461D /* If.swift */; };
+		5981EC3028CB0E2E00C6461D /* HalfASheet+Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981EC2C28CB0E2E00C6461D /* HalfASheet+Modifiers.swift */; };
+		5981EC3128CB0E2E00C6461D /* VerticalSlideTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5981EC2D28CB0E2E00C6461D /* VerticalSlideTransition.swift */; };
 		5983884428C85FDC007BFF7A /* Event Published Successfully.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983884328C85FDC007BFF7A /* Event Published Successfully.swift */; };
 		5983884628C861A8007BFF7A /* Event Details Other Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5983884528C861A8007BFF7A /* Event Details Other Events.swift */; };
 		5983884928C87533007BFF7A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 5983884828C87533007BFF7A /* Kingfisher */; };
@@ -150,6 +154,8 @@
 		59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB4466289950F5006766EA /* NullEncodeable.swift */; };
 		59DB446928995120006766EA /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB446828995120006766EA /* ImagePicker.swift */; };
 		59DB446B2899514E006766EA /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DB446A2899514E006766EA /* AppData.swift */; };
+		59DCDC6F28CA093B006FCF60 /* 84228-delete-animation.json in Resources */ = {isa = PBXBuildFile; fileRef = 59DCDC6E28CA093B006FCF60 /* 84228-delete-animation.json */; };
+		59DCDC7128CA0C53006FCF60 /* 117335-red-check (1).json in Resources */ = {isa = PBXBuildFile; fileRef = 59DCDC7028CA0C53006FCF60 /* 117335-red-check (1).json */; };
 		59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */; };
 		59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */; };
 		59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */; };
@@ -239,10 +245,6 @@
 		59532F0328AE410C001F6EEE /* Support Issue Solved Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Issue Solved Screen.swift"; sourceTree = "<group>"; };
 		59532F0628AE435C001F6EEE /* Notification Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notification Screen.swift"; sourceTree = "<group>"; };
 		5953999B28AFB5BD00C61A36 /* Setup Garage Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Setup Garage Screen.swift"; sourceTree = "<group>"; };
-		5954A19428AE5A4900B8BB30 /* Onboarding 1 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 1 Screen.swift"; sourceTree = "<group>"; };
-		5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 2 Screen.swift"; sourceTree = "<group>"; };
-		5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 3 screen.swift"; sourceTree = "<group>"; };
-		5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding 4 screen.swift"; sourceTree = "<group>"; };
 		5954A19E28AE64C000B8BB30 /* Getting Started Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Getting Started Screen.swift"; sourceTree = "<group>"; };
 		5954A1A028AE6C0800B8BB30 /* SignUp Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignUp Screen.swift"; sourceTree = "<group>"; };
 		5959AEE928BCCF8000702250 /* Transcation history Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Transcation history Screen.swift"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		59607F1F2891977600B46682 /* Change Password screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change Password screen.swift"; sourceTree = "<group>"; };
 		59607F2128919ED300B46682 /* Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		59607F2328924A2000B46682 /* Notifications setting screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Notifications setting screen.swift"; sourceTree = "<group>"; };
+		5962F80E28C9E9860052CDA7 /* practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practice.swift; sourceTree = "<group>"; };
 		59673EF028ABAB8600B2A305 /* Change User Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Name.swift"; sourceTree = "<group>"; };
 		596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Event step 2 Screen.swift"; sourceTree = "<group>"; };
 		596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Details Screen.swift"; sourceTree = "<group>"; };
@@ -272,6 +275,10 @@
 		597282F328B7993E0004F4CB /* New member request club.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New member request club.swift"; sourceTree = "<group>"; };
 		597282F528B79B460004F4CB /* Create Post Club Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Post Club Screen.swift"; sourceTree = "<group>"; };
 		597282F728B7A38B0004F4CB /* Club Admin View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Club Admin View.swift"; sourceTree = "<group>"; };
+		5981EC2728CB0DF300C6461D /* HalfASheetPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HalfASheetPost.swift; sourceTree = "<group>"; };
+		5981EC2A28CB0E2E00C6461D /* If.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = If.swift; sourceTree = "<group>"; };
+		5981EC2C28CB0E2E00C6461D /* HalfASheet+Modifiers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "HalfASheet+Modifiers.swift"; sourceTree = "<group>"; };
+		5981EC2D28CB0E2E00C6461D /* VerticalSlideTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalSlideTransition.swift; sourceTree = "<group>"; };
 		5983884328C85FDC007BFF7A /* Event Published Successfully.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Published Successfully.swift"; sourceTree = "<group>"; };
 		5983884528C861A8007BFF7A /* Event Details Other Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Details Other Events.swift"; sourceTree = "<group>"; };
 		5983884A28C8A1B0007BFF7A /* Product Added Successfully.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Product Added Successfully.swift"; sourceTree = "<group>"; };
@@ -320,6 +327,8 @@
 		59DB4466289950F5006766EA /* NullEncodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullEncodeable.swift; sourceTree = "<group>"; };
 		59DB446828995120006766EA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		59DB446A2899514E006766EA /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		59DCDC6E28CA093B006FCF60 /* 84228-delete-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "84228-delete-animation.json"; sourceTree = "<group>"; };
+		59DCDC7028CA0C53006FCF60 /* 117335-red-check (1).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "117335-red-check (1).json"; sourceTree = "<group>"; };
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
 		59DE385F288EBE7D00BD72D9 /* payment method 2 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "payment method 2 screen.swift"; sourceTree = "<group>"; };
 		59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Method step 3 screen.swift"; sourceTree = "<group>"; };
@@ -332,8 +341,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5962F81528C9FC9C0052CDA7 /* Lottie in Frameworks */,
 				5983884928C87533007BFF7A /* Kingfisher in Frameworks */,
 				59DB4462289939E0006766EA /* MultipartForm in Frameworks */,
+				5962F80D28C9C0520052CDA7 /* HalfASheet in Frameworks */,
+				5962F81228C9F73D0052CDA7 /* SwiftUIGIF in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +560,9 @@
 				5934669A2886C5D800956869 /* Screens */,
 				593466682886712800956869 /* cars_connetedApp.swift */,
 				5934666A2886712800956869 /* ContentView.swift */,
+				5981EC2928CB0E2E00C6461D /* HalfASheet */,
 				5934666C2886712E00956869 /* Assets.xcassets */,
+				59DCDC7228CA0EAC006FCF60 /* Lottie Files */,
 				593466922886952600956869 /* Resouces */,
 				5934666E2886712E00956869 /* Preview Content */,
 			);
@@ -676,10 +690,6 @@
 		5954A19C28AE63BD00B8BB30 /* Onboarding Screens */ = {
 			isa = PBXGroup;
 			children = (
-				5954A19428AE5A4900B8BB30 /* Onboarding 1 Screen.swift */,
-				5954A19628AE5F2C00B8BB30 /* Onboarding 2 Screen.swift */,
-				5954A19828AE604E00B8BB30 /* Onboarding 3 screen.swift */,
-				5954A19A28AE60FA00B8BB30 /* Onboarding 4 screen.swift */,
 				5983885228C8CCCA007BFF7A /* OnBoardingModel.swift */,
 			);
 			path = "Onboarding Screens";
@@ -752,6 +762,17 @@
 			path = "Clubs Screens";
 			sourceTree = "<group>";
 		};
+		5981EC2928CB0E2E00C6461D /* HalfASheet */ = {
+			isa = PBXGroup;
+			children = (
+				5981EC2A28CB0E2E00C6461D /* If.swift */,
+				5981EC2728CB0DF300C6461D /* HalfASheetPost.swift */,
+				5981EC2C28CB0E2E00C6461D /* HalfASheet+Modifiers.swift */,
+				5981EC2D28CB0E2E00C6461D /* VerticalSlideTransition.swift */,
+			);
+			path = HalfASheet;
+			sourceTree = "<group>";
+		};
 		599AF4AF28B60A9700DE103F /* Add Classified Screens */ = {
 			isa = PBXGroup;
 			children = (
@@ -810,6 +831,16 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		59DCDC7228CA0EAC006FCF60 /* Lottie Files */ = {
+			isa = PBXGroup;
+			children = (
+				5962F80E28C9E9860052CDA7 /* practice.swift */,
+				59DCDC7028CA0C53006FCF60 /* 117335-red-check (1).json */,
+				59DCDC6E28CA093B006FCF60 /* 84228-delete-animation.json */,
+			);
+			path = "Lottie Files";
+			sourceTree = "<group>";
+		};
 		59DE386F288FF04800BD72D9 /* User Profile, Follow, Unfollow screen */ = {
 			isa = PBXGroup;
 			children = (
@@ -849,6 +880,9 @@
 			packageProductDependencies = (
 				59DB4461289939E0006766EA /* MultipartForm */,
 				5983884828C87533007BFF7A /* Kingfisher */,
+				5962F80C28C9C0520052CDA7 /* HalfASheet */,
+				5962F81128C9F73D0052CDA7 /* SwiftUIGIF */,
+				5962F81428C9FC9C0052CDA7 /* Lottie */,
 			);
 			productName = "cars conneted";
 			productReference = 593466652886712800956869 /* cars conneted.app */;
@@ -925,6 +959,9 @@
 			packageReferences = (
 				59DB4460289939E0006766EA /* XCRemoteSwiftPackageReference "MultipartForm" */,
 				5983884728C87533007BFF7A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				5962F80B28C9C0520052CDA7 /* XCRemoteSwiftPackageReference "HalfASheet" */,
+				5962F81028C9F73C0052CDA7 /* XCRemoteSwiftPackageReference "swiftui-gif" */,
+				5962F81328C9FC9C0052CDA7 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 593466662886712800956869 /* Products */;
 			projectDirPath = "";
@@ -952,7 +989,9 @@
 				59D7D02A2892AF1900F9EC5D /* Inter-Medium.otf in Resources */,
 				59D7D0242892AF1900F9EC5D /* Inter-Regular.otf in Resources */,
 				59D7D0282892AF1900F9EC5D /* Inter-V.ttf in Resources */,
+				59DCDC7128CA0C53006FCF60 /* 117335-red-check (1).json in Resources */,
 				59D7D0342892AF1A00F9EC5D /* Inter-BoldItalic.otf in Resources */,
+				59DCDC6F28CA093B006FCF60 /* 84228-delete-animation.json in Resources */,
 				59D7D02E2892AF1900F9EC5D /* Inter-Black.otf in Resources */,
 				59D7D0312892AF1A00F9EC5D /* Inter-ThinItalic.otf in Resources */,
 				5934666D2886712E00956869 /* Assets.xcassets in Resources */,
@@ -989,8 +1028,8 @@
 			files = (
 				5950087F28ACAC7D00C44D86 /* Verify Email OTP Screen.swift in Sources */,
 				591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */,
-				5954A19528AE5A4900B8BB30 /* Onboarding 1 Screen.swift in Sources */,
 				5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */,
+				5962F80F28C9E9860052CDA7 /* practice.swift in Sources */,
 				597282F428B7993E0004F4CB /* New member request club.swift in Sources */,
 				599AF4B728B6324C00DE103F /* Add classified Screen.swift in Sources */,
 				5983884B28C8A1B0007BFF7A /* Product Added Successfully.swift in Sources */,
@@ -1010,7 +1049,6 @@
 				597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */,
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
 				595013B228B4B008007B594B /* Edit Garage Screen.swift in Sources */,
-				5954A19928AE604E00B8BB30 /* Onboarding 3 screen.swift in Sources */,
 				5959AEEE28BCD8C100702250 /* Dashboard Screen.swift in Sources */,
 				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
 				5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */,
@@ -1020,6 +1058,7 @@
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
+				5981EC2828CB0DF300C6461D /* HalfASheetPost.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
 				593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */,
@@ -1037,6 +1076,7 @@
 				599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */,
 				592A210A2899106100FC9EAF /* LoginDataModel.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
+				5981EC3028CB0E2E00C6461D /* HalfASheet+Modifiers.swift in Sources */,
 				59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */,
 				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
@@ -1059,7 +1099,6 @@
 				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
 				5983885328C8CCCA007BFF7A /* OnBoardingModel.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
-				5954A19728AE5F2C00B8BB30 /* Onboarding 2 Screen.swift in Sources */,
 				590D3C1328AA6F9E00278C83 /* NewUserProfileApi.swift in Sources */,
 				592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */,
 				597282E228B75EEC0004F4CB /* Edit Club Screen.swift in Sources */,
@@ -1069,6 +1108,7 @@
 				59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */,
 				59D7A47828B64EE70022F49A /* Shop Updated Successfully Screen.swift in Sources */,
 				592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */,
+				5981EC3128CB0E2E00C6461D /* VerticalSlideTransition.swift in Sources */,
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				597282E828B77ABD0004F4CB /* Clubs Screen.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
@@ -1079,6 +1119,7 @@
 				597282EC28B78A740004F4CB /* Members (other club members) Screen.swift in Sources */,
 				591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */,
 				59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */,
+				5981EC2E28CB0E2E00C6461D /* If.swift in Sources */,
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */,
 				5940A43A28B0FF3C00C5EEF4 /* Proximity Screen 3.swift in Sources */,
@@ -1094,7 +1135,6 @@
 				593F055928AF7A0400FEBE5F /* Forgot Password Screen.swift in Sources */,
 				599AF4B528B62CE500DE103F /* Post Product Vehicle Screen.swift in Sources */,
 				594DC7ED28B4F4E70000C99E /* Shop Others View Screen.swift in Sources */,
-				5954A19B28AE60FA00B8BB30 /* Onboarding 4 screen.swift in Sources */,
 				5983884D28C8AEEE007BFF7A /* My Profile Screen.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				5940A43828B0FD3600C5EEF4 /* Proximity Screen 2.swift in Sources */,
@@ -1435,6 +1475,30 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5962F80B28C9C0520052CDA7 /* XCRemoteSwiftPackageReference "HalfASheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/franklynw/HalfASheet.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		5962F81028C9F73C0052CDA7 /* XCRemoteSwiftPackageReference "swiftui-gif" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-gif.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		5962F81328C9FC9C0052CDA7 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		5983884728C87533007BFF7A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -1454,6 +1518,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5962F80C28C9C0520052CDA7 /* HalfASheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5962F80B28C9C0520052CDA7 /* XCRemoteSwiftPackageReference "HalfASheet" */;
+			productName = HalfASheet;
+		};
+		5962F81128C9F73D0052CDA7 /* SwiftUIGIF */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5962F81028C9F73C0052CDA7 /* XCRemoteSwiftPackageReference "swiftui-gif" */;
+			productName = SwiftUIGIF;
+		};
+		5962F81428C9FC9C0052CDA7 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5962F81328C9FC9C0052CDA7 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		5983884828C87533007BFF7A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5983884728C87533007BFF7A /* XCRemoteSwiftPackageReference "Kingfisher" */;
