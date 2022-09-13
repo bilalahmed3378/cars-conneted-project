@@ -27,7 +27,7 @@ struct  MessagesTab: View {
             // top bar
             HStack{
                 Button(action: {
-                    self.isDrawerOpen.toggle()
+                    self.isDrawerOpen = true
                 }, label: {
                     Image("side menu icon white")
                            .resizable()

@@ -206,6 +206,10 @@ struct myGarage : View {
     
     @State var toDeletedCar = false
     
+    @State private var showingSheet = false
+    
+    @State var showingSheetComments = false
+    
     var body : some View{
         
         VStack{
@@ -330,15 +334,20 @@ struct myGarage : View {
                         
                         Spacer()
                         
-                        Text("view details")
-                            .foregroundColor(.white)
-                            .font(AppFonts.regular_12)
-                        
-                        Image("Vector-3")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 14, height: 14)
-                        
+                        NavigationLink(destination: {
+                            Car_Specification()
+                        }, label: {
+                            Text("view details")
+                                .foregroundColor(.white)
+                                .font(AppFonts.regular_12)
+                            
+                            Image("Vector-3")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 14, height: 14)
+                            
+                        })
+                      
                         
                        
                     }.padding()
@@ -351,28 +360,43 @@ struct myGarage : View {
                 
             HStack{
                 
-                Image("Group 7367")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("Group 7369")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                    .offset(x: -10, y: 0)
-                
-                
-                
-                Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingSheet = true
+                }, label: {
+                    Image("Group 7367")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("Group 7369")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                        .offset(x: -10, y: 0)
+                    
+                    Text("Arsalan and 20 other")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingSheet){
+                    whoLikedScreen()
+                    
+                }
                 
                 Spacer()
                 
-                Text("12 comments")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    Text("12 comments")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                    
+                })
+                .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
+                    
+                }
                 
             }.padding(.leading,26)
                 .padding(.trailing,26)
@@ -397,14 +421,26 @@ struct myGarage : View {
                 
                 Spacer()
                 HStack{
-                    Image("ant-design_comment-outlined")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 26, height: 26)
+                   
                     
-                    Text("Comment")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                    Button(action: {
+                        self.showingSheetComments = true
+                    }, label: {
+                        
+                        Image("ant-design_comment-outlined")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 26, height: 26)
+                        
+                        Text("12 comments")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                        
+                    })
+                    .sheet(isPresented: $showingSheetComments){
+                        commentsScreen()
+                        
+                    }
                     
                 }
                 Spacer()

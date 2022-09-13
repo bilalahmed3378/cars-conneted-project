@@ -54,11 +54,14 @@ struct Setup_Garage_Screen: View {
                    
                     
                     Spacer()
-                    Button(action: {}, label: {
+                   
+                    NavigationLink(destination: Login_Screen(), label: {
                         Text("Skip")
                             .foregroundColor(AppColors.redGradientColor1)
                             .font(AppFonts.regular_16)
                     })
+                      
+                    
                 
                 }
                 .padding()

@@ -46,21 +46,23 @@ struct Add_classified_Screen: View {
     
     var body: some View {
         VStack{
-           
+            
             VStack{
                 
                 // top bar
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
                             .padding(.leading,-10)
                     })
-                   
                     
-                  Spacer()
+                    
+                    Spacer()
                     
                     Text("Add Classified")
                         .font(AppFonts.SemiBold_20)
@@ -73,1394 +75,1394 @@ struct Add_classified_Screen: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
-                  
+                    
                     
                     
                 }.padding(.leading)
                     .padding(.trailing)
                     .padding(.top,20)
                 
-            }  .padding(.top,40)
-                .padding(.bottom,30)
-                .background(
-                    Image("home screen background")
+            }
+            .padding(.top,40)
+            .padding(.bottom,30)
+            .background(
+                Image("home screen background")
                     .resizable())
             
             
             ScrollView(.vertical, showsIndicators: false){
-                Group{
-                    
-                HStack{
-                    Text("Select a category")
-                       
-                        .font(AppFonts.regular_16)
-                    
-                    Spacer()
-                }
-               .padding(.top)
-                
-                HStack{
-                    TextField("Service",text:$category)
-                        .foregroundColor(AppColors.redGradientColor1)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.black)
-                       .overlay(HStack{
-                        Spacer()
-                          Menu(content: {
-                              Button(action: {
-                                  self.isSelected = 0
-                              }, label: {
-                                  Text("Service")
-                              })
-                             
-                              Button(action: {
-                                  self.isSelected = 1
-                              }, label: {
-                                  Text("Vehicles")
-                              })
-                              
-                              Button(action: {
-                                  self.isSelected = 2
-                              }, label: {
-                                  Text("Parts")
-                              })
-                              
-                              
-                              
-                          }, label: {
-                              Image("dropdown menu 2")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
-                                    .padding()
-                          })
-                          
-                      })
-                }
-              
-                .padding(.bottom)
-                
-                }
-                
-                if(self.isSelected == 0){
-                HStack{
-                    Text("Link to shop")
-                        .font(AppFonts.regular_16)
-                    
-                    Spacer()
-                }
-                
-                .padding(.top,10)
-                
-                    Group{
-                HStack{
-                    TextField("Search shop",text:$searchShop)
-                        .foregroundColor(AppColors.redGradientColor1)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.black)
-                      .overlay(HStack{
-                        Spacer()
-                          
-                              Image("search icon black")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
-                                    .padding()
-                         
-                      })
-                }
-              
-                .padding(.bottom)
-                    
-                
-                
-                
-                HStack{
-                    HStack{
-                        Text("ABC")
-                            .font(AppFonts.regular_14)
-                           
-                        
-                        Image("cross icons")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }.padding()
-                        .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
-                    
-                    HStack{
-                        Text("desc")
-                            .font(AppFonts.regular_14)
-                            .foregroundColor(.gray)
-                        
-                        Image("cross icons")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }.padding()
-                        .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
-                    
-                    Spacer()
-                }
-                
-                
-                HStack{
-                    Text("Service details")
-                        .font(AppFonts.regular_16)
-                    
-                    Spacer()
-                }
-                
-                .padding(.top,30)
-                
-                VStack{
-                    
-            Text("Title")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("Car Wash",text:$title)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-               
-                
-                VStack{
-                    
-            Text("Price")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("$ 400",text:$price)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-              
-                .padding(.bottom)
-                
-                
-                
-                HStack{
-                    Text("Add availability hours")
-                        .font(AppFonts.regular_16)
-                    
-                    Toggle("", isOn: $availability)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                }
-                .padding(.bottom)
-               
-                    }
-                
-                if (self.availability){
-                Group{
-                VStack{
-                    HStack{
-                        Text("Monday")
-                            .font(AppFonts.regular_14)
-                        
-                        Toggle("", isOn: $monday)
-                            .toggleStyle(SwitchToggleStyle(tint: .green))
-                    }
-                   
-                        .padding(.bottom)
-                    
-                    
-                    if (self.monday){
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Start time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading){
-                                Text("End time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            
-                        }
-                       
-                           
-                    }
-                   
-                    
-                    
-                }
-                
-                Divider()
-                   
-                   
-                
-                
-                HStack{
-                    Text("Tuesday")
-                        .font(AppFonts.regular_14)
-                    
-                    Toggle("", isOn: $tuesday)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                }
-               
-                    
-                    if (self.tuesday){
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Start time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading){
-                                Text("End time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            
-                        }
-                       
-                            .padding(.bottom)
-                    }
-                
-                Divider()
-                   
-                
-                
-                HStack{
-                    Text("Wednesday")
-                        .font(AppFonts.regular_14)
-                    
-                    Toggle("", isOn: $wednesday)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                }
-                
-                    
-                    if (self.wednesday){
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Start time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading){
-                                Text("End time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            
-                        }
-                        .padding(.bottom)
-                        
-                    }
-                
-                Divider()
-                   
-                }
-                    
-                Group{
-                HStack{
-                    Text("Thursday")
-                        .font(AppFonts.regular_14)
-                    
-                    Toggle("", isOn: $thursday)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                }
-               
-                    
-                    
-                    if (self.thursday){
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Start time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading){
-                                Text("End time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            
-                        }
-                         .padding(.bottom)
-                        
-                    }
-                
-                
-                Divider()
-                
-                HStack{
-                    Text("Friday")
-                        .font(AppFonts.regular_14)
-                    
-                    Toggle("", isOn: $friday)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                }
-                
-              
-                    
-                    if (self.friday){
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Start time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading){
-                                Text("End time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            
-                        }
-                       
-                            .padding(.bottom)
-                    }
-                
-                Divider()
-                
-                HStack{
-                    Text("Saturday")
-                        .font(AppFonts.regular_14)
-                    
-                    Toggle("", isOn: $saturday)
-                        .toggleStyle(SwitchToggleStyle(tint: .green))
-                }
-               
-                    
-                    if (self.saturday){
-                        HStack{
-                            VStack(alignment: .leading){
-                                Text("Start time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            Spacer()
-                            
-                            VStack(alignment: .leading){
-                                Text("End time")
-                                    .font(AppFonts.regular_14)
-                                
-                                Text("9:00 AM")
-                                    .font(AppFonts.regular_12)
-                                    .foregroundColor(.gray)
-                                    .padding()
-                                    .padding(.trailing,30)
-                                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                
-                            }
-                            
-                            
-                        }
-                       
-                            .padding(.bottom)
-                    }
-                    
-                Divider()
-                    
-                }
-                    
-                }
                 
                 Group{
                     
-                VStack{
-                    
-            Text("Description")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("Tell us about this car",text:$description)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-               
-                
-                VStack{
-                    
-            Text("Location")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("Washington, DC",text:$location)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-               
-                
-                HStack{
-                    Text("Upload Images")
-                       .font(AppFonts.regular_16)
-                    
-                    Spacer()
-                }
-               
-                .padding(.top)
-                    
                     HStack{
-                        Image("Rectangle 4485")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                        Text("Select a category")
                         
-                        
-                        Image("Rectangle 4485")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                        
-                        Image("Frame 40-2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                        
-                    }
-                   
-                    
-                    
-                    HStack{
-                        Text("Different Contact Details")
-                           .font(AppFonts.regular_16)
-                        
-                        Toggle("", isOn: $differentdetails)
-                            .toggleStyle(SwitchToggleStyle(tint: .green))
+                            .font(AppFonts.regular_16)
                         
                         Spacer()
                     }
-                    
                     .padding(.top)
                     
-                    
-                }
-                
-                
-                Group{
-                    
-                    if(self.differentdetails){
-                    Group{
-                        
-                VStack{
-                    
-            Text("Name")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("John Wick",text:$name)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-             
-                    
-                }
-               
-                
-                
-                VStack{
-                    
-            Text("Email")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("123@gmail.com",text:$email)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-                
-                
-                VStack{
-                    
-            Text("Phone Number")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-             .padding(.bottom,-5)
-            
-              
-            TextField("+96-43564356456",text:$phone)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-             
-                    
-                }
-               
-                        
-                    }
-                    }
-                
-                    NavigationLink(destination: Post_products_Services_Screen(), label: {
-                        Text("Preview")
-                            .font(AppFonts.semiBold_16)
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    .padding(.top,30)
-                    .padding(.bottom)
-                    })
-                   
-                    
-                }
-                
-                }
-                
-                if(self.isSelected == 1) {
-                 HStack{
-                     Text("Link to shop")
-                         .font(AppFonts.regular_16)
-                     
-                     Spacer()
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.top,10)
-                 
-                 HStack{
-                     TextField("Search shop",text:$searchShop)
-                         .foregroundColor(AppColors.redGradientColor1)
-                       .padding(.vertical, 10)
-                       .autocapitalization(.none)
-                       .background(Rectangle().frame(height: 1).padding(.top, 40))
-                       .foregroundColor(.black)
-                       .overlay(HStack{
-                         Spacer()
-                           
-                               Image("search icon black")
-                                     .resizable()
-                                     .aspectRatio(contentMode: .fit)
-                                     .frame(width: 20, height: 20)
-                                     .padding()
-                          
-                       })
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.bottom)
-                     
-                 
-                 
-                 Group{
-                 HStack{
-                     HStack{
-                         Text("ABC")
-                             .font(AppFonts.regular_14)
-                            
-                         
-                         Image("cross icons")
-                             .resizable()
-                             .aspectRatio(contentMode: .fit)
-                             .frame(width: 20, height: 20)
-                     }.padding()
-                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
-                     
-                     HStack{
-                         Text("desc")
-                             .font(AppFonts.regular_14)
-                             .foregroundColor(.gray)
-                         
-                         Image("cross icons")
-                             .resizable()
-                             .aspectRatio(contentMode: .fit)
-                             .frame(width: 20, height: 20)
-                     }.padding()
-                         .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
-                     
-                     Spacer()
-                 }.padding(.leading)
-                     .padding(.trailing)
-                 
-                 HStack{
-                     Text("Main category")
-                     
-                     Spacer()
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.top)
-                 
-                 HStack{
-                     TextField("Spare parts",text:$mainCategory)
-                         .foregroundColor(AppColors.redGradientColor1)
-                       .padding(.vertical, 10)
-                       .autocapitalization(.none)
-                       .background(Rectangle().frame(height: 1).padding(.top, 40))
-                       .foregroundColor(.black)
-                       .overlay(HStack{
-                         Spacer()
-                           Menu(content: {
-                              
-                           }, label: {
-                               Image("dropdown menu 2")
-                                     .resizable()
-                                     .aspectRatio(contentMode: .fit)
-                                     .frame(width: 20, height: 20)
-                                     .padding()
-                           })
-                           
-                       })
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 
-                 HStack{
-                     Text("Sub category")
-                     
-                     Spacer()
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.top)
-                 
-                 HStack{
-                     TextField("Engine Spare Parts etc",text:$subCategory)
-                         .foregroundColor(AppColors.redGradientColor1)
-                       .padding(.vertical, 10)
-                       .autocapitalization(.none)
-                       .background(Rectangle().frame(height: 1).padding(.top, 40))
-                       .foregroundColor(.black)
-                       .overlay(HStack{
-                         Spacer()
-                           Menu(content: {
-                              
-                           }, label: {
-                               Image("dropdown menu 2")
-                                     .resizable()
-                                     .aspectRatio(contentMode: .fit)
-                                     .frame(width: 20, height: 20)
-                                     .padding()
-                           })
-                           
-                       })
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 
-                 }
-                 
-                 Group{
-                 HStack{
-                     Text("Part Details")
-                     
-                     Spacer()
-                 }
-                 .padding()
-                 .padding(.top)
-                 
-                 HStack{
-                     Text("Part Name")
-                     
-                     Spacer()
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.top)
-                 
-                 HStack{
-                     TextField("PK",text:$partName)
-                         .foregroundColor(AppColors.redGradientColor1)
-                       .padding(.vertical, 10)
-                       .autocapitalization(.none)
-                       .background(Rectangle().frame(height: 1).padding(.top, 40))
-                       .foregroundColor(.black)
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.bottom)
-                 
-                 HStack{
-                     Text("Model")
-                     
-                     Spacer()
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                
-                 
-                 HStack{
-                     TextField("2019",text:$model)
-                         .foregroundColor(AppColors.redGradientColor1)
-                       .padding(.vertical, 10)
-                       .autocapitalization(.none)
-                       .background(Rectangle().frame(height: 1).padding(.top, 40))
-                       .foregroundColor(.black)
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.bottom)
-                 
-                 HStack{
-                     Text("Price")
-                     
-                     Spacer()
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                
-                 
-                 HStack{
-                     TextField("56,000 USD",text:$price)
-                         .foregroundColor(AppColors.redGradientColor1)
-                       .padding(.vertical, 10)
-                       .autocapitalization(.none)
-                       .background(Rectangle().frame(height: 1).padding(.top, 40))
-                       .foregroundColor(.black)
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 .padding(.bottom)
-                     
-                     
-                     HStack{
-                         Text("Condition")
-                         
-                         Spacer()
-                     }
-                     .padding(.leading)
-                     .padding(.trailing)
-                    
-                     
-                     HStack{
-                         TextField("Used",text:$condition)
-                             .foregroundColor(AppColors.redGradientColor1)
-                           .padding(.vertical, 10)
-                           .autocapitalization(.none)
-                           .background(Rectangle().frame(height: 1).padding(.top, 40))
-                           .foregroundColor(.black)
-                           .overlay(HStack{
-                             Spacer()
-                               Menu(content: {
-                                  Text("Used")
-                                   
-                                   Text("New")
-                               }, label: {
-                                   Image("dropdown menu 2")
-                                         .resizable()
-                                         .aspectRatio(contentMode: .fit)
-                                         .frame(width: 20, height: 20)
-                                         .padding()
-                               })
-                               
-                           })
-                     }
-                     .padding(.leading)
-                     .padding(.trailing)
-                 
-                     
-                     
-                 }
-                 
-                 Group{
-                     
-                 VStack{
-                     
-             Text("Description")
-               .padding(.top,20)
-               .frame(maxWidth: .infinity, alignment: .leading)
-               .padding(.bottom,-5)
-             
-               
-             TextField("Tell us about this car",text:$description)
-                 .foregroundColor(AppColors.redGradientColor1)
-               .padding(.vertical, 10)
-               .autocapitalization(.none)
-               .background(Rectangle().frame(height: 1).padding(.top, 40))
-               .foregroundColor(.black)
-               
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 
-                 VStack{
-                     
-             Text("Location")
-               .padding(.top,20)
-               .frame(maxWidth: .infinity, alignment: .leading)
-               .padding(.bottom,-5)
-             
-               
-             TextField("Washington, DC",text:$location)
-                 .foregroundColor(AppColors.redGradientColor1)
-               .padding(.vertical, 10)
-               .autocapitalization(.none)
-               .background(Rectangle().frame(height: 1).padding(.top, 40))
-               .foregroundColor(.black)
-               
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 
-                     
-                     HStack{
-                         Text("Upload Images")
-                            .font(AppFonts.regular_16)
-                         
-                         Spacer()
-                     }
-                     .padding(.leading)
-                     .padding(.trailing)
-                     .padding(.top)
-                         
-                         HStack{
-                             Image("Rectangle 4485")
-                                 .resizable()
-                                 .aspectRatio(contentMode: .fit)
-                                 .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                             
-                             
-                             Image("Rectangle 4485")
-                                 .resizable()
-                                 .aspectRatio(contentMode: .fit)
-                                 .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                             
-                             Image("Frame 40-2")
-                                 .resizable()
-                                 .aspectRatio(contentMode: .fit)
-                                 .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                             
-                         }
-                         .padding()
-                     
-                     HStack{
-                         Text("Different Contact Details")
-                            .font(AppFonts.regular_16)
-                         
-                         Toggle("", isOn: $differentdetails)
-                             .toggleStyle(SwitchToggleStyle(tint: .green))
-                         
-                         Spacer()
-                     }
-                     .padding(.leading)
-                     .padding(.trailing)
-                     .padding(.top)
-                     
-                     
-                 }
-                 
-                 
-                 Group{
-                     
-                     if(self.differentdetails){
-                     Group{
-                         
-                 VStack{
-                     
-             Text("Name")
-               .padding(.top,20)
-               .frame(maxWidth: .infinity, alignment: .leading)
-               .padding(.bottom,-5)
-             
-               
-             TextField("John Wick",text:$name)
-                 .foregroundColor(AppColors.redGradientColor1)
-               .padding(.vertical, 10)
-               .autocapitalization(.none)
-               .background(Rectangle().frame(height: 1).padding(.top, 40))
-               .foregroundColor(.black)
-              
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 
-                 
-                 VStack{
-                     
-             Text("Email")
-               .padding(.top,20)
-               .frame(maxWidth: .infinity, alignment: .leading)
-               .padding(.bottom,-5)
-             
-               
-             TextField("123@gmail.com",text:$email)
-                 .foregroundColor(AppColors.redGradientColor1)
-               .padding(.vertical, 10)
-               .autocapitalization(.none)
-               .background(Rectangle().frame(height: 1).padding(.top, 40))
-               .foregroundColor(.black)
-               
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                 
-                 VStack{
-                     
-             Text("Phone Number")
-               .padding(.top,20)
-               .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-             
-               
-             TextField("+96-43564356456",text:$phone)
-                 .foregroundColor(AppColors.redGradientColor1)
-               .padding(.vertical, 10)
-               .autocapitalization(.none)
-               .background(Rectangle().frame(height: 1).padding(.top, 40))
-               .foregroundColor(.black)
-              
-                     
-                 }
-                 .padding(.leading)
-                 .padding(.trailing)
-                         
-                     }
-                     }
-                 
-                     NavigationLink(destination: Post_Product_Parts_Screen(), label: {
-                         Text("Preview")
-                             .font(AppFonts.semiBold_16)
-                             .fontWeight(.medium)
-                             .foregroundColor(.white)
-                             .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
-                             .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                     .padding(.top,30)
-                     .padding(.bottom)
-                         
-                     })
-                    
-                 }
-                 }
-                
-                if(self.isSelected == 2){
-                
-                HStack{
-                    Text("Link to shop")
-                        .font(AppFonts.regular_16)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.top,10)
-                
-                HStack{
-                    TextField("Search shop",text:$searchShop)
-                        .foregroundColor(AppColors.redGradientColor1)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.black)
-                      .overlay(HStack{
-                        Spacer()
-                          
-                              Image("search icon black")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
-                                    .padding()
-                         
-                      })
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-                    
-                
-                
-                Group{
-                HStack{
                     HStack{
-                        Text("ABC")
-                            .font(AppFonts.regular_14)
-                           
-                        
-                        Image("cross icons")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }.padding()
-                        .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
-                    
-                    HStack{
-                        Text("desc")
-                            .font(AppFonts.regular_14)
-                            .foregroundColor(.gray)
-                        
-                        Image("cross icons")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }.padding()
-                        .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
-                    
-                    Spacer()
-                }.padding(.leading)
-                    .padding(.trailing)
-                
-            
-                }
-                
-                Group{
-                HStack{
-                    Text("Car Details")
-                    
-                    Spacer()
-                }
-                .padding()
-                .padding(.top)
-                
-                HStack{
-                    Text("Brand")
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.top)
-                
-                HStack{
-                    TextField("Honda",text:$brand)
-                        .foregroundColor(AppColors.redGradientColor1)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.black)
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-                
-                HStack{
-                    Text("Model")
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.trailing)
-               
-                
-                HStack{
-                    TextField("2019",text:$model)
-                        .foregroundColor(AppColors.redGradientColor1)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.black)
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-                
-                    Group{
-                HStack{
-                    Text("Price")
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.trailing)
-               
-                
-                HStack{
-                    TextField("56,000 USD",text:$price)
-                        .foregroundColor(AppColors.redGradientColor1)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.black)
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-                    
-                    
-                    HStack{
-                        Text("Condition")
-                        
-                        Spacer()
-                    }
-                    .padding(.leading)
-                    .padding(.trailing)
-                   
-                    
-                    HStack{
-                        TextField("Used",text:$condition)
+                        TextField("Service",text:$category)
                             .foregroundColor(AppColors.redGradientColor1)
-                          .padding(.vertical, 10)
-                          .autocapitalization(.none)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
-                          .foregroundColor(.black)
-                          .overlay(HStack{
-                            Spacer()
-                              Menu(content: {
-                                 Text("Used")
-                                  
-                                  Text("New")
-                              }, label: {
-                                  Image("dropdown menu 2")
+                            .padding(.vertical, 10)
+                            .autocapitalization(.none)
+                            .background(Rectangle().frame(height: 1).padding(.top, 40))
+                            .foregroundColor(.black)
+                            .overlay(HStack{
+                                Spacer()
+                                Menu(content: {
+                                    Button(action: {
+                                        self.isSelected = 0
+                                    }, label: {
+                                        Text("Service")
+                                    })
+                                    
+                                    Button(action: {
+                                        self.isSelected = 1
+                                    }, label: {
+                                        Text("Vehicles")
+                                    })
+                                    
+                                    Button(action: {
+                                        self.isSelected = 2
+                                    }, label: {
+                                        Text("Parts")
+                                    })
+                                    
+                                    
+                                    
+                                }, label: {
+                                    Image("dropdown menu 2")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
                                         .frame(width: 20, height: 20)
                                         .padding()
-                              })
-                              
-                          })
+                                })
+                                
+                            })
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+                    
+                    .padding(.bottom)
+                    
+                }
                 
-                        
-                        
-                        
-                        
+                if(self.isSelected == 0){
                     HStack{
-                        Text("Fuel type")
+                        Text("Link to shop")
+                            .font(AppFonts.regular_16)
+                        
+                        Spacer()
+                    }
+                    
+                    .padding(.top,10)
+                    
+                    Group{
+                        
+                        HStack{
+                            TextField("Search shop",text:$searchShop)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                                .overlay(HStack{
+                                    Spacer()
+                                    
+                                    Image("search icon black")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20, height: 20)
+                                        .padding()
+                                    
+                                })
+                        }
+                        .padding(.bottom)
+                        
+                        
+                        
+                        
+                        HStack{
+                            HStack{
+                                Text("ABC")
+                                    .font(AppFonts.regular_14)
+                                
+                                
+                                Image("cross icons")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                            }.padding()
+                                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            
+                            HStack{
+                                Text("desc")
+                                    .font(AppFonts.regular_14)
+                                    .foregroundColor(.gray)
+                                
+                                Image("cross icons")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                            }.padding()
+                                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            
+                            Spacer()
+                        }
+                        
+                        
+                        HStack{
+                            Text("Service details")
+                                .font(AppFonts.regular_16)
+                            
+                            Spacer()
+                        }
+                        .padding(.top,30)
+                        
+                        VStack{
+                            
+                            Text("Title")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Car Wash",text:$title)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        
+                        
+                        VStack{
+                            
+                            Text("Price")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("$ 400",text:$price)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        .padding(.bottom)
+                        
+                        
+                        
+                        HStack{
+                            Text("Add availability hours")
+                                .font(AppFonts.regular_16)
+                            
+                            Toggle("", isOn: $availability)
+                                .toggleStyle(SwitchToggleStyle(tint: .green))
+                        }
+                        .padding(.bottom)
+                        
+                    }
+                    
+                    if (self.availability){
+                        Group{
+                            VStack{
+                                HStack{
+                                    Text("Monday")
+                                        .font(AppFonts.regular_14)
+                                    
+                                    Toggle("", isOn: $monday)
+                                        .toggleStyle(SwitchToggleStyle(tint: .green))
+                                }
+                                
+                                .padding(.bottom)
+                                
+                                
+                                if (self.monday){
+                                    HStack{
+                                        VStack(alignment: .leading){
+                                            Text("Start time")
+                                                .font(AppFonts.regular_14)
+                                            
+                                            Text("9:00 AM")
+                                                .font(AppFonts.regular_12)
+                                                .foregroundColor(.gray)
+                                                .padding()
+                                                .padding(.trailing,30)
+                                                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                            
+                                        }
+                                        
+                                        Spacer()
+                                        
+                                        VStack(alignment: .leading){
+                                            Text("End time")
+                                                .font(AppFonts.regular_14)
+                                            
+                                            Text("9:00 AM")
+                                                .font(AppFonts.regular_12)
+                                                .foregroundColor(.gray)
+                                                .padding()
+                                                .padding(.trailing,30)
+                                                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                            
+                                        }
+                                        
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                
+                                
+                                
+                            }
+                            
+                            Divider()
+                            
+                            
+                            
+                            
+                            HStack{
+                                Text("Tuesday")
+                                    .font(AppFonts.regular_14)
+                                
+                                Toggle("", isOn: $tuesday)
+                                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                            }
+                            
+                            
+                            if (self.tuesday){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Start time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        Text("End time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                
+                                .padding(.bottom)
+                            }
+                            
+                            Divider()
+                            
+                            
+                            
+                            HStack{
+                                Text("Wednesday")
+                                    .font(AppFonts.regular_14)
+                                
+                                Toggle("", isOn: $wednesday)
+                                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                            }
+                            
+                            
+                            if (self.wednesday){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Start time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        Text("End time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                .padding(.bottom)
+                                
+                            }
+                            
+                            Divider()
+                            
+                        }
+                        
+                        Group{
+                            HStack{
+                                Text("Thursday")
+                                    .font(AppFonts.regular_14)
+                                
+                                Toggle("", isOn: $thursday)
+                                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                            }
+                            
+                            
+                            
+                            if (self.thursday){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Start time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        Text("End time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                .padding(.bottom)
+                                
+                            }
+                            
+                            
+                            Divider()
+                            
+                            HStack{
+                                Text("Friday")
+                                    .font(AppFonts.regular_14)
+                                
+                                Toggle("", isOn: $friday)
+                                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                            }
+                            
+                            
+                            
+                            if (self.friday){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Start time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        Text("End time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                
+                                .padding(.bottom)
+                            }
+                            
+                            Divider()
+                            
+                            HStack{
+                                Text("Saturday")
+                                    .font(AppFonts.regular_14)
+                                
+                                Toggle("", isOn: $saturday)
+                                    .toggleStyle(SwitchToggleStyle(tint: .green))
+                            }
+                            
+                            
+                            if (self.saturday){
+                                HStack{
+                                    VStack(alignment: .leading){
+                                        Text("Start time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    VStack(alignment: .leading){
+                                        Text("End time")
+                                            .font(AppFonts.regular_14)
+                                        
+                                        Text("9:00 AM")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.gray)
+                                            .padding()
+                                            .padding(.trailing,30)
+                                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                        
+                                    }
+                                    
+                                    
+                                }
+                                
+                                .padding(.bottom)
+                            }
+                            
+                            Divider()
+                            
+                        }
+                        
+                    }
+                    
+                    Group{
+                        
+                        VStack{
+                            
+                            Text("Description")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Tell us about this car",text:$description)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        
+                        
+                        VStack{
+                            
+                            Text("Location")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Washington, DC",text:$location)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        
+                        
+                        HStack{
+                            Text("Upload Images")
+                                .font(AppFonts.regular_16)
+                            
+                            Spacer()
+                        }
+                        
+                        .padding(.top)
+                        
+                        HStack{
+                            Image("Rectangle 4485")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                            
+                            
+                            Image("Rectangle 4485")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                            
+                            Image("Frame 40-2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                            
+                        }
+                        
+                        
+                        
+                        HStack{
+                            Text("Different Contact Details")
+                                .font(AppFonts.regular_16)
+                            
+                            Toggle("", isOn: $differentdetails)
+                                .toggleStyle(SwitchToggleStyle(tint: .green))
+                            
+                            Spacer()
+                        }
+                        
+                        .padding(.top)
+                        
+                        
+                    }
+                    
+                    
+                    Group{
+                        
+                        if(self.differentdetails){
+                            Group{
+                                
+                                VStack{
+                                    
+                                    Text("Name")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("John Wick",text:$name)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                
+                                
+                                
+                                VStack{
+                                    
+                                    Text("Email")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("123@gmail.com",text:$email)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                
+                                
+                                VStack{
+                                    
+                                    Text("Phone Number")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("+96-43564356456",text:$phone)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                
+                                
+                            }
+                        }
+                        
+                        NavigationLink(destination: Post_products_Services_Screen(), label: {
+                            Text("Preview")
+                                .font(AppFonts.semiBold_16)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                .padding(.top,30)
+                                .padding(.bottom)
+                        })
+                        
+                        
+                    }
+                    
+                }
+                
+                if(self.isSelected == 1) {
+                    HStack{
+                        Text("Link to shop")
+                            .font(AppFonts.regular_16)
                         
                         Spacer()
                     }
                     .padding(.leading)
                     .padding(.trailing)
-                    .padding(.top)
-                   
-                 
+                    .padding(.top,10)
                     
                     HStack{
-                        TextField("Petrol",text:$fuelType)
+                        TextField("Search shop",text:$searchShop)
                             .foregroundColor(AppColors.redGradientColor1)
-                          .padding(.vertical, 10)
-                          .autocapitalization(.none)
-                          .background(Rectangle().frame(height: 1).padding(.top, 40))
-                          .foregroundColor(.black)
-                        
+                            .padding(.vertical, 10)
+                            .autocapitalization(.none)
+                            .background(Rectangle().frame(height: 1).padding(.top, 40))
+                            .foregroundColor(.black)
+                            .overlay(HStack{
+                                Spacer()
+                                
+                                Image("search icon black")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                    .padding()
+                                
+                            })
                     }
                     .padding(.leading)
                     .padding(.trailing)
                     .padding(.bottom)
-                        
+                    
+                    
+                    
+                    Group{
+                        HStack{
+                            HStack{
+                                Text("ABC")
+                                    .font(AppFonts.regular_14)
+                                
+                                
+                                Image("cross icons")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                            }.padding()
+                                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            
+                            HStack{
+                                Text("desc")
+                                    .font(AppFonts.regular_14)
+                                    .foregroundColor(.gray)
+                                
+                                Image("cross icons")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                            }.padding()
+                                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            
+                            Spacer()
+                        }.padding(.leading)
+                            .padding(.trailing)
                         
                         HStack{
-                            Text("Transmission")
+                            Text("Main category")
                             
                             Spacer()
                         }
                         .padding(.leading)
                         .padding(.trailing)
-                       
-                     
+                        .padding(.top)
                         
                         HStack{
-                            TextField("Automatic",text:$transmission)
+                            TextField("Spare parts",text:$mainCategory)
                                 .foregroundColor(AppColors.redGradientColor1)
-                              .padding(.vertical, 10)
-                              .autocapitalization(.none)
-                              .background(Rectangle().frame(height: 1).padding(.top, 40))
-                              .foregroundColor(.black)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                                .overlay(HStack{
+                                    Spacer()
+                                    Menu(content: {
+                                        
+                                    }, label: {
+                                        Image("dropdown menu 2")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 20, height: 20)
+                                            .padding()
+                                    })
+                                    
+                                })
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        HStack{
+                            Text("Sub category")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
+                        
+                        HStack{
+                            TextField("Engine Spare Parts etc",text:$subCategory)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                                .overlay(HStack{
+                                    Spacer()
+                                    Menu(content: {
+                                        
+                                    }, label: {
+                                        Image("dropdown menu 2")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 20, height: 20)
+                                            .padding()
+                                    })
+                                    
+                                })
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                    }
+                    
+                    Group{
+                        HStack{
+                            Text("Part Details")
+                            
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.top)
+                        
+                        HStack{
+                            Text("Part Name")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
+                        
+                        HStack{
+                            TextField("PK",text:$partName)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
                             
                         }
                         .padding(.leading)
                         .padding(.trailing)
-                       
+                        .padding(.bottom)
+                        
+                        HStack{
+                            Text("Model")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        HStack{
+                            TextField("2019",text:$model)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
+                        
+                        HStack{
+                            Text("Price")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        HStack{
+                            TextField("56,000 USD",text:$price)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
+                        
+                        
+                        HStack{
+                            Text("Condition")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        HStack{
+                            TextField("Used",text:$condition)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                                .overlay(HStack{
+                                    Spacer()
+                                    Menu(content: {
+                                        Text("Used")
+                                        
+                                        Text("New")
+                                    }, label: {
+                                        Image("dropdown menu 2")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 20, height: 20)
+                                            .padding()
+                                    })
+                                    
+                                })
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        
                     }
                     
+                    Group{
+                        
+                        VStack{
+                            
+                            Text("Description")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Tell us about this car",text:$description)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        VStack{
+                            
+                            Text("Location")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Washington, DC",text:$location)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        HStack{
+                            Text("Upload Images")
+                                .font(AppFonts.regular_16)
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
+                        
+                        HStack{
+                            Image("Rectangle 4485")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                            
+                            
+                            Image("Rectangle 4485")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                            
+                            Image("Frame 40-2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                            
+                        }
+                        .padding()
+                        
+                        HStack{
+                            Text("Different Contact Details")
+                                .font(AppFonts.regular_16)
+                            
+                            Toggle("", isOn: $differentdetails)
+                                .toggleStyle(SwitchToggleStyle(tint: .green))
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
+                        
+                        
+                    }
+                    
+                    
+                    Group{
+                        
+                        if(self.differentdetails){
+                            Group{
+                                
+                                VStack{
+                                    
+                                    Text("Name")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("John Wick",text:$name)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                .padding(.leading)
+                                .padding(.trailing)
+                                
+                                
+                                VStack{
+                                    
+                                    Text("Email")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("123@gmail.com",text:$email)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                .padding(.leading)
+                                .padding(.trailing)
+                                
+                                VStack{
+                                    
+                                    Text("Phone Number")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("+96-43564356456",text:$phone)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                .padding(.leading)
+                                .padding(.trailing)
+                                
+                            }
+                        }
+                        
+                        NavigationLink(destination: Post_Product_Parts_Screen(), label: {
+                            Text("Preview")
+                                .font(AppFonts.semiBold_16)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                .padding(.top,30)
+                                .padding(.bottom)
+                            
+                        })
+                        
+                    }
                 }
                 
-                Group{
-                    
-                VStack{
-                    
-            Text("Description")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("Tell us about this car",text:$description)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                
-                VStack{
-                    
-            Text("Location")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("Washington, DC",text:$location)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                
+                if(self.isSelected == 2){
                     
                     HStack{
-                        Text("Upload Images")
-                           .font(AppFonts.regular_16)
+                        Text("Link to shop")
+                            .font(AppFonts.regular_16)
                         
                         Spacer()
                     }
                     .padding(.leading)
                     .padding(.trailing)
-                    .padding(.top)
-                        
+                    .padding(.top,10)
                     
+                    HStack{
+                        TextField("Search shop",text:$searchShop)
+                            .foregroundColor(AppColors.redGradientColor1)
+                            .padding(.vertical, 10)
+                            .autocapitalization(.none)
+                            .background(Rectangle().frame(height: 1).padding(.top, 40))
+                            .foregroundColor(.black)
+                            .overlay(HStack{
+                                Spacer()
+                                
+                                Image("search icon black")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                    .padding()
+                                
+                            })
+                    }
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.bottom)
+                    
+                    
+                    
+                    Group{
+                        HStack{
+                            HStack{
+                                Text("ABC")
+                                    .font(AppFonts.regular_14)
+                                
+                                
+                                Image("cross icons")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                            }.padding()
+                                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            
+                            HStack{
+                                Text("desc")
+                                    .font(AppFonts.regular_14)
+                                    .foregroundColor(.gray)
+                                
+                                Image("cross icons")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                            }.padding()
+                                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            
+                            Spacer()
+                        }.padding(.leading)
+                            .padding(.trailing)
+                        
+                        
+                    }
+                    
+                    Group{
+                        HStack{
+                            Text("Car Details")
+                            
+                            Spacer()
+                        }
+                        .padding()
+                        .padding(.top)
+                        
+                        HStack{
+                            Text("Brand")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
+                        
+                        HStack{
+                            TextField("Honda",text:$brand)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
+                        
+                        HStack{
+                            Text("Model")
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        HStack{
+                            TextField("2019",text:$model)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.bottom)
+                        
+                        Group{
+                            HStack{
+                                Text("Price")
+                                
+                                Spacer()
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            
+                            
+                            HStack{
+                                TextField("56,000 USD",text:$price)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .padding(.vertical, 10)
+                                    .autocapitalization(.none)
+                                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                    .foregroundColor(.black)
+                                
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.bottom)
+                            
+                            
+                            HStack{
+                                Text("Condition")
+                                
+                                Spacer()
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            
+                            
+                            HStack{
+                                TextField("Used",text:$condition)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .padding(.vertical, 10)
+                                    .autocapitalization(.none)
+                                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                    .foregroundColor(.black)
+                                    .overlay(HStack{
+                                        Spacer()
+                                        Menu(content: {
+                                            Text("Used")
+                                            
+                                            Text("New")
+                                        }, label: {
+                                            Image("dropdown menu 2")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 20, height: 20)
+                                                .padding()
+                                        })
+                                        
+                                    })
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            
+                            
+                            
+                            
+                            
+                            HStack{
+                                Text("Fuel type")
+                                
+                                Spacer()
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.top)
+                            
+                            
+                            
+                            HStack{
+                                TextField("Petrol",text:$fuelType)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .padding(.vertical, 10)
+                                    .autocapitalization(.none)
+                                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                    .foregroundColor(.black)
+                                
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            .padding(.bottom)
+                            
+                            
+                            HStack{
+                                Text("Transmission")
+                                
+                                Spacer()
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            
+                            
+                            
+                            HStack{
+                                TextField("Automatic",text:$transmission)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .padding(.vertical, 10)
+                                    .autocapitalization(.none)
+                                    .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                    .foregroundColor(.black)
+                                
+                            }
+                            .padding(.leading)
+                            .padding(.trailing)
+                            
+                        }
+                        
+                    }
+                    
+                    Group{
+                        
+                        VStack{
+                            
+                            Text("Description")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Tell us about this car",text:$description)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        VStack{
+                            
+                            Text("Location")
+                                .padding(.top,20)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.bottom,-5)
+                            
+                            
+                            TextField("Washington, DC",text:$location)
+                                .foregroundColor(AppColors.redGradientColor1)
+                                .padding(.vertical, 10)
+                                .autocapitalization(.none)
+                                .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                .foregroundColor(.black)
+                            
+                            
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        
+                        
+                        HStack{
+                            Text("Upload Images")
+                                .font(AppFonts.regular_16)
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
+                        
+                        
                         HStack{
                             ZStack{
-                            Image("Rectangle 4485")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                                Image("Rectangle 4485")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: UIScreen.widthBlockSize*30, height: 90)
                                 
                                 Image("minus icon")
                                     .resizable()
@@ -1470,10 +1472,10 @@ struct Add_classified_Screen: View {
                             }
                             
                             ZStack{
-                            Image("Rectangle 4485")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
+                                Image("Rectangle 4485")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: UIScreen.widthBlockSize*30, height: 90)
                                 
                                 Image("minus icon")
                                     .resizable()
@@ -1490,116 +1492,116 @@ struct Add_classified_Screen: View {
                             
                         }
                         .padding()
-                    
-                    HStack{
-                        Text("Different Contact Details")
-                           .font(AppFonts.regular_16)
                         
-                        Toggle("", isOn: $differentdetails)
-                            .toggleStyle(SwitchToggleStyle(tint: .green))
+                        HStack{
+                            Text("Different Contact Details")
+                                .font(AppFonts.regular_16)
+                            
+                            Toggle("", isOn: $differentdetails)
+                                .toggleStyle(SwitchToggleStyle(tint: .green))
+                            
+                            Spacer()
+                        }
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
                         
-                        Spacer()
+                        
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .padding(.top)
                     
                     
-                }
-                
-                
-                Group{
-                    
-                    if(self.differentdetails){
                     Group{
                         
-                VStack{
-                    
-            Text("Name")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("John Wick",text:$name)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-             
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                
-                
-                VStack{
-                    
-            Text("Email")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-              .padding(.bottom,-5)
-            
-              
-            TextField("123@gmail.com",text:$email)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-              
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                
-                VStack{
-                    
-            Text("Phone Number")
-              .padding(.top,20)
-              .frame(maxWidth: .infinity, alignment: .leading)
-             .padding(.bottom,-5)
-            
-              
-            TextField("+96-43564356456",text:$phone)
-                .foregroundColor(AppColors.redGradientColor1)
-              .padding(.vertical, 10)
-              .autocapitalization(.none)
-              .background(Rectangle().frame(height: 1).padding(.top, 40))
-              .foregroundColor(.black)
-             
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
+                        if(self.differentdetails){
+                            Group{
+                                
+                                VStack{
+                                    
+                                    Text("Name")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("John Wick",text:$name)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                .padding(.leading)
+                                .padding(.trailing)
+                                
+                                
+                                VStack{
+                                    
+                                    Text("Email")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("123@gmail.com",text:$email)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                .padding(.leading)
+                                .padding(.trailing)
+                                
+                                VStack{
+                                    
+                                    Text("Phone Number")
+                                        .padding(.top,20)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                        .padding(.bottom,-5)
+                                    
+                                    
+                                    TextField("+96-43564356456",text:$phone)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .padding(.vertical, 10)
+                                        .autocapitalization(.none)
+                                        .background(Rectangle().frame(height: 1).padding(.top, 40))
+                                        .foregroundColor(.black)
+                                    
+                                    
+                                }
+                                .padding(.leading)
+                                .padding(.trailing)
+                                
+                            }
+                        }
                         
-                    }
-                    }
-                
-                    NavigationLink(destination: Post_Product_Vehicle_Screen(), label: {
-                        Text("Preview")
-                            .font(AppFonts.semiBold_16)
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                        NavigationLink(destination: Post_Product_Vehicle_Screen(), label: {
+                            Text("Preview")
+                                .font(AppFonts.semiBold_16)
+                                .fontWeight(.medium)
+                                .foregroundColor(.white)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                                 .padding(.top,30)
                                 .padding(.bottom)
-                    })
-                   
-                    
-                }
+                        })
+                        
+                        
+                    }
                     
                 }
                 
                 
             }
             .padding(.leading)
-                .padding(.trailing)
+            .padding(.trailing)
             
             
-           
+            
             Spacer()
         }.edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)

@@ -17,8 +17,9 @@ struct Transcation_history_Screen: View {
                 Group{
                 HStack{
                     Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("side menu icon white")
+                        Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 35, height: 35)
@@ -33,10 +34,15 @@ struct Transcation_history_Screen: View {
                     
                     Spacer()
                     
-                    Image("Ellipse 35-1")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 35, height: 35)
+                    NavigationLink(destination: {
+                        My_Profile_Screen()
+                    }, label: {
+                        Image("Ellipse 35-1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 35, height: 35)
+
+                    })
                     
                    
                     

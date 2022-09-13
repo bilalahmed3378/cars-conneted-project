@@ -36,11 +36,7 @@ struct Post_Product_Parts_Screen: View {
                     
                     Spacer()
                     
-                    Image("clarity_shopping-cart-solid")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
-                    
+                   
                     Image("doted icons-1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

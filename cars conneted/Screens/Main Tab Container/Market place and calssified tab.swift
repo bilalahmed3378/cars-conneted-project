@@ -41,12 +41,12 @@ struct Market_place_and_calssified: View {
                         .foregroundColor(.white)
                     
                     Spacer()
-                    NavigationLink(destination: Add_classified_Screen(), label: {
+                    NavigationLink(destination: Create_Shop_Screen(), label: {
                         
                         Image("plus icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 26, height: 26)
+                            .frame(width: 20, height: 20)
                     })
                   
                     
@@ -96,13 +96,19 @@ struct Market_place_and_calssified: View {
                     Text("Popular")
                         .font(AppFonts.semiBold_14)
                     Spacer()
-                    Button(action: {}, label: {
+                    
+                    NavigationLink(destination: {
+                        Popular_Classified_Screen()
+                    }, label: {
                         Text("View all")
                             .font(AppFonts.regular_12)
                             .foregroundColor(AppColors.redGradientColor1)
                     })
+                      
+                
                 }
                 .padding()
+                .padding(.bottom,-20)
                 
                 ScrollView(.horizontal,showsIndicators: false){
                     LazyHStack{
@@ -119,13 +125,19 @@ struct Market_place_and_calssified: View {
                              Text("Recommended")
                                  .font(AppFonts.semiBold_14)
                              Spacer()
-                             Button(action: {}, label: {
+                            
+                             NavigationLink(destination: {
+                                 Recommended_Classified_Screen()
+                             }, label: {
                                  Text("View all")
                                      .font(AppFonts.regular_12)
                                      .foregroundColor(AppColors.redGradientColor1)
                              })
+                               
+                             
                          }
                          .padding()
+                         .padding(.bottom,-20)
                 
                 ScrollView(.horizontal,showsIndicators: false){
                     LazyHStack{
@@ -136,6 +148,94 @@ struct Market_place_and_calssified: View {
                     
                 }
                 
+                
+                
+                HStack{
+                    Text("Cars")
+                        .font(AppFonts.semiBold_14)
+                    Spacer()
+                   
+                    
+                    NavigationLink(destination: {
+                        All_Cars_View_Screen()
+                    }, label: {
+                        Text("View all")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(AppColors.redGradientColor1)
+                    })
+                      
+                    
+                }
+                .padding()
+                .padding(.bottom,-20)
+       
+       ScrollView(.horizontal,showsIndicators: false){
+           LazyHStack{
+               ForEach(0...5 , id: \.self){ index in
+                   carsCard()
+               }
+           }
+           
+       }
+              
+                
+                HStack{
+                    Text("Spareparts")
+                        .font(AppFonts.semiBold_14)
+                    Spacer()
+                   
+                    NavigationLink(destination: {
+                        All_Sparepart_View_Screen()
+                    }, label: {
+                        Text("View all")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(AppColors.redGradientColor1)
+                    })
+                       
+                    
+                }
+                .padding()
+                .padding(.bottom,-20)
+       
+       ScrollView(.horizontal,showsIndicators: false){
+           LazyHStack{
+               ForEach(0...5 , id: \.self){ index in
+                   sparepartsCard()
+               }
+           }
+           
+       }
+                
+                
+                HStack{
+                    Text("Service")
+                        .font(AppFonts.semiBold_14)
+                    Spacer()
+                   
+                    NavigationLink(destination: {
+                        All_Service_View_Screen()
+                    }, label: {
+                        Text("View all")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(AppColors.redGradientColor1)
+                    })
+                      
+                    
+                }
+                .padding()
+                .padding(.bottom,-20)
+       
+       ScrollView(.horizontal,showsIndicators: false){
+           LazyHStack{
+               ForEach(0...5 , id: \.self){ index in
+                   serviceCard()
+               }
+           }
+           
+       }
+                
+                
+                
             }
             
             
@@ -145,13 +245,169 @@ struct Market_place_and_calssified: View {
         .edgesIgnoringSafeArea(.all)
         .navigationBarHidden(true)
     }
-    
+}
    
     //done
     struct partsCard : View {
         
         var body: some View {
            
+            NavigationLink(destination: {
+                Classified_Spare_Parts_Screen()
+            }, label: {
+                
+                VStack(alignment: .leading){
+                    
+                    Image("Rectangle 1263")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 210, height: 180)
+                    
+                    Text("Enginge Valve 16.5")
+                        .foregroundColor(.black)
+                        .font(AppFonts.medium_14)
+                        .lineLimit(1)
+                        .padding(.leading,10)
+                        .padding(.trailing,10)
+                    
+                    HStack{
+                        Text("Engine Part")
+                            .foregroundColor(.gray)
+                            .font(AppFonts.semiBold_12)
+                        Spacer()
+                        Text("$50")
+                            .font(AppFonts.medium_14)
+                            .foregroundColor(AppColors.redGradientColor1)
+                        
+                    }
+                    .padding(.leading,10)
+                    .padding(.trailing,10)
+                    
+                    HStack{
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                    }
+                    .padding(.leading,10)
+                    .padding(.trailing,10)
+                    .padding(.bottom,10)
+                }
+                .cornerRadius(10)
+                .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
+                .padding(5)
+                .padding(.leading,10)
+                    
+            })
+          
+          
+   
+        }
+    }
+
+
+struct partsCardrecommented : View {
+    
+    var body: some View {
+       
+        NavigationLink(destination: {
+            Classified_Spare_Parts_Screen()
+        }, label: {
+            ZStack(alignment: .leading){
+                Image("Rectangle 1264")
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .cornerRadius(10)
+                
+                VStack(alignment: .leading){
+                    Spacer()
+                    Text("lazer Head lights")
+                        .foregroundColor(.white)
+                        .font(AppFonts.semiBold_16)
+                    
+                    HStack{
+                        Text("Spare parts")
+                            .font(AppFonts.medium_12)
+                            .foregroundColor(.white)
+                        Spacer()
+                        Text("$50")
+                            .foregroundColor(.white)
+                            .font(AppFonts.semiBold_16)
+
+                    }
+                    
+                    HStack{
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("yellow Star icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                    }
+                    .padding(.top,-10)
+                    
+                }
+                .padding()
+                
+            }
+            .frame(width: 340, height: 200)
+                .padding()
+                .padding(.trailing,-15)
+      
+        
+        })
+           
+       
+
+    }
+}
+
+
+struct carsCard : View {
+    
+    var body: some View {
+       
+        NavigationLink(destination: {
+            Classified_Vehicle_Screen()
+        }, label: {
             VStack(alignment: .leading){
                 
                 Image("Rectangle 1263")
@@ -215,76 +471,163 @@ struct Market_place_and_calssified: View {
             .padding(.leading,10)
                 
           
-   
-        }
+        })
+       
+
     }
 }
 
-struct partsCardrecommented : View {
+struct sparepartsCard : View {
     
     var body: some View {
        
-            ZStack(alignment: .leading){
-                Image("Rectangle 1264")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .cornerRadius(10)
+        NavigationLink(destination: {
+            Classified_Spare_Parts_Screen()
+        }, label: {
+            VStack(alignment: .leading){
                 
-                VStack(alignment: .leading){
+                Image("Rectangle 1263")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 210, height: 180)
+                
+                Text("Enginge Valve 16.5")
+                    .foregroundColor(.black)
+                    .font(AppFonts.medium_14)
+                    .lineLimit(1)
+                    .padding(.leading,10)
+                    .padding(.trailing,10)
+                
+                HStack{
+                    Text("Engine Part")
+                        .foregroundColor(.gray)
+                        .font(AppFonts.semiBold_12)
                     Spacer()
-                    Text("lazer Head lights")
-                        .foregroundColor(.white)
-                        .font(AppFonts.semiBold_16)
-                    
-                    HStack{
-                        Text("Spare parts")
-                            .font(AppFonts.medium_12)
-                            .foregroundColor(.white)
-                        Spacer()
-                        Text("$50")
-                            .foregroundColor(.white)
-                            .font(AppFonts.semiBold_16)
-
-                    }
-                    
-                    HStack{
-                        Image("yellow Star icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 18, height: 18)
-                        
-                        Image("yellow Star icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 18, height: 18)
-                        
-                        Image("yellow Star icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 18, height: 18)
-                        
-                        Image("yellow Star icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 18, height: 18)
-                        
-                        Image("yellow Star icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 18, height: 18)
-                    }
-                    .padding(.top,-10)
+                    Text("$50")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(AppColors.redGradientColor1)
                     
                 }
-                .padding()
+                .padding(.leading,10)
+                .padding(.trailing,10)
                 
+                HStack{
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                }
+                .padding(.leading,10)
+                .padding(.trailing,10)
+                .padding(.bottom,10)
             }
-            .frame(width: 340, height: 200)
-                .padding()
-                .padding(.trailing,-15)
-      
-        
+            .cornerRadius(10)
+            .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
+            .padding(5)
+            .padding(.leading,10)
+                
+          
+
+        })
+     
+    }
+}
+
+
+struct serviceCard : View {
+    
+    var body: some View {
        
+        NavigationLink(destination: {
+            Classified_Service_Screen()
+        }, label: {
+            VStack(alignment: .leading){
+                
+                Image("Rectangle 1263")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 210, height: 180)
+                
+                Text("Enginge Valve 16.5")
+                    .foregroundColor(.black)
+                    .font(AppFonts.medium_14)
+                    .lineLimit(1)
+                    .padding(.leading,10)
+                    .padding(.trailing,10)
+                
+                HStack{
+                    Text("Engine Part")
+                        .foregroundColor(.gray)
+                        .font(AppFonts.semiBold_12)
+                    Spacer()
+                    Text("$50")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(AppColors.redGradientColor1)
+                    
+                }
+                .padding(.leading,10)
+                .padding(.trailing,10)
+                
+                HStack{
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                }
+                .padding(.leading,10)
+                .padding(.trailing,10)
+                .padding(.bottom,10)
+            }
+            .cornerRadius(10)
+            .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
+            .padding(5)
+            .padding(.leading,10)
+                
+        })
+        
+     
+      
 
     }
 }
+

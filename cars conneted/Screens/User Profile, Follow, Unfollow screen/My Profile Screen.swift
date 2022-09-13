@@ -13,17 +13,33 @@ struct My_Profile_Screen: View {
     @State var isPostView: Int = 0
     @State var isfollowing: Bool = true
     
+    @State var viewProfile = false
+
+    @State var viewStory = false
+   
+    
     var body: some View {
         ZStack{
             
             ScrollView{
                 VStack{
+                    
+                    NavigationLink(destination: View_Status_Screen(), isActive: $viewStory){
+                        EmptyView()
+                    }
+                    
+                    
                     Group{
                         HStack{
-                            Image("Icons-2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
+                            Button(action: {
+                                self.presentaionMode.wrappedValue.dismiss()
+                            }, label: {
+                                Image("Icons-2")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 35, height: 35)
+                            })
+                          
                             
                             Spacer()
                             
@@ -42,21 +58,62 @@ struct My_Profile_Screen: View {
                                 .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
                                 .padding(.top)
                             
-                            Image("unsplash_OhKElOkQ3RE-1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*26, height: 100)
-                                .offset(x: 0, y: -45)
+                            
+                            Menu(content: {
+                                
+                                Button(action: {
+                                    self.viewStory = true
+                                }, label: {
+                                    HStack{
+                                        
+                                        Text("View Story")
+                                        
+                                        Image("gg_profile")
+                                        
+                                       
+                                        
+                                    }
+                                })
+                             
+                                Button(action: {
+                                    self.viewProfile = true
+                                }, label: {
+                                    HStack{
+                                        
+                                        Text("View Profile Picture")
+                                        
+                                        Image("gg_profile-1")
+                                        
+                                      
+                                        
+                                    }
+                                })
+                               
+                                
+                            }, label: {
+                                Image("unsplash_OhKElOkQ3RE-1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                   .frame(width: UIScreen.widthBlockSize*26, height: 100)
+                                    .offset(x: 0, y: -45)
+                                    .padding(.leading,1)
+                                    .padding(.trailing,1)
+                                    .padding(.bottom,5)
+                                    .padding(.top,5)
+                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -45))
+                                   
+                            })
+                            
+                            
+                            
+                            
+                           
                             
                             Text("Elon Musk")
                                 .font(AppFonts.medium_18)
                                 .padding(.top, -30)
                         }
                        
-                        
-                      
-                       
-                        
                         HStack{
                             Image("carbon_application-mobile-1")
                                 .resizable()
@@ -81,25 +138,39 @@ struct My_Profile_Screen: View {
                             
                             Group{
                                 HStack{
-                                    VStack{
-                                        Text("Following")
-                                            .font(AppFonts.regular_16)
-                                            .padding(.bottom,10)
-                                            .foregroundColor(AppColors.redGradientColor1)
-                                        Text("156")
-                                            .font(AppFonts.regular_16)
-                                            .foregroundColor(AppColors.redGradientColor1)
-                                    }
+                                    
+                                    NavigationLink(destination: {
+                                        Following_Screen()
+                                    }, label: {
+                                        VStack{
+                                            Text("Following")
+                                                .font(AppFonts.regular_16)
+                                                .padding(.bottom,10)
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                            Text("156")
+                                                .font(AppFonts.regular_16)
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                        }
+                                    })
+                                  
+                                    
                                     Spacer()
-                                    VStack{
-                                        Text("Followers")
-                                            .font(AppFonts.regular_16)
-                                            .padding(.bottom,10)
-                                            .foregroundColor(AppColors.redGradientColor1)
-                                        Text("289")
-                                            .font(AppFonts.regular_16)
-                                            .foregroundColor(AppColors.redGradientColor1)
-                                    }
+                                    
+                                    NavigationLink(destination: {
+                                        Friends_Requests_Screens()
+                                    }, label: {
+                                        VStack{
+                                            Text("Followers")
+                                                .font(AppFonts.regular_16)
+                                                .padding(.bottom,10)
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                            Text("289")
+                                                .font(AppFonts.regular_16)
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                        }
+                                    })
+                                   
+                                    
                                     Spacer()
                                     
                                     VStack{
@@ -237,27 +308,33 @@ struct My_Profile_Screen: View {
                        
                         LazyVStack{
                             if(self.isPostView == 0){
-                            HStack{
-                                Image("unsplash_X6Uj51n5CE8")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 50, height: 50)
-                                    .padding(.trailing,5)
-                                
-                              
-                                
-                                Text("Write something...")
-                                    .font(AppFonts.regular_12)
-                                    .padding(.trailing,150)
-                                    .padding(.top,15)
-                                    .padding(.bottom,15)
-                                    .padding(.leading)
-                                    .background(RoundedRectangle(cornerRadius: 80).strokeBorder(.black))
-                                
-                                Spacer()
-                            }
-                            .padding()
-                            .padding(.top,-20)
+                                NavigationLink(destination: {
+                                    post_screen_2()
+                                }, label: {
+                                    HStack{
+                                        Image("unsplash_X6Uj51n5CE8")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 50, height: 50)
+                                            .padding(.trailing,5)
+                                        
+                                      
+                                        
+                                        Text("Write something...")
+                                            .font(AppFonts.regular_12)
+                                            .foregroundColor(.black)
+                                            .padding(.trailing,150)
+                                            .padding(.top,15)
+                                            .padding(.bottom,15)
+                                            .padding(.leading)
+                                            .background(RoundedRectangle(cornerRadius: 80).strokeBorder(.black))
+                                        
+                                        Spacer()
+                                    }
+                                    .padding()
+                                    .padding(.top,-20)
+                                })
+                          
                             
                             (ForEach(0...5 , id:\.self){ index in
                            
@@ -266,20 +343,34 @@ struct My_Profile_Screen: View {
                             }
                              )}
                                 else if(self.isPostView == 1) {
-                                    Text("Add New Car")
+                                    
+                                    
+                                    NavigationLink(destination: {
+                                        Add_your_Car_Screen()
+                                    }, label: {
+                                        Text("Add New Car")
                                         .font(AppFonts.regular_16)
                                         .foregroundColor(AppColors.redGradientColor1)
                                         .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                    })
+                                  
+                                       
                                         .padding()
                                     
                               GarageCardMyProfile()
                             }
                                 
                                 else if(self.isPostView == 2) {
-                                    Text("Add Classified")
-                                        .font(AppFonts.regular_16)
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                    
+                                    NavigationLink(destination: {
+                                        Add_classified_Screen()
+                                    }, label: {
+                                        Text("Add Classified")
+                                            .font(AppFonts.regular_16)
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                    })
+                                    
                                         .padding()
                                     VStack(alignment: .leading){
                                         HStack{
@@ -302,10 +393,17 @@ struct My_Profile_Screen: View {
                             }
                                
                             else if(self.isPostView == 3){
-                                Text("Create New Club")
-                                    .font(AppFonts.regular_16)
-                                    .foregroundColor(AppColors.redGradientColor1)
-                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                
+                                NavigationLink(destination: {
+                                    Create_Club_Screen()
+                                }, label: {
+                                    Text("Create New Club")
+                                        .font(AppFonts.regular_16)
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                })
+                                
+                              
                                     .padding()
                                 ClubsCardMyProfile()
                             }
@@ -333,6 +431,9 @@ struct My_Profile_Screen_Previews: PreviewProvider {
 
 struct PostCardMyProfile : View {
     
+    @State var showingSheet = false
+    
+    @State var showingSheetComments = false
     
     var body: some View {
         
@@ -370,18 +471,47 @@ struct PostCardMyProfile : View {
             
             HStack{
                 
-                Image("Group 7370")
                 
-                Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingSheet = true
+                }, label: {
+                    Image("Group 7367")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("Group 7369")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                        .offset(x: -10, y: 0)
+                    
+                    Text("Arsalan and 20 other")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingSheet){
+                    whoLikedScreen()
+                    
+                }
+
+               
                 
                 Spacer()
                 
-                Text("12 comments")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
-                
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    Text("12 comments")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                    
+                })
+                .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
+                    
+                }
+              
             }
             
             Divider()
@@ -397,13 +527,22 @@ struct PostCardMyProfile : View {
                 }
                 
                 Spacer()
-                HStack{
-                    Image("ant-design_comment-outlined")
-                    Text("Comment")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    HStack{
+                        Image("ant-design_comment-outlined")
+                        Text("Comment")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                        
+                    }
+                }) .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
                     
                 }
+               
                 Spacer()
                 HStack{
                     Image("ion_share-social-sharp")
@@ -436,6 +575,10 @@ struct PostCardMyProfile : View {
 
 
 struct GarageCardMyProfile : View {
+    @State var showingSheet = false
+    
+    @State var showingSheetComments = false
+    
     var body: some View {
         
         VStack{
@@ -447,22 +590,34 @@ struct GarageCardMyProfile : View {
                     .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*28)
                 VStack{
                     HStack{
-                        Text("Slot 1")
-                            .font(AppFonts.regular_12)
-                            .foregroundColor(.white)
-                            .frame(width: 80, height: 30)
-                            .background(RoundedRectangle(cornerRadius: 8).fill(.gray))
+                       
                         Spacer()
+                        
+                        Image("doted icons-1")
                     }
                     .padding(.leading)
                     .padding(.top)
+                    .padding(.trailing)
                     
                     Spacer()
                     
                     HStack{
-                        Image("Icons-3")
-                        Spacer()
-                        Image("Icons-4")
+                     
+                        Image("Ellipse 3")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8, height: 8)
+                        
+                        Image("Ellipse 20")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8, height: 8)
+                        
+                        Image("Ellipse 3")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 8, height: 8)
+                        
                     }
                     .padding(.leading)
                     .padding(.trailing)
@@ -472,30 +627,50 @@ struct GarageCardMyProfile : View {
             
             VStack{
                 
+               
             HStack{
                 
-                Image("Group 7367")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
+                Button(action: {
+                    self.showingSheet = true
+                }, label: {
+                    Image("Group 7367")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("Group 7369")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                        .offset(x: -10, y: 0)
+                    
+                    
+                    
+                    Text("Arsalan and 20 other")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingSheet){
+                    whoLikedScreen()
+                    
+                }
                 
-                Image("Group 7369")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                    .offset(x: -10, y: 0)
-                
-                
-                
-                Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(Color.gray)
+               
                 
                 Spacer()
                 
-                Text("12 comments")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    Text("12 comments")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
+                    
+                }
+               
                 
             }
             
@@ -518,17 +693,27 @@ struct GarageCardMyProfile : View {
                 }
                 
                 Spacer()
-                HStack{
-                    Image("ant-design_comment-outlined")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 26, height: 26)
-                    
-                    Text("Comment")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    HStack{
+                        Image("ant-design_comment-outlined")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 26, height: 26)
+                        
+                        Text("Comment")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                        
+                    }
+                })
+                .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
                     
                 }
+               
                 Spacer()
                 HStack{
                     Image("ion_share-social-sharp")
@@ -611,14 +796,19 @@ struct GarageCardMyProfile : View {
                 
                Spacer()
                 
-                Text("View Details")
-                    .font(AppFonts.medium_14)
-                    .foregroundColor(AppColors.redGradientColor1)
-                
-                Image("Icons-5")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
+                NavigationLink(destination: {
+                    Car_Specification()
+                }, label: {
+                    Text("View Details")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(AppColors.redGradientColor1)
+                    
+                    Image("Icons-5")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                })
+               
                 
             }.padding(.bottom)
             .padding(.leading)
@@ -667,7 +857,7 @@ struct ClubsCardMyProfile: View {
                         Spacer()
                         
                         
-                        Text("Join")
+                        Text("Invite")
                             .foregroundColor(.white)
                             .font(AppFonts.medium_12)
                             .padding(15)
@@ -683,39 +873,41 @@ struct ClubsCardMyProfile: View {
                     
                     Spacer()
                     
-                    
-                    HStack{
-                        
-                        
-                        
-                        
-                        Text("Ace Classic Club")
-                            .foregroundColor(.white)
-                            .font(AppFonts.regular_12)
-                        
-                        Spacer()
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:36)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:24)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:12)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                        //                            .offset(x:15)
-                        
-                        Text("+120")
-                            .foregroundColor(.white)
-                            .fontWeight(.medium)
-                        
-                        
-                    }.padding()
-                        .padding(.top,-20)
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
-                      
+                    NavigationLink(destination: My_club_Details__admin_view__Screen(), label: {
+                        HStack{
+                            
+                            
+                            
+                            
+                            Text("Ace Classic Club")
+                                .foregroundColor(.white)
+                                .font(AppFonts.regular_12)
+                            
+                            Spacer()
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:36)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:24)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:12)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                            //                            .offset(x:15)
+                            
+                            Text("+120")
+                                .foregroundColor(.white)
+                                .fontWeight(.medium)
+                            
+                            
+                        }.padding()
+                            .padding(.top,-20)
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
+                          
+                    })
+                   
                     
                     
                     
@@ -839,14 +1031,19 @@ struct ClassifiedCardMyProfile: View {
                 
                Spacer()
                 
-                Text("View Details")
-                    .font(AppFonts.medium_14)
-                    .foregroundColor(AppColors.redGradientColor1)
-                
-                Image("Icons-5")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
+                NavigationLink(destination: {
+                    Classified_Spare_Parts_Screen()
+                }, label: {
+                    Text("View Details")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(AppColors.redGradientColor1)
+                    
+                    Image("Icons-5")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                })
+               
                 
             }
             .padding(.leading,30)
@@ -863,3 +1060,246 @@ struct ClassifiedCardMyProfile: View {
     }
     
 }
+
+
+
+struct whoLikedScreen: View {
+    @State var ifAll = true
+    
+    @State var ifLike = false
+    
+    @State var ifHeart = false
+    
+    
+    
+    
+    
+    var body: some View {
+        VStack{
+            
+            HStack{
+                Text("People who reacted")
+                    .foregroundColor(.black)
+                    .font(AppFonts.SemiBold_20)
+                
+                Spacer()
+            }.padding()
+            
+            HStack{
+            
+                Button(action: {
+                    self.ifAll = true
+                    self.ifLike = false
+                    self.ifHeart = false
+                }, label: {
+                    HStack{
+                        Text("All")
+                            .font(AppFonts.regular_16)
+                            .foregroundColor(self.ifAll == true ? .blue : .gray)
+                        
+                        Text("845")
+                            .font(AppFonts.regular_16)
+                            .foregroundColor(self.ifAll == true ? .blue : .gray)
+                    }
+                    .padding(.trailing,30)
+                })
+         
+                
+                Button(action: {
+                    self.ifAll = false
+                    self.ifLike = true
+                    self.ifHeart = false
+                }, label: {
+                    HStack{
+                       Image("Group 7367")
+                        
+                        Text("625")
+                            .font(AppFonts.regular_16)
+                            .foregroundColor(self.ifLike == true ? .blue : .gray)
+                    }
+                    .padding(.trailing,30)
+                })
+             
+                Button(action: {
+                    self.ifAll = false
+                    self.ifLike = false
+                    self.ifHeart = true
+                }, label: {
+                    HStack{
+                       Image("Group 7369")
+                        
+                        Text("220")
+                            .font(AppFonts.regular_16)
+                            .foregroundColor(self.ifHeart == true ? .blue : .gray)
+                    }
+                })
+               
+                
+            Spacer()
+                
+                
+            
+            }.padding(.leading)
+                .padding(.trailing)
+            
+            Divider()
+            
+            ScrollView(){
+                
+                LazyVStack{
+                    if(self.ifAll){
+                    ForEach(0...10 , id: \.self){index in
+                        all()
+                    }
+                }
+                }
+                
+                if(self.ifLike){
+                LazyVStack{
+                    ForEach(0...10 , id: \.self){index in
+                        liked()
+                    }
+                }
+                }
+                
+                if(self.ifHeart){
+                LazyVStack{
+                    ForEach(0...10 , id: \.self){index in
+                    heart()
+                    }
+                }
+                }
+                
+                
+            }
+           
+            
+            
+            
+        }
+    }
+}
+
+struct all: View {
+    var body: some View{
+        
+        HStack{
+            Image("unsplash_X6Uj51n5CE8")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+            
+            VStack(alignment: .leading){
+                Text("Emma Watson")
+                    .foregroundColor(.black)
+                    .font(AppFonts.semiBold_16)
+                    .padding(.bottom,1)
+                
+                Text("(Haripur, Pakistan)")
+                    .foregroundColor(.black)
+                    .font(AppFonts.regular_16)
+                    .foregroundColor(.gray)
+                
+                
+            }.padding(.leading,5)
+            
+            Spacer()
+            
+            NavigationLink(destination: {
+                User_Profile__Wall()
+            }, label: {
+                Text("View Profile")
+                    .font(AppFonts.regular_16)
+                    .foregroundColor(AppColors.redGradientColor1)
+                
+            })
+           
+            
+            
+        }.padding()
+            
+        
+    }
+}
+
+
+struct liked: View {
+    var body: some View{
+        
+        HStack{
+            Image("unsplash_X6Uj51n5CE8")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+            
+            VStack(alignment: .leading){
+                Text("Hashim Ustad")
+                    .foregroundColor(.black)
+                    .font(AppFonts.semiBold_16)
+                    .padding(.bottom,1)
+                
+                Text("(Haripur, Pakistan)")
+                    .font(AppFonts.regular_16)
+                    .foregroundColor(.gray)
+                
+                
+            }.padding(.leading,5)
+            
+            Spacer()
+            
+            NavigationLink(destination: {
+                User_Profile__Wall()
+            }, label: {
+                Text("View Profile")
+                    .font(AppFonts.regular_16)
+                    .foregroundColor(AppColors.redGradientColor1)
+                
+            })
+            
+            
+        }.padding()
+            
+        
+    }
+}
+
+struct heart: View {
+    var body: some View{
+        
+        HStack{
+            Image("unsplash_X6Uj51n5CE8")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60)
+            
+            VStack(alignment: .leading){
+                Text("Boi Nadeem")
+                    .foregroundColor(.black)
+                    .font(AppFonts.semiBold_16)
+                    .padding(.bottom,1)
+                
+                Text("(Haripur, Pakistan)")
+                    .font(AppFonts.regular_16)
+                    .foregroundColor(.gray)
+                
+                
+            }.padding(.leading,5)
+            
+            Spacer()
+            
+            NavigationLink(destination: {
+                User_Profile__Wall()
+            }, label: {
+                
+                Text("View Profile")
+                    .font(AppFonts.regular_16)
+                    .foregroundColor(AppColors.redGradientColor1)
+                
+            })
+            
+            
+        }.padding()
+        
+    }
+}
+

@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct Add_your_Car_Screen: View {
+    
+    @State var date = Date()
+    
     @State var brand = ""
     @State var model = ""
     @State var color = ""
@@ -21,6 +24,12 @@ struct Add_your_Car_Screen: View {
     @State var showSheet = false
     
     @State var photos : Array<Image> = []
+    
+    @State private var selection = "Year"
+    
+    @State private var selection2 = "Type"
+    
+    let colors = ["Sedan", "Sports", "SUV"]
     
     var body: some View {
         ZStack{
@@ -187,20 +196,38 @@ struct Add_your_Car_Screen: View {
                   .foregroundColor(.black)
                   .overlay(HStack{
                     Spacer()
-                    Button(action: {
+                  
+                      Menu(content: {
+                          
+                         Picker("type", selection: $selection2) {
+                        
+                              ForEach(colors, id: \.self) {
+                                  
+                                  Text($0)
+                                  
+                              }
+                          }
+                          .pickerStyle(.menu)
+                          
+                      }, label: {
+                          Image("dropdown menu 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                                .padding()
+                      })
                      
-                    }) {
-                      Image("dropdown menu 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }.padding()
+                      
                   })
                         
                     }.padding(.leading)
                             .padding(.trailing)
                     
                     VStack{
+                        
+                        let calendar = Calendar.current
+                        let components = calendar.dateComponents([.year], from: date)
+                        let year :Int = components.year ?? 2022
                         
                 Text("Year")
                   .padding(.top,20)
@@ -216,14 +243,32 @@ struct Add_your_Car_Screen: View {
                   .foregroundColor(.black)
                   .overlay(HStack{
                     Spacer()
-                    Button(action: {
-                     
-                    }) {
-                      Image("bxs_calendar-event")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 24, height: 24)
-                    }.padding()
+                   
+                      
+                        
+                               
+                      Menu(content: {
+                          Picker("year", selection: $selection) {
+                              ForEach(1970...year, id: \.self) {
+                                  
+                                  Text(String($0))
+                                  
+                              }
+                          }
+                          .pickerStyle(.menu)
+                   
+          
+                      }, label: {
+                          Image("bxs_calendar-event")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
+                                .padding()
+                      })
+                                  
+                    
+                    
+                         
                   })
                         
                     }.padding(.leading)
@@ -295,6 +340,7 @@ struct Add_your_Car_Screen: View {
                  //   }
                     
                     HStack{
+                        Spacer()
                     Image("add photo image")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

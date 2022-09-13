@@ -11,6 +11,7 @@ struct Search_Screen: View {
     @State private var searchText = ""
     @Environment(\.presentationMode) var presentaionMode
     @State var isSelected: Int = 0
+   
     var body: some View {
         ZStack{
             
@@ -197,6 +198,7 @@ struct Search_Screen_Previews: PreviewProvider {
         Search_Screen()
     }
 }
+
 struct ClubCard : View {
   
   var body: some View {
@@ -269,34 +271,66 @@ struct ClubCard : View {
 }
 
 struct PeopleCard : View {
+    
+    @State var isFollow = true
+   
   
   var body: some View {
       
       HStack{
-          Image("Ellipse 33").padding(.trailing,10)
-          VStack(alignment: .leading){
-              Text("Jason Statham")
-                  .font(AppFonts.regular_14)
-                  .padding(.bottom,1)
-              
-              Text("@jason123")
-                  .font(AppFonts.regular_12)
-                  .padding(.bottom,1)
-              
-              Text("Followed by Eminem12")
-                  .font(AppFonts.regular_10)
-                  .foregroundColor(.gray)
-                  
           
-          }
+          NavigationLink(destination: User_Profile__Wall(), label: {
+              Image("Ellipse 33").padding(.trailing,10)
+              VStack(alignment: .leading){
+                  Text("Jason Statham")
+                      .foregroundColor(.black)
+                      .font(AppFonts.regular_14)
+                      .padding(.bottom,1)
+                  
+                  Text("@jason123")
+                      .foregroundColor(.black)
+                      .font(AppFonts.regular_12)
+                      .padding(.bottom,1)
+                  
+                  Text("Followed by Eminem12")
+                      .foregroundColor(.black)
+                      .font(AppFonts.regular_10)
+                      .foregroundColor(.gray)
+                      
+              
+              }
+          })
+             
+          
+         
           Spacer()
-          Button(action: {}, label: {
+          
+          if(self.isFollow){
+          Button(action: {
+              self.isFollow = false
+          }, label: {
+              
               Text("Follow")
                   .font(AppFonts.medium_12)
                   .foregroundColor(.white)
                   .background(RoundedRectangle(cornerRadius: 5).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
                   .padding()
           })
+          }
+          
+          if (!self.isFollow){
+          Button(action: {
+              self.isFollow = true
+          }, label: {
+              Text("Following")
+                  .font(AppFonts.medium_12)
+                  .foregroundColor(AppColors.redGradientColor1)
+                  .background(RoundedRectangle(cornerRadius: 5).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
+                  .padding()
+          })
+          }
+          
+          
          
           
       }.padding()

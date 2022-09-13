@@ -13,9 +13,11 @@ struct Notification_Screen: View {
     
     @State var filter =  false
     
+    @State var addItems = false
     
     var body: some View {
-        
+       
+        ZStack{
       
         
         VStack{
@@ -41,7 +43,7 @@ struct Notification_Screen: View {
             Spacer()
             
             Button(action: {
-                self.filter.toggle()
+                self.addItems.toggle()
             }, label: {
                 
                 Image("filter icon 2")
@@ -53,11 +55,6 @@ struct Notification_Screen: View {
         }
         .padding()
             
-           
-            
-          
-            
-           
             ScrollView(.vertical, showsIndicators: false){
                 
                 HStack{
@@ -105,13 +102,146 @@ struct Notification_Screen: View {
             
           
             
-} .navigationBarHidden(true)
-           
-        
-        
-     
-      
-        
+}
+       
+            HalfASheet(isPresented: $addItems){
+               ScrollView(.vertical, showsIndicators: false){
+                VStack{
+                    
+                    HStack{
+                       Image("Rectangle 24")
+                    }.padding()
+
+
+
+                    Button(action: {
+                        self.addItems = false
+                       
+
+                    }){
+
+                        
+                             HStack{
+                              
+                                 Text("Classified")
+                                     .foregroundColor(.black)
+                                     .font(AppFonts.medium_16)
+                                 
+                                 Spacer()
+                                 
+                                 Image("forward")
+                             }.padding()
+                                 .padding(.leading)
+                                 .padding(.trailing)
+                    }
+
+                    Divider()
+                    Group{
+
+                        Button(action: {
+                            self.addItems = false
+
+                        }, label: {
+                            HStack{
+                              
+                                Text("Clubs")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_16)
+                                
+                                Spacer()
+                                
+                                Image("forward")
+                                
+                               
+                            }.padding()
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                        })
+
+
+                    Divider()
+
+                        Button(action: {
+                            self.addItems = false
+                        }, label: {
+                            HStack{
+                               
+
+                                Text("Events")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_16)
+                                
+                                Spacer()
+                                
+                                Image("forward")
+                               
+                            }.padding()
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                        })
+                 
+
+                    Divider()
+
+                        Button(action: {
+                            self.addItems = false
+                        }, label: {
+                            HStack{
+                              
+
+                                Text("Posts")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_16)
+                                
+                                Spacer()
+                                
+                                Image("forward")
+                               
+                            }.padding()
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                        })
+                 
+
+                    Divider()
+
+                        
+                        Button(action: {
+                            self.addItems = false
+                        }, label: {
+                            HStack{
+                               
+
+                                Text("Others")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_16)
+                                
+                                Spacer()
+                                
+                                Image("forward")
+                                
+                            }.padding()
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                        })
+                 
+                    }
+                    Divider()
+
+                  
+
+
+                }
+                
+                }
+
+            }
+            .height(.proportional(0.5))
+            .closeButtonColor(UIColor.white)
+            .backgroundColor(UIColor.white)
+            
+            
+        } .navigationBarHidden(true)
     }
     
     

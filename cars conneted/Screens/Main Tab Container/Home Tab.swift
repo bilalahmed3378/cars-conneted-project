@@ -21,22 +21,52 @@ struct HomeTab: View {
     
     @State var toAddEvent = false
     
-   
+    @State var toAddCar = false
     
-
+    @State var toAddClub = false
+    
+    @State var toAddStatus = false
+    
+    @State var toAddClassified = false
+    
+    @State var toStatus  = false
+    
+    @State var toClose = false
     
     init(isDrawerOpen : Binding<Bool>){
         self._isDrawerOpen = isDrawerOpen
     }
+    
+    
     var body: some View {
         
         
             ZStack{
+                Group{
+                NavigationLink(destination: Create_Club_Screen() , isActive: self.$toAddClub) {
+                    EmptyView()
+                }
+                    
+                    NavigationLink(destination: View_Status_Screen() , isActive: self.$toStatus) {
+                        EmptyView()
+                    }
+                
+                NavigationLink(destination: Add_Status_Screen() , isActive: self.$toAddStatus) {
+                    EmptyView()
+                }
                 
                 NavigationLink(destination: post_screen_2() , isActive: self.$addFlowActive) {
                     EmptyView()
                 }
                 
+                NavigationLink(destination: Add_classified_Screen() , isActive: self.$toAddClassified) {
+                    EmptyView()
+                }
+                
+                NavigationLink(destination: Add_your_Car_Screen() , isActive: self.$toAddCar) {
+                    EmptyView()
+                }
+                }
                 NavigationLink(destination: Search_Screen() , isActive: self.$toSearchScreen) {
                     EmptyView()
                 }
@@ -98,7 +128,7 @@ struct HomeTab: View {
                             
                            
                             
-                            NavigationLink(destination: Setting_Screen()){
+                            NavigationLink(destination: My_Profile_Screen()){
                                 Image("profile icon home")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -155,7 +185,9 @@ struct HomeTab: View {
                             HStack{
                                 
                                 
-                                    Button(action: {}, label: {
+                                    Button(action: {
+                                        self.toAddStatus = true
+                                    }, label: {
                                         VStack{
                                         Image("Group 7364")
                                         
@@ -171,7 +203,10 @@ struct HomeTab: View {
                                 
                                 ForEach(0...10 , id:\.self){ index in
                                     
-                                        Button(action: {}, label: {
+                                  
+                                        Button(action: {
+                                            self.toStatus = true
+                                        }, label: {
                                             VStack{
                                             Image("Group 7365")
                                             Text("Arsalan")
@@ -234,9 +269,13 @@ struct HomeTab: View {
                             
                             ClubsCardHome()
                             Divider()
+                            
+                            marketPlaceSreachCardsHome()
+                            Divider()
                         }
                         
                     }
+                    
                
                 }
                 
@@ -385,7 +424,9 @@ struct HomeTab: View {
                 }
                 
                 HalfASheet(isPresented: $addItems){
+                    
                     VStack{
+                        Group{
                         Spacer()
                         
                        
@@ -407,6 +448,7 @@ struct HomeTab: View {
                         }
                        
                         Divider()
+                        }
                         Group{
                             
                             Button(action: {
@@ -414,7 +456,7 @@ struct HomeTab: View {
                                 self.toAddEvent = true
                             }, label: {
                                 HStack{
-                                    Image("add event icon red")
+                                    Image("event icon red")
                                         .padding(.trailing)
                                     
                                     Text("Add event")
@@ -428,55 +470,84 @@ struct HomeTab: View {
                         
                         Divider()
                         
-                        HStack{
-                            Image("add car icon red")
-                                .padding(.trailing)
                             
-                            Text("Add car")
-                                .foregroundColor(AppColors.redGradientColor1)
-                                .font(AppFonts.medium_16)
-                            Spacer()
-                        }.padding()
-                                .padding(.leading)
+                            Button(action: {
+                                self.addItems = false
+                                self.toAddCar = true
+                            }, label: {
+                                HStack{
+                                    
+                                    Image("add car icon red")
+                                        .padding(.trailing)
+                                    
+                                    Text("Add car")
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .font(AppFonts.medium_16)
+                                    Spacer()
+                                }.padding()
+                                        .padding(.leading)
+                                
+                            })
+                      
+                            
+                        Divider()
+                        
+                            Button(action: {
+                                self.addItems = false
+                                self.toAddClassified = true
+                            }, label: {
+                                HStack{
+                                    Image("add classified icon red-1")
+                                        .padding(.trailing)
+                                    
+                                    Text("Add classified")
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .font(AppFonts.medium_16)
+                                    Spacer()
+                                }.padding()
+                                        .padding(.leading)
+                            })
+                       
                         
                         Divider()
                         
-                        HStack{
-                            Image("add classified icon red")
-                                .padding(.trailing)
-                            
-                            Text("Add classified")
-                                .foregroundColor(AppColors.redGradientColor1)
-                                .font(AppFonts.medium_16)
-                            Spacer()
-                        }.padding()
-                                .padding(.leading)
-                        
-                        Divider()
-                        
-                        HStack{
-                            Image("add club icon red")
-                                .padding(.trailing)
-                            
-                            Text("Add club")
-                                .foregroundColor(AppColors.redGradientColor1)
-                                .font(AppFonts.medium_16)
-                            Spacer()
-                        }.padding()
-                                .padding(.leading)
+                            Button(action: {
+                                self.addItems = false
+                                self.toAddClub = true
+                            }, label: {
+                                HStack{
+                                    Image("add club icon red")
+                                        .padding(.trailing)
+                                    
+                                    Text("Add club")
+                                        .foregroundColor(AppColors.redGradientColor1)
+                                        .font(AppFonts.medium_16)
+                                    Spacer()
+                                }.padding()
+                                        .padding(.leading)
+                            })
+                      
                         }
+                        
+                        Group{
                         Divider()
                         
-                        HStack{
-                            Image("add status icon red")
-                                .padding(.trailing)
-                            
-                            Text("Add status")
-                                .foregroundColor(AppColors.redGradientColor1)
-                                .font(AppFonts.medium_16)
-                            Spacer()
-                        }.padding()
-                            .padding(.leading)
+                        Button(action: {
+                            self.addItems = false
+                            self.toAddStatus = true
+                        }, label: {
+                            HStack{
+                                Image("add club icon red")
+                                    .padding(.trailing)
+                                
+                                Text("Add status")
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                    .font(AppFonts.medium_16)
+                                Spacer()
+                            }.padding()
+                                .padding(.leading)
+                        })
+                      
                         
                         Divider()
                         
@@ -491,12 +562,12 @@ struct HomeTab: View {
                                     .fontWeight(.medium)
                                     .foregroundColor(AppColors.redGradientColor1)
                                     .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*7)
-                                    .background(RoundedRectangle(cornerRadius: 50).fill(.white))
+                                    .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor1))
                             })
                             
                             
                         }.padding()
-
+                        }
                         
                         
                         
@@ -520,6 +591,7 @@ struct HomeTab: View {
 struct PostsHome : View {
   
     @State private var showingSheet = false
+    @State private var showingLiked = false
     
   var body: some View {
       
@@ -557,12 +629,28 @@ struct PostsHome : View {
           
           HStack{
               
-              Image("Group 7370")
-              
-              Text("Arsalan and 20 other")
-                  .font(AppFonts.regular_10)
-                  .foregroundColor(Color.gray)
-              
+              Button(action: {
+                  self.showingLiked = true
+              }, label: {
+                  Image("Group 7367")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 18, height: 18)
+                  
+                  Image("Group 7369")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 18, height: 18)
+                      .offset(x: -10, y: 0)
+                  
+                  Text("Arsalan and 20 other")
+                      .font(AppFonts.regular_12)
+                      .foregroundColor(Color.gray)
+              })
+              .sheet(isPresented: $showingLiked){
+                  whoLikedScreen()
+                  
+              }
               Spacer()
               
               Button(action: {
@@ -594,13 +682,25 @@ struct PostsHome : View {
               }
               
               Spacer()
-              HStack{
-                  Image("ant-design_comment-outlined")
-                  Text("Comment")
-                      .font(AppFonts.regular_12)
-                      .foregroundColor(Color.gray)
+              
+              Button(action: {
+                  self.showingSheet.toggle()
+              }, label: {
+                  HStack{
+                      Image("ant-design_comment-outlined")
+                      Text("Comment")
+                          .font(AppFonts.regular_12)
+                          .foregroundColor(Color.gray)
+                      
+                  }
+              })
+              .sheet(isPresented: $showingSheet){
+                  commentsScreen()
                   
               }
+              
+             
+              
               Spacer()
               HStack{
                   Image("ion_share-social-sharp")
@@ -635,6 +735,9 @@ struct EventsHome : View {
     
     @State private var showingSheet = false
     
+    @State private var showingLiked = false
+    
+    @State private var  isfollowing = false
   var body: some View {
 
       VStack{
@@ -652,12 +755,28 @@ struct EventsHome : View {
                       Text("Bhai Nadeem.")
                           .font(AppFonts.medium_14)
                       
-                      Button(action: {}, label: {
+                      if(!self.isfollowing){
+                      Button(action: {
+                          self.isfollowing = true
+                      }, label: {
                           Text("Follow")
                               .font(AppFonts.medium_14)
                               .foregroundColor(.blue)
                       })
+                      }
+                      
+                      if(self.isfollowing){
+                      Button(action: {
+                          self.isfollowing = false
+                      }, label: {
+                          Text("Following")
+                              .font(AppFonts.medium_14)
+                              .foregroundColor(.blue)
+                      })
+                      }
                      
+                      
+                      
                   }
                   .padding(.bottom,2)
                   
@@ -769,14 +888,28 @@ struct EventsHome : View {
           
           HStack{
               
-              Button(action: {}, label: {
-                  Image("Group 7370")
+              Button(action: {
+                  self.showingLiked = true
+              }, label: {
+                  Image("Group 7367")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 18, height: 18)
+                  
+                  Image("Group 7369")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 18, height: 18)
+                      .offset(x: -10, y: 0)
                   
                   Text("Arsalan and 20 other")
-                      .font(AppFonts.regular_10)
+                      .font(AppFonts.regular_12)
                       .foregroundColor(Color.gray)
-                  
               })
+              .sheet(isPresented: $showingLiked){
+                  whoLikedScreen()
+                  
+              }
              
               Spacer()
               
@@ -864,193 +997,257 @@ struct EventsHome : View {
 }
 
 struct ClubsCardHome: View {
+    
+    @State private var showingSheet = false
+    @State private var showingLiked = false
+    
+    @State private var  isfollowing = false
+    
     var body: some View {
         
-        VStack{
-            
-            HStack{
-               
-                Image("post picture")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+       
+            VStack{
                 
-                VStack(alignment: .leading){
+                HStack{
+                   
+                    Image("post picture")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
                     
-                    HStack{
-                        Text("Rana Sahahbaz.")
-                            .font(AppFonts.medium_14)
+                    VStack(alignment: .leading){
                         
-                        Text("Follow")
-                            .font(AppFonts.medium_14)
-                            .foregroundColor(.blue)
+                        HStack{
+                            Text("Rana Sahahbaz.")
+                                .font(AppFonts.medium_14)
+                            
+                            if(!self.isfollowing){
+                            Button(action: {
+                                self.isfollowing = true
+                            }, label: {
+                                Text("Follow")
+                                    .font(AppFonts.medium_14)
+                                    .foregroundColor(.blue)
+                            })
+                            }
+                            
+                            if(self.isfollowing){
+                            Button(action: {
+                                self.isfollowing = false
+                            }, label: {
+                                Text("Following")
+                                    .font(AppFonts.medium_14)
+                                    .foregroundColor(.blue)
+                            })
+                            }
+                        }
+                        .padding(.bottom,2)
+                        
+                        HStack{
+                        Text("Shared a Club")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(.gray)
+                               
+                      
+                        Text("1h ago")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(.gray)
+                        }
+                        
                     }
-                    .padding(.bottom,2)
+                    Spacer()
                     
-                    HStack{
-                    Text("Shared a Club")
-                            .font(AppFonts.regular_12)
-                            .foregroundColor(.gray)
+                    Image("doted Icons")
+                    
+                }.padding(.bottom,10)
+                
+                Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
+                    .font(.subheadline)
+                    .foregroundColor(Color.gray)
+                
+                NavigationLink(destination: {
+                    Club_details_member_view_Screen()
+                }, label: {
+                    ZStack(alignment: .top){
+                        
+                        
+                        
+                        Image("unsplash_gmA751dxisA-1")
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                            .overlay(Color.black.opacity(0.03))
+                            .clipped()
                            
-                  
-                    Text("1h ago")
+                        
+                        
+                        VStack{
+                            
+                            HStack{
+                                
+                                Spacer()
+                                
+                                
+                                Text("Join")
+                                    .foregroundColor(.white)
+                                    .font(AppFonts.medium_12)
+                                    .padding(15)
+                                    .padding(.leading,10)
+                                    .padding(.trailing,10)
+                                    .background(AppColors.redGradientColor1)
+                                    .cornerRadius(8)
+                                    .padding(.trailing,20)
+                                  
+
+                                
+                            }
+                            
+                            Spacer()
+                            
+                            
+                            HStack{
+                                
+                                
+                                
+                                
+                                Text("Ace Classic Club")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.medium)
+                                
+                                Spacer()
+                                
+                                Image("unsplash_-IPFb6J03Mw")
+                                    .offset(x:36)
+                                
+                                Image("unsplash_-IPFb6J03Mw")
+                                    .offset(x:24)
+                                
+                                Image("unsplash_-IPFb6J03Mw")
+                                    .offset(x:12)
+                                
+                                Image("unsplash_-IPFb6J03Mw")
+                                //                            .offset(x:15)
+                                
+                                Text("+120")
+                                    .foregroundColor(.white)
+                                    .fontWeight(.medium)
+                                
+                                
+                            }.padding()
+                                .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                              
+                            
+                            
+                            
+                        }.padding(.top)
+                        
+                        
+                        
+                    }
+                    .frame(height: 240)
+                    .cornerRadius(10)
+                    .padding(.top)
+                })
+               
+                
+                HStack{
+                    
+                    Button(action: {
+                        self.showingLiked = true
+                    }, label: {
+                        Image("Group 7367")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("Group 7369")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                            .offset(x: -10, y: 0)
+                        
+                        Text("Arsalan and 20 other")
                             .font(AppFonts.regular_12)
-                            .foregroundColor(.gray)
+                            .foregroundColor(Color.gray)
+                    })
+                    .sheet(isPresented: $showingLiked){
+                        whoLikedScreen()
+                        
+                    }
+                    Spacer()
+                    
+                    Button(action: {
+                        self.showingSheet.toggle()
+                    }, label: {
+                        Text("12 comments")
+                            .font(AppFonts.regular_10)
+                            .foregroundColor(Color.gray)
+                    })
+                    .sheet(isPresented: $showingSheet){
+                        commentsScreen()
+                        
                     }
                     
                 }
-                Spacer()
                 
-                Image("doted Icons")
+                Image("Line 2")
                 
-            }.padding(.bottom,10)
-            
-            Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                .font(.subheadline)
-                .foregroundColor(Color.gray)
-            
-            ZStack(alignment: .top){
-                
-                
-                
-                Image("unsplash_gmA751dxisA-1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*92, height: 240)
-                    .overlay(Color.black.opacity(0.03))
-                    .clipped()
-                   
-                
-                
-                VStack{
-                    
+                HStack{
                     HStack{
+                        Image("heart icon")
+                        Text("Like")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
                         
-                        Spacer()
-                        
-                        
-                        Text("Join")
-                            .foregroundColor(.white)
-                            .font(AppFonts.medium_12)
-                            .padding(15)
-                            .padding(.leading,10)
-                            .padding(.trailing,10)
-                            .background(AppColors.redGradientColor1)
-                            .cornerRadius(8)
-                            .padding(.trailing,20)
-                          
-
                         
                     }
                     
                     Spacer()
+                    Button(action: {
+                        self.showingSheet.toggle()
+                    }, label: {
+                        HStack{
+                            Image("ant-design_comment-outlined")
+                            Text("Comment")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(Color.gray)
+                            
+                        }
+                    })
+                    .sheet(isPresented: $showingSheet){
+                        commentsScreen()
+                        
+                    }
                     
-                    
+                    Spacer()
                     HStack{
-                        
-                        
-                        
-                        
-                        Text("Ace Classic Club")
-                            .foregroundColor(.white)
-                            .fontWeight(.medium)
-                        
-                        Spacer()
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:36)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:24)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:12)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                        //                            .offset(x:15)
-                        
-                        Text("+120")
-                            .foregroundColor(.white)
-                            .fontWeight(.medium)
-                        
-                        
-                    }.padding()
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
-                      
-                    
-                    
-                    
-                }.padding(.top)
-                
-                
-                
-            }
-            .frame(height: 240)
-            .cornerRadius(10)
-            .padding(.top)
-            HStack{
-                
-                Image("Group 7370")
-                
-                Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
-                
-                Spacer()
-                
-                Text("12 comments")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
-                
-            }
-            
-            Image("Line 2")
-            
-            HStack{
-                HStack{
-                    Image("heart icon")
-                    Text("Like")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                        Image("ion_share-social-sharp")
+                        Text("Share")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                    }
+                    Spacer()
+                    HStack{
+                        Image("Icons")
+                        Text("Save")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                    }
                     
                     
                 }
                 
-                Spacer()
-                HStack{
-                    Image("ant-design_comment-outlined")
-                    Text("Comment")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
-                    
-                }
-                Spacer()
-                HStack{
-                    Image("ion_share-social-sharp")
-                    Text("Share")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
-                }
-                Spacer()
-                HStack{
-                    Image("Icons")
-                    Text("Save")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
-                }
+              Divider()
                 
                 
-            }
-            
-          Divider()
-            
-            
-        }.padding(.bottom,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
-            .padding(.top,20)
+            }.padding(.bottom,20)
+                .padding(.leading,20)
+                .padding(.trailing,20)
+                .padding(.top,20)
 
-     
+         
+      
+       
         
         
     }
@@ -1059,6 +1256,10 @@ struct ClubsCardHome: View {
 
 struct marketPlaceSreachCardsHome : View {
     
+    @State private var  isfollowing = false
+    
+    @State private var showingSheet = false
+    @State private var showingLiked = false
    
     
     var body: some View {
@@ -1078,9 +1279,25 @@ struct marketPlaceSreachCardsHome : View {
                         Text("Ustad Hashim Khan.")
                             .font(AppFonts.medium_14)
                         
-                        Text("Follow")
-                            .font(AppFonts.medium_14)
-                            .foregroundColor(.blue)
+                        if(!self.isfollowing){
+                        Button(action: {
+                            self.isfollowing = true
+                        }, label: {
+                            Text("Follow")
+                                .font(AppFonts.medium_14)
+                                .foregroundColor(.blue)
+                        })
+                        }
+                        
+                        if(self.isfollowing){
+                        Button(action: {
+                            self.isfollowing = false
+                        }, label: {
+                            Text("Following")
+                                .font(AppFonts.medium_14)
+                                .foregroundColor(.blue)
+                        })
+                        }
                     }
                     .padding(.bottom,2)
                     
@@ -1197,10 +1414,10 @@ struct marketPlaceSreachCardsHome : View {
                            
                         
                         Spacer()
-                        Button(action: {
-                            
-                          
-                            
+                       
+                        
+                        NavigationLink(destination: {
+                            Classified_Spare_Parts_Screen()
                         }, label: {
                             Text("Purchase")
                                 .font(AppFonts.regular_14)
@@ -1210,8 +1427,10 @@ struct marketPlaceSreachCardsHome : View {
                                 .padding(.trailing,30)
                                 .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*30, height: UIScreen.heightBlockSize*4))
                                 
-                        })
+                        
                       
+                        })
+                          
                            
                     }
                     .padding(.leading)
@@ -1228,17 +1447,42 @@ struct marketPlaceSreachCardsHome : View {
             
             HStack{
                 
-                Image("Group 7370")
-                
-                Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingLiked = true
+                }, label: {
+                    Image("Group 7367")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("Group 7369")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                        .offset(x: -10, y: 0)
+                    
+                    Text("Arsalan and 20 other")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingLiked){
+                    whoLikedScreen()
+                    
+                }
                 
                 Spacer()
                 
-                Text("12 comments")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingSheet.toggle()
+                }, label: {
+                    Text("12 comments")
+                        .font(AppFonts.regular_10)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingSheet){
+                    commentsScreen()
+                    
+                }
                 
             }
             
@@ -1255,13 +1499,23 @@ struct marketPlaceSreachCardsHome : View {
                 }
                 
                 Spacer()
-                HStack{
-                    Image("ant-design_comment-outlined")
-                    Text("Comment")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                
+                Button(action: {
+                    self.showingSheet.toggle()
+                }, label: {
+                    HStack{
+                        Image("ant-design_comment-outlined")
+                        Text("Comment")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                        
+                    }
+                })
+                .sheet(isPresented: $showingSheet){
+                    commentsScreen()
                     
                 }
+                
                 Spacer()
                 HStack{
                     Image("ion_share-social-sharp")
@@ -1295,6 +1549,7 @@ struct commentsScreen : View{
            
             HStack{
                 Text("Comments")
+                    .foregroundColor(.black)
                     .font(AppFonts.medium_18)
             }.padding()
             
@@ -1350,10 +1605,12 @@ struct commentsDetails : View{
             
             VStack(alignment: .leading){
                 Text("Jhon smith")
+                    .foregroundColor(.black)
                     .font(AppFonts.semiBold_12)
                     .padding(.bottom,2)
                 
                 Text("Lorem ipsum dolor sit amet, consecteturhb hiu uhpuhiuhpiuhhuh adipiscing elit.")
+                    .foregroundColor(.black)
                     .font(AppFonts.regular_12)
                     
             }
@@ -1368,6 +1625,7 @@ struct commentsDetails : View{
                
             
             Text("Like")
+                .foregroundColor(.black)
                 .font(AppFonts.regular_12)
                 .padding(.trailing)
             
@@ -1375,6 +1633,7 @@ struct commentsDetails : View{
              
             
             Text("Reply")
+                .foregroundColor(.black)
                 .font(AppFonts.regular_12)
             
             

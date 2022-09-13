@@ -252,7 +252,7 @@ struct Create_Club_Screen: View {
                             Image("add photo image")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*10)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
                              
                             }
                         })

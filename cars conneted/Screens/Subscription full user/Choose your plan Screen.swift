@@ -12,6 +12,10 @@ struct Choose_your_plan_Screen: View {
     
     @State var toPaymentMethod = false
     
+    @State var showSheet = false
+    
+    @State var photos : Array<Image> = []
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
         VStack{
@@ -175,7 +179,7 @@ struct Choose_your_plan_Screen: View {
             }.frame(width: UIScreen.widthBlockSize*90, height: 650)
                 .padding(.bottom,10)
                 .padding(.top,-25)
-                .background(RoundedRectangle(cornerRadius: 30).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 650))
+                .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 650))
                 .padding(.leading)
             
                     
@@ -432,7 +436,18 @@ struct Choose_your_plan_Screen: View {
             }
             Spacer()
            
-        } .navigationBarHidden(true)
+        }.sheet(isPresented: self.$showSheet) {
+            
+            ImagePicker(sourceType: .photoLibrary) { image in
+               
+                    self.photos.append(Image(uiImage: image))
+                
+            }
+            
+            
+            }
+        
+        .navigationBarHidden(true)
         }
     }
 }

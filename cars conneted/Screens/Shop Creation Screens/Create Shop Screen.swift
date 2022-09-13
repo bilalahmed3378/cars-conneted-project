@@ -241,15 +241,18 @@ struct Create_Shop_Screen: View {
                     }
                     
                     
-                Button(action: {}, label: {
-                    Text("Create Shop")
-                        .font(AppFonts.semiBold_16)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
-                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                })
-                .padding(.top,30)
+                    NavigationLink(destination: {
+                        Shop_Created_successfully()
+                    }, label: {
+                        Text("Create Shop")
+                            .font(AppFonts.semiBold_16)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                 .padding(.top,30)
+                    })
+                   
                     
                 
                 

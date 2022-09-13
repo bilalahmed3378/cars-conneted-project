@@ -89,6 +89,7 @@ struct Friends_Requests_Screens: View {
                     }
                     .padding()
                     
+                    LazyVStack{
                     ForEach(0...10 , id: \.self){index in
                         
                         friendsList()
@@ -97,7 +98,7 @@ struct Friends_Requests_Screens: View {
                         
                         
                     }
-                    
+                    }
                     
                 }
                 
@@ -123,7 +124,8 @@ struct Friends_Requests_Screens_Previews: PreviewProvider {
 }
 
 struct friendsRequest: View {
-    
+    @State var toFriend = false
+    @State var toFollow = false
     var body : some View {
         
         HStack{
@@ -143,6 +145,8 @@ struct friendsRequest: View {
                 
             }
             Spacer()
+            
+            if(!self.toFriend){
             Button(action: {}, label: {
                 Text("Delete")
                     .font(AppFonts.medium_12)
@@ -150,14 +154,47 @@ struct friendsRequest: View {
                     .frame(width: 75, height: 40)
                     .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.3))
             })
+            }
            
-            Button(action: {}, label: {
+            if(!self.toFriend){
+            Button(action: {
+                self.toFriend = true
+            }, label: {
                 Text("Confirm")
                     .font(AppFonts.medium_12)
                     .foregroundColor(.white)
                     .frame(width: 75, height: 40)
                     .background(RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
             })
+            }
+            
+            if(self.toFriend && !self.toFollow){
+            Button(action: {
+                self.toFollow = true
+            }, label: {
+                Text("Follow Back")
+                    .font(AppFonts.medium_12)
+                    .foregroundColor(.white)
+                    .background(RoundedRectangle(cornerRadius: 5).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
+                    .padding()
+                 
+            })
+            }
+            
+            if (self.toFollow ){
+            Button(action: {
+                self.toFollow = false
+            }, label: {
+                Text("Following")
+                    .font(AppFonts.medium_12)
+                    .foregroundColor(AppColors.redGradientColor1)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
+                    .padding()
+            })
+            }
+            
+            
+           
             
         }.padding(.leading)
             .padding(.trailing)
@@ -174,7 +211,7 @@ struct friendsRequest: View {
 
 
 struct friendsList: View {
-    
+    @State var isFollow = true
     var body : some View {
         
         HStack{
@@ -195,9 +232,30 @@ struct friendsList: View {
             }
             Spacer()
            
-            Text("Follow Back")
-                .font(AppFonts.medium_14)
-                .foregroundColor(AppColors.redGradientColor1)
+            if(self.isFollow){
+            Button(action: {
+                self.isFollow = false
+            }, label: {
+                
+                Text("Follow Back")
+                    .font(AppFonts.medium_12)
+                    .foregroundColor(.white)
+                    .background(RoundedRectangle(cornerRadius: 5).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
+                    .padding()
+            })
+            }
+            
+            if (!self.isFollow){
+            Button(action: {
+                self.isFollow = true
+            }, label: {
+                Text("Following")
+                    .font(AppFonts.medium_12)
+                    .foregroundColor(AppColors.redGradientColor1)
+                    .background(RoundedRectangle(cornerRadius: 5).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
+                    .padding()
+            })
+            }
             
             
         }.padding(.leading)

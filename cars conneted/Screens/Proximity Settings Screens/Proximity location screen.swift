@@ -148,7 +148,7 @@ struct Proximity_location_screen: View {
             
             
             NavigationLink(destination: {
-                Proximity_Screen_2()
+                MainTabContainer()
             }, label: {
                 Text("Confirm")
                     .font(AppFonts.semiBold_16)

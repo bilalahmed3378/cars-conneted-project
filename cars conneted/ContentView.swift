@@ -295,12 +295,12 @@ struct NavigationDrawer: View {
                             Spacer()
                             Button(action: {
                                 withAnimation{
-                                    self.mainTabContainer.selectedIndex = 3
+                                    self.mainTabContainer.selectedIndex = 4
                                     self.isDrawerOpen = false
                                     self.drawerOffset = -(UIScreen.widthBlockSize*70)
                                 }
                             }){
-                                NavigationLink(destination: MessagesTab(isDrawerOpen: $isDrawerOpen), label: {
+                                
                                     HStack{
                                         Image("message icon white")
                                             .resizable()
@@ -315,7 +315,7 @@ struct NavigationDrawer: View {
                                         
                                         
                                     }
-                                })
+                                
                                
                             }
                         }
@@ -377,7 +377,9 @@ struct NavigationDrawer: View {
                             
 //                            NavigationLink(destination: BookingScreen(isFlowRootActive: self.$bookingsScreenActive), isActive : self.$bookingsScreenActive){
                                 
-                            
+                            NavigationLink(destination: {
+                                My_Shop_My_View()
+                            }, label: {
                                 HStack{
                                     Image("my classified icon white")
                                         .resizable()
@@ -389,6 +391,9 @@ struct NavigationDrawer: View {
                                         .foregroundColor(.white)
                                         .padding(.leading,5)
                                 }
+                            })
+                            
+                            
                                
                                 
                          //   }
@@ -400,10 +405,14 @@ struct NavigationDrawer: View {
                             
 //                            NavigationLink(destination:SavedScreen(isFlowRootActive: self.$savedScreenActive),isActive: self.$savedScreenActive){
                                 
+                            Button(action: {
+                                withAnimation{
+                                    self.mainTabContainer.selectedIndex = 2
+                                    self.isDrawerOpen = false
+                                    self.drawerOffset = -(UIScreen.widthBlockSize*70)
+                                }
+                            }){
                             
-                            NavigationLink(destination: {
-                                Events_Screen(isDrawerOpen: $isDrawerOpen)
-                            }, label: {
                                 HStack{
                                     Image("my events icon white")
                                         .resizable()
@@ -416,7 +425,7 @@ struct NavigationDrawer: View {
                                         .padding(.leading,5)
                                 }
                                
-                            })
+                            }
                                
                                 
                                 

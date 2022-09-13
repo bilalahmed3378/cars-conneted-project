@@ -16,7 +16,9 @@ struct Car_Specification: View {
         VStack{
             ScrollView(.vertical, showsIndicators: false){
             HStack{
-                Button(action: {}, label: {
+                Button(action: {
+                    self.presentaionMode.wrappedValue.dismiss()
+                }, label: {
                     
                     Image("Icons-2")
                         .resizable()
