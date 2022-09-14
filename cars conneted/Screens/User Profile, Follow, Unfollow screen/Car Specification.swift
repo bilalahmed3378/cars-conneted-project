@@ -11,6 +11,8 @@ struct Car_Specification: View {
     @State private var comment = ""
     @Environment(\.presentationMode) var presentaionMode
     
+    @State private var addComment = false
+    
     var body: some View {
        
         VStack{
@@ -227,16 +229,21 @@ struct Car_Specification: View {
                 VStack{
                 HStack{
                 TextEditor(text: self.$comment)
+                        .onTapGesture {
+                            self.addComment = true
+                        }
                     .font(AppFonts.regular_14)
                     .foregroundColor(.gray)
                     .frame(minHeight: 40, idealHeight: 40 , maxHeight: 40)
                     .colorMultiply(.white)
                     .overlay(HStack{
+                        if(!self.addComment){
                         Text("Add comment")
                             .font(AppFonts.regular_14)
                             .foregroundColor(.gray)
                             .padding(.leading)
                         Spacer()
+                        }
                     })
                   
                     

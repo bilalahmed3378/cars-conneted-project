@@ -199,15 +199,20 @@ struct Add_your_Car_Screen: View {
                   
                       Menu(content: {
                           
-                         Picker("type", selection: $selection2) {
+                          Button(action: {}, label: {
+                              Text("SUV")
+                          })
+                         
+                          Button(action: {}, label: {
+                              Text("Sports")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("Sedan")
+                          })
                         
-                              ForEach(colors, id: \.self) {
-                                  
-                                  Text($0)
-                                  
-                              }
-                          }
-                          .pickerStyle(.menu)
+                          
+                       
                           
                       }, label: {
                           Image("dropdown menu 2")
@@ -225,9 +230,7 @@ struct Add_your_Car_Screen: View {
                     
                     VStack{
                         
-                        let calendar = Calendar.current
-                        let components = calendar.dateComponents([.year], from: date)
-                        let year :Int = components.year ?? 2022
+//                    
                         
                 Text("Year")
                   .padding(.top,20)
@@ -248,15 +251,234 @@ struct Add_your_Car_Screen: View {
                         
                                
                       Menu(content: {
-                          Picker("year", selection: $selection) {
-                              ForEach(1970...year, id: \.self) {
-                                  
-                                  Text(String($0))
-                                  
-                              }
+                         
+                          Group{
+                          Button(action: {}, label: {
+                              Text("1970")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1971")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1972")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1973")
+                              
+                              
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1974")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1975")
+                          })
+                              
                           }
-                          .pickerStyle(.menu)
-                   
+                          
+                          Group{
+                          Button(action: {}, label: {
+                              Text("1976")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1977")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1978")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1979")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1980")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1981")
+                          })
+                          Button(action: {}, label: {
+                              Text("1982")
+                          })
+                          Button(action: {}, label: {
+                              Text("1983")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1984")
+                          })
+                              
+                          }
+                          
+                          Group{
+                          Button(action: {}, label: {
+                              Text("1985")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1986")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1987")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1988")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1989")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1990")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1991")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1992")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1993")
+                          })
+                              
+                          }
+                          
+                          Group{
+                          Button(action: {}, label: {
+                              Text("1994")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1995")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1996")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1997")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1998")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("1999")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2000")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2001")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2002")
+                          })
+                              
+                          }
+                          
+                          Group{
+                          Button(action: {}, label: {
+                              Text("2003")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2004")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2005")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2006")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2007")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2008")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2009")
+                          })
+                          Button(action: {}, label: {
+                              Text("2010")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2011")
+                          })
+                              
+                          }
+                          
+                          Group{
+                          Button(action: {}, label: {
+                              Text("2012")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2013")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2014")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2015")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2016")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2017")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2018")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2019")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2020")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("2021")
+                          })
+                          }
+                          Button(action: {}, label: {
+                              Text("2022")
+                          })
+                          
           
                       }, label: {
                           Image("bxs_calendar-event")
@@ -294,7 +516,7 @@ struct Add_your_Car_Screen: View {
                     }.padding(.leading)
                         .padding(.trailing)
                     
-                   // ScrollView( showsIndicators: false){
+                  
                     if(!self.photos.isEmpty){
                       
                         ForEach(0...(self.photos.count-1) ,id: \.self){ index in
@@ -337,7 +559,7 @@ struct Add_your_Car_Screen: View {
                             .padding(.trailing)
                             .padding(.top)
                     }
-                 //   }
+                
                     
                     HStack{
                         Spacer()

@@ -210,13 +210,18 @@ struct NavigationDrawer: View {
                                     Spacer()
                                 }.padding(.bottom,5)
                                 
-                                HStack{
-                                    Text("Update to Premium")
-                                        .foregroundColor(.yellow)
-                                        .font(AppFonts.regular_12)
-                                        .lineLimit(1)
-                                    Spacer()
-                                }.padding(.bottom,5)
+                                NavigationLink(destination: {
+                                    My_Plan_screen()
+                                }, label: {
+                                    HStack{
+                                        Text("Update to Premium")
+                                            .foregroundColor(.yellow)
+                                            .font(AppFonts.regular_12)
+                                            .lineLimit(1)
+                                        Spacer()
+                                    }.padding(.bottom,5)
+                                })
+                              
                           
                             }.padding(.leading,5)
                             

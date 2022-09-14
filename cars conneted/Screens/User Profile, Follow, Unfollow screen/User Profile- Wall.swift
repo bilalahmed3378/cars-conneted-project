@@ -65,12 +65,12 @@ struct User_Profile__Wall: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                    .frame(width: UIScreen.widthBlockSize*26, height: 100)
-                                    .offset(x: 0, y: -45)
+                                    .offset(x: 0, y: -50)
                                     .padding(.leading,1)
                                     .padding(.trailing,1)
                                     .padding(.bottom,5)
                                     .padding(.top,5)
-                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -45))
+                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -50))
                             })
                           
                             
@@ -815,40 +815,45 @@ struct ClubsCardProfile: View {
                     
                     Spacer()
                     
+                    NavigationLink(destination: {
+                        Club_details_member_view_Screen()
+                    }, label: {
+                        HStack{
+                            
+                            
+                            
+                            
+                            Text("Ace Classic Club")
+                                .foregroundColor(.white)
+                                .font(AppFonts.regular_12)
+                            
+                            Spacer()
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:36)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:24)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .offset(x:12)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                            //                            .offset(x:15)
+                            
+                            Text("+120")
+                                .foregroundColor(.white)
+                                .fontWeight(.medium)
+                            
+                            
+                        }.padding()
+                            .padding(.top,-20)
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
+                          
+                        
+                    })
                     
-                    HStack{
-                        
-                        
-                        
-                        
-                        Text("Ace Classic Club")
-                            .foregroundColor(.white)
-                            .font(AppFonts.regular_12)
-                        
-                        Spacer()
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:36)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:24)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                            .offset(x:12)
-                        
-                        Image("unsplash_-IPFb6J03Mw")
-                        //                            .offset(x:15)
-                        
-                        Text("+120")
-                            .foregroundColor(.white)
-                            .fontWeight(.medium)
-                        
-                        
-                    }.padding()
-                        .padding(.top,-20)
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
-                      
-                    
+                   
                     
                     
                 }.padding(.top,20)
@@ -971,14 +976,19 @@ struct ClassifiedCardProfile: View {
                 
                Spacer()
                 
-                Text("View Details")
-                    .font(AppFonts.medium_14)
-                    .foregroundColor(AppColors.redGradientColor1)
-                
-                Image("Icons-5")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
+                NavigationLink(destination: {
+                    Classified_Spare_Parts_Screen()
+                }, label: {
+                    Text("View Details")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(AppColors.redGradientColor1)
+                    
+                    Image("Icons-5")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 24, height: 24)
+                })
+               
                 
             }
             .padding(.leading,30)

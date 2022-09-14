@@ -35,19 +35,7 @@ struct View_Status_Screen: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 60, height: 60)
-                    .overlay(
-                        VStack{
-                            Spacer()
-                            HStack{
-                                Spacer()
-                      Image("Group-1")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20 )
-                            }.padding(.trailing,1)
-                        }
-                )
-                    .padding(4)
+                   .padding(4)
                     .background(RoundedRectangle(cornerRadius: 100).strokeBorder(.red))
                     .padding(.trailing,10)
                 

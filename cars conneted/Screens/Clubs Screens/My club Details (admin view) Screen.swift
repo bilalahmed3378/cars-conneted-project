@@ -275,7 +275,7 @@ struct My_club_Details__admin_view__Screen: View {
 
                 LazyVStack{
                     ForEach(0...3, id: \.self){index in
-                        PostsClubs()
+                        PostsHome()
                     }
                 }
             

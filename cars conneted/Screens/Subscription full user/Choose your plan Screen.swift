@@ -12,9 +12,7 @@ struct Choose_your_plan_Screen: View {
     
     @State var toPaymentMethod = false
     
-    @State var showSheet = false
     
-    @State var photos : Array<Image> = []
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false){
@@ -63,7 +61,7 @@ struct Choose_your_plan_Screen: View {
                     Image("Frame 8647")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 200)
+                        .frame(width: UIScreen.widthBlockSize*100, height: 205)
                     
                     VStack{
                         
@@ -86,7 +84,7 @@ struct Choose_your_plan_Screen: View {
                             .foregroundColor(.white)
                         
                         
-                    }.frame(width: UIScreen.widthBlockSize*50, height: 100)
+                    }.frame(width: 150, height: 100)
                     
                     
                     
@@ -190,7 +188,7 @@ struct Choose_your_plan_Screen: View {
                         Image("Frame 8897")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*90, height: 200)
+                            .frame(width: UIScreen.widthBlockSize*100, height: 205)
                         
                         VStack{
                             
@@ -314,7 +312,7 @@ struct Choose_your_plan_Screen: View {
                             Image("Frame 8898")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*90, height: 200)
+                                .frame(width: UIScreen.widthBlockSize*100, height: 205)
                             
                             VStack{
                                 
@@ -436,16 +434,7 @@ struct Choose_your_plan_Screen: View {
             }
             Spacer()
            
-        }.sheet(isPresented: self.$showSheet) {
-            
-            ImagePicker(sourceType: .photoLibrary) { image in
-               
-                    self.photos.append(Image(uiImage: image))
-                
-            }
-            
-            
-            }
+        }
         
         .navigationBarHidden(true)
         }

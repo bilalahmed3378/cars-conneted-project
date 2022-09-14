@@ -155,14 +155,25 @@ struct Create_Club_Screen: View {
                   
                   .overlay(HStack{
                     Spacer()
-                    Button(action: {
-                     
-                    }) {
-                      Image("dropdown menu 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    }.padding()
+                   
+                      Menu(content:{
+                          Button(action: {}, label: {
+                              Text("Private")
+                          })
+                          
+                          Button(action: {}, label: {
+                              Text("Public")
+                          })
+                          
+                      }, label:{
+                          Image("dropdown menu 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                                .padding()
+                      })
+                      
+                      
                   })
                         
                     }

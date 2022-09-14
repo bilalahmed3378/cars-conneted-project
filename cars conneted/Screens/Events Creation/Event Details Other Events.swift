@@ -183,6 +183,11 @@ struct Event_Details_Other_Events: View {
                Text("Social Event")
                     .font(AppFonts.regular_12)
                 
+                Image("Ellipse 3")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 6, height: 6)
+                
                 Text("Entrepreneurs")
                      .font(AppFonts.regular_12)
                 

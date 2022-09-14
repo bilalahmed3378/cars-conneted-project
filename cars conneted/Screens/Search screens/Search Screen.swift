@@ -147,7 +147,7 @@ struct Search_Screen: View {
                     
                     LazyVStack{
                         ForEach(0...10 , id:\.self){ index in
-                            PostCard()
+                            PostsHome()
                 
                 }
                
@@ -205,52 +205,57 @@ struct ClubCard : View {
       
       HStack{
           
-          Image("Image clubs")
-          
-          VStack(alignment: .leading){
+          NavigationLink(destination: {
+             Club_details_member_view_Screen()
+          }, label: {
+              Image("Image clubs")
               
-              HStack{
-                  Text("Ace Classic Club")
-                      .font(AppFonts.semiBold_14)
-                      .foregroundColor(.red)
-                      .lineLimit(1)
+              VStack(alignment: .leading){
                   
-                  Spacer()
+                  HStack{
+                      Text("Ace Classic Club")
+                          .font(AppFonts.semiBold_14)
+                          .foregroundColor(.red)
+                          .lineLimit(1)
+                      
+                      Spacer()
+                  }
+                  
+                  ZStack{
+                      
+                      Image("unsplash_1Fsb2C7hxQ0")
+                          .resizable()
+                          .aspectRatio(contentMode: .fit)
+                          .frame(width: 20, height: 20)
+                      
+                      Image("unsplash_uXhUyqMnC_U")
+                          .resizable()
+                          .aspectRatio(contentMode: .fit)
+                          .frame(width: 20, height: 20)
+                          .offset(x: 12)
+                      
+                      Image("unsplash_ZAFpiVgZNng")
+                          .resizable()
+                          .aspectRatio(contentMode: .fit)
+                          .frame(width: 20, height: 20)
+                          .offset(x: 24)
+                      
+                      Image("unsplash_-IPFb6J03Mw")
+                          .resizable()
+                          .aspectRatio(contentMode: .fit)
+                          .frame(width: 20, height: 20)
+                          .offset(x: 36)
+                  }
+                  
+                  Text("+120 Members")
+                      .font(AppFonts.medium_12)
+                      .foregroundColor(.gray)
+                  
+                  
               }
-              
-              ZStack{
-                  
-                  Image("unsplash_1Fsb2C7hxQ0")
-                      .resizable()
-                      .aspectRatio(contentMode: .fit)
-                      .frame(width: 20, height: 20)
-                  
-                  Image("unsplash_uXhUyqMnC_U")
-                      .resizable()
-                      .aspectRatio(contentMode: .fit)
-                      .frame(width: 20, height: 20)
-                      .offset(x: 12)
-                  
-                  Image("unsplash_ZAFpiVgZNng")
-                      .resizable()
-                      .aspectRatio(contentMode: .fit)
-                      .frame(width: 20, height: 20)
-                      .offset(x: 24)
-                  
-                  Image("unsplash_-IPFb6J03Mw")
-                      .resizable()
-                      .aspectRatio(contentMode: .fit)
-                      .frame(width: 20, height: 20)
-                      .offset(x: 36)
-              }
-              
-              Text("+120 Members")
-                  .font(AppFonts.medium_12)
-                  .foregroundColor(.gray)
-              
-              
-          }
-          .padding(.leading,5)
+              .padding(.leading,5)
+          })
+        
           
           Button(action: {}, label: {
               Text("Leave")
@@ -500,16 +505,20 @@ struct EventCard : View {
                     Spacer()
                     Spacer()
                     
-                    Button(action: {
-                       
-                    }){
+                    NavigationLink(destination: {
+                        Event_Details_Other_Events()
+                    }, label: {
                         VStack{
                             Text("Register")
                                 .font(AppFonts.regular_14)
                                 .foregroundColor(.white)
                                 .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*40, height: 45))
                         }
-                    }
+                        
+                    })
+                        
+                       
+                    
                    
                   
                 }.padding(.trailing,50)

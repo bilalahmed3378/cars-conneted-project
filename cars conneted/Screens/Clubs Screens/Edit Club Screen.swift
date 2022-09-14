@@ -16,6 +16,10 @@ struct Edit_Club_Screen: View {
     @State var clubPrivacy = ""
     @State var whoCanJoin = ""
     
+    @State var showSheet = false
+    
+    @State var photos : Array<Image> = []
+    
     
     var body: some View {
         ZStack{
@@ -36,7 +40,7 @@ struct Edit_Club_Screen: View {
                 }.edgesIgnoringSafeArea(.top)
                     
             ScrollView(.vertical, showsIndicators: false){
-                VStack(alignment: .leading){
+                VStack{
                
                     HStack{
                         Button(action: {}, label: {
@@ -180,24 +184,66 @@ struct Edit_Club_Screen: View {
                         
                     }
                     
-                    HStack{
-                        Image("unsplash_eqW1MPinEV4")
+                  
+                    if(!self.photos.isEmpty){
+                      
+                       
+                        ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+                            
+                           
+                            self.photos[index]
+                                .resizable()
+                                .aspectRatio( contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                                .cornerRadius(8)
+                                .overlay(
+                                    VStack{
+                                       
+                                        
+                                        HStack{
+                                            Spacer()
+                                            Image(systemName: "minus")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .foregroundColor(.white)
+                                                .padding(5)
+                                                .frame(width: 15, height: 15)
+                                                .background(Circle()
+                                                    .fill(.red))
+                                                .offset(x: 5, y: -5)
+                                                .onTapGesture{
+                                                    self.photos.remove(at: index)
+                                                }
+                                            
+                                            
+                                           
+                                        }
+                                        Spacer()
+                                    }
+                                    
+                                )
+                         
+                            
+                        }
+                            .padding(.top)
+                      
+                    }
+                  
+                    
+                    Button(action: {
+                        self.showSheet = true
+                    }, label: {
+                        HStack{
+                            Spacer()
+                        Image("add photo image")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Image("unsplash_eqW1MPinEV4")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                        Image("Frame 40")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*30, height: 100)
-                        
-                    }.padding(.top)
-                        .padding(.bottom)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
+                            Spacer()
+
+                        }
+                    })
+                 
                     
                     HStack{
                         Spacer()
@@ -236,7 +282,18 @@ struct Edit_Club_Screen: View {
             }
            
            
-        } .navigationBarHidden(true)
+        }
+        .sheet(isPresented: self.$showSheet) {
+            
+            ImagePicker(sourceType: .photoLibrary) { image in
+               
+                    self.photos.append(Image(uiImage: image))
+                
+            }
+            
+            
+            }
+        .navigationBarHidden(true)
     }
 }
 

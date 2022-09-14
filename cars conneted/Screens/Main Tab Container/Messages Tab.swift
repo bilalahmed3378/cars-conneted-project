@@ -44,10 +44,15 @@ struct  MessagesTab: View {
                 
                 Spacer()
                 
-                Image("profile icon home")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40)
+                NavigationLink(destination: {
+                    My_Profile_Screen()
+                }, label: {
+                    Image("profile icon home")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                })
+               
                 
                 
             }.padding(.leading,24)

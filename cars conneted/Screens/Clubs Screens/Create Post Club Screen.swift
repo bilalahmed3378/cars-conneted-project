@@ -12,8 +12,13 @@ struct Create_Post_Club_Screen: View {
     
     @State private var postText: String = "What's in your mind..."
     
+    @State var showSheet = false
+    
+    @State var photos : Array<Image> = []
+    
     var body: some View {
         VStack{
+            ScrollView(.vertical){
             HStack{
                 Button(action: {}, label: {
                     Image("Icons-2")
@@ -33,7 +38,7 @@ struct Create_Post_Club_Screen: View {
                     .font(AppFonts.medium_12)
                     .foregroundColor(.white)
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*6))
+                    .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*5))
                 
             }
             .padding()
@@ -62,17 +67,23 @@ struct Create_Post_Club_Screen: View {
                 .font(AppFonts.regular_14)
                 .padding()
                 .foregroundColor(.gray)
-                .frame(minHeight: 50, idealHeight: 50 , maxHeight: 250)
+                .frame(minHeight: 250, idealHeight: 50 , maxHeight: 250)
                 .colorMultiply(.white)
                 .overlay(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.05)))
                 .overlay(
                     VStack{
                         Spacer()
                     HStack{
-                    Image("dashicons_format-gallery")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 30, height: 30)
+                        
+                        Button(action: {
+                            self.showSheet = true
+                        }, label: {
+                            Image("dashicons_format-gallery")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                        })
+                   
                     
                     Image("ant-design_camera-filled")
                         .resizable()
@@ -87,10 +98,66 @@ struct Create_Post_Club_Screen: View {
                 )
                 .padding()
             
-           
             
-            Spacer()
-        } .navigationBarHidden(true)
+            if(!self.photos.isEmpty){
+              
+               
+                ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+                    
+                   
+                    self.photos[index]
+                        .resizable()
+                        .aspectRatio( contentMode: .fill)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                        .cornerRadius(8)
+                        .overlay(
+                            VStack{
+                               
+                                
+                                HStack{
+                                    Spacer()
+                                    Image(systemName: "minus")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .foregroundColor(.white)
+                                        .padding(5)
+                                        .frame(width: 15, height: 15)
+                                        .background(Circle()
+                                            .fill(.red))
+                                        .offset(x: 5, y: -5)
+                                        .onTapGesture{
+                                            self.photos.remove(at: index)
+                                        }
+                                    
+                                    
+                                   
+                                }
+                                Spacer()
+                            }
+                            
+                        )
+                 
+                    
+                }
+                    .padding(.top)
+              
+            }
+            
+           
+            }
+          
+        }
+        .sheet(isPresented: self.$showSheet) {
+            
+            ImagePicker(sourceType: .photoLibrary) { image in
+               
+                    self.photos.append(Image(uiImage: image))
+                
+            }
+            
+            
+            }
+        .navigationBarHidden(true)
     }
 }
 

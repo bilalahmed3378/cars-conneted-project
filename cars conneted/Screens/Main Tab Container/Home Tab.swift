@@ -601,18 +601,27 @@ struct PostsHome : View {
           
           HStack{
              
-              Image("post picture")
+              NavigationLink(destination: {
+                  User_Profile__Wall()
+              }, label: {
+                  Image("post picture")
+                  
+                  VStack(alignment: .leading){
+                      Text("Elizebeth Smith")
+                          .foregroundColor(.black)
+                          .font(AppFonts.medium_14)
+                          .padding(.bottom,2)
+                      
+                      Text("1h ago")
+                          .foregroundColor(Color.gray)
+                          .font(AppFonts.regular_12)
+                      
+                      
+                  }
+              })
+            
               
-              VStack(alignment: .leading){
-                  Text("Elizebeth Smith")
-                      .font(AppFonts.medium_14)
-                  
-                  Text("1h ago")
-                      .foregroundColor(Color.gray)
-                      .font(AppFonts.regular_12)
-                  
-                  
-              }
+              
               Spacer()
               
               Image("doted Icons")
@@ -744,16 +753,31 @@ struct EventsHome : View {
           
           HStack{
              
-              Image("post picture")
-                  .resizable()
-                  .aspectRatio(contentMode: .fit)
-                  .frame(width: 50, height: 50)
+              NavigationLink(destination: {
+                  User_Profile__Wall()
+              }, label: {
+                  
+                  Image("post picture")
+                      .resizable()
+                      .aspectRatio(contentMode: .fit)
+                      .frame(width: 50, height: 50)
+              })
+             
               
               VStack(alignment: .leading){
                   
+                  
                   HStack{
-                      Text("Bhai Nadeem.")
-                          .font(AppFonts.medium_14)
+                      
+                      NavigationLink(destination: {
+                          User_Profile__Wall()
+                      }, label: {
+                          Text("Bhai Nadeem.")
+                              .foregroundColor(.black)
+                              .font(AppFonts.medium_14)
+                      })
+                      
+                    
                       
                       if(!self.isfollowing){
                       Button(action: {
@@ -853,7 +877,7 @@ struct EventsHome : View {
                       Text("$25")
                           .font(AppFonts.regular_14)
                           .foregroundColor(.gray)
-                          .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: 86, height: 45))
+                          .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*5))
                       
                   
                       Spacer()
@@ -865,7 +889,7 @@ struct EventsHome : View {
                               Text("Register")
                                   .font(AppFonts.regular_14)
                                   .foregroundColor(.white)
-                                  .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: 200, height: 45))
+                                  .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*5))
                           }
                       }
                      
@@ -1010,16 +1034,28 @@ struct ClubsCardHome: View {
                 
                 HStack{
                    
-                    Image("post picture")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 50, height: 50)
+                    NavigationLink(destination: {
+                        User_Profile__Wall()
+                    }, label: {
+                        Image("post picture")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 50, height: 50)
+                    })
+                   
                     
                     VStack(alignment: .leading){
                         
                         HStack{
-                            Text("Rana Sahahbaz.")
-                                .font(AppFonts.medium_14)
+                            
+                            NavigationLink(destination: {
+                                User_Profile__Wall()
+                            }, label: {
+                                Text("Rana Sahahbaz.")
+                                    .foregroundColor(.black)
+                                    .font(AppFonts.medium_14)
+                            })
+                          
                             
                             if(!self.isfollowing){
                             Button(action: {
@@ -1268,16 +1304,28 @@ struct marketPlaceSreachCardsHome : View {
             
             HStack{
                
-                Image("post picture")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 50, height: 50)
+                NavigationLink(destination: {
+                    User_Profile__Wall()
+                }, label: {
+                    Image("post picture")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 50, height: 50)
+                })
+               
                 
                 VStack(alignment: .leading){
                     
                     HStack{
-                        Text("Ustad Hashim Khan.")
-                            .font(AppFonts.medium_14)
+                        
+                        NavigationLink(destination: {
+                            User_Profile__Wall()
+                        }, label: {
+                            Text("Ustad Hashim Khan.")
+                                .foregroundColor(.black)
+                                .font(AppFonts.medium_14)
+                        })
+                        
                         
                         if(!self.isfollowing){
                         Button(action: {
@@ -1409,7 +1457,7 @@ struct marketPlaceSreachCardsHome : View {
                             .padding(10)
                             .padding(.leading,10)
                             .padding(.trailing,10)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*4))
+                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*5))
                             
                            
                         
@@ -1425,11 +1473,12 @@ struct marketPlaceSreachCardsHome : View {
                                 .padding(10)
                                 .padding(.leading,30)
                                 .padding(.trailing,30)
-                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*30, height: UIScreen.heightBlockSize*4))
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*5))
                                 
                         
                       
                         })
+                        .padding(.trailing)
                           
                            
                     }

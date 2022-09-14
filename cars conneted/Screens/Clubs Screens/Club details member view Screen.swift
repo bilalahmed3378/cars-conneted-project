@@ -117,6 +117,8 @@ struct Club_details_member_view_Screen: View {
                     
                 }.padding(.leading)
                     .padding(.trailing)
+                    .padding(.top,10)
+                    .padding(.bottom,10)
                    
                     .background(RoundedRectangle(cornerRadius: 50).strokeBorder(AppColors.redGradientColor1))
                 }
@@ -290,7 +292,7 @@ struct Club_details_member_view_Screen: View {
                 
                 LazyVStack{
                     ForEach(0...3, id: \.self){index in
-                        PostsClubsMember()
+                        PostsHome()
                     }
                 }
                 }

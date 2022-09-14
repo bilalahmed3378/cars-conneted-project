@@ -31,7 +31,6 @@
 		592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A22887C7B700A531A4 /* Messages Tab.swift */; };
 		592F18A82887EDB800A531A4 /* Search Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18A72887EDB800A531A4 /* Search Screen.swift */; };
 		592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AC28882C4300A531A4 /* post screen 2.swift */; };
-		592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18AE2889160E00A531A4 /* Post screen 3.swift */; };
 		592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B3288955A200A531A4 /* post screen 5 preview .swift */; };
 		592F18B92889806E00A531A4 /* message screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592F18B82889806D00A531A4 /* message screen.swift */; };
 		593466692886712800956869 /* cars_connetedApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 593466682886712800956869 /* cars_connetedApp.swift */; };
@@ -126,6 +125,7 @@
 		59A0B7C828D05A9000976D0B /* All Cars View Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B7C728D05A9000976D0B /* All Cars View Screen.swift */; };
 		59A0B7CA28D05B8400976D0B /* All Sparepart View Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B7C928D05B8400976D0B /* All Sparepart View Screen.swift */; };
 		59A0B7CC28D05BCB00976D0B /* All Service View Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B7CB28D05BCB00976D0B /* All Service View Screen.swift */; };
+		59C4559E28D1E40900A73F74 /* Classified Spareparts My View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C4559D28D1E40900A73F74 /* Classified Spareparts My View.swift */; };
 		59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */; };
 		59D6147828AD0A560014E4E9 /* Help Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6147728AD0A550014E4E9 /* Help Screen.swift */; };
 		59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */; };
@@ -215,7 +215,6 @@
 		592F18A22887C7B700A531A4 /* Messages Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Messages Tab.swift"; sourceTree = "<group>"; };
 		592F18A72887EDB800A531A4 /* Search Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Search Screen.swift"; sourceTree = "<group>"; };
 		592F18AC28882C4300A531A4 /* post screen 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 2.swift"; sourceTree = "<group>"; };
-		592F18AE2889160E00A531A4 /* Post screen 3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post screen 3.swift"; sourceTree = "<group>"; };
 		592F18B3288955A200A531A4 /* post screen 5 preview .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "post screen 5 preview .swift"; sourceTree = "<group>"; };
 		592F18B82889806D00A531A4 /* message screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "message screen.swift"; sourceTree = "<group>"; };
 		593466652886712800956869 /* cars conneted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "cars conneted.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -309,6 +308,7 @@
 		59A0B7C728D05A9000976D0B /* All Cars View Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All Cars View Screen.swift"; sourceTree = "<group>"; };
 		59A0B7C928D05B8400976D0B /* All Sparepart View Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All Sparepart View Screen.swift"; sourceTree = "<group>"; };
 		59A0B7CB28D05BCB00976D0B /* All Service View Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All Service View Screen.swift"; sourceTree = "<group>"; };
+		59C4559D28D1E40900A73F74 /* Classified Spareparts My View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Spareparts My View.swift"; sourceTree = "<group>"; };
 		59C80D8928ADFB5000F9E5F7 /* Privacy Policy Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Privacy Policy Screen.swift"; sourceTree = "<group>"; };
 		59D6147728AD0A550014E4E9 /* Help Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Help Screen.swift"; sourceTree = "<group>"; };
 		59D6147928AD17B90014E4E9 /* FeedBack Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedBack Screen.swift"; sourceTree = "<group>"; };
@@ -535,7 +535,6 @@
 			isa = PBXGroup;
 			children = (
 				592F18AC28882C4300A531A4 /* post screen 2.swift */,
-				592F18AE2889160E00A531A4 /* Post screen 3.swift */,
 				592F18B3288955A200A531A4 /* post screen 5 preview .swift */,
 				59428F1828D06D78002E2CD1 /* Add Status Screen.swift */,
 			);
@@ -881,6 +880,7 @@
 			children = (
 				59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */,
 				597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */,
+				59C4559D28D1E40900A73F74 /* Classified Spareparts My View.swift */,
 				597282DC28B751FA0004F4CB /* Classified Service Screen.swift */,
 				59A0B7C328D055F500976D0B /* Recommended Classified Screen.swift */,
 				59A0B7C528D059BC00976D0B /* Popular Classified Screen.swift */,
@@ -1095,7 +1095,6 @@
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				5981EC2828CB0DF300C6461D /* HalfASheetPost.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
-				592F18AF2889160F00A531A4 /* Post screen 3.swift in Sources */,
 				593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */,
 				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
 				5909F69328B3655D00F7FD38 /* My Plan screen.swift in Sources */,
@@ -1181,6 +1180,7 @@
 				59A0B7CA28D05B8400976D0B /* All Sparepart View Screen.swift in Sources */,
 				59A0B7C428D055F500976D0B /* Recommended Classified Screen.swift in Sources */,
 				599AF4B328B62A7400DE103F /* Post Product Parts Screen.swift in Sources */,
+				59C4559E28D1E40900A73F74 /* Classified Spareparts My View.swift in Sources */,
 				590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 				59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */,

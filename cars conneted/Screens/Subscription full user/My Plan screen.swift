@@ -75,6 +75,7 @@ struct My_Plan_screen: View {
             }.padding()
                 .padding(.leading,10)
                 .padding(.trailing,10)
+                .padding(.bottom)
                     
             VStack{
                 
@@ -83,7 +84,7 @@ struct My_Plan_screen: View {
                     Image("Frame 8647")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 180)
+                        .frame(width: UIScreen.widthBlockSize*100, height: 205)
                     
                     VStack{
                         
@@ -172,6 +173,7 @@ struct My_Plan_screen: View {
                         .foregroundColor(.white)
                         .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*80, height: 56))
                 })
+                .padding(.bottom)
                
                 
             

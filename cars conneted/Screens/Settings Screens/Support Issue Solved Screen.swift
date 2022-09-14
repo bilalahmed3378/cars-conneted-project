@@ -58,10 +58,14 @@ struct Support_Issue_Solved_Screen: View {
             }.padding(.leading)
                 .padding(.trailing)
             
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*50)
+            HStack{
+                Spacer()
+                
+                LottieView(name: LottieAnimations.successAnimation)
+                    .frame(width: 300, height: 300)
+                
+                Spacer()
+            }
             
             NavigationLink(destination: MainTabContainer(), label: {
                 Text("Proceed to Home")

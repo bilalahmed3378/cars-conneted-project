@@ -38,7 +38,10 @@ struct Getting_Started_Screen: View {
                 VStack{
                     
                 HStack{
-                    Image("Ellipse 11")
+                    Image("Ellipse 35-1")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 100, height: 100)
                 }.padding()
                
                 HStack{

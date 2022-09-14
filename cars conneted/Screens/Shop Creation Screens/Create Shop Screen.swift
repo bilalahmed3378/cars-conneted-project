@@ -17,6 +17,10 @@ struct Create_Shop_Screen: View {
     @State  var website = ""
     @State var description = ""
     
+    @State var showSheet = false
+    
+    @State var photos : Array<Image> = []
+    
     @Environment(\.presentationMode) var presentaionMode
     
     var body: some View {
@@ -27,7 +31,9 @@ struct Create_Shop_Screen: View {
                 
                 // top bar
                 HStack{
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.presentaionMode.wrappedValue.dismiss()
+                    }, label: {
                         Image("back icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -233,11 +239,60 @@ struct Create_Shop_Screen: View {
                     .padding(.top,30)
                    
                     
+                    
+                    if(!self.photos.isEmpty){
+                      
+                        ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+                            
+                            
+                            self.photos[index]
+                                .resizable()
+                                .aspectRatio( contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                                .cornerRadius(8)
+                                .overlay(
+                                    VStack{
+                                       
+                                        
+                                        HStack{
+                                            Spacer()
+                                            Image(systemName: "minus")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .foregroundColor(.white)
+                                                .padding(5)
+                                                .frame(width: 15, height: 15)
+                                                .background(Circle()
+                                                    .fill(.red))
+                                                .offset(x: 5, y: -5)
+                                                .onTapGesture{
+                                                    self.photos.remove(at: index)
+                                                }
+                                            
+                                            
+                                           
+                                        }
+                                        Spacer()
+                                    }
+                                    
+                                )
+                            
+                            
+                        }
+                            .padding(.top)
+                    }
+                
+                    
                     HStack{
-                        Image("unsplash_AHnhdjyTNGM")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: UIScreen.widthBlockSize*90, height: 220)
+                        Spacer()
+                    Image("add photo image")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
+                       .onTapGesture{
+                            self.showSheet = true
+                        }
+                        Spacer()
                     }
                     
                     
@@ -263,7 +318,18 @@ struct Create_Shop_Screen: View {
                     
             }
            
-            }.edgesIgnoringSafeArea(.top)
+            }
+            .sheet(isPresented: self.$showSheet) {
+                
+                ImagePicker(sourceType: .photoLibrary) { image in
+                   
+                        self.photos.append(Image(uiImage: image))
+                    
+                }
+                
+                
+                }
+            .edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)
         
     }

@@ -42,7 +42,16 @@ struct Add_classified_Screen: View {
     @State private var location = ""
     @Environment(\.presentationMode) var presentaionMode
     
+    @State var showSheet = false
+    
+    @State var photos : Array<Image> = []
+    
+    
     @State var isSelected: Int = 0
+    
+    @State private var addShop1 = false
+    
+    @State private var addShop2 = false
     
     var body: some View {
         VStack{
@@ -169,12 +178,17 @@ struct Add_classified_Screen: View {
                                 .foregroundColor(.black)
                                 .overlay(HStack{
                                     Spacer()
-                                    
-                                    Image("search icon black")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 20, height: 20)
-                                        .padding()
+                                    Button(action: {
+                                        self.addShop1 = false
+                                        self.addShop2 = false
+                                    }, label: {
+                                        Image("search icon black")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 20, height: 20)
+                                            .padding()
+                                    })
+                                   
                                     
                                 })
                         }
@@ -184,29 +198,43 @@ struct Add_classified_Screen: View {
                         
                         
                         HStack{
+                            
+                            if(!self.addShop1){
                             HStack{
                                 Text("ABC")
                                     .font(AppFonts.regular_14)
                                 
-                                
-                                Image("cross icons")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
+                                Button(action: {
+                                    self.addShop1 = true
+                                }, label: {
+                                    Image("cross icons")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20, height: 20)
+                                })
+                               
                             }.padding()
                                 .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            }
                             
+                            if(!self.addShop2){
                             HStack{
                                 Text("desc")
                                     .font(AppFonts.regular_14)
                                     .foregroundColor(.gray)
                                 
-                                Image("cross icons")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
+                                Button(action: {
+                                    self.addShop2 = true
+                                }, label: {
+                                    Image("cross icons")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 20, height: 20)
+                                })
+                               
                             }.padding()
                                 .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
+                            }
                             
                             Spacer()
                         }
@@ -626,26 +654,61 @@ struct Add_classified_Screen: View {
                         
                         .padding(.top)
                         
-                        HStack{
-                            Image("Rectangle 4485")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
-                            
-                            Image("Rectangle 4485")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
-                            Image("Frame 40-2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
+                        
+                        if(!self.photos.isEmpty){
+                          
+                            ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+                                
+                                
+                                self.photos[index]
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fill)
+                                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                                    .cornerRadius(8)
+                                    .overlay(
+                                        VStack{
+                                           
+                                            
+                                            HStack{
+                                                Spacer()
+                                                Image(systemName: "minus")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .foregroundColor(.white)
+                                                    .padding(5)
+                                                    .frame(width: 15, height: 15)
+                                                    .background(Circle()
+                                                        .fill(.red))
+                                                    .offset(x: 5, y: -5)
+                                                    .onTapGesture{
+                                                        self.photos.remove(at: index)
+                                                    }
+                                                
+                                                
+                                               
+                                            }
+                                            Spacer()
+                                        }
+                                        
+                                    )
+                                
+                                
+                            }
+                                .padding(.top)
                         }
+                    
                         
-                        
+                        HStack{
+                            Spacer()
+                        Image("add photo image")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
+                           .onTapGesture{
+                                self.showSheet = true
+                            }
+                            Spacer()
+                        }
                         
                         HStack{
                             Text("Different Contact Details")
@@ -746,14 +809,15 @@ struct Add_classified_Screen: View {
                 }
                 
                 if(self.isSelected == 1) {
+                    
                     HStack{
                         Text("Link to shop")
                             .font(AppFonts.regular_16)
                         
                         Spacer()
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+//                    .padding(.leading)
+//                    .padding(.trailing)
                     .padding(.top,10)
                     
                     HStack{
@@ -774,8 +838,8 @@ struct Add_classified_Screen: View {
                                 
                             })
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+//                    .padding(.leading)
+//                    .padding(.trailing)
                     .padding(.bottom)
                     
                     
@@ -791,7 +855,8 @@ struct Add_classified_Screen: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 20, height: 20)
-                            }.padding()
+                            }
+                            .padding()
                                 .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
                             
                             HStack{
@@ -803,20 +868,22 @@ struct Add_classified_Screen: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 20, height: 20)
-                            }.padding()
+                            }
+                            .padding()
                                 .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
                             
                             Spacer()
-                        }.padding(.leading)
-                            .padding(.trailing)
+                        }
+//                        .padding(.leading)
+//                            .padding(.trailing)
                         
                         HStack{
                             Text("Main category")
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         HStack{
@@ -840,16 +907,16 @@ struct Add_classified_Screen: View {
                                     
                                 })
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         HStack{
                             Text("Sub category")
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         HStack{
@@ -873,8 +940,8 @@ struct Add_classified_Screen: View {
                                     
                                 })
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                     }
                     
@@ -884,7 +951,7 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding()
+//                        .padding()
                         .padding(.top)
                         
                         HStack{
@@ -892,8 +959,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         HStack{
@@ -905,8 +972,8 @@ struct Add_classified_Screen: View {
                                 .foregroundColor(.black)
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.bottom)
                         
                         HStack{
@@ -914,8 +981,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         
                         HStack{
@@ -927,8 +994,8 @@ struct Add_classified_Screen: View {
                                 .foregroundColor(.black)
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.bottom)
                         
                         HStack{
@@ -936,9 +1003,9 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
-                        
+//                        .padding(.leading)
+//                        .padding(.trailing)
+//
                         
                         HStack{
                             TextField("56,000 USD",text:$price)
@@ -949,8 +1016,8 @@ struct Add_classified_Screen: View {
                                 .foregroundColor(.black)
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.bottom)
                         
                         
@@ -959,8 +1026,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         
                         HStack{
@@ -986,8 +1053,8 @@ struct Add_classified_Screen: View {
                                     
                                 })
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         
                         
@@ -1012,8 +1079,8 @@ struct Add_classified_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         VStack{
                             
@@ -1032,8 +1099,8 @@ struct Add_classified_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         
                         HStack{
@@ -1042,29 +1109,63 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
-                        HStack{
-                            Image("Rectangle 4485")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
-                            
-                            Image("Rectangle 4485")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
-                            Image("Frame 40-2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
+                        if(!self.photos.isEmpty){
+                          
+                            ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+                                
+                                
+                                self.photos[index]
+                                    .resizable()
+                                    .aspectRatio( contentMode: .fill)
+                                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                                    .cornerRadius(8)
+                                    .overlay(
+                                        VStack{
+                                           
+                                            
+                                            HStack{
+                                                Spacer()
+                                                Image(systemName: "minus")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .foregroundColor(.white)
+                                                    .padding(5)
+                                                    .frame(width: 15, height: 15)
+                                                    .background(Circle()
+                                                        .fill(.red))
+                                                    .offset(x: 5, y: -5)
+                                                    .onTapGesture{
+                                                        self.photos.remove(at: index)
+                                                    }
+                                                
+                                                
+                                               
+                                            }
+                                            Spacer()
+                                        }
+                                        
+                                    )
+                                
+                                
+                            }
+                                .padding(.top)
                         }
-                        .padding()
+                        
+                        HStack{
+                            Spacer()
+                        Image("add photo image")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
+                           .onTapGesture{
+                                self.showSheet = true
+                            }
+                            Spacer()
+                        }
                         
                         HStack{
                             Text("Different Contact Details")
@@ -1075,8 +1176,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         
@@ -1105,8 +1206,8 @@ struct Add_classified_Screen: View {
                                     
                                     
                                 }
-                                .padding(.leading)
-                                .padding(.trailing)
+//                                .padding(.leading)
+//                                .padding(.trailing)
                                 
                                 
                                 VStack{
@@ -1126,8 +1227,8 @@ struct Add_classified_Screen: View {
                                     
                                     
                                 }
-                                .padding(.leading)
-                                .padding(.trailing)
+//                                .padding(.leading)
+//                                .padding(.trailing)
                                 
                                 VStack{
                                     
@@ -1146,8 +1247,8 @@ struct Add_classified_Screen: View {
                                     
                                     
                                 }
-                                .padding(.leading)
-                                .padding(.trailing)
+//                                .padding(.leading)
+//                                .padding(.trailing)
                                 
                             }
                         }
@@ -1175,8 +1276,8 @@ struct Add_classified_Screen: View {
                         
                         Spacer()
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+//                    .padding(.leading)
+//                    .padding(.trailing)
                     .padding(.top,10)
                     
                     HStack{
@@ -1197,8 +1298,8 @@ struct Add_classified_Screen: View {
                                 
                             })
                     }
-                    .padding(.leading)
-                    .padding(.trailing)
+//                    .padding(.leading)
+//                    .padding(.trailing)
                     .padding(.bottom)
                     
                     
@@ -1230,9 +1331,10 @@ struct Add_classified_Screen: View {
                                 .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.3)))
                             
                             Spacer()
-                        }.padding(.leading)
-                            .padding(.trailing)
-                        
+                        }
+//                        .padding(.leading)
+//                            .padding(.trailing)
+//
                         
                     }
                     
@@ -1242,7 +1344,7 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding()
+//                        .padding()
                         .padding(.top)
                         
                         HStack{
@@ -1250,8 +1352,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         HStack{
@@ -1263,8 +1365,8 @@ struct Add_classified_Screen: View {
                                 .foregroundColor(.black)
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.bottom)
                         
                         HStack{
@@ -1272,8 +1374,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         
                         HStack{
@@ -1285,8 +1387,8 @@ struct Add_classified_Screen: View {
                                 .foregroundColor(.black)
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.bottom)
                         
                         Group{
@@ -1295,9 +1397,9 @@ struct Add_classified_Screen: View {
                                 
                                 Spacer()
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
-                            
+//                            .padding(.leading)
+//                            .padding(.trailing)
+//
                             
                             HStack{
                                 TextField("56,000 USD",text:$price)
@@ -1308,8 +1410,8 @@ struct Add_classified_Screen: View {
                                     .foregroundColor(.black)
                                 
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
+//                            .padding(.leading)
+//                            .padding(.trailing)
                             .padding(.bottom)
                             
                             
@@ -1318,8 +1420,8 @@ struct Add_classified_Screen: View {
                                 
                                 Spacer()
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
+//                            .padding(.leading)
+//                            .padding(.trailing)
                             
                             
                             HStack{
@@ -1332,9 +1434,15 @@ struct Add_classified_Screen: View {
                                     .overlay(HStack{
                                         Spacer()
                                         Menu(content: {
-                                            Text("Used")
+                                            Button(action: {}, label: {
+                                                Text("Used")
+                                            })
+                                          
+                                            Button(action: {}, label: {
+                                                Text("New")
+                                            })
+                                           
                                             
-                                            Text("New")
                                         }, label: {
                                             Image("dropdown menu 2")
                                                 .resizable()
@@ -1345,8 +1453,8 @@ struct Add_classified_Screen: View {
                                         
                                     })
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
+//                            .padding(.leading)
+//                            .padding(.trailing)
                             
                             
                             
@@ -1357,8 +1465,8 @@ struct Add_classified_Screen: View {
                                 
                                 Spacer()
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
+//                            .padding(.leading)
+//                            .padding(.trailing)
                             .padding(.top)
                             
                             
@@ -1372,8 +1480,8 @@ struct Add_classified_Screen: View {
                                     .foregroundColor(.black)
                                 
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
+//                            .padding(.leading)
+//                            .padding(.trailing)
                             .padding(.bottom)
                             
                             
@@ -1382,8 +1490,8 @@ struct Add_classified_Screen: View {
                                 
                                 Spacer()
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
+//                            .padding(.leading)
+//                            .padding(.trailing)
                             
                             
                             
@@ -1396,9 +1504,9 @@ struct Add_classified_Screen: View {
                                     .foregroundColor(.black)
                                 
                             }
-                            .padding(.leading)
-                            .padding(.trailing)
-                            
+//                            .padding(.leading)
+//                            .padding(.trailing)
+//
                         }
                         
                     }
@@ -1422,8 +1530,8 @@ struct Add_classified_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         VStack{
                             
@@ -1442,8 +1550,8 @@ struct Add_classified_Screen: View {
                             
                             
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         
                         
                         HStack{
@@ -1452,46 +1560,64 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         
-                        HStack{
-                            ZStack{
-                                Image("Rectangle 4485")
+                        if(!self.photos.isEmpty){
+
+                            ForEach(0...(self.photos.count-1) ,id: \.self){ index in
+
+
+                                self.photos[index]
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                                
-                                Image("minus icon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 18, height: 18)
-                                    .offset(x: 48, y: -42)
+                                    .aspectRatio( contentMode: .fill)
+                                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                                    .cornerRadius(8)
+                                    .overlay(
+                                        VStack{
+
+
+                                            HStack{
+                                                Spacer()
+                                                Image(systemName: "minus")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .foregroundColor(.white)
+                                                    .padding(5)
+                                                    .frame(width: 15, height: 15)
+                                                    .background(Circle()
+                                                        .fill(.red))
+                                                    .offset(x: 5, y: -5)
+                                                    .onTapGesture{
+                                                        self.photos.remove(at: index)
+                                                    }
+
+
+
+                                            }
+                                            Spacer()
+                                        }
+
+                                    )
+
+
                             }
-                            
-                            ZStack{
-                                Image("Rectangle 4485")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                                
-                                Image("minus icon")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 18, height: 18)
-                                    .offset(x: 48, y: -42)
-                            }
-                            
-                            
-                            Image("Frame 40-2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: UIScreen.widthBlockSize*30, height: 90)
-                            
+                                .padding(.top)
                         }
-                        .padding()
+                        
+                        HStack{
+
+                        Image("add photo image")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*10)
+                           .onTapGesture{
+                                self.showSheet = true
+                            }
+
+                        }
                         
                         HStack{
                             Text("Different Contact Details")
@@ -1502,8 +1628,8 @@ struct Add_classified_Screen: View {
                             
                             Spacer()
                         }
-                        .padding(.leading)
-                        .padding(.trailing)
+//                        .padding(.leading)
+//                        .padding(.trailing)
                         .padding(.top)
                         
                         
@@ -1532,8 +1658,8 @@ struct Add_classified_Screen: View {
                                     
                                     
                                 }
-                                .padding(.leading)
-                                .padding(.trailing)
+//                                .padding(.leading)
+//                                .padding(.trailing)
                                 
                                 
                                 VStack{
@@ -1553,8 +1679,8 @@ struct Add_classified_Screen: View {
                                     
                                     
                                 }
-                                .padding(.leading)
-                                .padding(.trailing)
+//                                .padding(.leading)
+//                                .padding(.trailing)
                                 
                                 VStack{
                                     
@@ -1573,8 +1699,8 @@ struct Add_classified_Screen: View {
                                     
                                     
                                 }
-                                .padding(.leading)
-                                .padding(.trailing)
+//                                .padding(.leading)
+//                                .padding(.trailing)
                                 
                             }
                         }
@@ -1603,7 +1729,18 @@ struct Add_classified_Screen: View {
             
             
             Spacer()
-        }.edgesIgnoringSafeArea(.all)
+        }
+        .sheet(isPresented: self.$showSheet) {
+            
+            ImagePicker(sourceType: .photoLibrary) { image in
+               
+                    self.photos.append(Image(uiImage: image))
+                
+            }
+            
+            
+            }
+        .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
     }
 }

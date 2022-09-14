@@ -509,6 +509,7 @@ struct Create_Event_step1_Screen: View {
                     
                     HStack{
                         
+                        HStack{
                         Button(action: {
                             self.eventType = true
                         }, label: {
@@ -538,9 +539,11 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                         }
+                        }
+                        .padding(.trailing,150)
                         
-                        Spacer()
                         
+                        HStack{
                         Button(action: {
                             self.eventType = false
                         }, label: {
@@ -570,7 +573,8 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                         }
-                       
+                        }
+                        Spacer()
                     }
                 }
                 .padding()
@@ -587,6 +591,8 @@ struct Create_Event_step1_Screen: View {
                     
                     HStack{
                         
+                        
+                        HStack{
                         Button(action: {
                             self.privacy = true
                         }, label: {
@@ -605,6 +611,7 @@ struct Create_Event_step1_Screen: View {
                             }
                         })
                        
+                        
                         if(self.privacy){
                         Text("Public")
                             .foregroundColor(AppColors.redGradientColor1)
@@ -616,9 +623,13 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                         }
+                            
+                        }
+                      
                         
-                        Spacer()
+                      
                         
+                        HStack{
                         Button(action: {
                             self.privacy = false
                         }, label: {
@@ -646,7 +657,10 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                         }
-                        
+                        }
+                        .padding(.leading,165)
+                      
+                        Spacer()
                     }
                 }
                 .padding()
@@ -662,6 +676,8 @@ struct Create_Event_step1_Screen: View {
                     }.padding(.bottom)
                     
                     HStack{
+                        
+                        HStack{
                         Button(action: {
                             self.recurringEvent = true
                         }, label: {
@@ -689,10 +705,11 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                             }
-                        
+                        }
+                        .padding(.trailing,180)
                 
-                        Spacer()
-                        
+                       
+                        HStack{
                     Button(action: {
                         self.recurringEvent = false
                     }, label: {
@@ -720,6 +737,9 @@ struct Create_Event_step1_Screen: View {
                             .foregroundColor(.gray)
                             .font(AppFonts.medium_16)
                     }
+                        }
+                    
+                        Spacer()
                 }
                 }
                 .padding()
@@ -738,6 +758,8 @@ struct Create_Event_step1_Screen: View {
                     }.padding(.bottom)
                     
                     HStack{
+                        
+                        HStack{
                         Button(action: {
                             self.eventTypeMoney = true
                             
@@ -767,9 +789,12 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                         }
-                           
+                        }
+                       
                         
-                        Spacer()
+                        
+                        HStack{
+                            
                         Button(action: {
                             self.eventTypeMoney = false
                         }, label: {
@@ -798,6 +823,11 @@ struct Create_Event_step1_Screen: View {
                                 .foregroundColor(.gray)
                                 .font(AppFonts.medium_16)
                         }
+                            
+                        }
+                        .padding(.leading,175)
+                        
+                        Spacer()
                     }
                 }
                 .padding()

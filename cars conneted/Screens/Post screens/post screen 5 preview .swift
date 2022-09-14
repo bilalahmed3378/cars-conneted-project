@@ -37,7 +37,12 @@ struct post_screen_5_preview_: View {
             
            Spacer()
             
-            Image("edit icons")
+            Button(action: {
+                self.presentaionMode.wrappedValue.dismiss()
+            }, label: {
+                Image("edit icons")
+            })
+           
         }
         .padding()
        

@@ -1,13 +1,13 @@
 //
-//  Classified Spare Parts Screen.swift
+//  Classified Spareparts My View.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 25/08/2022.
+//  Created by Bilal Ahmed on 14/09/2022.
 //
 
 import SwiftUI
 
-struct Classified_Spare_Parts_Screen: View {
+struct Classified_Spareparts_My_View: View {
     @Environment(\.presentationMode) var presentaionMode
     var body: some View {
         VStack{
@@ -452,7 +452,29 @@ struct Classified_Spare_Parts_Screen: View {
                 /// if  my view
                 ///
                
+                HStack{
+                Button(action: {}, label: {
+                    Text("Mark as sold")
+                        .font(AppFonts.semiBold_16)
+                        .fontWeight(.medium)
+                        .foregroundColor(.white)
+                        .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
+                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                })
               
+                    
+                    Button(action: {}, label: {
+                        Text("Edit product")
+                            .font(AppFonts.semiBold_16)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                    })
+                  
+                }  .padding(.top)
+                    .padding(.bottom)
+                ////
                     }
             }
            
@@ -460,11 +482,11 @@ struct Classified_Spare_Parts_Screen: View {
         }
     }.edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
-}
-}
-struct Classified_Spare_Parts_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Classified_Spare_Parts_Screen()
     }
 }
 
+struct Classified_Spareparts_My_View_Previews: PreviewProvider {
+    static var previews: some View {
+        Classified_Spareparts_My_View()
+    }
+}

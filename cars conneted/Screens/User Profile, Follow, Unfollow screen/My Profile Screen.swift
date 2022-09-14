@@ -95,12 +95,12 @@ struct My_Profile_Screen: View {
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                    .frame(width: UIScreen.widthBlockSize*26, height: 100)
-                                    .offset(x: 0, y: -45)
+                                    .offset(x: 0, y: -50)
                                     .padding(.leading,1)
                                     .padding(.trailing,1)
                                     .padding(.bottom,5)
                                     .padding(.top,5)
-                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -45))
+                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -50))
                                    
                             })
                             

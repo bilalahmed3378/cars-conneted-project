@@ -142,7 +142,7 @@ struct Setting_Screen: View {
            
             
             
-                NavigationLink(destination: Change_Password(), label: {
+                NavigationLink(destination: Change_User_Name(), label: {
                 HStack{
                     
                     Image("Vector")
