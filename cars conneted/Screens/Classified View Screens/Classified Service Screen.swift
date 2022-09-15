@@ -435,29 +435,7 @@ struct Classified_Service_Screen: View {
                 /// if  my view
                 ///
                
-                HStack{
-                Button(action: {}, label: {
-                    Text("Mark as sold")
-                        .font(AppFonts.semiBold_16)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
-                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                })
               
-                    
-                    Button(action: {}, label: {
-                        Text("Edit product")
-                            .font(AppFonts.semiBold_16)
-                            .fontWeight(.medium)
-                            .foregroundColor(.white)
-                            .frame(width: UIScreen.widthBlockSize*43, height: UIScreen.heightBlockSize*7)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    })
-                  
-                }  .padding(.top)
-                    .padding(.bottom)
-                ////
                     }
             }
            

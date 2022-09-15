@@ -35,11 +35,7 @@ struct Choose_your_plan_Screen: View {
                 
                 Spacer()
                
-                Text("Skip")
-                    .font(AppFonts.medium_16)
-                    .foregroundColor(AppColors.redGradientColor1)
                
-                
             }
             .padding()
             .padding(.trailing,20)
@@ -289,7 +285,9 @@ struct Choose_your_plan_Screen: View {
                         .padding(.bottom,30)
                         
                 
-                    Button(action: {}, label: {
+                    Button(action: {
+                        self.toPaymentMethod = true
+                    }, label: {
                         Text("Choose Plan")
                             .font(AppFonts.semiBold_16)
                             .foregroundColor(.white)
@@ -302,7 +300,7 @@ struct Choose_your_plan_Screen: View {
                 }.frame(width: UIScreen.widthBlockSize*90, height: 650)
                     .padding(.bottom,10)
                     .padding(.top,-25)
-                    .background(RoundedRectangle(cornerRadius: 30).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 650))
+                    .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 650))
                     .padding(.leading,10)
                     
                     VStack{
@@ -413,7 +411,9 @@ struct Choose_your_plan_Screen: View {
                             .padding(.bottom,30)
                             
                     
-                        Button(action: {}, label: {
+                        Button(action: {
+                            self.toPaymentMethod = true
+                        }, label: {
                             Text("Choose Plan")
                                 .font(AppFonts.semiBold_16)
                                 .foregroundColor(.white)
@@ -426,7 +426,7 @@ struct Choose_your_plan_Screen: View {
                     }.frame(width: UIScreen.widthBlockSize*90, height: 650)
                         .padding(.bottom,10)
                         .padding(.top,-25)
-                        .background(RoundedRectangle(cornerRadius: 30).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 650))
+                        .background(RoundedRectangle(cornerRadius: 50).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 650))
                         .padding(.leading,10)
                         .padding(.trailing)
                     

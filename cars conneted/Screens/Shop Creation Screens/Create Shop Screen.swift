@@ -117,9 +117,14 @@ struct Create_Shop_Screen: View {
                   .overlay(HStack{
                     Spacer()
                       Menu(content: {
-                          Text("Spare Parts")
+                          Button(action: {}, label: {
+                              Text("Spare Parts")
+                          })
+                       
+                          Button(action: {}, label: {
+                              Text("Parts")
+                          })
                           
-                          Text("Parts")
                           
                           
                       }, label: {

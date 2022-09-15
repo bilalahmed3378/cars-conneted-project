@@ -72,7 +72,7 @@ struct Change_Password: View {
            
             
             Text("Password")
-                .font(AppFonts.regular_12)
+                .font(AppFonts.regular_14)
                       .padding(.top,28)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       .foregroundColor(.gray)
@@ -115,7 +115,7 @@ struct Change_Password: View {
             }
             
             Text("Confirm Password")
-                .font(AppFonts.regular_12)
+                .font(AppFonts.regular_14)
                       .padding(.top,28)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       .foregroundColor(.gray)

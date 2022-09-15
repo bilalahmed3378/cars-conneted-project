@@ -71,6 +71,18 @@ struct Club_Admin_View: View {
                         .frame(width:20,height: 20)
                         .foregroundColor(.red)
                     
+                    Button(action: {
+                       
+                    }, label: {
+                        Image("Filter 2")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                       
+                           
+                    })
+
+                    
                     
                 }
                 .padding(10)

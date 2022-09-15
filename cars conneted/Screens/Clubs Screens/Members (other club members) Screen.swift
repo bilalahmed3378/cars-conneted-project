@@ -12,6 +12,8 @@ struct Members__other_club_members__Screen: View {
     
     @State private var searchText = ""
     
+    @State private var addFilter  = false
+    
     var body: some View {
         VStack{
             
@@ -63,6 +65,18 @@ struct Members__other_club_members__Screen: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(width:20,height: 20)
                     .foregroundColor(.red)
+                
+                Button(action: {
+                   
+                }, label: {
+                    Image("Filter 2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                   
+                       
+                })
+
                 
                 
             }

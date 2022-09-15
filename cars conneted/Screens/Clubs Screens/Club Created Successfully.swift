@@ -12,28 +12,9 @@ struct Club_Created_Successfully: View {
     var body: some View {
         VStack{
            
-            HStack{
-                Button(action: {
-                    self.presentaionMode.wrappedValue.dismiss()
-                }, label: {
-                    
-                    Image("Icons-2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
-                })
-                Spacer()
-            }
+           
               
-          Spacer()
-            
-          
-            LottieView(name: LottieAnimations.successAnimation)
-                .frame(width: 300, height: 300)
-            
-            
             HStack{
-                
                 Text("Club Created Successfully")
                     .font(AppFonts.SemiBold_20)
                     .fontWeight(.semibold)
@@ -42,9 +23,30 @@ struct Club_Created_Successfully: View {
                         .font(AppFonts.SemiBold_20)
                         .fontWeight(.semibold))
                 
-               
+                Spacer()
+            }.padding(.top)
+            
+            
+            HStack{
+                Text("Congratulations!")
+                    .font(AppFonts.SemiBold_20)
+                    .fontWeight(.semibold)
+                    .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                    .mask( Text("Congratulations!")
+                        .font(AppFonts.SemiBold_20)
+                        .fontWeight(.semibold))
+                
+                Spacer()
             }
-            .padding()
+            .padding(.top)
+            .padding(.bottom)
+            
+          
+            LottieView(name: LottieAnimations.successAnimation)
+                .frame(width: 300, height: 300)
+            
+            
+           
             
             
             NavigationLink(destination: {

@@ -12,28 +12,7 @@ struct Product_Added_Successfully: View {
     var body: some View {
         VStack{
            
-                HStack{
-                    Button(action: {
-                        self.presentaionMode.wrappedValue.dismiss()
-                    }, label: {
-                        
-                        Image("Icons-2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                    })
-                   
-                    
-                    Spacer()
-                    
-                    Text("Product Added")
-                        .font(AppFonts.SemiBold_20)
-                        .offset(x: -10, y: 0)
-                    
-                    Spacer()
-                   
-                }
-               
+             
             
             HStack{
                 Text("Product added Successfully")

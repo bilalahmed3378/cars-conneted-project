@@ -1,131 +1,123 @@
 //
-//  All Cars View Screen.swift
+//  Event Search Screen.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 13/09/2022.
+//  Created by Bilal Ahmed on 15/09/2022.
 //
 
 import SwiftUI
 
-struct All_Cars_View_Screen: View {
-    @Environment (\.presentationMode) var presentationMode
-    @State private var searchText  = ""
-    @State private var addFilter  = false
-   
+struct Event_Search_Screen: View {
+    @State private var searchText = ""
+    
+    @Environment(\.presentationMode) var presentaionMode
     
     @State var distanceValue : Int = 100
     
-   
+    @State private var addFilter  = false
     
     @State private var selectType = ""
     
     @State private var searchTextFilter  = ""
     
     @State private var toSearch  = false
+    
     var body: some View {
         ZStack{
-        VStack{
-            
             VStack{
                 
-                // top bar
-                HStack{
-                   
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image("back icon")
-                               .resizable()
-                               .aspectRatio(contentMode: .fit)
-                               .frame(width: 35, height: 35)
-                    })
+                VStack{
                     
-                    Spacer()
-                    
-                    Text("Vehicles")
-                        .font(AppFonts.SemiBold_20)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    NavigationLink(destination: Add_classified_Screen(), label: {
-                        
-                        Image("plus icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    })
-                  
-                    
-                    
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
-                    .padding(.top,20)
-                
-                
-                
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    
-                    NavigationLink(destination: {
-                        All_Cars_View_Screen()
-                    }, label: {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
-                            .foregroundColor(.red)
-                  
-                    })
-                   
-                    Button(action: {
-                        self.addFilter = true
-                    }, label: {
-                        Image("Filter 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                    // top bar
+                    HStack{
                        
-                           
-                    })
+                        Button(action: {
+                            self.presentaionMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image("back icon")
+                                   .resizable()
+                                   .aspectRatio(contentMode: .fit)
+                                   .frame(width: 35, height: 35)
+                        })
+                        
+                        Spacer()
+                        
+                        Text("Search Events")
+                            .font(AppFonts.SemiBold_20)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                      
+                        Button(action: {
+                            self.addFilter = true
+                        }, label: {
+                            Image("Icons-6")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 26, height: 26)
+                        
+                      
+                        })
+                            
+                          
+                        
+                        
+                    }.padding(.leading,24)
+                        .padding(.trailing,24)
+                        .padding(.top,20)
+                    
+                    
+                    
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
+                            .foregroundColor(.red)
+                        
+                        
+                        NavigationLink(destination: {
+                            Event_Search_Screen()
+                        }, label: {
+                            Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:20,height: 20)
+                                .foregroundColor(.red)
+                      
+                        })
+                        
+                     
 
+                       
+                        
+                        
+                    }
+                    .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                    .padding(.top,20)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    
                     
                     
                 }
-                .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
-                .padding(.leading,20)
-                .padding(.trailing,20)
+                .padding(.top,30)
+                    .padding(.bottom,15)
+                    .background(
+                        Image("home screen background")
+                            .resizable())
                 
-                
-                
-            }
-            .padding(.top,30)
-                .padding(.bottom,15)
-                .background(
-                    Image("home screen background")
-                        .resizable())
-            
-            
-            
-            ScrollView(.vertical,showsIndicators: false){
-                
-              
-                
-             
+                ScrollView(){
                     LazyVStack{
-                        ForEach(0...5 , id:\.self){ index in
-                           CarsClassified()
-                                
+                        ForEach(0...10, id: \.self){ index in
+                            eventSearchResult()
                         }
                     }
-                    
+                }
+                
+                
+                
+                
             }
-                       
-        }
             
             HalfASheetFilter(isPresented: $addFilter){
                 
@@ -287,100 +279,123 @@ struct All_Cars_View_Screen: View {
                             .padding(.top)
                             .padding(.bottom)
                     })
-                     
+                       
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
                 }
             }
             .height(.proportional(0.60))
             .closeButtonColor(UIColor.gray)
             .backgroundColor(UIColor.white)
-       
-       
         }
         .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
     }
 }
 
-struct All_Cars_View_Screen_Previews: PreviewProvider {
+struct Event_Search_Screen_Previews: PreviewProvider {
     static var previews: some View {
-        All_Cars_View_Screen()
+        Event_Search_Screen()
     }
 }
 
-struct CarsClassified : View {
+struct eventSearchResult: View{
+    @State var eventDetails = false
     
-    var body: some View {
-       
-        VStack(alignment: .leading){
+    var body: some View{
+        
+        ZStack{
             
-            HStack{
-                Spacer()
-            Image("Rectangle 1263")
+            NavigationLink(destination: Event_Details_Other_Events(), isActive: self.$eventDetails){
+                EmptyView()
+            }
+          
+            Image("Event cards pic")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*35)
+               
+            
+          
+            
+            VStack(alignment: .leading){
+                HStack{
+                    Spacer()
+                    Image("bookmark small")
+                }
                 Spacer()
-            }
-            
-            Text("Enginge Valve 16.5")
-                .foregroundColor(.black)
-                .font(AppFonts.medium_14)
-                .lineLimit(1)
-                .padding(.leading,10)
-                .padding(.trailing,10)
-                .padding(.bottom,2)
-            
-            HStack{
-                Text("Engine Part")
-                    .foregroundColor(.gray)
-                    .font(AppFonts.semiBold_12)
-                Spacer()
-                Text("$50")
-                    .font(AppFonts.medium_14)
-                    .foregroundColor(AppColors.redGradientColor1)
+                Text("Cars Expo 2022")
+                    .font(AppFonts.bold_20)
+                    .foregroundColor(Color.white)
+                HStack{
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    
+                    Text("5.0")
+                        .foregroundColor(.white)
+                        .font(AppFonts.regular_12)
+                }
+                
+                HStack{
+                    Image("time Icons")
+                    Text("June 8,2022")
+                        .foregroundColor(.white)
+                        .font(AppFonts.regular_12)
+                }
+                HStack{
+                    Image("location Icons")
+                    Text("KPK, Pakistan")
+                        .foregroundColor(.white)
+                        .font(AppFonts.regular_12)
+                }
+                
+                HStack{
+                  
+                    Text("$25")
+                        .font(AppFonts.regular_14)
+                        .foregroundColor(.gray)
+                        .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: 86, height: 45))
+                    
+                
+                    Spacer()
+                    
+                    Button(action: {
+                        self.eventDetails = true
+                    }){
+                        VStack{
+                            Text("Register")
+                                .font(AppFonts.regular_14)
+                                .foregroundColor(.white)
+                                .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: 200, height: 45))
+                        }
+                    }
+                   
+                  
+                }.padding(.trailing,75)
+                    .padding(.leading,30)
+                    .padding(.top,20)
+                    .padding(.bottom,10)
                 
             }
-            .padding(.leading,10)
-            .padding(.trailing,10)
+            .padding(20)
             
-            HStack{
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-            }
-            .padding(.leading,10)
-            .padding(.trailing,10)
-            .padding(.bottom,10)
+            
+         
+            
+          
+            
         }
-        .cornerRadius(10)
-        .padding(.top,10)
-        .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
-        .padding(5)
-        .padding(.leading,10)
-       
-            
-      
-
+            .frame(height:280)
+            .padding(.leading,20)
+            .padding(.trailing,20)
+            .padding(.bottom,10)
+        
     }
 }

@@ -12,35 +12,14 @@ struct User_name_Successfully_Changed_Screen: View {
     var body: some View {
         VStack{
            
-                HStack{
-                    Button(action: {
-                        self.presentaionMode.wrappedValue.dismiss()
-                    }, label: {
-                        
-                        Image("Icons-2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                    })
-                   
-                    
-                    Spacer()
-                    
-                    Text("Username")
-                        .font(AppFonts.SemiBold_20)
-                        .offset(x: -10, y: 0)
-                    
-                    Spacer()
-                   
-                }
-                .padding()
+               Spacer()
             
             HStack{
-                Text("Successfully Changed")
+                Text("Username Successfully Changed")
                     .font(AppFonts.SemiBold_20)
                     .fontWeight(.semibold)
                     .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                    .mask( Text("Successfully Changed")
+                    .mask( Text("Username Successfully Changed")
                         .font(AppFonts.SemiBold_20)
                         .fontWeight(.semibold))
                 

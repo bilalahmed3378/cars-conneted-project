@@ -58,10 +58,9 @@ struct Password_Changed_Screen: View {
                 .padding(.trailing,10)
                 
             
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*70, height: UIScreen.heightBlockSize*40)
+            LottieView(name: LottieAnimations.successAnimation)
+                .frame(width: 300, height: 300)
+            
             
             Button(action: {
                 self.toLogIn = true

@@ -11,7 +11,7 @@ struct Shop_Created_successfully: View {
     var body: some View {
         VStack{
            
-               
+            Spacer()
             
             HStack{
                 Text("Shop Created Successfully")
@@ -28,10 +28,9 @@ struct Shop_Created_successfully: View {
             
             
             
-          Image("ant-design_check-circle-filled")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*80, height: UIScreen.heightBlockSize*40)
+            LottieView(name: LottieAnimations.successAnimation)
+                .frame(width: 300, height: 300)
+            
             
             NavigationLink(destination: {
                 My_Shop_My_View()

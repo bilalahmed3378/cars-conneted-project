@@ -323,7 +323,7 @@ struct My_Profile_Screen: View {
                                         Text("Write something...")
                                             .font(AppFonts.regular_12)
                                             .foregroundColor(.black)
-                                            .padding(.trailing,150)
+                                            .padding(.trailing,190)
                                             .padding(.top,15)
                                             .padding(.bottom,15)
                                             .padding(.leading)

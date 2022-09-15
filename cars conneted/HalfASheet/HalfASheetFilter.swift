@@ -1,20 +1,21 @@
 //
-//  HalfASheet.swift
+//  HalfASheetFilter.swift
+//  cars conneted
 //
-//  Created on 28/01/2021.
+//  Created by Bilal Ahmed on 15/09/2022.
 //
 
 import SwiftUI
 import Combine
 
 
-public struct HalfASheetPost<Content: View>: View {
+public struct HalfASheetFilter<Content: View>: View {
     
     @Binding private var isPresented: Bool
     @State private var hasAppeared = false
     @State private var dragOffset: CGFloat = 0
     
-    internal var height: HalfASheetHeight = .proportional(0.84) // about the same as a ColorPicker
+    internal var height: HalfASheetHeight1 = .proportional(0.84) // about the same as a ColorPicker
     internal var contentInsets = EdgeInsets(top: 7, leading: 16, bottom: 12, trailing: 16)
     internal var backgroundColor: UIColor = .tertiarySystemGroupedBackground
     internal var closeButtonColor: UIColor = .gray
@@ -45,10 +46,10 @@ public struct HalfASheetPost<Content: View>: View {
                 
                 if isPresented {
                     
-                    Color.black.opacity(0.0)
-//                        .onTapGesture {
-//                            dismiss()
-//                        }
+                    Color.black.opacity(0.15)
+                        .onTapGesture {
+                            dismiss()
+                        }
                         .transition(.opacity)
                         .onAppear { // we don't want the content to slide up until the background has appeared
                             withAnimation {
@@ -98,7 +99,7 @@ public struct HalfASheetPost<Content: View>: View {
 
 
 // MARK: - Private
-extension HalfASheetPost {
+extension HalfASheetFilter {
     
     private var titleView: IfLet {
         
@@ -204,7 +205,7 @@ extension HalfASheetPost {
 }
 
 
-public enum HalfASheetHeight {
+public enum HalfASheetHeight1 {
     case fixed(CGFloat)
     case proportional(CGFloat)
     

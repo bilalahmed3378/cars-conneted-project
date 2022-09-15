@@ -73,6 +73,18 @@ struct My_Clubs_screens: View {
                             .frame(width:20,height: 20)
                             .foregroundColor(.red)
                         
+                        Button(action: {
+                           
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                           
+                               
+                        })
+
+                        
                         
                     }
                     .padding(10)
@@ -163,18 +175,22 @@ struct myClubsPosts: View{
                         
                         Spacer()
                         
-                        
-                        Text("Invite")
-                            .foregroundColor(.white)
-                            .font(AppFonts.medium_12)
-                            .padding(.top,10)
-                            .padding(.bottom,10)
-                            .padding(.leading,20)
-                            .padding(.trailing,20)
-                            .background(RoundedRectangle(cornerRadius: 7).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                            .cornerRadius(8)
-                            .padding(.trailing,20)
-                          
+                        NavigationLink(destination: {
+                            Invite_Friends_Screen()
+                        }, label: {
+                            Text("Invite")
+                                .foregroundColor(.white)
+                                .font(AppFonts.medium_12)
+                                .padding(.top,10)
+                                .padding(.bottom,10)
+                                .padding(.leading,20)
+                                .padding(.trailing,20)
+                                .background(RoundedRectangle(cornerRadius: 7).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                .cornerRadius(8)
+                                .padding(.trailing,20)
+                              
+                        })
+                     
 
                         
                     }

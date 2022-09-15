@@ -15,6 +15,8 @@ struct My_club_Details__admin_view__Screen: View {
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.5, longitude: -0.12), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
     @State private var searchText = ""
+    @State private var addFilter  = false
+    
     var body: some View {
         VStack{
             

@@ -41,7 +41,7 @@ struct Getting_Started_Screen: View {
                     Image("Ellipse 35-1")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 100, height: 100)
+                        .frame(width: 150, height: 150)
                 }.padding()
                
                 HStack{
@@ -88,7 +88,7 @@ struct Getting_Started_Screen: View {
                 .padding(.top,10)
                 .padding(.bottom,30)
                     
-                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*75).overlay(VStack{
+                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*60).overlay(VStack{
                     Spacer()
                     HStack{
                         Spacer()

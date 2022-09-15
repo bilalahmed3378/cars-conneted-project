@@ -26,24 +26,7 @@ struct E_mail_Confirmation_Screen: View {
                 EmptyView()
             }
            
-                HStack{
-                    Button(action: {
-                        self.presentaionMode.wrappedValue.dismiss()
-                    }, label: {
-                        
-                        Image("Icons-2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                    })
-                   
-                    
-                    Spacer()
-                    
-                   
-                   
-                }
-                .padding()
+               
             
         
             

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Classified_Vehicle_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
+    
+    @State var pictureDp: Int = 0
     var body: some View {
         VStack{
            
@@ -53,10 +55,28 @@ struct Classified_Vehicle_Screen: View {
                     
                 ZStack{
                     
+                    
+                    if(self.pictureDp == 0){
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
+                        .aspectRatio(contentMode: .fit)
                         .frame(width: UIScreen.widthBlockSize*90, height: 230)
+                    }
+                    
+                    if(self.pictureDp == 1){
+                    Image("unsplash_gmA751dxisA")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.widthBlockSize*90, height: 230)
+                    }
+                    
+                    if(self.pictureDp == 2){
+                    Image("unsplash_AHnhdjyTNGM")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.widthBlockSize*90, height: 230)
+                    }
+                  
                     
                     VStack{
                         
@@ -93,21 +113,65 @@ struct Classified_Vehicle_Screen: View {
                             Spacer()
                           
                             HStack{
-                                Image("Ellipse 20")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 10, height: 10)
                                 
-                       Image("Ellipse 3")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                                Button(action: {
+                                    self.pictureDp = 0
+                                }, label: {
+                                    if(self.pictureDp == 0){
+                                    Image("Ellipse 20")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 10, height: 10)
+                                        .padding(.trailing)
+                                    }
+                                    else{
+                                        Image("Ellipse 3")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 10, height: 10)
+                                            .padding(.trailing)
+                                    }
+                                })
+                               
+                                
+                                Button(action: {
+                                    self.pictureDp = 1
+                                }, label: {
+                                    if(self.pictureDp == 1){
+                                    Image("Ellipse 20")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 10, height: 10)
+                                        .padding(.trailing)
+                                    }
+                                    else{
+                                        Image("Ellipse 3")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 10, height: 10)
+                                            .padding(.trailing)
+                                    }
+                                })
                         
                        
-                        Image("Ellipse 3")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 10, height: 10)
+                                Button(action: {
+                                    self.pictureDp = 2
+                                }, label: {
+                                    if(self.pictureDp == 2){
+                                    Image("Ellipse 20")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 10, height: 10)
+                                        .padding(.trailing)
+                                    }
+                                    else{
+                                        Image("Ellipse 3")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 10, height: 10)
+                                            .padding(.trailing)
+                                    }
+                                })
                                 
                             }.offset(x: -15)
                             

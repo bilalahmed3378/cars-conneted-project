@@ -12,24 +12,7 @@ struct E_Mail_Confirmation_screen: View {
     var body: some View {
         VStack(alignment: .leading){
            
-                HStack{
-                    Button(action: {
-                        self.presentaionMode.wrappedValue.dismiss()
-                    }, label: {
-                        
-                        Image("Icons-2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 35, height: 35)
-                    })
-                   
-                    
-                    Spacer()
-                    
-                  
-                   
-                }
-                .padding()
+              Spacer()
             
             HStack{
                 Text("E-mail Verified Successfully")

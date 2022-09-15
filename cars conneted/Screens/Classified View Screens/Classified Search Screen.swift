@@ -1,27 +1,29 @@
 //
-//  All Cars View Screen.swift
+//  Classified Search Screen.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 13/09/2022.
+//  Created by Bilal Ahmed on 15/09/2022.
 //
 
 import SwiftUI
+import Kingfisher
 
-struct All_Cars_View_Screen: View {
+struct Classified_Search_Screen: View {
+    
     @Environment (\.presentationMode) var presentationMode
     @State private var searchText  = ""
-    @State private var addFilter  = false
-   
     
     @State var distanceValue : Int = 100
     
-   
+    @State private var addFilter  = false
     
     @State private var selectType = ""
     
     @State private var searchTextFilter  = ""
     
     @State private var toSearch  = false
+    
+    
     var body: some View {
         ZStack{
         VStack{
@@ -29,8 +31,9 @@ struct All_Cars_View_Screen: View {
             VStack{
                 
                 // top bar
+             
                 HStack{
-                   
+                
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
@@ -38,50 +41,28 @@ struct All_Cars_View_Screen: View {
                                .resizable()
                                .aspectRatio(contentMode: .fit)
                                .frame(width: 35, height: 35)
+                               .padding(.top)
+                               .padding(.leading)
                     })
                     
-                    Spacer()
                     
-                    Text("Vehicles")
-                        .font(AppFonts.SemiBold_20)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    NavigationLink(destination: Add_classified_Screen(), label: {
-                        
-                        Image("plus icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    })
-                  
-                    
-                    
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
-                    .padding(.top,20)
-                
-                
-                
                 HStack{
+                    
+                  
                     
                     TextField("Search",text: self.$searchText)
                         .foregroundColor(.red)
                     
                     
-                    NavigationLink(destination: {
-                        All_Cars_View_Screen()
-                    }, label: {
                         Image(systemName: "magnifyingglass")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width:20,height: 20)
                             .foregroundColor(.red)
                   
-                    })
-                   
+                  
                     Button(action: {
-                        self.addFilter = true
+                       
                     }, label: {
                         Image("Filter 2")
                             .resizable()
@@ -90,7 +71,6 @@ struct All_Cars_View_Screen: View {
                        
                            
                     })
-
                     
                     
                 }
@@ -100,7 +80,7 @@ struct All_Cars_View_Screen: View {
                 .padding(.leading,20)
                 .padding(.trailing,20)
                 
-                
+                }
                 
             }
             .padding(.top,30)
@@ -118,7 +98,7 @@ struct All_Cars_View_Screen: View {
              
                     LazyVStack{
                         ForEach(0...5 , id:\.self){ index in
-                           CarsClassified()
+                            classifiedSearchCard()
                                 
                         }
                     }
@@ -287,100 +267,161 @@ struct All_Cars_View_Screen: View {
                             .padding(.top)
                             .padding(.bottom)
                     })
-                     
+                       
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
                 }
             }
             .height(.proportional(0.60))
             .closeButtonColor(UIColor.gray)
             .backgroundColor(UIColor.white)
-       
-       
+            
+            
+        
         }
         .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
     }
 }
 
-struct All_Cars_View_Screen_Previews: PreviewProvider {
+struct Classified_Search_Screen_Previews: PreviewProvider {
     static var previews: some View {
-        All_Cars_View_Screen()
+        Classified_Search_Screen()
     }
 }
 
-struct CarsClassified : View {
-    
-    var body: some View {
-       
-        VStack(alignment: .leading){
-            
-            HStack{
-                Spacer()
-            Image("Rectangle 1263")
+struct classifiedSearchCard: View{
+    var body: some View{
+        
+        ZStack(alignment: .top){
+            Image("Rectangle 1265")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*35)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.widthBlockSize*90, height: 250)
+                .cornerRadius(10)
+            
+            VStack(alignment: .leading){
+                HStack{
+                    Image("Rectangle 1266")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 70, height: 70)
+                       
+                    
+                    VStack(alignment: .leading){
+                        Text("Jhon Deo Smith")
+                            .foregroundColor(.white)
+                            .font(AppFonts.semiBold_12)
+                            .padding(.bottom,3)
+                        Text("Tot. Sales 13")
+                            .foregroundColor(.white)
+                            .font(AppFonts.regular_12)
+                      
+                    }
+                    
+                    Spacer()
+                    Text("$50")
+                        .foregroundColor(.white)
+                        .font(AppFonts.SemiBold_20)
+                        .padding(.trailing,10)
+                    
+                }.padding()
+                    .padding(.bottom,-5)
+                   
+                
+                HStack{
+                Text("BMW Lazer Head Lights")
+                        .font(AppFonts.SemiBold_20)
+                    .foregroundColor(.white)
+                }.padding(.leading)
+                
+                HStack{
+                    Text("Spare Parts")
+                        .foregroundColor(.white)
+                        .font(AppFonts.semiBold_12)
+                }.padding(.leading)
+                .padding(.top,-3)
+                
+                HStack{
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("yellow Star icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                }
+                .padding(.leading)
+                .padding(.top,1)
+                .padding(.bottom,5)
+                
+                HStack{
+                    Text("$500")
+                        .font(AppFonts.regular_14)
+                        .foregroundColor(.white)
+                        .padding(10)
+                        .padding(.leading,10)
+                        .padding(.trailing,10)
+                        .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*5))
+                        
+                       
+                    
+                    Spacer()
+                   
+                    
+                    NavigationLink(destination: {
+                        Classified_Spare_Parts_Screen()
+                    }, label: {
+                        Text("Purchase")
+                            .font(AppFonts.regular_14)
+                            .foregroundColor(.white)
+                            .padding(10)
+                            .padding(.leading,30)
+                            .padding(.trailing,30)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*5))
+                            
+                    
+                  
+                    })
+                    .padding(.trailing)
+                      
+                       
+                }
+                .padding(.leading)
+                .padding(.trailing)
+                
                 Spacer()
+                
+              
+               
             }
             
-            Text("Enginge Valve 16.5")
-                .foregroundColor(.black)
-                .font(AppFonts.medium_14)
-                .lineLimit(1)
-                .padding(.leading,10)
-                .padding(.trailing,10)
-                .padding(.bottom,2)
-            
-            HStack{
-                Text("Engine Part")
-                    .foregroundColor(.gray)
-                    .font(AppFonts.semiBold_12)
-                Spacer()
-                Text("$50")
-                    .font(AppFonts.medium_14)
-                    .foregroundColor(AppColors.redGradientColor1)
-                
-            }
-            .padding(.leading,10)
-            .padding(.trailing,10)
-            
-            HStack{
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-            }
-            .padding(.leading,10)
-            .padding(.trailing,10)
-            .padding(.bottom,10)
         }
-        .cornerRadius(10)
-        .padding(.top,10)
-        .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
-        .padding(5)
-        .padding(.leading,10)
-       
-            
-      
-
+        .frame(width: UIScreen.widthBlockSize*90, height: 250)
+        
+        
     }
 }

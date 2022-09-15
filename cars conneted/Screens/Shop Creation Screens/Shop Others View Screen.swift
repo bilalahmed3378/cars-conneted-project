@@ -325,75 +325,79 @@ struct Shop_Others_View_Screen_Previews: PreviewProvider {
 
 struct ShopClassified: View{
     var body: some View{
-        
-        VStack{
-            Image("unsplash_YApiWyp0lqo")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 180, height: 150)
-            
-            HStack{
-                Text("Engine")
-                    .font(AppFonts.medium_16)
-                
-                Spacer()
-                
-                Text("(5.0)")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Image("bxs_star")
+        NavigationLink(destination: {
+            Classified_Spare_Parts_Screen()
+        }, label: {
+            VStack{
+                Image("unsplash_YApiWyp0lqo")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 12, height: 12)
+                    .frame(width: 180, height: 150)
                 
-            }.padding(.bottom,2)
-                .padding(.leading,7)
-                .padding(.trailing,7)
-            
-            HStack{
-                Text("Spare parts")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
+                HStack{
+                    Text("Engine")
+                        .font(AppFonts.medium_16)
+                    
+                    Spacer()
+                    
+                    Text("(5.0)")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Image("bxs_star")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 12, height: 12)
+                    
+                }.padding(.bottom,2)
+                    .padding(.leading,7)
+                    .padding(.trailing,7)
                 
-                Spacer()
-            }.padding(.bottom,2)
-                .padding(.leading,7)
-                .padding(.trailing,7)
-            
-            HStack{
-                Text("2019")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
+                HStack{
+                    Text("Spare parts")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                }.padding(.bottom,2)
+                    .padding(.leading,7)
+                    .padding(.trailing,7)
                 
-                Text("Used")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
+                HStack{
+                    Text("2019")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Text("Used")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                }.padding(.bottom,2)
+                    .padding(.leading,7)
+                    .padding(.trailing,7)
                 
-                Spacer()
-            }.padding(.bottom,2)
-                .padding(.leading,7)
-                .padding(.trailing,7)
-            
-            HStack{
-                Text("$5000")
-                    .font(AppFonts.medium_16)
+                HStack{
+                    Text("$5000")
+                        .font(AppFonts.medium_16)
+                    
+                    Spacer()
+                    
+                    Text("View")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(AppColors.redGradientColor1)
+                    
+                }.padding(.bottom,35)
+                    .padding(.leading,7)
+                    .padding(.trailing,7)
                 
-                Spacer()
                 
-                Text("View")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(AppColors.redGradientColor1)
                 
-            }.padding(.bottom,35)
-                .padding(.leading,7)
-                .padding(.trailing,7)
-            
-            
-            
-            
-        }.frame(width: 180, height: 230)
-            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.2)))
+                
+            }.frame(width: 180, height: 230)
+                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.2)))
+        })
+      
         
     }
 }

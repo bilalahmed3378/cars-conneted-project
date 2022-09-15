@@ -10,6 +10,8 @@ import SwiftUI
 struct Invite_friends_Clubs: View {
     @Environment(\.presentationMode) var presentaionMode
     @State var searchText = ""
+    @State private var addFilter  = false
+    
     var body: some View {
         VStack{
             VStack{

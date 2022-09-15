@@ -13,6 +13,13 @@ struct Clubs_Screen: View {
     
     @Binding var isDrawerOpen : Bool
     
+    @State private var addFilter  = false
+    @State private var selectType = ""
+    @State private var searchTextFilter  = ""
+    @State var distanceValue : Int = 100
+    @State private var toSearch  = false
+   
+    
     init(isDrawerOpen : Binding<Bool>){
         self._isDrawerOpen = isDrawerOpen
     }
@@ -47,7 +54,7 @@ struct Clubs_Screen: View {
                             Image("plus icon")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 35, height: 35)
+                                .frame(width: 20, height: 20)
                                 .padding(.trailing,10)
                         })
                       
@@ -55,16 +62,16 @@ struct Clubs_Screen: View {
                         Image("doted icons-1")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .padding(.trailing,10)
+                            .frame(width: 35, height: 35)
+                          
                         
                      
                            
                     }
                    
-                    .padding(.leading,24)
-                        .padding(.trailing,24)
-                        .padding(.top,20)
+                    .padding(.leading)
+                        .padding(.trailing)
+                        .padding(.top)
                     
                     // search bar
                     HStack{
@@ -72,11 +79,28 @@ struct Clubs_Screen: View {
                         TextField("Search",text: self.$searchText)
                             .foregroundColor(.red)
                         
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
-                            .foregroundColor(.red)
+                        NavigationLink(destination: {
+                            Club_Search_Screen()
+                        }, label: {
+                            Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:20,height: 20)
+                                .foregroundColor(.red)
+                        })
+                     
+                        
+                        Button(action: {
+                            self.addFilter = true
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                           
+                               
+                        })
+
                         
                         
                     }
@@ -182,6 +206,181 @@ struct Clubs_Screen: View {
                 Spacer()
                 
             }
+            
+            HalfASheetFilter(isPresented: $addFilter){
+                
+                VStack{
+                    HStack{
+                        Text("Filter Your Search")
+                        Spacer()
+                    }
+                    .padding(.top)
+                    
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchTextFilter)
+                            .foregroundColor(.red)
+                        
+                        
+                     
+                            Button(action: {
+                                self.addFilter = false
+                                self.toSearch = true
+                            }, label: {
+                                Image(systemName: "magnifyingglass")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:20,height: 20)
+                                    .foregroundColor(.red)
+                          
+                            })
+                        
+                      
+                           
+                        
+                        
+                    }
+                    .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red).frame(width: UIScreen.widthBlockSize*90))
+                    .padding(.top,10)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    
+                    
+                    
+                    Text("Selext Type")
+                      .padding(.top,20)
+                      .frame(maxWidth: .infinity, alignment: .leading)
+                      
+                      .padding(.bottom,-5)
+                    
+                      
+                    TextField("Body parts, Engine parts, etc",text:$selectType)
+                        .foregroundColor(AppColors.redGradientColor1)
+                      .padding(.vertical, 10)
+                      .autocapitalization(.none)
+                      .background(Rectangle().frame(width:UIScreen.widthBlockSize*90, height: 1).padding(.top, 40))
+                      .foregroundColor(.black)
+                      
+                      .overlay(HStack{
+                        Spacer()
+                       
+                          Menu(content:{
+                              Button(action: {}, label: {
+                                  Text("Body parts")
+                              })
+                              
+                              Button(action: {}, label: {
+                                  Text("Engine parts")
+                              })
+                              
+                          }, label:{
+                              Image("dropdown menu 2")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 20, height: 20)
+                                    .padding()
+                          })
+                          
+                          
+                      })
+                    
+                    HStack{
+                        Text("Price Range")
+                        Spacer()
+                    }
+                    .padding(.top)
+                    
+                    SeekBar(lable: "$", maxRange: 5000, color: AppColors.redGradientColor2, value: self.$distanceValue)
+                        
+                        .padding(.bottom)
+                    
+                    
+                    
+                    HStack{
+                        Text("Rating")
+                        Spacer()
+                    }
+                    
+                    HStack{
+                        
+                        HStack{
+                            Text("1")
+                            
+                            Image("Star")
+                        }
+                        .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                        
+                        HStack{
+                            Text("2")
+                            
+                            Image("Star")
+                        }
+                        .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                        
+                        HStack{
+                            Text("3")
+                            
+                            Image("Star")
+                        }
+                        .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                        
+                        
+                        HStack{
+                            Text("4")
+                            
+                            Image("Star")
+                        }
+                        .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                        
+                        
+                        HStack{
+                            Text("5")
+                            
+                            Image("Star")
+                        }
+                        .padding()
+                            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                        
+                        
+                        
+                        
+                        
+                        
+                    }
+                    
+                    
+                    Button(action: {
+                        self.addFilter = false
+                        self.toSearch = true
+                    }, label: {
+                        Text("Apply Filter")
+                            .font(AppFonts.semiBold_16)
+                            .fontWeight(.medium)
+                            .foregroundColor(.white)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                            .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                            .padding(.top)
+                            .padding(.bottom)
+                    })
+                       
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
+                }
+            }
+            .height(.proportional(0.60))
+            .closeButtonColor(UIColor.gray)
+            .backgroundColor(UIColor.white)
            
         }
         .edgesIgnoringSafeArea(.top)
@@ -196,6 +395,8 @@ struct Clubs_Screen: View {
 struct myClubsClubs: View{
     var body: some View{
     
+        ZStack{
+        
         VStack{
             
             ZStack(alignment: .top){
@@ -217,19 +418,23 @@ struct myClubsClubs: View{
                         
                         Spacer()
                         
-                        
-                        Text("Invite")
-                            .foregroundColor(.white)
-                            .font(AppFonts.medium_12)
-                            .padding(.top,10)
-                            .padding(.bottom,10)
-                            .padding(.leading,20)
-                            .padding(.trailing,20)
-                            .background(RoundedRectangle(cornerRadius: 7).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                            .cornerRadius(8)
-                            .padding(.trailing,20)
-                          
+                        NavigationLink(destination: {
+                            Invite_Friends_Screen()
+                        }, label: {
+                            Text("Invite")
+                                .foregroundColor(.white)
+                                .font(AppFonts.medium_12)
+                                .padding(.top,10)
+                                .padding(.bottom,10)
+                                .padding(.leading,20)
+                                .padding(.trailing,20)
+                                .background(RoundedRectangle(cornerRadius: 7).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                .cornerRadius(8)
+                                .padding(.trailing,20)
+                              
 
+                        })
+                     
                         
                     }
                     
@@ -279,7 +484,11 @@ struct myClubsClubs: View{
         }.padding(.bottom,20)
             .padding(.leading,18)
             .padding(.trailing,20)
-         
+            
+            
+          
+            
+        }
     }
 }
 
@@ -386,17 +595,21 @@ struct myClubsRecommened: View{
                         
                         Spacer()
                         
-                        
-                        Text("Join")
-                            .foregroundColor(.white)
-                            .font(AppFonts.medium_12)
-                            .padding(.top,10)
-                            .padding(.bottom,10)
-                            .padding(.leading,20)
-                            .padding(.trailing,20)
-                            .background(RoundedRectangle(cornerRadius: 7).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                            .cornerRadius(8)
-                            .padding(.trailing,20)
+                        NavigationLink(destination: {
+                            Club_details_member_view_Screen()
+                        }, label: {
+                            Text("Join")
+                                .foregroundColor(.white)
+                                .font(AppFonts.medium_12)
+                                .padding(.top,10)
+                                .padding(.bottom,10)
+                                .padding(.leading,20)
+                                .padding(.trailing,20)
+                                .background(RoundedRectangle(cornerRadius: 7).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                .cornerRadius(8)
+                                .padding(.trailing,20)
+                        })
+                       
                           
 
                         

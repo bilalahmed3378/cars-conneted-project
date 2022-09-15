@@ -1,131 +1,123 @@
 //
-//  All Cars View Screen.swift
+//  Event Search Screen.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 13/09/2022.
+//  Created by Bilal Ahmed on 15/09/2022.
 //
 
 import SwiftUI
 
-struct All_Cars_View_Screen: View {
-    @Environment (\.presentationMode) var presentationMode
-    @State private var searchText  = ""
-    @State private var addFilter  = false
-   
+struct Club_Search_Screen: View {
+    @State private var searchText = ""
+    
+    @Environment(\.presentationMode) var presentaionMode
     
     @State var distanceValue : Int = 100
     
-   
+    @State private var addFilter  = false
     
     @State private var selectType = ""
     
     @State private var searchTextFilter  = ""
     
     @State private var toSearch  = false
+    
     var body: some View {
         ZStack{
-        VStack{
-            
             VStack{
                 
-                // top bar
-                HStack{
-                   
-                    Button(action: {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Image("back icon")
-                               .resizable()
-                               .aspectRatio(contentMode: .fit)
-                               .frame(width: 35, height: 35)
-                    })
+                VStack{
                     
-                    Spacer()
-                    
-                    Text("Vehicles")
-                        .font(AppFonts.SemiBold_20)
-                        .foregroundColor(.white)
-                    
-                    Spacer()
-                    NavigationLink(destination: Add_classified_Screen(), label: {
-                        
-                        Image("plus icon")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                    })
-                  
-                    
-                    
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
-                    .padding(.top,20)
-                
-                
-                
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    
-                    NavigationLink(destination: {
-                        All_Cars_View_Screen()
-                    }, label: {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
-                            .foregroundColor(.red)
-                  
-                    })
-                   
-                    Button(action: {
-                        self.addFilter = true
-                    }, label: {
-                        Image("Filter 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                    // top bar
+                    HStack{
                        
-                           
-                    })
+                        Button(action: {
+                            self.presentaionMode.wrappedValue.dismiss()
+                        }, label: {
+                            Image("back icon")
+                                   .resizable()
+                                   .aspectRatio(contentMode: .fit)
+                                   .frame(width: 35, height: 35)
+                        })
+                        
+                        Spacer()
+                        
+                        Text("Search Club")
+                            .font(AppFonts.SemiBold_20)
+                            .foregroundColor(.white)
+                        
+                        Spacer()
+                      
+                        Button(action: {
+                            self.addFilter = true
+                        }, label: {
+                            Image("Icons-6")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 26, height: 26)
+                        
+                      
+                        })
+                            
+                          
+                        
+                        
+                    }.padding(.leading,24)
+                        .padding(.trailing,24)
+                        .padding(.top,20)
+                    
+                    
+                    
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
+                            .foregroundColor(.red)
+                        
+                        
+                        NavigationLink(destination: {
+                            Club_Search_Screen()
+                        }, label: {
+                            Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:20,height: 20)
+                                .foregroundColor(.red)
+                      
+                        })
+                        
+                     
 
+                       
+                        
+                        
+                    }
+                    .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                    .padding(.top,20)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    
                     
                     
                 }
-                .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
-                .padding(.leading,20)
-                .padding(.trailing,20)
+                .padding(.top,30)
+                    .padding(.bottom,15)
+                    .background(
+                        Image("home screen background")
+                            .resizable())
                 
-                
-                
-            }
-            .padding(.top,30)
-                .padding(.bottom,15)
-                .background(
-                    Image("home screen background")
-                        .resizable())
-            
-            
-            
-            ScrollView(.vertical,showsIndicators: false){
-                
-              
-                
-             
+                ScrollView(){
                     LazyVStack{
-                        ForEach(0...5 , id:\.self){ index in
-                           CarsClassified()
-                                
+                        ForEach(0...10, id: \.self){ index in
+                            clubSearchResult()
                         }
                     }
-                    
+                }
+                
+                
+                
+                
             }
-                       
-        }
             
             HalfASheetFilter(isPresented: $addFilter){
                 
@@ -287,100 +279,122 @@ struct All_Cars_View_Screen: View {
                             .padding(.top)
                             .padding(.bottom)
                     })
-                     
+                       
+                    
+                
+                    
+                    
+                    
+                    
+                    
+                    
                 }
             }
             .height(.proportional(0.60))
             .closeButtonColor(UIColor.gray)
             .backgroundColor(UIColor.white)
-       
-       
         }
         .edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
     }
 }
 
-struct All_Cars_View_Screen_Previews: PreviewProvider {
+struct Club_Search_Screen_Previews: PreviewProvider {
     static var previews: some View {
-        All_Cars_View_Screen()
+        Club_Search_Screen()
     }
 }
 
-struct CarsClassified : View {
-    
-    var body: some View {
-       
-        VStack(alignment: .leading){
+struct clubSearchResult: View{
+    var body: some View{
+        
+        ZStack(alignment: .top){
             
-            HStack{
-                Spacer()
-            Image("Rectangle 1263")
+            
+            
+            Image("unsplash_gmA751dxisA-1")
                 .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*35)
-                Spacer()
-            }
+                .aspectRatio(contentMode: .fill)
+                .frame(width: UIScreen.widthBlockSize*90, height: 240)
+                .overlay(Color.black.opacity(0.03))
+                .clipped()
+               
             
-            Text("Enginge Valve 16.5")
-                .foregroundColor(.black)
-                .font(AppFonts.medium_14)
-                .lineLimit(1)
-                .padding(.leading,10)
-                .padding(.trailing,10)
-                .padding(.bottom,2)
             
-            HStack{
-                Text("Engine Part")
-                    .foregroundColor(.gray)
-                    .font(AppFonts.semiBold_12)
-                Spacer()
-                Text("$50")
-                    .font(AppFonts.medium_14)
-                    .foregroundColor(AppColors.redGradientColor1)
+            VStack{
                 
-            }
-            .padding(.leading,10)
-            .padding(.trailing,10)
-            
-            HStack{
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-                
-                Image("yellow Star icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 18, height: 18)
-            }
-            .padding(.leading,10)
-            .padding(.trailing,10)
-            .padding(.bottom,10)
-        }
-        .cornerRadius(10)
-        .padding(.top,10)
-        .background(RoundedRectangle(cornerRadius: 10).fill(.white).shadow(radius: 3))
-        .padding(5)
-        .padding(.leading,10)
-       
-            
-      
+                HStack{
+                    
+                    Spacer()
+                    
+                    
+                    NavigationLink(destination: {
+                        Club_details_member_view_Screen()
+                    }, label: {
+                        Text("Join")
+                            .foregroundColor(.white)
+                            .font(AppFonts.medium_12)
+                            .padding(10)
+                            .padding(.leading,10)
+                            .padding(.trailing,10)
+                            .background(AppColors.redGradientColor1)
+                            .cornerRadius(8)
+                            .padding(.trailing,30)
+                          
 
+                    })
+                 
+                    
+                }
+                
+                Spacer()
+                
+                NavigationLink(destination: {
+                   Club_details_member_view_Screen()
+                }, label: {
+                    HStack{
+                        
+                        Text("Ace Classic Club")
+                            .foregroundColor(.white)
+                            .fontWeight(.medium)
+                        
+                        Spacer()
+                        
+                        Image("unsplash_-IPFb6J03Mw")
+                            .offset(x:36)
+                        
+                        Image("unsplash_-IPFb6J03Mw")
+                            .offset(x:24)
+                        
+                        Image("unsplash_-IPFb6J03Mw")
+                            .offset(x:12)
+                        
+                        Image("unsplash_-IPFb6J03Mw")
+                        //                            .offset(x:15)
+                        
+                        Text("+120")
+                            .foregroundColor(.white)
+                            .fontWeight(.medium)
+                        
+                        
+                    }.padding()
+                        .padding(.leading)
+                        .padding(.trailing)
+                        .background(RoundedCorners(tl: 0, tr: 0, bl: 0, br: 0).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*6))
+                      
+                })
+                
+             
+                
+                
+                
+            }.padding(.top)
+            
+            
+            
+        }
+        .frame(height: 240)
+        .cornerRadius(10)
+        .padding(.top)
     }
 }
