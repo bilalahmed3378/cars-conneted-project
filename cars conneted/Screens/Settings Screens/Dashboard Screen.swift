@@ -40,7 +40,7 @@ struct Dashboard_Screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,30)
+        }  .padding(.top,40)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")
@@ -63,6 +63,56 @@ struct Dashboard_Screen: View {
             }
             .padding()
          
+                
+                HStack{
+                    
+                    Spacer()
+                    
+                    VStack{
+                        Text("16.3k")
+                            .font(AppFonts.SemiBold_20)
+                            .padding(.bottom,2)
+                            .foregroundColor(.white)
+                        
+                        Text("Likes")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack{
+                        Text("6.9k")
+                            .font(AppFonts.SemiBold_20)
+                            .padding(.bottom,2)
+                            .foregroundColor(.white)
+                        
+                        Text("Comments")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                    VStack{
+                        Text("2.6k")
+                            .font(AppFonts.SemiBold_20)
+                            .padding(.bottom,2)
+                            .foregroundColor(.white)
+                        
+                        Text("Shares")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(.white)
+                    }
+                    
+                    Spacer()
+                    
+                }.padding(.top,30)
+                    .padding(.bottom,30)
+                .background(RoundedRectangle(cornerRadius: 25).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                .padding()
+                
+                
             ScrollView(.horizontal, showsIndicators: false){
                 
                 HStack{
@@ -331,8 +381,3 @@ struct Dashboard_Screen: View {
     }
 }
 
-struct Dashboard_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Dashboard_Screen()
-    }
-}

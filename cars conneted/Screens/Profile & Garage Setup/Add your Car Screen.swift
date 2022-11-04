@@ -144,89 +144,89 @@ struct Add_your_Car_Screen: View {
                     }.padding(.leading)
                             .padding(.trailing)
                     
-                    VStack{
-                        
-                Text("Color")
-                  .padding(.top,20)
-                  .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.bottom,-5)
-                
-                  
-                TextField("Black",text:$color)
-                    .foregroundColor(AppColors.redGradientColor1)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 30))
-                  .foregroundColor(.black)
-                       
-                    }.padding(.leading)
-                            .padding(.trailing)
+//                    VStack{
+//
+//                Text("Color")
+//                  .padding(.top,20)
+//                  .frame(maxWidth: .infinity, alignment: .leading)
+//                    .padding(.bottom,-5)
+//
+//
+//                TextField("Black",text:$color)
+//                    .foregroundColor(AppColors.redGradientColor1)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 30))
+//                  .foregroundColor(.black)
+//
+//                    }.padding(.leading)
+//                            .padding(.trailing)
                     
-                    VStack{
-                        
-                Text("Engine")
-                  .padding(.top,20)
-                  .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.bottom,-5)
-                
-                  
-                TextField("2000 CC",text:$engine)
-                    .foregroundColor(AppColors.redGradientColor1)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 30))
-                  .foregroundColor(.black)
-                        
-                    }.padding(.leading)
-                            .padding(.trailing)
+//                    VStack{
+//
+//                Text("Engine")
+//                  .padding(.top,20)
+//                  .frame(maxWidth: .infinity, alignment: .leading)
+//                  .padding(.bottom,-5)
+//
+//
+//                TextField("2000 CC",text:$engine)
+//                    .foregroundColor(AppColors.redGradientColor1)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 30))
+//                  .foregroundColor(.black)
+//
+//                    }.padding(.leading)
+//                            .padding(.trailing)
                     
-                    VStack{
-                        
-                Text("Type")
-                  .padding(.top,20)
-                  .frame(maxWidth: .infinity, alignment: .leading)
-                  .padding(.bottom,-5)
-                
-                  
-                TextField("Sedan, Sports, Etc",text:$type)
-                    .foregroundColor(AppColors.redGradientColor1)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 30))
-                  .foregroundColor(.black)
-                  .overlay(HStack{
-                    Spacer()
-                  
-                      Menu(content: {
-                          
-                          Button(action: {}, label: {
-                              Text("SUV")
-                          })
-                         
-                          Button(action: {}, label: {
-                              Text("Sports")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("Sedan")
-                          })
-                        
-                          
-                       
-                          
-                      }, label: {
-                          Image("dropdown menu 2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                                .padding()
-                      })
-                     
-                      
-                  })
-                        
-                    }.padding(.leading)
-                            .padding(.trailing)
+//                    VStack{
+//
+//                Text("Type")
+//                  .padding(.top,20)
+//                  .frame(maxWidth: .infinity, alignment: .leading)
+//                  .padding(.bottom,-5)
+//
+//
+//                TextField("Sedan, Sports, Etc",text:$type)
+//                    .foregroundColor(AppColors.redGradientColor1)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 30))
+//                  .foregroundColor(.black)
+//                  .overlay(HStack{
+//                    Spacer()
+//
+//                      Menu(content: {
+//
+//                          Button(action: {}, label: {
+//                              Text("SUV")
+//                          })
+//
+//                          Button(action: {}, label: {
+//                              Text("Sports")
+//                          })
+//
+//                          Button(action: {}, label: {
+//                              Text("Sedan")
+//                          })
+//
+//
+//
+//
+//                      }, label: {
+//                          Image("dropdown menu 2")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 20, height: 20)
+//                                .padding()
+//                      })
+//
+//
+//                  })
+//
+//                    }.padding(.leading)
+//                            .padding(.trailing)
                     
                     VStack{
                         

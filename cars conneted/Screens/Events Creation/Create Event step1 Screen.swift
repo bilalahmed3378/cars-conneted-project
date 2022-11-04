@@ -42,7 +42,7 @@ struct Create_Event_step1_Screen: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: Create_Event_step_2_Screen(), isActive: self.$toNextStep){
+            NavigationLink(destination: Event_Details_Screen(), isActive: self.$toNextStep){
                 EmptyView()
             }
            
@@ -210,39 +210,39 @@ struct Create_Event_step1_Screen: View {
             .padding(.trailing)
             .padding(.bottom)
                 
-                HStack{
-                    Text("SubCategory")
-                        .font(AppFonts.regular_12)
-                    
-                    Spacer()
-                }
-                .padding(.leading)
-                .padding(.trailing)
-               
-                
-                HStack{
-                    TextField("Ace Classic club",text:$subCategory)
-                        .foregroundColor(.gray)
-                        .font(AppFonts.regular_14)
-                      .padding(.vertical, 10)
-                      .autocapitalization(.none)
-                      .background(Rectangle().frame(height: 1).padding(.top, 40))
-                      .foregroundColor(.gray)
-                      .overlay(HStack{
-                        Spacer()
-                          
-                              Image("dropdown menu 2")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
-                                    .padding()
-                         
-                      })
-                    
-                }
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
+//                HStack{
+//                    Text("SubCategory")
+//                        .font(AppFonts.regular_12)
+//
+//                    Spacer()
+//                }
+//                .padding(.leading)
+//                .padding(.trailing)
+//
+//
+//                HStack{
+//                    TextField("Ace Classic club",text:$subCategory)
+//                        .foregroundColor(.gray)
+//                        .font(AppFonts.regular_14)
+//                      .padding(.vertical, 10)
+//                      .autocapitalization(.none)
+//                      .background(Rectangle().frame(height: 1).padding(.top, 40))
+//                      .foregroundColor(.gray)
+//                      .overlay(HStack{
+//                        Spacer()
+//
+//                              Image("dropdown menu 2")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 20, height: 20)
+//                                    .padding()
+//
+//                      })
+//
+//                }
+//                .padding(.leading)
+//                .padding(.trailing)
+//                .padding(.bottom)
                     
                     HStack{
                         Text("Description")
@@ -451,53 +451,53 @@ struct Create_Event_step1_Screen: View {
             
         ///
                 Group{
-            HStack{
-                Text("Attendies Limit")
-                    .font(AppFonts.regular_12)
-                
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-           
+//            HStack{
+//                Text("Attendies Limit")
+//                    .font(AppFonts.regular_12)
+//
+//                Spacer()
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//
+//
+//            HStack{
+//                TextField("500",text:$attendiesLimit)
+//                    .foregroundColor(.gray)
+//                    .font(AppFonts.regular_14)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+//                  .foregroundColor(.gray)
+//
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//            .padding(.bottom)
             
-            HStack{
-                TextField("500",text:$attendiesLimit)
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
-                  .foregroundColor(.gray)
-                
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.bottom)
-            
-            HStack{
-                Text("Attendies Ticket")
-                    .font(AppFonts.regular_12)
-                
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-           
-            
-            HStack{
-                TextField("500",text:$attendiesTicket)
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
-                  .foregroundColor(.gray)
-                
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.bottom)
+//            HStack{
+//                Text("Attendies Ticket")
+//                    .font(AppFonts.regular_12)
+//
+//                Spacer()
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//
+//
+//            HStack{
+//                TextField("500",text:$attendiesTicket)
+//                    .foregroundColor(.gray)
+//                    .font(AppFonts.regular_14)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+//                  .foregroundColor(.gray)
+//
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//            .padding(.bottom)
             
             
                 VStack{
@@ -750,139 +750,139 @@ struct Create_Event_step1_Screen: View {
                 }
                 
                 
-                VStack{
-                    HStack{
-                        Text("Event Type")
-                            .font(AppFonts.semiBold_12)
-                        Spacer()
-                    }.padding(.bottom)
-                    
-                    HStack{
-                        
-                        HStack{
-                        Button(action: {
-                            self.eventTypeMoney = true
-                            
-                        }, label: {
-                            if(self.eventTypeMoney){
-                            Image("Group 7139")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                            }
-                            else{
-                                
-                                Image("Rectangle 75")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                            }
-                        })
-                      
-                        if(self.eventTypeMoney){
-                        Text("Paid")
-                            .foregroundColor(AppColors.redGradientColor1)
-                            .font(AppFonts.medium_16)
-                        }
-                        else{
-                            Text("Paid")
-                                .foregroundColor(.gray)
-                                .font(AppFonts.medium_16)
-                        }
-                        }
-                       
-                        
-                        
-                        HStack{
-                            
-                        Button(action: {
-                            self.eventTypeMoney = false
-                        }, label: {
-                            if !(self.eventTypeMoney){
-                            Image("Group 7139")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
-                            }
-                            else{
-                                Image("Rectangle 75")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 30, height: 30)
-                            }
-                        })
-                      
-                        
-                        if !(self.eventTypeMoney){
-                        Text("Free")
-                                .foregroundColor(AppColors.redGradientColor1)
-                            .font(AppFonts.medium_16)
-                        }
-                        else{
-                            Text("Free")
-                                .foregroundColor(.gray)
-                                .font(AppFonts.medium_16)
-                        }
-                            
-                        }
-                        .padding(.leading,175)
-                        
-                        Spacer()
-                    }
-                }
-                .padding()
-                .background(RoundedRectangle(cornerRadius: 0).strokeBorder(.gray).shadow(radius: 2))
-                .padding()
+//                VStack{
+//                    HStack{
+//                        Text("Event Type")
+//                            .font(AppFonts.semiBold_12)
+//                        Spacer()
+//                    }.padding(.bottom)
+//
+//                    HStack{
+//
+//                        HStack{
+//                        Button(action: {
+//                            self.eventTypeMoney = true
+//
+//                        }, label: {
+//                            if(self.eventTypeMoney){
+//                            Image("Group 7139")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 30, height: 30)
+//                            }
+//                            else{
+//
+//                                Image("Rectangle 75")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 30, height: 30)
+//                            }
+//                        })
+//
+//                        if(self.eventTypeMoney){
+//                        Text("Paid")
+//                            .foregroundColor(AppColors.redGradientColor1)
+//                            .font(AppFonts.medium_16)
+//                        }
+//                        else{
+//                            Text("Paid")
+//                                .foregroundColor(.gray)
+//                                .font(AppFonts.medium_16)
+//                        }
+//                        }
+//
+//
+//
+//                        HStack{
+//
+//                        Button(action: {
+//                            self.eventTypeMoney = false
+//                        }, label: {
+//                            if !(self.eventTypeMoney){
+//                            Image("Group 7139")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 30, height: 30)
+//                            }
+//                            else{
+//                                Image("Rectangle 75")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 30, height: 30)
+//                            }
+//                        })
+//
+//
+//                        if !(self.eventTypeMoney){
+//                        Text("Free")
+//                                .foregroundColor(AppColors.redGradientColor1)
+//                            .font(AppFonts.medium_16)
+//                        }
+//                        else{
+//                            Text("Free")
+//                                .foregroundColor(.gray)
+//                                .font(AppFonts.medium_16)
+//                        }
+//
+//                        }
+//                        .padding(.leading,175)
+//
+//                        Spacer()
+//                    }
+//                }
+//                .padding()
+//                .background(RoundedRectangle(cornerRadius: 0).strokeBorder(.gray).shadow(radius: 2))
+//                .padding()
             
             
             Group{
-            HStack{
-                Text("Registration Price")
-                    .font(AppFonts.regular_12)
-                
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-           
+//            HStack{
+//                Text("Registration Price")
+//                    .font(AppFonts.regular_12)
+//
+//                Spacer()
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//
+//
+//            HStack{
+//                TextField("$500",text:$registrationPrice)
+//                    .foregroundColor(.gray)
+//                    .font(AppFonts.regular_14)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+//                  .foregroundColor(.gray)
+//
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//            .padding(.bottom)
             
-            HStack{
-                TextField("$500",text:$registrationPrice)
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
-                  .foregroundColor(.gray)
-                
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.bottom)
-            
-            HStack{
-                Text("Video URL")
-                    .font(AppFonts.regular_12)
-                
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-           
-            
-            HStack{
-                TextField("www.youtube.com",text:$videoUrl)
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
-                  .foregroundColor(.gray)
-                
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.bottom)
+//            HStack{
+//                Text("Video URL")
+//                    .font(AppFonts.regular_12)
+//
+//                Spacer()
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//
+//
+//            HStack{
+//                TextField("www.youtube.com",text:$videoUrl)
+//                    .foregroundColor(.gray)
+//                    .font(AppFonts.regular_14)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+//                  .foregroundColor(.gray)
+//
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//            .padding(.bottom)
 
             HStack{
                 Text("Website URL")
@@ -908,29 +908,29 @@ struct Create_Event_step1_Screen: View {
             .padding(.trailing)
             .padding(.bottom)
             
-            HStack{
-                Text("other URL")
-                    .font(AppFonts.regular_12)
-                
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-           
-            
-            HStack{
-                TextField("www.youtube.com",text:$otherUrl)
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                  .padding(.vertical, 10)
-                  .autocapitalization(.none)
-                  .background(Rectangle().frame(height: 1).padding(.top, 40))
-                  .foregroundColor(.gray)
-                
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.bottom)
+//            HStack{
+//                Text("other URL")
+//                    .font(AppFonts.regular_12)
+//
+//                Spacer()
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//
+//
+//            HStack{
+//                TextField("www.youtube.com",text:$otherUrl)
+//                    .foregroundColor(.gray)
+//                    .font(AppFonts.regular_14)
+//                  .padding(.vertical, 10)
+//                  .autocapitalization(.none)
+//                  .background(Rectangle().frame(height: 1).padding(.top, 40))
+//                  .foregroundColor(.gray)
+//
+//            }
+//            .padding(.leading)
+//            .padding(.trailing)
+//            .padding(.bottom)
 
             }
             

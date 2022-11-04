@@ -95,15 +95,15 @@ struct User_Profile__Wall: View {
                         }
                        
                         
-                        HStack{
-                            Image("carbon_application-mobile-1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                            
-                            Text("+96-96987458962")
-                                .font(AppFonts.regular_16)
-                        }
+//                        HStack{
+//                            Image("carbon_application-mobile-1")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 24, height: 24)
+//
+//                            Text("+96-96987458962")
+//                                .font(AppFonts.regular_16)
+//                        }
                         
                         HStack{
                             Image("location black icon")
@@ -406,11 +406,7 @@ struct User_Profile__Wall: View {
         }
     }
     
-    struct User_Profile__Wall_Previews: PreviewProvider {
-        static var previews: some View {
-            User_Profile__Wall()
-        }
-    }
+   
 
 struct PostCardProfile : View {
     
@@ -437,7 +433,15 @@ struct PostCardProfile : View {
                 }
                 Spacer()
                 
-                Image("doted Icons")
+                
+                Menu(content: {
+                    Button(action: {}, label: {
+                        Text("Remove")
+                    })
+                }, label: {
+                    Image("doted Icons")
+                })
+               
                 
             }.padding(.bottom,10)
             

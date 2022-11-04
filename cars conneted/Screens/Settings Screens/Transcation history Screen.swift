@@ -69,7 +69,7 @@ struct Transcation_history_Screen: View {
                     .padding(.trailing)
                     .padding(.top)
                 
-            }  .padding(.top,30)
+            }  .padding(.top,40)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
@@ -187,7 +187,7 @@ struct Transcation_history_Screen: View {
                     
                     
                     
-                    Text("Selext Type")
+                    Text("Select Type")
                       .padding(.top,20)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       

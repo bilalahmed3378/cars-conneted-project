@@ -88,7 +88,7 @@ struct Getting_Started_Screen: View {
                 .padding(.top,10)
                 .padding(.bottom,30)
                     
-                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(.white).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*60).overlay(VStack{
+                }.background(RoundedCorners(tl: 40, tr: 40, bl: 0, br: 0) .fill(AppColors.whiteColor).frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*60).overlay(VStack{
                     Spacer()
                     HStack{
                         Spacer()

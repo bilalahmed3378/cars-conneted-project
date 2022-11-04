@@ -149,14 +149,14 @@ struct Event_Details_Other_Events: View {
              
             
             HStack{
-                Image("Video Icon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 24, height: 24)
-                
-                Text("Watch Video")
-                    .font(AppFonts.regular_14)
-                    .foregroundColor(AppColors.redGradientColor1)
+//                Image("Video Icon")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 24, height: 24)
+//
+//                Text("Watch Video")
+//                    .font(AppFonts.regular_14)
+//                    .foregroundColor(AppColors.redGradientColor1)
                 
                 Spacer()
                 
@@ -168,11 +168,11 @@ struct Event_Details_Other_Events: View {
                 
                 Spacer()
                 
-                Image("media icon red")
-                
-                Text("Media")
-                    .font(AppFonts.regular_14)
-                    .foregroundColor(AppColors.redGradientColor1)
+//                Image("media icon red")
+//
+//                Text("Media")
+//                    .font(AppFonts.regular_14)
+//                    .foregroundColor(AppColors.redGradientColor1)
                 
             }.padding(.leading)
                 .padding(.trailing)
@@ -193,7 +193,7 @@ struct Event_Details_Other_Events: View {
                 
                 Spacer()
               
-                    Text("Entrepreneurs")
+                    Text("Follow Event")
                     .foregroundColor(AppColors.redGradientColor1)
                         .font(AppFonts.regular_12)
                         .padding()
@@ -207,25 +207,25 @@ struct Event_Details_Other_Events: View {
                 .padding(.leading)
                     .padding(.trailing)
             
-            HStack(alignment: .top){
-                Image("ticket icon red")
-                
-                VStack(alignment: .leading){
-                    
-                Text("Available Tickets")
-                    .foregroundColor(AppColors.redGradientColor1)
-                    .font(AppFonts.regular_16)
-                    .padding(.bottom,2)
-                    
-                    Text("130-500")
-                        .font(AppFonts.regular_16)
-                        .foregroundColor(.gray)
-                    
-                }
-                
-                Spacer()
-            }
-            .padding()
+//            HStack(alignment: .top){
+//                Image("ticket icon red")
+//                
+//                VStack(alignment: .leading){
+//                    
+//                Text("Available Tickets")
+//                    .foregroundColor(AppColors.redGradientColor1)
+//                    .font(AppFonts.regular_16)
+//                    .padding(.bottom,2)
+//                    
+//                    Text("130-500")
+//                        .font(AppFonts.regular_16)
+//                        .foregroundColor(.gray)
+//                    
+//                }
+//                
+//                Spacer()
+//            }
+//            .padding()
             
             HStack(alignment: .top){
                 Image("calander red icon")

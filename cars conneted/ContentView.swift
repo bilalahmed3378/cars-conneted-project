@@ -255,7 +255,7 @@ struct NavigationDrawer: View {
                                         Image("Home icon")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 30, height: 30)
+                                            .frame(width: 24, height: 24)
                                         
                                         Text("Home")
                                             .font(AppFonts.regular_16)
@@ -280,7 +280,7 @@ struct NavigationDrawer: View {
                                     Image("Dashboard icon")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 30, height: 30)
+                                        .frame(width: 24, height: 24)
                                     
                                     Text("Dashboard")
                                         .font(AppFonts.regular_16)
@@ -310,7 +310,7 @@ struct NavigationDrawer: View {
                                         Image("message icon white")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 30, height: 30)
+                                            .frame(width: 24, height: 24)
                                         
                                         Text("Messages")
                                             .font(AppFonts.regular_16)
@@ -333,7 +333,7 @@ struct NavigationDrawer: View {
                                     Image("fa-solid_user-friends")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 30, height: 30)
+                                        .frame(width: 24, height: 24)
                                     
                                     Text("Friends")
                                         .font(AppFonts.regular_16)
@@ -360,7 +360,7 @@ struct NavigationDrawer: View {
                                     Image("my garage icon white")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 30, height: 30)
+                                        .frame(width: 24, height: 24)
                                     
                                     Text("My Garage")
                                         .font(AppFonts.regular_16)
@@ -383,15 +383,15 @@ struct NavigationDrawer: View {
 //                            NavigationLink(destination: BookingScreen(isFlowRootActive: self.$bookingsScreenActive), isActive : self.$bookingsScreenActive){
                                 
                             NavigationLink(destination: {
-                                My_Shop_My_View()
+                                MyShopListsScreen()
                             }, label: {
                                 HStack{
                                     Image("my classified icon white")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 30, height: 30)
+                                        .frame(width: 24, height: 24)
                                     
-                                    Text("My Classifieds")
+                                    Text("My Shops")
                                         .font(AppFonts.regular_16)
                                         .foregroundColor(.white)
                                         .padding(.leading,5)
@@ -422,7 +422,7 @@ struct NavigationDrawer: View {
                                     Image("my events icon white")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width: 30, height: 30)
+                                        .frame(width: 24, height: 24)
                                     
                                     Text("My Events")
                                         .font(AppFonts.regular_16)
@@ -471,27 +471,25 @@ struct NavigationDrawer: View {
                             
                         }
                         
-                        
-                        // Settings  button group
+                        // saved items
                         Group{
                             Spacer()
                             Button(action: {
                                 withAnimation{
-                                    self.mainTabContainer.selectedIndex = 4
                                     self.isDrawerOpen = false
                                     self.drawerOffset = -(UIScreen.widthBlockSize*70)
                                 }
                             }){
                                 NavigationLink(destination: {
-                                    Transcation_history_Screen()
+                                    SavedItemsScreen()
                                 }, label: {
                                     HStack{
-                                        Image("transactions icon white")
+                                        Image("Combined-Shape")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 30, height: 30)
+                                            .frame(width: 24, height: 24)
                                         
-                                        Text("Transactions")
+                                        Text("Saved Items")
                                             .font(AppFonts.regular_16)
                                             .foregroundColor(.white)
                                             .padding(.leading,5)
@@ -502,100 +500,134 @@ struct NavigationDrawer: View {
                             }
                         }
                         
+                        
+                        
+                        
                         Group{
-                        // Settings  button group
-                        Group{
-                            Spacer()
-                            Button(action: {
-                                withAnimation{
-                                    self.mainTabContainer.selectedIndex = 4
-                                    self.isDrawerOpen = false
-                                    self.drawerOffset = -(UIScreen.widthBlockSize*70)
-                                }
-                            }){
-                                
-                                NavigationLink(destination: {
-                                    My_Plan_screen()
-                                }, label: {
-                                    HStack{
-                                        Image("membership icon white")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 30, height: 30)
-                                        
-                                        Text("Membership")
-                                            .font(AppFonts.regular_16)
-                                            .foregroundColor(.white)
-                                            .padding(.leading,5)
+                            // Settings  button group
+                            Group{
+                                Spacer()
+                                Button(action: {
+                                    withAnimation{
+                                        self.mainTabContainer.selectedIndex = 4
+                                        self.isDrawerOpen = false
+                                        self.drawerOffset = -(UIScreen.widthBlockSize*70)
                                     }
+                                }){
+                                    NavigationLink(destination: {
+                                        Transcation_history_Screen()
+                                    }, label: {
+                                        HStack{
+                                            Image("transactions icon white")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 24, height: 24)
+                                            
+                                            Text("Transactions")
+                                                .font(AppFonts.regular_16)
+                                                .foregroundColor(.white)
+                                                .padding(.leading,5)
+                                            
+                                        }
+                                    })
                                     
-                                })
-                              
-                            }
-                        }
-                        
-                        
-                        Group{
-                            Spacer()
-                            Button(action: {
-                                withAnimation{
-                                    self.mainTabContainer.selectedIndex = 4
-                                    self.isDrawerOpen = false
-                                    self.drawerOffset = -(UIScreen.widthBlockSize*70)
                                 }
-                            }){
-                                
-                                NavigationLink(destination: {
-                                    Setting_Screen()
-                                }, label: {
-                                    HStack{
-                                        Image("Setting icon white")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 30, height: 30)
+                            }
+                            
+                            Group{
+                                // Settings  button group
+                                Group{
+                                    Spacer()
+                                    Button(action: {
+                                        withAnimation{
+                                            self.mainTabContainer.selectedIndex = 4
+                                            self.isDrawerOpen = false
+                                            self.drawerOffset = -(UIScreen.widthBlockSize*70)
+                                        }
+                                    }){
                                         
-                                        Text("Setting")
-                                            .font(AppFonts.regular_16)
-                                            .foregroundColor(.white)
-                                            .padding(.leading,5)
+                                        NavigationLink(destination: {
+                                            My_Plan_screen()
+                                        }, label: {
+                                            HStack{
+                                                Image("membership icon white")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 24, height: 24)
+                                                
+                                                Text("Membership")
+                                                    .font(AppFonts.regular_16)
+                                                    .foregroundColor(.white)
+                                                    .padding(.leading,5)
+                                            }
+                                            
+                                        })
+                                        
                                     }
-                                    
-                                })
-                               
-                            }
-                        }
-                        
-                        
-                        Group{
-                            Spacer()
-                            Button(action: {
-                                withAnimation{
-                                    self.mainTabContainer.selectedIndex = 4
-                                    self.isDrawerOpen = false
-                                    self.drawerOffset = -(UIScreen.widthBlockSize*70)
                                 }
-                            }){
                                 
-                                NavigationLink(destination: Login_Screen(), label: {
-                                    HStack{
-                                        Image("Logout icon white")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width: 30, height: 30)
+                                
+                                Group{
+                                    Spacer()
+                                    Button(action: {
+                                        withAnimation{
+                                            self.mainTabContainer.selectedIndex = 4
+                                            self.isDrawerOpen = false
+                                            self.drawerOffset = -(UIScreen.widthBlockSize*70)
+                                        }
+                                    }){
                                         
-                                        Text("Logout")
-                                            .font(AppFonts.regular_16)
-                                            .foregroundColor(.white)
-                                            .padding(.leading,5)
-                                    }.padding(.bottom)
-                                       
-                                })
-                              
+                                        NavigationLink(destination: {
+                                            Setting_Screen()
+                                        }, label: {
+                                            HStack{
+                                                Image("Setting icon white")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 24, height: 24)
+                                                
+                                                Text("Setting")
+                                                    .font(AppFonts.regular_16)
+                                                    .foregroundColor(.white)
+                                                    .padding(.leading,5)
+                                            }
+                                            
+                                        })
+                                        
+                                    }
+                                }
+                                
+                                
+                                Group{
+                                    Spacer()
+                                    Button(action: {
+                                        withAnimation{
+                                            self.mainTabContainer.selectedIndex = 4
+                                            self.isDrawerOpen = false
+                                            self.drawerOffset = -(UIScreen.widthBlockSize*70)
+                                        }
+                                    }){
+                                        
+                                        NavigationLink(destination: Login_Screen(), label: {
+                                            HStack{
+                                                Image("Logout icon white")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 24, height: 24)
+                                                
+                                                Text("Logout")
+                                                    .font(AppFonts.regular_16)
+                                                    .foregroundColor(.white)
+                                                    .padding(.leading,5)
+                                            }.padding(.bottom,30)
+                                            
+                                        })
+                                        
+                                    }
+                                }
+                                
                             }
                         }
-                        
-                        }
-                        
                         
                     }
                     
@@ -624,6 +656,29 @@ struct NavigationDrawer: View {
 }
 
 
+
+
+struct Dialog<DialogContent : View> : View {
+    
+    let cancelable : Bool
+    @Binding var isShowing : Bool
+    @ViewBuilder let dialogContent : DialogContent
+    
+    var body: some View {
+        
+        Rectangle()
+            .foregroundColor(Color.black.opacity(0.6))
+            .onTapGesture(perform: {
+                if(self.cancelable && self.isShowing){
+                    isShowing.toggle()
+                }
+        })
+        
+        dialogContent
+        
+        
+    }
+}
 
 
 

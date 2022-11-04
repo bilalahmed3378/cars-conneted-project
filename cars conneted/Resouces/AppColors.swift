@@ -14,4 +14,11 @@ struct AppColors {
     
     static let redGradientColor2 = Color("RedGradientColor2")
     
+    static let BlackColor = Color("BlackColor")
+    
+    static let whiteColor = Color("WhiteColor")
+    
+    static let FixBlackColor = Color("FixBlackColor")
+    
+    
 }

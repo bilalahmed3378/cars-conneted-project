@@ -54,7 +54,7 @@ struct Popular_Classified_Screen: View {
                         Image("plus icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 30, height: 30)
                     })
                   
                     
@@ -106,7 +106,7 @@ struct Popular_Classified_Screen: View {
                 
                 
             }
-            .padding(.top,30)
+            .padding(.top,40)
                 .padding(.bottom,15)
                 .background(
                     Image("home screen background")

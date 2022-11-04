@@ -52,7 +52,7 @@ struct Events_Screen: View {
                 
                 Text("Events")
                     .font(AppFonts.SemiBold_20)
-                    .foregroundColor(.white)
+                    .foregroundColor(AppColors.whiteColor)
                 
                 Spacer()
                 
@@ -61,8 +61,8 @@ struct Events_Screen: View {
                 Image("doted icons-1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 35)
-                    .padding(.trailing,10)
+                    .frame(width: 35, height: 35)
+                   
                 
              
                    
@@ -111,7 +111,7 @@ struct Events_Screen: View {
             
         }
        
-        .padding(.top,30)
+        .padding(.top,40)
         .padding(.bottom,15)
         .background(
             Image("home screen background")

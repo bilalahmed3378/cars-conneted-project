@@ -43,7 +43,7 @@ struct My_Support_Requests_screen: View {
                 .padding(.top,20)
             
         }
-        }.padding(.top,30)
+        }.padding(.top,40)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")

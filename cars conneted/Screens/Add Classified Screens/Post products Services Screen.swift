@@ -60,7 +60,7 @@ struct Post_products_Services_Screen: View {
                     .padding(.trailing,24)
                     .padding(.top,20)
                 
-            }  .padding(.top,30)
+            }  .padding(.top,40)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")

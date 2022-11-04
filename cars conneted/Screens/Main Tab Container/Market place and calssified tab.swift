@@ -57,7 +57,7 @@ struct Market_place_and_calssified: View {
                     
                     Text("Market Place")
                         .font(AppFonts.SemiBold_20)
-                        .foregroundColor(.white)
+                        .foregroundColor(AppColors.whiteColor)
                     
                     Spacer()
                     NavigationLink(destination: Create_Shop_Screen(), label: {
@@ -65,7 +65,7 @@ struct Market_place_and_calssified: View {
                         Image("plus icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                            .frame(width: 20, height: 30)
                            
                     })
                     
@@ -120,7 +120,7 @@ struct Market_place_and_calssified: View {
                 
                 
             }
-            .padding(.top,30)
+            .padding(.top,40)
                 .padding(.bottom,15)
                 .background(
                     Image("home screen background")

@@ -82,6 +82,7 @@ struct Search_Screen: View {
                             .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
                             
                     }
+                    .padding(.top,10)
                     
                     
                     
@@ -92,6 +93,7 @@ struct Search_Screen: View {
                         Image("home screen background")
                             .resizable()
                     )
+                   
                 
                 
                 
@@ -102,48 +104,57 @@ struct Search_Screen: View {
                     
                     VStack{
                         
-                        HStack{
-                            
-                            Button(action: {
-                                self.isSelected = 0
-                            }, label: {
-                                Text("People")
-                                    .font(AppFonts.medium_14)
-                                    .foregroundColor(self.isSelected == 0 ? .red : .gray)
-                            })
-                          
-                            Spacer()
-                            
-                            Button(action: {
-                                self.isSelected = 1
-                            }, label: {
-                                Text("Posts")
-                                    .font(AppFonts.medium_14)
-                                    .foregroundColor(self.isSelected == 1 ? .red : .gray)
-                            })
-                           
-                            Spacer()
-                            
-                            Button(action: {
-                                self.isSelected = 2
-                            }, label: {
-                                Text("Events")
-                                    .font(AppFonts.medium_14)
-                                    .foregroundColor(self.isSelected == 2 ? .red : .gray)
-                            })
-                           
-                            Spacer()
-                            
-                            Button(action: {
-                                self.isSelected = 3
-                            }, label: {
-                                Text("Clubs")
-                                    .font(AppFonts.medium_14)
-                                    .foregroundColor(self.isSelected == 3 ? .red : .gray)
-                            })
-                           
+                        ScrollView(.horizontal, showsIndicators: false){
+                            HStack{
+                                
+                                Button(action: {
+                                    self.isSelected = 0
+                                }, label: {
+                                    Text("People")
+                                        .font(AppFonts.medium_14)
+                                        .foregroundColor(self.isSelected == 0 ? .red : .gray)
+                                })
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    self.isSelected = 1
+                                }, label: {
+                                    Text("Posts")
+                                        .font(AppFonts.medium_14)
+                                        .foregroundColor(self.isSelected == 1 ? .red : .gray)
+                                })
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    self.isSelected = 2
+                                }, label: {
+                                    Text("Events")
+                                        .font(AppFonts.medium_14)
+                                        .foregroundColor(self.isSelected == 2 ? .red : .gray)
+                                })
+                                
+                                Spacer()
+                                
+                                Button(action: {
+                                    self.isSelected = 3
+                                }, label: {
+                                    Text("Clubs")
+                                        .font(AppFonts.medium_14)
+                                        .foregroundColor(self.isSelected == 3 ? .red : .gray)
+                                })
+                                
+                                Button(action: {
+                                    self.isSelected = 4
+                                }, label: {
+                                    Text("Classified")
+                                        .font(AppFonts.medium_14)
+                                        .foregroundColor(self.isSelected == 4 ? .red : .gray)
+                                })
+                                
+                            }
                         }
-                        
                         Divider()
                             .padding(.top,10)
                         
@@ -202,6 +213,20 @@ struct Search_Screen: View {
                     LazyVStack{
                         ForEach(0...10 , id:\.self){ index in
                             ClubCard()
+                
+                }
+               
+                
+                    }
+            }
+                }
+                
+                if(self.isSelected == 4){
+                ScrollView(showsIndicators: false){
+                    
+                    LazyVStack{
+                        ForEach(0...10 , id:\.self){ index in
+                            marketPlaceSreachCardsHome()
                 
                 }
                

@@ -82,7 +82,7 @@ struct My_club_Details__admin_view__Screen: View {
                 
             }
            
-            .padding(.top,30)
+            .padding(.top,40)
             .padding(.bottom,15)
             .background(
                 Image("home screen background")

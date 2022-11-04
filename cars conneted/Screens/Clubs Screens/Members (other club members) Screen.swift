@@ -88,7 +88,7 @@ struct Members__other_club_members__Screen: View {
             
         }
        
-        .padding(.top,30)
+        .padding(.top,40)
         .padding(.bottom,15)
         .background(
             Image("home screen background")
@@ -119,11 +119,6 @@ struct Members__other_club_members__Screen: View {
     }
 }
 
-struct Members__other_club_members__Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Members__other_club_members__Screen()
-    }
-}
 
 struct clubMembers : View{
     var body: some View{

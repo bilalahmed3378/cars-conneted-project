@@ -15,52 +15,56 @@ struct My_Garage_My_View: View {
     
     @State var toAddCar =  false
     
+    @State var showDeleteDialog : Bool = false
+    
+    @State var showDeleteDialog2 : Bool = false
     
     
     var body: some View {
-        VStack{
-            
-            NavigationLink(destination: Edit_Garage_Screen(), isActive: self.$toEditGarage){
-                EmptyView()
-            }
-            
-            NavigationLink(destination: Add_your_Car_Screen(), isActive: self.$toAddCar){
-                EmptyView()
-            }
-            
-            HStack{
+        ZStack{
+            VStack{
                 
-                Button(action: {
-                    self.presentaionMode.wrappedValue.dismiss()
-                }, label: {
-                    Image("Icons-2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
-                })
-              
+                NavigationLink(destination: Edit_Garage_Screen(), isActive: self.$toEditGarage){
+                    EmptyView()
+                }
                 
-                Spacer()
+                NavigationLink(destination: Add_your_Car_Screen(), isActive: self.$toAddCar){
+                    EmptyView()
+                }
                 
-                Text("My Virual Garage")
-                    .font(AppFonts.medium_18)
-                
-                Spacer()
-                
-                Menu(content: {
+                HStack{
                     
                     Button(action: {
-                        self.toAddCar = true
+                        self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        
-                      Image("add new car")
-                        
-                        Text("Add New Car")
-                            .font(AppFonts.regular_14)
-                        
-                      
-                        
+                        Image("Icons-2")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35, height: 35)
                     })
+                    
+                    
+                    Spacer()
+                    
+                    Text("My Virual Garage")
+                        .font(AppFonts.medium_18)
+                    
+                    Spacer()
+                    
+                    Menu(content: {
+                        
+                        Button(action: {
+                            self.toAddCar = true
+                        }, label: {
+                            
+                            Image("add new car")
+                            
+                            Text("Add New Car")
+                                .font(AppFonts.regular_14)
+                            
+                            
+                            
+                        })
                         
                         Button(action: {
                             self.toEditGarage = true
@@ -74,7 +78,7 @@ struct My_Garage_My_View: View {
                         })
                         
                         Button(action: {
-                            
+                            self.showDeleteDialog = true
                         }, label: {
                             
                             Image("delete black")
@@ -85,122 +89,238 @@ struct My_Garage_My_View: View {
                                 .foregroundColor(AppColors.redGradientColor1)
                             
                         })
-                    
                         
-                    
-                    
-                    
-                }, label: {
-                    
-                    Image("doted Icons")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 35, height: 35)
                         
-                      
-                })
-                
-            }.padding()
-               
-            ScrollView(.vertical, showsIndicators: false){
-            
-            HStack{
-                
-                Spacer()
-                
-                VStack{
-                    Text("16.3k")
-                        .font(AppFonts.SemiBold_20)
-                        .padding(.bottom,2)
-                        .foregroundColor(.white)
+                        
+                        
+                        
+                    }, label: {
+                        
+                        Image("doted Icons")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 35, height: 35)
+                        
+                        
+                    })
                     
-                    Text("Likes")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.white)
-                }
+                }.padding()
                 
-                Spacer()
-                
-                VStack{
-                    Text("6.9k")
-                        .font(AppFonts.SemiBold_20)
-                        .padding(.bottom,2)
-                        .foregroundColor(.white)
+                ScrollView(.vertical, showsIndicators: false){
                     
-                    Text("Comments")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-                VStack{
-                    Text("2.6k")
-                        .font(AppFonts.SemiBold_20)
-                        .padding(.bottom,2)
-                        .foregroundColor(.white)
                     
-                    Text("Shares")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(.white)
-                }
-                
-                Spacer()
-                
-            }.padding(.top,30)
-                .padding(.bottom,30)
-            .background(RoundedRectangle(cornerRadius: 25).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-            .padding()
-            
-            
-            HStack{
-                Text("5 cars in Garage")
-                    .font(AppFonts.regular_18)
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            .padding(.bottom,10)
-            
-            
-            HStack{
-                Text("Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit. Aliqueto.")
-                    .font(AppFonts.regular_12)
-                Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
-            
-           
-                
-                LazyVStack{
-                    ForEach (0...3 , id : \.self){
-                        index in
-                        myGarage()
+                    
+                    
+                    HStack{
+                        Text("5 cars in Garage")
+                            .font(AppFonts.regular_18)
+                        Spacer()
+                    }
+                    .padding(.leading)
+                    .padding(.trailing)
+                    .padding(.bottom,10)
+                    
+                    
+                    HStack{
+                        Text("Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit. Aliqueto.")
+                            .font(AppFonts.regular_12)
+                        Spacer()
+                    }
+                    .padding(.leading)
+                    .padding(.trailing)
+                    
+                    
+                    
+                    LazyVStack{
+                        ForEach (0...3 , id : \.self){
+                            index in
+                            myGarage()
+                        }
+                        
                     }
                     
+                    Text("View more")
+                        .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.regular_16)
+                    
                 }
-               
-                Text("View more")
-                    .foregroundColor(AppColors.redGradientColor1)
-                    .font(AppFonts.regular_16)
                 
-            }
+                
+                
+                
+                
+            }.edgesIgnoringSafeArea(.bottom)
+                .navigationBarHidden(true)
+            
            
             
+                if(self.showDeleteDialog){
+                    
+                    Dialog(cancelable: false, isShowing: self.$showDeleteDialog){
+                        
+                        VStack{
+                            
+                            
+                            Image(systemName : "exclamationmark.triangle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 40, height: 40)
+                                .foregroundColor(AppColors.redGradientColor1)
+                            
+                            Text("Are you sure you want to delete Garage?")
+                                .font(AppFonts.regular_14)
+                                .foregroundColor(Color.black)
+                                .padding(.top,10)
+                            
+                           
+                         
+                                
+                                HStack{
+                                    
+                                    Button(action: {
+                                        withAnimation{
+                                            self.showDeleteDialog = false
+                                        }
+                                    }){
+                                        HStack{
+                                            Spacer()
+                                            
+                                            Text("Cancel")
+                                                .font(AppFonts.regular_14)
+                                                .foregroundColor(Color.white)
+                                            
+                                            Spacer()
+                                            
+                                        }
+                                        .padding()
+                                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.black))
+                                        .padding(.trailing,10)
+                                    }
+                                    
+                                    Button(action: {
+                                        
+                                        withAnimation{
+                                          
+                                        }
+                                        
+                                    }){
+                                        HStack{
+                                            Spacer()
+                                            
+                                            Text("Yes")
+                                                .font(AppFonts.regular_14)
+                                                .foregroundColor(Color.white)
+                                            
+                                            Spacer()
+                                        }
+                                        .padding(15)
+                                        .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1))
+                                        .padding(.leading,10)
+                                    }
+                                }
+                                .padding(.top,10)
+                                
+                            
+                            
+                           
+                            
+                        }
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 10).fill(Color.white).shadow(radius: 8))
+                        .padding(.leading,20)
+                        .padding(.trailing,20)
+                        
+                    }
+                    .edgesIgnoringSafeArea(.all)
+                }
             
-            
-            Spacer()
-        }.edgesIgnoringSafeArea(.bottom)
-            .navigationBarHidden(true)
+            if(self.showDeleteDialog2){
+                
+                Dialog(cancelable: false, isShowing: self.$showDeleteDialog){
+                    
+                    VStack{
+                        
+                        
+                        Image(systemName : "exclamationmark.triangle.fill")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                            .foregroundColor(AppColors.redGradientColor1)
+                        
+                        Text("Delete selected vehicle?")
+                            .font(AppFonts.regular_14)
+                            .foregroundColor(Color.black)
+                            .padding(.top,10)
+                        
+                       
+                     
+                            
+                            HStack{
+                                
+                                Button(action: {
+                                    withAnimation{
+                                        self.showDeleteDialog2 = false
+                                    }
+                                }){
+                                    HStack{
+                                        Spacer()
+                                        
+                                        Text("Cancel")
+                                            .font(AppFonts.regular_14)
+                                            .foregroundColor(Color.white)
+                                        
+                                        Spacer()
+                                        
+                                    }
+                                    .padding()
+                                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.black))
+                                    .padding(.trailing,10)
+                                }
+                                
+                                Button(action: {
+                                    
+                                    withAnimation{
+                                      
+                                    }
+                                    
+                                }){
+                                    HStack{
+                                        Spacer()
+                                        
+                                        Text("Yes")
+                                            .font(AppFonts.regular_14)
+                                            .foregroundColor(Color.white)
+                                        
+                                        Spacer()
+                                    }
+                                    .padding(15)
+                                    .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1))
+                                    .padding(.leading,10)
+                                }
+                            }
+                            .padding(.top,10)
+                            
+                        
+                        
+                       
+                        
+                    }
+                    .padding()
+                    .background(RoundedRectangle(cornerRadius: 10).fill(Color.white).shadow(radius: 8))
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    
+                }
+                .edgesIgnoringSafeArea(.all)
+            }
+                
+                
+           
+        }
     }
 }
 
-struct My_Garage_My_View_Previews: PreviewProvider {
-    static var previews: some View {
-        My_Garage_My_View()
-    }
-}
+
 
 struct myGarage : View {
     
@@ -250,7 +370,7 @@ struct myGarage : View {
                                 })
                                 
                                 Button(action: {
-                                    self.toDeletedCar = true
+                                   
                                 }, label: {
                                     
                                     Image("delete black")

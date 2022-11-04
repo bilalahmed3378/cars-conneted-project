@@ -61,6 +61,7 @@
 		5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088228ACBC4F00C44D86 /* Payment Methods screen.swift */; };
 		5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088428ACE97000C44D86 /* Billing Options Screen.swift */; };
 		595013B228B4B008007B594B /* Edit Garage Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595013B128B4B008007B594B /* Edit Garage Screen.swift */; };
+		5952DC0B290A63E100B73C5A /* SavedItemsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5952DC0A290A63E100B73C5A /* SavedItemsScreen.swift */; };
 		59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EF928AE0266001F6EEE /* Support Screen.swift */; };
 		59532EFC28AE0C79001F6EEE /* Support FAQS Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EFB28AE0C79001F6EEE /* Support FAQS Screen.swift */; };
 		59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59532EFD28AE132C001F6EEE /* Contact Support.swift */; };
@@ -91,6 +92,7 @@
 		5962F81528C9FC9C0052CDA7 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 5962F81428C9FC9C0052CDA7 /* Lottie */; };
 		59646AAE28CF834E0098F147 /* Following Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59646AAD28CF834E0098F147 /* Following Screen.swift */; };
 		59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59673EF028ABAB8600B2A305 /* Change User Name.swift */; };
+		596C102A290F927300209E84 /* MyShopListsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596C1029290F927300209E84 /* MyShopListsScreen.swift */; };
 		596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */; };
 		596D8A1628B8CA6B00E0F7DE /* Event Details Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */; };
 		597282DB28B74EFF0004F4CB /* Classified Spare Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */; };
@@ -254,6 +256,7 @@
 		5950088228ACBC4F00C44D86 /* Payment Methods screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Methods screen.swift"; sourceTree = "<group>"; };
 		5950088428ACE97000C44D86 /* Billing Options Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Billing Options Screen.swift"; sourceTree = "<group>"; };
 		595013B128B4B008007B594B /* Edit Garage Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edit Garage Screen.swift"; sourceTree = "<group>"; };
+		5952DC0A290A63E100B73C5A /* SavedItemsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedItemsScreen.swift; sourceTree = "<group>"; };
 		59532EF928AE0266001F6EEE /* Support Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support Screen.swift"; sourceTree = "<group>"; };
 		59532EFB28AE0C79001F6EEE /* Support FAQS Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Support FAQS Screen.swift"; sourceTree = "<group>"; };
 		59532EFD28AE132C001F6EEE /* Contact Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Contact Support.swift"; sourceTree = "<group>"; };
@@ -281,6 +284,7 @@
 		5962F80E28C9E9860052CDA7 /* practice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practice.swift; sourceTree = "<group>"; };
 		59646AAD28CF834E0098F147 /* Following Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Following Screen.swift"; sourceTree = "<group>"; };
 		59673EF028ABAB8600B2A305 /* Change User Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Change User Name.swift"; sourceTree = "<group>"; };
+		596C1029290F927300209E84 /* MyShopListsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyShopListsScreen.swift; sourceTree = "<group>"; };
 		596D8A1328B8AA9100E0F7DE /* Create Event step 2 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Event step 2 Screen.swift"; sourceTree = "<group>"; };
 		596D8A1528B8CA6B00E0F7DE /* Event Details Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Event Details Screen.swift"; sourceTree = "<group>"; };
 		597282DA28B74EFF0004F4CB /* Classified Spare Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Spare Parts Screen.swift"; sourceTree = "<group>"; };
@@ -359,6 +363,7 @@
 		59DB4466289950F5006766EA /* NullEncodeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NullEncodeable.swift; sourceTree = "<group>"; };
 		59DB446828995120006766EA /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		59DB446A2899514E006766EA /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
+		59DB62E0291127C600301685 /* lottie file.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "lottie file.json"; sourceTree = "<group>"; };
 		59DCDC6E28CA093B006FCF60 /* 84228-delete-animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "84228-delete-animation.json"; sourceTree = "<group>"; };
 		59DCDC7028CA0C53006FCF60 /* 117335-red-check (1).json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "117335-red-check (1).json"; sourceTree = "<group>"; };
 		59DE385D288EB41600BD72D9 /* Payment method step 1 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment method step 1 screen.swift"; sourceTree = "<group>"; };
@@ -594,8 +599,8 @@
 				5934669A2886C5D800956869 /* Screens */,
 				593466682886712800956869 /* cars_connetedApp.swift */,
 				5934666A2886712800956869 /* ContentView.swift */,
-				5981EC2928CB0E2E00C6461D /* HalfASheet */,
 				5934666C2886712E00956869 /* Assets.xcassets */,
+				5981EC2928CB0E2E00C6461D /* HalfASheet */,
 				59DCDC7228CA0EAC006FCF60 /* Lottie Files */,
 				593466922886952600956869 /* Resouces */,
 				5934666E2886712E00956869 /* Preview Content */,
@@ -649,8 +654,10 @@
 		5934669A2886C5D800956869 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				5952DC08290A63B400B73C5A /* Saved Item */,
 				5954A19C28AE63BD00B8BB30 /* Onboarding Screens */,
 				5954A19D28AE644200B8BB30 /* Getting Started & Registeration Screens */,
+				597282DE28B759CB0004F4CB /* Clubs Screens */,
 				593F055528AF75D800FEBE5F /* Login & Reset Password Screens */,
 				593F056028AF9C0400FEBE5F /* Profile & Garage Setup */,
 				5940A43628B0FC6A00C5EEF4 /* Proximity Settings Screens */,
@@ -659,10 +666,9 @@
 				592F18B72889804800A531A4 /* messages screens */,
 				5909F68D28B34F4600F7FD38 /* Subscription full user */,
 				5909F69A28B3A48200F7FD38 /* View Social Profile */,
-				594DC7EB28B4F44E0000C99E /* Shop Creation Screens */,
+				594DC7EB28B4F44E0000C99E /* Shop Screens */,
 				599AF4AF28B60A9700DE103F /* Add Classified Screens */,
 				59F585E528B73E1D000CE808 /* Classified View Screens */,
-				597282DE28B759CB0004F4CB /* Clubs Screens */,
 				590117A428B896DA0053019E /* Events Creation */,
 				59532F0528AE4343001F6EEE /* Notification Screens */,
 				59607F1A289159E700B46682 /* Settings Screens */,
@@ -704,15 +710,24 @@
 			path = "Proximity Settings Screens";
 			sourceTree = "<group>";
 		};
-		594DC7EB28B4F44E0000C99E /* Shop Creation Screens */ = {
+		594DC7EB28B4F44E0000C99E /* Shop Screens */ = {
 			isa = PBXGroup;
 			children = (
 				594DC7EC28B4F4E70000C99E /* Shop Others View Screen.swift */,
 				599AF4AD28B601F800DE103F /* Create Shop Screen.swift */,
 				5937A78128D048590088537B /* My Shop My View.swift */,
 				598C67EF28D0B25F006CC0B5 /* Shop Created successfully.swift */,
+				596C1029290F927300209E84 /* MyShopListsScreen.swift */,
 			);
-			path = "Shop Creation Screens";
+			path = "Shop Screens";
+			sourceTree = "<group>";
+		};
+		5952DC08290A63B400B73C5A /* Saved Item */ = {
+			isa = PBXGroup;
+			children = (
+				5952DC0A290A63E100B73C5A /* SavedItemsScreen.swift */,
+			);
+			path = "Saved Item";
 			sourceTree = "<group>";
 		};
 		59532F0528AE4343001F6EEE /* Notification Screens */ = {
@@ -875,6 +890,7 @@
 			children = (
 				5962F80E28C9E9860052CDA7 /* practice.swift */,
 				59DCDC7028CA0C53006FCF60 /* 117335-red-check (1).json */,
+				59DB62E0291127C600301685 /* lottie file.json */,
 				59DCDC6E28CA093B006FCF60 /* 84228-delete-animation.json */,
 			);
 			path = "Lottie Files";
@@ -1142,6 +1158,7 @@
 				59532EFC28AE0C79001F6EEE /* Support FAQS Screen.swift in Sources */,
 				595B9E4B288A8E5700BFC244 /* Market place and calssified tab.swift in Sources */,
 				5954A1A128AE6C0800B8BB30 /* SignUp Screen.swift in Sources */,
+				596C102A290F927300209E84 /* MyShopListsScreen.swift in Sources */,
 				590D3C1528AA6FCA00278C83 /* NewUserProfileResponseModel.swift in Sources */,
 				59646AAE28CF834E0098F147 /* Following Screen.swift in Sources */,
 				597282E428B760AF0004F4CB /* Club Created Successfully.swift in Sources */,
@@ -1208,6 +1225,7 @@
 				590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 				59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */,
+				5952DC0B290A63E100B73C5A /* SavedItemsScreen.swift in Sources */,
 				595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */,
 				593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */,
 				597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */,

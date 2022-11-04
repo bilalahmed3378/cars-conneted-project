@@ -51,7 +51,7 @@ struct MainTabContainer: View {
                         VStack{
                             Image("Home icon")
                                 .resizable()
-                                .frame(width: 24, height: 24)
+                                .frame(width: 28, height: 28)
                             Text("Home")
                                 .foregroundColor(.white)
                         }
@@ -70,7 +70,7 @@ struct MainTabContainer: View {
                         VStack{
                             Image("clubs icon")
                                 .resizable()
-                                .frame(width: 24, height: 24)
+                                .frame(width: 28, height: 28)
                             Text("Club")
                                 .foregroundColor(.white)
                         }
@@ -89,7 +89,7 @@ struct MainTabContainer: View {
                         VStack{
                             Image("event icon")
                                 .resizable()
-                                .frame(width: 24, height: 24)
+                                .frame(width: 28, height: 28)
                             Text("Events")
                                 .foregroundColor(.white)
                         
@@ -109,7 +109,7 @@ struct MainTabContainer: View {
                             VStack{
                                 Image("classified icon")
                                     .resizable()
-                                    .frame(width: 24, height: 24)
+                                    .frame(width: 28, height: 28)
                                 Text("Classified")
                                     .foregroundColor(.white)
                             
@@ -131,7 +131,7 @@ struct MainTabContainer: View {
                             VStack{
                                 Image("Message icon")
                                     .resizable()
-                                    .frame(width: 24, height: 24)
+                                    .frame(width: 28, height: 28)
                                 Text("Message")
                                     .foregroundColor(.white)
                             }
@@ -142,7 +142,7 @@ struct MainTabContainer: View {
                     
                     
                 }.padding(.top,20)
-                    .padding(.bottom,20)
+                    .padding(.bottom,30)
                     .padding(.leading,20)
                     .padding(.trailing,20)
                     .background(

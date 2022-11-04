@@ -43,10 +43,10 @@ struct My_Profile_Screen: View {
                             
                             Spacer()
                             
-                            Image("doted Icons")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 28, height: 28)
+//                            Image("doted Icons")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 28, height: 28)
                             
                         }.padding(.leading)
                             .padding(.trailing)
@@ -88,6 +88,21 @@ struct My_Profile_Screen: View {
                                         
                                     }
                                 })
+                                
+                                
+                                Button(action: {
+                                    self.viewStory = true
+                                }, label: {
+                                    HStack{
+                                        
+                                        Text("Update profile")
+                                        
+                                        Image("gg_profile")
+                                        
+                                       
+                                        
+                                    }
+                                })
                                
                                 
                             }, label: {
@@ -98,8 +113,8 @@ struct My_Profile_Screen: View {
                                     .offset(x: 0, y: -50)
                                     .padding(.leading,1)
                                     .padding(.trailing,1)
-                                    .padding(.bottom,5)
-                                    .padding(.top,5)
+                                    .padding(.bottom,2)
+                                    .padding(.top,2)
                                     .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -50))
                                    
                             })
@@ -114,15 +129,15 @@ struct My_Profile_Screen: View {
                                 .padding(.top, -30)
                         }
                        
-                        HStack{
-                            Image("carbon_application-mobile-1")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                            
-                            Text("+96-96987458962")
-                                .font(AppFonts.regular_16)
-                        }
+//                        HStack{
+//                            Image("carbon_application-mobile-1")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 24, height: 24)
+//
+//                            Text("+96-96987458962")
+//                                .font(AppFonts.regular_16)
+//                        }
                         
                         HStack{
                             Image("location black icon")

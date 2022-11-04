@@ -63,7 +63,7 @@ struct personal_message_screen: View {
                         .padding(.trailing)
                         .padding(.top)
                     
-                }  .padding(.top,30)
+                }  .padding(.top,40)
                     .padding(.bottom,30)
                     .background(
                         Image("home screen background")

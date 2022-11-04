@@ -17,16 +17,19 @@ struct E_mail_Confirmation_Screen: View {
     
     @State var toProfileSetup = false
     
-    
+    @State var toHomeScreen = false
     
     var body: some View {
         VStack{
             
-            NavigationLink(destination: User_profile_setup_Screen(), isActive: $toProfileSetup){
+            NavigationLink(destination: Login_Screen(), isActive: $toProfileSetup){
                 EmptyView()
             }
            
                
+            NavigationLink(destination: MainTabContainer(), isActive: self.$toHomeScreen){
+                EmptyView()
+            }
             
         
             
@@ -62,7 +65,7 @@ struct E_mail_Confirmation_Screen: View {
             Button(action: {
                 self.toProfileSetup = true
             }, label: {
-                Text("Profile Completion")
+                Text("Login Now")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
@@ -71,6 +74,21 @@ struct E_mail_Confirmation_Screen: View {
             })
             .padding(.top)
                 
+          
+//                Button(action: {
+//                    self.toHomeScreen = true
+//                }, label: {
+//                    HStack{
+//                        Spacer()
+//                        Text("Skip")
+//                            .font(AppFonts.regular_16)
+//                            .foregroundColor(AppColors.redGradientColor1)
+//                        Spacer()
+//                    }
+//                })
+//                .padding(.top)
+            
+            
             
             
                 Spacer()

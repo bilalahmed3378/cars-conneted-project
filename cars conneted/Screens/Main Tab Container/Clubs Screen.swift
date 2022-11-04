@@ -46,7 +46,7 @@ struct Clubs_Screen: View {
                         
                         Text("Clubs")
                             .font(AppFonts.SemiBold_20)
-                            .foregroundColor(.white)
+                            .foregroundColor(AppColors.whiteColor)
                         
                         Spacer()
                         
@@ -112,7 +112,7 @@ struct Clubs_Screen: View {
                     
                 }
                
-                .padding(.top,30)
+                .padding(.top,40)
                 .padding(.bottom,15)
                 .background(
                     Image("home screen background")
@@ -377,6 +377,7 @@ struct Clubs_Screen: View {
                     
                     
                 }
+                .padding(.bottom)
             }
             .height(.proportional(0.60))
             .closeButtonColor(UIColor.gray)
@@ -553,7 +554,7 @@ struct myClubCardShort : View {
           
           
           Button(action: {}, label: {
-              Text("Leave")
+              Text("View")
                   .font(AppFonts.medium_12)
                   .foregroundColor(.red)
                   .padding(10)
@@ -629,22 +630,22 @@ struct myClubsRecommened: View{
                             
                             Spacer()
                             
-                            Image("unsplash_-IPFb6J03Mw")
-                                .offset(x:36)
-                            
-                            Image("unsplash_-IPFb6J03Mw")
-                                .offset(x:24)
-                            
-                            Image("unsplash_-IPFb6J03Mw")
-                                .offset(x:12)
-                            
-                            Image("unsplash_-IPFb6J03Mw")
-                            //                            .offset(x:15)
-                            
-                            Text("+120")
-                                .foregroundColor(.white)
-                                
-                            
+//                            Image("unsplash_-IPFb6J03Mw")
+//                                .offset(x:36)
+//
+//                            Image("unsplash_-IPFb6J03Mw")
+//                                .offset(x:24)
+//
+//                            Image("unsplash_-IPFb6J03Mw")
+//                                .offset(x:12)
+//
+//                            Image("unsplash_-IPFb6J03Mw")
+//                            //                            .offset(x:15)
+//
+//                            Text("+120")
+//                                .foregroundColor(.white)
+//
+//
                             
                         }.padding()
                             .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))

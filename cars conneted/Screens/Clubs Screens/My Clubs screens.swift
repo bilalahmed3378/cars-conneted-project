@@ -42,7 +42,7 @@ struct My_Clubs_screens: View {
                             Image("plus icon")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
+                                .frame(width: 30, height: 30)
                                 .padding(.trailing,10)
                         })
                        
@@ -62,40 +62,40 @@ struct My_Clubs_screens: View {
                        
                     
                     // search bar
-                    HStack{
-                        
-                        TextField("Search",text: self.$searchText)
-                            .foregroundColor(.red)
-                        
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
-                            .foregroundColor(.red)
-                        
-                        Button(action: {
-                           
-                        }, label: {
-                            Image("Filter 2")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 20, height: 20)
-                           
-                               
-                        })
-
-                        
-                        
-                    }
-                    .padding(10)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                    .padding(.top,10)
-                    .padding(.leading)
-                    .padding(.trailing)
+//                    HStack{
+//
+//                        TextField("Search",text: self.$searchText)
+//                            .foregroundColor(.red)
+//
+//                        Image(systemName: "magnifyingglass")
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .frame(width:20,height: 20)
+//                            .foregroundColor(.red)
+//
+//                        Button(action: {
+//
+//                        }, label: {
+//                            Image("Filter 2")
+//                                .resizable()
+//                                .aspectRatio(contentMode: .fit)
+//                                .frame(width: 20, height: 20)
+//
+//
+//                        })
+//
+//
+//
+//                    }
+//                    .padding(10)
+//                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+//                    .padding(.top,10)
+//                    .padding(.leading)
+//                    .padding(.trailing)
                     
                 }
                
-                .padding(.top,40)
+                .padding(.top,60)
                 .padding(.bottom,15)
                 .background(
                     Image("home screen background")

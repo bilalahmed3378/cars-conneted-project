@@ -51,7 +51,7 @@ struct payment_method_2_screen: View {
                 .padding(.trailing,20)
                 .padding(.top,20)
             
-        }  .padding(.top,30)
+        }  .padding(.top,40)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")

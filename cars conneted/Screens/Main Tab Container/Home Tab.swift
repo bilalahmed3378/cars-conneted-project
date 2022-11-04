@@ -115,9 +115,9 @@ struct HomeTab: View {
                             Spacer()
                             
                             Button(action: {
-                                self.toProximity = true
+                                self.toSearchScreen = true
                             }, label: {
-                                Image("Location white")
+                                Image("White search Icon")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 20, height: 20)
@@ -148,46 +148,46 @@ struct HomeTab: View {
                         }
                             .padding(.leading,24)
                             .padding(.trailing,24)
-                            .padding(.top,20)
+                            .padding(.top,30)
                         
                         // search bar
-                        HStack{
-                            
-                            TextField("Search",text: self.$searchText)
-                                .foregroundColor(.red)
-                            
-                            
-                            Button(action: {
-                                self.toSearchScreen = true
-                            }, label: {
-                                Image(systemName: "magnifyingglass")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width:20,height: 20)
-                                    .foregroundColor(.red)
-                                
-                            })
-                            
-                            
-                            Button(action: {
-                                self.addFilter = true
-                            }, label: {
-                                Image("Filter 2")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 20, height: 20)
-                               
-                                   
-                            })
-
-                           
-                            
-                        }
-                        .padding(15)
-                        .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                        .padding(.top,20)
-                        .padding(.leading,20)
-                        .padding(.trailing,20)
+//                        HStack{
+//
+//                            TextField("Search",text: self.$searchText)
+//                                .foregroundColor(.red)
+//
+//
+//                            Button(action: {
+//
+//                            }, label: {
+//                                Image(systemName: "magnifyingglass")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width:20,height: 20)
+//                                    .foregroundColor(.red)
+//
+//                            })
+//
+//
+//                            Button(action: {
+//                                self.addFilter = true
+//                            }, label: {
+//                                Image("Filter 2")
+//                                    .resizable()
+//                                    .aspectRatio(contentMode: .fit)
+//                                    .frame(width: 20, height: 20)
+//
+//
+//                            })
+//
+//
+//
+//                        }
+//                        .padding(15)
+//                        .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+//                        .padding(.top,20)
+//                        .padding(.leading,20)
+//                        .padding(.trailing,20)
                         
                         // status heading
                         HStack{
@@ -197,6 +197,7 @@ struct HomeTab: View {
                         }
                         .padding(.leading,20)
                         .padding(.top,10)
+                        
                         
                         // list of ststuses
                         
@@ -210,9 +211,13 @@ struct HomeTab: View {
                                     }, label: {
                                         VStack{
                                         Image("Group 7364")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 50, height: 50)
                                         
                                         Text("Add")
-                                            .foregroundColor(.white)
+                                                .foregroundColor(.white)
+                                            
                                             
                                         }
                                         .padding(.leading,20)
@@ -229,10 +234,15 @@ struct HomeTab: View {
                                         }, label: {
                                             VStack{
                                             Image("Group 7365")
+                                                    .resizable()
+                                                    .aspectRatio(contentMode: .fit)
+                                                    .frame(width: 50, height: 50)
+                                                
                                             Text("Arsalan")
-                                                .foregroundColor(.white)
+                                                    .foregroundColor(.white)
                                             }
-                                            .padding(.leading,20)
+                                            .padding(.leading,10)
+                                            .padding(.trailing,10)
                                             
                                         })
                                        
@@ -262,14 +272,15 @@ struct HomeTab: View {
                                     .frame(width: 50, height: 50)
                                     .padding(.trailing,5)
                                 
+                                
                                 Text("Write something...")
                                     .font(AppFonts.regular_12)
-                                    .foregroundColor(.black)
-                                    .padding(.trailing,190)
+                                    .foregroundColor(AppColors.BlackColor)
+                                    .padding(.trailing,150)
                                     .padding(.top,15)
                                     .padding(.bottom,15)
                                     .padding(.leading)
-                                    .background(RoundedRectangle(cornerRadius: 80).strokeBorder(.black))
+                                    .background(RoundedRectangle(cornerRadius: 80).strokeBorder(AppColors.BlackColor))
                                 
                                 Spacer()
                             }
@@ -310,7 +321,7 @@ struct HomeTab: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 15, height: 15)
-                                .foregroundColor(Color.white)
+                                .foregroundColor(AppColors.whiteColor)
                                 .padding(20)
                                 .background(Circle().fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).shadow(radius: 10))
                                 .padding(.trailing,20)
@@ -787,6 +798,7 @@ struct PostsHome : View {
   
     @State private var showingSheet = false
     @State private var showingLiked = false
+    @State private var isLiked : Bool = false
     
   var body: some View {
       
@@ -803,7 +815,7 @@ struct PostsHome : View {
                   
                   VStack(alignment: .leading){
                       Text("Elizebeth Smith")
-                          .foregroundColor(.black)
+                          .foregroundColor(AppColors.BlackColor)
                           .font(AppFonts.medium_14)
                           .padding(.bottom,2)
                       
@@ -819,7 +831,16 @@ struct PostsHome : View {
               
               Spacer()
               
-              Image("doted Icons")
+              Menu(content: {
+                  Button(action: {
+                      
+                  }, label: {
+                      Text("Remove")
+                  })
+              }, label: {
+                  Image("doted Icons")
+              })
+             
               
           }.padding(.bottom,10)
           
@@ -877,11 +898,57 @@ struct PostsHome : View {
           
           HStack{
               HStack{
-                  Image("heart icon")
-                  Text("Like")
-                      .font(AppFonts.regular_12)
-                      .foregroundColor(Color.gray)
+                  if(self.isLiked){
+                      Button(action: {
+                          self.isLiked = false
+                      }, label: {
+                          Image("heart icon")
+                              .resizable()
+                              .aspectRatio(contentMode: .fit)
+                              .frame(width: 16, height: 16)
+                      })
+                     
+                  }
                   
+                  if(!self.isLiked){
+                      Button(action: {
+                          self.isLiked = true
+                      }, label: {
+                          Image("Heart icon 1")
+                              .resizable()
+                              .aspectRatio(contentMode: .fit)
+                              .frame(width: 16, height: 16)
+                      })
+                      
+                  }
+                  
+                  
+                  if(self.isLiked){
+                      Button(action: {
+                          self.isLiked = false
+                      }, label: {
+                          Text("Like")
+                              .font(AppFonts.regular_12)
+                              .foregroundColor(AppColors.redGradientColor1)
+                          
+                      })
+                     
+                  }
+                  
+                  if(!self.isLiked){
+                      Button(action: {
+                          self.isLiked = true
+                      }, label: {
+                          Text("Like")
+                              .font(AppFonts.regular_12)
+                              .foregroundColor(Color.gray)
+                          
+                      })
+                      
+                  }
+                  
+                  
+                 
                   
               }
               
@@ -942,6 +1009,8 @@ struct EventsHome : View {
     @State private var showingLiked = false
     
     @State private var  isfollowing = false
+    
+    @State private var isLiked : Bool = false
   var body: some View {
 
       VStack{
@@ -968,7 +1037,7 @@ struct EventsHome : View {
                           User_Profile__Wall()
                       }, label: {
                           Text("Bhai Nadeem.")
-                              .foregroundColor(.black)
+                              .foregroundColor(AppColors.BlackColor)
                               .font(AppFonts.medium_14)
                       })
                       
@@ -1013,7 +1082,13 @@ struct EventsHome : View {
               }
               Spacer()
               
-              Button(action: {}, label: {
+              Menu(content: {
+                  Button(action: {
+                      
+                  }, label: {
+                      Text("Remove")
+                  })
+              }, label: {
                   Image("doted Icons")
               })
             
@@ -1151,15 +1226,60 @@ struct EventsHome : View {
           
           HStack{
               
-              Button(action: {}, label: {
-                  HStack{
-                      Image("heart icon")
-                      Text("Like")
-                          .font(AppFonts.regular_12)
-                          .foregroundColor(Color.gray)
+              HStack{
+                  if(self.isLiked){
+                      Button(action: {
+                          self.isLiked = false
+                      }, label: {
+                          Image("heart icon")
+                              .resizable()
+                              .aspectRatio(contentMode: .fit)
+                              .frame(width: 16, height: 16)
+                      })
+                     
+                  }
+                  
+                  if(!self.isLiked){
+                      Button(action: {
+                          self.isLiked = true
+                      }, label: {
+                          Image("Heart icon 1")
+                              .resizable()
+                              .aspectRatio(contentMode: .fit)
+                              .frame(width: 16, height: 16)
+                      })
                       
                   }
-              })
+                  
+                  
+                  if(self.isLiked){
+                      Button(action: {
+                          self.isLiked = false
+                      }, label: {
+                          Text("Like")
+                              .font(AppFonts.regular_12)
+                              .foregroundColor(AppColors.redGradientColor1)
+                          
+                      })
+                     
+                  }
+                  
+                  if(!self.isLiked){
+                      Button(action: {
+                          self.isLiked = true
+                      }, label: {
+                          Text("Like")
+                              .font(AppFonts.regular_12)
+                              .foregroundColor(Color.gray)
+                          
+                      })
+                      
+                  }
+                  
+                  
+                 
+                  
+              }
               
             
             
@@ -1222,6 +1342,8 @@ struct ClubsCardHome: View {
     
     @State private var  isfollowing = false
     
+    @State private var isLiked : Bool = false
+    
     var body: some View {
         
        
@@ -1247,7 +1369,7 @@ struct ClubsCardHome: View {
                                 User_Profile__Wall()
                             }, label: {
                                 Text("Rana Sahahbaz.")
-                                    .foregroundColor(.black)
+                                    .foregroundColor(AppColors.BlackColor)
                                     .font(AppFonts.medium_14)
                             })
                           
@@ -1288,7 +1410,15 @@ struct ClubsCardHome: View {
                     }
                     Spacer()
                     
-                    Image("doted Icons")
+                    Menu(content: {
+                        Button(action: {
+                            
+                        }, label: {
+                            Text("Remove")
+                        })
+                    }, label: {
+                        Image("doted Icons")
+                    })
                     
                 }.padding(.bottom,10)
                 
@@ -1421,15 +1551,61 @@ struct ClubsCardHome: View {
                     
                 }
                 
-                Image("Line 2")
+                Divider()
                 
                 HStack{
                     HStack{
-                        Image("heart icon")
-                        Text("Like")
-                            .font(AppFonts.regular_12)
-                            .foregroundColor(Color.gray)
+                        if(self.isLiked){
+                            Button(action: {
+                                self.isLiked = false
+                            }, label: {
+                                Image("heart icon")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 16, height: 16)
+                            })
+                           
+                        }
                         
+                        if(!self.isLiked){
+                            Button(action: {
+                                self.isLiked = true
+                            }, label: {
+                                Image("Heart icon 1")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width: 16, height: 16)
+                            })
+                            
+                        }
+                        
+                        
+                        if(self.isLiked){
+                            Button(action: {
+                                self.isLiked = false
+                            }, label: {
+                                Text("Like")
+                                    .font(AppFonts.regular_12)
+                                    .foregroundColor(AppColors.redGradientColor1)
+                                
+                            })
+                           
+                        }
+                        
+                        if(!self.isLiked){
+                            Button(action: {
+                                self.isLiked = true
+                            }, label: {
+                                Text("Like")
+                                    .font(AppFonts.regular_12)
+                                    .foregroundColor(Color.gray)
+                                
+                            })
+                            
+                        }
+                        
+                        
+                       
                         
                     }
                     
@@ -1492,6 +1668,7 @@ struct marketPlaceSreachCardsHome : View {
     @State private var showingSheet = false
     @State private var showingLiked = false
    
+    @State private var isLiked : Bool = false
     
     var body: some View {
        
@@ -1517,7 +1694,7 @@ struct marketPlaceSreachCardsHome : View {
                             User_Profile__Wall()
                         }, label: {
                             Text("Ustad Hashim Khan.")
-                                .foregroundColor(.black)
+                                .foregroundColor(AppColors.BlackColor)
                                 .font(AppFonts.medium_14)
                         })
                         
@@ -1558,7 +1735,15 @@ struct marketPlaceSreachCardsHome : View {
                 }
                 Spacer()
                 
-                Image("doted Icons")
+                Menu(content: {
+                    Button(action: {
+                        
+                    }, label: {
+                        Text("Remove")
+                    })
+                }, label: {
+                    Image("doted Icons")
+                })
                 
             }.padding(.bottom,10)
             
@@ -1734,11 +1919,57 @@ struct marketPlaceSreachCardsHome : View {
             
             HStack{
                 HStack{
-                    Image("heart icon")
-                    Text("Like")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                    if(self.isLiked){
+                        Button(action: {
+                            self.isLiked = false
+                        }, label: {
+                            Image("heart icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 16, height: 16)
+                        })
+                       
+                    }
                     
+                    if(!self.isLiked){
+                        Button(action: {
+                            self.isLiked = true
+                        }, label: {
+                            Image("Heart icon 1")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 16, height: 16)
+                        })
+                        
+                    }
+                    
+                    
+                    if(self.isLiked){
+                        Button(action: {
+                            self.isLiked = false
+                        }, label: {
+                            Text("Like")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(AppColors.redGradientColor1)
+                            
+                        })
+                       
+                    }
+                    
+                    if(!self.isLiked){
+                        Button(action: {
+                            self.isLiked = true
+                        }, label: {
+                            Text("Like")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(Color.gray)
+                            
+                        })
+                        
+                    }
+                    
+                    
+                   
                     
                 }
                 
@@ -1778,7 +2009,7 @@ struct marketPlaceSreachCardsHome : View {
                 
             }
             
-            Image("Line 2")
+           Divider()
             
         }.padding()
 
@@ -1793,7 +2024,7 @@ struct commentsScreen : View{
            
             HStack{
                 Text("Comments")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.medium_18)
             }.padding()
             
@@ -1814,7 +2045,7 @@ struct commentsScreen : View{
                 .overlay(HStack{
                     Text("Add comment")
                         .font(AppFonts.regular_14)
-                        .foregroundColor(.gray)
+                        .foregroundColor(AppColors.BlackColor)
                         .padding(.leading)
                     Spacer()
                 })
@@ -1849,12 +2080,12 @@ struct commentsDetails : View{
             
             VStack(alignment: .leading){
                 Text("Jhon smith")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.semiBold_12)
                     .padding(.bottom,2)
                 
                 Text("Lorem ipsum dolor sit amet, consecteturhb hiu uhpuhiuhpiuhhuh adipiscing elit.")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.regular_12)
                     
             }
@@ -1869,7 +2100,7 @@ struct commentsDetails : View{
                
             
             Text("Like")
-                .foregroundColor(.black)
+                .foregroundColor(AppColors.BlackColor)
                 .font(AppFonts.regular_12)
                 .padding(.trailing)
             
@@ -1877,7 +2108,7 @@ struct commentsDetails : View{
              
             
             Text("Reply")
-                .foregroundColor(.black)
+                .foregroundColor(AppColors.BlackColor)
                 .font(AppFonts.regular_12)
             
             

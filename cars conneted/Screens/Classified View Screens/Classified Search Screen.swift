@@ -83,7 +83,7 @@ struct Classified_Search_Screen: View {
                 }
                 
             }
-            .padding(.top,30)
+            .padding(.top,40)
                 .padding(.bottom,15)
                 .background(
                     Image("home screen background")

@@ -46,7 +46,7 @@ struct Contact_Support: View {
                 .padding(.top,20)
             
         }
-        }.padding(.top,30)
+        }.padding(.top,40)
             .padding(.bottom,30)
             .background(
                 Image("home screen background")

@@ -56,29 +56,34 @@ struct Login_Screen: View {
                         HStack{
                             Text("Provide your registered email and password to login to Cars Connected!")
                                 .font(AppFonts.regular_14)
+                                .foregroundColor(AppColors.FixBlackColor)
                         }
                        
                         Text("E-Mail")
+                        .foregroundColor(AppColors.FixBlackColor)
                           .padding(.top,10)
                           .frame(maxWidth: .infinity, alignment: .leading)
                         
                         
                           
                         TextField("Email",text:$email)
+                        .foregroundColor(AppColors.FixBlackColor)
                           .padding(.vertical, 10)
                           .autocapitalization(.none)
-                          .background(Rectangle().frame(height: 1).padding(.top, 30))
-                          .foregroundColor(.black)
+                          .background(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(AppColors.FixBlackColor))
+                          
                           
                       Text("Password")
+                            .foregroundColor(AppColors.FixBlackColor)
                         .padding(.top,10)
                         .frame(maxWidth: .infinity, alignment: .leading)
                         
                       if isSecured {
                         SecureField("Enter Your Password", text: $password)
+                              .foregroundColor(AppColors.FixBlackColor)
                           .autocapitalization(.none)
                           .padding(.vertical, 10)
-                          .background(Rectangle().frame(height: 1).padding(.top, 30))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(AppColors.FixBlackColor))
                           .overlay(HStack{
                             Spacer()
                             Button(action: {
@@ -90,9 +95,10 @@ struct Login_Screen: View {
                           })
                       } else {
                         TextField("Enter Your Password", text: $password)
+                        .foregroundColor(AppColors.FixBlackColor)
                           .autocapitalization(.none)
                           .padding(.vertical, 10)
-                          .background(Rectangle().frame(height: 1).padding(.top, 30))
+                          .background(Rectangle().frame(height: 1).padding(.top, 30).foregroundColor(AppColors.FixBlackColor))
                           .overlay(HStack{
                             Spacer()
                             Button(action: {
@@ -108,6 +114,7 @@ struct Login_Screen: View {
                             Spacer()
                             
                             Text("Forget Password?")
+                                .foregroundColor(AppColors.FixBlackColor)
                                 .font(AppFonts.regular_12)
                             
                             Button(action: {
@@ -147,6 +154,7 @@ struct Login_Screen: View {
                         HStack{
                             Spacer()
                             Text("Don't have an account?")
+                                .foregroundColor(AppColors.FixBlackColor)
                                 .font(AppFonts.regular_12)
                                 
                             NavigationLink(destination: SignUp_Screen(), label: {

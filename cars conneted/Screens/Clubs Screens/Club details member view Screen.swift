@@ -60,28 +60,28 @@ struct Club_details_member_view_Screen: View {
                    
                 
                 // search bar
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
-                    
-                    
-                }
-                .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,10)
-                .padding(.leading,20)
-                .padding(.trailing,20)
-                
+//                HStack{
+//
+//                    TextField("Search",text: self.$searchText)
+//                        .foregroundColor(.red)
+//
+//                    Image(systemName: "magnifyingglass")
+//                        .resizable()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width:20,height: 20)
+//                        .foregroundColor(.red)
+//
+//
+//                }
+//                .padding(10)
+//                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+//                .padding(.top,10)
+//                .padding(.leading,20)
+//                .padding(.trailing,20)
+//
             }
            
-            .padding(.top,30)
+            .padding(.top,40)
             .padding(.bottom,15)
             .background(
                 Image("home screen background")
@@ -127,39 +127,39 @@ struct Club_details_member_view_Screen: View {
             .padding(.bottom,-10)
             
             
-            HStack{
-               
-                Image("bxs_star")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 16, height: 16)
-                
-                Image("bxs_star")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 16, height: 16)
-                
-                Image("bxs_star")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 16, height: 16)
-                
-                Image("bxs_star")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 16, height: 16)
-                
-                Image("bxs_star")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 16, height: 16)
-                
-                Text("5.0")
-                    .font(AppFonts.regular_14)
-                
-                Spacer()
-                
-            }.padding(.leading)
+//            HStack{
+//
+//                Image("bxs_star")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 16, height: 16)
+//
+//                Image("bxs_star")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 16, height: 16)
+//
+//                Image("bxs_star")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 16, height: 16)
+//
+//                Image("bxs_star")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 16, height: 16)
+//
+//                Image("bxs_star")
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 16, height: 16)
+//
+//                Text("5.0")
+//                    .font(AppFonts.regular_14)
+//
+//                Spacer()
+//
+//            }.padding(.leading)
             
                     if(self.requestAccept){
             HStack{
@@ -212,45 +212,48 @@ struct Club_details_member_view_Screen: View {
                 .padding(.bottom,-15)
             
             
-            HStack{
-                Image("unsplash_-IPFb6J03Mw")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
-                   
-                
-                Image("unsplash_-IPFb6J03Mw")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
-                    .offset(x:-16)
-                
-                Image("unsplash_-IPFb6J03Mw")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
-                    .offset(x:-30)
-                
-                Image("unsplash_-IPFb6J03Mw")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 30, height: 30)
-                    .offset(x:-44)
-                
-                Text("Jhon, Marry, Steven & 17 of your friends has joined this group")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                    .offset(x:-30)
-                
-                
-                Spacer()
-            }
-            .padding()
+                    if(self.requestAccept == true){
+                        HStack{
+                            Image("unsplash_-IPFb6J03Mw")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                            
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                                .offset(x:-16)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                                .offset(x:-30)
+                            
+                            Image("unsplash_-IPFb6J03Mw")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 30, height: 30)
+                                .offset(x:-44)
+                            
+                            Text("Jhon, Marry, Steven & 17 of your friends has joined this group")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(.gray)
+                                .offset(x:-30)
+                            
+                            
+                            Spacer()
+                        }
+                        .padding()
+                    }
+                    
                 }
             
-            Map(coordinateRegion: $mapRegion)
-                .frame(width: UIScreen.widthBlockSize*90, height: 150)
-                
+//            Map(coordinateRegion: $mapRegion)
+//                .frame(width: UIScreen.widthBlockSize*90, height: 150)
+//                
                 
                 VStack(alignment: .leading){
                 HStack{

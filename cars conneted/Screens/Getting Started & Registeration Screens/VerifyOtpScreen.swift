@@ -250,11 +250,18 @@ struct verifyOtpScreen: View {
                   }.padding(.leading)
                       .padding(.trailing)
                 
-                               
-                
-                
-                                Text("Enter OTP which we sent to on your email address abc****@gmail.com ")
-                                    .padding(.top,10)
+                  VStack(alignment: .leading){
+                      HStack{
+                          Text("Enter OTP which we sent to on your email address abc****@gmail.com ")
+                              .padding(.top,10)
+                          Spacer()
+                      }
+                      .padding(.leading)
+                      .padding(.trailing)
+                     
+                  }
+                  .padding(.leading)
+                  .padding(.trailing)
                   
                   ZStack {
                       

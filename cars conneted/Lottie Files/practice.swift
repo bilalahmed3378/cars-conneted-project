@@ -17,6 +17,9 @@ struct LottieAnimations {
    
     static let deletedSuccessfully = "84228-delete-animation"
     
+    
+    
+    
 }
 
 

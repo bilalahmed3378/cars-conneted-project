@@ -12,7 +12,8 @@ struct Successfully_Changed: View {
     var body: some View {
         VStack{
            
-               Spacer()
+              
+            
                
             
             HStack{

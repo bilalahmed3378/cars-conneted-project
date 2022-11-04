@@ -57,7 +57,7 @@ struct My_Shop_My_View: View {
                     .padding(.trailing)
                     .padding(.top,20)
                 
-            }  .padding(.top,30)
+            }  .padding(.top,40)
                 .padding(.bottom,30)
                 .background(
                     Image("home screen background")
