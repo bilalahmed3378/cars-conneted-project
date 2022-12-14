@@ -83,8 +83,8 @@ struct My_Plan_screen: View {
                     
                     Image("Frame 8647")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 205)
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: UIScreen.screenWidth - 40)
                     
                     VStack{
                         
@@ -94,6 +94,8 @@ struct My_Plan_screen: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 30)
+                            .padding(.trailing,20)
+
                         
                     }
                         
@@ -107,7 +109,7 @@ struct My_Plan_screen: View {
                             .foregroundColor(.white)
                         
                         
-                    }.frame(width: UIScreen.widthBlockSize*50, height: 100)
+                    }.frame(width: UIScreen.screenWidth - 40)
                     
                     
                     
@@ -174,9 +176,9 @@ struct My_Plan_screen: View {
                 
             
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: 570)
+            }.frame(width: UIScreen.screenWidth - 40)
                
-                .background(RoundedRectangle(cornerRadius: 30).fill(.gray.opacity(0.2)).frame(width: UIScreen.widthBlockSize*90, height: 570))
+                .background(RoundedRectangle(cornerRadius: 30).fill(.gray.opacity(0.2)).frame(width: UIScreen.screenWidth - 40))
          
             
                 Button(action: {

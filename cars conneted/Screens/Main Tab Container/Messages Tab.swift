@@ -53,7 +53,7 @@ struct  MessagesTab: View {
                 
                 Text("Messages")
                     .font(AppFonts.SemiBold_20)
-                    .foregroundColor(AppColors.whiteColor)
+                    .foregroundColor(.white)
                 
                 Spacer()
                 

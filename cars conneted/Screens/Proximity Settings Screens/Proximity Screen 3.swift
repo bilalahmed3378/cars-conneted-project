@@ -19,7 +19,7 @@ struct Proximity_Screen_3: View {
                 Button(action: {
                   
                 }, label: {
-                    Image("back icon")
+                    Image("BackIconWhite")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 35, height: 35)

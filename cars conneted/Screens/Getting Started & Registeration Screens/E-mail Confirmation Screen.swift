@@ -22,14 +22,14 @@ struct E_mail_Confirmation_Screen: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: Login_Screen(), isActive: $toProfileSetup){
-                EmptyView()
-            }
-           
-               
-            NavigationLink(destination: MainTabContainer(), isActive: self.$toHomeScreen){
-                EmptyView()
-            }
+//            NavigationLink(destination: Login_Screen(, isActive: $toProfileSetup){
+//                EmptyView()
+//            }
+//           
+//               
+//            NavigationLink(destination: MainTabContainer(), isActive: self.$toHomeScreen){
+//                EmptyView()
+//            }
             
         
             

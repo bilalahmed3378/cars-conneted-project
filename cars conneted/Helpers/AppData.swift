@@ -20,6 +20,15 @@ class AppData {
         return sharedPrefrences.bool(forKey: Constants.isFirstTimeLoaded)
     }
     
+    func isRememberMe()->Bool{
+        let sharedPrefrences = UserDefaults.standard
+        if (sharedPrefrences.object(forKey: Constants.rememberMe) == nil){
+            return false
+        }
+        return (sharedPrefrences.bool(forKey: Constants.rememberMe))
+    }
+    
+    
     func isUserLoggedIn()->Bool{
         let sharedPrefrences = UserDefaults.standard
         if (sharedPrefrences.object(forKey: Constants.userLoggedIn) == nil){
@@ -40,6 +49,15 @@ class AppData {
         }
         return sharedPrefrences.string(forKey: Constants.userEmail)!
     }
+    
+    func getUserPassword()->String{
+        let sharedPrefrences = UserDefaults.standard
+        if (sharedPrefrences.object(forKey: Constants.userPassword)==nil){
+            return ""
+        }
+        return sharedPrefrences.string(forKey: Constants.userPassword)!
+    }
+    
     
     func getUserId()->String{
         let sharedPrefrences = UserDefaults.standard
@@ -123,34 +141,52 @@ class AppData {
         
     }
     
+    func setRemeberMe(rememberMe : Bool){
+        UserDefaults.standard.set(rememberMe, forKey: Constants.rememberMe)
+    }
     
-    func getAddress() -> String{
-        if !(UserDefaults.standard.object(forKey: Constants.address) == nil){
-            return UserDefaults.standard.string(forKey: Constants.address) ?? ""
+    func saveRememberMeData(email : String , password: String){
+        UserDefaults.standard.set(email, forKey: Constants.userEmail)
+        UserDefaults.standard.set(password, forKey: Constants.userPassword)
+    }
+    
+//    func getAddress() -> String{
+//        if !(UserDefaults.standard.object(forKey: Constants.address) == nil){
+//            return UserDefaults.standard.string(forKey: Constants.address) ?? ""
+//        }
+//        return ""
+//        
+//    }
+    
+    func isEmailVerfied()->Bool{
+        if (UserDefaults.standard.object(forKey: Constants.emailVerfied) == nil){
+            return false
         }
-        return ""
-        
+        return UserDefaults.standard.bool(forKey: Constants.emailVerfied)
     }
     
     
+    func setEmailVerfied(verfied : Bool){
+        UserDefaults.standard.set(verfied, forKey: Constants.emailVerfied)
+    }
     
    
     
    
     
     
-    func saveAboutMe(aboutMe : String){
-        UserDefaults.standard.set(aboutMe, forKey: Constants.aboutMe)
-    }
-    
-    func getAboutMe()->String{
-        if (UserDefaults.standard.object(forKey: Constants.aboutMe) == nil){
-            return ""
-        }
-        else{
-            return UserDefaults.standard.string(forKey: Constants.aboutMe) ?? ""
-        }
-    }
+//    func saveAboutMe(aboutMe : String){
+//        UserDefaults.standard.set(aboutMe, forKey: Constants.aboutMe)
+//    }
+//
+//    func getAboutMe()->String{
+//        if (UserDefaults.standard.object(forKey: Constants.aboutMe) == nil){
+//            return ""
+//        }
+//        else{
+//            return UserDefaults.standard.string(forKey: Constants.aboutMe) ?? ""
+//        }
+//    }
     
     func saveBearerToken(bearerToken : String){
         UserDefaults.standard.set(bearerToken, forKey: Constants.bearerToken)
@@ -180,12 +216,11 @@ class AppData {
     
     func saveUserDetails(user : LoginUserModel){
         UserDefaults.standard.set(user.id, forKey: Constants.userId)
-        UserDefaults.standard.set(user.first_name, forKey: Constants.firstName)
-        UserDefaults.standard.set(user.last_name, forKey: Constants.lastName)
+        UserDefaults.standard.set(user.fullName, forKey: Constants.fullName)
         UserDefaults.standard.set(user.email, forKey: Constants.userEmail)
-        UserDefaults.standard.set(user.signup_method, forKey: Constants.signupMethod)
-        UserDefaults.standard.set(user.user_type, forKey: Constants.userType)
-        UserDefaults.standard.set(user.is_profile_setup, forKey: Constants.isProfileSetup)
+//        UserDefaults.standard.set(user.signup_method, forKey: Constants.signupMethod)
+//        UserDefaults.standard.set(user.user_type, forKey: Constants.userType)
+        UserDefaults.standard.set(user.type, forKey: Constants.type)
     }
     
     

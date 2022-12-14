@@ -19,7 +19,7 @@ struct Classified_Spare_Parts_Screen: View {
                     Button(action: {
                         self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
@@ -55,8 +55,8 @@ struct Classified_Spare_Parts_Screen: View {
                     
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 240)
+//                        .aspectRatio(contentMode: .fill)
+//                        .frame(width: UIScreen.widthBlockSize*90, height: 240)
                     
                     VStack{
                         

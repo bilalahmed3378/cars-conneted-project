@@ -92,7 +92,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Public")
-                        .foregroundColor(self.isProfileView ? .black : .gray)
+                        .foregroundColor(self.isProfileView ? AppColors.BlackColor : .gray)
                         .font(AppFonts.regular_14)
                 
                     Spacer()
@@ -126,7 +126,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Private")
-                        .foregroundColor(self.isProfileView ? .gray : .black)
+                        .foregroundColor(self.isProfileView ? .gray : AppColors.BlackColor)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -170,7 +170,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Public")
-                        .foregroundColor(self.isOnlineStatus ? .black : .gray)
+                        .foregroundColor(self.isOnlineStatus ? AppColors.BlackColor : .gray)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -202,7 +202,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Private")
-                        .foregroundColor(self.isOnlineStatus ? .gray : .black)
+                        .foregroundColor(self.isOnlineStatus ? .gray : AppColors.BlackColor)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -245,7 +245,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                     
                     Text("Public")
-                        .foregroundColor(self.selectedCircle == 0 ? .black : .gray)
+                        .foregroundColor(self.selectedCircle == 0 ? AppColors.BlackColor : .gray)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -277,7 +277,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                   
                     Text("Only friends")
-                        .foregroundColor(self.selectedCircle == 1 ? .black : .gray)
+                        .foregroundColor(self.selectedCircle == 1 ? AppColors.BlackColor : .gray)
                         .font(AppFonts.regular_14)
                     
                     Spacer()
@@ -307,7 +307,7 @@ struct Proximity_Setting_screen: View {
                         .frame(width: 30, height: 30)
                   
                     Text("Private")
-                        .foregroundColor(self.selectedCircle == 2 ? .black : .gray)                        .font(AppFonts.regular_14)
+                        .foregroundColor(self.selectedCircle == 2 ? AppColors.BlackColor : .gray)                        .font(AppFonts.regular_14)
                     
                     Spacer()
                     Button(action: {

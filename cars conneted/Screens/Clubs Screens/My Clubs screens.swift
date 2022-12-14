@@ -22,7 +22,7 @@ struct My_Clubs_screens: View {
                         Button(action: {
                             self.presentaionMode.wrappedValue.dismiss()
                         }, label: {
-                            Image("back icon")
+                            Image("BackIconWhite")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 35, height: 35)
@@ -42,7 +42,7 @@ struct My_Clubs_screens: View {
                             Image("plus icon")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(width: 30, height: 30)
+                                .frame(width: 25, height: 25)
                                 .padding(.trailing,10)
                         })
                        
@@ -163,7 +163,7 @@ struct myClubsPosts: View{
                 Image("unsplash_gmA751dxisA-1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 230)
+                    .frame(width: UIScreen.screenWidth - 40)
                     .overlay(Color.black.opacity(0.03))
                     .clipped()
                    
@@ -228,7 +228,7 @@ struct myClubsPosts: View{
                             
                         } .padding()
                             .padding(.top,-20)
-                        .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*8) )
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.screenWidth - 40, height: UIScreen.heightBlockSize*8) )
                        
                     })
                  
@@ -241,7 +241,7 @@ struct myClubsPosts: View{
                 
                 
             }
-            .frame(height: 240)
+           
             .cornerRadius(10)
           
             

@@ -11,16 +11,28 @@ import SwiftUI
 struct Getting_Started_Screen: View {
     @State var toSignUp = false
     @State var toLogIn = false
+    
+    @State var isLoggedIn : Bool = false
+
+    
+    @State var isLoginView : Bool = false
+
+    
+    @State var isUserLoggedIn : Bool = false
+    
+    @State var isProfileSetUp : Bool = false
+    
+    @State var firstTimeLoad : Bool = true
    
     
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: SignUp_Screen(), isActive: $toSignUp){
+            NavigationLink(destination: SignUp_Screen(pushToLogin: self.$isLoginView), isActive: $toSignUp){
                 EmptyView()
             }
             
-            NavigationLink(destination: Login_Screen( ), isActive: $toLogIn){
+            NavigationLink(destination: Login_Screen(pushToLogin: self.$isLoginView, isUserLoggedIn: self.$isUserLoggedIn, isProfileSetUp: self.$isProfileSetUp), isActive: $toLogIn){
                 EmptyView()
             }
             
@@ -101,11 +113,32 @@ struct Getting_Started_Screen: View {
                 
             }
             
-            
+            if(self.isLoggedIn){
+                NavigationLink(destination: MainTabContainer(isUserLoggedIn: self.$isLoggedIn), isActive: self.$isLoggedIn){
+                    EmptyView()
+                }
+            }
             
             
         }.edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
+            .onAppear{
+                if(self.firstTimeLoad){
+                    print("first time loaded")
+                    self.firstTimeLoad = false
+                    
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
+                        DispatchQueue.global(qos: .background).async {
+                            withAnimation{
+                                self.isLoggedIn = AppData().isUserLoggedIn()
+                            }
+                        }
+                    })
+                    
+                    
+                }
+            }
         
     }
 }

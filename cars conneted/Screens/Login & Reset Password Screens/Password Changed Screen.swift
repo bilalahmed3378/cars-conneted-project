@@ -15,9 +15,9 @@ struct Password_Changed_Screen: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: Login_Screen(), isActive: $toLogIn){
-                EmptyView()
-            }
+//            NavigationLink(destination: Login_Screen(), isActive: $toLogIn){
+//                EmptyView()
+//            }
            
                 HStack{
                     Button(action: {

@@ -34,7 +34,7 @@ struct Create_Shop_Screen: View {
                     Button(action: {
                         self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
@@ -243,6 +243,9 @@ struct Create_Shop_Screen: View {
                     }
                     .padding(.top,30)
                    
+                }
+                .padding(.leading)
+                .padding(.trailing)
                     
                     
                     if(!self.photos.isEmpty){
@@ -281,6 +284,8 @@ struct Create_Shop_Screen: View {
                                     }
                                     
                                 )
+                                .padding(.leading)
+                                .padding(.trailing)
                             
                             
                         }
@@ -317,9 +322,7 @@ struct Create_Shop_Screen: View {
                 
                 
                     Spacer()
-            }
-            .padding(.leading)
-            .padding(.trailing)
+           
                     
             }
            

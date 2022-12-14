@@ -34,9 +34,9 @@ struct Add_your_Car_Screen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: MainTabContainer(), isActive: $toHome){
-                EmptyView()
-            }
+//            NavigationLink(destination: MainTabContainer(), isActive: $toHome){
+//                EmptyView()
+//            }
            
                 VStack{
                     HStack{
@@ -89,7 +89,6 @@ struct Add_your_Car_Screen: View {
                 HStack{
                     Text("Add your Car")
                         .font(AppFonts.semiBold_24)
-                        
                         .overlay((LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                         .mask( Text("Add your Car")
                             .font(AppFonts.semiBold_24)
@@ -99,6 +98,7 @@ struct Add_your_Car_Screen: View {
                 }
                
                 Text("Add your car and provide us required deatils to setup in your garage")
+                            .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.regular_14)
                     .padding(.top)
                         
@@ -109,6 +109,7 @@ struct Add_your_Car_Screen: View {
                     VStack{
                         
                 Text("Brand")
+                            .foregroundColor(AppColors.BlackColor)
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
                  .padding(.bottom,-5)
@@ -128,6 +129,7 @@ struct Add_your_Car_Screen: View {
                     VStack{
                         
                 Text("Model")
+                            .foregroundColor(AppColors.BlackColor)
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
                  .padding(.bottom,-5)
@@ -233,6 +235,7 @@ struct Add_your_Car_Screen: View {
 //                    
                         
                 Text("Year")
+                            .foregroundColor(AppColors.BlackColor)
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
                   .padding(.bottom,-5)
@@ -501,6 +504,7 @@ struct Add_your_Car_Screen: View {
                     VStack{
                         
                 Text("Description")
+                            .foregroundColor(AppColors.BlackColor)
                   .padding(.top,20)
                   .frame(maxWidth: .infinity, alignment: .leading)
                   .padding(.bottom,-5)

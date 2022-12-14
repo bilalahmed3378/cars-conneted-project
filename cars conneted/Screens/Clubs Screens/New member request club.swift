@@ -16,7 +16,7 @@ struct New_member_request_club: View {
                 // top bar
                 HStack{
                     Button(action: {}, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)

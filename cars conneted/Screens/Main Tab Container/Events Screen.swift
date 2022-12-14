@@ -52,7 +52,7 @@ struct Events_Screen: View {
                 
                 Text("Events")
                     .font(AppFonts.SemiBold_20)
-                    .foregroundColor(AppColors.whiteColor)
+                    .foregroundColor(.white)
                 
                 Spacer()
                 

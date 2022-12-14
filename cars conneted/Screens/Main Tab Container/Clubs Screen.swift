@@ -46,7 +46,7 @@ struct Clubs_Screen: View {
                         
                         Text("Clubs")
                             .font(AppFonts.SemiBold_20)
-                            .foregroundColor(AppColors.whiteColor)
+                            .foregroundColor(.white)
                         
                         Spacer()
                         
@@ -566,9 +566,9 @@ struct myClubCardShort : View {
          
       }
       .padding()
-      .background(RoundedRectangle(cornerRadius: 20).fill(AppColors.redGradientColor1).opacity(0.05).frame(width: UIScreen.widthBlockSize*80, height: 200))
-      .padding(.leading,28)
-      .padding(.trailing,15)
+      .background(RoundedRectangle(cornerRadius: 20).fill(AppColors.redGradientColor1).opacity(0.05).frame(width: UIScreen.screenWidth - 40))
+      .padding(.leading,20)
+      
   }
 }
 

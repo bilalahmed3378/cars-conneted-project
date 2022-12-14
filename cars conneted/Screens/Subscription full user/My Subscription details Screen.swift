@@ -153,7 +153,7 @@ struct My_Subscription_details_Screen: View {
                     HStack{
                         Text("Billing Details")
                             .font(AppFonts.semiBold_12)
-                            .foregroundColor(.black)
+                            .foregroundColor(AppColors.BlackColor)
                         Spacer()
                         
                         Image("Vector-2")

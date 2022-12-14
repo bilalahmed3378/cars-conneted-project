@@ -79,7 +79,7 @@ struct planCards: View{
                 Image("Frame 8647")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 205)
+                    .frame(width: UIScreen.screenWidth - 40)
                 
                 VStack{
                     
@@ -89,6 +89,7 @@ struct planCards: View{
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 20, height: 30)
+                        .padding(.trailing,20)
                     
                 }
                     
@@ -102,8 +103,7 @@ struct planCards: View{
                         .foregroundColor(.white)
                     
                     
-                }.frame(width: 150, height: 100)
-                
+                }
                 
                 
             }
@@ -168,14 +168,13 @@ struct planCards: View{
                     .font(AppFonts.semiBold_16)
                     .foregroundColor(.white)
                     .background(RoundedRectangle(cornerRadius: 20).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*80, height: 56))
+                    .padding(.bottom)
             })
            
             
 
             
-        }.frame(width: UIScreen.widthBlockSize*90, height: 600)
-            .padding(.bottom,10)
-            .padding(.top,-25)
+        }.frame(width: UIScreen.screenWidth - 40)
             .background(RoundedRectangle(cornerRadius: 20).fill(.gray.opacity(0.2)))
             .padding(.leading)
     }

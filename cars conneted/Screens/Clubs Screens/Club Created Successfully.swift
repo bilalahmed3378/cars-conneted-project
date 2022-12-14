@@ -50,7 +50,6 @@ struct Club_Created_Successfully: View {
             
             
             NavigationLink(destination: {
-                MainTabContainer()
             }, label: {
                 Text("Proceed to Home")
                     .font(AppFonts.semiBold_16)

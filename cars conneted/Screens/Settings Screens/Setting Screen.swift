@@ -34,7 +34,7 @@ struct Setting_Screen: View {
                     Button(action: {
                         self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
@@ -174,7 +174,7 @@ struct Setting_Screen: View {
                
                 Text("Change Paasword")
                     .font(AppFonts.regular_14)
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 Spacer()
                 
@@ -206,7 +206,7 @@ struct Setting_Screen: View {
                
                 Text("Update Email")
                     .font(AppFonts.regular_14)
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 Spacer()
                 
@@ -244,7 +244,7 @@ struct Setting_Screen: View {
                
                 Text("Billing details")
                     .font(AppFonts.regular_14)
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 Spacer()
                 
@@ -274,7 +274,7 @@ struct Setting_Screen: View {
                    
                     Text("Payment")
                         .font(AppFonts.regular_14)
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.BlackColor)
                     
                     Spacer()
                     
@@ -306,7 +306,7 @@ struct Setting_Screen: View {
                
                 Text("Notification")
                     .font(AppFonts.regular_14)
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 Spacer()
                 
@@ -341,7 +341,7 @@ struct Setting_Screen: View {
                    
                     Text("Proximity Setting")
                         .font(AppFonts.regular_14)
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.BlackColor)
                     
                     Spacer()
                     
@@ -408,7 +408,7 @@ struct Setting_Screen: View {
                    
                     Text("Support")
                         .font(AppFonts.regular_14)
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.BlackColor)
                     
                     Spacer()
                     
@@ -444,7 +444,7 @@ struct Setting_Screen: View {
             
             Text("Feedback")
                 .font(AppFonts.regular_14)
-                .foregroundColor(.black)
+                .foregroundColor(AppColors.BlackColor)
             
             Spacer()
            
@@ -472,7 +472,7 @@ struct Setting_Screen: View {
                     
                     Text("Help")
                         .font(AppFonts.regular_14)
-                        .foregroundColor(.black)
+                        .foregroundColor(AppColors.BlackColor)
                     
                     Spacer()
                    
@@ -507,7 +507,7 @@ struct Setting_Screen: View {
                
                 Text("TOS")
                     .font(AppFonts.regular_14)
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 Spacer()
                 
@@ -538,7 +538,7 @@ struct Setting_Screen: View {
                        
                         Text("Privacy Policy")
                             .font(AppFonts.regular_14)
-                            .foregroundColor(.black)
+                            .foregroundColor(AppColors.BlackColor)
                         
                         Spacer()
                         
@@ -560,7 +560,7 @@ struct Setting_Screen: View {
             }
             Group{
                 
-                NavigationLink(destination: Login_Screen(), label: {
+                
                     HStack{
                         Image("majesticons_logout")
                             .resizable()
@@ -571,7 +571,7 @@ struct Setting_Screen: View {
                        
                         Text("Logout")
                             .font(AppFonts.regular_14)
-                            .foregroundColor(.black)
+                            .foregroundColor(AppColors.BlackColor)
                         
                         Spacer()
                         
@@ -585,7 +585,7 @@ struct Setting_Screen: View {
                     .frame(width: UIScreen.widthBlockSize*90, height: 30)
                     .padding(.bottom)
                       
-                })
+            
             
                 
               

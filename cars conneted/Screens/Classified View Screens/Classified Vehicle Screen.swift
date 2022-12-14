@@ -21,7 +21,7 @@ struct Classified_Vehicle_Screen: View {
                     Button(action: {
                         self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
@@ -59,22 +59,22 @@ struct Classified_Vehicle_Screen: View {
                     if(self.pictureDp == 0){
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 230)
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: UIScreen.screenWidth - 40)
                     }
                     
                     if(self.pictureDp == 1){
                     Image("unsplash_gmA751dxisA")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 230)
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: UIScreen.screenWidth - 40)
                     }
                     
                     if(self.pictureDp == 2){
                     Image("unsplash_AHnhdjyTNGM")
                         .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*90, height: 230)
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: UIScreen.screenWidth - 40)
                     }
                   
                     

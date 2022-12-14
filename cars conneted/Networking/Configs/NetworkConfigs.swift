@@ -10,7 +10,7 @@ import SwiftUI
 struct NetworkConfig {
     
 //    static let baseUrl = "http://164.92.224.155:83/api/"
-    static let baseUrl = "https://www.meccafitness.org/api/"
+    static let baseUrl = "http://159.223.196.179:85/api/"
 
     static let login = "login"
     static let register = "register"

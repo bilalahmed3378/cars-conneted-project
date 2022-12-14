@@ -57,7 +57,7 @@ struct Market_place_and_calssified: View {
                     
                     Text("Market Place")
                         .font(AppFonts.SemiBold_20)
-                        .foregroundColor(AppColors.whiteColor)
+                        .foregroundColor(.white)
                     
                     Spacer()
                     NavigationLink(destination: Create_Shop_Screen(), label: {
@@ -73,8 +73,8 @@ struct Market_place_and_calssified: View {
                   
                     
                     
-                }.padding(.leading,24)
-                    .padding(.trailing,24)
+                }.padding(.leading,20)
+                    .padding(.trailing,20)
                     .padding(.top,20)
                 
                 
@@ -283,6 +283,7 @@ struct Market_place_and_calssified: View {
                 VStack{
                     HStack{
                         Text("Filter Your Search")
+                            .foregroundColor(.black)
                         Spacer()
                     }
                     .padding(.top)
@@ -320,6 +321,7 @@ struct Market_place_and_calssified: View {
                     
                     
                     Text("Selext Type")
+                        .foregroundColor(.black)
                       .padding(.top,20)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       
@@ -358,6 +360,7 @@ struct Market_place_and_calssified: View {
                     
                     HStack{
                         Text("Price Range")
+                            .foregroundColor(.black)
                         Spacer()
                     }
                     .padding(.top)
@@ -377,6 +380,7 @@ struct Market_place_and_calssified: View {
                         
                         HStack{
                             Text("1")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -385,6 +389,7 @@ struct Market_place_and_calssified: View {
                         
                         HStack{
                             Text("2")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -393,6 +398,7 @@ struct Market_place_and_calssified: View {
                         
                         HStack{
                             Text("3")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -402,6 +408,7 @@ struct Market_place_and_calssified: View {
                         
                         HStack{
                             Text("4")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -411,6 +418,7 @@ struct Market_place_and_calssified: View {
                         
                         HStack{
                             Text("5")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }

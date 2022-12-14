@@ -45,7 +45,6 @@ struct Successfully_Changed: View {
             
             
             NavigationLink(destination: {
-                MainTabContainer()
             }, label: {
                 Text("Proceed to Home")
                     .font(AppFonts.semiBold_16)

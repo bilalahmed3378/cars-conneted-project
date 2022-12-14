@@ -14,9 +14,9 @@ struct Subscription_Updated_Successful_Screen: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: MainTabContainer(), isActive: self.$toHome){
-                EmptyView()
-            }
+//            NavigationLink(destination: MainTabContainer(), isActive: self.$toHome){
+//                EmptyView()
+//            }
             
            
                 HStack{

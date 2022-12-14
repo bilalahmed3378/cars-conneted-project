@@ -67,7 +67,7 @@ struct Support_Issue_Solved_Screen: View {
                 Spacer()
             }
             
-            NavigationLink(destination: MainTabContainer(), label: {
+           
                 Text("Proceed to Home")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
@@ -76,7 +76,7 @@ struct Support_Issue_Solved_Screen: View {
                     .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                     .padding(.top,30)
                 
-            })
+            
                 
             
             

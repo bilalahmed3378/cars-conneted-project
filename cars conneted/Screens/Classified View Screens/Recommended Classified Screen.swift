@@ -43,7 +43,7 @@ struct Recommended_Classified_Screen: View {
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                                .resizable()
                                .aspectRatio(contentMode: .fit)
                                .frame(width: 35, height: 35)

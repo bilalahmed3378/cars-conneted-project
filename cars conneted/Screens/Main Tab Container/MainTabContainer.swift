@@ -11,11 +11,14 @@ struct MainTabContainer: View {
     
     @State var selectedIndex : Int = 0
     
-   
+    @Binding var isUserLoggedIn : Bool
+
     
     @State var isDrawerOpen : Bool = false
     
-    
+    init(isUserLoggedIn  : Binding<Bool>){
+        self._isUserLoggedIn = isUserLoggedIn
+    }
     
     var body: some View {
         
@@ -141,13 +144,12 @@ struct MainTabContainer: View {
                     }
                     
                     
-                }.padding(.top,20)
-                    .padding(.bottom,30)
-                    .padding(.leading,20)
-                    .padding(.trailing,20)
+                }
+                    .padding(15)
                     .background(
-                        RoundedRectangle(cornerRadius: 20, style: .continuous).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))
-                        
+                        RoundedCorners(tl: 20, tr: 20, bl: 0, br: 0).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))
+//                        RoundedRectangle(cornerRadius: 20, style: .continuous).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))
+//
                     )
                 
             }

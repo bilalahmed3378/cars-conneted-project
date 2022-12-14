@@ -9,64 +9,81 @@ import Foundation
 import MultipartForm
 
 
-class LoginApi: ObservableObject {
-    @Published var isloading = false
+class LoginApi : ObservableObject{
+        //MARK: - Published Variables
+    @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
     @Published var loginSuccessful = false
-    @Published var ApiResponse: LoginResponseModel?
+    @Published var apiResponse :  LoginResponseModel?
     
+
     
-    func login(email: String , password: String){
-        self.isloading = true
-        self.isApiCallDone = false
-        self.isApiCallSuccessful = false
+
+    
+        //MARK: - Get Customer Orders History
+    func loginUser(email : String , password : String){
+        
+        self.isLoading = true
+        self.isApiCallSuccessful = true
         self.loginSuccessful = false
+        self.isApiCallDone = false
         
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.login)
-        else{return}
+            //Create url
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.login ) else {return}
         
-        let toFormRequest = MultipartForm(parts: [MultipartForm.Part(name: "email", value: email), MultipartForm.Part(name: "password", value: password)])
         
+        let formToRequest = MultipartForm(parts: [
+            MultipartForm.Part(name: "email", value: email),
+            MultipartForm.Part(name: "password", value: password)
+        ])
+        
+        
+            //Create request
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue(toFormRequest.contentType, forHTTPHeaderField: "content-type")
-        request.setValue("application/json", forHTTPHeaderField: "Accepted")
-        request.httpBody = toFormRequest.bodyData
+//        request.setValue( AppData().getAuthToken() , forHTTPHeaderField: Constants.x_auth_header)
+        request.setValue(formToRequest.contentType, forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpBody = formToRequest.bodyData
+        
+            //:end
+    
+
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data , error == nil
-            
-            else {
-                print(error?.localizedDescription ?? "No Data")
+            guard let data = data, error == nil else {
+                print(error?.localizedDescription ?? "No data")
                 DispatchQueue.main.async {
-                    self.isloading = false
                     self.isApiCallDone = true
-                    self.isApiCallSuccessful = false
+                    self.isApiCallSuccessful=false
+                    self.isLoading = false
                 }
-                
                 return
             }
+                //If sucess
+            
             
             do{
-                print("login response successful")
-                DispatchQueue.main.async{
+                print("Got login response succesfully.....")
+                DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
                 let main = try JSONDecoder().decode(LoginResponseModel.self, from: data)
                 DispatchQueue.main.async {
-                    self.ApiResponse = main
-                    self.isApiCallSuccessful = true
+                    self.apiResponse = main
+                    self.isApiCallSuccessful  = true
                     if(main.code == 200 && main.status == "success"){
                         if(main.data != nil){
                             if(main.data!.user != nil){
-                                AppData().saveBearerToken(bearerToken: main.data!.token ?? "")
                                 self.loginSuccessful = true
+//                                AppData().userLoggedIn()
+                                AppData().saveBearerToken(bearerToken: main.data!.token ?? "")
+//                                AppData().saveUserDetails(user: main.data!.user!)
                             }
                             else{
                                 self.loginSuccessful = false
                             }
-                            
                         }
                         else{
                             self.loginSuccessful = false
@@ -75,25 +92,27 @@ class LoginApi: ObservableObject {
                     else{
                         self.loginSuccessful = false
                     }
-                    self.isloading = false
+                    self.isLoading = false
                 }
-            }
-            catch{
+            }catch{  // if error
                 print(error)
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
-                    self.ApiResponse = nil
-                    self.isApiCallSuccessful = true
+                    self.apiResponse = nil
+                    self.isApiCallSuccessful  = true
                     self.loginSuccessful = false
-                    self.isloading = false
+                    self.isLoading = false
                 }
             }
+//            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+//            print(responseJSON)
         }
         
         task.resume()
-        
-        
     }
+    
+ 
+    
 }
 
 

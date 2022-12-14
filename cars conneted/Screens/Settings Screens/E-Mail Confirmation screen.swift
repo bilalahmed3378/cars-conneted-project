@@ -50,7 +50,7 @@ struct E_Mail_Confirmation_screen: View {
             HStack{
                 Spacer()
             
-                NavigationLink(destination: MainTabContainer(), label: {
+               
                     Text("Proceed to Home")
                         .font(AppFonts.semiBold_16)
                         .fontWeight(.medium)
@@ -58,7 +58,7 @@ struct E_Mail_Confirmation_screen: View {
                         .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
                         .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
                             .padding(.top,30)
-                })
+                
               
              
                 Spacer()

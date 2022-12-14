@@ -19,7 +19,7 @@ struct Invite_friends_Clubs: View {
                 // top bar
                 HStack{
                     Button(action: {}, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)

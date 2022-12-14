@@ -34,7 +34,7 @@ struct Club_Search_Screen: View {
                         Button(action: {
                             self.presentaionMode.wrappedValue.dismiss()
                         }, label: {
-                            Image("back icon")
+                            Image("BackIconWhite")
                                    .resizable()
                                    .aspectRatio(contentMode: .fit)
                                    .frame(width: 35, height: 35)
@@ -124,6 +124,7 @@ struct Club_Search_Screen: View {
                 VStack{
                     HStack{
                         Text("Filter Your Search")
+                            .foregroundColor(.black)
                         Spacer()
                     }
                     .padding(.top)
@@ -161,6 +162,7 @@ struct Club_Search_Screen: View {
                     
                     
                     Text("Selext Type")
+                        .foregroundColor(.black)
                       .padding(.top,20)
                       .frame(maxWidth: .infinity, alignment: .leading)
                       
@@ -218,6 +220,7 @@ struct Club_Search_Screen: View {
                         
                         HStack{
                             Text("1")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -226,6 +229,7 @@ struct Club_Search_Screen: View {
                         
                         HStack{
                             Text("2")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -234,6 +238,7 @@ struct Club_Search_Screen: View {
                         
                         HStack{
                             Text("3")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -243,6 +248,7 @@ struct Club_Search_Screen: View {
                         
                         HStack{
                             Text("4")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
@@ -252,16 +258,12 @@ struct Club_Search_Screen: View {
                         
                         HStack{
                             Text("5")
+                                .foregroundColor(.black)
                             
                             Image("Star")
                         }
                         .padding()
                             .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                        
-                        
-                        
-                        
-                        
                         
                     }
                     

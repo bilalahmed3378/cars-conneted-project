@@ -24,7 +24,7 @@ struct Club_chat_Screen: View {
                         Button(action: {
                            
                         }, label: {
-                            Image("back icon")
+                            Image("BackIconWhite")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 35, height: 35)

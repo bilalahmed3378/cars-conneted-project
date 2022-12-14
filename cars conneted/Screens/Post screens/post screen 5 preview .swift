@@ -15,16 +15,16 @@ struct post_screen_5_preview_: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: MainTabContainer(), isActive: self.$toHome){
-                EmptyView()
-            }
-            
+//            NavigationLink(destination: MainTabContainer(), isActive: self.$toHome){
+//                EmptyView()
+//            }
+//            
         HStack{
             
             Button(action: {
                 self.presentaionMode.wrappedValue.dismiss()
             }, label: {
-                Image("post back icons")
+                Image("Icons-2")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: 35, height: 35)

@@ -47,7 +47,7 @@ struct User_name_Successfully_Changed_Screen: View {
                 Spacer()
             }
             
-            NavigationLink(destination: MainTabContainer(), label: {
+            
                 Text("Proceed to Home")
                     .font(AppFonts.semiBold_16)
                     .fontWeight(.medium)
@@ -57,7 +57,7 @@ struct User_name_Successfully_Changed_Screen: View {
                         .padding(.top,30)
                 
             
-            })
+            
                
             
                 Spacer()

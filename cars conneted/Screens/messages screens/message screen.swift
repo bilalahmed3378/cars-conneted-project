@@ -24,7 +24,7 @@ struct personal_message_screen: View {
                         Button(action: {
                             self.presentationMode.wrappedValue.dismiss()
                         }, label: {
-                            Image("back icon")
+                            Image("BackIconWhite")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 35, height: 35)
@@ -110,27 +110,27 @@ struct personal_message_screen: View {
                 HStack(alignment: .bottom){
                     Text("Good bye sir you!")
                         .font(AppFonts.regular_16)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.white)
                     Text("17:47")
                         .font(AppFonts.regular_10)
-                        .foregroundColor(.black)
+                        .foregroundColor(Color.white)
                    
                 }
                 .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
+                .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.5))
                     
                     
                     HStack(alignment: .bottom){
                         Text("Good bye sir you!")
                             .font(AppFonts.regular_16)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color.white)
                         Text("17:47")
                             .font(AppFonts.regular_10)
-                            .foregroundColor(.black)
+                            .foregroundColor(Color.white)
                        
                     }
                     .padding(10)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.2))
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray).opacity(0.5))
                     
                     
                     Spacer()

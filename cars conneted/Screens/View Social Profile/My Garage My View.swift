@@ -342,7 +342,7 @@ struct myGarage : View {
                 Image("unsplash_1ZhZpP91olQ-1")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 240)
+                    .frame(width: UIScreen.screenWidth - 40)
                 VStack{
                     HStack{
                         Spacer()
@@ -474,7 +474,7 @@ struct myGarage : View {
                         .padding(.bottom)
                 }
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
+            }.frame(width: UIScreen.screenWidth - 40)
             
             VStack{
                 

@@ -55,11 +55,11 @@ struct Setup_Garage_Screen: View {
                     
                     Spacer()
                    
-                    NavigationLink(destination: Login_Screen(), label: {
+                   
                         Text("Skip")
                             .foregroundColor(AppColors.redGradientColor1)
-                            .font(AppFonts.regular_16)
-                    })
+                        .font(AppFonts.regular_16)
+                
                       
                     
                 
@@ -83,6 +83,7 @@ struct Setup_Garage_Screen: View {
             VStack(alignment: .leading){
                 HStack{
             Text("Its time to setup your garage and add your beautiful cars collection. It will take a moment.")
+                        .foregroundColor(AppColors.BlackColor)
                 .font(AppFonts.regular_14)
                     
                Spacer()
@@ -93,6 +94,7 @@ struct Setup_Garage_Screen: View {
             
             HStack{
                 Text("Visibility")
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.regular_14)
                 
                 
@@ -129,6 +131,7 @@ struct Setup_Garage_Screen: View {
                     
                     
                     Text("Private")
+                        .foregroundColor(AppColors.BlackColor)
                         .font(AppFonts.regular_16)
                      
                 }
@@ -159,6 +162,7 @@ struct Setup_Garage_Screen: View {
                    
                     
                     Text("Public")
+                        .foregroundColor(AppColors.BlackColor)
                         .font(AppFonts.regular_16)
                         
                      
@@ -172,6 +176,7 @@ struct Setup_Garage_Screen: View {
                 
             VStack{
             Text("Garage Name")
+                    .foregroundColor(AppColors.BlackColor)
               .padding(.top,20)
               .frame(maxWidth: .infinity, alignment: .leading)
              

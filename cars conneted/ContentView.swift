@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var isLoggedIn : Bool = false
   
     var body: some View {
         
         NavigationView{
             ZStack{
                 
-             ContentViewOnboarding()
+                Getting_Started_Screen()
           
                 
             }
@@ -249,7 +248,6 @@ struct NavigationDrawer: View {
                             }){
                                 
                                 NavigationLink(destination: {
-                                   MainTabContainer()
                                 }, label: {
                                     HStack{
                                         Image("Home icon")
@@ -608,8 +606,7 @@ struct NavigationDrawer: View {
                                         }
                                     }){
                                         
-                                        NavigationLink(destination: Login_Screen(), label: {
-                                            HStack{
+                                                                                    HStack{
                                                 Image("Logout icon white")
                                                     .resizable()
                                                     .aspectRatio(contentMode: .fit)
@@ -621,7 +618,7 @@ struct NavigationDrawer: View {
                                                     .padding(.leading,5)
                                             }.padding(.bottom,30)
                                             
-                                        })
+                                        
                                         
                                     }
                                 }

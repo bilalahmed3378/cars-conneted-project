@@ -18,7 +18,7 @@ struct Dashboard_Screen: View {
                 Button(action: {
                     self.presentaionMode.wrappedValue.dismiss()
                 }, label: {
-                    Image("back icon")
+                    Image("BackIconWhite")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 35, height: 35)

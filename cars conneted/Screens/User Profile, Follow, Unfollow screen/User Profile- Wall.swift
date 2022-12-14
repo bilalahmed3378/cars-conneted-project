@@ -410,6 +410,9 @@ struct User_Profile__Wall: View {
 
 struct PostCardProfile : View {
     
+    @State var showingSheet = false
+    
+    @State var showingSheetComments = false
     
     var body: some View {
         
@@ -433,15 +436,7 @@ struct PostCardProfile : View {
                 }
                 Spacer()
                 
-                
-                Menu(content: {
-                    Button(action: {}, label: {
-                        Text("Remove")
-                    })
-                }, label: {
-                    Image("doted Icons")
-                })
-               
+                Image("doted Icons")
                 
             }.padding(.bottom,10)
             
@@ -455,18 +450,47 @@ struct PostCardProfile : View {
             
             HStack{
                 
-                Image("Group 7370")
                 
-                Text("Arsalan and 20 other")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
+                Button(action: {
+                    self.showingSheet = true
+                }, label: {
+                    Image("Group 7367")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                    
+                    Image("Group 7369")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 18, height: 18)
+                        .offset(x: -10, y: 0)
+                    
+                    Text("Arsalan and 20 other")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                })
+                .sheet(isPresented: $showingSheet){
+                    whoLikedScreen()
+                    
+                }
+
+               
                 
                 Spacer()
                 
-                Text("12 comments")
-                    .font(AppFonts.regular_10)
-                    .foregroundColor(Color.gray)
-                
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    Text("12 comments")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(Color.gray)
+                    
+                })
+                .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
+                    
+                }
+              
             }
             
             Divider()
@@ -482,13 +506,22 @@ struct PostCardProfile : View {
                 }
                 
                 Spacer()
-                HStack{
-                    Image("ant-design_comment-outlined")
-                    Text("Comment")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                
+                Button(action: {
+                    self.showingSheetComments = true
+                }, label: {
+                    HStack{
+                        Image("ant-design_comment-outlined")
+                        Text("Comment")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                        
+                    }
+                }) .sheet(isPresented: $showingSheetComments){
+                    commentsScreen()
                     
                 }
+               
                 Spacer()
                 HStack{
                     Image("ion_share-social-sharp")
@@ -533,7 +566,7 @@ struct GarageCardOtherProfile : View {
                 Image("unsplash_1ZhZpP91olQ")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*28)
+                    .frame(width: UIScreen.screenWidth - 40)
                 VStack{
                     HStack{
                        
@@ -543,7 +576,7 @@ struct GarageCardOtherProfile : View {
                     }
                     .padding(.leading)
                     .padding(.top)
-                    .padding(.trailing)
+                    .padding(.trailing,30)
                     
                     Spacer()
                     
@@ -763,7 +796,7 @@ struct GarageCardOtherProfile : View {
                 
             }
             .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(.gray.opacity(0.3)))
-            .padding()
+            .padding(20)
             .padding(.top,-15)
             
             
@@ -790,7 +823,7 @@ struct ClubsCardProfile: View {
                 Image("unsplash_gmA751dxisA-1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                    .frame(width: UIScreen.screenWidth - 40)
                     .overlay(Color.black.opacity(0.03))
                     .clipped()
                    
@@ -803,7 +836,7 @@ struct ClubsCardProfile: View {
                         Spacer()
                         
                         
-                        Text("Join")
+                        Text("Invite")
                             .foregroundColor(.white)
                             .font(AppFonts.medium_12)
                             .padding(15)
@@ -819,9 +852,7 @@ struct ClubsCardProfile: View {
                     
                     Spacer()
                     
-                    NavigationLink(destination: {
-                        Club_details_member_view_Screen()
-                    }, label: {
+                    NavigationLink(destination: My_club_Details__admin_view__Screen(), label: {
                         HStack{
                             
                             
@@ -852,12 +883,11 @@ struct ClubsCardProfile: View {
                             
                         }.padding()
                             .padding(.top,-20)
-                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.screenWidth - 40, height: 70))
                           
-                        
                     })
-                    
                    
+                    
                     
                     
                 }.padding(.top,20)
@@ -865,7 +895,6 @@ struct ClubsCardProfile: View {
                 
                 
             }
-            .frame(height: 240)
             .cornerRadius(10)
             .padding(.top,20)
             
@@ -876,8 +905,6 @@ struct ClubsCardProfile: View {
             .padding(.trailing,20)
           
 
-     
-        
         
     }
     
@@ -892,7 +919,7 @@ struct ClassifiedCardProfile: View {
                 Image("classified")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
+                    .frame(width: UIScreen.screenWidth - 40)
                 
                 VStack{
                     Spacer()
@@ -916,7 +943,7 @@ struct ClassifiedCardProfile: View {
                 
                 
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*24)
+            }.frame(width: UIScreen.screenWidth - 40)
             
             VStack{
             
@@ -999,10 +1026,9 @@ struct ClassifiedCardProfile: View {
                 .padding(.trailing,20)
                 
             }.frame(width: UIScreen.widthBlockSize*90, height: 94)
-            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.widthBlockSize*90, height: 94))
+            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.screenWidth - 40, height: 94))
             
         }.frame(width: UIScreen.widthBlockSize*90)
-        
         
         
         

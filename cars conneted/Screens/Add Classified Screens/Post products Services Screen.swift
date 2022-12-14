@@ -31,7 +31,7 @@ struct Post_products_Services_Screen: View {
                 // top bar
                 HStack{
                     Button(action: {}, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)

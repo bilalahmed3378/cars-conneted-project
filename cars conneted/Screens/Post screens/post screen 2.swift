@@ -87,10 +87,9 @@ struct post_screen_2: View {
                     }
                     .opacity(post.isEmpty ? 0.25 : 1)
                 .font(AppFonts.regular_16)
-                .foregroundColor(.black)
+                .foregroundColor(AppColors.BlackColor)
                 .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
-                
-                .background(RoundedRectangle(cornerRadius: 0).fill(.white))
+                .background(RoundedRectangle(cornerRadius: 0).fill(AppColors.whiteColor))
                 
                 
                 

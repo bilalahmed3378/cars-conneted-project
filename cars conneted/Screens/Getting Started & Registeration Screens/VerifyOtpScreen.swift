@@ -288,7 +288,7 @@ struct verifyOtpScreen: View {
                   
                   Button(action: {
                  
-                                 toEmailConfirm = true
+                      self.toEmailConfirm = true
                  
                              }){
                  

@@ -21,7 +21,7 @@ struct My_Profile_Screen: View {
     var body: some View {
         ZStack{
             
-            ScrollView{
+            ScrollView(.vertical){
                 VStack{
                     
                     NavigationLink(destination: View_Status_Screen(), isActive: $viewStory){
@@ -50,12 +50,13 @@ struct My_Profile_Screen: View {
                             
                         }.padding(.leading)
                             .padding(.trailing)
+                            .padding(.top)
                         
                         Group{
                             Image("unsplash_spxgIcI7YGo")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
+                                .frame(width: UIScreen.screenWidth - 40)
                                 .padding(.top)
                             
                             
@@ -109,7 +110,7 @@ struct My_Profile_Screen: View {
                                 Image("unsplash_OhKElOkQ3RE-1")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
-                                   .frame(width: UIScreen.widthBlockSize*26, height: 100)
+                                    .frame(width: UIScreen.widthBlockSize*26, height: 100)
                                     .offset(x: 0, y: -50)
                                     .padding(.leading,1)
                                     .padding(.trailing,1)
@@ -315,11 +316,7 @@ struct My_Profile_Screen: View {
                             }
                         }
                     
-                    ///////////////
-                  
-                    
-                    
-                      ////////////////
+                   
                        
                         LazyVStack{
                             if(self.isPostView == 0){
@@ -333,21 +330,19 @@ struct My_Profile_Screen: View {
                                             .frame(width: 50, height: 50)
                                             .padding(.trailing,5)
                                         
-                                      
                                         
                                         Text("Write something...")
                                             .font(AppFonts.regular_12)
-                                            .foregroundColor(.black)
-                                            .padding(.trailing,190)
+                                            .foregroundColor(AppColors.BlackColor)
+                                            .padding(.trailing,150)
                                             .padding(.top,15)
                                             .padding(.bottom,15)
                                             .padding(.leading)
-                                            .background(RoundedRectangle(cornerRadius: 80).strokeBorder(.black))
+                                            .background(RoundedRectangle(cornerRadius: 80).strokeBorder(AppColors.BlackColor))
                                         
                                         Spacer()
                                     }
                                     .padding()
-                                    .padding(.top,-20)
                                 })
                           
                             
@@ -437,11 +432,7 @@ struct My_Profile_Screen: View {
     }
 }
 
-struct My_Profile_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        My_Profile_Screen()
-    }
-}
+
 
 
 struct PostCardMyProfile : View {
@@ -602,7 +593,7 @@ struct GarageCardMyProfile : View {
                 Image("unsplash_1ZhZpP91olQ")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*28)
+                    .frame(width: UIScreen.screenWidth - 40)
                 VStack{
                     HStack{
                        
@@ -612,7 +603,7 @@ struct GarageCardMyProfile : View {
                     }
                     .padding(.leading)
                     .padding(.top)
-                    .padding(.trailing)
+                    .padding(.trailing,30)
                     
                     Spacer()
                     
@@ -746,8 +737,8 @@ struct GarageCardMyProfile : View {
                 
             }
                 
-            } .padding(.leading)
-                .padding(.trailing)
+            } .padding(.leading,24)
+                .padding(.trailing,24)
                
             
             VStack{
@@ -832,7 +823,7 @@ struct GarageCardMyProfile : View {
                 
             }
             .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(.gray.opacity(0.3)))
-            .padding()
+            .padding(20)
             .padding(.top,-15)
             
             
@@ -859,7 +850,7 @@ struct ClubsCardMyProfile: View {
                 Image("unsplash_gmA751dxisA-1")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                    .frame(width: UIScreen.screenWidth - 40)
                     .overlay(Color.black.opacity(0.03))
                     .clipped()
                    
@@ -919,7 +910,7 @@ struct ClubsCardMyProfile: View {
                             
                         }.padding()
                             .padding(.top,-20)
-                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*10))
+                            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.screenWidth - 40, height: 70))
                           
                     })
                    
@@ -931,7 +922,6 @@ struct ClubsCardMyProfile: View {
                 
                 
             }
-            .frame(height: 240)
             .cornerRadius(10)
             .padding(.top,20)
             
@@ -958,7 +948,7 @@ struct ClassifiedCardMyProfile: View {
                 Image("classified")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
+                    .frame(width: UIScreen.screenWidth - 40)
                 
                 VStack{
                     Spacer()
@@ -982,7 +972,7 @@ struct ClassifiedCardMyProfile: View {
                 
                 
                 
-            }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*24)
+            }.frame(width: UIScreen.screenWidth - 40)
             
             VStack{
             
@@ -1065,12 +1055,9 @@ struct ClassifiedCardMyProfile: View {
                 .padding(.trailing,20)
                 
             }.frame(width: UIScreen.widthBlockSize*90, height: 94)
-            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.widthBlockSize*90, height: 94))
+            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.screenWidth - 40, height: 94))
             
         }.frame(width: UIScreen.widthBlockSize*90)
-        
-        
-        
         
     }
     
@@ -1094,7 +1081,7 @@ struct whoLikedScreen: View {
             
             HStack{
                 Text("People who reacted")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.SemiBold_20)
                 
                 Spacer()
@@ -1206,12 +1193,12 @@ struct all: View {
             
             VStack(alignment: .leading){
                 Text("Emma Watson")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.semiBold_16)
                     .padding(.bottom,1)
                 
                 Text("(Haripur, Pakistan)")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.regular_16)
                     .foregroundColor(.gray)
                 
@@ -1249,13 +1236,13 @@ struct liked: View {
             
             VStack(alignment: .leading){
                 Text("Hashim Ustad")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.semiBold_16)
                     .padding(.bottom,1)
                 
                 Text("(Haripur, Pakistan)")
                     .font(AppFonts.regular_16)
-                    .foregroundColor(.gray)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 
             }.padding(.leading,5)
@@ -1289,13 +1276,13 @@ struct heart: View {
             
             VStack(alignment: .leading){
                 Text("Boi Nadeem")
-                    .foregroundColor(.black)
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.semiBold_16)
                     .padding(.bottom,1)
                 
                 Text("(Haripur, Pakistan)")
                     .font(AppFonts.regular_16)
-                    .foregroundColor(.gray)
+                    .foregroundColor(AppColors.BlackColor)
                 
                 
             }.padding(.leading,5)

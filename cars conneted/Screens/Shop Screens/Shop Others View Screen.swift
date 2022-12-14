@@ -20,7 +20,7 @@ struct Shop_Others_View_Screen: View {
                     Button(action: {
                         self.presentaionMode.wrappedValue.dismiss()
                     }, label: {
-                        Image("back icon")
+                        Image("BackIconWhite")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)

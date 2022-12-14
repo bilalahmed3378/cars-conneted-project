@@ -25,7 +25,7 @@ struct Proximity_location_screen: View {
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Image("back icon")
+                    Image("BackIconWhite")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 35, height: 35)
@@ -148,7 +148,7 @@ struct Proximity_location_screen: View {
             
             
             NavigationLink(destination: {
-                MainTabContainer()
+              
             }, label: {
                 Text("Confirm")
                     .font(AppFonts.semiBold_16)

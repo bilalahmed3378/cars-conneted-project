@@ -844,9 +844,12 @@ struct PostsHome : View {
               
           }.padding(.bottom,10)
           
-          Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-              .font(AppFonts.regular_12)
-              .foregroundColor(Color.gray)
+          HStack{
+              Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
+                  .font(AppFonts.regular_12)
+                  .foregroundColor(Color.gray)
+              Spacer()
+          }
           
           Image("unsplash_gmA751dxisA")
               .resizable()
@@ -1096,13 +1099,15 @@ struct EventsHome : View {
           }.padding(.bottom,10)
           
           Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-              .font(.subheadline)
+              .font(AppFonts.regular_14)
               .foregroundColor(Color.gray)
           
           ZStack{
             
               Image("Event cards pic")
                   .resizable()
+                  .aspectRatio(contentMode: .fill)
+                  .frame(width: UIScreen.screenWidth - 40)
               
               VStack(alignment: .leading){
                   HStack{
@@ -1147,7 +1152,7 @@ struct EventsHome : View {
                       Text("$25")
                           .font(AppFonts.regular_14)
                           .foregroundColor(.gray)
-                          .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*5))
+                          .background(RoundedRectangle(cornerRadius: 50).fill(.white).frame(width: 50, height: 30))
                       
                   
                       Spacer()
@@ -1159,12 +1164,12 @@ struct EventsHome : View {
                               Text("Register")
                                   .font(AppFonts.regular_14)
                                   .foregroundColor(.white)
-                                  .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*5))
+                                  .background(RoundedRectangle(cornerRadius: 50).fill((LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing))).frame(width: 100, height: 30))
                           }
                       }
                      
                     
-                  }.padding(.trailing,75)
+                  }.padding(.trailing,20)
                       .padding(.leading,30)
                       .padding(.top,20)
                       .padding(.bottom,10)
@@ -1177,7 +1182,7 @@ struct EventsHome : View {
               
             
               
-          }.frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*30)
+          }.frame(width: UIScreen.screenWidth - 40)
               
           
           HStack{
@@ -1423,7 +1428,7 @@ struct ClubsCardHome: View {
                 }.padding(.bottom,10)
                 
                 Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                    .font(.subheadline)
+                    .font(AppFonts.regular_14)
                     .foregroundColor(Color.gray)
                 
                 NavigationLink(destination: {
@@ -1436,7 +1441,7 @@ struct ClubsCardHome: View {
                         Image("unsplash_gmA751dxisA-1")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
-                            .frame(width: UIScreen.widthBlockSize*92, height: 240)
+                            .frame(width: UIScreen.screenWidth - 40)
                             .overlay(Color.black.opacity(0.03))
                             .clipped()
                            
@@ -1495,7 +1500,7 @@ struct ClubsCardHome: View {
                                 
                                 
                             }.padding()
-                                .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*92, height: UIScreen.heightBlockSize*6))
+                                .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.screenWidth - 40, height: UIScreen.heightBlockSize*6))
                               
                             
                             
@@ -1505,7 +1510,7 @@ struct ClubsCardHome: View {
                         
                         
                     }
-                    .frame(height: 240)
+                    
                     .cornerRadius(10)
                     .padding(.top)
                 })
@@ -1748,14 +1753,14 @@ struct marketPlaceSreachCardsHome : View {
             }.padding(.bottom,10)
             
             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet tincidunt viverra nunc scelerisque gravida odio.")
-                .font(.subheadline)
+                .font(AppFonts.regular_14)
                 .foregroundColor(Color.gray)
             
             ZStack(alignment: .top){
                 Image("Rectangle 1265")
                     .resizable()
                     .aspectRatio(contentMode: .fill)
-                    .frame(width: UIScreen.widthBlockSize*90, height: 250)
+                    .frame(width: UIScreen.screenWidth - 40)
                     .cornerRadius(10)
                 
                 VStack(alignment: .leading){
@@ -1830,6 +1835,8 @@ struct marketPlaceSreachCardsHome : View {
                     .padding(.top,1)
                     .padding(.bottom,5)
                     
+                    Spacer()
+                    
                     HStack{
                         Text("$500")
                             .font(AppFonts.regular_14)
@@ -1837,7 +1844,7 @@ struct marketPlaceSreachCardsHome : View {
                             .padding(10)
                             .padding(.leading,10)
                             .padding(.trailing,10)
-                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: UIScreen.widthBlockSize*15, height: UIScreen.heightBlockSize*5))
+                            .background(RoundedRectangle(cornerRadius: 50).fill(.gray).frame(width: 50, height: 30))
                             
                            
                         
@@ -1853,7 +1860,7 @@ struct marketPlaceSreachCardsHome : View {
                                 .padding(10)
                                 .padding(.leading,30)
                                 .padding(.trailing,30)
-                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*40, height: UIScreen.heightBlockSize*5))
+                                .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: 100, height: 30))
                                 
                         
                       
@@ -1864,15 +1871,16 @@ struct marketPlaceSreachCardsHome : View {
                     }
                     .padding(.leading)
                     .padding(.trailing)
+                    .padding(.bottom)
                     
-                    Spacer()
+                   
                     
                   
                    
                 }
                 
             }
-            .frame(width: UIScreen.widthBlockSize*90, height: 250)
+            .frame(width: UIScreen.screenWidth - 40)
             
             HStack{
                 

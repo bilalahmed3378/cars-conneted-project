@@ -26,7 +26,7 @@ struct Support_FAQS_Screen: View {
                 Button(action: {
                     self.presentationMode.wrappedValue.dismiss()
                 }, label: {
-                    Image("back icon")
+                    Image("BackIconWhite")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .frame(width: 35, height: 35)

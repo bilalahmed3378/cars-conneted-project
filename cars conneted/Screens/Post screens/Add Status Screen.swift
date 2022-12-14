@@ -78,7 +78,7 @@ struct Add_Status_Screen: View {
                     Spacer()
                     
                     NavigationLink(destination: {
-                        MainTabContainer()
+                       
                     }, label: {
                         HStack{
                             Text("Share")

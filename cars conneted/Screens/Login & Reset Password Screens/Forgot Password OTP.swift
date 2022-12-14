@@ -234,7 +234,7 @@ struct verifyOtpPasswordScreen: View {
                                     Image("Icons-2")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width :UIScreen.widthBlockSize*10, height: UIScreen.heightBlockSize*10)
+                                        .frame(width: 35, height: 35)
                                     
                                 })
                       Spacer()
@@ -256,6 +256,8 @@ struct verifyOtpPasswordScreen: View {
                 
                                 Text("Enter OTP which we sent to on your email address abc****@gmail.com ")
                                     .padding(.top,10)
+                                    .padding(.leading,20)
+                                    .padding(.trailing,20)
                   
                   ZStack {
                       

@@ -46,6 +46,7 @@ struct User_profile_setup_Screen: View {
             ScrollView(.vertical, showsIndicators: false){
             HStack{
                 Text("Join as")
+                    .foregroundColor(AppColors.BlackColor)
                     .font(AppFonts.regular_14)
                 
                 
@@ -81,6 +82,7 @@ struct User_profile_setup_Screen: View {
                     
                     
                     Text("User")
+                        .foregroundColor(AppColors.BlackColor)
                         .font(AppFonts.regular_16)
                      
                 }
@@ -111,6 +113,7 @@ struct User_profile_setup_Screen: View {
                    
                     
                     Text("Vendor")
+                        .foregroundColor(AppColors.BlackColor)
                         .font(AppFonts.regular_16)
                         
                      
@@ -126,11 +129,13 @@ struct User_profile_setup_Screen: View {
                 VStack{
                     if !(self.isSelected){
                         Text("Ventor or Dealer Name")
+                            .foregroundColor(AppColors.BlackColor)
                           .padding(.top,20)
                           .frame(maxWidth: .infinity, alignment: .leading)
                     }
                     else{
                         Text("First Name")
+                            .foregroundColor(AppColors.BlackColor)
                           .padding(.top,20)
                           .frame(maxWidth: .infinity, alignment: .leading)
                     }
@@ -141,13 +146,14 @@ struct User_profile_setup_Screen: View {
                       .padding(.vertical, 10)
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
-                      .foregroundColor(.black)
+                      .foregroundColor(AppColors.BlackColor)
                 } .padding(.trailing)
                     .padding(.leading)
                 
                 if(self.isSelected){
                     VStack{
                         Text("Last Name")
+                            .foregroundColor(AppColors.BlackColor)
                           .padding(.top,20)
                           .frame(maxWidth: .infinity, alignment: .leading)
                         
@@ -156,7 +162,7 @@ struct User_profile_setup_Screen: View {
                           .padding(.vertical, 10)
                           .autocapitalization(.none)
                           .background(Rectangle().frame(height: 1).padding(.top, 30))
-                          .foregroundColor(.black)
+                          .foregroundColor(AppColors.BlackColor)
                     }
                     .padding(.trailing)
                         .padding(.leading)
@@ -165,6 +171,7 @@ struct User_profile_setup_Screen: View {
                 
                 VStack{
                     Text("Number")
+                        .foregroundColor(AppColors.BlackColor)
                       .padding(.top,20)
                       .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -173,7 +180,7 @@ struct User_profile_setup_Screen: View {
                       .padding(.vertical, 10)
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
-                      .foregroundColor(.black)
+                      .foregroundColor(AppColors.BlackColor)
                 } .padding(.trailing)
                     .padding(.leading)
                 
@@ -187,7 +194,7 @@ struct User_profile_setup_Screen: View {
                       .padding(.vertical, 10)
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
-                      .foregroundColor(.black)
+                      .foregroundColor(AppColors.BlackColor)
                       .overlay(HStack{
                         Spacer()
                         Button(action: {
@@ -201,6 +208,7 @@ struct User_profile_setup_Screen: View {
                 
                 VStack{
                     Text("About")
+                        .foregroundColor(AppColors.BlackColor)
                       .padding(.top,20)
                       .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -209,7 +217,7 @@ struct User_profile_setup_Screen: View {
                       .padding(.vertical, 10)
                       .autocapitalization(.none)
                       .background(Rectangle().frame(height: 1).padding(.top, 30))
-                      .foregroundColor(.black)
+                      .foregroundColor(AppColors.BlackColor)
                      
                 } .padding(.trailing)
                     .padding(.leading)
