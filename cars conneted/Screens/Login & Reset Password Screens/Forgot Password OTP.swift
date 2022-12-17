@@ -339,12 +339,12 @@ struct verifyOtpPasswordScreen: View {
 
 
 
-
-struct verifyOtpPasswordScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        verifyOtpScreen()
-    }
-}
+//
+//struct verifyOtpPasswordScreen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        verifyOtpScreen()
+//    }
+//}
 
 
 class ViewModelPassword: ObservableObject {
