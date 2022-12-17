@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D647509294E35910014A9E1 /* sendOtpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647508294E35910014A9E1 /* sendOtpApi.swift */; };
+		4D64750B294E36210014A9E1 /* sendOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64750A294E36210014A9E1 /* sendOtpResponseModel.swift */; };
+		4D647511294E38310014A9E1 /* verifyOtpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647510294E38310014A9E1 /* verifyOtpApi.swift */; };
+		4D647513294E38570014A9E1 /* verifyOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647512294E38570014A9E1 /* verifyOtpResponseModel.swift */; };
+		4D647518294E39930014A9E1 /* resetPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647517294E39930014A9E1 /* resetPasswordApi.swift */; };
+		4D64751A294E39A70014A9E1 /* resetPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647519294E39A70014A9E1 /* resetPasswordResponseModel.swift */; };
 		590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590117A528B896FF0053019E /* Create Event step1 Screen.swift */; };
 		5909F68C28B34DB300F7FD38 /* Follow request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F68B28B34DB300F7FD38 /* Follow request.swift */; };
 		5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */; };
@@ -201,6 +207,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D647508294E35910014A9E1 /* sendOtpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendOtpApi.swift; sourceTree = "<group>"; };
+		4D64750A294E36210014A9E1 /* sendOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendOtpResponseModel.swift; sourceTree = "<group>"; };
+		4D647510294E38310014A9E1 /* verifyOtpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyOtpApi.swift; sourceTree = "<group>"; };
+		4D647512294E38570014A9E1 /* verifyOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyOtpResponseModel.swift; sourceTree = "<group>"; };
+		4D647517294E39930014A9E1 /* resetPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordApi.swift; sourceTree = "<group>"; };
+		4D647519294E39A70014A9E1 /* resetPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordResponseModel.swift; sourceTree = "<group>"; };
 		590117A528B896FF0053019E /* Create Event step1 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Event step1 Screen.swift"; sourceTree = "<group>"; };
 		5909F68B28B34DB300F7FD38 /* Follow request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Follow request.swift"; sourceTree = "<group>"; };
 		5909F68E28B34F7A00F7FD38 /* Choose your plan Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Choose your plan Screen.swift"; sourceTree = "<group>"; };
@@ -407,6 +419,81 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D647505294E35740014A9E1 /* Send Otp Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D647507294E35840014A9E1 /* model */,
+				4D647506294E357E0014A9E1 /* api */,
+			);
+			path = "Send Otp Api";
+			sourceTree = "<group>";
+		};
+		4D647506294E357E0014A9E1 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				4D647508294E35910014A9E1 /* sendOtpApi.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		4D647507294E35840014A9E1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4D64750A294E36210014A9E1 /* sendOtpResponseModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4D64750D294E38100014A9E1 /* Verify Otp */ = {
+			isa = PBXGroup;
+			children = (
+				4D64750F294E38240014A9E1 /* api */,
+				4D64750E294E381F0014A9E1 /* model */,
+			);
+			path = "Verify Otp";
+			sourceTree = "<group>";
+		};
+		4D64750E294E381F0014A9E1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4D647512294E38570014A9E1 /* verifyOtpResponseModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4D64750F294E38240014A9E1 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				4D647510294E38310014A9E1 /* verifyOtpApi.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
+		4D647514294E396C0014A9E1 /* Reset Password */ = {
+			isa = PBXGroup;
+			children = (
+				4D647516294E39800014A9E1 /* api */,
+				4D647515294E397B0014A9E1 /* model */,
+			);
+			path = "Reset Password";
+			sourceTree = "<group>";
+		};
+		4D647515294E397B0014A9E1 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4D647519294E39A70014A9E1 /* resetPasswordResponseModel.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4D647516294E39800014A9E1 /* api */ = {
+			isa = PBXGroup;
+			children = (
+				4D647517294E39930014A9E1 /* resetPasswordApi.swift */,
+			);
+			path = api;
+			sourceTree = "<group>";
+		};
 		590117A428B896DA0053019E /* Events Creation */ = {
 			isa = PBXGroup;
 			children = (
@@ -472,6 +559,9 @@
 		592A21032898F92400FC9EAF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4D647514294E396C0014A9E1 /* Reset Password */,
+				4D64750D294E38100014A9E1 /* Verify Otp */,
+				4D647505294E35740014A9E1 /* Send Otp Api */,
 				591192E2289A46A8004DF048 /* Logout Api */,
 				59DB445D28993789006766EA /* Configs */,
 				59D5E805294891A0007712E0 /* Register Api */,
@@ -1129,7 +1219,9 @@
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
 				595013B228B4B008007B594B /* Edit Garage Screen.swift in Sources */,
 				5959AEEE28BCD8C100702250 /* Dashboard Screen.swift in Sources */,
+				4D647518294E39930014A9E1 /* resetPasswordApi.swift in Sources */,
 				5954A19F28AE64C000B8BB30 /* Getting Started Screen.swift in Sources */,
+				4D647509294E35910014A9E1 /* sendOtpApi.swift in Sources */,
 				5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */,
 				5909F68F28B34F7A00F7FD38 /* Choose your plan Screen.swift in Sources */,
 				5983884628C861A8007BFF7A /* Event Details Other Events.swift in Sources */,
@@ -1138,6 +1230,7 @@
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				5981EC2828CB0DF300C6461D /* HalfASheetPost.swift in Sources */,
+				4D64750B294E36210014A9E1 /* sendOtpResponseModel.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */,
 				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
@@ -1159,6 +1252,7 @@
 				59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */,
 				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
+				4D647513294E38570014A9E1 /* verifyOtpResponseModel.swift in Sources */,
 				59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */,
 				594D228128BC88590096D1B0 /* Events Screen.swift in Sources */,
 				5961024028D32F5500226916 /* Club Search Screen.swift in Sources */,
@@ -1218,6 +1312,7 @@
 				59D7CF0E28925C0000F9EC5D /* Transacation detail screen.swift in Sources */,
 				593F055928AF7A0400FEBE5F /* Forgot Password Screen.swift in Sources */,
 				599AF4B528B62CE500DE103F /* Post Product Vehicle Screen.swift in Sources */,
+				4D64751A294E39A70014A9E1 /* resetPasswordResponseModel.swift in Sources */,
 				594DC7ED28B4F4E70000C99E /* Shop Others View Screen.swift in Sources */,
 				5983884D28C8AEEE007BFF7A /* My Profile Screen.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
@@ -1235,6 +1330,7 @@
 				59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */,
 				5952DC0B290A63E100B73C5A /* SavedItemsScreen.swift in Sources */,
 				595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */,
+				4D647511294E38310014A9E1 /* verifyOtpApi.swift in Sources */,
 				593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */,
 				597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */,
 				59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */,
