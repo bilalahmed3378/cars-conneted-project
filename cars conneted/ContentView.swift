@@ -9,13 +9,16 @@ import SwiftUI
 
 struct ContentView: View {
     
-  
+    @State var isUserLoggedIn : Bool = true
+
     var body: some View {
         
         NavigationView{
             ZStack{
                 
-                Getting_Started_Screen()
+//                Getting_Started_Screen()
+                
+                MainTabContainer(isUserLoggedIn: $isUserLoggedIn)
           
                 
             }
