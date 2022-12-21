@@ -7,16 +7,22 @@
 
 import SwiftUI
 
+
 struct Forgot_Password_Screen: View {
+    
+    @StateObject var SendOtpApi = sendOtpApi()
     @State  var email = ""
     @Environment(\.presentationMode) var presentaionMode
     
     @State var toSendOTP = false
     
+    @State var showToast = false
+    @State var toastMessage = ""
+    
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: verifyOtpPasswordScreen(), isActive: $toSendOTP){
+            NavigationLink(destination: verifyOtpPasswordScreen(email: self.email), isActive: $toSendOTP){
                 EmptyView()
             }
             
@@ -101,7 +107,22 @@ struct Forgot_Password_Screen: View {
               .padding(.trailing)
        
             Button(action: {
-                self.toSendOTP = true
+                
+                if !(self.email.isEmpty){
+                    
+                    self.SendOtpApi.sendOtp(email: self.email)
+                    
+                    self.toSendOTP = true
+                    
+                }
+                
+                else{
+                    
+                    self.showToast = true
+                    self.toastMessage = "Please enter your email"
+                    
+                }
+                
             }, label: {
                 Text("Send OTP")
                     .font(AppFonts.semiBold_16)
@@ -117,15 +138,19 @@ struct Forgot_Password_Screen: View {
                 Spacer()
         }
        
-                
+            if(showToast){
+                Toast(isShowing: self.$showToast, message: self.toastMessage)
+            }
+            
            
         } .navigationBarHidden(true)
             
     }
 }
 
-struct Forgot_Password_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Forgot_Password_Screen()
-    }
-}
+//struct Forgot_Password_Screen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Forgot_Password_Screen()
+//    }
+//}
+

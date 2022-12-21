@@ -44,6 +44,10 @@ struct NetworkConfig {
     static let updateShippingAddress = "ShippingAddress/update"
     static let deleteShippingAddress = "ShippingAddress/delete"
     static let checkout = "checkout"
+    static let sendOtp = "forgot-password"
+    static let resetPassword = "change-password"
+
+
 
     
 }
