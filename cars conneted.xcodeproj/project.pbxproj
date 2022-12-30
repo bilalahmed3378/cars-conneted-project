@@ -380,7 +380,6 @@
 		59D7D0222892AF1900F9EC5D /* Inter-LightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-LightItalic.otf"; sourceTree = "<group>"; };
 		59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "cars-conneted-Info.plist"; path = "cars conneted/cars-conneted-Info.plist"; sourceTree = SOURCE_ROOT; };
 		59D7D0372892B3C700F9EC5D /* AppFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFonts.swift; sourceTree = "<group>"; };
-		59D8E1A029556D2300EC052B /* cars connetedDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "cars connetedDebug.entitlements"; sourceTree = "<group>"; };
 		59D8E1A129556D9700EC052B /* cars-conneted-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "cars-conneted-Info.plist"; path = "cars conneted/Preview Content/cars-conneted-Info.plist"; sourceTree = "<group>"; };
 		59DB445E289937A7006766EA /* NetworkConfigs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfigs.swift; sourceTree = "<group>"; };
 		59DB446428995098006766EA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -395,6 +394,7 @@
 		59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Method step 3 screen.swift"; sourceTree = "<group>"; };
 		59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Profile- Wall.swift"; sourceTree = "<group>"; };
 		59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Vehicle Screen.swift"; sourceTree = "<group>"; };
+		C4102311295598290015171E /* cars connetedDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "cars connetedDebug.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -674,7 +674,7 @@
 		593466672886712800956869 /* cars conneted */ = {
 			isa = PBXGroup;
 			children = (
-				59D8E1A029556D2300EC052B /* cars connetedDebug.entitlements */,
+				C4102311295598290015171E /* cars connetedDebug.entitlements */,
 				59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */,
 				5991C6212954D08000F619DA /* GoogleService-Info.plist */,
 				59DB446328995067006766EA /* Helpers */,
