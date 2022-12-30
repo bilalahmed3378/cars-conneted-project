@@ -259,8 +259,3 @@ struct My_Shop_My_View: View {
     }
 }
 
-struct My_Shop_My_View_Previews: PreviewProvider {
-    static var previews: some View {
-        My_Shop_My_View()
-    }
-}

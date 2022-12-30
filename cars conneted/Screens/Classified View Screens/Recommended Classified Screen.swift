@@ -30,6 +30,9 @@ struct Recommended_Classified_Screen: View {
     
     @State private var toSearch  = false
     
+    @State private var showSearchBar : Bool = false
+
+    
     
     var body: some View {
         ZStack{
@@ -63,6 +66,15 @@ struct Recommended_Classified_Screen: View {
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 30, height: 30)
                     })
+                    
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
                   
                     
                     
@@ -71,44 +83,37 @@ struct Recommended_Classified_Screen: View {
                     .padding(.top,20)
                 
                 
-                
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    
-                    NavigationLink(destination: {
-                        Recommended_Classified_Screen()
-                    }, label: {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
+                if(self.showSearchBar){
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
                             .foregroundColor(.red)
-                  
-                    })
-                       
-                    Button(action: {
-                        self.addFilter = true
-                    }, label: {
-                        Image("Filter 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                        
+                        
                        
                            
-                    })
+                        Button(action: {
+                            self.addFilter = true
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                           
+                               
+                        })
 
-                   
-                    
-                    
+                       
+                        
+                        
+                    }
+                    .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                    .padding(.top,20)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
                 }
-                .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
-                .padding(.leading,20)
-                .padding(.trailing,20)
+               
                 
                 
                 
@@ -317,11 +322,7 @@ struct Recommended_Classified_Screen: View {
     }
 }
 
-struct Recommended_Classified_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Recommended_Classified_Screen()
-    }
-}
+
 
 struct RecommendedClassified : View {
     

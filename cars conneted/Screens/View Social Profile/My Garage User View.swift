@@ -72,11 +72,6 @@ struct My_Garage_User_View: View {
     }
 }
 
-struct My_Garage_User_View_Previews: PreviewProvider {
-    static var previews: some View {
-        My_Garage_User_View()
-    }
-}
 
 
 struct myGarageUserView : View {

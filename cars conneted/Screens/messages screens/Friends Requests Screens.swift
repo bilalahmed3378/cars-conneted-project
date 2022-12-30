@@ -117,11 +117,7 @@ struct Friends_Requests_Screens: View {
     }
 }
 
-struct Friends_Requests_Screens_Previews: PreviewProvider {
-    static var previews: some View {
-        Friends_Requests_Screens()
-    }
-}
+
 
 struct friendsRequest: View {
     @State var toFriend = false

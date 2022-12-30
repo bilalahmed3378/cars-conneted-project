@@ -462,9 +462,4 @@ struct Classified_Spare_Parts_Screen: View {
             .navigationBarHidden(true)
 }
 }
-struct Classified_Spare_Parts_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Classified_Spare_Parts_Screen()
-    }
-}
 

@@ -587,8 +587,3 @@ struct Classified_Vehicle_Screen: View {
     }
 }
 
-struct Classified_Vehicle_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Classified_Vehicle_Screen()
-    }
-}

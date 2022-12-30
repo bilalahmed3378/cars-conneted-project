@@ -15,7 +15,7 @@ struct HomeTab: View {
     @State var addItems = false
     @State var addFlowActive = false
     
-    @State var toSearchScreen = false
+    @State var toSearchScreen : Bool = false
     
     @State var toProximity = false
     
@@ -115,13 +115,14 @@ struct HomeTab: View {
                             Spacer()
                             
                             Button(action: {
-                                self.toSearchScreen = true
+                                self.toSearchScreen.toggle()
                             }, label: {
                                 Image("White search Icon")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: 20, height: 20)
                                     .padding(.trailing,10)
+                                    
                             })
                            
                             NavigationLink(destination: Notification_Screen(), label: {
@@ -189,67 +190,67 @@ struct HomeTab: View {
 //                        .padding(.leading,20)
 //                        .padding(.trailing,20)
                         
-                        // status heading
-                        HStack{
-                            Text("Status")
-                                .foregroundColor(.white)
-                            Spacer()
-                        }
-                        .padding(.leading,20)
-                        .padding(.top,10)
-                        
-                        
-                        // list of ststuses
-                        
-                        ScrollView(.horizontal,showsIndicators: false){
-                            
-                            HStack{
-                                
-                                
-                                    Button(action: {
-                                        self.toAddStatus = true
-                                    }, label: {
-                                        VStack{
-                                        Image("Group 7364")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .frame(width: 50, height: 50)
-                                        
-                                        Text("Add")
-                                                .foregroundColor(.white)
-                                            
-                                            
-                                        }
-                                        .padding(.leading,20)
-                                    })
-                                   
-                                  
-                               
-                                
-                                ForEach(0...10 , id:\.self){ index in
-                                    
-                                  
-                                        Button(action: {
-                                            self.toStatus = true
-                                        }, label: {
-                                            VStack{
-                                            Image("Group 7365")
-                                                    .resizable()
-                                                    .aspectRatio(contentMode: .fit)
-                                                    .frame(width: 50, height: 50)
-                                                
-                                            Text("Arsalan")
-                                                    .foregroundColor(.white)
-                                            }
-                                            .padding(.leading,10)
-                                            .padding(.trailing,10)
-                                            
-                                        })
-                                       
-                                }
-                                
-                            }
-                        }
+//                        // status heading
+//                        HStack{
+//                            Text("Status")
+//                                .foregroundColor(.white)
+//                            Spacer()
+//                        }
+//                        .padding(.leading,20)
+//                        .padding(.top,10)
+//
+//
+//                        // list of ststuses
+//
+//                        ScrollView(.horizontal,showsIndicators: false){
+//
+//                            HStack{
+//
+//
+//                                    Button(action: {
+//                                        self.toAddStatus = true
+//                                    }, label: {
+//                                        VStack{
+//                                        Image("Group 7364")
+//                                                .resizable()
+//                                                .aspectRatio(contentMode: .fit)
+//                                                .frame(width: 50, height: 50)
+//
+//                                        Text("Add")
+//                                                .foregroundColor(.white)
+//
+//
+//                                        }
+//                                        .padding(.leading,20)
+//                                    })
+//
+//
+//
+//
+//                                ForEach(0...10 , id:\.self){ index in
+//
+//
+//                                        Button(action: {
+//                                            self.toStatus = true
+//                                        }, label: {
+//                                            VStack{
+//                                            Image("Group 7365")
+//                                                    .resizable()
+//                                                    .aspectRatio(contentMode: .fit)
+//                                                    .frame(width: 50, height: 50)
+//
+//                                            Text("Arsalan")
+//                                                    .foregroundColor(.white)
+//                                            }
+//                                            .padding(.leading,10)
+//                                            .padding(.trailing,10)
+//
+//                                        })
+//
+//                                }
+//
+//                            }
+//                        }
                          
                     }
                    

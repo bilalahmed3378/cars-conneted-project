@@ -22,6 +22,9 @@ struct Event_Search_Screen: View {
     
     @State private var toSearch  = false
     
+    @State private var showSearchBar : Bool = false
+
+    
     var body: some View {
         ZStack{
             VStack{
@@ -58,6 +61,15 @@ struct Event_Search_Screen: View {
                         
                       
                         })
+                        
+                        Button(action: {
+                            self.showSearchBar.toggle()
+                        }, label: {
+                            Image("White search Icon")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                        })
                             
                           
                         
@@ -67,36 +79,38 @@ struct Event_Search_Screen: View {
                         .padding(.top,20)
                     
                     
-                    
-                    HStack{
-                        
-                        TextField("Search",text: self.$searchText)
-                            .foregroundColor(.red)
-                        
-                        
-                        NavigationLink(destination: {
-                            Event_Search_Screen()
-                        }, label: {
-                            Image(systemName: "magnifyingglass")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:20,height: 20)
+                    if(self.showSearchBar){
+                        HStack{
+                            
+                            TextField("Search",text: self.$searchText)
                                 .foregroundColor(.red)
-                      
-                        })
-                        
-                     
+                            
+                            
+                            NavigationLink(destination: {
+                                Event_Search_Screen()
+                            }, label: {
+                                Image(systemName: "magnifyingglass")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:20,height: 20)
+                                    .foregroundColor(.red)
+                          
+                            })
+                            
+                         
 
-                       
-                        
+                           
+                            
+                            
+                        }
+                        .padding(15)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                        .padding(.top,20)
+                        .padding(.leading,20)
+                        .padding(.trailing,20)
                         
                     }
-                    .padding(15)
-                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                    .padding(.top,20)
-                    .padding(.leading,20)
-                    .padding(.trailing,20)
-                    
+                   
                     
                     
                 }
@@ -299,11 +313,7 @@ struct Event_Search_Screen: View {
     }
 }
 
-struct Event_Search_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Event_Search_Screen()
-    }
-}
+
 
 struct eventSearchResult: View{
     @State var eventDetails = false

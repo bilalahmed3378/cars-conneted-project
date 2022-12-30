@@ -13,6 +13,8 @@ struct Club_Admin_View: View {
     @Environment(\.presentationMode) var presentaionMode
     
     @State var requestAccept: Bool = false
+    @State private var showSearchBar : Bool = false
+
     
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 51.5, longitude: -0.12), span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
     
@@ -51,6 +53,15 @@ struct Club_Admin_View: View {
                         .frame(width: 30, height: 30)
                         .padding(.trailing,10)
                     
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
+                    
                  
                        
                 }
@@ -59,38 +70,38 @@ struct Club_Admin_View: View {
                     .padding(.trailing)
                     .padding(.top)
                 
-                // search bar
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
-                    
-                    Button(action: {
+                
+                if(self.showSearchBar){
+                    // search bar
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
+                            .foregroundColor(.red)
+                        
                        
-                    }, label: {
-                        Image("Filter 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                       
+                        
+                        Button(action: {
                            
-                    })
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                           
+                               
+                        })
 
-                    
+                        
+                        
+                    }
+                    .padding(10)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                    .padding(.top,10)
+                    .padding(.leading)
+                    .padding(.trailing)
                     
                 }
-                .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,10)
-                .padding(.leading)
-                .padding(.trailing)
-                
+               
             }
            
             .padding(.top,40)
@@ -397,11 +408,7 @@ struct Club_Admin_View: View {
     }
 }
 
-struct Club_Admin_View_Previews: PreviewProvider {
-    static var previews: some View {
-        Club_Admin_View()
-    }
-}
+
 
 
 struct PostsClubsAdmin : View {

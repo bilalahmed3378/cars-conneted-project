@@ -20,6 +20,9 @@ struct Events_Screen: View {
     @State private var searchTextFilter  = ""
     @State var distanceValue : Int = 100
     @State private var toSearch  = false
+    @State private var showSearchBar : Bool = false
+
+    
     
     @Binding var isDrawerOpen : Bool
     
@@ -58,11 +61,15 @@ struct Events_Screen: View {
                 
                
                 
-                Image("doted icons-1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 35, height: 35)
-                   
+                Button(action: {
+                    self.showSearchBar.toggle()
+                }, label: {
+                    Image("White search Icon")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 20)
+                })
+                
                 
              
                    
@@ -72,42 +79,36 @@ struct Events_Screen: View {
                 .padding(.trailing)
                 .padding(.top,20)
             
-            // search bar
-            HStack{
-                
-                TextField("Search",text: self.$searchText)
-                    .foregroundColor(.red)
-                
-                NavigationLink(destination: {
-                    Event_Search_Screen()
-                }, label: {
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
+            if(self.showSearchBar){
+                // search bar
+                HStack{
+                    
+                    TextField("Search",text: self.$searchText)
                         .foregroundColor(.red)
-                })
-              
-                
-                Button(action: {
-                    self.addFilter = true
-                }, label: {
-                    Image("Filter 2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
+                    
                    
+                    
+                    Button(action: {
+                        self.addFilter = true
+                    }, label: {
+                        Image("Filter 2")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
                        
-                })
+                           
+                    })
 
-                
-                
+                    
+                    
+                }
+                .padding(15)
+                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                .padding(.top,20)
+                .padding(.leading,20)
+                .padding(.trailing,20)
             }
-            .padding(15)
-            .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-            .padding(.top,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
+           
             
         }
        

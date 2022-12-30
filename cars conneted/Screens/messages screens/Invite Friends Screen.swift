@@ -15,7 +15,8 @@ struct Invite_Friends_Screen: View {
     
     @State private var addFilter  = false
   
-    
+    @State private var showSearchBar : Bool = false
+
     
     var body: some View {
         VStack{
@@ -43,6 +44,15 @@ struct Invite_Friends_Screen: View {
                     Spacer()
                     
                     
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
+                  
                   
                     
                     
@@ -58,37 +68,36 @@ struct Invite_Friends_Screen: View {
             
             ScrollView(.vertical, showsIndicators: false){
          
-            HStack{
-                
-                TextField("Search",text: self.$searchText)
-                    .foregroundColor(.red)
-                    .font(AppFonts.regular_14)
-                
-                
-               
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
-                
-                
-                Button(action: {
-                   
-                }, label: {
-                    Image("Filter 2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                   
+                if(self.showSearchBar){
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
+                            .foregroundColor(.red)
+                            .font(AppFonts.regular_14)
+                        
+                        
                        
-                })
+                          
+                        
+                        
+                        Button(action: {
+                           
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                           
+                               
+                        })
 
-                 
-            } .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red))
-                .padding(.leading)
-                    .padding(.trailing)
+                         
+                    } .padding(15)
+                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red))
+                        .padding(.leading)
+                            .padding(.trailing)
+                }
+           
             
             
             LazyVStack{
@@ -109,11 +118,7 @@ struct Invite_Friends_Screen: View {
     }
 }
 
-struct Invite_Friends_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Invite_Friends_Screen()
-    }
-}
+
 
 struct inviteFriendsCard: View{
     
