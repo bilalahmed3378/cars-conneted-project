@@ -9,7 +9,10 @@ import SwiftUI
 
 struct SignUp_Screen: View {
     
-    @ObservedObject var registerApi  = RegisterApi()
+    @StateObject var registerApi  = RegisterApi()
+    
+    @StateObject var SendOtpApi = sendOtpApi()
+
     
     @Binding var pushToLogin : Bool
     
@@ -33,7 +36,7 @@ struct SignUp_Screen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: verifyOtpScreen(), isActive: $pushToOTP){
+            NavigationLink(destination: verifyOtpEmailScreen(email: self.email), isActive: $pushToOTP){
                 EmptyView()
             }
             
@@ -223,6 +226,7 @@ struct SignUp_Screen: View {
                                         
                                         if(self.registerApi.registerSuccessful){
                                             
+                                            self.SendOtpApi.sendOtp(email: self.email)
                                             self.pushToOTP = true
                                         }
                                         else{

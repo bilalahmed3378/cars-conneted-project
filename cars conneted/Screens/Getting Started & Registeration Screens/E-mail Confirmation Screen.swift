@@ -101,10 +101,10 @@ struct E_mail_Confirmation_Screen: View {
 }
 
 
-struct E_mail_Confirmation_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        E_mail_Confirmation_Screen()
-    }
-}
-
-
+//struct E_mail_Confirmation_Screen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        E_mail_Confirmation_Screen()
+//    }
+//}
+//
+//

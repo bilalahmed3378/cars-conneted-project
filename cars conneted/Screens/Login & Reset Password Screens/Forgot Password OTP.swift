@@ -230,7 +230,7 @@ struct verifyOtpPasswordScreen: View {
     
     @State var showToast = false
     @State var toastMessage = ""
-        
+    
     @State var resendOtpToast = false
     
     @State var email: String
@@ -286,7 +286,7 @@ struct verifyOtpPasswordScreen: View {
                         otpText(text: viewModel.otp3)
                         otpText(text: viewModel.otp4)
                         otpText(text: viewModel.otp5)
-
+                        
                     }
                     
                     
@@ -324,6 +324,33 @@ struct verifyOtpPasswordScreen: View {
                             
                             Spacer()
                             
+                        }.onDisappear {
+                            
+                            if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
+                                
+                                if(self.SendOtpApi.dataRetrivedSuccessfully){
+                                    
+                                    self.showToast = true
+                                    self.toastMessage = "otp sent successfully"
+                                    
+                                }
+                                
+                                else{
+                                    
+                                    self.showToast = true
+                                    self.toastMessage = "incorrect otp"
+                                    
+                                    
+                                }
+                                
+                            }
+                            
+                            else if(self.SendOtpApi.isApiCallDone && (!self.SendOtpApi.isApiCallSuccessful)){
+                                
+                                self.showToast = true
+                                self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
+                                
+                            }
                         }
                     }
                     
@@ -371,20 +398,59 @@ struct verifyOtpPasswordScreen: View {
                     Text("Didn't receive OTP")
                         .font(AppFonts.regular_12)
                     
-                    Button{
+                    
+                    if(self.SendOtpApi.isLoading){
                         
-                        if(self.timeRemaining == 0){
-                            
-                            self.SendOtpApi.sendOtp(email: self.email)
-                        }
                         
-                    } label: {
-                        
-                        Text("Resend (\(self.timeRemaining))")
-                            .font(AppFonts.medium_14)
-                            .foregroundColor( (self.timeRemaining == 0) ? AppColors.redGradientColor1 : .black)
+                        ProgressView()
+                            .padding(.leading,1)
+                            .onDisappear {
+                                
+                                if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
+                                    
+                                    if(self.SendOtpApi.dataRetrivedSuccessfully){
+                                        
+                                        self.showToast = true
+                                        self.toastMessage = "otp sent successfully"
+                                        
+                                    }
+                                    
+                                    else{
+                                        
+                                        self.showToast = true
+                                        self.toastMessage = "failed to send otp"
+                                        
+                                        
+                                    }
+                                    
+                                }
+                                
+                                else if(self.SendOtpApi.isApiCallDone && (!self.SendOtpApi.isApiCallSuccessful)){
+                                    
+                                    self.showToast = true
+                                    self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
+                                    
+                                }
+                            }
                     }
                     
+                    else{
+                        
+                        Button{
+                            
+                            if(self.timeRemaining == 0){
+                                
+                                self.SendOtpApi.sendOtp(email: self.email)
+                            }
+                            
+                        } label: {
+                            
+                            Text("Resend (\(self.timeRemaining))")
+                                .font(AppFonts.medium_14)
+                                .foregroundColor( (self.timeRemaining == 0) ? AppColors.redGradientColor1 : .black)
+                        }
+                        
+                    }
                     
                     Spacer()
                     
@@ -400,36 +466,36 @@ struct verifyOtpPasswordScreen: View {
             }
             
             
-            if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
-                
-                if(self.SendOtpApi.dataRetrivedSuccessfully){
-                    
-                    if(self.resendOtpToast){
-                        
-                        Toast(isShowing: self.$resendOtpToast, message: "Otp sent successfully")
-                    }
-                    
-                }
-                
-                else{
-                    
-                    if(self.resendOtpToast){
-                        
-                        Toast(isShowing: self.$resendOtpToast, message: "failed to send otp")
-                    }
-                    
-                }
-                
-            }
-            else if(self.SendOtpApi.isApiCallDone && (!self.SendOtpApi.isApiCallSuccessful)){
-                
-                if(self.resendOtpToast){
-                    
-                    Toast(isShowing: self.$resendOtpToast, message: "Unable to access internet. Please check you internet connection and try again.")
-                }
-                
-            }
-            
+            //            if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
+            //
+            //                if(self.SendOtpApi.dataRetrivedSuccessfully){
+            //
+            //                    if(self.resendOtpToast){
+            //
+            //                        Toast(isShowing: self.$resendOtpToast, message: "Otp sent successfully")
+            //                    }
+            //
+            //                }
+            //
+            //                else{
+            //
+            //                    if(self.resendOtpToast){
+            //
+            //                        Toast(isShowing: self.$resendOtpToast, message: "failed to send otp")
+            //                    }
+            //
+            //                }
+            //
+            //            }
+            //            else if(self.SendOtpApi.isApiCallDone && (!self.SendOtpApi.isApiCallSuccessful)){
+            //
+            //                if(self.resendOtpToast){
+            //
+            //                    Toast(isShowing: self.$resendOtpToast, message: "Unable to access internet. Please check you internet connection and try again.")
+            //                }
+            //
+            //            }
+            //
             
             
             
