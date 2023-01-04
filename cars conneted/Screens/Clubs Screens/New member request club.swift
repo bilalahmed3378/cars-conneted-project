@@ -107,11 +107,7 @@ struct New_member_request_club: View {
     }
 }
 
-struct New_member_request_club_Previews: PreviewProvider {
-    static var previews: some View {
-        New_member_request_club()
-    }
-}
+
 
 struct followRequestsClub: View {
     

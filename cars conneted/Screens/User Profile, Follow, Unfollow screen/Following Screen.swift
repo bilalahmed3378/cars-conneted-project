@@ -83,11 +83,7 @@ struct Following_Screen: View {
     }
 
 
-struct Following_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Following_Screen()
-    }
-}
+
 
 
 

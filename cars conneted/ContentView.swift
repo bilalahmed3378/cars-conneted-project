@@ -9,15 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-  
+
     var body: some View {
         
         NavigationView{
             ZStack{
-                
                 Getting_Started_Screen()
-          
-                
+               
             }
             .edgesIgnoringSafeArea(.all)
         }
@@ -247,8 +245,7 @@ struct NavigationDrawer: View {
                                 }
                             }){
                                 
-                                NavigationLink(destination: {
-                                }, label: {
+                               
                                     HStack{
                                         Image("Home icon")
                                             .resizable()
@@ -260,7 +257,7 @@ struct NavigationDrawer: View {
                                             .foregroundColor(.white)
                                             .padding(.leading,5)
                                     }
-                                })
+                                
                                
                             }
                         }

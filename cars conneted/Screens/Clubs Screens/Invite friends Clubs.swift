@@ -11,6 +11,8 @@ struct Invite_friends_Clubs: View {
     @Environment(\.presentationMode) var presentaionMode
     @State var searchText = ""
     @State private var addFilter  = false
+    @State private var showSearchBar : Bool = false
+
     
     var body: some View {
         VStack{
@@ -39,7 +41,17 @@ struct Invite_friends_Clubs: View {
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 35, height: 35)
-                  
+                        .padding(.trailing,10)
+                    
+                    
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
                     
                     
                 }.padding(.leading)
@@ -54,22 +66,20 @@ struct Invite_friends_Clubs: View {
             
             ScrollView(.vertical, showsIndicators: false){
               
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
-                    
-                    
+                if(self.showSearchBar){
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
+                            .foregroundColor(.red)
+                        
+                       
+                        
+                    }
+                    .padding(10)
+                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1))
+                    .padding()
                 }
-                .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1))
-                .padding()
+               
                 
                 LazyVStack{
                     
@@ -93,11 +103,7 @@ struct Invite_friends_Clubs: View {
     }
 }
 
-struct Invite_friends_Clubs_Previews: PreviewProvider {
-    static var previews: some View {
-        Invite_friends_Clubs()
-    }
-}
+
 
 struct inviteFriendsClub: View {
     

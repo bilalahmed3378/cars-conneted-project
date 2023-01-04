@@ -317,11 +317,8 @@ struct Shop_Others_View_Screen: View {
     }
 }
 
-struct Shop_Others_View_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Shop_Others_View_Screen()
-    }
-}
+
+
 
 struct ShopClassified: View{
     var body: some View{

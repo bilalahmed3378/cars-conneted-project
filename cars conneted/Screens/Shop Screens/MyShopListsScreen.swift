@@ -11,6 +11,9 @@ struct MyShopListsScreen: View {
     @Environment(\.presentationMode) var presentaionMode
     @State private var searchText = ""
     
+    @State private var showSearchBar : Bool = false
+
+    
     var body: some View {
         VStack{
             VStack(spacing:0){
@@ -36,6 +39,16 @@ struct MyShopListsScreen: View {
                     
                     
                    Spacer()
+                    
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
+                    
                 }
                 .padding(.top,10)
                 
@@ -48,37 +61,39 @@ struct MyShopListsScreen: View {
                 )
                
            
-            
-            HStack{
-                
-                TextField("Search",text: self.$searchText)
-                    .foregroundColor(.red)
-                    .font(AppFonts.regular_14)
-                
-                
-                
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
-                
-                
-                Button(action: {
+            if(self.showSearchBar){
+                HStack{
                     
-                }, label: {
-                    Image("Filter 2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
-                   
+                    TextField("Search",text: self.$searchText)
+                        .foregroundColor(.red)
+                        .font(AppFonts.regular_14)
+                    
+                    
+                    
+                        Image(systemName: "magnifyingglass")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:20,height: 20)
+                            .foregroundColor(.red)
+                    
+                    
+                    Button(action: {
+                        
+                    }, label: {
+                        Image("Filter 2")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
                        
-                })
+                           
+                    })
 
-            } .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                .padding(.leading,20)
-                .padding(.trailing,20)
+                } .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+            }
+           
                 
             HStack{
                 Text("14 available shops")

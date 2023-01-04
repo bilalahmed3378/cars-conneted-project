@@ -23,6 +23,9 @@ struct Classified_Search_Screen: View {
     
     @State private var toSearch  = false
     
+    @State private var showSearchBar : Bool = false
+
+    
     
     var body: some View {
         ZStack{
@@ -33,54 +36,70 @@ struct Classified_Search_Screen: View {
                 // top bar
              
                 HStack{
-                
+                    
                     Button(action: {
                         self.presentationMode.wrappedValue.dismiss()
                     }, label: {
                         Image("BackIconWhite")
-                               .resizable()
-                               .aspectRatio(contentMode: .fit)
-                               .frame(width: 35, height: 35)
-                               .padding(.top)
-                               .padding(.leading)
-                    })
-                    
-                    
-                HStack{
-                    
-                  
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    
-                        Image(systemName: "magnifyingglass")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
-                            .foregroundColor(.red)
-                  
-                  
+                            .frame(width: 35, height: 35)
+                            .padding(.top)
+                            .padding(.leading)
+                    })
+                    
+                    Spacer()
+                    
                     Button(action: {
-                       
+                        self.showSearchBar.toggle()
                     }, label: {
-                        Image("Filter 2")
+                        Image("White search Icon")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 20)
-                       
-                           
                     })
                     
+                }
                     
+                    
+                if(self.showSearchBar){
+                    HStack{
+                        
+                      
+                        
+                        TextField("Search",text: self.$searchText)
+                            .foregroundColor(.red)
+                        
+                        
+                            Image(systemName: "magnifyingglass")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width:20,height: 20)
+                                .foregroundColor(.red)
+                      
+                      
+                        Button(action: {
+                           
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
+                           
+                               
+                        })
+                        
+                        
+                    }
+                    .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                    .padding(.top,20)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
                 }
-                .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
-                .padding(.leading,20)
-                .padding(.trailing,20)
+               
                 
-                }
+                
                 
             }
             .padding(.top,40)
@@ -290,11 +309,7 @@ struct Classified_Search_Screen: View {
     }
 }
 
-struct Classified_Search_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Classified_Search_Screen()
-    }
-}
+
 
 struct classifiedSearchCard: View{
     var body: some View{

@@ -741,11 +741,7 @@ struct Event_Details_Screen: View {
     }
 }
 
-struct Event_Details_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Event_Details_Screen()
-    }
-}
+
 
 
        

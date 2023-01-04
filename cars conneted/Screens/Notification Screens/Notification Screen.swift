@@ -247,11 +247,7 @@ struct Notification_Screen: View {
     
 }
 
-struct Notification_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Notification_Screen()
-    }
-}
+
 
 struct todayNotifications : View {
   

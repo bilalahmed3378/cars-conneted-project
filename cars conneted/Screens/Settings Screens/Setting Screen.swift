@@ -20,6 +20,9 @@ struct Setting_Screen: View {
 
     @State var profileSetupDone : Bool = true
     
+    @State private var showSearchBar : Bool = false
+
+    
    
     
     
@@ -52,7 +55,19 @@ struct Setting_Screen: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 35, height: 35)
+                            .padding(.trailing,10)
+
                     })
+                    
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
+                   
                    
                     
                     
@@ -61,26 +76,23 @@ struct Setting_Screen: View {
                     .padding(.top)
                 
                 
+                    if(self.showSearchBar){
+                        HStack{
+                            
+                            TextField("Search",text: self.$searchText)
+                                .foregroundColor(.red)
+                                .font(AppFonts.regular_14)
+                            
+                          
+                        }
+                        .padding(10)
+                        .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                        .padding(.top)
+                        .padding(.leading)
+                        .padding(.trailing)
+                            
+                    }
                 
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                        .font(AppFonts.regular_14)
-                    
-                    Image(systemName: "magnifyingglass")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width:20,height: 20)
-                        .foregroundColor(.red)
-                    
-                    
-                }
-                .padding(10)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top)
-                .padding(.leading)
-                .padding(.trailing)
                 }
                 
                 
@@ -601,13 +613,3 @@ struct Setting_Screen: View {
 
 }
 
-struct Setting_Screen_Previews: PreviewProvider {
-    
-    
-    static var previews: some View {
-        
-
-        
-        Setting_Screen()
-    }
-}

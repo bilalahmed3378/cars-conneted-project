@@ -144,11 +144,7 @@ struct My_Clubs_screens: View {
     }
 }
 
-struct My_Clubs_screens_Previews: PreviewProvider {
-    static var previews: some View {
-        My_Clubs_screens()
-    }
-}
+
 
 struct myClubsPosts: View{
     var body: some View{

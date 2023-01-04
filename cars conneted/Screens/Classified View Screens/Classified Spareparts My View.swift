@@ -485,8 +485,3 @@ struct Classified_Spareparts_My_View: View {
     }
 }
 
-struct Classified_Spareparts_My_View_Previews: PreviewProvider {
-    static var previews: some View {
-        Classified_Spareparts_My_View()
-    }
-}

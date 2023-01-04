@@ -446,8 +446,4 @@ struct Classified_Service_Screen: View {
     }
 }
 
-struct Classified_Service_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Classified_Service_Screen()
-    }
-}
+

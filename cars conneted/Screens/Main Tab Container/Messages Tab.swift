@@ -25,6 +25,8 @@ struct  MessagesTab: View {
     @State var addItems = false
     
     @State private var showingSheet = false
+    @State private var showSearchBar : Bool = false
+
    
     
     init(isDrawerOpen : Binding<Bool>){
@@ -57,13 +59,13 @@ struct  MessagesTab: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: {
-                    My_Profile_Screen()
+                Button(action: {
+                    self.showSearchBar.toggle()
                 }, label: {
-                    Image("profile icon home")
+                    Image("White search Icon")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 40, height: 40)
+                        .frame(width: 20, height: 20)
                 })
                
                 
@@ -74,36 +76,35 @@ struct  MessagesTab: View {
             
      
             
-            HStack{
-                
-                TextField("Search",text: self.$searchText)
-                    .foregroundColor(.red)
-                
-                Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:20,height: 20)
-                    .foregroundColor(.red)
-                
-                Button(action: {
-                    self.addFilter = true
-                }, label: {
-                    Image("Filter 2")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 20, height: 20)
+            if(self.showSearchBar){
+                HStack{
+                    
+                    TextField("Search",text: self.$searchText)
+                        .foregroundColor(.red)
+                    
                    
+                    
+                    Button(action: {
+                        self.addFilter = true
+                    }, label: {
+                        Image("Filter 2")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
                        
-                })
+                           
+                    })
 
-                
-                
+                    
+                    
+                }
+                .padding(15)
+                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                .padding(.top,20)
+                .padding(.leading,20)
+                .padding(.trailing,20)
             }
-            .padding(15)
-            .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-            .padding(.top,20)
-            .padding(.leading,20)
-            .padding(.trailing,20)
+          
             
         } .padding(.top,40)
             .padding(.bottom,15)

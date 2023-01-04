@@ -22,6 +22,8 @@ struct Market_place_and_calssified: View {
     @State private var addFilter  = false
     
     @State private var toSearch  = false
+    @State private var showSearchBar : Bool = false
+
     
     
     
@@ -66,8 +68,20 @@ struct Market_place_and_calssified: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 20, height: 30)
+                            .padding(.trailing,10)
+
                            
                     })
+                    
+                    Button(action: {
+                        self.showSearchBar.toggle()
+                    }, label: {
+                        Image("White search Icon")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 20, height: 20)
+                    })
+                   
                     
                     
                   
@@ -79,44 +93,37 @@ struct Market_place_and_calssified: View {
                 
                 
                 
-                HStack{
-                    
-                    TextField("Search",text: self.$searchText)
-                        .foregroundColor(.red)
-                    
-                    
-                    NavigationLink(destination: {
-                        Classified_Search_Screen()
-                    }, label: {
-                        Image(systemName: "magnifyingglass")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20,height: 20)
+                if(self.showSearchBar){
+                    HStack{
+                        
+                        TextField("Search",text: self.$searchText)
                             .foregroundColor(.red)
-                  
-                   
-                    })
-                    
-                    Button(action: {
-                        self.addFilter = true
-                    }, label: {
-                        Image("Filter 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
+                        
+                        
                        
+                        
+                        Button(action: {
+                            self.addFilter = true
+                        }, label: {
+                            Image("Filter 2")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20, height: 20)
                            
-                    })
-                   
-                    
+                               
+                        })
+                       
+                        
+                        
+                    }
+                    .padding(15)
+                    .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
+                    .padding(.top,20)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
                     
                 }
-                .padding(15)
-                .background(RoundedRectangle(cornerRadius: 10).fill(.white.opacity(0.7)))
-                .padding(.top,20)
-                .padding(.leading,20)
-                .padding(.trailing,20)
-                
+               
                 
                 
             }

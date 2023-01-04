@@ -165,11 +165,7 @@ struct Proximity_location_screen: View {
     }
 }
 
-struct Proximity_location_screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Proximity_location_screen()
-    }
-}
+
 
 
 import SwiftUI
