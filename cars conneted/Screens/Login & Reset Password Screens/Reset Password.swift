@@ -23,6 +23,8 @@ struct Reset_Password: View {
     
     @State var otp : String
     
+    @State var token: String
+    
     @Environment(\.presentationMode) var presentaionMode
     
     @State var toPasswordChanged = false
@@ -185,9 +187,14 @@ struct Reset_Password: View {
                         
                     }
                     
+                    else if !(self.isValidPassword()){
+                        self.toastMessage = "Password must be at least 8 characters long and must contains one special charater and number."
+                        self.showToast = true
+                    }
+                    
                     else{
                         
-                        self.ResetPasswordApi.resetPassword(email: self.email, password: self.password, otp: self.otp)
+                        self.ResetPasswordApi.resetPassword(password: self.password, token: self.token)
                         
                     }
                     
@@ -219,7 +226,7 @@ struct Reset_Password: View {
                             .onAppear{
                                 if(self.ResetPasswordApi.isApiCallDone && self.ResetPasswordApi.isApiCallSuccessful){
                                     
-                                    if(self.ResetPasswordApi.dataRetrivedSuccessfully){
+                                    if(self.ResetPasswordApi.passwordChanged){
                                         
                                         self.toPasswordChanged = true
                                     }
@@ -252,7 +259,19 @@ struct Reset_Password: View {
         }.navigationBarHidden(true)
         
     }
-}
+    
+    func isValidPassword() -> Bool {
+        // least one digit
+        // least one lowercase
+        // least one symbol
+        //  min 8 characters total
+        let password = self.password.trimmingCharacters(in: CharacterSet.whitespaces)
+        let passwordRegx = "^(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&<>*~:`-]).{8,}$"
+        let passwordCheck = NSPredicate(format: "SELF MATCHES %@",passwordRegx)
+        return passwordCheck.evaluate(with: password)
+
+    }
+    }
 
 //struct Reset_Password_Previews: PreviewProvider {
 //    static var previews: some View {

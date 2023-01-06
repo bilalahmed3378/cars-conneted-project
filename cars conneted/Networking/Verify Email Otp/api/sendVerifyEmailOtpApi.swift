@@ -1,5 +1,5 @@
 //
-//  verifyOtpApi.swift
+//  verifyEmailOtpApi.swift
 //  cars conneted
 //
 //  Created by Sohaib Sajjad on 17/12/2022.
@@ -8,20 +8,24 @@
 import Foundation
 
 
-class verifyOtpApi : ObservableObject{
+import MultipartForm
+
+
+
+class verifyEmailOtpApi : ObservableObject{
     
         //MARK: - Published Variables
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
     @Published var dataRetrivedSuccessfully = false
-    @Published var apiResponse :  verifyOtpResponseModel?
+    @Published var apiResponse :  sendOtpResponseModel?
     
 
     
 
     
-    func verifyOtp(otp: String){
+    func sendOtp(email: String){
         
         self.isLoading = true
         self.isApiCallSuccessful = false
@@ -30,7 +34,7 @@ class verifyOtpApi : ObservableObject{
         
         
             //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.verifyOtp + "?otp=\(otp)" ) else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.sendForgetPasswordOtp + "?email=\(email)" ) else {return}
         
         
         
@@ -60,11 +64,11 @@ class verifyOtpApi : ObservableObject{
             
             
             do{
-                print("Got verify otp response succesfully.....")
+                print("Got send otp response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(verifyOtpResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(sendOtpResponseModel.self, from: data)
                 DispatchQueue.main.async {
                     self.apiResponse = main
                     self.isApiCallSuccessful  = true

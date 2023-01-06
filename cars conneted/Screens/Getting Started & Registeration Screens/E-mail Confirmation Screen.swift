@@ -15,23 +15,27 @@ struct E_mail_Confirmation_Screen: View {
     var image = Image("Group 7139")
     
     
-    @State var toProfileSetup = false
+    @State var toLoginScreen = false
+    
+    @State var isUserLoggedIn = false
     
     @State var toHomeScreen = false
+    
+    @State var isProfileSetUp = false
     
     var body: some View {
         VStack{
             
-//            NavigationLink(destination: Login_Screen(, isActive: $toProfileSetup){
-//                EmptyView()
-//            }
+            NavigationLink(destination: Login_Screen(pushToLogin: self.$toLoginScreen, isUserLoggedIn: self.$isUserLoggedIn, isProfileSetUp: self.$isProfileSetUp), isActive: self.$toLoginScreen){
+                EmptyView()
+            }
 //           
 //               
 //            NavigationLink(destination: MainTabContainer(), isActive: self.$toHomeScreen){
 //                EmptyView()
 //            }
             
-        
+         
             
        
             
@@ -63,7 +67,7 @@ struct E_mail_Confirmation_Screen: View {
            
             
             Button(action: {
-                self.toProfileSetup = true
+                self.toLoginScreen = true
             }, label: {
                 Text("Login Now")
                     .font(AppFonts.semiBold_16)

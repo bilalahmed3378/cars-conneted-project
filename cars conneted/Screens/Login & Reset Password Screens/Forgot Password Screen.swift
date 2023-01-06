@@ -10,11 +10,11 @@ import SwiftUI
 
 struct Forgot_Password_Screen: View {
     
-    @StateObject var SendOtpApi = sendOtpApi()
+    @StateObject var SendOtpApi = sendForgetPsswordOtpApi()
     @State  var email = ""
     @Environment(\.presentationMode) var presentaionMode
     
-    @State var toSendOTP = false
+    @State var toVerifyOtpScreen = false
     
     @State var showToast = false
     @State var toastMessage = ""
@@ -22,7 +22,7 @@ struct Forgot_Password_Screen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: verifyOtpPasswordScreen(email: self.email), isActive: $toSendOTP){
+            NavigationLink(destination: verifyOtpPasswordScreen(otpId: self.SendOtpApi.apiResponse?.data?.otp_id ?? "", email: self.email), isActive: $toVerifyOtpScreen){
                 EmptyView()
             }
             
@@ -123,9 +123,9 @@ struct Forgot_Password_Screen: View {
                             
                             if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
                                 
-                                if(self.SendOtpApi.dataRetrivedSuccessfully){
+                                if(self.SendOtpApi.otpSent){
                                     
-                                    self.toSendOTP = true
+                                    self.toVerifyOtpScreen = true
                                     
                                 }
                                 

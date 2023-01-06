@@ -10,7 +10,7 @@ import Foundation
 
 struct resetPasswordResponseModel : Codable{
     
-    let status : String
+    let successful : Bool
     let code : Int
     let message : String
     
@@ -20,9 +20,9 @@ struct resetPasswordResponseModel : Codable{
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         do {
-            status = try container.decode(String?.self, forKey: .status) ?? ""
+            successful = try container.decode(Bool?.self, forKey: .successful) ?? false
         } catch  {
-            status = ""
+            successful = false
         }
         
         do {

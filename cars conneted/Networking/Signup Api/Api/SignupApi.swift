@@ -6,49 +6,42 @@
 //
 
 import Foundation
-import MultipartForm
 
-class RegisterApi : ObservableObject{
+class SignupApi : ObservableObject{
         //MARK: - Published Variables
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
-    @Published var registerSuccessful = false
-    @Published var apiResponse :  RegisterResponseModel?
-    
+    @Published var signupSuccessful = false
+    @Published var apiResponse :  SignupResponseModel?
+    @Published var emailAlreadyInUse = false
+
 
     
 
     
         //MARK: - Get Customer Orders History
-    func registerUser( email : String , password : String){
+    func signupUser( email : String , password : String){
         
         self.isLoading = true
         self.isApiCallSuccessful = true
-        self.registerSuccessful = false
+        self.signupSuccessful = false
+        self.emailAlreadyInUse = false
         self.isApiCallDone = false
         
             //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.register ) else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.signup ) else {return}
         
         
-        let formToRequest = MultipartForm(parts: [
-//            MultipartForm.Part(name: "fullName", value: fullName),
-            MultipartForm.Part(name: "email", value: email),
-            MultipartForm.Part(name: "password", value: password),
-//            MultipartForm.Part(name: "signup_method", value: "email"),
-//            MultipartForm.Part(name: "user_type", value: "professional")
-        ])
-        
-        
+        let data : Data = "email=\(email)&password=\(password)".data(using: .utf8)!
+
+    
             //Create request
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-//        request.setValue( AppData().getAuthToken() , forHTTPHeaderField: Constants.x_auth_header)
-        request.setValue(formToRequest.contentType, forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.httpBody = formToRequest.bodyData
-        
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secret_key")
+        request.httpBody = data
         
         
         
@@ -70,46 +63,51 @@ class RegisterApi : ObservableObject{
             
             
             do{
-                print("Got register response succesfully.....")
+                print("Got signup response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(RegisterResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(SignupResponseModel.self, from: data)
+                
                 DispatchQueue.main.async {
                     self.apiResponse = main
                     self.isApiCallSuccessful  = true
-                    if(main.code == 200 && main.status == "success"){
+                    
+                    if(main.code == 200 && main.successful == true){
+                        
                         if(main.data != nil){
-                            self.registerSuccessful = true
+                            self.signupSuccessful = true
                         }
                         else{
-                            self.registerSuccessful = false
-                            print("register data null")
+                            self.signupSuccessful = false
+
                         }
                     }
-                    else if(main.message == "The given data was invalid."){
-                        self.registerSuccessful = false
-                        print("register invalid data")
+                    
+                    else if (main.message == "Email already in use. Please try different email."){
+                        
+                        self.emailAlreadyInUse = true
+                        
                     }
+
                     else{
-                        self.registerSuccessful = false
-                        print("else register fail")
+                        self.signupSuccessful = false
                     }
                     self.isLoading = false
                 }
             }catch{  // if error
                 print(error)
                 DispatchQueue.main.async {
-                    print("in aa deconging error of register api")
+                    print(error)
                     self.isApiCallDone = true
                     self.apiResponse = nil
                     self.isApiCallSuccessful  = true
-                    self.registerSuccessful = false
+                    self.signupSuccessful = false
                     self.isLoading = false
                 }
             }
-//            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-//            print(responseJSON)
+            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
+            print(responseJSON)
         }
         
         task.resume()

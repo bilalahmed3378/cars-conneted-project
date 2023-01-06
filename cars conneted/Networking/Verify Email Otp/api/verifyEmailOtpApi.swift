@@ -1,38 +1,44 @@
 //
-//  LoginApi.swift
+//  sendOtpApi.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 02/08/2022.
+//  Created by Sohaib Sajjad on 17/12/2022.
 //
 
 import Foundation
 
 
-class LoginApi : ObservableObject{
+import MultipartForm
+
+
+
+class verifyEmailOtpApi : ObservableObject{
+    
         //MARK: - Published Variables
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
-    @Published var loginSuccessful = false
-    @Published var apiResponse :  LoginResponseModel?
+    @Published var otpVerified = false
+    @Published var apiResponse :  verifyEmailOtpResponseModel?
     
 
     
 
     
-        //MARK: - Get Customer Orders History
-    func loginUser(email : String , password : String){
+    func verifyEmailOtp(otpId: String, otp: String){
         
         self.isLoading = true
-        self.isApiCallSuccessful = true
-        self.loginSuccessful = false
+        self.isApiCallSuccessful = false
+        self.otpVerified = false
         self.isApiCallDone = false
         
+        
             //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.login ) else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.verifyEmailOtp ) else {return}
         
         
-        let data : Data = "email=\(email)&password=\(password)".data(using: .utf8)!
+        
+        let data : Data = "otp_id=\(otpId)&otp=\(otp)".data(using: .utf8)!
 
     
             //Create request
@@ -42,9 +48,6 @@ class LoginApi : ObservableObject{
         request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secret_key")
         request.httpBody = data
         
-            //:end
-    
-
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
@@ -60,42 +63,21 @@ class LoginApi : ObservableObject{
             
             
             do{
-                print("Got login response succesfully.....")
-                
-//                guard let response = response as? HTTPURLResponse else { return }
-//
-//                print(response.)
-                
+                print("Got verify email otp response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(LoginResponseModel.self, from: data)
-                
+                let main = try JSONDecoder().decode(verifyEmailOtpResponseModel.self, from: data)
                 DispatchQueue.main.async {
-                
                     self.apiResponse = main
-                    self.isApiCallSuccessful = true
-                    
+                    self.isApiCallSuccessful  = true
                     if(main.code == 200 && main.successful == true){
-                        if(main.data != nil){
+                        
+                        self.otpVerified = true
 
-                            self.loginSuccessful = true
-
-//                            AppData().saveBearerToken(bearerToken: main.data!.token ?? "")
-                           
-                        }
-                        else{
-                            self.loginSuccessful = false
-                        }
                     }
                     else{
-                        
-//                        print("I am hererererererer")
-//                        
-//                        print(self.isApiCallDone)
-//                        print(self.isApiCallSuccessful)
-
-                        self.loginSuccessful = false
+                        self.otpVerified = false
                     }
                     self.isLoading = false
                 }
@@ -105,7 +87,7 @@ class LoginApi : ObservableObject{
                     self.isApiCallDone = true
                     self.apiResponse = nil
                     self.isApiCallSuccessful  = true
-                    self.loginSuccessful = false
+                    self.otpVerified = false
                     self.isLoading = false
                 }
             }
@@ -116,8 +98,6 @@ class LoginApi : ObservableObject{
         task.resume()
     }
     
- 
+
     
 }
-
-

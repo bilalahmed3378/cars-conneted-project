@@ -214,13 +214,13 @@ class AppData {
         UserDefaults.standard.removeObject(forKey: Constants.userStore)
     }
     
-    func saveUserDetails(user : LoginUserModel){
-        UserDefaults.standard.set(user.id, forKey: Constants.userId)
-        UserDefaults.standard.set(user.fullName, forKey: Constants.fullName)
+    func saveUserDetails(user : LoginDataModel){
+        UserDefaults.standard.set(user.user_id, forKey: Constants.userId)
+        UserDefaults.standard.set(user.firstName + " " + user.lastName, forKey: Constants.fullName)
         UserDefaults.standard.set(user.email, forKey: Constants.userEmail)
 //        UserDefaults.standard.set(user.signup_method, forKey: Constants.signupMethod)
 //        UserDefaults.standard.set(user.user_type, forKey: Constants.userType)
-        UserDefaults.standard.set(user.type, forKey: Constants.type)
+//        UserDefaults.standard.set(user., forKey: Constants.type)
     }
     
     

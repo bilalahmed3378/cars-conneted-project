@@ -9,10 +9,7 @@ import SwiftUI
 
 struct SignUp_Screen: View {
     
-    @StateObject var registerApi  = RegisterApi()
-    
-    @StateObject var SendOtpApi = sendOtpApi()
-
+    @StateObject var signupApi  = SignupApi()
     
     @Binding var pushToLogin : Bool
     
@@ -36,7 +33,7 @@ struct SignUp_Screen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: verifyOtpEmailScreen(email: self.email), isActive: $pushToOTP){
+            NavigationLink(destination: verifyOtpEmailScreen(email: self.email, otpId: self.signupApi.apiResponse?.data?.otp_id ?? ""), isActive: $pushToOTP){
                 EmptyView()
             }
             
@@ -172,9 +169,34 @@ struct SignUp_Screen: View {
                         HStack{
                             Spacer()
                             
-                            if(self.registerApi.isLoading){
+                            if(self.signupApi.isLoading){
                                 ProgressView()
                                     .padding(.bottom,5)
+                                    .onDisappear{
+                                        if(self.signupApi.isApiCallDone && self.signupApi.isApiCallSuccessful){
+                                            
+                                            if(self.signupApi.signupSuccessful){
+                                                
+                                                self.pushToOTP = true
+                                            }
+                                            else if (self.signupApi.emailAlreadyInUse){
+                                                self.toastMessage = "This email already taken. Please try different email."
+                                                self.showToast = true
+                                            }
+                                            
+                                            else if (self.signupApi.emailAlreadyInUse){
+                                                self.toastMessage = "Unable to Signup"
+                                                self.showToast = true
+                                            }
+                                            
+                                        }
+                                        else if(self.signupApi.isApiCallDone && (!self.signupApi.isApiCallSuccessful)){
+                                            self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
+                                            self.showToast = true
+                                        }
+                                    }
+
+                                
                             }
                             else{
                                 Button(action: {
@@ -208,7 +230,7 @@ struct SignUp_Screen: View {
                                         self.showToast = true
                                     }
                                     else{
-                                        self.registerApi.registerUser(  email: self.email, password: self.password )
+                                        self.signupApi.signupUser(  email: self.email, password: self.password )
                                     }
                                     
                                 }, label: {
@@ -221,25 +243,6 @@ struct SignUp_Screen: View {
                                 })
                                 .padding(.top)
                                 .padding(.bottom)
-                                .onAppear{
-                                    if(self.registerApi.isApiCallDone && self.registerApi.isApiCallSuccessful){
-                                        
-                                        if(self.registerApi.registerSuccessful){
-                                            
-                                            self.SendOtpApi.sendOtp(email: self.email)
-                                            self.pushToOTP = true
-                                        }
-                                        else{
-                                            self.toastMessage = "This email already taken. Please try different email."
-                                            self.showToast = true
-                                        }
-                                        
-                                    }
-                                    else if(self.registerApi.isApiCallDone && (!self.registerApi.isApiCallSuccessful)){
-                                        self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
-                                        self.showToast = true
-                                    }
-                                }
                             }
                             
                             Spacer()

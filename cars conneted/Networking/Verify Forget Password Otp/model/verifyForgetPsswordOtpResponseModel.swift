@@ -1,46 +1,44 @@
 //
-//  verifyOtpResponseModel.swift
+//  verifyForgetPsswordOtpResponseModel.swift
 //  cars conneted
 //
-//  Created by Sohaib Sajjad on 17/12/2022.
+//  Created by Sohaib Sajjad on 06/01/2023.
 //
 
 import Foundation
 
-struct verifyOtpResponseModel : Codable{
+
+struct verifyForgetPsswordOtpResponseModel : Codable {
     
-    let status : String
+    
+    let successful : Bool
     let code : Int
     let message : String
     
     init(from decoder: Decoder) throws {
         
-        
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        do {
-            status = try container.decode(String?.self, forKey: .status) ?? ""
-        } catch  {
-            status = ""
+        do{
+            successful = try container.decode(Bool?.self, forKey: .successful) ?? false
+        } catch{
+            successful = false
         }
         
-        do {
+        do{
             code = try container.decode(Int?.self, forKey: .code) ?? 0
-        } catch  {
+        } catch{
             code = 0
         }
         
-        do {
+        do{
             message = try container.decode(String?.self, forKey: .message) ?? ""
-        } catch  {
+        } catch{
             message = ""
         }
-        
         
        
         
     }
-    
-    
     
 }

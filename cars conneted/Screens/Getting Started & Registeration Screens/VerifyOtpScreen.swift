@@ -12,203 +12,17 @@ import SwiftUI
 import UIKit
 
 
-//struct verifyOtpScreen: View {
-//    @State var otp1 : String = ""
-//    @State var otp2 : String = ""
-//    @State var otp3 : String = ""
-//    @State var otp4 : String = ""
-//
-//   @State var toEmailConfirm = false
-//
-//    @Environment(\.presentationMode) var presentaionMode
-//
-//    var body: some View {
-//
-//
-//        ZStack{
-//
-//            NavigationLink(destination: E_mail_Confirmation_Screen(), isActive: $toEmailConfirm){
-//                EmptyView()
-//            }
-//
-//        VStack(alignment: .leading){
-//
-//            HStack{
-//                Button(action: {
-//                    self.presentaionMode.wrappedValue.dismiss()
-//                }, label: {
-//                    Image("Icons-2")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width :UIScreen.widthBlockSize*10, height: UIScreen.heightBlockSize*10)
-//                })
-//            }
-//
-//                Text("Verify OTP")
-//
-//                .font(AppFonts.semiBold_24)
-//                    .foregroundColor(AppColors.redGradientColor1)
-//                    .padding(.top,10)
-//
-//
-//                Text("Enter OTP which we sent to on your email address abc****@gmail.com ")
-//                    .padding(.top,10)
-//
-//
-//                HStack{
-//
-//
-//                    TextField("",text: self.$otp1)
-//                        .foregroundColor(AppColors.redGradientColor1)
-//
-//                        .font(AppFonts.medium_24)
-//                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
-//                        .multilineTextAlignment(.center)
-//                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
-////                        .padding(.trailing,14)
-//
-//                        .onChange(of: self.otp1) { newValue in
-//                            if(self.otp1.isEmpty){
-//                                self.otp1 = newValue
-//                            }
-//                            else{
-//                                self.otp1 = String(self.otp1.prefix(1))
-//                            }
-//                        }
-//
-//                    Spacer()
-//
-//                    TextField("",text: self.$otp2)
-//                        .foregroundColor(AppColors.redGradientColor1)
-//
-//                        .font(AppFonts.medium_24)
-//                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
-//                        .multilineTextAlignment(.center)
-//                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
-//
-//
-//                        .onChange(of: self.otp2) { newValue in
-//                            if(self.otp2.isEmpty){
-//                                self.otp2 = newValue
-//                            }
-//                            else{
-//                                self.otp2 = String(self.otp1.prefix(1))
-//                            }
-//                        }
-//
-//                    Spacer()
-//
-//
-//                    TextField("",text: self.$otp3)
-//                        .foregroundColor(AppColors.redGradientColor1)
-//
-//                        .font(AppFonts.medium_24)
-//                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
-//                        .multilineTextAlignment(.center)
-//                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
-//
-//
-//                        .onChange(of: self.otp3) { newValue in
-//                            if(self.otp3.isEmpty){
-//                                self.otp3 = newValue
-//                            }
-//                            else{
-//                                self.otp3 =
-//                                String(self.otp3.prefix(1))
-//                            }
-//                        }
-//
-//                    Spacer()
-//
-//
-//                    TextField("",text: self.$otp4)
-//                        .foregroundColor(AppColors.redGradientColor1)
-//
-//                        .font(AppFonts.medium_24)
-//                        .frame(width: UIScreen.widthBlockSize*20, height: UIScreen.heightBlockSize*10)
-//                        .multilineTextAlignment(.center)
-//                        .background(RoundedRectangle(cornerRadius: 5).strokeBorder(.red,lineWidth: 1.5))
-//
-//
-//                        .onChange(of: self.otp4) { newValue in
-//                            if(self.otp4.isEmpty){
-//                                self.otp4 = newValue
-//                            }
-//                            else{
-//                                self.otp1 = String(self.otp4 .prefix(1))
-//                            }
-//                        }
-//
-//
-//                }.padding(.top)
-//
-//
-//            Button(action: {
-//
-//                toEmailConfirm = true
-//
-//            }){
-//
-//                HStack{
-//                    Spacer()
-//                    Text("Verify OTP")
-//                        .font(AppFonts.semiBold_16)
-//                        .fontWeight(.bold)
-//                        .foregroundColor(.white)
-//                    Spacer()
-//                }
-//                .padding(20)
-//                .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
-//                .padding(.top)
-//
-//            }
-//
-//            HStack{
-//
-//                Spacer()
-//            Text("Didn't receive OTP")
-//                    .font(AppFonts.regular_12)
-//
-//                Text("Resend (0:09)")
-//                    .font(AppFonts.medium_14)
-//                    .foregroundColor(AppColors.redGradientColor1)
-//
-//                Spacer()
-//
-//            }.padding(.top)
-//
-//
-//                Spacer()
-//
-//        }.padding(.leading,24)
-//            .padding(.trailing,24)
-//
-//        } .navigationBarHidden(true)
-//
-//
-//    }
-//}
-//
-//
-//struct verifyOtpScreen_Previews: PreviewProvider {
-//    static var previews: some View {
-//        verifyOtpScreen()
-//    }
-//}
-
-
-
-
 
 
 struct verifyOtpEmailScreen: View {
     
     @StateObject var viewModel = ViewModel()
+    
     @State var isFocused = false
     
-    @StateObject var VerifyOtpApi = verifyOtpApi()
+    @StateObject var VerifyEmailOtpApi = verifyEmailOtpApi()
     
-    @StateObject var SendOtpApi = sendOtpApi()
+    @StateObject var resendOtpApi = resendEmailVerificationOtpApi()
     
     @State var toEmailConfirmationScreen = false
     
@@ -233,6 +47,9 @@ struct verifyOtpEmailScreen: View {
     @State var resendOtpToast = false
     
     @State var email: String
+    
+    @State var otpId: String
+   
     
     var body: some View {
         
@@ -305,14 +122,14 @@ struct verifyOtpEmailScreen: View {
                     
                     if !(viewModel.otpField.isEmpty){
                         
-                        self.VerifyOtpApi.verifyOtp(otp: viewModel.otpField)
-                        
+                        self.VerifyEmailOtpApi.verifyEmailOtp(otpId: self.otpId, otp: viewModel.otpField)
+
                         
                     }
                     
                 }){
                     
-                    if(self.VerifyOtpApi.isLoading){
+                    if(self.VerifyEmailOtpApi.isLoading){
                         
                         HStack{
                             
@@ -325,15 +142,17 @@ struct verifyOtpEmailScreen: View {
                             
                         }.onDisappear {
                             
-                            if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
+                            if(self.VerifyEmailOtpApi.isApiCallDone && self.VerifyEmailOtpApi.isApiCallSuccessful){
                                 
-                                if(self.SendOtpApi.dataRetrivedSuccessfully){
+                                if(self.VerifyEmailOtpApi.otpVerified){
                                     
+                                    self.toEmailConfirmationScreen = true
                                     self.showToast = true
-                                    self.toastMessage = "otp sent successfully"
+                                    self.toastMessage = "otp verified successfully"
                                     
                                 }
                                 
+                            
                                 else{
                                     
                                     self.showToast = true
@@ -344,7 +163,7 @@ struct verifyOtpEmailScreen: View {
                                 
                             }
                             
-                            else if(self.SendOtpApi.isApiCallDone && (!self.SendOtpApi.isApiCallSuccessful)){
+                            else if(self.VerifyEmailOtpApi.isApiCallDone && (!self.VerifyEmailOtpApi.isApiCallSuccessful)){
                                 
                                 self.showToast = true
                                 self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
@@ -357,34 +176,19 @@ struct verifyOtpEmailScreen: View {
                     else{
                         
                         HStack{
+                            
                             Spacer()
+                            
                             Text("Verify OTP")
                                 .font(AppFonts.semiBold_16)
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
+                            
                             Spacer()
                         }
                         .padding(20)
                         .background(RoundedRectangle(cornerRadius: 100).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7))
                         .padding(.top)
-                        .onAppear{
-                            if(self.VerifyOtpApi.isApiCallDone && self.VerifyOtpApi.isApiCallSuccessful){
-                                
-                                if(self.VerifyOtpApi.dataRetrivedSuccessfully){
-                                    
-                                    self.toEmailConfirmationScreen = true
-                                }
-                                else{
-                                    self.toastMessage = "incorrect otp"
-                                    self.showToast = true
-                                }
-                                
-                            }
-                            else if(self.VerifyOtpApi.isApiCallDone && (!self.VerifyOtpApi.isApiCallSuccessful)){
-                                self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
-                                self.showToast = true
-                            }
-                        }
                         
                         
                     }
@@ -398,16 +202,17 @@ struct verifyOtpEmailScreen: View {
                         .font(AppFonts.regular_12)
                     
                     
-                    if(self.SendOtpApi.isLoading){
+                    if(self.resendOtpApi.isLoading){
                         
                         ProgressView()
                             .padding(.leading,1)
                             .onDisappear {
                                 
-                                if(self.SendOtpApi.isApiCallDone && self.SendOtpApi.isApiCallSuccessful){
+                                if(self.resendOtpApi.isApiCallDone && self.resendOtpApi.isApiCallSuccessful){
                                     
-                                    if(self.SendOtpApi.dataRetrivedSuccessfully){
+                                    if(self.resendOtpApi.otpSent){
                                         
+                                        self.otpId = self.resendOtpApi.apiResponse!.data!.otp_id
                                         self.showToast = true
                                         self.toastMessage = "otp sent successfully"
                                         
@@ -423,7 +228,7 @@ struct verifyOtpEmailScreen: View {
                                     
                                 }
                                 
-                                else if(self.SendOtpApi.isApiCallDone && (!self.SendOtpApi.isApiCallSuccessful)){
+                                else if(self.resendOtpApi.isApiCallDone && (!self.resendOtpApi.isApiCallSuccessful)){
                                     
                                     self.showToast = true
                                     self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
@@ -438,7 +243,7 @@ struct verifyOtpEmailScreen: View {
                             
                             if(self.timeRemaining == 0){
                                 
-                                self.SendOtpApi.sendOtp(email: self.email)
+                                self.resendOtpApi.resendEmailVerificationOtp(email: self.email)
                             }
                             
                         } label: {

@@ -1,38 +1,38 @@
 //
-//  LoginApi.swift
+//  sendForgetPsswordOtpApi.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 02/08/2022.
+//  Created by Sohaib Sajjad on 06/01/2023.
 //
 
 import Foundation
 
 
-class LoginApi : ObservableObject{
+class sendForgetPsswordOtpApi : ObservableObject{
         //MARK: - Published Variables
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
-    @Published var loginSuccessful = false
-    @Published var apiResponse :  LoginResponseModel?
-    
+    @Published var otpSent = false
+    @Published var apiResponse :  sendForgetPsswordOtpResponseModel?
+
 
     
 
     
         //MARK: - Get Customer Orders History
-    func loginUser(email : String , password : String){
+    func sendOtp( email : String){
         
         self.isLoading = true
         self.isApiCallSuccessful = true
-        self.loginSuccessful = false
+        self.otpSent = false
         self.isApiCallDone = false
         
             //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.login ) else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.sendForgetPasswordOtp ) else {return}
         
         
-        let data : Data = "email=\(email)&password=\(password)".data(using: .utf8)!
+        let data : Data = "email=\(email)".data(using: .utf8)!
 
     
             //Create request
@@ -41,6 +41,8 @@ class LoginApi : ObservableObject{
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secret_key")
         request.httpBody = data
+        
+        
         
             //:end
     
@@ -60,52 +62,39 @@ class LoginApi : ObservableObject{
             
             
             do{
-                print("Got login response succesfully.....")
-                
-//                guard let response = response as? HTTPURLResponse else { return }
-//
-//                print(response.)
-                
+                print("Got send forget password otp response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(LoginResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(sendForgetPsswordOtpResponseModel.self, from: data)
                 
                 DispatchQueue.main.async {
-                
                     self.apiResponse = main
-                    self.isApiCallSuccessful = true
+                    self.isApiCallSuccessful  = true
                     
                     if(main.code == 200 && main.successful == true){
+                        
                         if(main.data != nil){
-
-                            self.loginSuccessful = true
-
-//                            AppData().saveBearerToken(bearerToken: main.data!.token ?? "")
-                           
+                            self.otpSent = true
                         }
                         else{
-                            self.loginSuccessful = false
+                            self.otpSent = false
                         }
                     }
+                    
                     else{
-                        
-//                        print("I am hererererererer")
-//                        
-//                        print(self.isApiCallDone)
-//                        print(self.isApiCallSuccessful)
-
-                        self.loginSuccessful = false
+                        self.otpSent = false
                     }
                     self.isLoading = false
                 }
             }catch{  // if error
                 print(error)
                 DispatchQueue.main.async {
+                    print(error)
                     self.isApiCallDone = true
                     self.apiResponse = nil
                     self.isApiCallSuccessful  = true
-                    self.loginSuccessful = false
+                    self.otpSent = false
                     self.isLoading = false
                 }
             }
@@ -119,5 +108,3 @@ class LoginApi : ObservableObject{
  
     
 }
-
-

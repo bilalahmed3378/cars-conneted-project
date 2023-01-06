@@ -10,14 +10,16 @@ import SwiftUI
 struct Password_Changed_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     
-    @State var toLogIn = false
-    
+    @State var toLoginScreen = false
+    @State var isUserLoggedIn = false
+    @State var isProfileSetup = false
+
     var body: some View {
         VStack{
             
-//            NavigationLink(destination: Login_Screen(), isActive: $toLogIn){
-//                EmptyView()
-//            }
+            NavigationLink(destination: Login_Screen(pushToLogin: self.$toLoginScreen, isUserLoggedIn: self.$isUserLoggedIn, isProfileSetUp: self.$isProfileSetup), isActive: self.$toLoginScreen){
+                EmptyView()
+            }
            
                 HStack{
                     Button(action: {
@@ -63,7 +65,7 @@ struct Password_Changed_Screen: View {
             
             
             Button(action: {
-                self.toLogIn = true
+                self.toLoginScreen = true
             }, label: {
                 Text("Back to Login")
                     .font(AppFonts.semiBold_16)
@@ -82,8 +84,8 @@ struct Password_Changed_Screen: View {
     }
 }
 
-struct Password_Changed_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Password_Changed_Screen()
-    }
-}
+//struct Password_Changed_Screen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Password_Changed_Screen()
+//    }
+//}

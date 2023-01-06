@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import MultipartForm
 
 class resetPasswordApi : ObservableObject{
     
@@ -14,34 +13,37 @@ class resetPasswordApi : ObservableObject{
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
-    @Published var dataRetrivedSuccessfully = false
+    @Published var passwordChanged = false
     @Published var apiResponse :  resetPasswordResponseModel?
     
 
     
 
     
-    func resetPassword(email: String, password: String, otp: String){
+    func resetPassword(password: String, token: String){
         
         self.isLoading = true
         self.isApiCallSuccessful = false
-        self.dataRetrivedSuccessfully = false
+        self.passwordChanged = false
         self.isApiCallDone = false
         
         
             //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.resetPassword + "?email=\(email)&password=\(password)&password_confirmation=\(password)&otp=\(otp)"  ) else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.resetPassword) else {return}
         
         
         
-        let token = AppData().getBearerToken()
+        let data : Data = "password=\(password)".data(using: .utf8)!
 
-        
+    
             //Create request
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
-        request.setValue( "Bearer \(token)", forHTTPHeaderField: "Authorization")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.setValue(token, forHTTPHeaderField: "token")
+        request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secret_key")
+        request.httpBody = data
+        
 
             //:end
     
@@ -69,13 +71,13 @@ class resetPasswordApi : ObservableObject{
                 DispatchQueue.main.async {
                     self.apiResponse = main
                     self.isApiCallSuccessful  = true
-                    if(main.code == 200 && main.status == "success"){
+                    if(main.code == 200 && main.successful == true){
                         
-                        self.dataRetrivedSuccessfully = true
+                        self.passwordChanged = true
 
                     }
                     else{
-                        self.dataRetrivedSuccessfully = false
+                        self.passwordChanged = false
                     }
                     self.isLoading = false
                 }
@@ -85,7 +87,7 @@ class resetPasswordApi : ObservableObject{
                     self.isApiCallDone = true
                     self.apiResponse = nil
                     self.isApiCallSuccessful  = true
-                    self.dataRetrivedSuccessfully = false
+                    self.passwordChanged = false
                     self.isLoading = false
                 }
             }
