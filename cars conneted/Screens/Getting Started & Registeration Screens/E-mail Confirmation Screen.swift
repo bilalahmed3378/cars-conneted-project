@@ -26,7 +26,7 @@ struct E_mail_Confirmation_Screen: View {
     var body: some View {
         VStack{
             
-            NavigationLink(destination: Login_Screen(pushToLogin: self.$toLoginScreen, isUserLoggedIn: self.$isUserLoggedIn, isProfileSetUp: self.$isProfileSetUp), isActive: self.$toLoginScreen){
+            NavigationLink(destination: Login_Screen(), isActive: self.$toLoginScreen){
                 EmptyView()
             }
 //           

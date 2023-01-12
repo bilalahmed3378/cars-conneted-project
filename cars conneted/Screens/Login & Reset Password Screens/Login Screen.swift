@@ -22,30 +22,42 @@ struct Login_Screen: View {
     @State var showToast : Bool = false
     @State var toastMessage : String = ""
     
-    @Binding var pushToLogin : Bool
+//    @Binding var pushToLogin : Bool
+//
+    @State var isUserLoggedIn = false
+//
+//
+//    @Binding var isProfileSetUp : Bool
     
-    @Binding var isUserLoggedIn : Bool
+        @State var forgetPasswordActive : Bool = false
+
     
-    @State var forgetPasswordActive : Bool = false
-    
-    @Binding var isProfileSetUp : Bool
-    
-    init (pushToLogin : Binding<Bool> , isUserLoggedIn : Binding<Bool>  , isProfileSetUp : Binding<Bool>){
-        self._pushToLogin = pushToLogin
-        self._isUserLoggedIn = isUserLoggedIn
-        self._isProfileSetUp = isProfileSetUp
-    }
+//    init (pushToLogin : Binding<Bool> , isUserLoggedIn : Binding<Bool>  , isProfileSetUp : Binding<Bool>){
+//        self._pushToLogin = pushToLogin
+//        self._isUserLoggedIn = isUserLoggedIn
+//        self._isProfileSetUp = isProfileSetUp
+//    }
     
     var body: some View {
+        
         ZStack{
             
-            NavigationLink(destination: MainTabContainer(isUserLoggedIn: self.$isUserLoggedIn), isActive: $isUserLoggedIn){
-                EmptyView()
+            if !(self.loginApi.hasToSetupProfile){
+                
+                NavigationLink(destination: MainTabContainer(), isActive: $isUserLoggedIn){
+                    EmptyView()
+                }
             }
             
             NavigationLink(destination: Forgot_Password_Screen(), isActive: $toResetPassword){
                 EmptyView()
             }
+            
+            NavigationLink(destination: User_profile_setup_Screen(), isActive: self.$loginApi.hasToSetupProfile){
+                EmptyView()
+            }
+            
+        
             
             VStack{
                 Image("Login Screen background")
@@ -171,17 +183,27 @@ struct Login_Screen: View {
                                         
                                         if(self.loginApi.loginSuccessful){
                                             
-                                            
-                                            
-                                            AppData().setRemeberMe(rememberMe: self.remmberMe)
                                             if(self.remmberMe){
                                                 AppData().saveRememberMeData(email: self.email, password: self.password)
                                             }
-                                            AppData().userLoggedIn()
-                                            AppData().saveUserDetails(user: self.loginApi.apiResponse!.data!)
-                                            withAnimation{
-                                                self.isProfileSetUp = false
+                                           
+                                            
+                                            if(self.loginApi.apiResponse!.data != nil){
+                                                
+                                                AppData().setRemeberMe(rememberMe: self.remmberMe)
+                                                AppData().saveUserDetails(user: self.loginApi.apiResponse!.data!)
+                                                AppData().userLoggedIn()
                                                 self.isUserLoggedIn = true
+
+                                                
+                                            }
+                                            
+                                            else{
+                                                
+                                                withAnimation{
+                                                    self.isUserLoggedIn = true
+                                                    
+                                                }
                                                 
                                             }
                                             
@@ -244,7 +266,7 @@ struct Login_Screen: View {
                             .foregroundColor(AppColors.BlackColor)
                             .font(AppFonts.regular_12)
                         
-                        NavigationLink(destination: SignUp_Screen(pushToLogin: self.$pushToLogin), label: {
+                        NavigationLink(destination: SignUp_Screen(), label: {
                             Text("Register")
                                 .font(AppFonts.medium_14)
                                 .foregroundColor(AppColors.redGradientColor1)
@@ -323,6 +345,11 @@ struct Login_Screen: View {
                 if(self.remmberMe){
                     self.email = appData.getUserEmail()
                     self.password = appData.getUserPassword()
+                }
+                
+                if (appData.isUserLoggedIn()){
+                    
+                    self.isUserLoggedIn = true
                 }
                 
             }

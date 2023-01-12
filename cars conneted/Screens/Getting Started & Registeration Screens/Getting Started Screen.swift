@@ -28,11 +28,11 @@ struct Getting_Started_Screen: View {
     var body: some View {
         ZStack{
             
-            NavigationLink(destination: SignUp_Screen(pushToLogin: self.$isLoginView), isActive: $toSignUp){
+            NavigationLink(destination: SignUp_Screen(), isActive: $toSignUp){
                 EmptyView()
             }
             
-            NavigationLink(destination: Login_Screen(pushToLogin: self.$isLoginView, isUserLoggedIn: self.$isUserLoggedIn, isProfileSetUp: self.$isProfileSetUp), isActive: $toLogIn){
+            NavigationLink(destination: Login_Screen(), isActive: $toLogIn){
                 EmptyView()
             }
             
@@ -114,7 +114,7 @@ struct Getting_Started_Screen: View {
             }
             
             if(self.isLoggedIn){
-                NavigationLink(destination: MainTabContainer(isUserLoggedIn: self.$isLoggedIn), isActive: self.$isLoggedIn){
+                NavigationLink(destination: MainTabContainer(), isActive: self.$isLoggedIn){
                     EmptyView()
                 }
             }

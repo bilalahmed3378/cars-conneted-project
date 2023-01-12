@@ -11,15 +11,15 @@ struct MainTabContainer: View {
     
     @State var selectedIndex : Int = 0
     
-    @Binding var isUserLoggedIn : Bool
+//    @Binding var isUserLoggedIn : Bool
 
     
     @State var isDrawerOpen : Bool = false
     
-    init(isUserLoggedIn  : Binding<Bool>){
-        self._isUserLoggedIn = isUserLoggedIn
-    }
-    
+//    init(isUserLoggedIn  : Binding<Bool>){
+//        self._isUserLoggedIn = isUserLoggedIn
+//    }
+//
     var body: some View {
         
         ZStack{

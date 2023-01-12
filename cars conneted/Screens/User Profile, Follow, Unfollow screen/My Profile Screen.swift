@@ -10,368 +10,466 @@ import SwiftUI
 struct My_Profile_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
     
+    @StateObject var getProfileApi = GetProfileApi()
+    
     @State var isPostView: Int = 0
     @State var isfollowing: Bool = true
     
     @State var viewProfile = false
-
+    
     @State var viewStory = false
-   
+    
+    @State var isLoadingFirstTime = true
+    
     
     var body: some View {
         ZStack{
             
-            ScrollView(.vertical){
+            if(self.getProfileApi.isLoading){
+
+                VStack{
+
+                    Spacer()
+
+                    HStack{
+
+                        Spacer()
+
+                        ProgressView()
+                            .padding()
+
+
+                        Spacer()
+
+                    }
+
+
+                    Spacer()
+
+                }
+
+
+            }
+            
+            else if(self.getProfileApi.isApiCallDone && (!self.getProfileApi.isApiCallSuccessful)){
+                
                 VStack{
                     
-                    NavigationLink(destination: View_Status_Screen(), isActive: $viewStory){
-                        EmptyView()
+                    
+                    Spacer()
+                    
+                    Text("Unable to access internet.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.black)
+                    
+                    Button(action: {
+                        withAnimation{
+                            self.getProfileApi.getProfile()
+                        }
+                    }){
+                        Text("Try Agin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                        
                     }
+                    .padding(.top,30)
                     
+                    Spacer()
                     
-                    Group{
-                        HStack{
-                            Button(action: {
-                                self.presentaionMode.wrappedValue.dismiss()
-                            }, label: {
-                                Image("Icons-2")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 35, height: 35)
-                            })
-                          
-                            
-                            Spacer()
-                            
-//                            Image("doted Icons")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 28, height: 28)
-                            
-                        }.padding(.leading)
-                            .padding(.trailing)
-                            .padding(.top)
-                        
-                        Group{
-                            Image("unsplash_spxgIcI7YGo")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(width: UIScreen.screenWidth - 40)
-                                .padding(.top)
-                            
-                            
-                            Menu(content: {
-                                
-                                Button(action: {
-                                    self.viewStory = true
-                                }, label: {
-                                    HStack{
-                                        
-                                        Text("View Story")
-                                        
-                                        Image("gg_profile")
-                                        
-                                       
-                                        
-                                    }
-                                })
-                             
-                                Button(action: {
-                                    self.viewProfile = true
-                                }, label: {
-                                    HStack{
-                                        
-                                        Text("View Profile Picture")
-                                        
-                                        Image("gg_profile-1")
-                                        
-                                      
-                                        
-                                    }
-                                })
-                                
-                                
-                                Button(action: {
-                                    self.viewStory = true
-                                }, label: {
-                                    HStack{
-                                        
-                                        Text("Update profile")
-                                        
-                                        Image("gg_profile")
-                                        
-                                       
-                                        
-                                    }
-                                })
-                               
-                                
-                            }, label: {
-                                Image("unsplash_OhKElOkQ3RE-1")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: UIScreen.widthBlockSize*26, height: 100)
-                                    .offset(x: 0, y: -50)
-                                    .padding(.leading,1)
-                                    .padding(.trailing,1)
-                                    .padding(.bottom,2)
-                                    .padding(.top,2)
-                                    .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -50))
-                                   
-                            })
-                            
-                            
-                            
-                            
-                           
-                            
-                            Text("Elon Musk")
-                                .font(AppFonts.medium_18)
-                                .padding(.top, -30)
+                }
+            }
+            
+            else if(self.getProfileApi.isApiCallDone && self.getProfileApi.isApiCallSuccessful && (!self.getProfileApi.dataRetrivedSuccessfully)){
+                
+                VStack{
+                    
+                    Spacer()
+                    
+                    Text("Unable to get profile.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.black)
+                    
+                    Button(action: {
+                        withAnimation{
+                            self.getProfileApi.getProfile()
                         }
-                       
-//                        HStack{
-//                            Image("carbon_application-mobile-1")
-//                                .resizable()
-//                                .aspectRatio(contentMode: .fit)
-//                                .frame(width: 24, height: 24)
-//
-//                            Text("+96-96987458962")
-//                                .font(AppFonts.regular_16)
-//                        }
+                    }){
+                        Text("Try Agin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
                         
-                        HStack{
-                            Image("location black icon")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width: 24, height: 24)
-                            
-                            Text("Washington DC, USA")
-                                .font(AppFonts.regular_16)
-                        }
-                        
-                     
-                            
+                    }
+                    .padding(.top,30)
+                    
+                    Spacer()
+                    
+                }
+                
+            }
+            
+            
+            else if(self.getProfileApi.isApiCallDone && self.getProfileApi.isApiCallSuccessful){
+
+                if(self.getProfileApi.dataRetrivedSuccessfully){
+
+
+                    ScrollView(.vertical){
+                        VStack{
+
+                            NavigationLink(destination: View_Status_Screen(), isActive: $viewStory){
+                                EmptyView()
+                            }
+
+
                             Group{
                                 HStack{
-                                    
-                                    NavigationLink(destination: {
-                                        Following_Screen()
+                                    Button(action: {
+                                        self.presentaionMode.wrappedValue.dismiss()
                                     }, label: {
-                                        VStack{
-                                            Text("Following")
-                                                .font(AppFonts.regular_16)
-                                                .padding(.bottom,10)
-                                                .foregroundColor(AppColors.redGradientColor1)
-                                            Text("156")
-                                                .font(AppFonts.regular_16)
-                                                .foregroundColor(AppColors.redGradientColor1)
-                                        }
-                                    })
-                                  
-                                    
-                                    Spacer()
-                                    
-                                    NavigationLink(destination: {
-                                        Friends_Requests_Screens()
-                                    }, label: {
-                                        VStack{
-                                            Text("Followers")
-                                                .font(AppFonts.regular_16)
-                                                .padding(.bottom,10)
-                                                .foregroundColor(AppColors.redGradientColor1)
-                                            Text("289")
-                                                .font(AppFonts.regular_16)
-                                                .foregroundColor(AppColors.redGradientColor1)
-                                        }
-                                    })
-                                   
-                                    
-                                    Spacer()
-                                    
-                                    VStack{
-                                        Text("Posts")
-                                            .font(AppFonts.regular_16)
-                                            .padding(.bottom,10)
-                                            .foregroundColor(AppColors.redGradientColor1)
-                                        Text("90")
-                                            .font(AppFonts.regular_16)
-                                            .foregroundColor(AppColors.redGradientColor1)
-                                    }
-                                }
-                                .padding()
-                                
-                            }
-                        HStack{
-                            Spacer()
-                       Text("Risus ullamcorper sed ultrices quam mauris ullamcorper vulputate elementum morbi. A aliquet aenean faucibus turpis erat. Sed neque lobortis et nullam et bibendum tristique faucibus elementum.")
-                            .font(AppFonts.regular_14)
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(.gray)
-                            Spacer()
-                        }
-                        .padding(.leading)
-                        .padding(.bottom)
-                        
-                        
-                    
-                        
-                        Group{
-                            HStack{
-                                
-                                Button(action: {
-                                    self.isPostView = 0
-                                }, label: {
-                                    
-                                    if(self.isPostView == 0){
-                                        Text("Posts")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.white)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                                    }
-                                    else{
-                                        Text("Posts")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.gray)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                    }
-                                      
-                                })
-                                
-                                
-                                Button(action: {
-                                    self.isPostView = 1
-                                }, label: {
-                                    
-                                    if ((self.isPostView == 1) ){
-                                        Text("Garage")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.white)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                                    }
-                                    else{
-                                        Text("Garage")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.gray)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                    }
-                                    
-                                })
-                                
-                                
-                                Button(action: {
-                                    self.isPostView = 2
-                                }, label: {
-                                    
-                                    if ((self.isPostView == 2) ){
-                                        Text("Classified")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.white)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                                    }
-                                    else{
-                                        Text("Classified")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.gray)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                    }
-                                    
-                                })
-                                
-                                
-                                Button(action: {
-                                    self.isPostView = 3
-                                }, label: {
-                                    
-                                    if ((self.isPostView == 3) ){
-                                        Text("Clubs")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.white)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                                    }
-                                    else{
-                                        Text("Clubs")
-                                            .font(AppFonts.regular_14)
-                                            .foregroundColor(.gray)
-                                            .frame(width: UIScreen.widthBlockSize*22, height: 50)
-                                            .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                                    }
-                                    
-                                })
-                                
-                            }
-                            .padding()
-                            
-                        
-                            
-                            
-                          
-                            }
-                        }
-                    
-                   
-                       
-                        LazyVStack{
-                            if(self.isPostView == 0){
-                                NavigationLink(destination: {
-                                    post_screen_2()
-                                }, label: {
-                                    HStack{
-                                        Image("unsplash_X6Uj51n5CE8")
+                                        Image("Icons-2")
                                             .resizable()
                                             .aspectRatio(contentMode: .fit)
-                                            .frame(width: 50, height: 50)
-                                            .padding(.trailing,5)
+                                            .frame(width: 35, height: 35)
+                                    })
+
+
+                                    Spacer()
+
+                                    NavigationLink(destination: Edit_Profile_Screen(existingProfileData: self.getProfileApi.apiResponse!.data!)){
                                         
+                                        Image("Edit")
                                         
-                                        Text("Write something...")
-                                            .font(AppFonts.regular_12)
-                                            .foregroundColor(AppColors.BlackColor)
-                                            .padding(.trailing,150)
-                                            .padding(.top,15)
-                                            .padding(.bottom,15)
-                                            .padding(.leading)
-                                            .background(RoundedRectangle(cornerRadius: 80).strokeBorder(AppColors.BlackColor))
-                                        
+                                    }
+
+                                }.padding(.leading)
+                                    .padding(.trailing)
+                                    .padding(.top)
+
+                                Group{
+                                    Image("unsplash_spxgIcI7YGo")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: UIScreen.screenWidth - 40)
+                                        .padding(.top)
+
+
+                                    Menu(content: {
+
+                                        Button(action: {
+                                            self.viewStory = true
+                                        }, label: {
+                                            HStack{
+
+                                                Text("View Story")
+
+                                                Image("gg_profile")
+
+
+
+                                            }
+                                        })
+
+                                        Button(action: {
+                                            self.viewProfile = true
+                                        }, label: {
+                                            HStack{
+
+                                                Text("View Profile Picture")
+
+                                                Image("gg_profile-1")
+
+
+
+                                            }
+                                        })
+
+
+                                        Button(action: {
+                                            self.viewStory = true
+                                        }, label: {
+                                            HStack{
+
+                                                Text("Update profile")
+
+                                                Image("gg_profile")
+
+
+
+                                            }
+                                        })
+
+
+                                    }, label: {
+                                        Image("unsplash_OhKElOkQ3RE-1")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: UIScreen.widthBlockSize*26, height: 100)
+                                            .offset(x: 0, y: -50)
+                                            .padding(.leading,1)
+                                            .padding(.trailing,1)
+                                            .padding(.bottom,2)
+                                            .padding(.top,2)
+                                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(.red) .offset(x: 0, y: -50))
+
+                                    })
+
+
+
+
+
+
+                                    Text("\(self.getProfileApi.apiResponse!.data!.firstName) \(self.getProfileApi.apiResponse!.data!.lastName)")
+                                        .font(AppFonts.medium_18)
+                                        .padding(.top, -30)
+                                }
+
+                                //                        HStack{
+                                //                            Image("carbon_application-mobile-1")
+                                //                                .resizable()
+                                //                                .aspectRatio(contentMode: .fit)
+                                //                                .frame(width: 24, height: 24)
+                                //
+                                //                            Text("+96-96987458962")
+                                //                                .font(AppFonts.regular_16)
+                                //                        }
+
+                                HStack{
+                                    Image("location black icon")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 24, height: 24)
+
+                                    Text(self.getProfileApi.apiResponse!.data!.address)
+                                        .font(AppFonts.regular_16)
+                                }.padding(.leading,20)
+                                    .padding(.trailing,20)
+
+
+
+                                Group{
+                                    HStack{
+
+                                        NavigationLink(destination: {
+                                            Following_Screen()
+                                        }, label: {
+                                            VStack{
+                                                Text("Following")
+                                                    .font(AppFonts.regular_16)
+                                                    .padding(.bottom,10)
+                                                    .foregroundColor(AppColors.redGradientColor1)
+                                                Text("156")
+                                                    .font(AppFonts.regular_16)
+                                                    .foregroundColor(AppColors.redGradientColor1)
+                                            }
+                                        })
+
+
                                         Spacer()
+
+                                        NavigationLink(destination: {
+                                            Friends_Requests_Screens()
+                                        }, label: {
+                                            VStack{
+                                                Text("Followers")
+                                                    .font(AppFonts.regular_16)
+                                                    .padding(.bottom,10)
+                                                    .foregroundColor(AppColors.redGradientColor1)
+                                                Text("289")
+                                                    .font(AppFonts.regular_16)
+                                                    .foregroundColor(AppColors.redGradientColor1)
+                                            }
+                                        })
+
+
+                                        Spacer()
+
+                                        VStack{
+                                            Text("Posts")
+                                                .font(AppFonts.regular_16)
+                                                .padding(.bottom,10)
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                            Text("90")
+                                                .font(AppFonts.regular_16)
+                                                .foregroundColor(AppColors.redGradientColor1)
+                                        }
                                     }
                                     .padding()
-                                })
-                          
-                            
-                            (ForEach(0...5 , id:\.self){ index in
-                           
-                                PostCardMyProfile()
-                            
+
+                                }
+                                HStack{
+                                    Spacer()
+                                    Text(self.getProfileApi.apiResponse!.data!.about)
+                                        .font(AppFonts.regular_14)
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(.gray)
+                                    Spacer()
+                                }
+                                .padding(.leading)
+                                .padding(.bottom)
+
+
+
+
+                                Group{
+                                    HStack{
+
+                                        Button(action: {
+                                            self.isPostView = 0
+                                        }, label: {
+
+                                            if(self.isPostView == 0){
+                                                Text("Posts")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                            }
+                                            else{
+                                                Text("Posts")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.gray)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                            }
+
+                                        })
+
+
+                                        Button(action: {
+                                            self.isPostView = 1
+                                        }, label: {
+
+                                            if ((self.isPostView == 1) ){
+                                                Text("Garage")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                            }
+                                            else{
+                                                Text("Garage")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.gray)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                            }
+
+                                        })
+
+
+                                        Button(action: {
+                                            self.isPostView = 2
+                                        }, label: {
+
+                                            if ((self.isPostView == 2) ){
+                                                Text("Classified")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                            }
+                                            else{
+                                                Text("Classified")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.gray)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                            }
+
+                                        })
+
+
+                                        Button(action: {
+                                            self.isPostView = 3
+                                        }, label: {
+
+                                            if ((self.isPostView == 3) ){
+                                                Text("Clubs")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.white)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                            }
+                                            else{
+                                                Text("Clubs")
+                                                    .font(AppFonts.regular_14)
+                                                    .foregroundColor(.gray)
+                                                    .frame(width: UIScreen.widthBlockSize*22, height: 50)
+                                                    .background(   RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+                                            }
+
+                                        })
+
+                                    }
+                                    .padding()
+
+
+
+
+
+                                }
                             }
-                             )}
+
+
+
+                            LazyVStack{
+                                if(self.isPostView == 0){
+                                    NavigationLink(destination: {
+                                        post_screen_2()
+                                    }, label: {
+                                        HStack{
+                                            Image("unsplash_X6Uj51n5CE8")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .frame(width: 50, height: 50)
+                                                .padding(.trailing,5)
+
+
+                                            Text("Write something...")
+                                                .font(AppFonts.regular_12)
+                                                .foregroundColor(AppColors.BlackColor)
+                                                .padding(.trailing,150)
+                                                .padding(.top,15)
+                                                .padding(.bottom,15)
+                                                .padding(.leading)
+                                                .background(RoundedRectangle(cornerRadius: 80).strokeBorder(AppColors.BlackColor))
+
+                                            Spacer()
+                                        }
+                                        .padding()
+                                    })
+
+
+                                    (ForEach(0...5 , id:\.self){ index in
+
+                                        PostCardMyProfile()
+
+                                    }
+                                    )}
                                 else if(self.isPostView == 1) {
-                                    
-                                    
+
+
                                     NavigationLink(destination: {
                                         Add_your_Car_Screen()
                                     }, label: {
                                         Text("Add New Car")
-                                        .font(AppFonts.regular_16)
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                            .font(AppFonts.regular_16)
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
                                     })
-                                  
-                                       
-                                        .padding()
-                                    
-                              GarageCardMyProfile()
-                            }
-                                
+
+
+                                    .padding()
+
+                                    GarageCardMyProfile()
+                                }
+
                                 else if(self.isPostView == 2) {
-                                    
+
                                     NavigationLink(destination: {
                                         Add_classified_Screen()
                                     }, label: {
@@ -380,8 +478,8 @@ struct My_Profile_Screen: View {
                                             .foregroundColor(AppColors.redGradientColor1)
                                             .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
                                     })
-                                    
-                                        .padding()
+
+                                    .padding()
                                     VStack(alignment: .leading){
                                         HStack{
                                             Text("23 items in Classified")
@@ -389,7 +487,7 @@ struct My_Profile_Screen: View {
                                                 .font(AppFonts.regular_18)
                                             Spacer()
                                         }
-                                        
+
                                         HStack{
                                             Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliqueto.")
                                                 .foregroundColor(.gray)
@@ -398,37 +496,92 @@ struct My_Profile_Screen: View {
                                         }
                                     }
                                     .padding()
-                            
+
                                     ClassifiedCardMyProfile()
-                            }
-                               
-                            else if(self.isPostView == 3){
-                                
-                                NavigationLink(destination: {
-                                    Create_Club_Screen()
-                                }, label: {
-                                    Text("Create New Club")
-                                        .font(AppFonts.regular_16)
-                                        .foregroundColor(AppColors.redGradientColor1)
-                                        .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
-                                })
-                                
-                              
+                                }
+
+                                else if(self.isPostView == 3){
+
+                                    NavigationLink(destination: {
+                                        Create_Club_Screen()
+                                    }, label: {
+                                        Text("Create New Club")
+                                            .font(AppFonts.regular_16)
+                                            .foregroundColor(AppColors.redGradientColor1)
+                                            .background(RoundedRectangle(cornerRadius: 10).strokeBorder(AppColors.redGradientColor1).frame(width: UIScreen.widthBlockSize*90, height: 50))
+                                    })
+
+
                                     .padding()
-                                ClubsCardMyProfile()
+                                    ClubsCardMyProfile()
+                                }
+
+
+
                             }
-                                
-                                
-                        
+
+
+
                         }
-                        
-                        
+                        .padding()
+                        .padding(.top,-20)
+                    }
+
+
+
+
+                }
+
+
+
+            }
+            
+            
+            else{
+                
+                VStack{
+                    
+                    Spacer()
+                    
+                    Text("Unable to get profile.")
+                        .font(.system(size: 14))
+                        .foregroundColor(.black)
+                    
+                    Button(action: {
+                        withAnimation{
+                            self.getProfileApi.getProfile()
+                        }
+                    }){
+                        Text("Try Agin")
+                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
                         
                     }
-                    .padding()
-                    .padding(.top,-20)
+                    .padding(.top,30)
+                    
+                    Spacer()
+                    
                 }
-            } .navigationBarHidden(true)
+                
+            }
+            
+            
+            
+            
+        } .navigationBarHidden(true)
+            .onAppear{
+                
+                if(self.isLoadingFirstTime){
+                    
+                    self.getProfileApi.getProfile()
+                    
+                    self.isLoadingFirstTime = false
+                    
+                }
+                
+            }
     }
 }
 
@@ -445,10 +598,10 @@ struct PostCardMyProfile : View {
         
         VStack{
             
-           
+            
             
             HStack{
-               
+                
                 Image("post picture")
                 
                 VStack(alignment: .leading){
@@ -500,8 +653,8 @@ struct PostCardMyProfile : View {
                     whoLikedScreen()
                     
                 }
-
-               
+                
+                
                 
                 Spacer()
                 
@@ -517,7 +670,7 @@ struct PostCardMyProfile : View {
                     commentsScreen()
                     
                 }
-              
+                
             }
             
             Divider()
@@ -548,7 +701,7 @@ struct PostCardMyProfile : View {
                     commentsScreen()
                     
                 }
-               
+                
                 Spacer()
                 HStack{
                     Image("ion_share-social-sharp")
@@ -568,9 +721,9 @@ struct PostCardMyProfile : View {
                 
             }
             
-           Divider()
+            Divider()
             
-        
+            
             
             
         }
@@ -588,7 +741,7 @@ struct GarageCardMyProfile : View {
     var body: some View {
         
         VStack{
-           
+            
             ZStack{
                 Image("unsplash_1ZhZpP91olQ")
                     .resizable()
@@ -596,7 +749,7 @@ struct GarageCardMyProfile : View {
                     .frame(width: UIScreen.screenWidth - 40)
                 VStack{
                     HStack{
-                       
+                        
                         Spacer()
                         
                         Image("doted icons-1")
@@ -608,7 +761,7 @@ struct GarageCardMyProfile : View {
                     Spacer()
                     
                     HStack{
-                     
+                        
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
@@ -633,193 +786,193 @@ struct GarageCardMyProfile : View {
             
             VStack{
                 
-               
-            HStack{
                 
-                Button(action: {
-                    self.showingSheet = true
-                }, label: {
-                    Image("Group 7367")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                    
-                    Image("Group 7369")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 18, height: 18)
-                        .offset(x: -10, y: 0)
-                    
-                    
-                    
-                    Text("Arsalan and 20 other")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
-                })
-                .sheet(isPresented: $showingSheet){
-                    whoLikedScreen()
-                    
-                }
-                
-               
-                
-                Spacer()
-                
-                Button(action: {
-                    self.showingSheetComments = true
-                }, label: {
-                    Text("12 comments")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
-                })
-                .sheet(isPresented: $showingSheetComments){
-                    commentsScreen()
-                    
-                }
-               
-                
-            }
-            
-            Divider()
-                .padding(.leading)
-                .padding(.trailing)
-            
-            HStack{
                 HStack{
-                    Image("ei_like")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 26, height: 26)
                     
-                    Text("Like")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
+                    Button(action: {
+                        self.showingSheet = true
+                    }, label: {
+                        Image("Group 7367")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                        
+                        Image("Group 7369")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 18, height: 18)
+                            .offset(x: -10, y: 0)
+                        
+                        
+                        
+                        Text("Arsalan and 20 other")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                    })
+                    .sheet(isPresented: $showingSheet){
+                        whoLikedScreen()
+                        
+                    }
+                    
+                    
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        self.showingSheetComments = true
+                    }, label: {
+                        Text("12 comments")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                    })
+                    .sheet(isPresented: $showingSheetComments){
+                        commentsScreen()
+                        
+                    }
                     
                     
                 }
                 
-                Spacer()
+                Divider()
+                    .padding(.leading)
+                    .padding(.trailing)
                 
-                Button(action: {
-                    self.showingSheetComments = true
-                }, label: {
+                HStack{
                     HStack{
-                        Image("ant-design_comment-outlined")
+                        Image("ei_like")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 26, height: 26)
                         
-                        Text("Comment")
+                        Text("Like")
                             .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                         
+                        
                     }
-                })
-                .sheet(isPresented: $showingSheetComments){
-                    commentsScreen()
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        self.showingSheetComments = true
+                    }, label: {
+                        HStack{
+                            Image("ant-design_comment-outlined")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 26, height: 26)
+                            
+                            Text("Comment")
+                                .font(AppFonts.regular_12)
+                                .foregroundColor(Color.gray)
+                            
+                        }
+                    })
+                    .sheet(isPresented: $showingSheetComments){
+                        commentsScreen()
+                        
+                    }
+                    
+                    Spacer()
+                    HStack{
+                        Image("ion_share-social-sharp")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 26, height: 26)
+                        
+                        Text("Share")
+                            .font(AppFonts.regular_12)
+                            .foregroundColor(Color.gray)
+                    }
+                    
+                    
+                    
                     
                 }
-               
-                Spacer()
-                HStack{
-                    Image("ion_share-social-sharp")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 26, height: 26)
-                    
-                    Text("Share")
-                        .font(AppFonts.regular_12)
-                        .foregroundColor(Color.gray)
-                }
-               
-               
-                
-                
-            }
                 
             } .padding(.leading,24)
                 .padding(.trailing,24)
-               
+            
             
             VStack{
-            
-            HStack{
-                Text("Engine v 1.6")
-                    .font(AppFonts.semiBold_14)
-                Spacer()
-                Text("$ 5,000")
-                    .foregroundColor(AppColors.redGradientColor1)
-                    .font(AppFonts.bold_16)
                 
-            }.padding(.top)
-            .padding(.leading)
-                    .padding(.trailing)
-           
-            
-            
-            HStack{
-                Text("Spare Parts")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Image("Ellipse 3")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 5, height: 5)
-                   
-                
-                Text("Used")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Image("Ellipse 3")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 5, height: 5)
-                   
-                
-                Text("2019")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Spacer()
-            }
-            .padding(.leading)
-                .padding(.trailing)
-            
-            
-            HStack{
-                
-                Text("(5.0)")
-                    .font(AppFonts.regular_12)
-                
-                
-                Image("bxs_star")
-                Image("bxs_star")
-                Image("bxs_star")
-                Image("bxs_star")
-                Image("bxs_star")
-                
-               Spacer()
-                
-                NavigationLink(destination: {
-                    Car_Specification()
-                }, label: {
-                    Text("View Details")
-                        .font(AppFonts.medium_14)
+                HStack{
+                    Text("Engine v 1.6")
+                        .font(AppFonts.semiBold_14)
+                    Spacer()
+                    Text("$ 5,000")
                         .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.bold_16)
                     
-                    Image("Icons-5")
+                }.padding(.top)
+                    .padding(.leading)
+                    .padding(.trailing)
+                
+                
+                
+                HStack{
+                    Text("Spare Parts")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Image("Ellipse 3")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 24, height: 24)
-                })
-               
+                        .frame(width: 5, height: 5)
+                    
+                    
+                    Text("Used")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Image("Ellipse 3")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 5, height: 5)
+                    
+                    
+                    Text("2019")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                }
+                .padding(.leading)
+                .padding(.trailing)
                 
-            }.padding(.bottom)
-            .padding(.leading)
+                
+                HStack{
+                    
+                    Text("(5.0)")
+                        .font(AppFonts.regular_12)
+                    
+                    
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: {
+                        Car_Specification()
+                    }, label: {
+                        Text("View Details")
+                            .font(AppFonts.medium_14)
+                            .foregroundColor(AppColors.redGradientColor1)
+                        
+                        Image("Icons-5")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                    })
+                    
+                    
+                }.padding(.bottom)
+                    .padding(.leading)
                     .padding(.trailing)
-            
+                
                 
             }
             .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(.gray.opacity(0.3)))
@@ -842,7 +995,7 @@ struct ClubsCardMyProfile: View {
         
         VStack{
             
-           
+            
             ZStack(alignment: .top){
                 
                 
@@ -853,7 +1006,7 @@ struct ClubsCardMyProfile: View {
                     .frame(width: UIScreen.screenWidth - 40)
                     .overlay(Color.black.opacity(0.03))
                     .clipped()
-                   
+                
                 
                 
                 VStack{
@@ -872,8 +1025,8 @@ struct ClubsCardMyProfile: View {
                             .background(AppColors.redGradientColor1)
                             .cornerRadius(8)
                             .padding(.trailing,20)
-                          
-
+                        
+                        
                         
                     }
                     
@@ -911,9 +1064,9 @@ struct ClubsCardMyProfile: View {
                         }.padding()
                             .padding(.top,-20)
                             .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).fill(LinearGradient(colors: [AppColors.redGradientColor1,AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)).frame(width: UIScreen.screenWidth - 40, height: 70))
-                          
+                        
                     })
-                   
+                    
                     
                     
                     
@@ -925,14 +1078,14 @@ struct ClubsCardMyProfile: View {
             .cornerRadius(10)
             .padding(.top,20)
             
-           
+            
             
         }.padding(.bottom,20)
             .padding(.leading,20)
             .padding(.trailing,20)
-          
-
-     
+        
+        
+        
         
         
     }
@@ -975,87 +1128,87 @@ struct ClassifiedCardMyProfile: View {
             }.frame(width: UIScreen.screenWidth - 40)
             
             VStack{
-            
-            HStack{
-                Text("Engine v 1.6")
-                    .font(AppFonts.semiBold_14)
-                Spacer()
-                Text("$ 5,000")
-                    .foregroundColor(AppColors.redGradientColor1)
-                    .font(AppFonts.bold_16)
                 
-            }
-            .padding(.leading,30)
-                .padding(.trailing,30)
-                .padding(.bottom,2)
-            
-            
-            HStack{
-                Text("Spare Parts")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Image("Ellipse 3")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 5, height: 5)
-                   
-                
-                Text("Used")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Image("Ellipse 3")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 5, height: 5)
-                   
-                
-                Text("2019")
-                    .font(AppFonts.regular_12)
-                    .foregroundColor(.gray)
-                
-                Spacer()
-            }
-            .padding(.leading,30)
-                .padding(.trailing,30)
-                .padding(.bottom,2)
-            
-            
-            HStack{
-                
-                Text("(5.0)")
-                    .font(AppFonts.regular_12)
-                
-                
-                Image("bxs_star")
-                Image("bxs_star")
-                Image("bxs_star")
-                Image("bxs_star")
-                Image("bxs_star")
-                
-               Spacer()
-                
-                NavigationLink(destination: {
-                    Classified_Spare_Parts_Screen()
-                }, label: {
-                    Text("View Details")
-                        .font(AppFonts.medium_14)
+                HStack{
+                    Text("Engine v 1.6")
+                        .font(AppFonts.semiBold_14)
+                    Spacer()
+                    Text("$ 5,000")
                         .foregroundColor(AppColors.redGradientColor1)
+                        .font(AppFonts.bold_16)
                     
-                    Image("Icons-5")
+                }
+                .padding(.leading,30)
+                .padding(.trailing,30)
+                .padding(.bottom,2)
+                
+                
+                HStack{
+                    Text("Spare Parts")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Image("Ellipse 3")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 24, height: 24)
-                })
-               
+                        .frame(width: 5, height: 5)
+                    
+                    
+                    Text("Used")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Image("Ellipse 3")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 5, height: 5)
+                    
+                    
+                    Text("2019")
+                        .font(AppFonts.regular_12)
+                        .foregroundColor(.gray)
+                    
+                    Spacer()
+                }
+                .padding(.leading,30)
+                .padding(.trailing,30)
+                .padding(.bottom,2)
                 
-            }
-            .padding(.leading,30)
+                
+                HStack{
+                    
+                    Text("(5.0)")
+                        .font(AppFonts.regular_12)
+                    
+                    
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    Image("bxs_star")
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: {
+                        Classified_Spare_Parts_Screen()
+                    }, label: {
+                        Text("View Details")
+                            .font(AppFonts.medium_14)
+                            .foregroundColor(AppColors.redGradientColor1)
+                        
+                        Image("Icons-5")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 24, height: 24)
+                    })
+                    
+                    
+                }
+                .padding(.leading,30)
                 .padding(.trailing,20)
                 
             }.frame(width: UIScreen.widthBlockSize*90, height: 94)
-            .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.screenWidth - 40, height: 94))
+                .background(RoundedCorners(tl: 0, tr: 0, bl: 10, br: 10).stroke(.gray).frame(width: UIScreen.screenWidth - 40, height: 94))
             
         }.frame(width: UIScreen.widthBlockSize*90)
         
@@ -1088,7 +1241,7 @@ struct whoLikedScreen: View {
             }.padding()
             
             HStack{
-            
+                
                 Button(action: {
                     self.ifAll = true
                     self.ifLike = false
@@ -1105,7 +1258,7 @@ struct whoLikedScreen: View {
                     }
                     .padding(.trailing,30)
                 })
-         
+                
                 
                 Button(action: {
                     self.ifAll = false
@@ -1113,7 +1266,7 @@ struct whoLikedScreen: View {
                     self.ifHeart = false
                 }, label: {
                     HStack{
-                       Image("Group 7367")
+                        Image("Group 7367")
                         
                         Text("625")
                             .font(AppFonts.regular_16)
@@ -1121,26 +1274,26 @@ struct whoLikedScreen: View {
                     }
                     .padding(.trailing,30)
                 })
-             
+                
                 Button(action: {
                     self.ifAll = false
                     self.ifLike = false
                     self.ifHeart = true
                 }, label: {
                     HStack{
-                       Image("Group 7369")
+                        Image("Group 7369")
                         
                         Text("220")
                             .font(AppFonts.regular_16)
                             .foregroundColor(self.ifHeart == true ? .blue : .gray)
                     }
                 })
-               
-                
-            Spacer()
                 
                 
-            
+                Spacer()
+                
+                
+                
             }.padding(.leading)
                 .padding(.trailing)
             
@@ -1150,31 +1303,31 @@ struct whoLikedScreen: View {
                 
                 LazyVStack{
                     if(self.ifAll){
-                    ForEach(0...10 , id: \.self){index in
-                        all()
+                        ForEach(0...10 , id: \.self){index in
+                            all()
+                        }
                     }
-                }
                 }
                 
                 if(self.ifLike){
-                LazyVStack{
-                    ForEach(0...10 , id: \.self){index in
-                        liked()
+                    LazyVStack{
+                        ForEach(0...10 , id: \.self){index in
+                            liked()
+                        }
                     }
-                }
                 }
                 
                 if(self.ifHeart){
-                LazyVStack{
-                    ForEach(0...10 , id: \.self){index in
-                    heart()
+                    LazyVStack{
+                        ForEach(0...10 , id: \.self){index in
+                            heart()
+                        }
                     }
-                }
                 }
                 
                 
             }
-           
+            
             
             
             
@@ -1215,11 +1368,11 @@ struct all: View {
                     .foregroundColor(AppColors.redGradientColor1)
                 
             })
-           
+            
             
             
         }.padding()
-            
+        
         
     }
 }
@@ -1260,7 +1413,7 @@ struct liked: View {
             
             
         }.padding()
-            
+        
         
     }
 }

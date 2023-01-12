@@ -179,8 +179,8 @@ struct Edit_Garage_Screen: View {
     }
 }
 
-struct Edit_Garage_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Edit_Garage_Screen()
-    }
-}
+//struct Edit_Garage_Screen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Edit_Garage_Screen()
+//    }
+//}

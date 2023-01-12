@@ -78,8 +78,8 @@ struct Vehicle_Deleted_Screen: View {
     }
 }
 
-struct Vehicle_Deleted_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Vehicle_Deleted_Screen()
-    }
-}
+//struct Vehicle_Deleted_Screen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Vehicle_Deleted_Screen()
+//    }
+//}

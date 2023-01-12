@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D44E0542970849800107DF3 /* Update Car Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E0532970849800107DF3 /* Update Car Screen.swift */; };
+		4D44E059297084EF00107DF3 /* updateCarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E058297084EF00107DF3 /* updateCarResponseModel.swift */; };
+		4D44E05B2970853900107DF3 /* updateCarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E05A2970853900107DF3 /* updateCarApi.swift */; };
+		4D44E0602970892B00107DF3 /* viewGarageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E05F2970892A00107DF3 /* viewGarageResponseModel.swift */; };
+		4D44E0622970893B00107DF3 /* viewGarageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E0612970893B00107DF3 /* viewGarageApi.swift */; };
+		4D47A6B1296FF4E300957CA4 /* updateProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B0296FF4E300957CA4 /* updateProfileResponseModel.swift */; };
+		4D47A6B3296FF4F200957CA4 /* updateProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B2296FF4F200957CA4 /* updateProfileApi.swift */; };
+		4D47A6B52970592500957CA4 /* Edit Profile Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B42970592500957CA4 /* Edit Profile Screen.swift */; };
+		4D47A6BA29705AAE00957CA4 /* getProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B929705AAE00957CA4 /* getProfileResponseModel.swift */; };
+		4D47A6BC29705AC000957CA4 /* getProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6BB29705AC000957CA4 /* getProfileApi.swift */; };
 		4D51A0FA29680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51A0F929680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift */; };
 		4D51A0FC29680B12009F7828 /* resendEmailVerificationOtpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51A0FB29680B12009F7828 /* resendEmailVerificationOtpApi.swift */; };
 		4D51A1012968234B009F7828 /* sendForgetPsswordOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51A1002968234B009F7828 /* sendForgetPsswordOtpResponseModel.swift */; };
@@ -15,6 +25,28 @@
 		4D64750B294E36210014A9E1 /* verifyEmailOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D64750A294E36210014A9E1 /* verifyEmailOtpResponseModel.swift */; };
 		4D647518294E39930014A9E1 /* resetPasswordApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647517294E39930014A9E1 /* resetPasswordApi.swift */; };
 		4D64751A294E39A70014A9E1 /* resetPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D647519294E39A70014A9E1 /* resetPasswordResponseModel.swift */; };
+		4D83CE8F297091D400CBEADE /* deleteCarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83CE8E297091D400CBEADE /* deleteCarResponseModel.swift */; };
+		4D83CE912970922000CBEADE /* deleteCarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D83CE902970922000CBEADE /* deleteCarApi.swift */; };
+		4D83CE93297098CC00CBEADE /* GooglePlaces.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D83CE92297098CC00CBEADE /* GooglePlaces.framework */; };
+		4D83CE95297098DA00CBEADE /* GooglePlaces.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4D83CE94297098DA00CBEADE /* GooglePlaces.bundle */; };
+		4D8D42AA296E945F00622EFA /* createProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D42A9296E945F00622EFA /* createProfileApi.swift */; };
+		4D8D42B7296EA13200622EFA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8D42B6296EA13200622EFA /* CoreGraphics.framework */; };
+		4D8D42B9296EA13B00622EFA /* CoreLocationUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8D42B8296EA13B00622EFA /* CoreLocationUI.framework */; };
+		4D8D42BB296EA16600622EFA /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8D42BA296EA16600622EFA /* libc++.tbd */; };
+		4D8D42BD296EA18200622EFA /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8D42BC296EA18200622EFA /* libz.tbd */; };
+		4D8D42BF296EA19500622EFA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8D42BE296EA19400622EFA /* QuartzCore.framework */; };
+		4D8D42C1296EA19C00622EFA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D8D42C0296EA19C00622EFA /* UIKit.framework */; };
+		4D8D42C3296EA50E00622EFA /* responseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D8D42C2296EA50E00622EFA /* responseModel.swift */; };
+		4D96481E296E88DB007D4A05 /* Navigation Drawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D96481D296E88DB007D4A05 /* Navigation Drawer.swift */; };
+		4D964820296E8912007D4A05 /* Dialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D96481F296E8912007D4A05 /* Dialog.swift */; };
+		4D964822296E8949007D4A05 /* Rounded Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D964821296E8949007D4A05 /* Rounded Corners.swift */; };
+		4D9BB577296EB4690003A8C3 /* Places Search Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB574296EB4680003A8C3 /* Places Search Bar.swift */; };
+		4D9BB578296EB4690003A8C3 /* PlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB575296EB4680003A8C3 /* PlaceViewModel.swift */; };
+		4D9BB579296EB4690003A8C3 /* PlacesManual.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB576296EB4690003A8C3 /* PlacesManual.swift */; };
+		4D9BB586296EDB030003A8C3 /* setupGarageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB585296EDB030003A8C3 /* setupGarageResponseModel.swift */; };
+		4D9BB588296EDB130003A8C3 /* setupGarageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB587296EDB130003A8C3 /* setupGarageApi.swift */; };
+		4D9BB58D296EE2EC0003A8C3 /* addCarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB58C296EE2EC0003A8C3 /* addCarApi.swift */; };
+		4D9BB58F296EE30D0003A8C3 /* addCarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D9BB58E296EE30D0003A8C3 /* addCarResponseModel.swift */; };
 		4DC89293296825A10023A151 /* verifyForgetPsswordOtpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC89292296825A10023A151 /* verifyForgetPsswordOtpApi.swift */; };
 		4DC89295296825BD0023A151 /* verifyForgetPsswordOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DC89294296825BD0023A151 /* verifyForgetPsswordOtpResponseModel.swift */; };
 		590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 590117A528B896FF0053019E /* Create Event step1 Screen.swift */; };
@@ -28,8 +60,6 @@
 		5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */; };
 		5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */; };
 		591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */; };
-		591192E1289A45A4004DF048 /* Logout Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591192E0289A45A4004DF048 /* Logout Api.swift */; };
-		591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591192E7289A472E004DF048 /* LogoutResponseModel.swift */; };
 		592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A21072899102400FC9EAF /* LoginResponseModel.swift */; };
 		592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A210D2899113A00FC9EAF /* LoginApi.swift */; };
 		592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BF64628B4ABA20094B1AE /* My Garage User View.swift */; };
@@ -213,6 +243,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4D44E0532970849800107DF3 /* Update Car Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Update Car Screen.swift"; sourceTree = "<group>"; };
+		4D44E058297084EF00107DF3 /* updateCarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateCarResponseModel.swift; sourceTree = "<group>"; };
+		4D44E05A2970853900107DF3 /* updateCarApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateCarApi.swift; sourceTree = "<group>"; };
+		4D44E05F2970892A00107DF3 /* viewGarageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewGarageResponseModel.swift; sourceTree = "<group>"; };
+		4D44E0612970893B00107DF3 /* viewGarageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewGarageApi.swift; sourceTree = "<group>"; };
+		4D47A6B0296FF4E300957CA4 /* updateProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateProfileResponseModel.swift; sourceTree = "<group>"; };
+		4D47A6B2296FF4F200957CA4 /* updateProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateProfileApi.swift; sourceTree = "<group>"; };
+		4D47A6B42970592500957CA4 /* Edit Profile Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edit Profile Screen.swift"; sourceTree = "<group>"; };
+		4D47A6B929705AAE00957CA4 /* getProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfileResponseModel.swift; sourceTree = "<group>"; };
+		4D47A6BB29705AC000957CA4 /* getProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfileApi.swift; sourceTree = "<group>"; };
 		4D51A0F929680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resendEmailVerificationOtpResponseModel.swift; sourceTree = "<group>"; };
 		4D51A0FB29680B12009F7828 /* resendEmailVerificationOtpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resendEmailVerificationOtpApi.swift; sourceTree = "<group>"; };
 		4D51A1002968234B009F7828 /* sendForgetPsswordOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sendForgetPsswordOtpResponseModel.swift; sourceTree = "<group>"; };
@@ -221,6 +261,28 @@
 		4D64750A294E36210014A9E1 /* verifyEmailOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyEmailOtpResponseModel.swift; sourceTree = "<group>"; };
 		4D647517294E39930014A9E1 /* resetPasswordApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordApi.swift; sourceTree = "<group>"; };
 		4D647519294E39A70014A9E1 /* resetPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resetPasswordResponseModel.swift; sourceTree = "<group>"; };
+		4D83CE8E297091D400CBEADE /* deleteCarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteCarResponseModel.swift; sourceTree = "<group>"; };
+		4D83CE902970922000CBEADE /* deleteCarApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = deleteCarApi.swift; sourceTree = "<group>"; };
+		4D83CE92297098CC00CBEADE /* GooglePlaces.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GooglePlaces.framework; sourceTree = "<group>"; };
+		4D83CE94297098DA00CBEADE /* GooglePlaces.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlaces.bundle; path = GooglePlaces.framework/Resources/GooglePlaces.bundle; sourceTree = "<group>"; };
+		4D8D42A9296E945F00622EFA /* createProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createProfileApi.swift; sourceTree = "<group>"; };
+		4D8D42B6296EA13200622EFA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		4D8D42B8296EA13B00622EFA /* CoreLocationUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocationUI.framework; path = System/Library/Frameworks/CoreLocationUI.framework; sourceTree = SDKROOT; };
+		4D8D42BA296EA16600622EFA /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		4D8D42BC296EA18200622EFA /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		4D8D42BE296EA19400622EFA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		4D8D42C0296EA19C00622EFA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		4D8D42C2296EA50E00622EFA /* responseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = responseModel.swift; sourceTree = "<group>"; };
+		4D96481D296E88DB007D4A05 /* Navigation Drawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Navigation Drawer.swift"; sourceTree = "<group>"; };
+		4D96481F296E8912007D4A05 /* Dialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialog.swift; sourceTree = "<group>"; };
+		4D964821296E8949007D4A05 /* Rounded Corners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rounded Corners.swift"; sourceTree = "<group>"; };
+		4D9BB574296EB4680003A8C3 /* Places Search Bar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Places Search Bar.swift"; sourceTree = "<group>"; };
+		4D9BB575296EB4680003A8C3 /* PlaceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceViewModel.swift; sourceTree = "<group>"; };
+		4D9BB576296EB4690003A8C3 /* PlacesManual.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesManual.swift; sourceTree = "<group>"; };
+		4D9BB585296EDB030003A8C3 /* setupGarageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupGarageResponseModel.swift; sourceTree = "<group>"; };
+		4D9BB587296EDB130003A8C3 /* setupGarageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupGarageApi.swift; sourceTree = "<group>"; };
+		4D9BB58C296EE2EC0003A8C3 /* addCarApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCarApi.swift; sourceTree = "<group>"; };
+		4D9BB58E296EE30D0003A8C3 /* addCarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addCarResponseModel.swift; sourceTree = "<group>"; };
 		4DC89292296825A10023A151 /* verifyForgetPsswordOtpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyForgetPsswordOtpApi.swift; sourceTree = "<group>"; };
 		4DC89294296825BD0023A151 /* verifyForgetPsswordOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = verifyForgetPsswordOtpResponseModel.swift; sourceTree = "<group>"; };
 		590117A528B896FF0053019E /* Create Event step1 Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Create Event step1 Screen.swift"; sourceTree = "<group>"; };
@@ -234,8 +296,6 @@
 		5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage My View.swift"; sourceTree = "<group>"; };
 		5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle Deleted Screen.swift"; sourceTree = "<group>"; };
 		591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOtpScreen.swift; sourceTree = "<group>"; };
-		591192E0289A45A4004DF048 /* Logout Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logout Api.swift"; sourceTree = "<group>"; };
-		591192E7289A472E004DF048 /* LogoutResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResponseModel.swift; sourceTree = "<group>"; };
 		592A21072899102400FC9EAF /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		592A210D2899113A00FC9EAF /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		592BF64628B4ABA20094B1AE /* My Garage User View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage User View.swift"; sourceTree = "<group>"; };
@@ -404,9 +464,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D8D42C1296EA19C00622EFA /* UIKit.framework in Frameworks */,
+				4D8D42BF296EA19500622EFA /* QuartzCore.framework in Frameworks */,
+				4D8D42BD296EA18200622EFA /* libz.tbd in Frameworks */,
+				4D8D42BB296EA16600622EFA /* libc++.tbd in Frameworks */,
+				4D8D42B9296EA13B00622EFA /* CoreLocationUI.framework in Frameworks */,
+				4D8D42B7296EA13200622EFA /* CoreGraphics.framework in Frameworks */,
 				59D8E1AB2955835600EC052B /* FirebaseMessaging in Frameworks */,
 				5962F81528C9FC9C0052CDA7 /* Lottie in Frameworks */,
 				5983884928C87533007BFF7A /* Kingfisher in Frameworks */,
+				4D83CE93297098CC00CBEADE /* GooglePlaces.framework in Frameworks */,
 				59D8E1A72955835600EC052B /* FirebaseAnalytics in Frameworks */,
 				59D8E1A92955835600EC052B /* FirebaseCrashlytics in Frameworks */,
 				59DB4462289939E0006766EA /* MultipartForm in Frameworks */,
@@ -432,6 +499,108 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4D44E055297084CC00107DF3 /* Update Car Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D44E057297084DB00107DF3 /* Api */,
+				4D44E056297084D500107DF3 /* Models */,
+			);
+			path = "Update Car Api";
+			sourceTree = "<group>";
+		};
+		4D44E056297084D500107DF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D44E058297084EF00107DF3 /* updateCarResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D44E057297084DB00107DF3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D44E05A2970853900107DF3 /* updateCarApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4D44E05C297088FE00107DF3 /* View Garage Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D44E05E2970891700107DF3 /* Api */,
+				4D44E05D2970890A00107DF3 /* Model */,
+			);
+			path = "View Garage Api";
+			sourceTree = "<group>";
+		};
+		4D44E05D2970890A00107DF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D44E05F2970892A00107DF3 /* viewGarageResponseModel.swift */,
+			);
+			name = Model;
+			path = "../New Group1/Model";
+			sourceTree = "<group>";
+		};
+		4D44E05E2970891700107DF3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D44E0612970893B00107DF3 /* viewGarageApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4D47A6AD296FF4B400957CA4 /* Update Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4D47A6AF296FF4C500957CA4 /* Api */,
+				4D47A6AE296FF4BE00957CA4 /* Models */,
+			);
+			path = "Update Profile";
+			sourceTree = "<group>";
+		};
+		4D47A6AE296FF4BE00957CA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D47A6B0296FF4E300957CA4 /* updateProfileResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D47A6AF296FF4C500957CA4 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D47A6B2296FF4F200957CA4 /* updateProfileApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4D47A6B629705A7B00957CA4 /* Get Profile Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D47A6B829705A9700957CA4 /* Api */,
+				4D47A6B729705A8F00957CA4 /* Models */,
+			);
+			path = "Get Profile Api";
+			sourceTree = "<group>";
+		};
+		4D47A6B729705A8F00957CA4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D47A6B929705AAE00957CA4 /* getProfileResponseModel.swift */,
+			);
+			name = Models;
+			path = "../New Group/Models";
+			sourceTree = "<group>";
+		};
+		4D47A6B829705A9700957CA4 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D47A6BB29705AC000957CA4 /* getProfileApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		4D51A0F629680AB7009F7828 /* Resend Email Verification Otp */ = {
 			isa = PBXGroup;
 			children = (
@@ -532,6 +701,129 @@
 			path = api;
 			sourceTree = "<group>";
 		};
+		4D83CE8B297091B100CBEADE /* Delete Car Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D83CE8D297091C300CBEADE /* Api */,
+				4D83CE8C297091BE00CBEADE /* Model */,
+			);
+			path = "Delete Car Api";
+			sourceTree = "<group>";
+		};
+		4D83CE8C297091BE00CBEADE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D83CE8E297091D400CBEADE /* deleteCarResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D83CE8D297091C300CBEADE /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D83CE902970922000CBEADE /* deleteCarApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4D8D42A6296E943700622EFA /* Create Profile */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D42A8296E944C00622EFA /* Api */,
+				4D8D42A7296E944300622EFA /* Models */,
+			);
+			path = "Create Profile";
+			sourceTree = "<group>";
+		};
+		4D8D42A7296E944300622EFA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D42C2296EA50E00622EFA /* responseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D8D42A8296E944C00622EFA /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D42A9296E945F00622EFA /* createProfileApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4D8D42B5296EA13200622EFA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D8D42C0296EA19C00622EFA /* UIKit.framework */,
+				4D8D42BE296EA19400622EFA /* QuartzCore.framework */,
+				4D8D42BC296EA18200622EFA /* libz.tbd */,
+				4D8D42BA296EA16600622EFA /* libc++.tbd */,
+				4D8D42B8296EA13B00622EFA /* CoreLocationUI.framework */,
+				4D8D42B6296EA13200622EFA /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4D9BB573296EB44E0003A8C3 /* Google Place Files */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB574296EB4680003A8C3 /* Places Search Bar.swift */,
+				4D9BB576296EB4690003A8C3 /* PlacesManual.swift */,
+				4D9BB575296EB4680003A8C3 /* PlaceViewModel.swift */,
+			);
+			path = "Google Place Files";
+			sourceTree = "<group>";
+		};
+		4D9BB582296EDACD0003A8C3 /* Setup Garage Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB584296EDAEC0003A8C3 /* Api */,
+				4D9BB583296EDAE10003A8C3 /* Models */,
+			);
+			path = "Setup Garage Api";
+			sourceTree = "<group>";
+		};
+		4D9BB583296EDAE10003A8C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB585296EDB030003A8C3 /* setupGarageResponseModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4D9BB584296EDAEC0003A8C3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB587296EDB130003A8C3 /* setupGarageApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		4D9BB589296EE28F0003A8C3 /* Add Car Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB58B296EE2A30003A8C3 /* Api */,
+				4D9BB58A296EE29C0003A8C3 /* Model */,
+			);
+			path = "Add Car Api";
+			sourceTree = "<group>";
+		};
+		4D9BB58A296EE29C0003A8C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB58E296EE30D0003A8C3 /* addCarResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4D9BB58B296EE2A30003A8C3 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				4D9BB58C296EE2EC0003A8C3 /* addCarApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		4DC8928F296825630023A151 /* Verify Forget Password Otp */ = {
 			isa = PBXGroup;
 			children = (
@@ -590,44 +882,27 @@
 				5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */,
 				592BF64628B4ABA20094B1AE /* My Garage User View.swift */,
 				595013B128B4B008007B594B /* Edit Garage Screen.swift */,
+				4D44E0532970849800107DF3 /* Update Car Screen.swift */,
 			);
 			path = "View Social Profile";
-			sourceTree = "<group>";
-		};
-		591192E2289A46A8004DF048 /* Logout Api */ = {
-			isa = PBXGroup;
-			children = (
-				591192E6289A46E7004DF048 /* Api */,
-				591192E0289A45A4004DF048 /* Logout Api.swift */,
-				591192E5289A46D6004DF048 /* Models */,
-			);
-			path = "Logout Api";
-			sourceTree = "<group>";
-		};
-		591192E5289A46D6004DF048 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				591192E7289A472E004DF048 /* LogoutResponseModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		591192E6289A46E7004DF048 /* Api */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Api;
 			sourceTree = "<group>";
 		};
 		592A21032898F92400FC9EAF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4D83CE8B297091B100CBEADE /* Delete Car Api */,
+				4D44E05C297088FE00107DF3 /* View Garage Api */,
+				4D44E055297084CC00107DF3 /* Update Car Api */,
+				4D47A6B629705A7B00957CA4 /* Get Profile Api */,
+				4D47A6AD296FF4B400957CA4 /* Update Profile */,
+				4D9BB589296EE28F0003A8C3 /* Add Car Api */,
+				4D9BB582296EDACD0003A8C3 /* Setup Garage Api */,
+				4D8D42A6296E943700622EFA /* Create Profile */,
 				4DC8928F296825630023A151 /* Verify Forget Password Otp */,
 				4D51A0FD2968231D009F7828 /* Send Forget Password Otp */,
 				4D51A0F629680AB7009F7828 /* Resend Email Verification Otp */,
 				4D647514294E396C0014A9E1 /* Reset Password */,
 				4D647505294E35740014A9E1 /* Verify Email Otp */,
-				591192E2289A46A8004DF048 /* Logout Api */,
 				59DB445D28993789006766EA /* Configs */,
 				59D5E805294891A0007712E0 /* Signup Api */,
 				592A21042898F94800FC9EAF /* Login Api */,
@@ -669,6 +944,7 @@
 				594D228028BC88590096D1B0 /* Events Screen.swift */,
 				592F18A22887C7B700A531A4 /* Messages Tab.swift */,
 				595B9E4A288A8E5700BFC244 /* Market place and calssified tab.swift */,
+				4D96481D296E88DB007D4A05 /* Navigation Drawer.swift */,
 			);
 			path = "Main Tab Container";
 			sourceTree = "<group>";
@@ -710,6 +986,7 @@
 				593466782886712F00956869 /* cars connetedTests */,
 				593466822886712F00956869 /* cars connetedUITests */,
 				593466662886712800956869 /* Products */,
+				4D8D42B5296EA13200622EFA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -726,6 +1003,9 @@
 		593466672886712800956869 /* cars conneted */ = {
 			isa = PBXGroup;
 			children = (
+				4D83CE92297098CC00CBEADE /* GooglePlaces.framework */,
+				4D83CE94297098DA00CBEADE /* GooglePlaces.bundle */,
+				4D9BB573296EB44E0003A8C3 /* Google Place Files */,
 				C4102311295598290015171E /* cars connetedDebug.entitlements */,
 				59D7D0362892B25200F9EC5D /* cars-conneted-Info.plist */,
 				5991C6212954D08000F619DA /* GoogleService-Info.plist */,
@@ -1042,6 +1322,8 @@
 				59DB446828995120006766EA /* ImagePicker.swift */,
 				59DB446A2899514E006766EA /* AppData.swift */,
 				59D5E80329487F1B007712E0 /* Toast.swift */,
+				4D96481F296E8912007D4A05 /* Dialog.swift */,
+				4D964821296E8949007D4A05 /* Rounded Corners.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1065,6 +1347,7 @@
 				5983884C28C8AEEE007BFF7A /* My Profile Screen.swift */,
 				59646AAD28CF834E0098F147 /* Following Screen.swift */,
 				598C67ED28D0892A006CC0B5 /* View Status Screen.swift */,
+				4D47A6B42970592500957CA4 /* Edit Profile Screen.swift */,
 			);
 			path = "User Profile, Follow, Unfollow screen";
 			sourceTree = "<group>";
@@ -1222,6 +1505,7 @@
 				59DCDC7128CA0C53006FCF60 /* 117335-red-check (1).json in Resources */,
 				59D7D0342892AF1A00F9EC5D /* Inter-BoldItalic.otf in Resources */,
 				59DCDC6F28CA093B006FCF60 /* 84228-delete-animation.json in Resources */,
+				4D83CE95297098DA00CBEADE /* GooglePlaces.bundle in Resources */,
 				59D7D02E2892AF1900F9EC5D /* Inter-Black.otf in Resources */,
 				59D7D0312892AF1A00F9EC5D /* Inter-ThinItalic.otf in Resources */,
 				5934666D2886712E00956869 /* Assets.xcassets in Resources */,
@@ -1258,18 +1542,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				5950087F28ACAC7D00C44D86 /* Verify Email OTP Screen.swift in Sources */,
-				591192E8289A472E004DF048 /* LogoutResponseModel.swift in Sources */,
 				59428F1928D06D78002E2CD1 /* Add Status Screen.swift in Sources */,
 				5950088528ACE97000C44D86 /* Billing Options Screen.swift in Sources */,
+				4D8D42AA296E945F00622EFA /* createProfileApi.swift in Sources */,
 				5962F80F28C9E9860052CDA7 /* practice.swift in Sources */,
 				4DC89295296825BD0023A151 /* verifyForgetPsswordOtpResponseModel.swift in Sources */,
 				597282F428B7993E0004F4CB /* New member request club.swift in Sources */,
 				599AF4B728B6324C00DE103F /* Add classified Screen.swift in Sources */,
+				4D9BB577296EB4690003A8C3 /* Places Search Bar.swift in Sources */,
 				59D5E80429487F1B007712E0 /* Toast.swift in Sources */,
 				5983884B28C8A1B0007BFF7A /* Product Added Successfully.swift in Sources */,
 				596D8A1628B8CA6B00E0F7DE /* Event Details Screen.swift in Sources */,
 				59607F202891977600B46682 /* Change Password screen.swift in Sources */,
 				5961023A28D30D4800226916 /* HalfASheetFilter.swift in Sources */,
+				4D9BB579296EB4690003A8C3 /* PlacesManual.swift in Sources */,
 				5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */,
 				5909F69528B3950E00F7FD38 /* My Subscription details Screen.swift in Sources */,
 				598C67F028D0B25F006CC0B5 /* Shop Created successfully.swift in Sources */,
@@ -1279,13 +1565,16 @@
 				59D7D0382892B3C700F9EC5D /* AppFonts.swift in Sources */,
 				59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */,
 				59A0B7C628D059BC00976D0B /* Popular Classified Screen.swift in Sources */,
+				4D44E0622970893B00107DF3 /* viewGarageApi.swift in Sources */,
 				598C67EE28D0892A006CC0B5 /* View Status Screen.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Screen.swift in Sources */,
+				4D44E0602970892B00107DF3 /* viewGarageResponseModel.swift in Sources */,
 				592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */,
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
 				596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */,
 				59D5E80D294891A0007712E0 /* SignupApi.swift in Sources */,
 				59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */,
+				4D44E0542970849800107DF3 /* Update Car Screen.swift in Sources */,
 				597282F828B7A38B0004F4CB /* Club Admin View.swift in Sources */,
 				59607F1528914F6700B46682 /* Car Specification.swift in Sources */,
 				595013B228B4B008007B594B /* Edit Garage Screen.swift in Sources */,
@@ -1300,19 +1589,24 @@
 				597282E028B759F10004F4CB /* Create Club Screen.swift in Sources */,
 				5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */,
 				5953999C28AFB5BD00C61A36 /* Setup Garage Screen.swift in Sources */,
+				4D47A6B1296FF4E300957CA4 /* updateProfileResponseModel.swift in Sources */,
 				592F18A32887C7B700A531A4 /* Messages Tab.swift in Sources */,
 				5981EC2828CB0DF300C6461D /* HalfASheetPost.swift in Sources */,
 				4D64750B294E36210014A9E1 /* verifyEmailOtpResponseModel.swift in Sources */,
+				4D9BB578296EB4690003A8C3 /* PlaceViewModel.swift in Sources */,
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */,
+				4D9BB58F296EE30D0003A8C3 /* addCarResponseModel.swift in Sources */,
+				4D47A6BA29705AAE00957CA4 /* getProfileResponseModel.swift in Sources */,
 				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
+				4D9BB586296EDB030003A8C3 /* setupGarageResponseModel.swift in Sources */,
 				5909F69328B3655D00F7FD38 /* My Plan screen.swift in Sources */,
 				597282DB28B74EFF0004F4CB /* Classified Spare Parts Screen.swift in Sources */,
-				591192E1289A45A4004DF048 /* Logout Api.swift in Sources */,
 				59532EFA28AE0266001F6EEE /* Support Screen.swift in Sources */,
 				59A0B7CC28D05BCB00976D0B /* All Service View Screen.swift in Sources */,
 				5909F69728B39D3A00F7FD38 /* Subscription Billing Detail Screen.swift in Sources */,
 				5909F69928B3A35800F7FD38 /* Subscription Updated Successful Screen.swift in Sources */,
+				4D47A6B3296FF4F200957CA4 /* updateProfileApi.swift in Sources */,
 				597282E628B775870004F4CB /* My Clubs screens.swift in Sources */,
 				592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */,
 				597282F028B793080004F4CB /* Club chat Screen.swift in Sources */,
@@ -1343,15 +1637,19 @@
 				597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
 				4D51A0FC29680B12009F7828 /* resendEmailVerificationOtpApi.swift in Sources */,
+				4D47A6B52970592500957CA4 /* Edit Profile Screen.swift in Sources */,
+				4D44E059297084EF00107DF3 /* updateCarResponseModel.swift in Sources */,
 				5983885328C8CCCA007BFF7A /* OnBoardingModel.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
 				5990D1A328D2E59200CCD93A /* Classified Search Screen.swift in Sources */,
 				592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */,
 				597282E228B75EEC0004F4CB /* Edit Club Screen.swift in Sources */,
 				597282EE28B78F2E0004F4CB /* Club details member view Screen.swift in Sources */,
+				4D83CE912970922000CBEADE /* deleteCarApi.swift in Sources */,
 				59532F0228AE3C44001F6EEE /* Support Issue Details Screen.swift in Sources */,
 				59532F0028AE2744001F6EEE /* My Support Requests screen.swift in Sources */,
 				59532F0428AE410C001F6EEE /* Support Issue Solved Screen.swift in Sources */,
+				4D964820296E8912007D4A05 /* Dialog.swift in Sources */,
 				59D7A47828B64EE70022F49A /* Shop Updated Successfully Screen.swift in Sources */,
 				592F18AD28882C4300A531A4 /* post screen 2.swift in Sources */,
 				5981EC3128CB0E2E00C6461D /* VerticalSlideTransition.swift in Sources */,
@@ -1370,6 +1668,8 @@
 				59DE3860288EBE7D00BD72D9 /* payment method 2 screen.swift in Sources */,
 				5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */,
 				5940A43A28B0FF3C00C5EEF4 /* Proximity Screen 3.swift in Sources */,
+				4D964822296E8949007D4A05 /* Rounded Corners.swift in Sources */,
+				4D96481E296E88DB007D4A05 /* Navigation Drawer.swift in Sources */,
 				599AF4AE28B601F900DE103F /* Create Shop Screen.swift in Sources */,
 				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
 				5909F69128B362E400F7FD38 /* Subscription Successful.swift in Sources */,
@@ -1378,6 +1678,8 @@
 				593F055728AF761A00FEBE5F /* Login Screen.swift in Sources */,
 				5961023C28D30E0800226916 /* HalfASheetFilter+Modifiers.swift in Sources */,
 				59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */,
+				4D9BB588296EDB130003A8C3 /* setupGarageApi.swift in Sources */,
+				4D8D42C3296EA50E00622EFA /* responseModel.swift in Sources */,
 				4DC89293296825A10023A151 /* verifyForgetPsswordOtpApi.swift in Sources */,
 				5909F68C28B34DB300F7FD38 /* Follow request.swift in Sources */,
 				5961023E28D3244B00226916 /* Invite Friends Screen.swift in Sources */,
@@ -1387,6 +1689,7 @@
 				599AF4B528B62CE500DE103F /* Post Product Vehicle Screen.swift in Sources */,
 				4D64751A294E39A70014A9E1 /* resetPasswordResponseModel.swift in Sources */,
 				594DC7ED28B4F4E70000C99E /* Shop Others View Screen.swift in Sources */,
+				4D47A6BC29705AC000957CA4 /* getProfileApi.swift in Sources */,
 				5983884D28C8AEEE007BFF7A /* My Profile Screen.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				59A0B7C828D05A9000976D0B /* All Cars View Screen.swift in Sources */,
@@ -1401,10 +1704,13 @@
 				590117A628B896FF0053019E /* Create Event step1 Screen.swift in Sources */,
 				592F18A12887C10500A531A4 /* MainTabContainer.swift in Sources */,
 				59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */,
+				4D44E05B2970853900107DF3 /* updateCarApi.swift in Sources */,
 				5952DC0B290A63E100B73C5A /* SavedItemsScreen.swift in Sources */,
+				4D9BB58D296EE2EC0003A8C3 /* addCarApi.swift in Sources */,
 				595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */,
 				593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */,
 				597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */,
+				4D83CE8F297091D400CBEADE /* deleteCarResponseModel.swift in Sources */,
 				59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */,
 				593F055B28AF912200FEBE5F /* Verify Password Otp.swift in Sources */,
 			);
@@ -1497,6 +1803,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1550,6 +1857,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -1567,6 +1875,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cars conneted/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted/Google\\ Place\\ Files",
+					"$(PROJECT_DIR)/cars\\ conneted/Google\\ Place\\ Files",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cars-conneted-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -1598,6 +1917,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"cars conneted/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted/Google\\ Place\\ Files",
+					"$(PROJECT_DIR)/cars\\ conneted/Google\\ Place\\ Files",
+					"$(PROJECT_DIR)/cars\\ conneted",
+					"$(PROJECT_DIR)/cars\\ conneted",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "cars-conneted-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

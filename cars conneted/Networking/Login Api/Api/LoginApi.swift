@@ -15,7 +15,7 @@ class LoginApi : ObservableObject{
     @Published var isApiCallSuccessful = false
     @Published var loginSuccessful = false
     @Published var apiResponse :  LoginResponseModel?
-    
+    @Published var hasToSetupProfile = false
 
     
 
@@ -27,6 +27,8 @@ class LoginApi : ObservableObject{
         self.isApiCallSuccessful = true
         self.loginSuccessful = false
         self.isApiCallDone = false
+        self.hasToSetupProfile = false
+
         
             //Create url
         guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.login ) else {return}
@@ -77,16 +79,33 @@ class LoginApi : ObservableObject{
                     self.isApiCallSuccessful = true
                     
                     if(main.code == 200 && main.successful == true){
-                        if(main.data != nil){
+                        
+                        guard let response = response as? HTTPURLResponse else {
+                            
+                            print("didn't get token")
+                            
+                            return }
+                        
+                        if (!(response.value(forHTTPHeaderField: "token")!).isEmpty){
+                            
+                            AppData().saveBearerToken(bearerToken: response.value(forHTTPHeaderField: "token")!)
+                            
+                            print(response.value(forHTTPHeaderField: "token")!)
+                            
+                        }
+                        
+                        self.loginSuccessful = true
+                        
+                        if(main.data == nil){
 
-                            self.loginSuccessful = true
-
+                            self.hasToSetupProfile = true
+                            
 //                            AppData().saveBearerToken(bearerToken: main.data!.token ?? "")
                            
                         }
-                        else{
-                            self.loginSuccessful = false
-                        }
+                        
+                        
+                       
                     }
                     else{
                         
@@ -107,10 +126,12 @@ class LoginApi : ObservableObject{
                     self.isApiCallSuccessful  = true
                     self.loginSuccessful = false
                     self.isLoading = false
+                    self.hasToSetupProfile = false
                 }
             }
             let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
             print(responseJSON)
+            
         }
         
         task.resume()

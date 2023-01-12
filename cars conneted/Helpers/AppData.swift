@@ -42,6 +42,7 @@ class AppData {
         UserDefaults.standard.set(true, forKey: Constants.userLoggedIn)
     }
     
+   
     func getUserEmail()->String{
         let sharedPrefrences = UserDefaults.standard
         if (sharedPrefrences.object(forKey: Constants.userEmail)==nil){

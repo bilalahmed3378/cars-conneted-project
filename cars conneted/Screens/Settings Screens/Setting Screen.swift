@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Setting_Screen: View {
     @Environment(\.presentationMode) var presentaionMode
-    @ObservedObject var logoutApi : LogoutApi = LogoutApi()
+//    @ObservedObject var logoutApi : LogoutApi = LogoutApi()
     
     @State private var searchText = ""
     

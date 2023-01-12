@@ -10,10 +10,10 @@ import SwiftUI
 struct SignUp_Screen: View {
     
     @StateObject var signupApi  = SignupApi()
-    
-    @Binding var pushToLogin : Bool
-    
+        
     @State  var pushToOTP = false
+
+    @State  var pushToLogin = false
 
     @State var showToast : Bool = false
     @State var toastMessage : String = ""
@@ -26,10 +26,10 @@ struct SignUp_Screen: View {
     @State var toVerify = false
     @State var toLogin = false
     
-    init (pushToLogin : Binding<Bool>){
-        self._pushToLogin = pushToLogin
-        
-    }
+//    init (pushToLogin : Binding<Bool>){
+//        self._pushToLogin = pushToLogin
+//
+//    }
     var body: some View {
         ZStack{
             
@@ -183,12 +183,7 @@ struct SignUp_Screen: View {
                                                 self.toastMessage = "This email already taken. Please try different email."
                                                 self.showToast = true
                                             }
-                                            
-                                            else if (self.signupApi.emailAlreadyInUse){
-                                                self.toastMessage = "Unable to Signup"
-                                                self.showToast = true
-                                            }
-                                            
+                                                                                        
                                         }
                                         else if(self.signupApi.isApiCallDone && (!self.signupApi.isApiCallSuccessful)){
                                             self.toastMessage = "Unable to access internet. Please check you internet connection and try again."

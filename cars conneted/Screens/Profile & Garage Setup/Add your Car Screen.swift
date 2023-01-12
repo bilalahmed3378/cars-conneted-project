@@ -9,7 +9,11 @@ import SwiftUI
 
 struct Add_your_Car_Screen: View {
     
+    @StateObject var addCarApi = AddCarApi()
+    
     @State var date = Date()
+    
+    let dateFormatter = DateFormatter()
     
     @State var brand = ""
     @State var model = ""
@@ -17,6 +21,7 @@ struct Add_your_Car_Screen: View {
     @State var engine = ""
     @State var type = ""
     @State var year = ""
+    @State var currentYear = 2021
     @State var description = ""
     @Environment(\.presentationMode) var presentaionMode
     @State var toHome = false
@@ -31,12 +36,22 @@ struct Add_your_Car_Screen: View {
     
     let colors = ["Sedan", "Sports", "SUV"]
     
+    @State var showToast : Bool = false
+    @State var toastMessage : String = ""
+    
+    
+    init(){
+
+        self.dateFormatter.dateFormat = "YYYY"
+
+    }
+    
     var body: some View {
         ZStack{
             
-//            NavigationLink(destination: MainTabContainer(), isActive: $toHome){
-//                EmptyView()
-//            }
+            NavigationLink(destination: MainTabContainer(), isActive: $toHome){
+                EmptyView()
+            }
            
                 VStack{
                     HStack{
@@ -232,7 +247,7 @@ struct Add_your_Car_Screen: View {
                     
                     VStack{
                         
-//                    
+//
                         
                 Text("Year")
                             .foregroundColor(AppColors.BlackColor)
@@ -254,234 +269,20 @@ struct Add_your_Car_Screen: View {
                         
                                
                       Menu(content: {
-                         
-                          Group{
-                          Button(action: {}, label: {
-                              Text("1970")
-                          })
                           
-                          Button(action: {}, label: {
-                              Text("1971")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1972")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1973")
+                          ForEach(1900...(self.currentYear) ,id: \.self){ value in
                               
                               
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1974")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1975")
-                          })
+                              Button {
+                                  
+                                  self.year = "\(value)"
+                                  
+                              } label: {
+                                  
+                                  Text(String(value))
+                              }
                               
                           }
-                          
-                          Group{
-                          Button(action: {}, label: {
-                              Text("1976")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1977")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1978")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1979")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1980")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1981")
-                          })
-                          Button(action: {}, label: {
-                              Text("1982")
-                          })
-                          Button(action: {}, label: {
-                              Text("1983")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1984")
-                          })
-                              
-                          }
-                          
-                          Group{
-                          Button(action: {}, label: {
-                              Text("1985")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1986")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1987")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1988")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1989")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1990")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1991")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1992")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1993")
-                          })
-                              
-                          }
-                          
-                          Group{
-                          Button(action: {}, label: {
-                              Text("1994")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1995")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1996")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1997")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1998")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("1999")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2000")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2001")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2002")
-                          })
-                              
-                          }
-                          
-                          Group{
-                          Button(action: {}, label: {
-                              Text("2003")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2004")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2005")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2006")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2007")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2008")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2009")
-                          })
-                          Button(action: {}, label: {
-                              Text("2010")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2011")
-                          })
-                              
-                          }
-                          
-                          Group{
-                          Button(action: {}, label: {
-                              Text("2012")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2013")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2014")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2015")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2016")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2017")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2018")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2019")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2020")
-                          })
-                          
-                          Button(action: {}, label: {
-                              Text("2021")
-                          })
-                          }
-                          Button(action: {}, label: {
-                              Text("2022")
-                          })
-                          
           
                       }, label: {
                           Image("bxs_calendar-event")
@@ -579,33 +380,91 @@ struct Add_your_Car_Screen: View {
                         .padding(.trailing)
                     
                     
-                    HStack{
-                        Spacer()
-                Button(action: {
-                    self.toHome = true
-                }, label: {
-                    Text("Save to Garage")
-                        .font(AppFonts.semiBold_16)
-                        .fontWeight(.medium)
-                        .foregroundColor(.white)
-                        .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
-                        .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
-                })
-                .padding(.top)
-                        Spacer()
+                    if(self.addCarApi.isLoading){
+                        
+                        HStack{
+                            
+                            Spacer()
+                            
+                            ProgressView()
+                                .padding()
+                                .onDisappear{
+                                    if(self.addCarApi.isApiCallDone && self.addCarApi.isApiCallSuccessful){
+                                        
+                                        if(self.addCarApi.carAddedSuccessfully){
+                                            
+                                            self.toHome = true
+                                        }
+                                        
+                                        else {
+                                            self.toastMessage = "Unable to add car"
+                                            self.showToast = true
+                                        }
+                                        
+                                    }
+                                    else if(self.addCarApi.isApiCallDone && (!self.addCarApi.isApiCallSuccessful)){
+                                        self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
+                                        self.showToast = true
+                                    }
+                                    
+                                    else{
+                                        
+                                        self.toastMessage = "something went wrong"
+                                        self.showToast = true
+                                        
+                                    }
+                                    
+                                }
+
+                            
+                            Spacer()
+                        }
+                        
+                       
+                        
                     }
-                
-                
+                    
+                    else{
+                        
+                        Button(action: {
+                            
+                            self.addCarApi.addCar(brand: self.brand, model: self.model, year: Int(self.year) ?? 0, description: self.description)
+                            
+                        }, label: {
+                            
+                            HStack{
+                                
+                                Spacer()
+                                
+                                Text("Save to Garage")
+                                    .font(AppFonts.semiBold_16)
+                                    .fontWeight(.medium)
+                                    .foregroundColor(.white)
+                                    .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*7)
+                                    .background(RoundedRectangle(cornerRadius: 50).fill(LinearGradient(colors: [AppColors.redGradientColor1, AppColors.redGradientColor2], startPoint: .leading, endPoint: .trailing)))
+                                
+                                Spacer()
+                                
+                            }
+                            
+                        })
+                        .padding(.top)
+                        
+                    }
+                        
                     Spacer()
                 }
             
                     
             }
             
-         
+            if(showToast){
+                Toast(isShowing: self.$showToast, message: self.toastMessage)
+            }
            
            
-        }.sheet(isPresented: self.$showSheet) {
+        }
+        .sheet(isPresented: self.$showSheet) {
             
             ImagePicker(sourceType: .photoLibrary) { image in
                
@@ -615,12 +474,17 @@ struct Add_your_Car_Screen: View {
             
             
             }
+        .onAppear{
+            
+            self.currentYear = Int(self.dateFormatter.string(from: self.date)) ?? 2022
+            
+        }
         .navigationBarHidden(true)
     }
 }
 
-struct Add_your_Car_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Add_your_Car_Screen()
-    }
-}
+//struct Add_your_Car_Screen_Previews: PreviewProvider {
+//    static var previews: some View {
+//        Add_your_Car_Screen()
+//    }
+//}
