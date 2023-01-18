@@ -8,6 +8,8 @@
 
 
 import Foundation
+import SwiftUI
+import Lottie
 
 
 struct LottieAnimations {
@@ -24,8 +26,8 @@ struct LottieAnimations {
 
 
 
-import SwiftUI
-import Lottie
+
+//import LottieUI
 
 struct LottieView: UIViewRepresentable {
     
@@ -35,8 +37,8 @@ struct LottieView: UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)
 
-        let animationView = AnimationView()
-        let animation = Animation.named(name)
+        let animationView = LottieAnimationView()
+        let animation = LottieAnimation.named(name)
         animationView.animation = animation
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = loopMode

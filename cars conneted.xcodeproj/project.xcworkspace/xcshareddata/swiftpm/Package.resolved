@@ -24,7 +24,7 @@
       "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
         "branch" : "master",
-        "revision" : "bc3bccd40c16dfe54a0888600d7fa58ba373676c"
+        "revision" : "070769431f77a42728460221c9d6e4f44e5d0d4a"
       }
     },
     {
@@ -32,8 +32,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleAppMeasurement.git",
       "state" : {
-        "revision" : "71eb6700dd53a851473c48d392f00a3ab26699a6",
-        "version" : "10.1.0"
+        "revision" : "9a09ece724128e8d1e14c5133b87c0e236844ac0",
+        "version" : "10.4.0"
       }
     },
     {
@@ -50,8 +50,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/GoogleUtilities.git",
       "state" : {
-        "revision" : "6db6edb48bdd9943426562c7f042a5492de5ba3d",
-        "version" : "7.10.0"
+        "revision" : "0543562f85620b5b7c510c6bcbef75b562a5127b",
+        "version" : "7.11.0"
       }
     },
     {
@@ -68,8 +68,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/google/gtm-session-fetcher.git",
       "state" : {
-        "revision" : "efda500b6d9858d38a76dbfbfa396bd644692e4a",
-        "version" : "3.0.0"
+        "revision" : "96d7cc73a71ce950723aa3c50ce4fb275ae180b8",
+        "version" : "3.1.0"
       }
     },
     {
@@ -77,8 +77,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/franklynw/HalfASheet.git",
       "state" : {
-        "revision" : "4f43296b3722082dd5735521ee0fbf25e61cd21c",
-        "version" : "1.0.2"
+        "branch" : "develop",
+        "revision" : "5d1ade1157f87c4f922f4aa1af318f53fa1a3764"
       }
     },
     {
@@ -86,8 +86,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/onevcat/Kingfisher.git",
       "state" : {
-        "revision" : "44e891bdb61426a95e31492a67c7c0dfad1f87c5",
-        "version" : "7.4.1"
+        "branch" : "master",
+        "revision" : "0ce2b6b09be2f46c505e31ca012ad555ef6160a9"
       }
     },
     {
@@ -104,8 +104,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios.git",
       "state" : {
-        "revision" : "b4bd0604ded9574807f41b4004b57dd1226a30a4",
-        "version" : "3.5.0"
+        "branch" : "master",
+        "revision" : "f2ed8ef11d59bbfaae8797df4ecfc302c1d635ba"
+      }
+    },
+    {
+      "identity" : "lottieui",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jasudev/LottieUI.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "492bd7e4b5b03148f6815f0f4568411cd7ae1fe1"
       }
     },
     {
@@ -113,8 +122,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/davbeck/MultipartForm.git",
       "state" : {
-        "revision" : "c91979ea956a360bf84f0cc480afbcc7c946c753",
-        "version" : "0.1.0"
+        "branch" : "master",
+        "revision" : "c91979ea956a360bf84f0cc480afbcc7c946c753"
       }
     },
     {
@@ -149,8 +158,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/globulus/swiftui-gif.git",
       "state" : {
-        "revision" : "1bb63c180520ca4f86d65f1046007ac98b6f83e6",
-        "version" : "1.0.0"
+        "branch" : "main",
+        "revision" : "1bb63c180520ca4f86d65f1046007ac98b6f83e6"
+      }
+    },
+    {
+      "identity" : "swiftui-shimmer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/markiv/SwiftUI-Shimmer.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "965a7cbcbf094cbcf22b9251a2323bdc3432e171"
       }
     }
   ],

@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import Kingfisher
+
 
 struct Help_Screen: View {
     @Environment (\.presentationMode) var presentationMode
-    @State private var isClicked = false
-    @State private var isClickedTwo = false
+  
+    @StateObject var getAllFaqsApi  = ViewAllFaqsApi()
+    
+    @State var faqsList : [ViewAllFaqsFaqsModel] = []
+
+
+
     @State private var searchText = ""
     var body: some View {
         VStack{
@@ -52,124 +59,209 @@ struct Help_Screen: View {
                 .resizable())
         }
             
-            ScrollView(.vertical, showsIndicators: false){
-            
-            HStack{
-            HStack{
-              
-              TextField("Search",text: self.$searchText)
-                    .font(AppFonts.regular_14)
-                    .foregroundColor(.red)
-                    
-               
-                Image(systemName: "magnifyingglass")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width :20, height: 20)
-                    .foregroundColor(.red)
-           
-            } .padding()
-                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-            }.padding()
-            
-            VStack(alignment: .leading){
+            if (self.getAllFaqsApi.isLoading){
                 
-                HStack{
-                    Text("When Registration will start?")
-                        .foregroundColor(.gray)
-                        .font(AppFonts.regular_14)
-                      
+                
+                ShimmerView(cornerRadius: 10, fill: .gray)
+                    .frame(width: 100, height: 15)
+                    .padding(.top,20)
+                
+                ScrollView(.vertical,showsIndicators: false){
+                    
+                    ForEach(0...6 , id:\.self){index in
+                        
+                        
+                        HStack{
+                            
+                            Spacer()
+                            
+                            ShimmerView(cornerRadius: 10, fill: .gray)
+                                .frame(width: 150, height: 200)
+                            
+                            Spacer()
+                            
+                            ShimmerView(cornerRadius: 10, fill: .gray)
+                                .frame(width: 150, height: 200)
+                            
+                            Spacer()
+                            
+                        }
+                        .padding(.top,20)
+                        
+                        
+                            
+                        
+                    }
+                }
+                .padding(.top,10)
+                .clipped()
+                
+            }
+            
+            else if(self.getAllFaqsApi.isApiCallDone && self.getAllFaqsApi.isApiCallSuccessful){
+                
+                if !(self.faqsList.isEmpty){
+                    
+                    ScrollView(.vertical, showsIndicators: false){
+                        
+                        LazyVStack{
+                            ForEach(self.faqsList.indices , id: \.self){ index in
+                                FaqsCards(faqs: self.faqsList[index])
+                                    .onAppear{
+                                        if(index == (self.faqsList.count - 1)){
+                                            self.getAllFaqsApi.viewMoreFaqs(faqsList: self.$faqsList)
+                                        }
+                                    }
+                                if(self.getAllFaqsApi.isLoadingMore && (index == (self.faqsList.count - 1))){
+                                    ProgressView()
+                                        .padding(20)
+                                }
+                            }
+                        }
+                        
+                        
+                        
+                        
+                    }
+                }
+                else{
                     Spacer()
+                    
+                    Text("Unable to get faqs. Please try again later.")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(.black)
+                        .padding(.leading,20)
+                        .padding(.trailing,20)
+                        
                     Button(action: {
                         withAnimation{
-                            self.isClicked.toggle()
+                            self.getAllFaqsApi.viewAllFaqs(FaqsList: self.$faqsList)
                         }
-                    }, label: {
-                        
-                        Image(self.isClicked ? "dropdown menu icon" : "dropdown menu 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 16)
-                        
-                    })
-                   
+                    }){
+                        Text("Try Agin")
+                            .font(AppFonts.medium_14)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+
+                    }
+                    .padding(.top,30)
                     
-                }
-                
-                if(self.isClicked){
-                    
-                VStack(alignment: .leading){
-                    
-                    
-                Divider()
-                        .padding()
-                
-                Text("Registration will start on Aug 20")
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                     
-                }
-            }
-            }.padding()
-                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-            
-            VStack(alignment: .leading){
-                
-                HStack{
-                    Text("When Registration will start?")
-                        .foregroundColor(.gray)
-                        .font(AppFonts.regular_14)
-                      
                     Spacer()
-                    Button(action: {
-                        withAnimation{
-                            self.isClickedTwo.toggle()
-                        }
-                    }, label: {
-                        
-                        Image(self.isClickedTwo ? "dropdown menu icon" : "dropdown menu 2")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 16)
-                        
-                    })
-                   
-                    
-                }
-                
-                if(self.isClickedTwo){
-                    
-                VStack(alignment: .leading){
-                    
-                    
-                Divider()
-                        .padding()
-                
-                Text("Registration will start on Aug 20")
-                    .foregroundColor(.gray)
-                    .font(AppFonts.regular_14)
-                     
                 }
             }
-            }.padding()
-                .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
-                .padding(.leading)
-                .padding(.trailing)
-                .padding(.bottom)
-            
-            
+            else if(self.getAllFaqsApi.isLoading && (!self.getAllFaqsApi.isApiCallSuccessful)){
+                Spacer()
+                
+                Text("Unable to access internet. Please check yuor internet connection and try again.")
+                    .font(AppFonts.medium_14)
+                    .foregroundColor(.black)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    
+                Button(action: {
+                    withAnimation{
+                        self.getAllFaqsApi.viewAllFaqs(FaqsList: self.$faqsList)
+                    }
+                }){
+                    Text("Try Agin")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+
+                }
+                .padding(.top,30)
+                
+                Spacer()
+            }
+            else{
+                Spacer()
+                
+                Text("Unable to get faqs. Please try again later.")
+                    .font(AppFonts.medium_14)
+                    .foregroundColor(.black)
+                    .padding(.leading,20)
+                    .padding(.trailing,20)
+                    
+                Button(action: {
+                    withAnimation{
+                        self.getAllFaqsApi.viewAllFaqs(FaqsList: self.$faqsList)
+                    }
+                }){
+                    Text("Try Agin")
+                        .font(AppFonts.medium_14)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+
+                }
+                .padding(.top,30)
+                
+                Spacer()
             }
           
         }.edgesIgnoringSafeArea(.top)
             .navigationBarHidden(true)
+            .onAppear{
+                self.getAllFaqsApi.viewAllFaqs(FaqsList: self.$faqsList)
+            }
     }
 }
 
-struct Help_Screen_Previews: PreviewProvider {
-    static var previews: some View {
-        Help_Screen()
+
+struct FaqsCards : View {
+    
+    @State private var isClicked = false
+    @State private var isClickedTwo = false
+    
+    let faqs : ViewAllFaqsFaqsModel
+
+    
+    var body : some View{
+        
+        VStack(alignment: .leading){
+            
+            HStack{
+                Text("\(self.faqs.question)")
+                    .foregroundColor(.gray)
+                    .font(AppFonts.regular_14)
+                  
+                Spacer()
+                Button(action: {
+                    withAnimation{
+                        self.isClicked.toggle()
+                    }
+                }, label: {
+                    
+                    Image(self.isClicked ? "dropdown menu icon" : "dropdown menu 2")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 20, height: 16)
+                    
+                })
+               
+                
+            }
+            
+            if(self.isClicked){
+                
+            VStack(alignment: .leading){
+                
+                
+            Divider()
+                    .padding()
+            
+                Text("\(self.faqs.answer)")
+                .foregroundColor(.gray)
+                .font(AppFonts.regular_14)
+                 
+            }
+        }
+        }.padding()
+            .background(RoundedRectangle(cornerRadius: 10).fill(.gray.opacity(0.3)))
+            .padding(.leading)
+            .padding(.trailing)
+            .padding(.bottom)
     }
 }

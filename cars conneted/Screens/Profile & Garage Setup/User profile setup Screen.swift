@@ -10,6 +10,8 @@ import SwiftUI
 struct User_profile_setup_Screen: View, MyLocationReceiver {
     
     @StateObject var createProfileApi = CreateProfileApi()
+    @StateObject var profileCoverImageApi = ProfileCoverImageApi()
+
     
     @State var firstName = ""
     @State var lastName = ""
@@ -23,6 +25,18 @@ struct User_profile_setup_Screen: View, MyLocationReceiver {
     
     @State var showToast : Bool = false
     @State var toastMessage : String = ""
+    
+    @State var coverPhoto : Image? = nil
+    @State var profilePhoto : Image? = nil
+
+
+    @State var showSheet = false
+    
+    @State var showBottomSheet: Bool = false
+   
+    @State var pickingForProfile : Bool = false
+
+
     
     
     @Environment(\.presentationMode) var presentaionMode
@@ -40,18 +54,51 @@ struct User_profile_setup_Screen: View, MyLocationReceiver {
                 }
                 
                 HStack{
-                    Image("bilal3")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
+                    
+                    Button(action: {
+                        self.pickingForProfile = false
+                        self.showBottomSheet = true
+                    }, label: {
+                        if(self.coverPhoto != nil){
+                            coverPhoto?
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
+                        }
+                        else{
+                            Image("bilal3")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
+                              
+                        }
+                    })
+                   
+                   
                 }
                 
                 HStack{
-                    Image("Bilal4")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
-                        .offset(x: -120 , y: -30 )
+                    Button(action: {
+                        self.pickingForProfile = true
+                        self.showBottomSheet = true
+                    }, label: {
+                        if(self.profilePhoto != nil){
+                            profilePhoto?
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
+                                .offset(x: -120 , y: -30 )
+                        }
+                        else{
+                            Image("Bilal4")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
+                                .offset(x: -120 , y: -30 )
+                        }
+                    })
+                  
+                   
                 }
                 
                 
@@ -410,6 +457,36 @@ struct User_profile_setup_Screen: View, MyLocationReceiver {
             
         }.edgesIgnoringSafeArea(.all)
             .navigationBarHidden(true)
+            .sheet(isPresented: self.$showBottomSheet) {
+                
+                ImagePicker(sourceType: .photoLibrary) { image in
+                    
+                    let size = Image(uiImage: image).asUIImage().getSizeIn(.megabyte)
+                    
+                    print("image data size ===> \(size)")
+
+                    
+                    if(size > 5){
+                        self.toastMessage = "Image must be less then 5 mb"
+                        self.showToast = true
+                    }
+                    else{
+                        
+                        if(self.pickingForProfile){
+                            self.profilePhoto = Image(uiImage: image)
+                           
+                        }
+                        else{
+                            self.coverPhoto = Image(uiImage: image)
+                            let imageData  = (((self.coverPhoto!.asUIImage()).jpegData(compressionQuality: 1)) ?? Data())
+                            self.profileCoverImageApi.profileCoverImage(image: imageData)
+                            
+                        }
+                    }
+                    
+                }
+                
+            }
         
     }
 }

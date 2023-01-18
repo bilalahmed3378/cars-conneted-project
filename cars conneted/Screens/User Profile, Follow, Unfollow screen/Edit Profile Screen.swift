@@ -14,6 +14,8 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
 
     
     @StateObject var updateProfileApi = UpdateProfileApi()
+    @StateObject var profileCoverImageApi = ProfileCoverImageApi()
+
     
     @State var firstName = ""
     @State var lastName = ""
@@ -27,6 +29,16 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
     
     @State var showToast : Bool = false
     @State var toastMessage : String = ""
+    
+    @State var coverPhoto : Image? = nil
+    @State var profilePhoto : Image? = nil
+
+
+    @State var showSheet = false
+    
+    @State var showBottomSheet: Bool = false
+   
+    @State var pickingForProfile : Bool = false
     
     
     @Environment(\.presentationMode) var presentaionMode
@@ -49,19 +61,55 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
                 }
                 
                 HStack{
-                    Image("bilal3")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
+                    
+                    Button(action: {
+                        self.pickingForProfile = false
+                        self.showBottomSheet = true
+                    }, label: {
+                        if(self.coverPhoto != nil){
+                            coverPhoto?
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
+                        }
+                        else{
+                            Image("bilal3")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: UIScreen.widthBlockSize*100, height: UIScreen.heightBlockSize*30)
+                              
+                        }
+                    })
+                   
+                   
                 }
                 
                 HStack{
-                    Image("Bilal4")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
-                        .offset(x: -120 , y: -30 )
+                    Button(action: {
+                        self.pickingForProfile = true
+                        self.showBottomSheet = true
+                    }, label: {
+                        if(self.profilePhoto != nil){
+                            profilePhoto?
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
+                                .cornerRadius(100)
+
+                                
+                        }
+                        else{
+                            Image("Bilal4")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .cornerRadius(50)
+                                .frame(width: UIScreen.widthBlockSize*35, height: UIScreen.heightBlockSize*12)
+                        }
+                    })
+                  
+                   
                 }
+                .offset(x: -120 , y: -30 )
                 
                 
                 ScrollView(.vertical, showsIndicators: false){
@@ -342,6 +390,8 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
                                 
                                 self.updateProfileApi.updateProfile(firstName: self.firstName, lastName: self.lastName, phone: self.phone, about: self.about, lat: self.latitude, long: self.longitude, address: self.address)
                                 
+//                                if(self.profilePhoto ){}
+                                
                             }
                                 
                         } label: {
@@ -430,6 +480,37 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
                 self.longitude = self.existingProfileData.location?.coordinates[1] ?? 0.0
                 
             }
+            .sheet(isPresented: self.$showBottomSheet) {
+                
+                ImagePicker(sourceType: .photoLibrary) { image in
+                    
+                    let size = Image(uiImage: image).asUIImage().getSizeIn(.megabyte)
+                    
+                    print("image data size ===> \(size)")
+
+                    
+                    if(size > 5){
+                        self.toastMessage = "Image must be less then 5 mb"
+                        self.showToast = true
+                    }
+                    else{
+                        
+                        if(self.pickingForProfile){
+                            self.profilePhoto = Image(uiImage: image)
+                           
+                        }
+                        else{
+                            self.coverPhoto = Image(uiImage: image)
+                            let imageData  = (((self.coverPhoto!.asUIImage()).jpegData(compressionQuality: 1)) ?? Data())
+                            self.profileCoverImageApi.profileCoverImage(image: imageData)
+                            
+                        }
+                    }
+                    
+                }
+                
+            }
+        
         
     }
 }
