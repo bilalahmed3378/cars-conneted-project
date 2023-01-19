@@ -10,12 +10,10 @@
 		4D44E0542970849800107DF3 /* Update Car Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E0532970849800107DF3 /* Update Car Screen.swift */; };
 		4D44E059297084EF00107DF3 /* updateCarResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E058297084EF00107DF3 /* updateCarResponseModel.swift */; };
 		4D44E05B2970853900107DF3 /* updateCarApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E05A2970853900107DF3 /* updateCarApi.swift */; };
-		4D44E0602970892B00107DF3 /* viewGarageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E05F2970892A00107DF3 /* viewGarageResponseModel.swift */; };
 		4D44E0622970893B00107DF3 /* viewGarageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D44E0612970893B00107DF3 /* viewGarageApi.swift */; };
 		4D47A6B1296FF4E300957CA4 /* updateProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B0296FF4E300957CA4 /* updateProfileResponseModel.swift */; };
 		4D47A6B3296FF4F200957CA4 /* updateProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B2296FF4F200957CA4 /* updateProfileApi.swift */; };
 		4D47A6B52970592500957CA4 /* Edit Profile Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B42970592500957CA4 /* Edit Profile Screen.swift */; };
-		4D47A6BA29705AAE00957CA4 /* getProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6B929705AAE00957CA4 /* getProfileResponseModel.swift */; };
 		4D47A6BC29705AC000957CA4 /* getProfileApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D47A6BB29705AC000957CA4 /* getProfileApi.swift */; };
 		4D51A0FA29680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51A0F929680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift */; };
 		4D51A0FC29680B12009F7828 /* resendEmailVerificationOtpApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D51A0FB29680B12009F7828 /* resendEmailVerificationOtpApi.swift */; };
@@ -60,6 +58,12 @@
 		5909F69C28B3A4C000F7FD38 /* My Garage My View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */; };
 		5909F69E28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */; };
 		591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */; };
+		5929E69D2979411A003D94C2 /* viewGarageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E69C2979411A003D94C2 /* viewGarageResponseModel.swift */; };
+		5929E6A22979451F003D94C2 /* ViewAllGarageCarsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E6A12979451F003D94C2 /* ViewAllGarageCarsResponseModel.swift */; };
+		5929E6A529794B8C003D94C2 /* getProfileResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E6A429794B8C003D94C2 /* getProfileResponseModel.swift */; };
+		5929E6A729794D5A003D94C2 /* GetGarageCarsApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E6A629794D5A003D94C2 /* GetGarageCarsApi.swift */; };
+		5929E6AC29796893003D94C2 /* AddCarImagesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E6AB29796893003D94C2 /* AddCarImagesResponseModel.swift */; };
+		5929E6AE29796913003D94C2 /* AddCarImagesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5929E6AD29796913003D94C2 /* AddCarImagesApi.swift */; };
 		592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A21072899102400FC9EAF /* LoginResponseModel.swift */; };
 		592A210E2899113A00FC9EAF /* LoginApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592A210D2899113A00FC9EAF /* LoginApi.swift */; };
 		592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 592BF64628B4ABA20094B1AE /* My Garage User View.swift */; };
@@ -200,6 +204,8 @@
 		599AF4B328B62A7400DE103F /* Post Product Parts Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */; };
 		599AF4B528B62CE500DE103F /* Post Product Vehicle Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B428B62CE500DE103F /* Post Product Vehicle Screen.swift */; };
 		599AF4B728B6324C00DE103F /* Add classified Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599AF4B628B6324C00DE103F /* Add classified Screen.swift */; };
+		599EDBF4297925C800DBE65C /* UpdateGarageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599EDBF3297925C800DBE65C /* UpdateGarageResponseModel.swift */; };
+		599EDBF62979268C00DBE65C /* UpdateGarageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 599EDBF52979268C00DBE65C /* UpdateGarageApi.swift */; };
 		59A0B7C428D055F500976D0B /* Recommended Classified Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B7C328D055F500976D0B /* Recommended Classified Screen.swift */; };
 		59A0B7C628D059BC00976D0B /* Popular Classified Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B7C528D059BC00976D0B /* Popular Classified Screen.swift */; };
 		59A0B7C828D05A9000976D0B /* All Cars View Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59A0B7C728D05A9000976D0B /* All Cars View Screen.swift */; };
@@ -254,6 +260,11 @@
 		59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */; };
 		59DE3871288FF0AF00BD72D9 /* User Profile- Wall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */; };
 		59F585E728B73E47000CE808 /* Classified Vehicle Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */; };
+		59FF5B662979048D004720C9 /* ProfileMainImageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF5B652979048D004720C9 /* ProfileMainImageResponseModel.swift */; };
+		59FF5B68297904DB004720C9 /* ProfileMainImageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF5B67297904DB004720C9 /* ProfileMainImageApi.swift */; };
+		59FF5B6A29790C15004720C9 /* SetupGarageInApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF5B6929790C15004720C9 /* SetupGarageInApp.swift */; };
+		59FF5B6F29791DEC004720C9 /* DeleteGarageResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF5B6E29791DEC004720C9 /* DeleteGarageResponseModel.swift */; };
+		59FF5B7129791E24004720C9 /* DeleteGarageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59FF5B7029791E24004720C9 /* DeleteGarageApi.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -277,12 +288,10 @@
 		4D44E0532970849800107DF3 /* Update Car Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Update Car Screen.swift"; sourceTree = "<group>"; };
 		4D44E058297084EF00107DF3 /* updateCarResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateCarResponseModel.swift; sourceTree = "<group>"; };
 		4D44E05A2970853900107DF3 /* updateCarApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateCarApi.swift; sourceTree = "<group>"; };
-		4D44E05F2970892A00107DF3 /* viewGarageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewGarageResponseModel.swift; sourceTree = "<group>"; };
 		4D44E0612970893B00107DF3 /* viewGarageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = viewGarageApi.swift; sourceTree = "<group>"; };
 		4D47A6B0296FF4E300957CA4 /* updateProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateProfileResponseModel.swift; sourceTree = "<group>"; };
 		4D47A6B2296FF4F200957CA4 /* updateProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = updateProfileApi.swift; sourceTree = "<group>"; };
 		4D47A6B42970592500957CA4 /* Edit Profile Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Edit Profile Screen.swift"; sourceTree = "<group>"; };
-		4D47A6B929705AAE00957CA4 /* getProfileResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfileResponseModel.swift; sourceTree = "<group>"; };
 		4D47A6BB29705AC000957CA4 /* getProfileApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getProfileApi.swift; sourceTree = "<group>"; };
 		4D51A0F929680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resendEmailVerificationOtpResponseModel.swift; sourceTree = "<group>"; };
 		4D51A0FB29680B12009F7828 /* resendEmailVerificationOtpApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = resendEmailVerificationOtpApi.swift; sourceTree = "<group>"; };
@@ -327,6 +336,12 @@
 		5909F69B28B3A4C000F7FD38 /* My Garage My View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage My View.swift"; sourceTree = "<group>"; };
 		5909F69D28B3B4DB00F7FD38 /* Vehicle Deleted Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vehicle Deleted Screen.swift"; sourceTree = "<group>"; };
 		591043A728AE4E4000F6E81F /* VerifyOtpScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerifyOtpScreen.swift; sourceTree = "<group>"; };
+		5929E69C2979411A003D94C2 /* viewGarageResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = viewGarageResponseModel.swift; sourceTree = "<group>"; };
+		5929E6A12979451F003D94C2 /* ViewAllGarageCarsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAllGarageCarsResponseModel.swift; sourceTree = "<group>"; };
+		5929E6A429794B8C003D94C2 /* getProfileResponseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getProfileResponseModel.swift; sourceTree = "<group>"; };
+		5929E6A629794D5A003D94C2 /* GetGarageCarsApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetGarageCarsApi.swift; sourceTree = "<group>"; };
+		5929E6AB29796893003D94C2 /* AddCarImagesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarImagesResponseModel.swift; sourceTree = "<group>"; };
+		5929E6AD29796913003D94C2 /* AddCarImagesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCarImagesApi.swift; sourceTree = "<group>"; };
 		592A21072899102400FC9EAF /* LoginResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponseModel.swift; sourceTree = "<group>"; };
 		592A210D2899113A00FC9EAF /* LoginApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginApi.swift; sourceTree = "<group>"; };
 		592BF64628B4ABA20094B1AE /* My Garage User View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "My Garage User View.swift"; sourceTree = "<group>"; };
@@ -436,6 +451,8 @@
 		599AF4B228B62A7400DE103F /* Post Product Parts Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Product Parts Screen.swift"; sourceTree = "<group>"; };
 		599AF4B428B62CE500DE103F /* Post Product Vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post Product Vehicle Screen.swift"; sourceTree = "<group>"; };
 		599AF4B628B6324C00DE103F /* Add classified Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add classified Screen.swift"; sourceTree = "<group>"; };
+		599EDBF3297925C800DBE65C /* UpdateGarageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGarageResponseModel.swift; sourceTree = "<group>"; };
+		599EDBF52979268C00DBE65C /* UpdateGarageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateGarageApi.swift; sourceTree = "<group>"; };
 		59A0B7C328D055F500976D0B /* Recommended Classified Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recommended Classified Screen.swift"; sourceTree = "<group>"; };
 		59A0B7C528D059BC00976D0B /* Popular Classified Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Popular Classified Screen.swift"; sourceTree = "<group>"; };
 		59A0B7C728D05A9000976D0B /* All Cars View Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "All Cars View Screen.swift"; sourceTree = "<group>"; };
@@ -492,6 +509,11 @@
 		59DE3861288ECC7700BD72D9 /* Payment Method step 3 screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Method step 3 screen.swift"; sourceTree = "<group>"; };
 		59DE3870288FF0AF00BD72D9 /* User Profile- Wall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User Profile- Wall.swift"; sourceTree = "<group>"; };
 		59F585E628B73E47000CE808 /* Classified Vehicle Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Classified Vehicle Screen.swift"; sourceTree = "<group>"; };
+		59FF5B652979048D004720C9 /* ProfileMainImageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainImageResponseModel.swift; sourceTree = "<group>"; };
+		59FF5B67297904DB004720C9 /* ProfileMainImageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMainImageApi.swift; sourceTree = "<group>"; };
+		59FF5B6929790C15004720C9 /* SetupGarageInApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupGarageInApp.swift; sourceTree = "<group>"; };
+		59FF5B6E29791DEC004720C9 /* DeleteGarageResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGarageResponseModel.swift; sourceTree = "<group>"; };
+		59FF5B7029791E24004720C9 /* DeleteGarageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteGarageApi.swift; sourceTree = "<group>"; };
 		C4102311295598290015171E /* cars connetedDebug.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "cars connetedDebug.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -589,19 +611,10 @@
 		4D44E05C297088FE00107DF3 /* View Garage Api */ = {
 			isa = PBXGroup;
 			children = (
+				5929E69B297940D2003D94C2 /* Model */,
 				4D44E05E2970891700107DF3 /* Api */,
-				4D44E05D2970890A00107DF3 /* Model */,
 			);
 			path = "View Garage Api";
-			sourceTree = "<group>";
-		};
-		4D44E05D2970890A00107DF3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				4D44E05F2970892A00107DF3 /* viewGarageResponseModel.swift */,
-			);
-			name = Model;
-			path = "../New Group1/Model";
 			sourceTree = "<group>";
 		};
 		4D44E05E2970891700107DF3 /* Api */ = {
@@ -640,19 +653,10 @@
 		4D47A6B629705A7B00957CA4 /* Get Profile Api */ = {
 			isa = PBXGroup;
 			children = (
+				5929E6A3297945A5003D94C2 /* Model */,
 				4D47A6B829705A9700957CA4 /* Api */,
-				4D47A6B729705A8F00957CA4 /* Models */,
 			);
 			path = "Get Profile Api";
-			sourceTree = "<group>";
-		};
-		4D47A6B729705A8F00957CA4 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4D47A6B929705AAE00957CA4 /* getProfileResponseModel.swift */,
-			);
-			name = Models;
-			path = "../New Group/Models";
 			sourceTree = "<group>";
 		};
 		4D47A6B829705A9700957CA4 /* Api */ = {
@@ -945,31 +949,86 @@
 				592BF64628B4ABA20094B1AE /* My Garage User View.swift */,
 				595013B128B4B008007B594B /* Edit Garage Screen.swift */,
 				4D44E0532970849800107DF3 /* Update Car Screen.swift */,
+				59FF5B6929790C15004720C9 /* SetupGarageInApp.swift */,
 			);
 			path = "View Social Profile";
+			sourceTree = "<group>";
+		};
+		5929E69B297940D2003D94C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5929E69C2979411A003D94C2 /* viewGarageResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5929E69E297944B1003D94C2 /* Get Garage Cars Api */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6A0297944D3003D94C2 /* Api */,
+				5929E69F297944C3003D94C2 /* Model */,
+			);
+			path = "Get Garage Cars Api";
+			sourceTree = "<group>";
+		};
+		5929E69F297944C3003D94C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6A12979451F003D94C2 /* ViewAllGarageCarsResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5929E6A0297944D3003D94C2 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6A629794D5A003D94C2 /* GetGarageCarsApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		5929E6A3297945A5003D94C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6A429794B8C003D94C2 /* getProfileResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5929E6A829796862003D94C2 /* Add Car Images Api */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6AA2979687B003D94C2 /* Api */,
+				5929E6A929796876003D94C2 /* Model */,
+			);
+			path = "Add Car Images Api";
+			sourceTree = "<group>";
+		};
+		5929E6A929796876003D94C2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6AB29796893003D94C2 /* AddCarImagesResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5929E6AA2979687B003D94C2 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6AD29796913003D94C2 /* AddCarImagesApi.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 		592A21032898F92400FC9EAF /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				594BACF4297819D40066E466 /* Profile Images Api */,
+				59BF26FA29792EA300BB7324 /* Authentication Apis */,
+				59BF26F929792E8300BB7324 /* Profile Apis */,
+				59BF26F829792E6500BB7324 /* Cars Apis */,
+				59BF26F729792E3400BB7324 /* Garage Apis */,
 				5936A01C2977D26100C53CBA /* FAQS Api */,
-				4D83CE8B297091B100CBEADE /* Delete Car Api */,
-				4D44E05C297088FE00107DF3 /* View Garage Api */,
-				4D44E055297084CC00107DF3 /* Update Car Api */,
-				4D47A6B629705A7B00957CA4 /* Get Profile Api */,
-				4D47A6AD296FF4B400957CA4 /* Update Profile */,
-				4D9BB589296EE28F0003A8C3 /* Add Car Api */,
-				4D9BB582296EDACD0003A8C3 /* Setup Garage Api */,
-				4D8D42A6296E943700622EFA /* Create Profile */,
-				4DC8928F296825630023A151 /* Verify Forget Password Otp */,
-				4D51A0FD2968231D009F7828 /* Send Forget Password Otp */,
-				4D51A0F629680AB7009F7828 /* Resend Email Verification Otp */,
-				4D647514294E396C0014A9E1 /* Reset Password */,
-				4D647505294E35740014A9E1 /* Verify Email Otp */,
 				59DB445D28993789006766EA /* Configs */,
-				59D5E805294891A0007712E0 /* Signup Api */,
-				592A21042898F94800FC9EAF /* Login Api */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -1217,6 +1276,7 @@
 		594BACF4297819D40066E466 /* Profile Images Api */ = {
 			isa = PBXGroup;
 			children = (
+				59FF5B6229790433004720C9 /* Profile Main Image Api */,
 				594BACF529781A140066E466 /* Cover Image Api */,
 			);
 			path = "Profile Images Api";
@@ -1377,6 +1437,79 @@
 			path = "Add Classified Screens";
 			sourceTree = "<group>";
 		};
+		599EDBF0297924B300DBE65C /* Update Garage Api */ = {
+			isa = PBXGroup;
+			children = (
+				599EDBF2297924DE00DBE65C /* Api */,
+				599EDBF1297924D700DBE65C /* Model */,
+			);
+			path = "Update Garage Api";
+			sourceTree = "<group>";
+		};
+		599EDBF1297924D700DBE65C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				599EDBF3297925C800DBE65C /* UpdateGarageResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		599EDBF2297924DE00DBE65C /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				599EDBF52979268C00DBE65C /* UpdateGarageApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		59BF26F729792E3400BB7324 /* Garage Apis */ = {
+			isa = PBXGroup;
+			children = (
+				5929E69E297944B1003D94C2 /* Get Garage Cars Api */,
+				4D9BB582296EDACD0003A8C3 /* Setup Garage Api */,
+				4D44E05C297088FE00107DF3 /* View Garage Api */,
+				59FF5B6B29791DAE004720C9 /* Delete Garage Api */,
+				599EDBF0297924B300DBE65C /* Update Garage Api */,
+			);
+			path = "Garage Apis";
+			sourceTree = "<group>";
+		};
+		59BF26F829792E6500BB7324 /* Cars Apis */ = {
+			isa = PBXGroup;
+			children = (
+				5929E6A829796862003D94C2 /* Add Car Images Api */,
+				4D9BB589296EE28F0003A8C3 /* Add Car Api */,
+				4D44E055297084CC00107DF3 /* Update Car Api */,
+				4D83CE8B297091B100CBEADE /* Delete Car Api */,
+			);
+			path = "Cars Apis";
+			sourceTree = "<group>";
+		};
+		59BF26F929792E8300BB7324 /* Profile Apis */ = {
+			isa = PBXGroup;
+			children = (
+				594BACF4297819D40066E466 /* Profile Images Api */,
+				4D8D42A6296E943700622EFA /* Create Profile */,
+				4D47A6AD296FF4B400957CA4 /* Update Profile */,
+				4D47A6B629705A7B00957CA4 /* Get Profile Api */,
+			);
+			path = "Profile Apis";
+			sourceTree = "<group>";
+		};
+		59BF26FA29792EA300BB7324 /* Authentication Apis */ = {
+			isa = PBXGroup;
+			children = (
+				592A21042898F94800FC9EAF /* Login Api */,
+				59D5E805294891A0007712E0 /* Signup Api */,
+				4D647505294E35740014A9E1 /* Verify Email Otp */,
+				4D647514294E396C0014A9E1 /* Reset Password */,
+				4D51A0F629680AB7009F7828 /* Resend Email Verification Otp */,
+				4D51A0FD2968231D009F7828 /* Send Forget Password Otp */,
+				4DC8928F296825630023A151 /* Verify Forget Password Otp */,
+			);
+			path = "Authentication Apis";
+			sourceTree = "<group>";
+		};
 		59D5E805294891A0007712E0 /* Signup Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,6 +1623,56 @@
 				5990D1A228D2E59200CCD93A /* Classified Search Screen.swift */,
 			);
 			path = "Classified View Screens";
+			sourceTree = "<group>";
+		};
+		59FF5B6229790433004720C9 /* Profile Main Image Api */ = {
+			isa = PBXGroup;
+			children = (
+				59FF5B6429790457004720C9 /* Api */,
+				59FF5B632979044C004720C9 /* Model */,
+			);
+			path = "Profile Main Image Api";
+			sourceTree = "<group>";
+		};
+		59FF5B632979044C004720C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59FF5B652979048D004720C9 /* ProfileMainImageResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59FF5B6429790457004720C9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				59FF5B67297904DB004720C9 /* ProfileMainImageApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		59FF5B6B29791DAE004720C9 /* Delete Garage Api */ = {
+			isa = PBXGroup;
+			children = (
+				59FF5B6D29791DBE004720C9 /* Api */,
+				59FF5B6C29791DB8004720C9 /* Model */,
+			);
+			path = "Delete Garage Api";
+			sourceTree = "<group>";
+		};
+		59FF5B6C29791DB8004720C9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				59FF5B6E29791DEC004720C9 /* DeleteGarageResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		59FF5B6D29791DBE004720C9 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				59FF5B7029791E24004720C9 /* DeleteGarageApi.swift */,
+			);
+			path = Api;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1719,11 +1902,11 @@
 				4D44E0622970893B00107DF3 /* viewGarageApi.swift in Sources */,
 				598C67EE28D0892A006CC0B5 /* View Status Screen.swift in Sources */,
 				592F18A82887EDB800A531A4 /* Search Screen.swift in Sources */,
-				4D44E0602970892B00107DF3 /* viewGarageResponseModel.swift in Sources */,
 				592BF64728B4ABA20094B1AE /* My Garage User View.swift in Sources */,
 				594BACFB29781B210066E466 /* ProfileCoverImageApi.swift in Sources */,
 				59D669E328ABBA2F0012FBF8 /* Proximity location screen.swift in Sources */,
 				596D8A1428B8AA9100E0F7DE /* Create Event step 2 Screen.swift in Sources */,
+				5929E6AE29796913003D94C2 /* AddCarImagesApi.swift in Sources */,
 				59D5E80D294891A0007712E0 /* SignupApi.swift in Sources */,
 				59673EF128ABAB8600B2A305 /* Change User Name.swift in Sources */,
 				4D44E0542970849800107DF3 /* Update Car Screen.swift in Sources */,
@@ -1750,7 +1933,6 @@
 				59D669DF28ABB5D70012FBF8 /* Change Email screen.swift in Sources */,
 				593F055F28AF971D00FEBE5F /* Password Changed Screen.swift in Sources */,
 				4D9BB58F296EE30D0003A8C3 /* addCarResponseModel.swift in Sources */,
-				4D47A6BA29705AAE00957CA4 /* getProfileResponseModel.swift in Sources */,
 				593F055428AF740800FEBE5F /* E-mail Confirmation Screen.swift in Sources */,
 				4D9BB586296EDB030003A8C3 /* setupGarageResponseModel.swift in Sources */,
 				5909F69328B3655D00F7FD38 /* My Plan screen.swift in Sources */,
@@ -1765,9 +1947,12 @@
 				597282F028B793080004F4CB /* Club chat Screen.swift in Sources */,
 				59DB446928995120006766EA /* ImagePicker.swift in Sources */,
 				599AF4B128B60AE200DE103F /* Post products Services Screen.swift in Sources */,
+				59FF5B68297904DB004720C9 /* ProfileMainImageApi.swift in Sources */,
+				59FF5B6A29790C15004720C9 /* SetupGarageInApp.swift in Sources */,
 				59DE385E288EB41700BD72D9 /* Payment method step 1 screen.swift in Sources */,
 				5981EC3028CB0E2E00C6461D /* HalfASheet+Modifiers.swift in Sources */,
 				59532F0728AE435C001F6EEE /* Notification Screen.swift in Sources */,
+				5929E6A22979451F003D94C2 /* ViewAllGarageCarsResponseModel.swift in Sources */,
 				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
 				4D51A10329682365009F7828 /* sendForgetPsswordOtpApi.swift in Sources */,
@@ -1791,10 +1976,12 @@
 				597282F628B79B460004F4CB /* Create Post Club Screen.swift in Sources */,
 				59D7CF12289289D500F9EC5D /* Friends Requests Screens.swift in Sources */,
 				4D51A0FC29680B12009F7828 /* resendEmailVerificationOtpApi.swift in Sources */,
+				5929E6AC29796893003D94C2 /* AddCarImagesResponseModel.swift in Sources */,
 				594BACF929781A520066E466 /* ProfileCoverImageResponseModel.swift in Sources */,
 				4D47A6B52970592500957CA4 /* Edit Profile Screen.swift in Sources */,
 				4D44E059297084EF00107DF3 /* updateCarResponseModel.swift in Sources */,
 				5983885328C8CCCA007BFF7A /* OnBoardingModel.swift in Sources */,
+				5929E6A529794B8C003D94C2 /* getProfileResponseModel.swift in Sources */,
 				59532EFE28AE132C001F6EEE /* Contact Support.swift in Sources */,
 				5990D1A328D2E59200CCD93A /* Classified Search Screen.swift in Sources */,
 				592A21082899102400FC9EAF /* LoginResponseModel.swift in Sources */,
@@ -1811,9 +1998,11 @@
 				593466992886C5C600956869 /* Home Tab.swift in Sources */,
 				597282E828B77ABD0004F4CB /* Clubs Screen.swift in Sources */,
 				59DE3862288ECC7700BD72D9 /* Payment Method step 3 screen.swift in Sources */,
+				5929E6A729794D5A003D94C2 /* GetGarageCarsApi.swift in Sources */,
 				5983884428C85FDC007BFF7A /* Event Published Successfully.swift in Sources */,
 				5934666B2886712800956869 /* ContentView.swift in Sources */,
 				59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */,
+				599EDBF62979268C00DBE65C /* UpdateGarageApi.swift in Sources */,
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
 				597282EC28B78A740004F4CB /* Members (other club members) Screen.swift in Sources */,
 				591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */,
@@ -1828,12 +2017,14 @@
 				599AF4AE28B601F900DE103F /* Create Shop Screen.swift in Sources */,
 				59607F1C28915A1900B46682 /* Setting Screen.swift in Sources */,
 				5909F69128B362E400F7FD38 /* Subscription Successful.swift in Sources */,
+				59FF5B6F29791DEC004720C9 /* DeleteGarageResponseModel.swift in Sources */,
 				4D51A0FA29680AF9009F7828 /* resendEmailVerificationOtpResponseModel.swift in Sources */,
 				5936A0202977D2A900C53CBA /* ViewAllFaqsRsponseModel.swift in Sources */,
 				592F18B92889806E00A531A4 /* message screen.swift in Sources */,
 				593F055728AF761A00FEBE5F /* Login Screen.swift in Sources */,
 				5961023C28D30E0800226916 /* HalfASheetFilter+Modifiers.swift in Sources */,
 				59458AD828ACFF0C00A9ED02 /* Billing Screen.swift in Sources */,
+				599EDBF4297925C800DBE65C /* UpdateGarageResponseModel.swift in Sources */,
 				4D9BB588296EDB130003A8C3 /* setupGarageApi.swift in Sources */,
 				4D8D42C3296EA50E00622EFA /* responseModel.swift in Sources */,
 				4DC89293296825A10023A151 /* verifyForgetPsswordOtpApi.swift in Sources */,
@@ -1847,6 +2038,7 @@
 				594DC7ED28B4F4E70000C99E /* Shop Others View Screen.swift in Sources */,
 				4D47A6BC29705AC000957CA4 /* getProfileApi.swift in Sources */,
 				5983884D28C8AEEE007BFF7A /* My Profile Screen.swift in Sources */,
+				59FF5B7129791E24004720C9 /* DeleteGarageApi.swift in Sources */,
 				59DB446B2899514E006766EA /* AppData.swift in Sources */,
 				59A0B7C828D05A9000976D0B /* All Cars View Screen.swift in Sources */,
 				5940A43828B0FD3600C5EEF4 /* Proximity Screen 2.swift in Sources */,
@@ -1865,6 +2057,8 @@
 				4D9BB58D296EE2EC0003A8C3 /* addCarApi.swift in Sources */,
 				595E06C128AFBACC00EFB54B /* Add your Car Screen.swift in Sources */,
 				593F056228AF9C4200FEBE5F /* User profile setup Screen.swift in Sources */,
+				5929E69D2979411A003D94C2 /* viewGarageResponseModel.swift in Sources */,
+				59FF5B662979048D004720C9 /* ProfileMainImageResponseModel.swift in Sources */,
 				597282DD28B751FA0004F4CB /* Classified Service Screen.swift in Sources */,
 				4D83CE8F297091D400CBEADE /* deleteCarResponseModel.swift in Sources */,
 				59C80D8A28ADFB5000F9E5F7 /* Privacy Policy Screen.swift in Sources */,

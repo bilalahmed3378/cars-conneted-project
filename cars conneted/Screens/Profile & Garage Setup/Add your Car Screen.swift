@@ -10,6 +10,9 @@ import SwiftUI
 struct Add_your_Car_Screen: View {
     
     @StateObject var addCarApi = AddCarApi()
+    @StateObject var CarImageApi = AddCarImagesApi()
+
+
     
     @State var date = Date()
     
@@ -427,8 +430,25 @@ struct Add_your_Car_Screen: View {
                     else{
                         
                         Button(action: {
-                            
-                            self.addCarApi.addCar(brand: self.brand, model: self.model, year: Int(self.year) ?? 0, description: self.description)
+                            if(self.brand.isEmpty){
+                                self.toastMessage = "Please Add Brand"
+                                self.showToast = true
+                            }
+                            else if(self.model.isEmpty){
+                                self.toastMessage = "Please Add Model"
+                                self.showToast = true
+                            }
+                            else if(self.year.isEmpty){
+                                self.toastMessage = "Please Add Year"
+                                self.showToast = true
+                            }
+                            else if(self.description.isEmpty){
+                                self.toastMessage = "Please Add Description"
+                                self.showToast = true
+                            }
+                            else{
+                                self.addCarApi.addCar(brand: self.brand, model: self.model, year: Int(self.year) ?? 0, description: self.description)
+                            }
                             
                         }, label: {
                             

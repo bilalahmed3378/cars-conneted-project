@@ -11,6 +11,10 @@ import SwiftUI
 struct Update_your_Car_Screen: View {
     
     @StateObject var updateCarApi = UpdateCarApi()
+    @StateObject var CarImageApi = AddCarImagesApi()
+
+    let existingCarData : ViewAllGarageCarsCarsModel
+
     
     @State var date = Date()
     
@@ -30,7 +34,7 @@ struct Update_your_Car_Screen: View {
     
     @State var showSheet = false
     
-    @State var photos : Array<Image> = []
+    @State var photos : Image? = nil
     
     @State private var selection = "Year"
     
@@ -44,14 +48,12 @@ struct Update_your_Car_Screen: View {
     let carId: String
 
     
-    let carDataModel: viewGarageDataCarModel
     
-    init(carId: String, carDataModel: viewGarageDataCarModel){
+    init(carId: String, existingCarData : ViewAllGarageCarsCarsModel){
         
         self.carId = carId
-        self.carDataModel = carDataModel
         self.dateFormatter.dateFormat = "YYYY"
-        
+        self.existingCarData = existingCarData
     }
     
     var body: some View {
@@ -330,48 +332,45 @@ struct Update_your_Car_Screen: View {
                         .padding(.trailing)
                     
                     
-                    if(!self.photos.isEmpty){
-                        
-                        ForEach(0...(self.photos.count-1) ,id: \.self){ index in
-                            
-                            
-                            self.photos[index]
-                                .resizable()
-                                .aspectRatio( contentMode: .fill)
-                                .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
-                                .cornerRadius(8)
-                                .overlay(
-                                    VStack{
-                                        
-                                        
-                                        HStack{
-                                            Spacer()
-                                            Image(systemName: "minus")
-                                                .resizable()
-                                                .aspectRatio(contentMode: .fit)
-                                                .foregroundColor(.white)
-                                                .padding(5)
-                                                .frame(width: 15, height: 15)
-                                                .background(Circle()
-                                                    .fill(.red))
-                                                .offset(x: 5, y: -5)
-                                                .onTapGesture{
-                                                    self.photos.remove(at: index)
-                                                }
-                                            
-                                            
-                                            
-                                        }
-                                        Spacer()
-                                    }
+                   
+                    if(self.photos != nil){
+                        photos?
+                            .resizable()
+                            .aspectRatio( contentMode: .fill)
+                            .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
+                            .cornerRadius(8)
+                            .overlay(
+                                VStack{
                                     
-                                )
-                            
-                            
-                        }.padding(.leading)
-                            .padding(.trailing)
-                            .padding(.top)
+                                    
+                                    HStack{
+                                        Spacer()
+                                        Image(systemName: "minus")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .foregroundColor(.white)
+                                            .padding(5)
+                                            .frame(width: 15, height: 15)
+                                            .background(Circle()
+                                                .fill(.red))
+                                            .offset(x: 5, y: -5)
+//                                            .onTapGesture{
+//                                                self.photos.remove
+//                                            }
+                                        
+                                        
+                                        
+                                    }
+                                    Spacer()
+                                }
+                                
+                            )
+                        
                     }
+                          
+                            
+                     
+                    
                     
                     
                     HStack{
@@ -437,8 +436,26 @@ struct Update_your_Car_Screen: View {
                     else{
                         
                         Button(action: {
-                            
-                            self.updateCarApi.updateCar(car_id: self.carId, brand: self.brand, model: self.model, year: Int(self.year) ?? 0, description: self.description)
+                            if(self.brand.isEmpty){
+                                self.toastMessage = "Please Add Brand"
+                                self.showToast = true
+                            }
+                            else if(self.model.isEmpty){
+                                self.toastMessage = "Please Add Model"
+                                self.showToast = true
+                            }
+                            else if(self.year.isEmpty){
+                                self.toastMessage = "Please Add Year"
+                                self.showToast = true
+                            }
+                            else if(self.description.isEmpty){
+                                self.toastMessage = "Please Add Description"
+                                self.showToast = true
+                            }
+                           
+                            else{
+                                self.updateCarApi.updateCar(car_id: self.carId, brand: self.brand, model: self.model, year: Int(self.year) ?? 0, description: self.description)
+                            }
                             
                         }, label: {
                             
@@ -478,7 +495,21 @@ struct Update_your_Car_Screen: View {
             
             ImagePicker(sourceType: .photoLibrary) { image in
                 
-                self.photos.append(Image(uiImage: image))
+                let size = Image(uiImage: image).asUIImage().getSizeIn(.megabyte)
+                
+                print("image data size ===> \(size)")
+
+                
+                if(size > 5){
+                    self.toastMessage = "Image must be less then 5 mb"
+                    self.showToast = true
+                }
+                else{
+                    self.photos = Image(uiImage: image)
+                    let imageData = (((self.photos!.asUIImage()).jpegData(compressionQuality: 1)) ?? Data())
+                    self.CarImageApi.carsImage(image: imageData, car_id: self.existingCarData._id)
+                }
+               
                 
             }
             
@@ -486,10 +517,10 @@ struct Update_your_Car_Screen: View {
         }
         .onAppear{
             
-            self.brand = self.carDataModel.brand
-            self.model = self.carDataModel.model
-            self.year = String(self.carDataModel.year)
-            self.description = self.carDataModel.description
+            self.brand = self.existingCarData.brand
+            self.model = self.existingCarData.model
+            self.year = String(self.existingCarData.year)
+            self.description = self.existingCarData.description
 
             self.currentYear = Int(self.dateFormatter.string(from: self.date)) ?? 2022
 

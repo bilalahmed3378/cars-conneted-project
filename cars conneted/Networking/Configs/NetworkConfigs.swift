@@ -29,10 +29,16 @@ struct NetworkConfig {
     static let addCar = ":3003/user/cars/add"
     static let updateCar = ":3003/user/cars/update"
     static let deleteCar = ":3003/user/cars/delete"
+    static let deleteGarage = ":3003/user/garage/delete"
     static let setupGarage = ":3003/user/garage/setup"
+    static let updateGarage = ":3003/user/garage/update"
     static let viewGarage = ":3003/user/garage/view"
     static let viewAllFaqs = ":3002/user/faq/view"
     static let profileCoverImage = ":3001/user/profile/upload-cover-image"
+    static let profileMainImage = ":3001/user/profile/upload-profile-image"
+    static let getGarageCars = ":3003/user/garage/view-cars"
+
+
 
 
     

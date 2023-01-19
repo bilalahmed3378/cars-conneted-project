@@ -1,50 +1,54 @@
 //
-//  viewGarageApi.swift
+//  UpdateGarageApi.swift
 //  cars conneted
 //
-//  Created by Sohaib Sajjad on 12/01/2023.
+//  Created by Bilal Ahmed on 19/01/2023.
 //
 
 import Foundation
-import SwiftUI
 
-class ViewGarageApi : ObservableObject{
-    //MARK: - Published Variables
+
+class UpdateGarageApi : ObservableObject{
+        //MARK: - Published Variables
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
-    @Published var dataRetrievedSuccessfully = false
-    @Published var apiResponse :  viewGarageResponseModel?
+    @Published var garageUpdateSuccessfully = false
+    @Published var apiResponse :  UpdateGarageResponseModel?
+
+
     
-    
-    //MARK: - Get Customer Orders History
-    func viewGarage(carsList: Binding <[viewGarageDataCarModel]>){
+        //MARK: - Get Customer Orders History
+    func updateGarage(garageName : String, isPublic: Bool, lat: Double, long: Double, address: String){
         
         self.isLoading = true
         self.isApiCallSuccessful = true
-        self.dataRetrievedSuccessfully = false
+        self.garageUpdateSuccessfully = false
         self.isApiCallDone = false
-        carsList.wrappedValue.removeAll()
         
+            //Create url
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.updateGarage ) else {return}
         
-        //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.viewGarage ) else {return}
-        
+
+        let data : Data = "garageName=\(garageName)&isPublic=\(isPublic)&lat=\(lat)&long=\(long)&address=\(address)".data(using: .utf8)!
+
         
         let token = AppData().getBearerToken()
-        
-        
-        //Create request
+
+    
+            //Create request
         var request = URLRequest(url: url)
-        request.httpMethod = "GET"
+        request.httpMethod = "POST"
         request.setValue( token, forHTTPHeaderField: "token")
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secret_key")
+        request.httpBody = data
         
         
         
-        //:end
-        
-        
+            //:end
+    
+
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
@@ -56,15 +60,15 @@ class ViewGarageApi : ObservableObject{
                 }
                 return
             }
-            //If sucess
+                //If sucess
             
             
             do{
-                print("Got view garage response succesfully.....")
+                print("Got setup garage response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(viewGarageResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(UpdateGarageResponseModel.self, from: data)
                 
                 DispatchQueue.main.async {
                     self.apiResponse = main
@@ -72,30 +76,11 @@ class ViewGarageApi : ObservableObject{
                     
                     if(main.code == 200 && main.successful == true){
                         
-                        if !(main.data!.isEmpty){
-                            
-                            self.dataRetrievedSuccessfully = true
-                            
-                            if !(main.data![0].cars.isEmpty){
-                                
-                                carsList.wrappedValue.removeAll()
-                                carsList.wrappedValue.append(contentsOf: main.data![0].cars)
-                                
-                            }
-                            
-                        }
-                        
-                        else{
-                            
-                            self.dataRetrievedSuccessfully = false
-                            
-                        }
-                        
-                        
+                        self.garageUpdateSuccessfully = true
                     }
                     
                     else{
-                        self.dataRetrievedSuccessfully = false
+                        self.garageUpdateSuccessfully = false
                     }
                     self.isLoading = false
                 }
@@ -106,7 +91,7 @@ class ViewGarageApi : ObservableObject{
                     self.isApiCallDone = true
                     self.apiResponse = nil
                     self.isApiCallSuccessful  = true
-                    self.dataRetrievedSuccessfully = false
+                    self.garageUpdateSuccessfully = false
                     self.isLoading = false
                 }
             }
@@ -117,6 +102,6 @@ class ViewGarageApi : ObservableObject{
         task.resume()
     }
     
-    
+ 
     
 }

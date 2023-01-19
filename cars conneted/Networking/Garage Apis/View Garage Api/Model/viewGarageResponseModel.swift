@@ -60,11 +60,9 @@ struct viewGarageDataModel : Codable, Hashable {
     let isPublic: Bool
     let address: String
     let location: viewGarageDataLocationModel?
-    let cars: String
+    let cars: [String]
     let createdAt: String
     let updatedAt: String
-    let __v: Int
-
     
     
     init(from decoder: Decoder) throws {
@@ -108,9 +106,9 @@ struct viewGarageDataModel : Codable, Hashable {
         }
         
         do{
-            cars = try container.decode(String?.self, forKey: .cars) ?? ""
+            cars = try container.decode([String]?.self, forKey: .cars) ?? []
         } catch{
-            cars = ""
+            cars = []
         }
         
         do{
@@ -123,11 +121,6 @@ struct viewGarageDataModel : Codable, Hashable {
             updatedAt = try container.decode(String?.self, forKey: .updatedAt) ?? ""
         } catch{
             updatedAt = ""
-        }
-        do{
-            __v = try container.decode(Int?.self, forKey: .__v) ?? 0
-        } catch{
-            __v = 0
         }
         
         
@@ -169,130 +162,130 @@ struct viewGarageDataLocationModel : Codable, Hashable {
 
 
 
-//struct viewGarageDataCarModel : Codable, Hashable {
-//
-//    let _id: String
-//    let owner_id: String
-//    let garage_id: String
-//    let brand: String
-//    let model: String
-//    let year: Int
-//    let description: String
-//    let isShared: Bool
-//    let sharedFromUser: String
-//    let sharedFromGarage: String
-//    let sharedCar: String
-//    let comments: [String]
-//    let likedBy: [String]
-//    let lovedBy: [String]
-//    let sharedBy: [String]
-//    let images: [viewGarageDataCarImageModel]
-//
-//
-//    init(from decoder: Decoder) throws {
-//
-//        let container = try decoder.container(keyedBy: CodingKeys.self)
-//
-//        do{
-//            _id = try container.decode(String?.self, forKey: ._id) ?? ""
-//        } catch{
-//            _id = ""
-//        }
-//
-//        do{
-//            owner_id = try container.decode(String?.self, forKey: .owner_id) ?? ""
-//        } catch{
-//            owner_id = ""
-//        }
-//
-//        do{
-//            garage_id = try container.decode(String?.self, forKey: .garage_id) ?? ""
-//        } catch{
-//            garage_id = ""
-//        }
-//
-//        do{
-//            brand = try container.decode(String?.self, forKey: .brand) ?? ""
-//        } catch{
-//            brand = ""
-//        }
-//
-//        do{
-//            model = try container.decode(String?.self, forKey: .model) ?? ""
-//        } catch{
-//            model = ""
-//        }
-//
-//        do{
-//            year = try container.decode(Int?.self, forKey: .year) ?? 0
-//        } catch{
-//            year = 0
-//        }
-//
-//        do{
-//            description = try container.decode(String?.self, forKey: .description) ?? ""
-//        } catch{
-//            description = ""
-//        }
-//
-//        do{
-//            isShared = try container.decode(Bool?.self, forKey: .isShared) ?? false
-//        } catch{
-//            isShared = false
-//        }
-//
-//        do{
-//            sharedFromUser = try container.decode(String?.self, forKey: .sharedFromUser) ?? ""
-//        } catch{
-//            sharedFromUser = ""
-//        }
-//
-//        do{
-//            sharedFromGarage = try container.decode(String?.self, forKey: .sharedFromGarage) ?? ""
-//        } catch{
-//            sharedFromGarage = ""
-//        }
-//
-//        do{
-//            sharedCar = try container.decode(String?.self, forKey: .sharedCar) ?? ""
-//        } catch{
-//            sharedCar = ""
-//        }
-//
-//
-//        do{
-//            comments = try container.decode([String]?.self, forKey: .comments) ?? []
-//        } catch{
-//            comments = []
-//        }
-//
-//        do{
-//            likedBy = try container.decode([String]?.self, forKey: .likedBy) ?? []
-//        } catch{
-//            likedBy = []
-//        }
-//
-//        do{
-//            lovedBy = try container.decode([String]?.self, forKey: .lovedBy) ?? []
-//        } catch{
-//            lovedBy = []
-//        }
-//
-//        do{
-//            sharedBy = try container.decode([String]?.self, forKey: .sharedBy) ?? []
-//        } catch{
-//            sharedBy = []
-//        }
-//
-//        do{
-//            images = try container.decode([viewGarageDataCarImageModel]?.self, forKey: .images) ?? []
-//        } catch{
-//            images = []
-//        }
-//
-//    }
-//
-//}
+struct viewGarageDataCarModel : Codable, Hashable {
+    
+    let _id: String
+    let owner_id: String
+    let garage_id: String
+    let brand: String
+    let model: String
+    let year: Int
+    let description: String
+    let isShared: Bool
+    let sharedFromUser: String
+    let sharedFromGarage: String
+    let sharedCar: String
+    let comments: [String]
+    let likedBy: [String]
+    let lovedBy: [String]
+    let sharedBy: [String]
+    let images: [viewGarageDataCarImageModel]
+    
+    
+    init(from decoder: Decoder) throws {
+        
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        do{
+            _id = try container.decode(String?.self, forKey: ._id) ?? ""
+        } catch{
+            _id = ""
+        }
+        
+        do{
+            owner_id = try container.decode(String?.self, forKey: .owner_id) ?? ""
+        } catch{
+            owner_id = ""
+        }
+        
+        do{
+            garage_id = try container.decode(String?.self, forKey: .garage_id) ?? ""
+        } catch{
+            garage_id = ""
+        }
+        
+        do{
+            brand = try container.decode(String?.self, forKey: .brand) ?? ""
+        } catch{
+            brand = ""
+        }
+        
+        do{
+            model = try container.decode(String?.self, forKey: .model) ?? ""
+        } catch{
+            model = ""
+        }
+        
+        do{
+            year = try container.decode(Int?.self, forKey: .year) ?? 0
+        } catch{
+            year = 0
+        }
+        
+        do{
+            description = try container.decode(String?.self, forKey: .description) ?? ""
+        } catch{
+            description = ""
+        }
+        
+        do{
+            isShared = try container.decode(Bool?.self, forKey: .isShared) ?? false
+        } catch{
+            isShared = false
+        }
+        
+        do{
+            sharedFromUser = try container.decode(String?.self, forKey: .sharedFromUser) ?? ""
+        } catch{
+            sharedFromUser = ""
+        }
+        
+        do{
+            sharedFromGarage = try container.decode(String?.self, forKey: .sharedFromGarage) ?? ""
+        } catch{
+            sharedFromGarage = ""
+        }
+        
+        do{
+            sharedCar = try container.decode(String?.self, forKey: .sharedCar) ?? ""
+        } catch{
+            sharedCar = ""
+        }
+        
+        
+        do{
+            comments = try container.decode([String]?.self, forKey: .comments) ?? []
+        } catch{
+            comments = []
+        }
+        
+        do{
+            likedBy = try container.decode([String]?.self, forKey: .likedBy) ?? []
+        } catch{
+            likedBy = []
+        }
+        
+        do{
+            lovedBy = try container.decode([String]?.self, forKey: .lovedBy) ?? []
+        } catch{
+            lovedBy = []
+        }
+        
+        do{
+            sharedBy = try container.decode([String]?.self, forKey: .sharedBy) ?? []
+        } catch{
+            sharedBy = []
+        }
+        
+        do{
+            images = try container.decode([viewGarageDataCarImageModel]?.self, forKey: .images) ?? []
+        } catch{
+            images = []
+        }
+        
+    }
+    
+}
 
 
 

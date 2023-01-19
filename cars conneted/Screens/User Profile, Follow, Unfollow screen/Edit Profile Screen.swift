@@ -15,6 +15,8 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
     
     @StateObject var updateProfileApi = UpdateProfileApi()
     @StateObject var profileCoverImageApi = ProfileCoverImageApi()
+    @StateObject var profileMainImageApi = ProfileMainImageApi()
+
 
     
     @State var firstName = ""
@@ -497,6 +499,8 @@ struct Edit_Profile_Screen: View, MyLocationReceiver {
                         
                         if(self.pickingForProfile){
                             self.profilePhoto = Image(uiImage: image)
+                            let imageData = (((self.profilePhoto!.asUIImage()).jpegData(compressionQuality: 1)) ?? Data())
+                            self.profileMainImageApi.profileMainImage(image: imageData)
                            
                         }
                         else{

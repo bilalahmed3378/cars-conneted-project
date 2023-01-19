@@ -11,10 +11,17 @@ struct My_Garage_My_View: View {
     @Environment(\.presentationMode) var presentaionMode
     
     @StateObject var viewGarageApi = ViewGarageApi()
+    @StateObject var deleteGarageApi = DeleteGarageApi()
+    @StateObject var viewGarageCarsApi = GetGarageCarsApi()
+    @State var carsList : [ViewAllGarageCarsCarsModel] = []
+
+
     
     @State var toEditGarage =  false
     
     @State var toAddCar =  false
+    @State var toGarage =  false
+
     
     @State var showDeleteDialog : Bool = false
     
@@ -22,7 +29,6 @@ struct My_Garage_My_View: View {
     
     @State var isLoadingFirstTime = true
     
-    @State var carsList : [viewGarageDataCarModel] = []
     
     @State var showToast : Bool = false
     @State var toastMessage : String = ""
@@ -31,6 +37,22 @@ struct My_Garage_My_View: View {
     var body: some View {
         
         ZStack{
+            
+//                NavigationLink(destination: Edit_Garage_Screen( existingGarageData: self.viewGarageApi.apiResponse!.data!), isActive: self.$toEditGarage){
+//                    EmptyView()
+//                }
+            
+           
+            
+            NavigationLink(destination: Add_your_Car_Screen(), isActive: self.$toAddCar){
+                EmptyView()
+            }
+            
+            NavigationLink(destination: SetupGarageInApp(), isActive: self.$toGarage){
+                EmptyView()
+            }
+            
+           
             
             
             if(self.viewGarageApi.isLoading){
@@ -72,7 +94,7 @@ struct My_Garage_My_View: View {
                     
                     Button(action: {
                         withAnimation{
-                            self.viewGarageApi.viewGarage(carsList: self.$carsList)
+                            self.viewGarageApi.viewGarage()
                         }
                     }){
                         Text("Try Agin")
@@ -89,35 +111,7 @@ struct My_Garage_My_View: View {
                 }
             }
             
-            else if(self.viewGarageApi.isApiCallDone && self.viewGarageApi.isApiCallSuccessful && (!self.viewGarageApi.dataRetrievedSuccessfully)){
-                
-                VStack{
-                    
-                    Spacer()
-                    
-                    Text("Unable to get garage.")
-                        .font(.system(size: 14))
-                        .foregroundColor(.black)
-                    
-                    Button(action: {
-                        withAnimation{
-                            self.viewGarageApi.viewGarage(carsList: self.$carsList)
-                        }
-                    }){
-                        Text("Try Agin")
-                            .font(.system(size: 14))
-                            .foregroundColor(.white)
-                            .padding()
-                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
-                        
-                    }
-                    .padding(.top,30)
-                    
-                    Spacer()
-                    
-                }
-                
-            }
+          
             
             
             else if(self.viewGarageApi.isApiCallDone && self.viewGarageApi.isApiCallSuccessful){
@@ -125,16 +119,10 @@ struct My_Garage_My_View: View {
                 if(self.viewGarageApi.dataRetrievedSuccessfully){
                     
                     
+                    
                     VStack{
                         
-                        NavigationLink(destination: Edit_Garage_Screen(), isActive: self.$toEditGarage){
-                            EmptyView()
-                        }
-                        
-                        NavigationLink(destination: Add_your_Car_Screen(), isActive: self.$toAddCar){
-                            EmptyView()
-                        }
-                        
+                      
                         HStack{
                             
                             Button(action: {
@@ -169,16 +157,18 @@ struct My_Garage_My_View: View {
                                     
                                 })
                                 
-                                Button(action: {
-                                    self.toEditGarage = true
-                                }, label: {
+                               NavigationLink(destination: {
+                                   Edit_Garage_Screen(existingGarageData: self.viewGarageApi.apiResponse!.data!)
+                               }, label: {
+                                   Image("carbon_edit")
+                                   
+                                   Text("Edit")
+                                       .font(AppFonts.regular_14)
+                                   
+                               })
                                     
-                                    Image("carbon_edit")
-                                    
-                                    Text("Edit")
-                                        .font(AppFonts.regular_14)
-                                    
-                                })
+                                   
+                              
                                 
                                 Button(action: {
                                     self.showDeleteDialog = true
@@ -209,53 +199,200 @@ struct My_Garage_My_View: View {
                             
                         }.padding()
                         
-                        ScrollView(.vertical, showsIndicators: false){
-                            
-                            
-                            
-                            
-                            HStack{
-                                Text("5 cars in Garage")
-                                    .font(AppFonts.regular_18)
+                        if(self.viewGarageCarsApi.isLoading){
+                            VStack{
+                                
                                 Spacer()
-                            }
-                            .padding(.leading)
-                            .padding(.trailing)
-                            .padding(.bottom,10)
-                            
-                            
-                            HStack{
-                                Text("Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit. Aliqueto.")
-                                    .font(AppFonts.regular_12)
-                                Spacer()
-                            }
-                            .padding(.leading)
-                            .padding(.trailing)
-                            
-                            
-                            
-                            LazyVStack{
-                                ForEach (self.carsList.indices , id : \.self){
-                                    index in
+                                
+                                HStack{
                                     
-                                    myGarage(carDataModel: self.carsList[index], carsList: self.$carsList, showToast: self.$showToast, toastMessage: self.$toastMessage)
+                                    Spacer()
+                                    
+                                    ProgressView()
+                                        .padding()
+                                    
+                                    
+                                    Spacer()
+                                    
+                                }
+                                
+                                
+                                Spacer()
+                                
+                            }
+                        }
+                        
+                      else if(viewGarageCarsApi.isApiCallDone && viewGarageCarsApi.isApiCallSuccessful){
+                            if(viewGarageCarsApi.dataRetrivedSuccessfully){
+                                
+                                ScrollView(.vertical, showsIndicators: false){
+                                    
+                                    HStack{
+                                        Text("5 cars in Garage")
+                                            .font(AppFonts.regular_18)
+                                        Spacer()
+                                    }
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                                    .padding(.bottom,10)
+                                    
+                                    
+                                    HStack{
+                                        Text("Lorem ipsum dolor sit amet, \nconsectetur adipiscing elit. Aliqueto.")
+                                            .font(AppFonts.regular_12)
+                                        Spacer()
+                                    }
+                                    .padding(.leading)
+                                    .padding(.trailing)
+                                    
+                                    
+                                    
+                                    LazyVStack{
+                                        ForEach (self.carsList.indices , id : \.self){
+                                            index in
+
+                                            myGarage(carsList: self.carsList[index], carsLists: self.$carsList, showToast: self.$showToast, toastMessage: self.$toastMessage)
+                                                .onAppear{
+                                                    if(index == (self.carsList.count - 1)){
+                                                        self.viewGarageCarsApi.viewMorecars(carsList: self.$carsList)
+                                                    }
+                                                    
+                                                }
+                                            if(self.viewGarageCarsApi.isLoadingMore && (index == (self.carsList.count - 1))){
+                                                ProgressView()
+                                                    .padding(20)
+                                            }
+                                            
+                                        }
+
+                                    }
+                                    
+                                   
+                                    
                                 }
                                 
                             }
+                            else{
+                                VStack{
+                                    
+                                    
+                                    Spacer()
+                                    
+                                    Text("No car found")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.black)
+                                    
+                                    Button(action: {
+                                        withAnimation{
+                                            self.toAddCar = true
+                                        }
+                                    }){
+                                        Text("Add car")
+                                            .font(.system(size: 14))
+                                            .foregroundColor(.white)
+                                            .padding()
+                                            .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                                        
+                                    }
+                                    .padding(.top,30)
+                                    
+                                    Spacer()
+                                    
+                                }
+                            }
+                        }
+                        else if(viewGarageCarsApi.isApiCallDone && !(self.viewGarageCarsApi.isApiCallSuccessful)){
                             
-                            Text("View more")
-                                .foregroundColor(AppColors.redGradientColor1)
-                                .font(AppFonts.regular_16)
-                            
+                            VStack{
+                                
+                                
+                                Spacer()
+                                
+                                Text("Unable to access internet.")
+                                    .font(.system(size: 14))
+                                    .foregroundColor(.black)
+                                
+                                Button(action: {
+                                    withAnimation{
+                                        self.viewGarageCarsApi.viewAllGarageCars(carsList: self.$carsList)
+                                    }
+                                }){
+                                    Text("Try Agin")
+                                        .font(.system(size: 14))
+                                        .foregroundColor(.white)
+                                        .padding()
+                                        .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                                    
+                                }
+                                .padding(.top,30)
+                                
+                                Spacer()
+                                
+                            }
                         }
                         
-                        
-                        
+                       
                         
                         
                     }.edgesIgnoringSafeArea(.bottom)
                         .navigationBarHidden(true)
                     
+                }
+                
+               else if(self.viewGarageApi.apiResponse!.code == 400 && self.viewGarageApi.apiResponse!.successful == false){
+                    VStack{
+                        
+                        Spacer()
+                        
+                        Text("First Setup your Garage.")
+                            .font(.system(size: 14))
+                            .foregroundColor(.black)
+                        
+                        Button(action: {
+                            withAnimation{
+                                self.toGarage = true
+                            }
+                        }){
+                            Text("Setup Garage")
+                                .font(.system(size: 14))
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                            
+                        }
+                        .padding(.top,30)
+                        
+                        Spacer()
+                        
+                    }
+                }
+                
+                else{
+                    VStack{
+                        
+                        Spacer()
+                        
+                        Text("Unable to get garage.")
+                            .font(.system(size: 14))
+                            .foregroundColor(.black)
+                        
+                        Button(action: {
+                            withAnimation{
+                                self.viewGarageApi.viewGarage()
+                            }
+                        }){
+                            Text("Try Agin")
+                                .font(.system(size: 14))
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(RoundedRectangle(cornerRadius: 5).fill(.blue))
+                            
+                        }
+                        .padding(.top,30)
+                        
+                        Spacer()
+                        
+                    }
                 }
                 
                 
@@ -274,7 +411,7 @@ struct My_Garage_My_View: View {
                     
                     Button(action: {
                         withAnimation{
-                            self.viewGarageApi.viewGarage(carsList: self.$carsList)
+                            self.viewGarageApi.viewGarage()
                         }
                     }){
                         Text("Try Agin")
@@ -337,26 +474,51 @@ struct My_Garage_My_View: View {
                                 .padding(.trailing,10)
                             }
                             
-                            Button(action: {
-                                
-                                withAnimation{
-                                    
-                                }
-                                
-                            }){
+                            if(self.deleteGarageApi.isLoading){
                                 HStack{
                                     Spacer()
-                                    
-                                    Text("Yes")
-                                        .font(AppFonts.regular_14)
-                                        .foregroundColor(Color.white)
-                                    
+                                    ProgressView()
                                     Spacer()
                                 }
-                                .padding(15)
-                                .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1))
-                                .padding(.leading,10)
+                                .onDisappear{
+                                    if(self.deleteGarageApi.isApiCallDone && self.deleteGarageApi.isApiCallSuccessful){
+                                        self.showDeleteDialog = false
+                                        self.showToast = true
+                                        self.toastMessage = "Garage Deleted Successfully"
+                                        
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
+                                            self.viewGarageApi.viewGarage()
+                                        }
+                                        
+                                    }
+                                    else{
+                                        self.showToast = true
+                                        self.toastMessage = "Unable to delete garage"
+                                    }
+                                }
                             }
+                            
+                            else{
+                                Button(action: {
+                                    self.deleteGarageApi.deleteCar()
+                                }, label: {
+                                    HStack{
+                                        Spacer()
+                                        
+                                        Text("Delete")
+                                            .font(AppFonts.regular_14)
+                                            .foregroundColor(Color.white)
+                                        
+                                        Spacer()
+                                    }
+                                    .padding(15)
+                                    .background(RoundedRectangle(cornerRadius: 10).fill(AppColors.redGradientColor1))
+                                    .padding(.leading,10)
+                                })
+                            }
+                               
+                               
+                            
                         }
                         .padding(.top,10)
                         
@@ -465,7 +627,9 @@ struct My_Garage_My_View: View {
             
             if (self.isLoadingFirstTime){
                 
-                self.viewGarageApi.viewGarage(carsList: self.$carsList)
+                self.viewGarageApi.viewGarage()
+                
+                self.viewGarageCarsApi.viewAllGarageCars(carsList: self.$carsList)
                 
                 self.isLoadingFirstTime = false
                 
@@ -479,38 +643,39 @@ struct My_Garage_My_View: View {
 
 
 struct myGarage : View {
-    
+
     @StateObject var deleteCarApi = DeleteCarApi()
+
+    let carsList : ViewAllGarageCarsCarsModel
     
-    @State var carDataModel : viewGarageDataCarModel
-    
-    @Binding var carsList : [viewGarageDataCarModel]
-    
+    @Binding var carsLists : [ViewAllGarageCarsCarsModel]
+
+
     @Binding var showToast : Bool
-    
+
     @Binding var toastMessage : String
-    
+
     @State var toDeletedCar = false
-    
+
     @State var toUpdateCar = false
 
-    
+
     @State private var showingSheet = false
-    
+
     @State var showingSheetComments = false
-    
+
     var body : some View{
-        
+
         VStack{
-            
+
             NavigationLink(destination: Vehicle_Deleted_Screen(), isActive: self.$toDeletedCar){
                 EmptyView()
             }
-            
-            NavigationLink(destination: Update_your_Car_Screen(carId: self.carDataModel._id, carDataModel: self.carDataModel ), isActive: self.$toUpdateCar){
+
+            NavigationLink(destination: Update_your_Car_Screen(carId: self.carsList._id, existingCarData: self.carsList), isActive: self.$toUpdateCar){
                 EmptyView()
             }
-            
+
             ZStack{
                 Image("unsplash_1ZhZpP91olQ-1")
                     .resizable()
@@ -519,96 +684,95 @@ struct myGarage : View {
                 VStack{
                     HStack{
                         Spacer()
-                        
-                        
+
+
                         if(self.deleteCarApi.isLoading){
-                            
+
                             ProgressView()
                                 .padding()
                                 .onDisappear{
                                     if(self.deleteCarApi.isApiCallDone && self.deleteCarApi.isApiCallSuccessful){
-                                        
+
                                         if(self.deleteCarApi.carDeletedSuccessfully){
-                                            
-                                            self.carsList.removeAll{$0._id == self.carDataModel._id}
-                                            
+
+                                            self.carsLists.removeAll{$0._id == self.carsList._id}
                                             self.toastMessage = "car deleted successfully"
                                             self.showToast = true
-                                            
+
                                         }
-                                        
+
                                         else {
                                             self.toastMessage = "Unable to delete car"
                                             self.showToast = true
                                         }
-                                        
+
                                     }
                                     else if(self.deleteCarApi.isApiCallDone && (!self.deleteCarApi.isApiCallSuccessful)){
                                         self.toastMessage = "Unable to access internet. Please check you internet connection and try again."
                                         self.showToast = true
                                     }
-                                    
+
                                     else{
-                                        
+
                                         self.toastMessage = "something went wrong"
                                         self.showToast = true
-                                        
+
                                     }
-                                    
+
                                 }
 
-                            
+
                         }
-                        
+
                         else{
-                            
+
                             Menu(content: {
-                                
+
                                 Button(action: {}, label: {
-                                    
+
                                     Image("share")
-                                    
+
                                     Text("Share")
                                         .font(AppFonts.regular_14)
-                                    
-                                    
-                                    
+
+
+
                                 })
-                                
+
                                 Button(action: {
-                                    
+
                                     self.toUpdateCar = true
-                                    
-                                    
+
+
                                 }, label: {
-                                    
+
                                     Image("carbon_edit")
-                                    
+
                                     Text("Edit")
                                         .font(AppFonts.regular_14)
-                                    
+
                                 })
-                                
+
                                 Button(action: {
-                                    
-                                    self.deleteCarApi.deleteCar(car_id: self.carDataModel._id)
-                                    
+
+                                    self.deleteCarApi.deleteCar(car_id: self.carsList._id)
+
                                 }, label: {
-                                    
+
                                     Image("delete black")
-                                    
-                                    
+
+
                                     Text("Delete")
                                         .font(AppFonts.regular_14)
-                                    
+
                                 })
-                                
-                                
-                                
-                                
-                                
+
+
+
+
+
                             }, label: {
-                                
+
                                 Image("doted icons-1")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
@@ -616,93 +780,93 @@ struct myGarage : View {
                                     .padding()
                                     .padding(.top)
                             })
-                            
-                            
+
+
                         }
-                        
+
                     }
-                    
+
                     Spacer()
                     HStack{
-                        Text(self.carDataModel.brand)
+                        Text(self.carsList.brand)
                             .font(AppFonts.semiBold_14)
                             .foregroundColor(.white)
                         Spacer()
                     }.padding()
                         .padding(.bottom,-30)
-                    
-                    
+
+
                     HStack{
                         Group{
-                            Text(self.carDataModel.model)
+                            Text(self.carsList.model)
                                 .font(AppFonts.regular_12)
                                 .foregroundColor(.white)
-                            
+
                             Image("Ellipse 3")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 5, height: 5)
                                 .padding(.leading,1)
-                            
-                            Text(self.carDataModel.description)
+
+                            Text(self.carsList.description)
                                 .font(AppFonts.regular_12)
                                 .foregroundColor(.white)
-                            
+
                             Image("Ellipse 3")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 5, height: 5)
                                 .padding(.leading,1)
-                            
-                            Text(String(self.carDataModel.year))
+
+                            Text(String(self.carsList.year))
                                 .font(AppFonts.regular_12)
                                 .foregroundColor(.white)
-                            
+
                             Spacer()
                         }
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 8, height: 8)
-                        
+
                         Image("Ellipse 20")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 8, height: 8)
-                        
+
                         Image("Ellipse 3")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 8, height: 8)
-                        
+
                         Spacer()
-                        
+
                         NavigationLink(destination: {
                             Car_Specification()
                         }, label: {
                             Text("view details")
                                 .foregroundColor(.white)
                                 .font(AppFonts.regular_12)
-                            
+
                             Image("Vector-3")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 14, height: 14)
-                            
+
                         })
-                        
-                        
-                        
+
+
+
                     }.padding()
                         .padding(.bottom)
                 }
-                
+
             }.frame(width: UIScreen.screenWidth - 40)
-            
+
             VStack{
-                
+
                 HStack{
-                    
+
                     Button(action: {
                         self.showingSheet = true
                     }, label: {
@@ -710,81 +874,81 @@ struct myGarage : View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 18, height: 18)
-                        
+
                         Image("Group 7369")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 18, height: 18)
                             .offset(x: -10, y: 0)
-                        
+
                         Text("Arsalan and 20 other")
                             .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                     })
                     .sheet(isPresented: $showingSheet){
                         whoLikedScreen()
-                        
+
                     }
-                    
+
                     Spacer()
-                    
+
                     Button(action: {
                         self.showingSheetComments = true
                     }, label: {
                         Text("12 comments")
                             .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
-                        
+
                     })
                     .sheet(isPresented: $showingSheetComments){
                         commentsScreen()
-                        
+
                     }
-                    
+
                 }.padding(.leading,26)
                     .padding(.trailing,26)
-                
+
                 Divider()
                     .padding(.leading,26)
                     .padding(.trailing,26)
-                
+
                 HStack{
                     HStack{
                         Image("ei_like")
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 26, height: 26)
-                        
+
                         Text("Like")
                             .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
-                        
-                        
+
+
                     }
-                    
+
                     Spacer()
                     HStack{
-                        
-                        
+
+
                         Button(action: {
                             self.showingSheetComments = true
                         }, label: {
-                            
+
                             Image("ant-design_comment-outlined")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 26, height: 26)
-                            
+
                             Text("12 comments")
                                 .font(AppFonts.regular_12)
                                 .foregroundColor(Color.gray)
-                            
+
                         })
                         .sheet(isPresented: $showingSheetComments){
                             commentsScreen()
-                            
+
                         }
-                        
+
                     }
                     Spacer()
                     HStack{
@@ -792,28 +956,28 @@ struct myGarage : View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 26, height: 26)
-                        
+
                         Text("Share")
                             .font(AppFonts.regular_12)
                             .foregroundColor(Color.gray)
                     }
-                    
-                    
-                    
-                    
+
+
+
+
                 }.padding(.leading,26)
                     .padding(.trailing,26)
-                
+
             }
-            
-            
+
+
         }.padding(.top)
             .padding(.bottom)
             .background(RoundedRectangle(cornerRadius: 0).fill(.gray.opacity(0.2)))
-        
-        
-        
-        
+
+
+
+
     }
-    
+
 }
