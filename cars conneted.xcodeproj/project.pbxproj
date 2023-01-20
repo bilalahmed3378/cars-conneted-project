@@ -133,6 +133,8 @@
 		594BACFB29781B210066E466 /* ProfileCoverImageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594BACFA29781B210066E466 /* ProfileCoverImageApi.swift */; };
 		594D228128BC88590096D1B0 /* Events Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594D228028BC88590096D1B0 /* Events Screen.swift */; };
 		594DC7ED28B4F4E70000C99E /* Shop Others View Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DC7EC28B4F4E70000C99E /* Shop Others View Screen.swift */; };
+		594DC956297A662C007897ED /* RemoveCarImagesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DC955297A662C007897ED /* RemoveCarImagesResponseModel.swift */; };
+		594DC958297A667B007897ED /* RemoveCarImagesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 594DC957297A667B007897ED /* RemoveCarImagesApi.swift */; };
 		5950087F28ACAC7D00C44D86 /* Verify Email OTP Screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */; };
 		5950088128ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */; };
 		5950088328ACBC4F00C44D86 /* Payment Methods screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5950088228ACBC4F00C44D86 /* Payment Methods screen.swift */; };
@@ -381,6 +383,8 @@
 		594BACFA29781B210066E466 /* ProfileCoverImageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCoverImageApi.swift; sourceTree = "<group>"; };
 		594D228028BC88590096D1B0 /* Events Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Events Screen.swift"; sourceTree = "<group>"; };
 		594DC7EC28B4F4E70000C99E /* Shop Others View Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shop Others View Screen.swift"; sourceTree = "<group>"; };
+		594DC955297A662C007897ED /* RemoveCarImagesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCarImagesResponseModel.swift; sourceTree = "<group>"; };
+		594DC957297A667B007897ED /* RemoveCarImagesApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveCarImagesApi.swift; sourceTree = "<group>"; };
 		5950087E28ACAC7D00C44D86 /* Verify Email OTP Screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Verify Email OTP Screen.swift"; sourceTree = "<group>"; };
 		5950088028ACB6EE00C44D86 /* Proximity Location Successfully Changed screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Proximity Location Successfully Changed screen.swift"; sourceTree = "<group>"; };
 		5950088228ACBC4F00C44D86 /* Payment Methods screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Payment Methods screen.swift"; sourceTree = "<group>"; };
@@ -1319,6 +1323,31 @@
 			path = "Shop Screens";
 			sourceTree = "<group>";
 		};
+		594DC952297A65EB007897ED /* Remove Car Images Api */ = {
+			isa = PBXGroup;
+			children = (
+				594DC954297A6613007897ED /* Api */,
+				594DC953297A660C007897ED /* Model */,
+			);
+			path = "Remove Car Images Api";
+			sourceTree = "<group>";
+		};
+		594DC953297A660C007897ED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				594DC955297A662C007897ED /* RemoveCarImagesResponseModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		594DC954297A6613007897ED /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				594DC957297A667B007897ED /* RemoveCarImagesApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		5952DC08290A63B400B73C5A /* Saved Item */ = {
 			isa = PBXGroup;
 			children = (
@@ -1477,6 +1506,7 @@
 		59BF26F829792E6500BB7324 /* Cars Apis */ = {
 			isa = PBXGroup;
 			children = (
+				594DC952297A65EB007897ED /* Remove Car Images Api */,
 				5929E6A829796862003D94C2 /* Add Car Images Api */,
 				4D9BB589296EE28F0003A8C3 /* Add Car Api */,
 				4D44E055297084CC00107DF3 /* Update Car Api */,
@@ -1956,6 +1986,7 @@
 				59D669DD28ABB5210012FBF8 /* User name Successfully Changed Screen.swift in Sources */,
 				592F18B4288955A300A531A4 /* post screen 5 preview .swift in Sources */,
 				4D51A10329682365009F7828 /* sendForgetPsswordOtpApi.swift in Sources */,
+				594DC958297A667B007897ED /* RemoveCarImagesApi.swift in Sources */,
 				59D7CF1028926D6D00F9EC5D /* Proximity Setting screen.swift in Sources */,
 				594D228128BC88590096D1B0 /* Events Screen.swift in Sources */,
 				5961024028D32F5500226916 /* Club Search Screen.swift in Sources */,
@@ -2004,6 +2035,7 @@
 				59DB4467289950F5006766EA /* NullEncodeable.swift in Sources */,
 				599EDBF62979268C00DBE65C /* UpdateGarageApi.swift in Sources */,
 				59D6147A28AD17B90014E4E9 /* FeedBack Screen.swift in Sources */,
+				594DC956297A662C007897ED /* RemoveCarImagesResponseModel.swift in Sources */,
 				597282EC28B78A740004F4CB /* Members (other club members) Screen.swift in Sources */,
 				591043B428AE4E4100F6E81F /* VerifyOtpScreen.swift in Sources */,
 				59D669E128ABB8590012FBF8 /* E-Mail Confirmation screen.swift in Sources */,

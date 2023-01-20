@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct My_Garage_My_View: View {
     @Environment(\.presentationMode) var presentaionMode
@@ -675,12 +676,26 @@ struct myGarage : View {
             NavigationLink(destination: Update_your_Car_Screen(carId: self.carsList._id, existingCarData: self.carsList), isActive: self.$toUpdateCar){
                 EmptyView()
             }
+            
+            
 
             ZStack{
-                Image("unsplash_1ZhZpP91olQ-1")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.screenWidth - 40)
+                
+                if(self.carsList.images.count > 0){
+                    KFImage(URL(string: self.carsList.images[0].url))
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.screenWidth - 40)
+                }
+                else{
+                    Image("unsplash_spxgIcI7YGo")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: UIScreen.screenWidth - 40)
+                    
+                }
+                
+                
                 VStack{
                     HStack{
                         Spacer()

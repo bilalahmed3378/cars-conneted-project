@@ -37,6 +37,10 @@ struct NetworkConfig {
     static let profileCoverImage = ":3001/user/profile/upload-cover-image"
     static let profileMainImage = ":3001/user/profile/upload-profile-image"
     static let getGarageCars = ":3003/user/garage/view-cars"
+    static let carImages = ":3003/user/cars/add-images"
+    static let removeCarImages = ":3003/user/cars/remove-image"
+
+
 
 
 

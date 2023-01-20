@@ -12,6 +12,8 @@ struct Update_your_Car_Screen: View {
     
     @StateObject var updateCarApi = UpdateCarApi()
     @StateObject var CarImageApi = AddCarImagesApi()
+    @StateObject var removeCarImagesApi = RemoveCarImagesApi()
+
 
     let existingCarData : ViewAllGarageCarsCarsModel
 
@@ -339,24 +341,45 @@ struct Update_your_Car_Screen: View {
                             .aspectRatio( contentMode: .fill)
                             .frame(width: UIScreen.widthBlockSize*90, height: UIScreen.heightBlockSize*25)
                             .cornerRadius(8)
+                            .padding(.leading,20)
                             .overlay(
                                 VStack{
                                     
                                     
                                     HStack{
                                         Spacer()
-                                        Image(systemName: "minus")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .foregroundColor(.white)
-                                            .padding(5)
-                                            .frame(width: 15, height: 15)
-                                            .background(Circle()
-                                                .fill(.red))
-                                            .offset(x: 5, y: -5)
-//                                            .onTapGesture{
-//                                                self.photos.remove
-//                                            }
+                                        if(self.removeCarImagesApi.isLoading){
+                                            ProgressView()
+                                                .onAppear{
+                                                    if(self.removeCarImagesApi.isApiCallDone && self.removeCarImagesApi.isApiCallSuccessful){
+                                                        if(self.removeCarImagesApi.imageRemovedSuccessfully){
+                                                            
+                                                        }
+                                                        else{
+                                                            self.showToast = true
+                                                            self.toastMessage = "Unabale to remove image"
+                                                        }
+                                                    }
+                                                }
+                                        }
+                                        else{
+                                            Image(systemName: "minus")
+                                                .resizable()
+                                                .aspectRatio(contentMode: .fit)
+                                                .foregroundColor(.white)
+                                                .padding(5)
+                                                .frame(width: 15, height: 15)
+                                                .background(Circle()
+                                                    .fill(.red))
+                                                .offset(x: 5, y: -5)
+                                                .onTapGesture{
+                                                    if(self.existingCarData.images.count > 0){
+                                                        self.removeCarImagesApi.RemoveImage(image_id: self.existingCarData.images[0].image_id, car_id: self.existingCarData._id)
+                                                    }
+                                                  
+                                                }
+                                        }
+                                       
                                         
                                         
                                         

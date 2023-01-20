@@ -1,56 +1,45 @@
 //
-//  AddCarImagesApi.swift
+//  RemoveCarImagesApi.swift
 //  cars conneted
 //
-//  Created by Bilal Ahmed on 19/01/2023.
+//  Created by Bilal Ahmed on 20/01/2023.
 //
 
 import Foundation
-import MultipartForm
 
-class AddCarImagesApi : ObservableObject{
+
+class RemoveCarImagesApi : ObservableObject{
         //MARK: - Published Variables
     @Published var isLoading = false
     @Published var isApiCallDone = false
     @Published var isApiCallSuccessful = false
-    @Published var profileCoverImageUploaded = false
-    @Published var apiResponse :  AddCarImagesResponseModel?
+    @Published var imageRemovedSuccessfully = false
+    @Published var apiResponse :  RemoveCarImagesResponseModel?
 
 
     
-
-    
-        //MARK: - Get Customer Orders History
-    func carsImage(image : Data, car_id : String){
+        //MARK: - Get History
+    func RemoveImage(image_id : String, car_id: String){
         
         self.isLoading = true
         self.isApiCallSuccessful = true
-        self.profileCoverImageUploaded = false
+        self.imageRemovedSuccessfully = false
         self.isApiCallDone = false
         
             //Create url
-        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.carImages ) else {return}
+        guard let url = URL(string: NetworkConfig.baseUrl + NetworkConfig.removeCarImages + "?image_id=\(image_id)&car_id=\(car_id)" ) else {return}
         
 
-        var formToRequest = MultipartForm()
-        
-        formToRequest.parts.append(MultipartForm.Part(name: "carImages" , data: image, filename: "cover_image.png"))
-        formToRequest.parts.append(MultipartForm.Part(name: "car_id", value: car_id))
 
-        
-      
-        
         
         let token = AppData().getBearerToken()
-        
+
+    
             //Create request
         var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.setValue(token, forHTTPHeaderField: "token")
-        request.setValue(formToRequest.contentType, forHTTPHeaderField: "Content-Type")
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.httpMethod = "DELETE"
+        request.setValue( token, forHTTPHeaderField: "token")
         request.setValue(NetworkConfig.secretKey, forHTTPHeaderField: "secret_key")
-        request.httpBody = formToRequest.bodyData
         
         
         
@@ -72,11 +61,11 @@ class AddCarImagesApi : ObservableObject{
             
             
             do{
-                print("Got car images response succesfully.....")
+                print("Got Remove image response succesfully.....")
                 DispatchQueue.main.async {
                     self.isApiCallDone = true
                 }
-                let main = try JSONDecoder().decode(AddCarImagesResponseModel.self, from: data)
+                let main = try JSONDecoder().decode(RemoveCarImagesResponseModel.self, from: data)
                 
                 DispatchQueue.main.async {
                     self.apiResponse = main
@@ -84,11 +73,11 @@ class AddCarImagesApi : ObservableObject{
                     
                     if(main.code == 200 && main.successful == true){
                         
-                        self.profileCoverImageUploaded = true
+                        self.imageRemovedSuccessfully = true
                     }
                     
                     else{
-                        self.profileCoverImageUploaded = false
+                        self.imageRemovedSuccessfully = false
                     }
                     self.isLoading = false
                 }
@@ -99,7 +88,7 @@ class AddCarImagesApi : ObservableObject{
                     self.isApiCallDone = true
                     self.apiResponse = nil
                     self.isApiCallSuccessful  = true
-                    self.profileCoverImageUploaded = false
+                    self.imageRemovedSuccessfully = false
                     self.isLoading = false
                 }
             }
